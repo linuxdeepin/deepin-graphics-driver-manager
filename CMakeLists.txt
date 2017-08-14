@@ -11,13 +11,15 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_FLAGS -Wall)
 
-
 if (NOT (${CMAKE_BUILD_TYPE} MATCHES "Debug"))
     set(CMAKE_CXX_FLAGS -O3)
+else ()
+    set(CMAKE_CXX_COMPILER "clang++")
 endif ()
 
 # Sources files
-file(GLOB SRCS "*.h" "*.cpp" "widgets/*.h" "widgets/*.cpp")
+file(GLOB SRCS "*.h" "*.cpp"
+               "widgets/*.h" "widgets/*.cpp")
 
 # Find the library
 find_package(PkgConfig REQUIRED)
@@ -40,3 +42,13 @@ if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 endif ()
 
 install(TARGETS ${BIN_NAME} DESTINATION bin)
+
+# Test settings
+enable_testing()
+add_executable(Test tests/test.cpp
+                    graphicsdeviceinfo.h graphicsdeviceinfo.cpp
+)
+target_link_libraries(Test
+${Qt5Widgets_LIBRARIES}
+)
+add_test(NAME Test COMMAND Test)
