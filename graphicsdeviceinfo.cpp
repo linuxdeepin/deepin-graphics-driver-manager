@@ -4,6 +4,16 @@
 #include <QProcess>
 #include <QDebug>
 
+GraphicsDeviceInfo::DeviceFlag GraphicsDeviceInfo::deviceType(const QString &devInfo)
+{
+    if (devInfo.contains("Intel"))
+        return GraphicsDeviceInfo::INTEL;
+    else if (devInfo.contains("NVIDIA"))
+        return GraphicsDeviceInfo::NVIDIA;
+    else
+        return GraphicsDeviceInfo::NoDevice;
+}
+
 GraphicsDeviceInfo::GraphicsDeviceInfo() :
     m_sysDevFlag(NoDevice)
 {
@@ -22,8 +32,9 @@ void GraphicsDeviceInfo::init()
         if (!dev.contains("VGA"))
             continue;
 
+        m_sysDevFlag |= deviceType(dev);
         m_devices << dev;
     }
 
-    qDebug() << m_devices;
+    qDebug() << m_sysDevFlag;
 }

@@ -14,17 +14,22 @@ public:
         NVIDIA      = 1 << 1,
         INTEL       = 1 << 2,
     };
+    Q_DECLARE_FLAGS(DeviceFlags, DeviceFlag)
 
     explicit GraphicsDeviceInfo();
 
     int deviceFlag() const { return m_sysDevFlag; }
 
+    static GraphicsDeviceInfo::DeviceFlag deviceType(const QString &devInfo);
+
 private:
     void init();
 
 private:
-    int m_sysDevFlag;
+    DeviceFlags m_sysDevFlag;
     QSet<QString> m_devices;
 };
+
+Q_DECLARE_OPERATORS_FOR_FLAGS(GraphicsDeviceInfo::DeviceFlags)
 
 #endif

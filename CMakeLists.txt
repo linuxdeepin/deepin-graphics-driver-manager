@@ -19,7 +19,8 @@ endif ()
 
 # Sources files
 file(GLOB SRCS "*.h" "*.cpp"
-               "widgets/*.h" "widgets/*.cpp")
+               "widgets/*.h" "widgets/*.cpp"
+               "resolutions/*.h" "resolutions/*.cpp")
 
 # Find the library
 find_package(PkgConfig REQUIRED)
@@ -47,6 +48,7 @@ install(TARGETS ${BIN_NAME} DESTINATION bin)
 enable_testing()
 add_executable(Test tests/test.cpp
                     graphicsdeviceinfo.h graphicsdeviceinfo.cpp
+                    resolutions/resolution.h resolutions/resolution.cpp
 )
 target_link_libraries(Test
 ${Qt5Widgets_LIBRARIES}
