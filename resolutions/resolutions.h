@@ -32,7 +32,14 @@ private:
 class ResolutionsBuilder
 {
 public:
-    static Resolutions build(const GraphicsDeviceInfo &devInfo);
+    explicit ResolutionsBuilder(const GraphicsDeviceInfo &devInfo);
+
+    ResolutionsBuilder config(const QString &config);
+    Resolutions build();
+
+private:
+    QString m_config;
+    GraphicsDeviceInfo m_devInfo;
 };
 
 #endif

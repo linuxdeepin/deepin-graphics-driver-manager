@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     m_devInfo(new GraphicsDeviceInfo)
 {
-    Resolutions r = ResolutionsBuilder::build(*m_devInfo);
+    Resolutions r = ResolutionsBuilder(*m_devInfo).build();
 
     setWindowFlags(Qt::FramelessWindowHint);
     setFixedSize(400, 300);
