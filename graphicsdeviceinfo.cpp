@@ -35,6 +35,4 @@ void GraphicsDeviceInfo::init()
         m_sysDevFlag |= deviceType(dev);
         m_devices << dev;
     }
-
-    qDebug() << m_sysDevFlag;
 }

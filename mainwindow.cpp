@@ -1,6 +1,7 @@
 
 #include "mainwindow.h"
 #include "graphicsdeviceinfo.h"
+#include "resolutions/resolutions.h"
 
 #include <QGuiApplication>
 #include <QScreen>
@@ -11,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     m_devInfo(new GraphicsDeviceInfo)
 {
+    Resolutions r = ResolutionsBuilder::build(*m_devInfo);
+
     setWindowFlags(Qt::FramelessWindowHint);
     setFixedSize(400, 300);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
