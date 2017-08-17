@@ -4,6 +4,14 @@
 #include <QProcess>
 #include <QDebug>
 
+extern "C" {
+    #include <pci/pci.h>
+}
+
+#include <cstring>
+
+#define VGA_CLASS "VGA compatible controller"
+
 GraphicsDeviceInfo::DeviceFlag GraphicsDeviceInfo::deviceType(const QString &devInfo)
 {
     if (devInfo.contains("Intel"))
@@ -22,19 +30,25 @@ GraphicsDeviceInfo::GraphicsDeviceInfo() :
 
 void GraphicsDeviceInfo::init()
 {
-    QProcess proc;
-    proc.start("lspci");
-    proc.waitForFinished();
+    struct pci_access *pacc;
+    struct pci_dev *dev;
+    char namebuf[1024];
 
-    const auto &devices = proc.readAll().split('\n');
-    for (const auto &dev : devices)
+    pacc = pci_alloc();
+    pci_init(pacc);
+    pci_scan_bus(pacc);
+    for (dev = pacc->devices; dev; dev = dev->next)
     {
-        if (!dev.contains("VGA"))
+        pci_fill_info(dev, PCI_FILL_CLASS | PCI_FILL_IDENT);
+        const char *devClass = pci_lookup_name(pacc, namebuf, sizeof(namebuf), PCI_LOOKUP_CLASS, dev->device_class);
+        if (std::strcmp(devClass, VGA_CLASS))
             continue;
 
-        qDebug() << dev;
+        const QString devInfo = pci_lookup_name(pacc, namebuf, sizeof(namebuf), PCI_LOOKUP_VENDOR | PCI_LOOKUP_DEVICE, dev->vendor_id, dev->device_id);
 
-        m_sysDevFlag |= deviceType(dev);
-        m_devices << dev;
+        qDebug() << devInfo;
+
+        m_sysDevFlag |= deviceType(devInfo);
+        m_devices << devInfo;
     }
 }

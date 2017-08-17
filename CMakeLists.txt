@@ -27,12 +27,14 @@ find_package(PkgConfig REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 
 pkg_check_modules(DtkWidget REQUIRED dtkwidget)
+pkg_check_modules(PCI REQUIRED libpci)
 
 # Tell CMake to create the executable
 add_executable(${BIN_NAME} ${SRCS})
-target_include_directories(${BIN_NAME} PUBLIC ${DtkWidget_INCLUDE_DIRS})
+target_include_directories(${BIN_NAME} PUBLIC ${DtkWidget_INCLUDE_DIRS} ${PCI_INCLUDE_DIRS})
 target_link_libraries(${BIN_NAME}
     ${DtkWidget_LIBRARIES}
+    ${PCI_LIBRARIES}
     ${Qt5Widgets_LIBRARIES}
     ${Qt5Concurrent_LIBRARIES}
 )
@@ -51,6 +53,7 @@ add_executable(Test tests/test.cpp
                     resolutions/resolution.h resolutions/resolution.cpp
 )
 target_link_libraries(Test
-${Qt5Widgets_LIBRARIES}
+    ${Qt5Widgets_LIBRARIES}
+    ${Qt5Widgets_LIBRARIES}
 )
 add_test(NAME Test COMMAND Test)
