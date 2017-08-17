@@ -1,27 +1,36 @@
 
 #include "mainwindow.h"
-#include "graphicsdeviceinfo.h"
-#include "resolutions/resolutions.h"
+#include "widgets/resolutionwidget.h"
 
 #include <QGuiApplication>
 #include <QScreen>
 #include <QKeyEvent>
+#include <QDebug>
+#include <QTimer>
 
-MainWindow::MainWindow(QWidget *parent) : 
-    QWidget(parent),
+#include <DTitlebar>
 
-    m_devInfo(new GraphicsDeviceInfo)
+MainWindow::MainWindow(QWidget *parent) :
+    DMainWindow(parent),
+
+    m_resolutions(ResolutionsBuilder(m_devInfo).build())
 {
-    Resolutions r = ResolutionsBuilder(*m_devInfo).build();
+    // DTitlebar *tbar = titlebar();
+    // tbar->setWindowFlags(tbar->windowFlags() & ~Qt::WindowMaximizeButtonHint);
 
-    setWindowFlags(Qt::FramelessWindowHint);
-    setFixedSize(400, 300);
+    m_resolutionsLayout = new QVBoxLayout;
+
+    setCentralWidget(new QWidget);
+    centralWidget()->setLayout(m_resolutionsLayout);
+
+    setFixedSize(500, 600);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
+
+    QTimer::singleShot(0, this, &MainWindow::loadResolutions);
 }
 
 MainWindow::~MainWindow()
 {
-    delete m_devInfo;
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *e)
@@ -35,4 +44,13 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
     }
 
     return QWidget::keyPressEvent(e);
+}
+
+void MainWindow::loadResolutions()
+{
+    for (const auto &r : m_resolutions.resolutions())
+    {
+        ResolutionWidget *rw = new ResolutionWidget(r);
+        m_resolutionsLayout->addWidget(rw);
+    }
 }

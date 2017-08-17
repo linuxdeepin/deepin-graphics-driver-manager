@@ -2,10 +2,16 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QWidget>
+#include "graphicsdeviceinfo.h"
+#include "resolutions/resolutions.h"
 
-class GraphicsDeviceInfo;
-class MainWindow : public QWidget 
+#include <QVBoxLayout>
+
+#include <DMainWindow>
+
+DWIDGET_USE_NAMESPACE
+
+class MainWindow : public DMainWindow
 {
     Q_OBJECT
 
@@ -16,8 +22,14 @@ public:
 private:
     void keyPressEvent(QKeyEvent *e);
 
+private Q_SLOTS:
+    void loadResolutions();
+
 private:
-    GraphicsDeviceInfo *m_devInfo;
+    GraphicsDeviceInfo m_devInfo;
+    Resolutions m_resolutions;
+
+    QVBoxLayout *m_resolutionsLayout;
 };
 
 #endif
