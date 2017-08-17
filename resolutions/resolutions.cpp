@@ -13,7 +13,7 @@ Resolutions::Resolutions()
 }
 
 ResolutionsBuilder::ResolutionsBuilder(const GraphicsDeviceInfo &devInfo) :
-    m_config("/home/resolutions.json"),
+    m_config(":/config/resolutions/resolutions.json1"),
     m_devInfo(devInfo)
 {
 

@@ -33,6 +33,7 @@ private:
 
     QVBoxLayout *m_resolutionsLayout;
     QLabel *m_resolutionsIcon;
+    QLabel *m_vendorsName;
     QWidget *m_resolutionsWidget;
     QPushButton *m_toggleButton;
 };

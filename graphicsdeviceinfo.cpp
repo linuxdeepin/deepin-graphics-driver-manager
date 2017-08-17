@@ -51,4 +51,5 @@ void GraphicsDeviceInfo::init()
         m_sysDevFlag |= deviceType(devInfo);
         m_devices << devInfo;
     }
+    pci_cleanup(pacc);
 }

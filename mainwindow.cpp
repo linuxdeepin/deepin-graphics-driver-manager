@@ -21,6 +21,10 @@ MainWindow::MainWindow(QWidget *parent) :
     m_toggleButton->setText(tr("Toggle"));
 
     m_resolutionsIcon = new QLabel;
+    m_vendorsName = new QLabel;
+    m_vendorsName->setWordWrap(true);
+    m_vendorsName->setAlignment(Qt::AlignCenter);
+    m_vendorsName->setText(m_devInfo.devices().toList().join('\n'));
 
     m_resolutionsLayout = new QVBoxLayout;
     m_resolutionsWidget = new QWidget;
@@ -28,6 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QVBoxLayout *centralLayout = new QVBoxLayout;
     centralLayout->addWidget(m_resolutionsIcon);
+    centralLayout->addWidget(m_vendorsName);
     centralLayout->addStretch();
     centralLayout->addWidget(m_resolutionsWidget);
     centralLayout->addStretch();

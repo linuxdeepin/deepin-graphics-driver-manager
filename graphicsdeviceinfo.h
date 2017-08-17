@@ -19,6 +19,7 @@ public:
     explicit GraphicsDeviceInfo();
 
     int deviceFlag() const { return m_sysDevFlag; }
+    const QSet<QString> devices() const { return m_devices; }
 
     static GraphicsDeviceInfo::DeviceFlag deviceType(const QString &devInfo);
 

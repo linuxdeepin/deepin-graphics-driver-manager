@@ -1,0 +1,42 @@
+[
+    {
+        "type": 0,
+        "name": "none"
+    },
+
+    {
+        "type": 1,
+        "name": "amd"
+    },
+
+    {
+        "type": 2,
+        "name": "nvidia"
+    },
+
+    {
+        "type": 4,
+        "name": "intel"
+    },
+
+    {
+        "type": 6,
+        "name": "nvidia_intel",
+        "icon_name": "nvidia_intel",
+        "resolutions":
+        [
+            {
+                "id": 100,
+                "name": "Opensource Driver"
+            },
+            {
+                "id": 200,
+                "name": "Closesource Driver"
+            },
+            {
+                "id": 300,
+                "name": "Mode Settings"
+            }
+        ]
+    }
+]
