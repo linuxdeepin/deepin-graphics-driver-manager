@@ -11,6 +11,8 @@
 
 DWIDGET_USE_NAMESPACE
 
+class QPushButton;
+class QLabel;
 class MainWindow : public DMainWindow
 {
     Q_OBJECT
@@ -30,6 +32,9 @@ private:
     Resolutions m_resolutions;
 
     QVBoxLayout *m_resolutionsLayout;
+    QLabel *m_resolutionsIcon;
+    QWidget *m_resolutionsWidget;
+    QPushButton *m_toggleButton;
 };
 
 #endif

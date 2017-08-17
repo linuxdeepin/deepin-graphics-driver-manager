@@ -32,6 +32,8 @@ void GraphicsDeviceInfo::init()
         if (!dev.contains("VGA"))
             continue;
 
+        qDebug() << dev;
+
         m_sysDevFlag |= deviceType(dev);
         m_devices << dev;
     }

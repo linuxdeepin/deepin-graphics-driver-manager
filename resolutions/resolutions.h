@@ -17,7 +17,7 @@ public:
     const QString iconName() const { return m_iconName; }
     const QString description() const { return m_description; }
 
-    const QList<Resolution> resolutions() const { return m_resolutions; };
+    const QList<Resolution> resolutions() const { return m_resolutions; }
 
 private:
     explicit Resolutions();

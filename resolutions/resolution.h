@@ -10,6 +10,10 @@ class Resolution
 public:
     explicit Resolution(const QJsonObject &info);
 
+    int id() const { return m_resId; }
+    const QString name() const { return m_resName; }
+    const QString description() const { return m_resDescription; }
+
     bool operator==(const Resolution &rhs) const { return m_resId == rhs.m_resId; }
 
 private:
