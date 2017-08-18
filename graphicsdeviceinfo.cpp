@@ -46,8 +46,6 @@ void GraphicsDeviceInfo::init()
 
         const QString devInfo = pci_lookup_name(pacc, namebuf, sizeof(namebuf), PCI_LOOKUP_VENDOR | PCI_LOOKUP_DEVICE, dev->vendor_id, dev->device_id);
 
-        qDebug() << devInfo;
-
         m_sysDevFlag |= deviceType(devInfo);
         m_devices << devInfo;
     }

@@ -21,6 +21,8 @@ MainWindow::MainWindow(QWidget *parent) :
     m_toggleButton->setText(tr("Toggle"));
 
     m_resolutionsIcon = new QLabel;
+    m_resolutionsIcon->setAlignment(Qt::AlignCenter);
+    m_resolutionsIcon->setPixmap(QPixmap(":/resources/icons/" + m_resolutions.iconName()));
     m_vendorsName = new QLabel;
     m_vendorsName->setWordWrap(true);
     m_vendorsName->setAlignment(Qt::AlignCenter);

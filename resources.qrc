@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file>config/resolutions/resolutions.json</file>
+        <file>resources/config/resolutions/resolutions.json</file>
+        <file>resources/icons/amd.png</file>
+        <file>resources/icons/intel.png</file>
+        <file>resources/icons/nvidia_intel.png</file>
+        <file>resources/icons/nvidia.png</file>
     </qresource>
 </RCC>

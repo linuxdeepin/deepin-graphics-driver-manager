@@ -6,23 +6,26 @@
 
     {
         "type": 1,
-        "name": "amd"
+        "name": "amd",
+        "icon_name": "amd.png"
     },
 
     {
         "type": 2,
-        "name": "nvidia"
+        "name": "nvidia",
+        "icon_name": "nvidia.png"
     },
 
     {
         "type": 4,
-        "name": "intel"
+        "name": "intel",
+        "icon_name": "intel.png"
     },
 
     {
         "type": 6,
         "name": "nvidia_intel",
-        "icon_name": "nvidia_intel",
+        "icon_name": "nvidia_intel.png",
         "resolutions":
         [
             {
