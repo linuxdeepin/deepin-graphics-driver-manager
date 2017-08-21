@@ -30,15 +30,18 @@
         [
             {
                 "id": 100,
-                "name": "Opensource Driver"
+                "name": "Opensource Driver",
+                "description": "open source driver"
             },
             {
                 "id": 200,
-                "name": "Closesource Driver"
+                "name": "Closesource Driver",
+                "description": "close source driver"
             },
             {
                 "id": 300,
-                "name": "Mode Settings"
+                "name": "Mode Settings",
+                "description": "mode settings"
             }
         ]
     }

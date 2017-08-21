@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     m_toggleButton = new QPushButton;
     m_toggleButton->setText(tr("Toggle"));
+    m_toggleButton->setFixedHeight(38);
 
     m_resolutionsIcon = new QLabel;
     m_resolutionsIcon->setAlignment(Qt::AlignCenter);
@@ -31,6 +32,11 @@ MainWindow::MainWindow(QWidget *parent) :
     m_resolutionsLayout = new QVBoxLayout;
     m_resolutionsWidget = new QWidget;
     m_resolutionsWidget->setLayout(m_resolutionsLayout);
+    m_resolutionsWidget->setObjectName("ResolutionsWidget");
+    m_resolutionsWidget->setStyleSheet("QWidget #ResolutionsWidget {"
+                                       "border: 1px solid #eee;"
+                                       "border-radius: 3px;"
+                                       "}");
 
     QVBoxLayout *centralLayout = new QVBoxLayout;
     centralLayout->addWidget(m_resolutionsIcon);
@@ -40,7 +46,7 @@ MainWindow::MainWindow(QWidget *parent) :
     centralLayout->addStretch();
     centralLayout->addWidget(m_toggleButton);
     centralLayout->setSpacing(0);
-    centralLayout->setContentsMargins(90, 0, 90, 30);
+    centralLayout->setContentsMargins(70, 0, 70, 30);
 
     DTitlebar *tbar = titlebar();
     tbar->setTitle(QString());
@@ -49,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setCentralWidget(new QWidget);
     centralWidget()->setLayout(centralLayout);
 
-    setFixedSize(500, 600);
+    setFixedSize(440, 600);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
     QTimer::singleShot(0, this, &MainWindow::loadResolutions);
