@@ -26,8 +26,11 @@ private:
 
 private Q_SLOTS:
     void loadResolutions();
+    void onResolutionSelected();
 
 private:
+    int m_usedIndex;
+    int m_selectedIndex;
     GraphicsDeviceInfo m_devInfo;
     Resolutions m_resolutions;
 
@@ -36,6 +39,7 @@ private:
     QLabel *m_vendorsName;
     QWidget *m_resolutionsWidget;
     QPushButton *m_toggleButton;
+    QPushButton *m_okButton;
 };
 
 #endif

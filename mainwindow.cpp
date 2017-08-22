@@ -21,6 +21,10 @@ MainWindow::MainWindow(QWidget *parent) :
     m_toggleButton->setText(tr("Toggle"));
     m_toggleButton->setFixedHeight(38);
 
+    m_okButton = new QPushButton;
+    m_okButton->setText(tr("OK"));
+    m_okButton->setFixedHeight(38);
+
     m_resolutionsIcon = new QLabel;
     m_resolutionsIcon->setAlignment(Qt::AlignCenter);
     m_resolutionsIcon->setPixmap(QPixmap(":/resources/icons/" + m_resolutions.iconName()));
@@ -45,6 +49,7 @@ MainWindow::MainWindow(QWidget *parent) :
     centralLayout->addWidget(m_resolutionsWidget);
     centralLayout->addStretch();
     centralLayout->addWidget(m_toggleButton);
+    centralLayout->addWidget(m_okButton);
     centralLayout->setSpacing(0);
     centralLayout->setContentsMargins(70, 0, 70, 30);
 
@@ -84,5 +89,27 @@ void MainWindow::loadResolutions()
     {
         ResolutionWidget *rw = new ResolutionWidget(r);
         m_resolutionsLayout->addWidget(rw);
+
+        connect(rw, &ResolutionWidget::clicked, this, &MainWindow::onResolutionSelected);
     }
+}
+
+void MainWindow::onResolutionSelected()
+{
+    ResolutionWidget *rw = static_cast<ResolutionWidget *>(sender());
+
+    const int idx = m_resolutionsLayout->indexOf(rw);
+    Q_ASSERT(idx != -1);
+
+    m_selectedIndex = idx;
+
+    for (int i(0); i != m_resolutionsLayout->count(); ++i)
+    {
+        ResolutionWidget *w = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(i)->widget());
+        w->setChecked(i == idx);
+    }
+
+    const bool changed = m_selectedIndex != m_usedIndex;
+    m_toggleButton->setVisible(changed);
+    m_okButton->setVisible(!changed);
 }
