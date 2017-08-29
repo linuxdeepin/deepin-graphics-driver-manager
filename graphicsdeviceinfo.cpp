@@ -10,7 +10,8 @@ extern "C" {
 
 #include <cstring>
 
-#define VGA_CLASS "VGA compatible controller"
+#define CLASSNAME_VGA   "VGA compatible controller"
+#define CLASSNAME_3D    "3D controller"
 
 GraphicsDeviceInfo::DeviceFlag GraphicsDeviceInfo::deviceType(const QString &devInfo)
 {
@@ -41,7 +42,7 @@ void GraphicsDeviceInfo::init()
     {
         pci_fill_info(dev, PCI_FILL_CLASS | PCI_FILL_IDENT);
         const char *devClass = pci_lookup_name(pacc, namebuf, sizeof(namebuf), PCI_LOOKUP_CLASS, dev->device_class);
-        if (std::strcmp(devClass, VGA_CLASS))
+        if (std::strcmp(devClass, CLASSNAME_VGA) && std::strcmp(devClass, CLASSNAME_3D))
             continue;
 
         const QString devInfo = pci_lookup_name(pacc, namebuf, sizeof(namebuf), PCI_LOOKUP_VENDOR | PCI_LOOKUP_DEVICE, dev->vendor_id, dev->device_id);
