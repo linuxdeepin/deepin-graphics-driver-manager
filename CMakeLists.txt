@@ -25,11 +25,13 @@ file(GLOB SRCS "*.h" "*.cpp"
 # Find the library
 find_package(PkgConfig REQUIRED)
 find_package(Qt5Widgets REQUIRED)
+find_package(OpenGL REQUIRED)
+find_package(GLUT REQUIRED)
 
 pkg_check_modules(DtkWidget REQUIRED dtkwidget)
 pkg_check_modules(PCI REQUIRED libpci)
 
-# Tell CMake to create the executable
+# driver-manager
 add_executable(${BIN_NAME} ${SRCS} resources.qrc)
 target_include_directories(${BIN_NAME} PUBLIC ${DtkWidget_INCLUDE_DIRS} ${PCI_INCLUDE_DIRS})
 target_link_libraries(${BIN_NAME}
@@ -38,6 +40,10 @@ target_link_libraries(${BIN_NAME}
     ${Qt5Widgets_LIBRARIES}
     ${Qt5Concurrent_LIBRARIES}
 )
+
+# gltest
+add_executable(gltest gltest/main.cpp)
+target_link_libraries(gltest ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${Qt5Widgets_LIBRARIES})
 
 # Install settings
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
