@@ -114,7 +114,10 @@ public:
 
         setLayout(centralLayout);
         setFixedSize(qApp->primaryScreen()->geometry().size());
-        setWindowFlags(Qt::FramelessWindowHint);
+        setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
+
+        connect(m_acceptBtn, &QPushButton::clicked, this, &GLTestWindow::onAccept);
+        connect(m_cancelBtn, &QPushButton::clicked, this, &GLTestWindow::onCancel);
     }
 
 protected:
@@ -127,6 +130,17 @@ protected:
 #endif
         default:;
         }
+    }
+
+private slots:
+    void onAccept()
+    {
+        qApp->quit();
+    }
+
+    void onCancel()
+    {
+        qApp->quit();
     }
 
 private:
