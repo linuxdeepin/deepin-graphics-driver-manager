@@ -9,6 +9,8 @@
 #include <QOpenGLFunctions>
 #include <QDebug>
 #include <QTimer>
+#include <QDesktopWidget>
+#include <QScreen>
 
 #include <GL/gl.h>
 #include <GL/glut.h>
@@ -21,14 +23,16 @@ public:
     explicit GLTestWidget(QWidget *parent = nullptr)
         : QOpenGLWidget(parent)
     {
+        m_xRotated = m_yRotated = m_zRotated = 0;
+
         QTimer *t = new QTimer(this);
         t->setInterval(1000 / 60);
         t->start();
 
         connect(t, &QTimer::timeout, this, [=] {
-            m_xRotated += 1.2;
-            m_yRotated += 1.2;
-            m_zRotated += 1.2;
+            m_xRotated += 1.0;
+            m_yRotated += 1.0;
+            m_zRotated += 1.0;
             update();
         });
     }
@@ -109,6 +113,8 @@ public:
         centralLayout->addLayout(btnsLayout);
 
         setLayout(centralLayout);
+        setFixedSize(qApp->primaryScreen()->geometry().size());
+        setWindowFlags(Qt::FramelessWindowHint);
     }
 
 protected:
@@ -135,7 +141,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     GLTestWindow *w = new GLTestWindow;
-    w->showFullScreen();
+    w->show();
 
     return app.exec();
 }
