@@ -22,9 +22,15 @@ public:
         : QOpenGLWidget(parent)
     {
         QTimer *t = new QTimer(this);
+        t->setInterval(1000 / 60);
         t->start();
 
-        connect(t, &QTimer::timeout, this, [=] {update();});
+        connect(t, &QTimer::timeout, this, [=] {
+            m_xRotated += 1.2;
+            m_yRotated += 1.2;
+            m_zRotated += 1.2;
+            update();
+        });
     }
 
 protected:
@@ -40,43 +46,29 @@ protected:
         // glEnable(GL_POLYGON_OFFSET_FILL);
         // glPolygonMode(GL_FRONT, GL_LINE);
         glShadeModel(GL_SMOOTH);
-        // QOpenGLFunctions *f = QOpenGLContext::currentContext()->functions();
-        // f->glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-        // f->glClearDepthf(1.0f);
-        // f->glEnable(GL_DEPTH_TEST);
-        // f->glDepthFunc(GL_LEQUAL);
-        // // f->glShadeModel(GL_SMOOTH);
-        // f->glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
     }
 
     void resizeGL(int w, int h)
     {
         glViewport(0, 0, w, h);
-        // QOpenGLFunctions *f = QOpenGLContext::currentContext()->functions();
-        // f->glViewport(0, 0, w, h);
     }
 
     void paintGL()
     {
-
         glMatrixMode(GL_MODELVIEW);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glLoadIdentity();
 
+        GLfloat ambientColor[] = {0.6f, 0.3f, 0.7f, 1.0f};
+        glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
 
-            //Add ambient light
-    GLfloat ambientColor[] = {0.6f, 0.2f, 0.4f, 1.0f}; //Color(0.2, 0.2, 0.2)
-    glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
+        GLfloat lightColor0[] = {1.0f, 0.0f, 0.0f, 1.0f};
+        GLfloat lightPos0[] = {10.0f, 10.0f, 0.0f, 1.0f};
+        glLightfv(GL_LIGHT0, GL_DIFFUSE, lightColor0);
+        glLightfv(GL_LIGHT0, GL_POSITION, lightPos0);
 
-    GLfloat lightColor0[] = {0.4f, 0.2f, 0.7f, 1.0f}; //Color (0.5, 0.5, 0.5)
-    GLfloat lightPos0[] = {4.0f, 10.0f, 8.0f, 1.0f}; //Positioned at (4, 0, 8)
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, lightColor0);
-    glLightfv(GL_LIGHT0, GL_POSITION, lightPos0);
-
-        //Add directed light
-        GLfloat lightColor1[] = {0.5f, 0.2f, 0.2f, 1.0f}; //Color (0.5, 0.2, 0.2)
-        //Coming from the direction (-1, 0.5, 0.5)
-        GLfloat lightPos1[] = {-1.0f, 0.5f, 0.5f, 0.0f};
+        GLfloat lightColor1[] = {0.4f, 0.7f, 0.2f, 1.0f};
+        GLfloat lightPos1[] = {0.0f, 0.0f, -5.0f, 0.0f};
         glLightfv(GL_LIGHT1, GL_DIFFUSE, lightColor1);
         glLightfv(GL_LIGHT1, GL_POSITION, lightPos1);
 
@@ -85,12 +77,8 @@ protected:
         glRotatef(m_yRotated, 0.0, 1.0, 0.0);
         glRotatef(m_zRotated, 0.0, 0.0, 1.0);
         glScalef(.4, .4, .4);
-        glColor3f(0.3, 0.4, 0.7);
+        glColor3f(0.3, 0.4, 0.4);
         glutSolidTeapot(1.0f);
-        glFlush();
-        m_xRotated += 0.5;
-        m_yRotated += 0.5;
-        m_zRotated += 0.5;
     }
 
 private:
@@ -102,7 +90,7 @@ class GLTestWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit GLTestWindow(QWidget *parent = nullptr) 
+    explicit GLTestWindow(QWidget *parent = nullptr)
         : QWidget(parent)
     {
         m_acceptBtn = new QPushButton(tr("OK"));
