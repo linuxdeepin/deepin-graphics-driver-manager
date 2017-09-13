@@ -32,18 +32,21 @@
                 "id": 100,
                 "name": "Opensource Driver",
                 "description": "open source driver",
+                "prepare": "",
                 "status": "status_nvidia_intel_opensource.sh"
             },
             {
                 "id": 200,
                 "name": "Closesource Driver",
                 "description": "close source driver",
+                "prepare": "prepare_nvidia_intel_closesource.sh",
                 "status": ""
             },
             {
                 "id": 300,
                 "name": "Mode Settings",
                 "description": "mode settings",
+                "prepare": "",
                 "status": ""
             }
         ]

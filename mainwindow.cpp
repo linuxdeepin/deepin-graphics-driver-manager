@@ -122,5 +122,7 @@ void MainWindow::onResolutionSelected()
 void MainWindow::onToggleBtnClicked()
 {
     Q_ASSERT(m_selectedIndex != m_usedIndex);
-    qDebug() << Q_FUNC_INFO << m_selectedIndex << m_usedIndex;
+
+    ResolutionWidget *w = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
+    w->prepareInstall();
 }

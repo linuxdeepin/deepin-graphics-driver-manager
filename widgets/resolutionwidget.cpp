@@ -6,9 +6,34 @@
 #include <QMouseEvent>
 #include <QDebug>
 #include <QProcess>
+#include <QDir>
+
+inline const QString scriptAbsolutePath(const QString &scriptName)
+{
+    return QDir::currentPath() + "/scripts/" + scriptName;
+}
+
+// #ifdef QT_DEBUG
+#define QPROCESS_DUMP(Process) \
+    connect(Process, &QProcess::readyReadStandardOutput, Process, [=] { qDebug().noquote() << proc->readAllStandardOutput(); }); \
+    connect(Process, &QProcess::readyReadStandardError, Process, [=] { qWarning().noquote() << proc->readAllStandardError(); });
+// #else
+// #define QPROCESS_DUMP(Process) Q_UNUSED(Process)
+// #endif
+
+#define QPROCESS_DELETE_SELF(Process) \
+    connect(Process, static_cast<void (QProcess::*)(int)>(&QProcess::finished), Process, &QProcess::deleteLater);
+
+#define EXECUTE_SCRIPT(Process, Script) \
+    Process->start("bash", QStringList() << "-x" << scriptAbsolutePath(Script));
+
+#define EXECUTE_SCRIPT_ROOT(Process, Script) \
+    Process->start("pkexec", QStringList() << "bash" << "-x" << scriptAbsolutePath(Script));
 
 ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
-    QWidget(parent)
+    QWidget(parent),
+
+    m_resolution(r)
 {
     m_checkedBtn = new QLabel;
     m_checkedBtn->setPixmap(QPixmap(":/resources/icons/select.png"));
@@ -52,9 +77,7 @@ void ResolutionWidget::setChecked(const bool checked)
 
 void ResolutionWidget::mouseReleaseEvent(QMouseEvent *e)
 {
-    e->ignore();
-
-    QWidget::mouseReleaseEvent(e);
+    e->accept();
 
     emit clicked();
 }
@@ -64,15 +87,11 @@ void ResolutionWidget::checkInstallStat(const QString &script)
     if (script.isEmpty())
         return;
 
-    qDebug() << script;
-
     QProcess *proc = new QProcess;
+    QPROCESS_DUMP(proc);
+    QPROCESS_DELETE_SELF(proc);
 
-    connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), proc, &QProcess::deleteLater);
-    connect(proc, &QProcess::readyReadStandardOutput, this, [=] { qDebug().noquote() << proc->readAllStandardOutput(); });
-    connect(proc, &QProcess::readyReadStandardError, this, [=] { qWarning().noquote() << proc->readAllStandardError(); });
-
-    proc->start("bash", QStringList() << "-x" << "scripts/" + script);
+    EXECUTE_SCRIPT(proc, script);
     proc->waitForFinished();
     const int r = proc->exitCode();
 
@@ -81,4 +100,17 @@ void ResolutionWidget::checkInstallStat(const QString &script)
         m_running = true;
         emit clicked();
     }
+}
+
+void ResolutionWidget::prepareInstall()
+{
+    const QString script = m_resolution.prepareScript();
+    Q_ASSERT(!script.isEmpty());
+
+    QProcess *proc = new QProcess;
+    QPROCESS_DUMP(proc);
+    QPROCESS_DELETE_SELF(proc);
+
+    EXECUTE_SCRIPT_ROOT(proc, script);
+    proc->waitForFinished();
 }

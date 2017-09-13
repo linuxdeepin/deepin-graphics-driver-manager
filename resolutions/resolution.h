@@ -10,18 +10,20 @@ class Resolution
 public:
     explicit Resolution(const QJsonObject &info);
 
-    int id() const { return m_resId; }
-    const QString name() const { return m_resName; }
-    const QString description() const { return m_resDescription; }
-    const QString statusScript() const { return m_statusScriptName; }
+    inline int id() const { return m_resId; }
+    inline const QString name() const { return m_resName; }
+    inline const QString description() const { return m_resDescription; }
+    inline const QString statusScript() const { return m_statusScript; }
+    inline const QString prepareScript() const { return m_prepareScript; }
 
-    bool operator==(const Resolution &rhs) const { return m_resId == rhs.m_resId; }
+    inline bool operator==(const Resolution &rhs) const { return m_resId == rhs.m_resId; }
 
 private:
     int m_resId;
     QString m_resName;
     QString m_resDescription;
-    QString m_statusScriptName;
+    QString m_prepareScript;
+    QString m_statusScript;
 };
 
 #endif
