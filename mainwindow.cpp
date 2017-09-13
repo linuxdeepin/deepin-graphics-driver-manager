@@ -63,6 +63,8 @@ MainWindow::MainWindow(QWidget *parent) :
     setFixedSize(440, 600);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
+    connect(m_toggleButton, &QPushButton::clicked, this, &MainWindow::onToggleBtnClicked);
+
     QTimer::singleShot(0, this, &MainWindow::loadResolutions);
 }
 
@@ -107,9 +109,18 @@ void MainWindow::onResolutionSelected()
     {
         ResolutionWidget *w = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(i)->widget());
         w->setChecked(i == idx);
+
+        if (w->running())
+            m_usedIndex = i;
     }
 
     const bool changed = m_selectedIndex != m_usedIndex;
     m_toggleButton->setVisible(changed);
     m_okButton->setVisible(!changed);
+}
+
+void MainWindow::onToggleBtnClicked()
+{
+    Q_ASSERT(m_selectedIndex != m_usedIndex);
+    qDebug() << Q_FUNC_INFO << m_selectedIndex << m_usedIndex;
 }

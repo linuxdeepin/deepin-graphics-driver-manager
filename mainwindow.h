@@ -27,6 +27,7 @@ private:
 private Q_SLOTS:
     void loadResolutions();
     void onResolutionSelected();
+    void onToggleBtnClicked();
 
 private:
     int m_usedIndex;
