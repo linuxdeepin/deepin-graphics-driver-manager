@@ -45,13 +45,6 @@ target_link_libraries(${BIN_NAME}
 add_executable(gltest gltest/main.cpp)
 target_link_libraries(gltest ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${Qt5Widgets_LIBRARIES})
 
-# Install settings
-if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-    set(CMAKE_INSTALL_PREFIX /usr)
-endif ()
-
-install(TARGETS ${BIN_NAME} DESTINATION bin)
-
 # Test settings
 enable_testing()
 add_executable(Test tests/test.cpp
@@ -63,3 +56,20 @@ target_link_libraries(Test
     ${PCI_LIBRARIES}
 )
 add_test(NAME Test COMMAND Test)
+
+# Install settings
+if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+set(CMAKE_INSTALL_PREFIX /usr)
+endif ()
+
+# bin
+install(TARGETS ${BIN_NAME} DESTINATION bin)
+install(TARGETS gltest DESTINATION lib/deepin-graphics-driver-manager)
+
+# systemd servies
+install(FILES resources/service/driver-installer.service
+        DESTINATION /lib/systemd/system)
+
+# scripts
+file(GLOB SCRIPTS "scripts/*.sh")
+install(FILES ${SCRIPTS} DESTINATION lib/deepin-graphics-driver-manager)

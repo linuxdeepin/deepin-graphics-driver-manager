@@ -40,6 +40,7 @@
                 "name": "Closesource Driver",
                 "description": "close source driver",
                 "prepare": "prepare_nvidia_intel_closesource.sh",
+                "condition": "test_battery.sh",
                 "status": ""
             },
             {

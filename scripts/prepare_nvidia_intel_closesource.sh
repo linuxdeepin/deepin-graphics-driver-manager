@@ -1,9 +1,8 @@
 #!/bin/sh
 
 COMMANDS=(
-    "true"
     "apt update"
-    "ls -la"
+    "apt install -d deepin-deb-installer"
 )
 
 for cmd in "${COMMANDS[@]}"
