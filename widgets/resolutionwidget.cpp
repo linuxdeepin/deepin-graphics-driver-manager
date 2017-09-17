@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QProcess>
 #include <QDir>
+#include <QTimer>
 
 inline const QString scriptAbsolutePath(const QString &scriptName)
 {
@@ -63,7 +64,8 @@ ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
     centralLayout->setSpacing(0);
     centralLayout->setContentsMargins(0, 0, 0, 0);
 
-    QMetaObject::invokeMethod(this, "checkInstallStat", Qt::QueuedConnection, Q_ARG(QString, r.statusScript()));
+    QTimer::singleShot(1, this, &ResolutionWidget::checkInstallStat);
+    QTimer::singleShot(1, this, &ResolutionWidget::checkCondition);
 
     setLayout(centralLayout);
     setFixedHeight(70);
@@ -82,8 +84,24 @@ void ResolutionWidget::mouseReleaseEvent(QMouseEvent *e)
     emit clicked();
 }
 
-void ResolutionWidget::checkInstallStat(const QString &script)
+void ResolutionWidget::checkCondition()
 {
+    const QString &script = m_resolution.conditionScript();
+    if (script.isEmpty())
+        return;
+
+    QProcess *proc = new QProcess;
+    QPROCESS_DUMP(proc);
+    QPROCESS_DELETE_SELF(proc);
+
+    connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), [=] (const int exitCode) { setVisible(!exitCode); });
+
+    EXECUTE_SCRIPT(proc, script);
+}
+
+void ResolutionWidget::checkInstallStat()
+{
+    const QString &script = m_resolution.statusScript();
     if (script.isEmpty())
         return;
 
@@ -111,6 +129,24 @@ void ResolutionWidget::prepareInstall()
     QPROCESS_DUMP(proc);
     QPROCESS_DELETE_SELF(proc);
 
+    connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &ResolutionWidget::onPrepareFinshed);
+
     EXECUTE_SCRIPT_ROOT(proc, script);
     proc->waitForFinished();
+}
+
+void ResolutionWidget::onPrepareFinshed()
+{
+    const QString& installScript = m_resolution.installScript();
+
+    QProcess *proc = new QProcess;
+    QPROCESS_DUMP(proc);
+    QPROCESS_DELETE_SELF(proc);
+
+    const QStringList args = { "cp",
+                               "-f",
+                               scriptAbsolutePath(installScript),
+                               "/usr/bin/deepin-graphics-driver-installer.sh" };
+
+    proc->start("pkexec", args);
 }

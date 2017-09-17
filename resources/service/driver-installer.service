@@ -2,10 +2,12 @@
 Description=Deepin Graphics Driver Manager - Installer
 After=systemd-user-sessions.service getty@tty1.service plymouth-quit.service
 Before=lightdm.service
+ConditionFileIsExecutable=/usr/bin/deepin-graphics-driver-installer.sh
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/dgradvrmgr.sh
+Environment=LC_ALL=C
+ExecStart=/usr/lib/deepin-graphics-driver-manager/dgradvrmgr.sh
 StandardInput=tty-force
 StandardOutput=inherit
 StandardError=inherit

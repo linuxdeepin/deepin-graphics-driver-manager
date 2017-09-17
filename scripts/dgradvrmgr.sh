@@ -9,5 +9,6 @@ if [ $? != 0 ]; then
 	exit 0
 fi
 
-apt install deepin-deb-installer
+bash -x /usr/bin/deepin-graphics-driver-installer.sh
+rm -f /usr/bin/deepin-graphics-driver-installer.sh
 /usr/bin/xinit /usr/bin/gltest

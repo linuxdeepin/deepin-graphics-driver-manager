@@ -26,7 +26,9 @@ protected:
     void mouseReleaseEvent(QMouseEvent *e);
 
 private slots:
-    void checkInstallStat(const QString &script);
+    void checkCondition();
+    void checkInstallStat();
+    void onPrepareFinshed();
 
 private:
     bool m_running;
