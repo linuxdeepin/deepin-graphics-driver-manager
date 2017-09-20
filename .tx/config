@@ -1,0 +1,10 @@
+[main]
+host = https://www.transifex.com
+minimum_perc = 80
+mode = developer
+
+[deepin-graphics-driver-manager.deepin-graphics-driver-manager]
+file_filter = translations/deepin-graphics-driver-manager<lang>.ts
+source_file = translations/deepin-graphics-driver-manager.ts
+source_lang = en
+type = QT
