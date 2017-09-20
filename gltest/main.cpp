@@ -11,6 +11,7 @@
 #include <QTimer>
 #include <QDesktopWidget>
 #include <QScreen>
+#include <QLabel>
 
 #include <GL/gl.h>
 #include <GL/glut.h>
@@ -99,8 +100,11 @@ public:
     {
         m_acceptBtn = new QPushButton(tr("OK"));
         m_cancelBtn = new QPushButton(tr("Cancel"));
+        QLabel *tipsLabel = new QLabel(tr("Press OK if every thing seems good."));
+        tipsLabel->setAlignment(Qt::AlignCenter);
 
         m_glTestWidget = new GLTestWidget;
+        m_glTestWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
         QHBoxLayout *btnsLayout = new QHBoxLayout;
         btnsLayout->addStretch();
@@ -110,6 +114,7 @@ public:
 
         QVBoxLayout *centralLayout = new QVBoxLayout;
         centralLayout->addWidget(m_glTestWidget);
+        centralLayout->addWidget(tipsLabel);
         centralLayout->addLayout(btnsLayout);
 
         setLayout(centralLayout);
@@ -140,7 +145,7 @@ private slots:
 
     void onCancel()
     {
-        qApp->quit();
+        qApp->exit(-1);
     }
 
 private:
