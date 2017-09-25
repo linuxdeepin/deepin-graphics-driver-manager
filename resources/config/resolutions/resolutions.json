@@ -13,7 +13,18 @@
     {
         "type": 2,
         "name": "nvidia",
-        "icon_name": "nvidia.png"
+        "icon_name": "nvidia.png",
+        "resolutions":
+        [
+            {
+                "id": 100,
+                "name": "Closesource Driver",
+                "description": "close source driver",
+                "prepare": "",
+                "install": "install_nvidia_closesource.sh",
+                "status": "status_nvidia_intel_opensource.sh"
+            }
+        ]
     },
 
     {
