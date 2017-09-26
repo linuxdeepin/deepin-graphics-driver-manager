@@ -13,6 +13,10 @@ set(CMAKE_CXX_FLAGS -Wall)
 
 if (NOT (${CMAKE_BUILD_TYPE} MATCHES "Debug"))
     set(CMAKE_CXX_FLAGS -O3)
+
+    # generate qm
+    execute_process(COMMAND bash "translate_generation.sh"
+                    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 else ()
     set(CMAKE_CXX_COMPILER "clang++")
 endif ()
@@ -72,4 +76,11 @@ install(FILES resources/service/driver-installer.service
 
 # scripts
 file(GLOB SCRIPTS "scripts/*.sh")
-install(FILES ${SCRIPTS} DESTINATION lib/deepin-graphics-driver-manager PERMISSIONS OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+install(FILES ${SCRIPTS}
+        DESTINATION lib/deepin-graphics-driver-manager
+        PERMISSIONS OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+
+# qm files
+file(GLOB QM_FILES "translations/*.qm")
+install(FILES ${QM_FILES}
+        DESTINATION share/deepin-graphics-driver-manager/translations)
