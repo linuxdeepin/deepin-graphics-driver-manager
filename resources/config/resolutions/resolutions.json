@@ -18,6 +18,14 @@
         [
             {
                 "id": 100,
+                "name": "Opensource Driver",
+                "description": "open source driver",
+                "prepare": "",
+                "install": "install_nouveau.sh",
+                "status": "status_nouveau.sh"
+            },
+            {
+                "id": 200,
                 "name": "Closesource Driver",
                 "description": "close source driver",
                 "prepare": "",

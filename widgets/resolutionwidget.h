@@ -14,10 +14,11 @@ class ResolutionWidget: public QWidget
 public:
     explicit ResolutionWidget(const Resolution &r, QWidget *parent = nullptr);
 
-    bool running() const { return m_running; }
-    bool checked() const { return m_checked; }
     void setChecked(const bool checked);
     void prepareInstall();
+    bool running() const { return m_running; }
+    bool checked() const { return m_checked; }
+    const Resolution resolution() const { return m_resolution; }
 
 signals:
     void clicked() const;

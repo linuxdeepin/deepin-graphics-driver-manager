@@ -2,7 +2,7 @@
 #include "mainwindow.h"
 #include "widgets/resolutionwidget.h"
 
-#include <QGuiApplication>
+#include <QApplication>
 #include <QScreen>
 #include <QKeyEvent>
 #include <QDebug>
@@ -64,6 +64,7 @@ MainWindow::MainWindow(QWidget *parent) :
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
     connect(m_toggleButton, &QPushButton::clicked, this, &MainWindow::onToggleBtnClicked);
+    connect(m_okButton, &QPushButton::clicked, qApp, &QApplication::quit);
 
     QTimer::singleShot(0, this, &MainWindow::loadResolutions);
 }
@@ -99,6 +100,7 @@ void MainWindow::loadResolutions()
 void MainWindow::onResolutionSelected()
 {
     ResolutionWidget *rw = static_cast<ResolutionWidget *>(sender());
+    qDebug() << "Resolution selected: " << rw->resolution().name();
 
     const int idx = m_resolutionsLayout->indexOf(rw);
     Q_ASSERT(idx != -1);
