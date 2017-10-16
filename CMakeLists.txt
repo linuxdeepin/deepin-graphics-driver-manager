@@ -70,6 +70,10 @@ endif ()
 install(TARGETS ${BIN_NAME} DESTINATION bin)
 install(TARGETS gltest DESTINATION lib/deepin-graphics-driver-manager)
 
+# resolutions.json
+install(FILES resources/config/resolutions/resolutions.json
+        DESTINATION lib/deepin-graphics-driver-manager)
+
 # systemd servies
 install(FILES resources/service/driver-installer.service
         DESTINATION /lib/systemd/system)

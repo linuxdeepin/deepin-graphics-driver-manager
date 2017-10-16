@@ -13,7 +13,7 @@ Resolutions::Resolutions()
 }
 
 ResolutionsBuilder::ResolutionsBuilder(const GraphicsDeviceInfo &devInfo) :
-    m_config(":/resources/config/resolutions/resolutions.json"),
+    m_config("/usr/lib/deepin-graphics-driver-manager/resolutions.json"),
     m_devInfo(devInfo)
 {
 
