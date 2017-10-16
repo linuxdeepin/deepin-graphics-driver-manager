@@ -29,7 +29,8 @@ ResolutionsBuilder ResolutionsBuilder::config(const QString &config)
 Resolutions ResolutionsBuilder::build()
 {
     QFile config(m_config);
-    Q_ASSERT_X(config.open(QIODevice::ReadOnly), Q_FUNC_INFO, "read config file error");
+    // Q_ASSERT_X(config.open(QIODevice::ReadOnly), Q_FUNC_INFO, "read config file error");
+    qDebug() << "read config file: " << config.open(QIODevice::ReadOnly);
 
     const int deviceType = m_devInfo.deviceFlag();
     const auto doc = QJsonDocument::fromJson(config.readAll());
