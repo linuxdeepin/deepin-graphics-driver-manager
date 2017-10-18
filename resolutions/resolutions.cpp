@@ -13,7 +13,11 @@ Resolutions::Resolutions()
 }
 
 ResolutionsBuilder::ResolutionsBuilder(const GraphicsDeviceInfo &devInfo) :
+#ifdef QT_DEBUG
+    m_config("resources/config/resolutions/resolutions.json"),
+#else
     m_config("/usr/lib/deepin-graphics-driver-manager/resolutions.json"),
+#endif
     m_devInfo(devInfo)
 {
 
@@ -51,6 +55,7 @@ Resolutions ResolutionsBuilder::build()
     Resolutions r;
     r.m_name = resolutionsObject["name"].toString();
     r.m_iconName = resolutionsObject["icon_name"].toString();
+    r.m_statusScript = resolutionsObject["status"].toString();
 
     for (const auto res : resolutionsObject["resolutions"].toArray())
         r.m_resolutions.append(Resolution(res.toObject()));

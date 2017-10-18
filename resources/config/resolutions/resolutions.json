@@ -21,16 +21,14 @@
                 "name": "Opensource Driver",
                 "description": "open source driver",
                 "prepare": "",
-                "install": "install_nouveau.sh",
-                "status": "status_nouveau.sh"
+                "install": "install_nouveau.sh"
             },
             {
                 "id": 200,
                 "name": "Closesource Driver",
                 "description": "close source driver",
                 "prepare": "",
-                "install": "install_nvidia_closesource.sh",
-                "status": "status_nvidia_intel_opensource.sh"
+                "install": "install_nvidia_closesource.sh"
             }
         ]
     },
@@ -45,14 +43,14 @@
         "type": 6,
         "name": "nvidia_intel",
         "icon_name": "nvidia_intel.png",
+        "status": "status_nvidia_intel.sh",
         "resolutions":
         [
             {
                 "id": 100,
                 "name": "Opensource Driver",
                 "description": "open source driver",
-                "prepare": "",
-                "status": "status_nvidia_intel_opensource.sh"
+                "prepare": ""
             },
             {
                 "id": 200,
@@ -60,15 +58,13 @@
                 "description": "close source driver",
                 "prepare": "prepare_nvidia_intel_closesource.sh",
                 "install": "install_nvidia_intel_closesource.sh",
-                "condition": "test_battery.sh",
-                "status": ""
+                "condition": "test_battery.sh"
             },
             {
                 "id": 300,
                 "name": "Mode Settings",
                 "description": "mode settings",
-                "prepare": "",
-                "status": ""
+                "prepare": ""
             }
         ]
     }

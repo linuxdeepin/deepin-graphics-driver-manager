@@ -13,7 +13,6 @@ public:
     inline int id() const { return m_resId; }
     inline const QString name() const { return m_resName; }
     inline const QString description() const { return m_resDescription; }
-    inline const QString statusScript() const { return m_statusScript; }
     inline const QString prepareScript() const { return m_prepareScript; }
     inline const QString installScript() const { return m_installScript; }
     inline const QString postInstScript() const { return m_postInstScript; }
@@ -28,7 +27,6 @@ private:
     QString m_prepareScript;
     QString m_installScript;
     QString m_postInstScript;
-    QString m_statusScript;
     QString m_conditionScript;
 };
 

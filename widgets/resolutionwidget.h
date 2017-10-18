@@ -5,6 +5,35 @@
 #include "../resolutions/resolution.h"
 
 #include <QWidget>
+#include <QDebug>
+#include <QProcess>
+#include <QDir>
+
+inline const QString scriptAbsolutePath(const QString &scriptName)
+{
+#ifdef QT_DEBUG
+    return QDir::currentPath() + "/scripts/" + scriptName;
+#else
+    return "/usr/lib/deepin-graphics-driver-manager/" + scriptName;
+#endif
+}
+
+// #ifdef QT_DEBUG
+#define QPROCESS_DUMP(Process) \
+    connect(Process, &QProcess::readyReadStandardOutput, Process, [=] { qDebug().noquote() << proc->readAllStandardOutput(); }); \
+    connect(Process, &QProcess::readyReadStandardError, Process, [=] { qWarning().noquote() << proc->readAllStandardError(); });
+// #else
+// #define QPROCESS_DUMP(Process) Q_UNUSED(Process)
+// #endif
+
+#define QPROCESS_DELETE_SELF(Process) \
+    connect(Process, static_cast<void (QProcess::*)(int)>(&QProcess::finished), Process, &QProcess::deleteLater);
+
+#define EXECUTE_SCRIPT(Process, Script) \
+    Process->start("bash", QStringList() << "-x" << scriptAbsolutePath(Script));
+
+#define EXECUTE_SCRIPT_ROOT(Process, Script) \
+    Process->start("pkexec", QStringList() << "bash" << "-x" << scriptAbsolutePath(Script));
 
 class QLabel;
 class ResolutionWidget: public QWidget
@@ -16,7 +45,6 @@ public:
 
     void setChecked(const bool checked);
     void prepareInstall();
-    bool running() const { return m_running; }
     bool checked() const { return m_checked; }
     const Resolution resolution() const { return m_resolution; }
 
@@ -28,11 +56,9 @@ protected:
 
 private slots:
     void checkCondition();
-    void checkInstallStat();
     void onPrepareFinshed();
 
 private:
-    bool m_running;
     bool m_checked;
     Resolution m_resolution;
     QLabel *m_checkedBtn;

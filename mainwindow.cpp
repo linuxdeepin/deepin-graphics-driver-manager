@@ -88,13 +88,30 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 
 void MainWindow::loadResolutions()
 {
+    QList<ResolutionWidget *> rwList;
     for (const auto &r : m_resolutions.resolutions())
     {
         ResolutionWidget *rw = new ResolutionWidget(r);
         m_resolutionsLayout->addWidget(rw);
+        rwList << rw;
 
         connect(rw, &ResolutionWidget::clicked, this, &MainWindow::onResolutionSelected);
     }
+
+    const QString &script = m_resolutions.statusScript();
+    Q_ASSERT(!script.isEmpty());
+
+    QProcess *proc = new QProcess;
+    QPROCESS_DUMP(proc);
+    QPROCESS_DELETE_SELF(proc);
+
+    EXECUTE_SCRIPT(proc, script);
+    proc->waitForFinished();
+    const int index = proc->exitCode();
+    m_usedIndex = index;
+
+    if (index >= 0 && index < rwList.size())
+        emit rwList[index]->clicked();
 }
 
 void MainWindow::onResolutionSelected()
@@ -111,9 +128,6 @@ void MainWindow::onResolutionSelected()
     {
         ResolutionWidget *w = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(i)->widget());
         w->setChecked(i == idx);
-
-        if (w->running())
-            m_usedIndex = i;
     }
 
     const bool changed = m_selectedIndex != m_usedIndex;

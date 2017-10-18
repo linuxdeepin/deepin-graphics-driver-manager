@@ -4,36 +4,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QMouseEvent>
-#include <QDebug>
-#include <QProcess>
-#include <QDir>
 #include <QTimer>
-
-inline const QString scriptAbsolutePath(const QString &scriptName)
-{
-#ifdef QT_DEBUG
-    return QDir::currentPath() + "/scripts/" + scriptName;
-#else
-    return "/usr/lib/deepin-graphics-driver-manager/" + scriptName;
-#endif
-}
-
-// #ifdef QT_DEBUG
-#define QPROCESS_DUMP(Process) \
-    connect(Process, &QProcess::readyReadStandardOutput, Process, [=] { qDebug().noquote() << proc->readAllStandardOutput(); }); \
-    connect(Process, &QProcess::readyReadStandardError, Process, [=] { qWarning().noquote() << proc->readAllStandardError(); });
-// #else
-// #define QPROCESS_DUMP(Process) Q_UNUSED(Process)
-// #endif
-
-#define QPROCESS_DELETE_SELF(Process) \
-    connect(Process, static_cast<void (QProcess::*)(int)>(&QProcess::finished), Process, &QProcess::deleteLater);
-
-#define EXECUTE_SCRIPT(Process, Script) \
-    Process->start("bash", QStringList() << "-x" << scriptAbsolutePath(Script));
-
-#define EXECUTE_SCRIPT_ROOT(Process, Script) \
-    Process->start("pkexec", QStringList() << "bash" << "-x" << scriptAbsolutePath(Script));
 
 ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
     QWidget(parent),
@@ -68,11 +39,11 @@ ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
     centralLayout->setSpacing(0);
     centralLayout->setContentsMargins(0, 0, 0, 0);
 
-    QTimer::singleShot(1, this, &ResolutionWidget::checkInstallStat);
     QTimer::singleShot(1, this, &ResolutionWidget::checkCondition);
 
     setLayout(centralLayout);
     setFixedHeight(70);
+    setChecked(false);
 }
 
 void ResolutionWidget::setChecked(const bool checked)
@@ -101,27 +72,6 @@ void ResolutionWidget::checkCondition()
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), [=] (const int exitCode) { setVisible(!exitCode); });
 
     EXECUTE_SCRIPT(proc, script);
-}
-
-void ResolutionWidget::checkInstallStat()
-{
-    const QString &script = m_resolution.statusScript();
-    if (script.isEmpty())
-        return;
-
-    QProcess *proc = new QProcess;
-    QPROCESS_DUMP(proc);
-    QPROCESS_DELETE_SELF(proc);
-
-    EXECUTE_SCRIPT(proc, script);
-    proc->waitForFinished();
-    const int r = proc->exitCode();
-
-    if (!r)
-    {
-        m_running = true;
-        emit clicked();
-    }
 }
 
 void ResolutionWidget::prepareInstall()

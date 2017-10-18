@@ -13,9 +13,10 @@ class Resolutions
     friend class ResolutionsBuilder;
 
 public:
-    const QString name() const { return m_name; }
-    const QString iconName() const { return m_iconName; }
-    const QString description() const { return m_description; }
+    inline const QString name() const { return m_name; }
+    inline const QString iconName() const { return m_iconName; }
+    inline const QString description() const { return m_description; }
+    inline const QString statusScript() const { return m_statusScript; }
 
     const QList<Resolution> resolutions() const { return m_resolutions; }
 
@@ -26,6 +27,7 @@ private:
     QString m_name;
     QString m_iconName;
     QString m_description;
+    QString m_statusScript;
     QList<Resolution> m_resolutions;
 };
 
