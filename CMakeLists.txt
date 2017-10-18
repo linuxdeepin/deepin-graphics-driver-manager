@@ -79,10 +79,9 @@ install(FILES resources/service/driver-installer.service
         DESTINATION /lib/systemd/system)
 
 # scripts
-file(GLOB SCRIPTS "scripts/*.sh")
-install(FILES ${SCRIPTS}
+install(DIRECTORY scripts/
         DESTINATION lib/deepin-graphics-driver-manager
-        PERMISSIONS OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+        FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
 
 # qm files
 file(GLOB QM_FILES "translations/*.qm")

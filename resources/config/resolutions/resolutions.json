@@ -43,7 +43,7 @@
         "type": 6,
         "name": "nvidia_intel",
         "icon_name": "nvidia_intel.png",
-        "status": "status_nvidia_intel.sh",
+        "status": "nvidia_intel/status_nvidia_intel.sh",
         "resolutions":
         [
             {
