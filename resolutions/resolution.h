@@ -15,7 +15,6 @@ public:
     inline const QString description() const { return m_resDescription; }
     inline const QString prepareScript() const { return m_prepareScript; }
     inline const QString installScript() const { return m_installScript; }
-    inline const QString postInstScript() const { return m_postInstScript; }
     inline const QString conditionScript() const { return m_conditionScript; }
 
     inline bool operator==(const Resolution &rhs) const { return m_resId == rhs.m_resId; }
@@ -26,7 +25,6 @@ private:
     QString m_resDescription;
     QString m_prepareScript;
     QString m_installScript;
-    QString m_postInstScript;
     QString m_conditionScript;
 };
 

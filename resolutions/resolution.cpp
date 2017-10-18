@@ -11,6 +11,5 @@ Resolution::Resolution(const QJsonObject &info)
     m_resDescription = QApplication::translate("Resolution", info["description"].toString().toStdString().c_str());
     m_prepareScript = info["prepare"].toString();
     m_installScript = info["install"].toString();
-    m_postInstScript = info["post_install"].toString();
     m_conditionScript = info["condition"].toString();
 }
