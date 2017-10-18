@@ -37,10 +37,9 @@ if [ -n "$nvidia_mod" ]; then
 	 rmmod -f nvidia
 fi
 echo "Loading kernel modules......"
-modprobe nvidia-drm
-modprobe nvidia-current-drm
-#echo "Now start desktop......"
-#systemctl restart lightdm
+modprobe nvidia-drm nvidia-current-drm
+echo "Now start desktop...... Enjoy it !"
+systemctl restart lightdm
 
 
-#sudo overlayroot-chroot apt-get install nvidia-driver -y --allow-downgrades
+

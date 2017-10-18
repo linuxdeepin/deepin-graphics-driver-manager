@@ -2,7 +2,11 @@
 
 COMMANDS=(
     "apt update"
-    "apt install -d deepin-deb-installer"
+    "apt-get install -d nvidia-driver -y --allow-downgrades"
+#    "apt install -o Dir::Cache::Archives=/var/cache/nvidia/ -d nvidia-driver"
+#    "overlayroot-enable"
+#    "apt-get install nvidia-driver -y --allow-downgrades"
+#    "apt install -d deepin-deb-installer"
 )
 
 for cmd in "${COMMANDS[@]}"
