@@ -12,5 +12,6 @@ Resolution::Resolution(const QJsonObject &info)
     m_statusScript = info["status"].toString();
     m_prepareScript = info["prepare"].toString();
     m_installScript = info["install"].toString();
+    m_postInstScript = info["post_install"].toString();
     m_conditionScript = info["condition"].toString();
 }
