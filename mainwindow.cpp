@@ -78,6 +78,7 @@ MainWindow::MainWindow(QWidget *parent) :
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
     connect(m_toggleButton, &QPushButton::clicked, this, &MainWindow::onToggleBtnClicked);
+    connect(m_rebootButton, &QPushButton::clicked, this, &MainWindow::onRebootBtnClicked);
     connect(m_okButton, &QPushButton::clicked, qApp, &QApplication::quit);
 
     QTimer::singleShot(0, this, &MainWindow::loadResolutions);
@@ -165,6 +166,11 @@ void MainWindow::onToggleBtnClicked()
     m_toggleButton->setVisible(false);
     m_progress->setVisible(true);
     m_progress->start();
+}
+
+void MainWindow::onRebootBtnClicked()
+{
+    qDebug() << "reboot";
 }
 
 void MainWindow::onPrepareFinished()

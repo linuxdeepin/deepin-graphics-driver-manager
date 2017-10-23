@@ -19,3 +19,5 @@ if [ $? == 0]; then
 fi
 
 rm -f /usr/bin/deepin-graphics-driver-installer.sh
+
+reboot
