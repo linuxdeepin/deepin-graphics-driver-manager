@@ -36,7 +36,32 @@
     {
         "type": 4,
         "name": "intel",
-        "icon_name": "intel.png"
+        "icon_name": "intel.png",
+        "status": "",
+        "resolutions":
+        [
+            {
+                "id": 100,
+                "name": "glamor",
+                "description": "glamor",
+                "prepare": "intel/prepare_intel_opensource.sh",
+                "install": "intel/install_glamor.sh"
+            },
+            {
+                "id": 200,
+                "name": "sna",
+                "description": "sna",
+                "prepare": "intel/prepare_intel_opensource.sh",
+                "install": "intel/install_sna.sh"
+            },
+            {
+                "id": 300,
+                "name": "uxa",
+                "description": "uxa",
+                "prepare": "intel/prepare_intel_opensource.sh",
+                "install": "intel/install_uxa.sh"
+            }
+        ]
     },
 
     {
