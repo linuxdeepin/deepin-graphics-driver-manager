@@ -8,6 +8,7 @@
 #include <QVBoxLayout>
 
 #include <DMainWindow>
+#include <DWaterProgress>
 
 DWIDGET_USE_NAMESPACE
 
@@ -28,6 +29,7 @@ private Q_SLOTS:
     void loadResolutions();
     void onResolutionSelected();
     void onToggleBtnClicked();
+    void onPrepareFinished();
 
 private:
     int m_usedIndex;
@@ -39,8 +41,10 @@ private:
     QLabel *m_resolutionsIcon;
     QLabel *m_vendorsName;
     QWidget *m_resolutionsWidget;
+    DWaterProgress *m_progress;
     QPushButton *m_toggleButton;
     QPushButton *m_okButton;
+    QPushButton *m_rebootButton;
 };
 
 #endif

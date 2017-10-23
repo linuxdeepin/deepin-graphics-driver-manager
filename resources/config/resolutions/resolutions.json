@@ -75,7 +75,7 @@
                 "id": 100,
                 "name": "Opensource Driver",
                 "description": "open source driver",
-                "prepare": "",
+                "prepare": "nvidia_intel_prepare.sh",
                 "install": ""
             },
             {

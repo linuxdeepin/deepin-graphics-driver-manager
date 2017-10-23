@@ -25,6 +25,17 @@ MainWindow::MainWindow(QWidget *parent) :
     m_okButton->setText(tr("OK"));
     m_okButton->setFixedHeight(38);
 
+    m_rebootButton = new QPushButton;
+    m_rebootButton->setText(tr("Reboot"));
+    m_rebootButton->setFixedHeight(38);
+    m_rebootButton->setVisible(false);
+
+    m_progress = new DWaterProgress;
+    m_progress->setTextVisible(false);
+    m_progress->setFixedSize(128, 128);
+    m_progress->setValue(50);
+    m_progress->setVisible(false);
+
     m_resolutionsIcon = new QLabel;
     m_resolutionsIcon->setAlignment(Qt::AlignCenter);
     m_resolutionsIcon->setPixmap(QPixmap(":/resources/icons/" + m_resolutions.iconName()));
@@ -47,9 +58,12 @@ MainWindow::MainWindow(QWidget *parent) :
     centralLayout->addWidget(m_vendorsName);
     centralLayout->addStretch();
     centralLayout->addWidget(m_resolutionsWidget);
+    centralLayout->addWidget(m_progress);
+    centralLayout->setAlignment(m_progress, Qt::AlignHCenter);
     centralLayout->addStretch();
     centralLayout->addWidget(m_toggleButton);
     centralLayout->addWidget(m_okButton);
+    centralLayout->addWidget(m_rebootButton);
     centralLayout->setSpacing(0);
     centralLayout->setContentsMargins(70, 0, 70, 30);
 
@@ -141,4 +155,21 @@ void MainWindow::onToggleBtnClicked()
 
     ResolutionWidget *w = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
     w->prepareInstall();
+
+    connect(w, &ResolutionWidget::prepareFinished, this, &MainWindow::onPrepareFinished);
+
+    // toggle UI
+    m_resolutionsIcon->setVisible(false);
+    m_vendorsName->setVisible(false);
+    m_resolutionsWidget->setVisible(false);
+    m_toggleButton->setVisible(false);
+    m_progress->setVisible(true);
+    m_progress->start();
+}
+
+void MainWindow::onPrepareFinished()
+{
+    m_progress->setVisible(false);
+    m_progress->stop();
+    m_rebootButton->setVisible(true);
 }

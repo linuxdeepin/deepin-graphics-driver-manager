@@ -86,7 +86,7 @@ void ResolutionWidget::prepareInstall()
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &ResolutionWidget::onPrepareFinshed);
 
     EXECUTE_SCRIPT_ROOT(proc, script);
-    proc->waitForFinished();
+    // proc->waitForFinished();
 }
 
 void ResolutionWidget::onPrepareFinshed()
@@ -103,4 +103,6 @@ void ResolutionWidget::onPrepareFinshed()
                                "/usr/bin/deepin-graphics-driver-installer.sh" };
 
     proc->start("pkexec", args);
+
+    emit prepareFinished();
 }

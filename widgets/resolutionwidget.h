@@ -50,6 +50,7 @@ public:
 
 signals:
     void clicked() const;
+    void prepareFinished();
 
 protected:
     void mouseReleaseEvent(QMouseEvent *e);
