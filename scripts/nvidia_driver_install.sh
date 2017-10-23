@@ -25,7 +25,7 @@ fi
 
 apt-get install nvidia-driver -y --allow-downgrades 
 
-systemctl stop lightdm
+#systemctl stop lightdm
 if [ -n "$nouveau_mod" ]; then
 	 echo "Had already used nouveau,remove it instead by nvidia "
 	 rmmod -f nouveau
@@ -38,8 +38,8 @@ if [ -n "$nvidia_mod" ]; then
 fi
 echo "Loading kernel modules......"
 modprobe nvidia-drm nvidia-current-drm
-echo "Now start desktop...... Enjoy it !"
-systemctl restart lightdm
+#echo "Now start desktop...... Enjoy it !"
+#systemctl restart lightdm
 
 
 

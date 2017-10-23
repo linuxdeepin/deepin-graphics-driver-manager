@@ -25,7 +25,7 @@ fi
 
 apt-get install nvidia-driver -y --allow-downgrades 
 
-systemctl stop lightdm
+#systemctl stop lightdm
 if [ -n "$nouveau_mod" ]; then
 	 echo "Had already used nouveau,remove it instead by nvidia "
 	 rmmod -f nouveau

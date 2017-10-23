@@ -5,6 +5,8 @@
 
 dialog --title "Deepin Graphics Driver Manager - Installer" --yesno "\nSure to start install driver?" 6 50
 
+overlayroot-disable
+
 if [ $? != 0 ]; then
 	exit 0
 fi

@@ -75,21 +75,22 @@
                 "id": 100,
                 "name": "Opensource Driver",
                 "description": "open source driver",
-                "prepare": ""
+                "prepare": "",
+                "install": ""
             },
             {
                 "id": 200,
                 "name": "Closesource Driver",
                 "description": "close source driver",
                 "prepare": "prepare_nvidia_intel_closesource.sh",
-                "install": "install_nvidia_intel_closesource.sh",
-                "condition": "test_battery.sh"
+                "install": "nvidia_driver_install.sh"
             },
             {
                 "id": 300,
                 "name": "Mode Settings",
                 "description": "mode settings",
-                "prepare": ""
+                "prepare": "",
+                "install": ""
             }
         ]
     }
