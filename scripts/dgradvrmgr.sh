@@ -14,7 +14,7 @@ fi
 bash -x /tmp/exe.sh "test"
 /usr/bin/xinit /usr/lib/deepin-graphics-driver-manager/gltest
 
-if [ $? == 0 ]; then
+if [ -e "/tmp/gltest-success" ]; then
 	bash -x /tmp/exe.sh "post"
 fi
 

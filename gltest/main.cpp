@@ -140,6 +140,10 @@ protected:
 private slots:
     void onAccept()
     {
+        QFile f("/tmp/gltest-success");
+        f.open(QIODevice::Append);
+        f.close();
+
         qApp->quit();
     }
 
@@ -158,6 +162,8 @@ int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
     QApplication app(argc, argv);
+
+    QFile("/tmp/gltest-success").remove();
 
     GLTestWindow *w = new GLTestWindow;
     w->show();
