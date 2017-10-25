@@ -82,8 +82,9 @@ void ResolutionWidget::checkCondition()
 
 void ResolutionWidget::prepareInstall()
 {
-    const QString script = m_resolution.prepareScript();
-    Q_ASSERT(!script.isEmpty());
+    const QString prepare = scriptAbsolutePath(m_resolution.prepareScript());
+    const QString install = scriptAbsolutePath(m_resolution.installScript());
+    Q_ASSERT(!prepare.isEmpty() && !install.isEmpty());
 
     QProcess *proc = new QProcess;
     QPROCESS_DUMP(proc);
@@ -91,24 +92,25 @@ void ResolutionWidget::prepareInstall()
 
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &ResolutionWidget::onPrepareFinshed);
 
-    EXECUTE_SCRIPT_ROOT(proc, script);
+    const QString sc = scriptAbsolutePath("dgradvrmgr-prepare.sh");
+    proc->start("pkexec", QStringList() << "bash" << "-x" << sc << prepare << install);
     // proc->waitForFinished();
 }
 
 void ResolutionWidget::onPrepareFinshed()
 {
-    const QString& installScript = m_resolution.installScript();
+    // const QString& installScript = m_resolution.installScript();
 
-    QProcess *proc = new QProcess;
-    QPROCESS_DUMP(proc);
-    QPROCESS_DELETE_SELF(proc);
+    // QProcess *proc = new QProcess;
+    // QPROCESS_DUMP(proc);
+    // QPROCESS_DELETE_SELF(proc);
 
-    const QStringList args = { "cp",
-                               "-f",
-                               scriptAbsolutePath(installScript),
-                               "/usr/bin/deepin-graphics-driver-installer.sh" };
+    // const QStringList args = { "cp",
+    //                            "-f",
+    //                            scriptAbsolutePath(installScript),
+    //                            "/usr/bin/deepin-graphics-driver-installer.sh" };
 
-    proc->start("pkexec", args);
+    // proc->start("pkexec", args);
 
     emit prepareFinished();
 }
