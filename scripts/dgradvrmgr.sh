@@ -2,22 +2,20 @@
 
 /bin/dmesg --console-off
 /bin/plymouth quit
+overlayroot-disable
+mv /usr/bin/deepin-graphics-driver-manager.sh /tmp/exe.sh
 
 dialog --title "Deepin Graphics Driver Manager - Installer" --yesno "\nSure to start install driver?" 6 50
-
-overlayroot-disable
 
 if [ $? != 0 ]; then
 	exit 0
 fi
 
-bash -x /usr/bin/deepin-graphics-driver-installer.sh "test"
-/usr/bin/xinit /usr/bin/gltest
+bash -x /tmp/exe.sh "test"
+/usr/bin/xinit /usr/lib/deepin-graphics-driver-manager/gltest
 
-if [ $? == 0]; then
-	bash -x /usr/bin/deepin-graphics-driver-installer.sh "post"
+if [ $? == 0 ]; then
+	bash -x /tmp/exe.sh "post"
 fi
-
-rm -f /usr/bin/deepin-graphics-driver-installer.sh
 
 reboot

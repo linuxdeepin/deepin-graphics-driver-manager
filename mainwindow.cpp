@@ -45,6 +45,8 @@ MainWindow::MainWindow(QWidget *parent) :
     m_vendorsName->setText(m_devInfo.devices().toList().join('\n'));
 
     m_resolutionsLayout = new QVBoxLayout;
+    m_resolutionsLayout->setContentsMargins(8, 8, 8, 8);
+    m_resolutionsLayout->setSpacing(0);
     m_resolutionsWidget = new QWidget;
     m_resolutionsWidget->setLayout(m_resolutionsLayout);
     m_resolutionsWidget->setObjectName("ResolutionsWidget");

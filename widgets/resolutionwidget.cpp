@@ -7,7 +7,7 @@
 #include <QTimer>
 
 ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
-    QWidget(parent),
+    QFrame(parent),
 
     m_resolution(r)
 {
@@ -21,7 +21,10 @@ ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
                            "}");
     m_description = new QLabel;
     m_description->setText(r.description());
+    m_description->setWordWrap(true);
+    m_description->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_description->setStyleSheet("QLabel {"
+                                 "font-size: 12px;"
                                  "color: #888;"
                                  "}");
 
@@ -33,7 +36,6 @@ ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
 
     QHBoxLayout *centralLayout = new QHBoxLayout;
     centralLayout->addLayout(infoLayout);
-    centralLayout->addStretch();
     centralLayout->addWidget(m_checkedBtn);
     centralLayout->setAlignment(m_checkedBtn, Qt::AlignCenter);
     centralLayout->setSpacing(0);
@@ -44,6 +46,10 @@ ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
     setLayout(centralLayout);
     setFixedHeight(70);
     setChecked(false);
+    setObjectName("ResolutionWidget");
+    setStyleSheet("QFrame#ResolutionWidget {"
+                //   "border: 1px solid red;"
+                  "}");
 }
 
 void ResolutionWidget::setChecked(const bool checked)

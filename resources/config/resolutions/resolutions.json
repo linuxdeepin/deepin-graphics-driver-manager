@@ -72,6 +72,13 @@
         "resolutions":
         [
             {
+                "id": 300,
+                "name": "Mode Settings",
+                "description": "mode settings",
+                "prepare": "",
+                "install": ""
+            },
+            {
                 "id": 100,
                 "name": "Opensource Driver",
                 "description": "open source driver",
@@ -81,16 +88,9 @@
             {
                 "id": 200,
                 "name": "Closesource Driver",
-                "description": "close source driver",
+                "description": "只有特殊的专用需求才会用到闭源驱动的功能。A卡的加速方式驱动会自动判断，无需外部配置 。",
                 "prepare": "prepare_nvidia_intel_closesource.sh",
                 "install": "nvidia_driver_install.sh"
-            },
-            {
-                "id": 300,
-                "name": "Mode Settings",
-                "description": "mode settings",
-                "prepare": "",
-                "install": ""
             }
         ]
     }

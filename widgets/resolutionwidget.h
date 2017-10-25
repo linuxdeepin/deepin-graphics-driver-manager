@@ -4,7 +4,7 @@
 
 #include "../resolutions/resolution.h"
 
-#include <QWidget>
+#include <QFrame>
 #include <QDebug>
 #include <QProcess>
 #include <QDir>
@@ -36,7 +36,7 @@ inline const QString scriptAbsolutePath(const QString &scriptName)
     Process->start("pkexec", QStringList() << "bash" << "-x" << scriptAbsolutePath(Script));
 
 class QLabel;
-class ResolutionWidget: public QWidget
+class ResolutionWidget: public QFrame
 {
     Q_OBJECT
 
