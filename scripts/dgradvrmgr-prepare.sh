@@ -8,3 +8,4 @@ echo $INSTALL
 
 bash -x $PREPARE
 cp -f $INSTALL /usr/bin/deepin-graphics-driver-installer.sh
+overlayroot-enable

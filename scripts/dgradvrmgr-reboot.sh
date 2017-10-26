@@ -1,4 +1,4 @@
 #!/bin/bash
 
-overlayroot-enable
+#overlayroot-enable
 reboot
