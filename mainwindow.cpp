@@ -176,7 +176,7 @@ void MainWindow::onRebootBtnClicked()
     QPROCESS_DUMP(proc);
     QPROCESS_DELETE_SELF(proc);
 
-    EXECUTE_SCRIPT_ROOT(proc, scriptAbsolutePath("dgradvrmgr-reboot.sh"));
+    EXECUTE_SCRIPT_ROOT(proc, "dgradvrmgr-reboot.sh");
     proc->waitForFinished();
 }
 
