@@ -36,9 +36,9 @@ MainWindow::MainWindow(QWidget *parent) :
     m_progress->setValue(50);
     m_progress->setVisible(false);
 
-    m_resolutionsIcon = new QLabel;
-    m_resolutionsIcon->setAlignment(Qt::AlignCenter);
-    m_resolutionsIcon->setPixmap(QPixmap(":/resources/icons/" + m_resolutions.iconName()));
+    m_tipsIcon = new QLabel;
+    m_tipsIcon->setAlignment(Qt::AlignCenter);
+    m_tipsIcon->setPixmap(QPixmap(":/resources/icons/" + m_resolutions.iconName()));
     m_vendorsName = new QLabel;
     m_vendorsName->setWordWrap(true);
     m_vendorsName->setAlignment(Qt::AlignCenter);
@@ -56,7 +56,7 @@ MainWindow::MainWindow(QWidget *parent) :
                                        "}");
 
     QVBoxLayout *centralLayout = new QVBoxLayout;
-    centralLayout->addWidget(m_resolutionsIcon);
+    centralLayout->addWidget(m_tipsIcon);
     centralLayout->addWidget(m_vendorsName);
     centralLayout->addStretch();
     centralLayout->addWidget(m_resolutionsWidget);
@@ -162,7 +162,7 @@ void MainWindow::onToggleBtnClicked()
     connect(w, &ResolutionWidget::prepareFinished, this, &MainWindow::onPrepareFinished);
 
     // toggle UI
-    m_resolutionsIcon->setVisible(false);
+    m_tipsIcon->setVisible(false);
     m_vendorsName->setVisible(false);
     m_resolutionsWidget->setVisible(false);
     m_toggleButton->setVisible(false);
@@ -180,9 +180,20 @@ void MainWindow::onRebootBtnClicked()
     proc->waitForFinished();
 }
 
-void MainWindow::onPrepareFinished()
+void MainWindow::onPrepareFinished(const int exitCode)
 {
     m_progress->setVisible(false);
     m_progress->stop();
-    m_rebootButton->setVisible(true);
+    m_tipsIcon->setVisible(true);
+
+    if (exitCode)
+    {
+        m_tipsIcon->setPixmap(QPixmap(":/resources/icons/fail.png"));
+        m_okButton->setVisible(true);
+    }
+    else
+    {
+        m_tipsIcon->setPixmap(QPixmap(":/resources/icons/success.png"));
+        m_rebootButton->setVisible(true);
+    }
 }

@@ -50,14 +50,13 @@ public:
 
 signals:
     void clicked() const;
-    void prepareFinished();
+    void prepareFinished(const int exitCode);
 
 protected:
     void mouseReleaseEvent(QMouseEvent *e);
 
 private slots:
     void checkCondition();
-    void onPrepareFinshed();
 
 private:
     bool m_checked;

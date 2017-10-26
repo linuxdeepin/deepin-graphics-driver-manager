@@ -30,7 +30,7 @@ private Q_SLOTS:
     void onResolutionSelected();
     void onToggleBtnClicked();
     void onRebootBtnClicked();
-    void onPrepareFinished();
+    void onPrepareFinished(const int exitCode);
 
 private:
     int m_usedIndex;
@@ -39,7 +39,7 @@ private:
     Resolutions m_resolutions;
 
     QVBoxLayout *m_resolutionsLayout;
-    QLabel *m_resolutionsIcon;
+    QLabel *m_tipsIcon;
     QLabel *m_vendorsName;
     QWidget *m_resolutionsWidget;
     DWaterProgress *m_progress;

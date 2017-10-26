@@ -5,5 +5,7 @@
         <file>resources/icons/nvidia_intel.png</file>
         <file>resources/icons/nvidia.png</file>
         <file>resources/icons/select.png</file>
+        <file>resources/icons/success.png</file>
+        <file>resources/icons/fail.png</file>
     </qresource>
 </RCC>
