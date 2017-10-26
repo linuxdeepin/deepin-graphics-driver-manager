@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rm -f /usr/bin/deepin-graphics-driver-manager.sh
+
+#DEBHELPER#
