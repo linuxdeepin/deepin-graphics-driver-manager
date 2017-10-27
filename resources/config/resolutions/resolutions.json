@@ -7,7 +7,17 @@
     {
         "type": 1,
         "name": "amd",
-        "icon_name": "amd.png"
+        "icon_name": "amd.png",
+        "resolutions":
+        [
+            {
+                "id": 100,
+                "name": "Use AMD card driver",
+                "description": "Closed source driver will only be used in special needs. Driver will auto determine the acceleration mode of AMD graphics card without external configuration.",
+                "prepare": "",
+                "install": ""
+            }
+        ]
     },
 
     {
@@ -49,15 +59,15 @@
             },
             {
                 "id": 200,
-                "name": "sna",
-                "description": "sna",
+                "name": "Use SNA to acceleration mode",
+                "description": "Can speed up the graphics card with better performance, unstable in some graphics cards with screen splash after tested",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_sna.sh"
             },
             {
                 "id": 300,
-                "name": "uxa",
-                "description": "uxa",
+                "name": "Use UXA acceleration mode",
+                "description": "A more ancient and mature acceleration mode with the best compatibility can support all Intel graphics cards to achieve acceleration, but the performance is relatively weak . ",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_uxa.sh"
             }
@@ -72,23 +82,23 @@
         "resolutions":
         [
             {
-                "id": 300,
-                "name": "Mode Settings",
-                "description": "mode settings",
+                "id": 100,
+                "name": "No NVIDIA card driver",
+                "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
                 "prepare": "",
                 "install": ""
             },
             {
-                "id": 100,
-                "name": "Opensource Driver",
-                "description": "open source driver",
+                "id": 200,
+                "name": "Use open source driver nouveau",
+                "description": "It's derived by analyzing the nvidia closed source driver with weaker performance and unstable in some graphics cards.",
                 "prepare": "nvidia/nvidia_intel_prepare.sh",
                 "install": ""
             },
             {
-                "id": 200,
-                "name": "Closesource Driver",
-                "description": "只有特殊的专用需求才会用到闭源驱动的功能。",
+                "id": 300,
+                "name": "Use closed source driver nvidia",
+                "description": "Only adaptive to parts of distributions and graphics cards, so black screen resulted from incompatible version and unsupporterd graphics card will be occurred.",
                 "prepare": "nvidia/prepare_nvidia_intel_closesource.sh",
                 "install": "nvidia/install_nvidia_intel_closesource.sh"
             }
