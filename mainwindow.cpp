@@ -67,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent) :
     centralLayout->addWidget(m_okButton);
     centralLayout->addWidget(m_rebootButton);
     centralLayout->setSpacing(0);
-    centralLayout->setContentsMargins(70, 0, 70, 30);
+    centralLayout->setContentsMargins(40, 0, 40, 30);
 
     DTitlebar *tbar = titlebar();
     tbar->setTitle(QString());
@@ -116,7 +116,8 @@ void MainWindow::loadResolutions()
     }
 
     const QString &script = m_resolutions.statusScript();
-    Q_ASSERT(!script.isEmpty());
+    if (script.isEmpty())
+        return;
 
     QProcess *proc = new QProcess;
     QPROCESS_DUMP(proc);

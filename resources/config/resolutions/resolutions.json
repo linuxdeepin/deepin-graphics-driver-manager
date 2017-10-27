@@ -8,12 +8,13 @@
         "type": 1,
         "name": "amd",
         "icon_name": "amd.png",
+        "status": "default_stat.sh",
         "resolutions":
         [
             {
                 "id": 100,
                 "name": "Use AMD card driver",
-                "description": "Closed source driver will only be used in special needs. Driver will auto determine the acceleration mode of AMD graphics card without external configuration.",
+                "description": "For special needs.  Auto determine the acceleration mode without external configuration.",
                 "prepare": "",
                 "install": ""
             }
@@ -24,6 +25,7 @@
         "type": 2,
         "name": "nvidia",
         "icon_name": "nvidia.png",
+        "status": "default_stat.sh",
         "resolutions":
         [
             {
@@ -47,27 +49,27 @@
         "type": 4,
         "name": "intel",
         "icon_name": "intel.png",
-        "status": "",
+        "status": "default_stat.sh",
         "resolutions":
         [
             {
                 "id": 100,
                 "name": "glamor",
-                "description": "glamor",
+                "description": "x uses glamor as the default acceleration mode with low compatibility on old graphics cards.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_glamor.sh"
             },
             {
                 "id": 200,
                 "name": "Use SNA to acceleration mode",
-                "description": "Can speed up the graphics card with better performance, unstable in some graphics cards with screen splash after tested",
+                "description": "Speed up the graphics card with better performance, but unstable with screen splash after tested.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_sna.sh"
             },
             {
                 "id": 300,
                 "name": "Use UXA acceleration mode",
-                "description": "A more ancient and mature acceleration mode with the best compatibility can support all Intel graphics cards to achieve acceleration, but the performance is relatively weak . ",
+                "description": "A more ancient and mature acceleration mode with the best compatibility and weaker performance. ",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_uxa.sh"
             }
@@ -91,14 +93,14 @@
             {
                 "id": 200,
                 "name": "Use open source driver nouveau",
-                "description": "It's derived by analyzing the nvidia closed source driver with weaker performance and unstable in some graphics cards.",
+                "description": "Unstable in some graphics cards withweaker performance.",
                 "prepare": "nvidia/nvidia_intel_prepare.sh",
                 "install": ""
             },
             {
                 "id": 300,
                 "name": "Use closed source driver nvidia",
-                "description": "Only adaptive to parts of distributions and graphics cards, so black screen resulted from incompatible version and unsupporterd graphics card will be occurred.",
+                "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
                 "prepare": "nvidia/prepare_nvidia_intel_closesource.sh",
                 "install": "nvidia/install_nvidia_intel_closesource.sh"
             }
