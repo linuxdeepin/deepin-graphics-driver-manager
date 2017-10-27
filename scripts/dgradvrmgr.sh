@@ -11,11 +11,15 @@ if [ $? != 0 ]; then
 	exit 0
 fi
 
-bash -x /tmp/exe.sh "test"
+#bash -x /tmp/exe.sh test
+/tmp/exe.sh test
 /usr/bin/xinit /usr/lib/deepin-graphics-driver-manager/gltest
 
 if [ -e "/tmp/gltest-success" ]; then
-	bash -x /tmp/exe.sh "post"
+	echo "syncing into disk......"
+	#touch /tmp/succes
+#	bash -x /tmp/exe.sh post
+	/tmp/exe.sh post
 fi
 
 reboot

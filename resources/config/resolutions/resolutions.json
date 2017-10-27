@@ -68,7 +68,7 @@
         "type": 6,
         "name": "nvidia_intel",
         "icon_name": "nvidia_intel.png",
-        "status": "nvidia_intel/status_nvidia_intel.sh",
+        "status": "nvidia/status_nvidia_intel.sh",
         "resolutions":
         [
             {
@@ -82,15 +82,15 @@
                 "id": 100,
                 "name": "Opensource Driver",
                 "description": "open source driver",
-                "prepare": "nvidia_intel_prepare.sh",
+                "prepare": "nvidia/nvidia_intel_prepare.sh",
                 "install": ""
             },
             {
                 "id": 200,
                 "name": "Closesource Driver",
-                "description": "只有特殊的专用需求才会用到闭源驱动的功能。A卡的加速方式驱动会自动判断，无需外部配置 。",
-                "prepare": "prepare_nvidia_intel_closesource.sh",
-                "install": "nvidia_driver_install.sh"
+                "description": "只有特殊的专用需求才会用到闭源驱动的功能。",
+                "prepare": "nvidia/prepare_nvidia_intel_closesource.sh",
+                "install": "nvidia/install_nvidia_intel_closesource.sh"
             }
         ]
     }
