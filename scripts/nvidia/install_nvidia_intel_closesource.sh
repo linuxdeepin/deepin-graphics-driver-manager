@@ -20,11 +20,14 @@ else
 fi	
 
 #systemctl stop lightdm
-if [$1 == "post" ];then
+if [ $1 == "post" ];then
 	if [ -x /usr/bin/nvidia-installer ];then
 		overlayroot-chroot nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
 	fi
-	overlayroot-chroot apt-get install nvidia-driver -y --allow-downgrades
+
+	overlayroot-chroot rmmod -f nouveau
+	overlayroot-chroot apt-get install nvidia-driver* -y --allow-downgrades
+	overlayroot-chroot apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
 	echo "Sync driver into disk ...... done"
 else
 	apt-get install nvidia-driver -y --allow-downgrades 
