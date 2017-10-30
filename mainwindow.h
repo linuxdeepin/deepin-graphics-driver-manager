@@ -39,8 +39,10 @@ private:
     Resolutions m_resolutions;
 
     QVBoxLayout *m_resolutionsLayout;
+    QLabel *m_topTips;
     QLabel *m_tipsIcon;
     QLabel *m_vendorsName;
+    QLabel *m_botTips;
     QWidget *m_resolutionsWidget;
     DWaterProgress *m_progress;
     QPushButton *m_toggleButton;

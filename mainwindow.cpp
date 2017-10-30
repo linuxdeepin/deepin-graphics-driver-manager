@@ -21,6 +21,16 @@ MainWindow::MainWindow(QWidget *parent) :
     m_toggleButton->setText(tr("Toggle"));
     m_toggleButton->setFixedHeight(38);
 
+    m_topTips = new QLabel;
+    m_topTips->setAlignment(Qt::AlignHCenter);
+    m_topTips->setVisible(false);
+    m_topTips->setText("Top Tips");
+
+    m_botTips = new QLabel;
+    m_botTips->setAlignment(Qt::AlignHCenter);
+    m_botTips->setVisible(false);
+    m_botTips->setText("Bot Tips");
+
     m_okButton = new QPushButton;
     m_okButton->setText(tr("OK"));
     m_okButton->setFixedHeight(38);
@@ -56,12 +66,14 @@ MainWindow::MainWindow(QWidget *parent) :
                                        "}");
 
     QVBoxLayout *centralLayout = new QVBoxLayout;
+    centralLayout->addWidget(m_topTips);
     centralLayout->addWidget(m_tipsIcon);
     centralLayout->addWidget(m_vendorsName);
     centralLayout->addStretch();
     centralLayout->addWidget(m_resolutionsWidget);
     centralLayout->addWidget(m_progress);
     centralLayout->setAlignment(m_progress, Qt::AlignHCenter);
+    centralLayout->addWidget(m_botTips);
     centralLayout->addStretch();
     centralLayout->addWidget(m_toggleButton);
     centralLayout->addWidget(m_okButton);
