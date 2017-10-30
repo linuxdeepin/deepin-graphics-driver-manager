@@ -14,6 +14,7 @@ fi
 #bash -x /tmp/exe.sh test
 /tmp/exe.sh test
 /usr/bin/xinit /usr/lib/deepin-graphics-driver-manager/gltest
+killall Xorg
 
 if [ -e "/tmp/gltest-success" ]; then
 	echo "syncing into disk......"
