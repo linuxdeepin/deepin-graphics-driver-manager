@@ -71,7 +71,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     DTitlebar *tbar = titlebar();
     tbar->setTitle(QString());
-    tbar->setWindowFlags(tbar->windowFlags() & ~Qt::WindowMaximizeButtonHint);
 
     setCentralWidget(new QWidget);
     centralWidget()->setLayout(centralLayout);
