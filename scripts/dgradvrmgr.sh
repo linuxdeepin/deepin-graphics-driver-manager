@@ -5,9 +5,9 @@
 overlayroot-disable
 overlayroot-chroot mv /usr/bin/deepin-graphics-driver-installer.sh /tmp/exe.sh
 
-dialog --title "Deepin Graphics Driver Manager - Installer" --yesno "\nSure to start install driver?" 6 50
+dialog --timeout 8 --title "Deepin Graphics Driver Manager - Installer" --yesno "\nSure to start install driver?" 6 50
 
-if [ $? != 0 ]; then
+if [ $? == 1 ]; then
 	exit 0
 fi
 
@@ -15,6 +15,7 @@ fi
 /tmp/exe.sh test
 /usr/bin/xinit /usr/lib/deepin-graphics-driver-manager/gltest
 killall Xorg
+sleep 5
 
 if [ -e "/tmp/gltest-success" ]; then
 	echo "syncing into disk......"

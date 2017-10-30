@@ -25,22 +25,29 @@
         "type": 2,
         "name": "nvidia",
         "icon_name": "nvidia.png",
-        "status": "default_stat.sh",
+        "status": "nvidia/status_nvidia.sh",
         "resolutions":
         [
             {
                 "id": 100,
-                "name": "Opensource Driver",
-                "description": "open source driver",
+                "name": "No NVIDIA card driver",
+                "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
                 "prepare": "",
-                "install": "install_nouveau.sh"
+                "install": ""
             },
             {
                 "id": 200,
-                "name": "Closesource Driver",
-                "description": "close source driver",
-                "prepare": "",
-                "install": "install_nvidia_closesource.sh"
+                "name": "Use open source driver nouveau",
+                "description": "Unstable in some graphics cards withweaker performance.",
+                "prepare": "nvidia/prepare_nouveau_intel_closesource.sh",
+                "install": "nvidia/install_nouveau.sh"
+            },
+            {
+                "id": 300,
+                "name": "Use closed source driver nvidia",
+                "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
+                "prepare": "nvidia/prepare_nvidia_intel_closesource.sh",
+                "install": "nvidia/install_nvidia_intel_closesource.sh"
             }
         ]
     },
@@ -80,7 +87,7 @@
         "type": 6,
         "name": "nvidia_intel",
         "icon_name": "nvidia_intel.png",
-        "status": "nvidia/status_nvidia_intel.sh",
+        "status": "nvidia_intel/status_nvidia_intel.sh",
         "resolutions":
         [
             {
@@ -94,8 +101,8 @@
                 "id": 200,
                 "name": "Use open source driver nouveau",
                 "description": "Unstable in some graphics cards withweaker performance.",
-                "prepare": "nvidia/nvidia_intel_prepare.sh",
-                "install": ""
+                "prepare": "nvidia/prepare_nouveau_intel_closesource.sh",
+                "install": "nvidia/install_nouveau.sh"
             },
             {
                 "id": 300,
