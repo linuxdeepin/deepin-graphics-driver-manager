@@ -32,7 +32,8 @@ if [ $1 == "post" ];then
 	[ -f /etc/X11/xorg.conf ] && overlayroot-chroot rm -rf /etc/X11/xorg.conf
 
 	overlayroot-chroot apt-get purge nvidia-* -y --allow-downgrades
-	overlayroot-chroot apt-get install xserver-xorg-xorg-core --reinstall -y --allow-downgrades
+	overlayroot-chroot apt-get install xserver-xorg-core --reinstall -y --allow-downgrades
+	overlayroot-chroot apt-get install xserver-xorg-video-nouveau --reinstall -y --allow-downgrades
 	overlayroot-chroot apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
 	echo "Sync driver into disk ...... done"
 else
@@ -46,7 +47,8 @@ else
 	fi
 	echo "Loading kernel modules......"
 	modprobe nouveau
-	apt-get install xserver-xorg-xorg-core --reinstall -y --allow-downgrades
+	apt-get install xserver-xorg-core --reinstall -y --allow-downgrades
+	apt-get install xserver-xorg-video-nouveau --reinstall -y --allow-downgrades
 	apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
 	#echo "Now start desktop......"
 	#systemctl restart lightdm
