@@ -56,7 +56,7 @@
         "type": 4,
         "name": "intel",
         "icon_name": "intel.png",
-        "status": "default_stat.sh",
+        "status": "intel/intel_stat.sh",
         "resolutions":
         [
             {
