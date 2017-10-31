@@ -29,7 +29,7 @@ if [ $1 == "post" ];then
 	overlayroot-chroot rmmod -f nvidia-modeset 
 	overlayroot-chroot rmmod -f nvidia
 	
-	[ -f /etc/X11/xorg.conf ] && rm -rf /etc/X11/xorg.conf
+	[ -f /etc/X11/xorg.conf ] && overlayroot-chroot rm -rf /etc/X11/xorg.conf
 
 	overlayroot-chroot apt-get purge nvidia-* -y --allow-downgrades
 	overlayroot-chroot apt-get install xserver-xorg-xorg-core --reinstall -y --allow-downgrades
