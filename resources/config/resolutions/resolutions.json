@@ -33,7 +33,7 @@
                 "name": "No NVIDIA card driver",
                 "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
                 "prepare": "empty.sh",
-                "install": "empty.sh"
+                "install": "nvidia/install_glamor.sh"
             },
             {
                 "id": 200,
