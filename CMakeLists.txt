@@ -70,6 +70,18 @@ endif ()
 install(TARGETS ${BIN_NAME} DESTINATION bin)
 install(TARGETS gltest DESTINATION lib/deepin-graphics-driver-manager)
 
+# desktop
+install(FILES deepin-graphics-driver-manager.desktop DESTINATION share/applications)
+
+# icons
+foreach (ICON_SIZE 64)
+    install(FILES resources/icons/deepin-graphics-driver-manager-${ICON_SIZE}px.svg
+            RENAME deepin-graphics-driver-manager.svg
+            DESTINATION share/icons/hicolor/${ICON_SIZE}x${ICON_SIZE}/apps)
+endforeach ()
+install(FILES resources/icons/deepin-graphics-driver-manager-64px.svg
+        DESTINATION share/icons/hicolor/scalable/apps)
+
 # resolutions.json
 install(FILES resources/config/resolutions/resolutions.json
         DESTINATION lib/deepin-graphics-driver-manager)
