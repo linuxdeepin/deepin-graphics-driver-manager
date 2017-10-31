@@ -26,7 +26,7 @@ if [ $1 == "post" ];then
 	fi
 
 	overlayroot-chroot rmmod -f nouveau
-	overlayroot-chroot apt-get install nvidia-driver* -y --allow-downgrades
+	overlayroot-chroot apt-get install nvidia-driver --reinstall -y --allow-downgrades
 	overlayroot-chroot apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
 	echo "Sync driver into disk ...... done"
 else
