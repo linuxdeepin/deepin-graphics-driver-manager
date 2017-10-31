@@ -174,6 +174,10 @@ void MainWindow::onToggleBtnClicked()
     connect(w, &ResolutionWidget::prepareFinished, this, &MainWindow::onPrepareFinished);
 
     // toggle UI
+    m_topTips->setText(tr("Install..."));
+    m_topTips->setVisible(true);
+    m_botTips->setText(tr("Please Wait..."));
+    m_botTips->setVisible(true);
     m_tipsIcon->setVisible(false);
     m_vendorsName->setVisible(false);
     m_resolutionsWidget->setVisible(false);
@@ -200,11 +204,15 @@ void MainWindow::onPrepareFinished(const int exitCode)
 
     if (exitCode)
     {
+        m_topTips->setText(tr("Fail"));
+        m_botTips->setText(tr("Failed, please upload log file."));
         m_tipsIcon->setPixmap(QPixmap(":/resources/icons/fail.png"));
         m_okButton->setVisible(true);
     }
     else
     {
+        m_topTips->setText(tr("Success"));
+        m_botTips->setText(tr("Congratulations!"));
         m_tipsIcon->setPixmap(QPixmap(":/resources/icons/success.png"));
         m_rebootButton->setVisible(true);
     }
