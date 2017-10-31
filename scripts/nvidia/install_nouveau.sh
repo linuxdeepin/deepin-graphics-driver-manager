@@ -9,7 +9,7 @@ if [ "$(id -u)" -ne "0" ];then
 fi
 
 export DEBIAN_FRONTEND=noninteractive
-ret=`lspci | grep VGA | grep NVIDIA`
+ret=`lspci |grep -iE 'VGA|3D controller' | grep NVIDIA`
 nouveau_mod=`lsmod | grep nouveau`
 nvidia_mod=`lsmod | grep nvidia`
 if [ -n "$ret" ]; then
