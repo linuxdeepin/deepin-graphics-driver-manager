@@ -15,8 +15,8 @@
                 "id": 100,
                 "name": "Use AMD card driver",
                 "description": "For special needs.  Auto determine the acceleration mode without external configuration.",
-                "prepare": "",
-                "install": ""
+                "prepare": "empty.sh",
+                "install": "empty.sh"
             }
         ]
     },
@@ -32,8 +32,8 @@
                 "id": 100,
                 "name": "No NVIDIA card driver",
                 "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
-                "prepare": "",
-                "install": ""
+                "prepare": "empty.sh",
+                "install": "empty.sh"
             },
             {
                 "id": 200,
@@ -94,7 +94,7 @@
                 "id": 100,
                 "name": "No NVIDIA card driver",
                 "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
-                "prepare": "",
+                "prepare": "empty.sh",
                 "install": "nvidia/install_glamor.sh"
             },
             {
