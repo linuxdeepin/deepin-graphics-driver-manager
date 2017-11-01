@@ -17,8 +17,6 @@ if (NOT (${CMAKE_BUILD_TYPE} MATCHES "Debug"))
     # generate qm
     execute_process(COMMAND bash "translate_generation.sh"
                     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
-else ()
-    set(CMAKE_CXX_COMPILER "clang++")
 endif ()
 
 # Sources files
@@ -46,8 +44,10 @@ target_link_libraries(${BIN_NAME}
 )
 
 # gltest
-add_executable(gltest gltest/main.cpp)
-target_link_libraries(gltest ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${Qt5Widgets_LIBRARIES})
+add_subdirectory(gltest)
+
+# notify
+add_subdirectory(notify)
 
 # Test settings
 enable_testing()
@@ -68,7 +68,6 @@ endif ()
 
 # bin
 install(TARGETS ${BIN_NAME} DESTINATION bin)
-install(TARGETS gltest DESTINATION lib/deepin-graphics-driver-manager)
 
 # desktop
 install(FILES deepin-graphics-driver-manager.desktop DESTINATION share/applications)
