@@ -1,11 +1,11 @@
 #!/bin/sh
-ret=`lspci | grep VGA | grep Intel Corporation`
-if [ -n "$ret" ]; then
-	echo "Found Intel card: $ret"
-else
-	echo "No Intel card found."
-	exit -1
-fi	
+#ret=`lspci | grep VGA | grep Intel Corporation`
+#if [ -n "$ret" ]; then
+#	echo "Found Intel card: $ret"
+#else
+#	echo "No Intel card found."
+#	exit -1
+#fi	
 #当前的intel加速方式
 #intel_accel_method=`cat /var/log/intel_driver_mode.status`
 intel_accel_method_sna=`cat /var/log/Xorg.0.log | grep SNA`
