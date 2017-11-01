@@ -168,10 +168,11 @@ void MainWindow::onToggleBtnClicked()
 {
     Q_ASSERT(m_selectedIndex != m_usedIndex);
 
-    ResolutionWidget *w = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
-    w->prepareInstall();
+    ResolutionWidget *old_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_usedIndex)->widget());
+    ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
+    new_driver_widget->prepareInstall(old_driver_widget->resolution());
 
-    connect(w, &ResolutionWidget::prepareFinished, this, &MainWindow::onPrepareFinished);
+    connect(new_driver_widget, &ResolutionWidget::prepareFinished, this, &MainWindow::onPrepareFinished);
 
     // toggle UI
     m_topTips->setText(tr("Install..."));

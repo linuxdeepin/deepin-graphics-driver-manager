@@ -80,7 +80,7 @@ void ResolutionWidget::checkCondition()
     EXECUTE_SCRIPT(proc, script);
 }
 
-void ResolutionWidget::prepareInstall()
+void ResolutionWidget::prepareInstall(const Resolution &old_resolution)
 {
     const QString prepare = scriptAbsolutePath(m_resolution.prepareScript());
     const QString install = scriptAbsolutePath(m_resolution.installScript());
@@ -93,6 +93,10 @@ void ResolutionWidget::prepareInstall()
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &ResolutionWidget::prepareFinished);
 
     const QString sc = scriptAbsolutePath("dgradvrmgr-prepare.sh");
-    proc->start("pkexec", QStringList() << "bash" << "-x" << sc << prepare << install);
-    // proc->waitForFinished();
+    const QString old_driver = old_resolution.name();
+    const QString new_driver = m_resolution.name();
+
+    QStringList args { "bash", "-x", sc, prepare, install, old_driver, new_driver };
+
+    proc->start("pkexec", args);
 }

@@ -11,7 +11,7 @@ DCORE_USE_NAMESPACE
 
 #define CONFIG "/usr/lib/deepin-graphics-driver-manager/config.conf"
 
-QSettings SETTINGS(CONFIG, QSettings::IniFormat);
+QSettings *SETTINGS = nullptr;
 
 void show_dialog(const QString &message, const QString &iconName)
 {
@@ -24,7 +24,7 @@ void show_dialog(const QString &message, const QString &iconName)
 
 void show_success_dialog()
 {
-    const QString &new_driver = SETTINGS.value("new_driver").toString();
+    const QString &new_driver = SETTINGS->value("new_driver").toString();
     const QString &message = QT_TRANSLATE_NOOP("main", "Install %1 successful!");
 
     show_dialog(message.arg(new_driver), "deepin-graphics-driver-manager");
@@ -32,34 +32,57 @@ void show_success_dialog()
 
 void show_fail_dialog()
 {
-    const QString &old_driver = SETTINGS.value("old_driver").toString();
-    const QString &new_driver = SETTINGS.value("new_driver").toString();
+    const QString &old_driver = SETTINGS->value("old_driver").toString();
+    const QString &new_driver = SETTINGS->value("new_driver").toString();
     const QString &message = QT_TRANSLATE_NOOP("main", "Install %1 failed, fallback to %2");
 
     show_dialog(message.arg(old_driver).arg(new_driver), "dialog-warning");
 }
 
-void clear()
+void mark()
 {
-    QFile(CONFIG).remove();
+    QFile f(CONFIG);
+    f.open(QIODevice::ReadWrite);
+
+    QString buf = f.readAll();
+
+    QRegularExpression re("^(notified=).*$");
+    re.setPatternOptions(QRegularExpression::MultilineOption);
+    buf.replace(re, "\\1true");
+
+    f.seek(0);
+    f.write(buf.toStdString().c_str());
+    f.close();
 }
 
-int main(int argc, char *args[])
+void init()
 {
-    DApplication dapp(argc, args);
-
-    DLogManager::registerConsoleAppender();
+    SETTINGS = new QSettings(CONFIG, QSettings::IniFormat);
 
     if (!QFile(CONFIG).exists())
-        return 0;
+        return qApp->quit();
 
-    const bool succeed = SETTINGS.value("success").toBool();
+    const bool notified = SETTINGS->value("notified", true).toBool();
+    if (notified)
+        return qApp->quit();
+
+    const bool succeed = SETTINGS->value("success").toBool();
     if (succeed)
         show_success_dialog();
     else
         show_fail_dialog();
 
-    clear();
+    mark();
+}
+
+int main(int argc, char *args[])
+{
+    DApplication dapp(argc, args);
+    dapp.setQuitOnLastWindowClosed(true);
+
+    DLogManager::registerConsoleAppender();
+
+    QTimer::singleShot(1, nullptr, init);
 
     return dapp.exec();
 }

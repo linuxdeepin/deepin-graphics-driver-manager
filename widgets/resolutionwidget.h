@@ -44,7 +44,7 @@ public:
     explicit ResolutionWidget(const Resolution &r, QWidget *parent = nullptr);
 
     void setChecked(const bool checked);
-    void prepareInstall();
+    void prepareInstall(const Resolution &old_resolution);
     bool checked() const { return m_checked; }
     const Resolution resolution() const { return m_resolution; }
 
