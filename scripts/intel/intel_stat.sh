@@ -14,7 +14,7 @@ if [ -n "$intel_accel_method_sna" ];then
 	echo "now intel accel mode is : SNA"
 	intel_accel_method=1
 	exit 1
-elif [ -n "$intel_accel_method_sna" ];then
+elif [ -n "$intel_accel_method_uxa" ];then
 	echo "now intel accel mode is : UXA"
 	intel_accel_method=2
 	exit 2

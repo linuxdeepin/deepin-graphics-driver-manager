@@ -9,13 +9,6 @@ if [ "$(id -u)" -ne "0" ];then
 fi
 
 export DEBIAN_FRONTEND=noninteractive
-ret=`lspci | grep VGA | grep Intel Corporation`
-if [ -n "$ret" ]; then
-	echo "Found Intel card: $ret"
-else
-	echo "No Intel card found."
-	exit
-fi	
 
 # 0 ------ default is glamor
 # 1 ------ use SNA accel method
@@ -47,15 +40,15 @@ overlayroot-chroot apt-get install xserver-xorg-video-intel --reinstall -y --all
 
 systemctl stop lightdm
 if [ $1 == "post" ];then
-	overlayroot-chroot apt-get purge nvidia-* -y --allow-downgrades
-	overlayroot-chroot apt-get purge xserver-xorg-video-nouveau -y --allow-downgrades
+#	overlayroot-chroot apt-get purge nvidia-* -y --allow-downgrades
+#	overlayroot-chroot apt-get purge xserver-xorg-video-nouveau -y --allow-downgrades
 	overlayroot-chroot apt-get install xserver-xorg-core --reinstall -y --allow-downgrades
 	overlayroot-chroot apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
-	[ -f /etc/X11/xorg.conf ] && overlayroot-chroot rm -f /etc/X11/xorg.conf
+	overlayroot-chroot rm -f /etc/X11/xorg.conf
 	#根据需求调整显卡的加速方式，从而达到最优化
-	case $1 in
+	case $2 in
 		0)echo "Using default glamor accel method"
-			[ -f /etc/X11/xorg.conf.d/20-intel.conf ] && rm /etc/X11/xorg.conf.d/20-intel.conf
+			overlayroot-chroot rm -f /etc/X11/xorg.conf.d/20-intel.conf
 			overlayroot-chroot apt-get purge xserver-xorg-video-intel -y --allow-downgrades
 			;;
 		1)set_intel_accel_sna
@@ -64,8 +57,8 @@ if [ $1 == "post" ];then
 #			overlayroot-chroot apt-get install xserver-xorg-video-intel -y --allow-downgrades
 			;;
 		*)
-			rm /etc/X11/xorg.conf.d/20-intel.conf
-			[ -f /etc/X11/xorg.conf ] && rm /etc/X11/xorg.conf
+			overlayroot-chroot rm -f /etc/X11/xorg.conf.d/20-intel.conf
+			overlayroot-chroot rm -f /etc/X11/xorg.conf
 			echo "You need to set an accel method,default glamor"
 			;;	
 	esac	
@@ -78,17 +71,17 @@ else
 	rmmod -f nouveau
 	echo "Loading kernel modules......"
 	modprobe i915
-	apt-get purge nvidia-* -y --allow-downgrades
-	apt-get purge xserver-xorg-video-nouveau -y --allow-downgrades
+#	apt-get purge nvidia-* -y --allow-downgrades
+#	apt-get purge xserver-xorg-video-nouveau -y --allow-downgrades
 	[ -f /etc/X11/xorg.conf ] && rm -f /etc/X11/xorg.conf
 	apt-get install xserver-xorg-core --reinstall -y --allow-downgrades
 	apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
 	#根据需求调整显卡的加速方式，从而达到最优化
-	case $1 in
+	case $2 in
 		0)
-			[ -f /etc/X11/xorg.conf.d/20-intel.conf ] && rm /etc/X11/xorg.conf.d/20-intel.conf
+			[ -f /etc/X11/xorg.conf.d/20-intel.conf ] && rm -f /etc/X11/xorg.conf.d/20-intel.conf
 			apt-get purge xserver-xorg-video-intel -y --allow-downgrades
-			echo "Using default glamor accel method"
+			echo "Using default glamor accel method overlay"
 			;;
 		1)set_intel_accel_sna
 #			apt-get install xserver-xorg-video-intel -y --allow-downgrades
