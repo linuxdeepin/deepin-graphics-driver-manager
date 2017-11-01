@@ -188,7 +188,7 @@ void MainWindow::onToggleBtnClicked()
 
 void MainWindow::onRebootBtnClicked()
 {
-    QProcess::startDetached("dbus-send --print-reply --dest=com.deepin.dde.shutdownFront /com/deepin/dde/shutdownFront com.deepin.dde.shutdownFront.Shutdown");
+    QProcess::startDetached("dbus-send --print-reply --dest=com.deepin.dde.shutdownFront /com/deepin/dde/shutdownFront com.deepin.dde.shutdownFront.Restart");
 }
 
 void MainWindow::onPrepareFinished(const int exitCode)
