@@ -188,12 +188,7 @@ void MainWindow::onToggleBtnClicked()
 
 void MainWindow::onRebootBtnClicked()
 {
-    QProcess *proc = new QProcess;
-    QPROCESS_DUMP(proc);
-    QPROCESS_DELETE_SELF(proc);
-
-    EXECUTE_SCRIPT_ROOT(proc, "dgradvrmgr-reboot.sh");
-    proc->waitForFinished();
+    QProcess::startDetached("dbus-send --print-reply --dest=com.deepin.dde.shutdownFront /com/deepin/dde/shutdownFront com.deepin.dde.shutdownFront.Shutdown");
 }
 
 void MainWindow::onPrepareFinished(const int exitCode)
