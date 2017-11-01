@@ -14,5 +14,8 @@ int main()
     const auto nvidia_gt740 = "01:00.0 VGA compatible controller: NVIDIA Corporation GK107 [GeForce GT 740] (rev a1)";
     assert(GraphicsDeviceInfo::deviceType(nvidia_gt740) == GraphicsDeviceInfo::NVIDIA);
 
+    const auto amd = "01:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Tobago PRO [Radeon R7 360 / R9 360 OEM] (rev 81)";
+    assert(GraphicsDeviceInfo::deviceType(amd) == GraphicsDeviceInfo::AMD);
+
     return 0;
 }

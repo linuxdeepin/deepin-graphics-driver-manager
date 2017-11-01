@@ -19,6 +19,8 @@ GraphicsDeviceInfo::DeviceFlag GraphicsDeviceInfo::deviceType(const QString &dev
         return GraphicsDeviceInfo::INTEL;
     else if (devInfo.contains("NVIDIA"))
         return GraphicsDeviceInfo::NVIDIA;
+    else if (devInfo.contains("AMD"))
+        return GraphicsDeviceInfo::AMD;
     else
         return GraphicsDeviceInfo::NoDevice;
 }
