@@ -14,7 +14,7 @@ export DEBIAN_FRONTEND=noninteractive
 # 1 ------ use SNA accel method
 # 2 ------ use UXA accel method
 
-set_intel_accel_sna() {
+set_intel_accel_sna_post() {
 INTEL_XORG_CONF="/etc/X11/xorg.conf.d/20-intel.conf"
 echo 'Section "Device"
 Identifier "Intel Graphics"
@@ -26,7 +26,18 @@ EndSection' | overlayroot-chroot tee $INTEL_XORG_CONF
 overlayroot-chroot apt-get install xserver-xorg-video-intel --reinstall -y --allow-downgrades
 }
 
-set_intel_accel_uxa() {
+set_intel_accel_sna_overlay() {
+INTEL_XORG_CONF="/etc/X11/xorg.conf.d/20-intel.conf"
+echo 'Section "Device"
+Identifier "Intel Graphics"
+Driver "intel"
+Option "AccelMethod" "sna"
+#Option "PageFlip" "False"
+#Option "TearFree" "True"
+EndSection' | tee $INTEL_XORG_CONF
+apt-get install xserver-xorg-video-intel --reinstall -y --allow-downgrades
+}
+set_intel_accel_uxa_post() {
 INTEL_XORG_CONF="/etc/X11/xorg.conf.d/20-intel.conf"
 echo 'Section "Device"
 Identifier "Intel Graphics"
@@ -38,6 +49,17 @@ EndSection' | overlayroot-chroot tee $INTEL_XORG_CONF
 overlayroot-chroot apt-get install xserver-xorg-video-intel --reinstall -y --allow-downgrades
 }
 
+set_intel_accel_uxa_overlay() {
+INTEL_XORG_CONF="/etc/X11/xorg.conf.d/20-intel.conf"
+echo 'Section "Device"
+Identifier "Intel Graphics"
+Driver "intel"
+Option "AccelMethod" "uxa"
+#Option "PageFlip" "False"
+#Option "TearFree" "True"
+EndSection' | tee $INTEL_XORG_CONF
+apt-get install xserver-xorg-video-intel --reinstall -y --allow-downgrades
+}
 systemctl stop lightdm
 if [ $1 == "post" ];then
 #	overlayroot-chroot apt-get purge nvidia-* -y --allow-downgrades
@@ -51,9 +73,9 @@ if [ $1 == "post" ];then
 			overlayroot-chroot rm -f /etc/X11/xorg.conf.d/20-intel.conf
 			overlayroot-chroot apt-get purge xserver-xorg-video-intel -y --allow-downgrades
 			;;
-		1)set_intel_accel_sna
+		1)set_intel_accel_sna_post
 			;;
-		2)set_intel_accel_uxa
+		2)set_intel_accel_uxa_post
 #			overlayroot-chroot apt-get install xserver-xorg-video-intel -y --allow-downgrades
 			;;
 		*)
@@ -83,10 +105,10 @@ else
 			apt-get purge xserver-xorg-video-intel -y --allow-downgrades
 			echo "Using default glamor accel method overlay"
 			;;
-		1)set_intel_accel_sna
+		1)set_intel_accel_sna_overlay
 #			apt-get install xserver-xorg-video-intel -y --allow-downgrades
 			;;
-		2)set_intel_accel_uxa
+		2)set_intel_accel_uxa_overlay
 #			apt-get install xserver-xorg-video-intel -y --allow-downgrades
 			;;
 		*)
