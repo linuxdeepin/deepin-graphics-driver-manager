@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Deepin graphics driver manager - notify
+GenericName=Deepin graphics driver manager - notify
+Comment=Send Notify
+Exec=/usr/lib/deepin-graphics-driver-manager/notify
+Icon=deepin-graphics-driver-manager
+Terminal=false
+Type=Application
+StartupNotify=false
+X-GNOME-Autostart-Phase=Applications
+X-GNOME-AutoRestart=false
+X-GNOME-Autostart-Notify=false
+X-KDE-autostart-after=panel
+X-KDE-StartupNotify=false
