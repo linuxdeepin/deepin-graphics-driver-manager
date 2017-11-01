@@ -8,7 +8,7 @@ overlayroot-chroot mv /usr/bin/deepin-graphics-driver-installer.sh /tmp/exe.sh
 dialog --timeout 8 --title "Deepin Graphics Driver Manager - Installer" --yesno "\nSure to start install driver?" 6 50
 
 if [ $? == 1 ]; then
-	exit 0
+	reboot
 fi
 
 #bash -x /tmp/exe.sh test
