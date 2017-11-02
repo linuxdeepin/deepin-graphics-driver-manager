@@ -8,3 +8,15 @@ file_filter = translations/deepin-graphics-driver-manager<lang>.ts
 source_file = translations/deepin-graphics-driver-manager.ts
 source_lang = en
 type = QT
+
+[deepin-graphics-driver-manager.deepin-dgradrimgr-notify]
+file_filter = translations/deepin-dgradrimgr-notify<lang>.ts
+source_file = translations/deepin-dgradrimgr-notify.ts
+source_lang = en
+type = QT
+
+[deepin-graphics-driver-manager.deepin-dgradrimgr-gltest]
+file_filter = translations/deepin-dgradrimgr-gltest<lang>.ts
+source_file = translations/deepin-dgradrimgr-gltest.ts
+source_lang = en
+type = QT
