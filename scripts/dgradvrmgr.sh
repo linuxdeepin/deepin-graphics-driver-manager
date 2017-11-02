@@ -22,7 +22,7 @@ if [ -e "/tmp/gltest-success" ]; then
 	#touch /tmp/succes
 #	bash -x /tmp/exe.sh post
 	/tmp/exe.sh post
-	sed -i -E 's/(success=.*$)/\1true/' /usr/lib/deepin-graphics-driver-manager/config.conf
+	overlayroot-chroot sed -i -E 's/(success=).*$/\1true/' /usr/lib/deepin-graphics-driver-manager/config.conf
 fi
 
 reboot
