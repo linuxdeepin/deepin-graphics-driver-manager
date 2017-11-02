@@ -11,6 +11,8 @@ int main(int argc, char *argv[])
 {
     DApplication::loadDXcbPlugin();
     DApplication app(argc, argv);
+    if (!app.setSingleInstance("dgradvrmgr"))
+        return -1;
     app.setOrganizationName("deepin");
     app.setApplicationName("deepin-graphics-driver-manager");
     app.setApplicationVersion("1.0");
