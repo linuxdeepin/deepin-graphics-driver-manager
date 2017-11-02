@@ -91,6 +91,7 @@ void ResolutionWidget::prepareInstall(const Resolution &old_resolution)
     QPROCESS_DELETE_SELF(proc);
 
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &ResolutionWidget::prepareFinished);
+    connect(proc, &QProcess::readyRead, this, [=] { emit policyKitPassed(); proc->disconnect(proc, &QProcess::readyRead, this, nullptr); });
 
     const QString sc = scriptAbsolutePath("dgradvrmgr-prepare.sh");
     const QString old_driver = old_resolution.name();

@@ -176,12 +176,26 @@ void MainWindow::onToggleBtnClicked()
 {
     Q_ASSERT(m_selectedIndex != m_usedIndex);
 
+    m_started = false;
+
     ResolutionWidget *old_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_usedIndex)->widget());
     ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
     new_driver_widget->prepareInstall(old_driver_widget->resolution());
 
     connect(new_driver_widget, &ResolutionWidget::prepareFinished, this, &MainWindow::onPrepareFinished);
+    connect(new_driver_widget, &ResolutionWidget::policyKitPassed, this, &MainWindow::onPolicyKitPassed);
+}
 
+void MainWindow::onRebootBtnClicked()
+{
+    QProcess::startDetached("dbus-send --print-reply --dest=com.deepin.dde.shutdownFront /com/deepin/dde/shutdownFront com.deepin.dde.shutdownFront.Restart");
+}
+
+void MainWindow::onPolicyKitPassed()
+{
+    m_started = true;
+
+    ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
     const QString &new_driver_name = new_driver_widget->resolution().name();
 
     // toggle UI
@@ -197,13 +211,11 @@ void MainWindow::onToggleBtnClicked()
     m_progress->start();
 }
 
-void MainWindow::onRebootBtnClicked()
-{
-    QProcess::startDetached("dbus-send --print-reply --dest=com.deepin.dde.shutdownFront /com/deepin/dde/shutdownFront com.deepin.dde.shutdownFront.Restart");
-}
-
 void MainWindow::onPrepareFinished(const int exitCode)
 {
+    if (!m_started)
+        return;
+
     m_progress->setVisible(false);
     m_progress->stop();
     m_tipsIcon->setVisible(true);

@@ -30,11 +30,13 @@ private Q_SLOTS:
     void onResolutionSelected();
     void onToggleBtnClicked();
     void onRebootBtnClicked();
+    void onPolicyKitPassed();
     void onPrepareFinished(const int exitCode);
 
 private:
     int m_usedIndex;
     int m_selectedIndex;
+    bool m_started;
     GraphicsDeviceInfo m_devInfo;
     Resolutions m_resolutions;
 

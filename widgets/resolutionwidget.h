@@ -50,6 +50,7 @@ public:
 
 signals:
     void clicked() const;
+    void policyKitPassed();
     void prepareFinished(const int exitCode);
 
 protected:
