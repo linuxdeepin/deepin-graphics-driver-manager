@@ -98,9 +98,9 @@ public:
     explicit GLTestWindow(QWidget *parent = nullptr)
         : QWidget(parent)
     {
-        m_acceptBtn = new QPushButton(tr("OK"));
+        m_acceptBtn = new QPushButton(tr("Apply"));
         m_cancelBtn = new QPushButton(tr("Cancel"));
-        QLabel *tipsLabel = new QLabel(tr("Press OK if every thing seems good."));
+        QLabel *tipsLabel = new QLabel(tr("Please ensure the driver works normally without blurred screen and screen tearing"));
         tipsLabel->setAlignment(Qt::AlignCenter);
 
         m_glTestWidget = new GLTestWidget;
