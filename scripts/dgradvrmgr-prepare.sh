@@ -6,6 +6,8 @@ INSTALL=$2
 OLD_DRIVER=$3
 NEW_DRIVER=$4
 
+USER_LANG=$5
+
 echo $PREPARE
 echo $INSTALL
 
@@ -17,6 +19,7 @@ cp -f $INSTALL /usr/bin/deepin-graphics-driver-installer.sh || exit 1
 overlayroot-enable || exit 1
 
 echo "[General]
+lang=$USER_LANG
 old_driver=$OLD_DRIVER
 new_driver=$NEW_DRIVER
 success=false

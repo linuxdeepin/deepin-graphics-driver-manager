@@ -93,11 +93,12 @@ void ResolutionWidget::prepareInstall(const Resolution &old_resolution)
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &ResolutionWidget::prepareFinished);
     connect(proc, &QProcess::readyRead, this, [=] { emit policyKitPassed(); proc->disconnect(proc, &QProcess::readyRead, this, nullptr); });
 
+    const QString lang = QLocale().name();
     const QString sc = scriptAbsolutePath("dgradvrmgr-prepare.sh");
     const QString old_driver = old_resolution.name();
     const QString new_driver = m_resolution.name();
 
-    QStringList args { "bash", "-x", sc, prepare, install, old_driver, new_driver };
+    QStringList args { "bash", "-x", sc, prepare, install, old_driver, new_driver, lang };
 
     proc->start("pkexec", args);
 }
