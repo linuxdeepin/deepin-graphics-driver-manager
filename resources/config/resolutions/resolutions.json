@@ -30,21 +30,24 @@
         [
             {
                 "id": 100,
-                "name": "No NVIDIA card driver",
+                "title": "No NVIDIA card driver",
+		"name": "default",
                 "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
                 "prepare": "empty.sh",
                 "install": "nvidia/install_glamor.sh"
             },
             {
                 "id": 200,
-                "name": "Use open source driver nouveau",
+                "title": "Use open source driver nouveau",
+		"name": "nouveau",
                 "description": "Unstable in some graphics cards withweaker performance.",
                 "prepare": "nvidia/prepare_nouveau_intel_closesource.sh",
                 "install": "nvidia/install_nouveau.sh"
             },
             {
                 "id": 300,
-                "name": "Use closed source driver nvidia",
+                "title": "Use closed source driver nvidia",
+		"name": "NVIDIA",
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
                 "prepare": "nvidia/prepare_nvidia_intel_closesource.sh",
                 "install": "nvidia/install_nvidia_intel_closesource.sh"
@@ -61,21 +64,24 @@
         [
             {
                 "id": 100,
-                "name": "glamor",
+                "title": "glamor",
+		"name": "glamor",
                 "description": "x uses glamor as the default acceleration mode with low compatibility on old graphics cards.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_glamor.sh"
             },
             {
                 "id": 200,
-                "name": "Use SNA to acceleration mode",
+                "title": "Use SNA to acceleration mode",
+		"name": "SNA",
                 "description": "Speed up the graphics card with better performance, but unstable with screen splash after tested.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_sna.sh"
             },
             {
                 "id": 300,
-                "name": "Use UXA acceleration mode",
+                "title": "Use UXA acceleration mode",
+		"name": "UXA",
                 "description": "A more ancient and mature acceleration mode with the best compatibility and weaker performance. ",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_uxa.sh"
@@ -92,21 +98,24 @@
         [
             {
                 "id": 100,
-                "name": "No NVIDIA card driver",
+                "title": "No NVIDIA card driver",
+		"name": "default",
                 "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
                 "prepare": "empty.sh",
                 "install": "nvidia/install_glamor.sh"
             },
             {
                 "id": 200,
-                "name": "Use open source driver nouveau",
+                "title": "Use open source driver nouveau",
+		"name": "nouveau",
                 "description": "Unstable in some graphics cards withweaker performance.",
                 "prepare": "nvidia/prepare_nouveau_intel_closesource.sh",
                 "install": "nvidia/install_nouveau.sh"
             },
             {
                 "id": 300,
-                "name": "Use closed source driver nvidia",
+                "title": "Use closed source driver nvidia",
+		"name": "NVIDIA",
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
                 "prepare": "nvidia/prepare_nvidia_intel_closesource.sh",
                 "install": "nvidia/install_nvidia_intel_closesource.sh"

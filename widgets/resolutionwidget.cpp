@@ -16,7 +16,7 @@ ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
     m_checkedBtn->setFixedSize(16, 16);
 
     m_title = new QLabel;
-    m_title->setText(r.name());
+    m_title->setText(r.title());
     m_title->setStyleSheet("QLabel {"
                            "}");
     m_description = new QLabel;

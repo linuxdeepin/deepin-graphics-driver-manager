@@ -24,12 +24,18 @@ MainWindow::MainWindow(QWidget *parent) :
     m_topTips = new QLabel;
     m_topTips->setAlignment(Qt::AlignHCenter);
     m_topTips->setVisible(false);
-    m_topTips->setText("Top Tips");
+    m_topTips->setStyleSheet("QLabel {"
+                             "font-size: 16pt;"
+                             "}");
 
     m_botTips = new QLabel;
     m_botTips->setAlignment(Qt::AlignHCenter);
     m_botTips->setVisible(false);
-    m_botTips->setText("Bot Tips");
+    m_botTips->setStyleSheet("QLabel {"
+                             "margin-top: 35px;"
+                             "}");
+
+    m_tipsIcon = new QLabel;
 
     m_okButton = new QPushButton;
     m_okButton->setText(tr("OK"));
@@ -42,17 +48,17 @@ MainWindow::MainWindow(QWidget *parent) :
 
     m_progress = new DWaterProgress;
     m_progress->setTextVisible(false);
-    m_progress->setFixedSize(128, 128);
+    m_progress->setFixedSize(100, 100);
     m_progress->setValue(50);
     m_progress->setVisible(false);
 
-    m_tipsIcon = new QLabel;
-    m_tipsIcon->setAlignment(Qt::AlignCenter);
-    m_tipsIcon->setPixmap(QPixmap(":/resources/icons/" + m_resolutions.iconName()));
-    m_vendorsName = new QLabel;
-    m_vendorsName->setWordWrap(true);
-    m_vendorsName->setAlignment(Qt::AlignCenter);
-    m_vendorsName->setText(m_devInfo.devices().toList().join('\n'));
+    m_vendorIcon = new QLabel;
+    m_vendorIcon->setAlignment(Qt::AlignCenter);
+    m_vendorIcon->setPixmap(QPixmap(":/resources/icons/" + m_resolutions.iconName()));
+    m_vendorName = new QLabel;
+    m_vendorName->setWordWrap(true);
+    m_vendorName->setAlignment(Qt::AlignCenter);
+    m_vendorName->setText(m_devInfo.devices().toList().join('\n'));
 
     m_resolutionsLayout = new QVBoxLayout;
     m_resolutionsLayout->setContentsMargins(8, 8, 8, 8);
@@ -67,9 +73,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QVBoxLayout *centralLayout = new QVBoxLayout;
     centralLayout->addWidget(m_topTips);
-    centralLayout->addWidget(m_tipsIcon);
-    centralLayout->addWidget(m_vendorsName);
+    centralLayout->addWidget(m_vendorIcon);
+    centralLayout->addWidget(m_vendorName);
     centralLayout->addStretch();
+    centralLayout->addWidget(m_tipsIcon);
+    centralLayout->setAlignment(m_tipsIcon, Qt::AlignHCenter);
     centralLayout->addWidget(m_resolutionsWidget);
     centralLayout->addWidget(m_progress);
     centralLayout->setAlignment(m_progress, Qt::AlignHCenter);
@@ -174,13 +182,15 @@ void MainWindow::onToggleBtnClicked()
 
     connect(new_driver_widget, &ResolutionWidget::prepareFinished, this, &MainWindow::onPrepareFinished);
 
+    const QString &new_driver_name = new_driver_widget->resolution().name();
+
     // toggle UI
-    m_topTips->setText(tr("Install..."));
+    m_topTips->setText(tr("Switching"));
     m_topTips->setVisible(true);
-    m_botTips->setText(tr("Please Wait..."));
+    m_botTips->setText(tr("Switching to %1, please wait").arg(new_driver_name));
     m_botTips->setVisible(true);
-    m_tipsIcon->setVisible(false);
-    m_vendorsName->setVisible(false);
+    m_vendorIcon->setVisible(false);
+    m_vendorName->setVisible(false);
     m_resolutionsWidget->setVisible(false);
     m_toggleButton->setVisible(false);
     m_progress->setVisible(true);
@@ -200,15 +210,15 @@ void MainWindow::onPrepareFinished(const int exitCode)
 
     if (exitCode)
     {
-        m_topTips->setText(tr("Fail"));
-        m_botTips->setText(tr("Failed, please upload log file."));
+        m_topTips->setText(tr("Switch Failed"));
+        m_botTips->setText(tr("Sorry, switch failed"));
         m_tipsIcon->setPixmap(QPixmap(":/resources/icons/fail.png"));
         m_okButton->setVisible(true);
     }
     else
     {
-        m_topTips->setText(tr("Success"));
-        m_botTips->setText(tr("Congratulations!"));
+        m_topTips->setText(tr("Switch Succeeded"));
+        m_botTips->setText(tr("The graphics driver will take effect after reboot"));
         m_tipsIcon->setPixmap(QPixmap(":/resources/icons/success.png"));
         m_rebootButton->setVisible(true);
     }

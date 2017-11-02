@@ -40,8 +40,9 @@ private:
 
     QVBoxLayout *m_resolutionsLayout;
     QLabel *m_topTips;
+    QLabel *m_vendorIcon;
+    QLabel *m_vendorName;
     QLabel *m_tipsIcon;
-    QLabel *m_vendorsName;
     QLabel *m_botTips;
     QWidget *m_resolutionsWidget;
     DWaterProgress *m_progress;
