@@ -24,6 +24,7 @@ public:
 
 private:
     void keyPressEvent(QKeyEvent *e);
+    void noResolutions();
 
 private Q_SLOTS:
     void loadResolutions();

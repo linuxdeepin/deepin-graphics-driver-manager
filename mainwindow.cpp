@@ -122,8 +122,21 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
     return QWidget::keyPressEvent(e);
 }
 
+void MainWindow::noResolutions()
+{
+    m_tipsIcon->setVisible(true);
+    m_tipsIcon->setPixmap(QPixmap(":/resources/icons/fail.png"));
+    m_botTips->setText(tr("Not Support"));
+    m_botTips->setVisible(true);
+    m_resolutionsWidget->setVisible(false);
+    m_toggleButton->setVisible(false);
+}
+
 void MainWindow::loadResolutions()
 {
+    if (m_resolutions.resolutions().isEmpty())
+        return noResolutions();
+
     QList<ResolutionWidget *> rwList;
     for (const auto &r : m_resolutions.resolutions())
     {
