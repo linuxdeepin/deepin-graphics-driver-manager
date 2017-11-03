@@ -8,5 +8,5 @@ Homepage: https://www.deepin.org
 
 Package: deepin-graphics-driver-manager
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, dialog, overlayroot
+Depends: ${shlibs:Depends}, ${misc:Depends}, dialog, overlayroot, rsync, sed
 Description: deepin driver manager
