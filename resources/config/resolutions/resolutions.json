@@ -41,16 +41,16 @@
                 "title": "Use open source driver nouveau",
 		"name": "nouveau",
                 "description": "Unstable in some graphics cards withweaker performance.",
-                "prepare": "nvidia/prepare_nouveau_intel_closesource.sh",
+                "prepare": "nvidia/prepare_nouveau_opensource.sh",
                 "install": "nvidia/install_nouveau.sh"
             },
             {
                 "id": 300,
-                "title": "Use closed source driver nvidia",
+                "title": "Use private source driver nvidia",
 		"name": "NVIDIA",
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
-                "prepare": "nvidia/prepare_nvidia_intel_closesource.sh",
-                "install": "nvidia/install_nvidia_intel_closesource.sh"
+                "prepare": "nvidia/prepare_nvidia_closesource.sh",
+                "install": "nvidia/install_nvidia_closesource.sh"
             }
         ]
     },
@@ -102,23 +102,33 @@
 		"name": "default",
                 "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
                 "prepare": "empty.sh",
-                "install": "nvidia/install_glamor.sh"
+                "install": "nvidia_intel/install_glamor.sh"
             },
             {
                 "id": 200,
                 "title": "Use open source driver nouveau",
 		"name": "nouveau",
                 "description": "Unstable in some graphics cards withweaker performance.",
-                "prepare": "nvidia/prepare_nouveau_intel_closesource.sh",
-                "install": "nvidia/install_nouveau.sh"
+                "prepare": "nvidia_intel/prepare_nouveau_intel.sh",
+                "install": "nvidia_intel/install_nouveau_intel.sh"
             },
             {
                 "id": 300,
-                "title": "Use closed source driver nvidia",
+                "title": "Use private source driver nvidia",
 		"name": "NVIDIA",
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
-                "prepare": "nvidia/prepare_nvidia_intel_closesource.sh",
-                "install": "nvidia/install_nvidia_intel_closesource.sh"
+                "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
+		"condition":"nvidia_intel/no_bumblebee.sh",
+                "install": "nvidia_intel/install_nvidia_intel.sh"
+            },
+            {
+                "id": 400,
+                "title": "大大大黄黄黄蜂蜂蜂",
+		"name": "NVIDIA",
+                "description": "显卡架构支持大黄蜂，哈哈",
+                "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
+		"condition":"nvidia_intel/bumblebee.sh",
+                "install": "nvidia_intel/install_nvidia_intel_bumblebee.sh"
             }
         ]
     }
