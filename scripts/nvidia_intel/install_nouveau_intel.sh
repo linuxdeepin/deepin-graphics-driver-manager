@@ -28,8 +28,9 @@ if [ $1 == "post" ];then
 	overlayroot-chroot apt purge nvidia-* -y --allow-downgrades
 	overlayroot-chroot apt purge bumblebee -y --allow-downgrades
 	sync
-	[ -f /etc/X11/xorg.conf ] && overlayroot-chroot rm -rf /etc/X11/xorg.conf
-	[ -f /etc/modprobe.d/bumblebee.conf ] && overlayroot-chroot rm -rf /etc/modprobe.d/bumblebee.conf
+	overlayroot-chroot rm -rf /etc/X11/xorg.conf
+	overlayroot-chroot rm -rf /etc/modprobe.d/bumblebee.conf
+	overlayroot-chroot rm -rf /etc/bumblebee/bumblebee.conf
 	overlayroot-chroot find /usr/lib/ -name libGLESv1_CM.so* | xargs overlayroot-chroot rm
 	overlayroot-chroot apt install xserver-xorg-core --reinstall -y --allow-downgrades
 	overlayroot-chroot apt install libgl1-mesa-glx --reinstall -y --allow-downgrades
