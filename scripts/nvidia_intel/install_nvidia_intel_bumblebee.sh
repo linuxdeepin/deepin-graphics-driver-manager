@@ -19,7 +19,7 @@ if [ $1 == "post" ];then
 	if [ -x /usr/bin/nvidia-installer ];then
 		overlayroot-chroot nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
 	fi
-	find /media/root-rw/overlay/ -size 0 | xargs sudo rm -rf
+	find /media/root-rw/overlay/ -size 0 | xargs rm -rf
 	mount -o remount,rw $POSTOS /media/root-ro
 	rsync -avz --progress /media/root-rw/overlay/* /media/root-ro/
 	sync
