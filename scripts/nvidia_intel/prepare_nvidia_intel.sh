@@ -20,4 +20,5 @@ do
         echo "### Failed in command '${cmd}'"
         exit -1;
     fi
+    [ -f /etc/X11/xorg.conf.d/20-intel.conf ] && rm -rf /etc/X11/xorg.conf.d/20-intel.conf
 done
