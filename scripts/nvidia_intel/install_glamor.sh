@@ -40,10 +40,10 @@ else
 		rmmod -f nvidia-modeset 
 		rmmod -f nvidia
 	fi
+	modprobe nouveau
 	apt purge nvidia-* -y --allow-downgrades
 	apt purge xserver-xorg-video-nouveau -y --allow-downgrades
 	echo "Loading kernel modules......"
-	modprobe nouveau
 	[ -f /etc/X11/xorg.conf ] && rm -rf /etc/X11/xorg.conf
 	[ -f /etc/modprobe.d/bumblebee.conf ] && rm -rf /etc/modprobe.d/bumblebee.conf
 	[ -f /etc/X11/xorg.conf.d/20-nouveau.conf ] && rm -rf /etc/X11/xorg.conf.d/20-nouveau.conf
