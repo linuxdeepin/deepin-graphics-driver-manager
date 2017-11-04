@@ -29,6 +29,7 @@ if [ $1 == "post" ];then
 	overlayroot-chroot apt purge bumblebee -y --allow-downgrades
 	sync
 	overlayroot-chroot rm -rf /etc/X11/xorg.conf
+	overlayroot-chroot rm -rf /etc/X11/xorg.conf.d/20-intel.conf
 	overlayroot-chroot rm -rf /etc/modprobe.d/bumblebee.conf
 	overlayroot-chroot rm -rf /etc/bumblebee/bumblebee.conf
 	overlayroot-chroot find /usr/lib/ -name libGLESv1_CM.so* | xargs overlayroot-chroot rm
@@ -49,8 +50,10 @@ else
 	fi
 	echo "Loading kernel modules......"
 	modprobe nouveau
-	[ -f /etc/X11/xorg.conf ] && overlayroot-chroot rm -rf /etc/X11/xorg.conf
-	[ -f /etc/modprobe.d/bumblebee.conf ] && overlayroot-chroot rm -rf /etc/modprobe.d/bumblebee.conf
+	[ -f /etc/X11/xorg.conf ] && rm -rf /etc/X11/xorg.conf
+	[ -f /etc/X11/xorg.conf.d/20-intel.conf ] && rm -rf /etc/X11/xorg.conf
+	[ -f /etc/modprobe.d/bumblebee.conf ] && rm -rf /etc/modprobe.d/bumblebee.conf
+	[ -f /etc/bumvlebee/bumblebee.conf ] && rm -rf /etc/modprobe.d/bumblebee.conf
 	apt install libgl1-mesa-glx --reinstall -y --allow-downgrades
 	apt install xserver-xorg-core --reinstall -y --allow-downgrades
 	apt install xserver-xorg-video-nouveau --reinstall -y --allow-downgrades
