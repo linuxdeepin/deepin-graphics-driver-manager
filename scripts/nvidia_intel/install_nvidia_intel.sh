@@ -19,8 +19,13 @@ if [ $1 == "post" ];then
 	if [ -x /usr/bin/nvidia-installer ];then
 		overlayroot-chroot nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
 	fi
-	overlayroot-chroot apt purge bumblebee -y --allow-downgrades
-	find /media/root-rw/overlay/ -size 0 | xargs sudo rm -rf
+#	rmmod -f nvidia-drm 
+#	rmmod -f nvidia-modeset 
+#	rmmod -f nvidia
+#	modprobe nouveau
+	sync
+
+	find /media/root-rw/overlay/ -size 0 | xargs rm -rf
 	mount -o remount,rw $POSTOS /media/root-ro
 	rsync -avz --progress /media/root-rw/overlay/* /media/root-ro/
 	sync
@@ -30,20 +35,14 @@ if [ $1 == "post" ];then
 	overlayroot-chroot rm /usr/lib/x86_64-linux-gnu/libGL.so.1.2.0
 	overlayroot-chroot rm /usr/lib/x86_64-linux-gnu/libEGL.so.1.0.0
 	overlayroot-chroot rm /usr/lib/x86_64-linux-gnu/libGLESv2.so.2.0.0
-	overlayroot-chroot rm /etc/systemd/system/bumblebeed.service
-	overlayroot-chroot rm /etc/bumblebee/bumblebee.conf
 	overlayroot-chroot rm /etc/X11/xorg.conf.d/20-intel.conf
+	overlayroot-chroot rm /etc/X11/xorg.conf.d/20-nouveau.conf
 	overlayroot-chroot apt-get install xserver-xorg-core --reinstall -y --allow-downgrades
 	overlayroot-chroot apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
 	echo "Sync driver into disk ...... Done"
 else
-	systemctl stop lightdm
 	if [ -x /usr/bin/nvidia-installer ];then
 		nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
-	fi
-	if [ -n "$nouveau_mod" ]; then
-		echo "Had already used nouveau,remove it instead by nvidia "
-		rmmod -f nouveau
 	fi
 	if [ -n "$nvidia_mod" ]; then
 		echo "Had already used nvidia,updating new nvidia driver "
@@ -51,17 +50,19 @@ else
 		rmmod -f nvidia-modeset 
 		rmmod -f nvidia
 	fi
-	apt purge bumblebee -y --allow-downgrades
+	modprobe nouveau
 	apt install nvidia-driver -y --allow-downgrades 
-#	apt install bumblebee-nvidia nvidia-driver -y --allow-downgrades 
 	apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
-	rm /etc/bumblebee/bumblebee.conf
 	rm /etc/X11/xorg.conf.d/20-intel.conf
 	echo "Loading kernel modules......"
+	if [ -n "$nouveau_mod" ]; then
+		echo "Had already used nouveau,remove it instead by nvidia "
+		rmmod -f nouveau
+	fi
+	rmmod -f nouveau
 	modprobe nvidia-drm
 	modprobe nvidia-current-drm
 	#echo "Now start desktop......"
 	#systemctl restart lightdm
 fi
 
-#sudo overlayroot-chroot apt-get install nvidia-driver -y --allow-downgrades
