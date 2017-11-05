@@ -31,7 +31,7 @@
             {
                 "id": 100,
                 "title": "No NVIDIA card driver",
-		"name": "default",
+                "name": "default",
                 "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
                 "prepare": "empty.sh",
                 "install": "nvidia/install_glamor.sh"
@@ -39,7 +39,7 @@
             {
                 "id": 200,
                 "title": "Use open source driver nouveau",
-		"name": "nouveau",
+                "name": "nouveau",
                 "description": "Unstable in some graphics cards withweaker performance.",
                 "prepare": "nvidia/prepare_nouveau_opensource.sh",
                 "install": "nvidia/install_nouveau.sh"
@@ -47,7 +47,7 @@
             {
                 "id": 300,
                 "title": "Use private source driver nvidia",
-		"name": "NVIDIA",
+                "name": "NVIDIA",
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
                 "prepare": "nvidia/prepare_nvidia_closesource.sh",
                 "install": "nvidia/install_nvidia_closesource.sh"
@@ -65,7 +65,7 @@
             {
                 "id": 100,
                 "title": "glamor",
-		"name": "glamor",
+                "name": "glamor",
                 "description": "x uses glamor as the default acceleration mode with low compatibility on old graphics cards.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_glamor.sh"
@@ -73,7 +73,7 @@
             {
                 "id": 200,
                 "title": "Use SNA to acceleration mode",
-		"name": "SNA",
+                "name": "SNA",
                 "description": "Speed up the graphics card with better performance, but unstable with screen splash after tested.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_sna.sh"
@@ -81,7 +81,7 @@
             {
                 "id": 300,
                 "title": "Use UXA acceleration mode",
-		"name": "UXA",
+                "name": "UXA",
                 "description": "A more ancient and mature acceleration mode with the best compatibility and weaker performance. ",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_uxa.sh"
@@ -99,7 +99,7 @@
             {
                 "id": 100,
                 "title": "No NVIDIA card driver",
-		"name": "default",
+                "name": "default",
                 "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
                 "prepare": "empty.sh",
                 "install": "nvidia_intel/install_glamor.sh"
@@ -107,7 +107,7 @@
             {
                 "id": 200,
                 "title": "Use open source driver nouveau",
-		"name": "nouveau",
+                "name": "nouveau",
                 "description": "Unstable in some graphics cards withweaker performance.",
                 "prepare": "nvidia_intel/prepare_nouveau_intel.sh",
                 "install": "nvidia_intel/install_nouveau_intel.sh"
@@ -115,20 +115,44 @@
             {
                 "id": 300,
                 "title": "Use private source driver nvidia",
-		"name": "NVIDIA",
+                "name": "NVIDIA",
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
                 "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
-		"condition":"nvidia_intel/no_bumblebee.sh",
+                "condition":"nvidia_intel/no_bumblebee.sh",
                 "install": "nvidia_intel/install_nvidia_intel.sh"
             },
             {
                 "id": 400,
                 "title": "大大大黄黄黄蜂蜂蜂",
-		"name": "NVIDIA",
+                "name": "NVIDIA",
                 "description": "显卡架构支持大黄蜂，哈哈",
                 "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
-		"condition":"nvidia_intel/bumblebee.sh",
+                "condition":"nvidia_intel/bumblebee.sh",
                 "install": "nvidia_intel/install_nvidia_intel_bumblebee.sh"
+            },
+            {
+                "id": 500,
+                "title": "glamor",
+                "name": "glamor",
+                "description": "x uses glamor as the default acceleration mode with low compatibility on old graphics cards.",
+                "prepare": "intel/prepare_intel_opensource.sh",
+                "install": "intel/install_glamor.sh"
+            },
+            {
+                "id": 600,
+                "title": "Use SNA to acceleration mode",
+                "name": "SNA",
+                "description": "Speed up the graphics card with better performance, but unstable with screen splash after tested.",
+                "prepare": "intel/prepare_intel_opensource.sh",
+                "install": "intel/install_sna.sh"
+            },
+            {
+                "id": 700,
+                "title": "Use UXA acceleration mode",
+                "name": "UXA",
+                "description": "A more ancient and mature acceleration mode with the best compatibility and weaker performance. ",
+                "prepare": "intel/prepare_intel_opensource.sh",
+                "install": "intel/install_uxa.sh"
             }
         ]
     }
