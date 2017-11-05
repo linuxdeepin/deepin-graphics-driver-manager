@@ -126,7 +126,7 @@ void MainWindow::noResolutions()
 {
     m_tipsIcon->setVisible(true);
     m_tipsIcon->setPixmap(QPixmap(":/resources/icons/fail.png"));
-    m_botTips->setText(tr("Not Support"));
+    m_botTips->setText(tr("The current hardware combination not supported, please wait for future version"));
     m_botTips->setVisible(true);
     m_resolutionsWidget->setVisible(false);
     m_toggleButton->setVisible(false);
