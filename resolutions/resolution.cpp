@@ -4,8 +4,32 @@
 #include <QDebug>
 #include <QApplication>
 
+static const char *translates[] = {
+    QT_TRANSLATE_NOOP("Resolution", "Use AMD card driver"),
+    QT_TRANSLATE_NOOP("Resolution", "For special needs. Auto determine the acceleration mode without external configuration."),
+
+    QT_TRANSLATE_NOOP("Resolution", "NVIDIA Default Driver"),
+    QT_TRANSLATE_NOOP("Resolution", "NVIDIA card driver is not detected in the current environment, and will be in gray"),
+    QT_TRANSLATE_NOOP("Resolution", "Use Open Source Driver"),
+    QT_TRANSLATE_NOOP("Resolution", "NVIDIA Open Source Driver"),
+    QT_TRANSLATE_NOOP("Resolution", "Unstable in some graphics cards withweaker performance."),
+    QT_TRANSLATE_NOOP("Resolution", "NVIDIA Closed Source Driver"),
+    QT_TRANSLATE_NOOP("Resolution", "Only adaptive to parts of distributions and graphics cards, may occur black screen"),
+
+    QT_TRANSLATE_NOOP("Resolution", "Intel Default Driver"),
+    QT_TRANSLATE_NOOP("Resolution", "Uses glamor as the default acceleration mode with low compatibility on old graphics cards."),
+    QT_TRANSLATE_NOOP("Resolution", "Intel Compatible Mode"),
+    QT_TRANSLATE_NOOP("Resolution", "Speed up the graphics card with better performance, but unstable with screen splash after tested."),
+    QT_TRANSLATE_NOOP("Resolution", "Intel Acceleration Mode"),
+    QT_TRANSLATE_NOOP("Resolution", "A more ancient and mature acceleration mode with the best compatibility and weaker performance."),
+
+    QT_TRANSLATE_NOOP("Resolution", "Bumblebee Solution")
+};
+
 Resolution::Resolution(const QJsonObject &info)
 {
+    Q_UNUSED(translates)
+
     m_resId = info["id"].toInt();
     m_resName = QApplication::translate("Resolution", info["name"].toString().toStdString().c_str());
     m_resTitle = QApplication::translate("Resolution", info["title"].toString().toStdString().c_str());

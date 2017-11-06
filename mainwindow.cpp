@@ -236,15 +236,15 @@ void MainWindow::onPrepareFinished(const int exitCode)
 
     if (exitCode)
     {
-        m_topTips->setText(tr("Switch Failed"));
+        m_topTips->setText(tr("Download failed"));
         m_botTips->setText(tr("Sorry, switch failed"));
         m_tipsIcon->setPixmap(QPixmap(":/resources/icons/fail.png"));
         m_okButton->setVisible(true);
     }
     else
     {
-        m_topTips->setText(tr("Switch Succeeded"));
-        m_botTips->setText(tr("The graphics driver will take effect after reboot"));
+        m_topTips->setText(tr("Download Succeeded"));
+        m_botTips->setText(tr("Please reboot to enter installation progress"));
         m_tipsIcon->setPixmap(QPixmap(":/resources/icons/success.png"));
         m_rebootButton->setVisible(true);
     }

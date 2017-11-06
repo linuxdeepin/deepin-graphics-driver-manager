@@ -4,56 +4,116 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="21"/>
         <source>Toggle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="41"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="45"/>
         <source>Reboot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="202"/>
+        <source>The current hardware combination not supported, please wait for future version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Switching</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="204"/>
         <source>Switching to %1, please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="225"/>
-        <source>Switch Failed</source>
+        <source>Download failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="226"/>
         <source>Sorry, switch failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="232"/>
-        <source>Switch Succeeded</source>
+        <source>Download Succeeded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="233"/>
-        <source>The graphics driver will take effect after reboot</source>
+        <source>Please reboot to enter installation progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Resolution</name>
+    <message>
+        <source>Use AMD card driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NVIDIA Default Driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Open Source Driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NVIDIA Open Source Driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unstable in some graphics cards withweaker performance.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>NVIDIA Closed Source Driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intel Default Driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intel Compatible Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intel Acceleration Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bumblebee Solution</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="21"/>
-        <location filename="../main.cpp" line="22"/>
         <source>Deepin Graphics Driver Manager</source>
         <translation type="unfinished"></translation>
     </message>
