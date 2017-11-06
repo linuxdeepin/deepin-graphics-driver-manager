@@ -1,12 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 COMMANDS=(
-    "apt update"
+    "apt-get update"
     "apt-get install -d xserver-xorg-video-nouveau -y --allow-downgrades"
-#    "apt install -o Dir::Cache::Archives=/var/cache/nvidia/ -d nvidia-driver"
     "overlayroot-enable"
-#    "apt-get install nvidia-driver -y --allow-downgrades"
-#    "apt install -d deepin-deb-installer"
 )
 
 for cmd in "${COMMANDS[@]}"
