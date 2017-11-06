@@ -84,6 +84,8 @@ if [ $1 == "post" ];then
 			echo "You need to set an accel method,default glamor"
 			;;	
 	esac	
+	sync
+	sleep 3
 	echo "Sync driver into disk ...... done"
 else
 

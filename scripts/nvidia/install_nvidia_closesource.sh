@@ -36,6 +36,8 @@ if [ $1 == "post" ];then
 	overlayroot-chroot rmmod -f nouveau
 	overlayroot-chroot apt-get install xserver-xorg-core --reinstall -y --allow-downgrades
 	overlayroot-chroot apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
+	sync
+	sleep 3
 	echo "Sync driver into disk ...... done"
 else
 	systemctl stop lightdm
