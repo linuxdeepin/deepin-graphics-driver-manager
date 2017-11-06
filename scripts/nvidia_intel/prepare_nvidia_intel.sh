@@ -1,7 +1,7 @@
 #!/bin/sh
 
 COMMANDS=(
-    "apt update"
+    "apt-get update"
     "apt install -d xserver-xorg-core  xserver-xorg-input-all -y --allow-downgrades"
     "apt install -d nvidia-driver -y --allow-downgrades"
     "apt install -d bumblebee-nvidia -y --allow-downgrades"

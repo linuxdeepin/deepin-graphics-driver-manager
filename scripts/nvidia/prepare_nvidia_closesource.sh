@@ -1,7 +1,7 @@
 #!/bin/sh
 
 COMMANDS=(
-    "apt update"
+    "apt-get update"
     "apt-get install -d nvidia-driver -y --allow-downgrades"
 #    "apt install -o Dir::Cache::Archives=/var/cache/nvidia/ -d nvidia-driver"
     "overlayroot-enable"
