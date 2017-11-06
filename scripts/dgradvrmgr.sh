@@ -15,14 +15,6 @@ fi
 /tmp/exe.sh test
 /usr/bin/xinit /usr/lib/deepin-graphics-driver-manager/gltest
 killall Xorg
-sleep 5
-
-if [ -e "/tmp/gltest-success" ]; then
-	echo "syncing into disk......"
-	#touch /tmp/succes
-#	bash -x /tmp/exe.sh post
-	/tmp/exe.sh post
-	overlayroot-chroot sed -i -E 's/(success=).*$/\1true/' /usr/lib/deepin-graphics-driver-manager/config.conf
-fi
+sleep 1
 
 reboot

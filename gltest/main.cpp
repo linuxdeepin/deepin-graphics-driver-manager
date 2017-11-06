@@ -12,6 +12,7 @@
 #include <QDesktopWidget>
 #include <QScreen>
 #include <QLabel>
+#include <QProcess>
 
 #include <GL/gl.h>
 #include <GL/glut.h>
@@ -100,8 +101,8 @@ public:
     {
         m_acceptBtn = new QPushButton(tr("Apply"));
         m_cancelBtn = new QPushButton(tr("Cancel"));
-        QLabel *tipsLabel = new QLabel(tr("Please ensure the driver works normally without blurred screen and screen tearing"));
-        tipsLabel->setAlignment(Qt::AlignCenter);
+        m_tipsLabel = new QLabel(tr("Please ensure the driver works normally without blurred screen and screen tearing"));
+        m_tipsLabel->setAlignment(Qt::AlignCenter);
 
         m_glTestWidget = new GLTestWidget;
         m_glTestWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -114,7 +115,7 @@ public:
 
         QVBoxLayout *centralLayout = new QVBoxLayout;
         centralLayout->addWidget(m_glTestWidget);
-        centralLayout->addWidget(tipsLabel);
+        centralLayout->addWidget(m_tipsLabel);
         centralLayout->addLayout(btnsLayout);
 
         setLayout(centralLayout);
@@ -140,11 +141,16 @@ protected:
 private slots:
     void onAccept()
     {
-        QFile f("/tmp/gltest-success");
-        f.open(QIODevice::Append);
-        f.close();
+        m_cancelBtn->setVisible(false);
+        m_acceptBtn->setVisible(false);
+        m_tipsLabel->setText(tr("Syncing data to disk, 5-10 minutes needed, then auto reboot the system"));
 
-        qApp->quit();
+        QProcess *proc = new QProcess;
+
+        connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &GLTestWindow::onPostFinished);
+        connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), proc, &QProcess::deleteLater);
+
+        proc->start("bash", QStringList() << "/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-post.sh");
     }
 
     void onCancel()
@@ -152,8 +158,14 @@ private slots:
         qApp->exit(-1);
     }
 
+    void onPostFinished(const int exitCode)
+    {
+        qApp->exit(exitCode);
+    }
+
 private:
     GLTestWidget *m_glTestWidget;
+    QLabel *m_tipsLabel;
     QPushButton *m_acceptBtn;
     QPushButton *m_cancelBtn;
 };
@@ -162,8 +174,6 @@ int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
     QApplication app(argc, argv);
-
-    QFile("/tmp/gltest-success").remove();
 
     GLTestWindow *w = new GLTestWindow;
     w->show();
