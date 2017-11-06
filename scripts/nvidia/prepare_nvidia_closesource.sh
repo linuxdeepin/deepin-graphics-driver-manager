@@ -15,6 +15,6 @@ do
 
     if [ $? != 0 ]; then
         echo "### Failed in command '${cmd}'"
-        exit -1;
+        exit 1;
     fi
 done
