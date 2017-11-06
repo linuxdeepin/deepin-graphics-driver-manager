@@ -34,6 +34,8 @@ if [ $1 == "post" ];then
 	overlayroot-chroot apt install libgl1-mesa-glx --reinstall -y --allow-downgrades
 	overlayroot-chroot apt install xserver-xorg-video-nouveau --reinstall -y --allow-downgrades
 	overlayroot-chroot apt install xserver-xorg-input-all --reinstall -y --allow-downgrades
+	sync
+	sleep 3
 	echo "Sync driver into disk ...... done"
 else
 	apt purge nvidia-* -y --allow-downgrades
