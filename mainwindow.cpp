@@ -31,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
     m_botTips = new QLabel;
     m_botTips->setAlignment(Qt::AlignHCenter);
     m_botTips->setVisible(false);
+    m_botTips->setWordWrap(true);
     m_botTips->setStyleSheet("QLabel {"
                              "margin-top: 35px;"
                              "}");
