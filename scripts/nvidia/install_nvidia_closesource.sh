@@ -44,7 +44,7 @@ else
 	fi
 	if [ -n "$nouveau_mod" ]; then
 		echo "Had already used nouveau,remove it instead by nvidia "
-		rmmod -f nouveau
+#		rmmod -f nouveau
 	fi
 	if [ -n "$nvidia_mod" ]; then
 		echo "Had already used nvidia,updating new nvidia driver "
@@ -56,6 +56,7 @@ else
 	apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
 	rm /etc/X11/xorg.conf.d/20-intel.conf
 	echo "Loading kernel modules......"
+	rmmod -f nouveau
 	modprobe nvidia-drm
 	modprobe nvidia-current-drm
 	#echo "Now start desktop......"
