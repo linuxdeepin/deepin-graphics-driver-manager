@@ -44,6 +44,7 @@ public:
     explicit ResolutionWidget(const Resolution &r, QWidget *parent = nullptr);
 
     void setChecked(const bool checked);
+    void setUsing(const bool using_);
     void prepareInstall(const Resolution &old_resolution);
     bool checked() const { return m_checked; }
     const Resolution resolution() const { return m_resolution; }
@@ -61,6 +62,7 @@ private slots:
 
 private:
     bool m_checked;
+    bool m_using;
     Resolution m_resolution;
     QLabel *m_checkedBtn;
     QLabel *m_title;
