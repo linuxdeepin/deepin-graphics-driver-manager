@@ -30,7 +30,7 @@
         [
             {
                 "id": 100,
-                "title": "NVIDIA Default Driver",
+                "title": "Use NVIDIA default driver",
                 "name": "NVIDIA Default Driver",
                 "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
                 "prepare": "empty.sh",
@@ -38,7 +38,7 @@
             },
             {
                 "id": 200,
-                "title": "Use open source driver nouveau",
+                "title": "Use NVIDIA open source driver",
                 "name": "NVIDIA Open Source Driver",
                 "description": "Unstable in some graphics cards withweaker performance.",
                 "prepare": "nvidia/prepare_nouveau_opensource.sh",
@@ -46,7 +46,7 @@
             },
             {
                 "id": 300,
-                "title": "NVIDIA Closed Source Driver",
+                "title": "Use NVIDIA closed source driver",
                 "name": "NVIDIA Closed Source Driver",
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
                 "prepare": "nvidia/prepare_nvidia_closesource.sh",
@@ -64,7 +64,7 @@
         [
             {
                 "id": 100,
-                "title": "Intel Default Driver",
+                "title": "Use Intel default driver",
                 "name": "Intel Default Driver",
                 "description": "Uses glamor as the default acceleration mode with low compatibility on old graphics cards.",
                 "prepare": "intel/prepare_intel_opensource.sh",
@@ -72,7 +72,7 @@
             },
             {
                 "id": 200,
-                "title": "Intel Compatible Mode",
+                "title": "Use Intel compatible mode",
                 "name": "Intel Compatible Mode",
                 "description": "Speed up the graphics card with better performance, but unstable with screen splash after tested.",
                 "prepare": "intel/prepare_intel_opensource.sh",
@@ -80,7 +80,7 @@
             },
             {
                 "id": 300,
-                "title": "Intel Acceleration Mode",
+                "title": "Use Intel acceleration mode",
                 "name": "Intel Acceleration Mode",
                 "description": "A more ancient and mature acceleration mode with the best compatibility and weaker performance.",
                 "prepare": "intel/prepare_intel_opensource.sh",
@@ -98,7 +98,7 @@
         [
             {
                 "id": 100,
-                "title": "Intel Default Driver",
+                "title": "Use NVIDIA default driver",
                 "name": "Intel Default Driver",
                 "description": "Uses glamor as the default acceleration mode with low compatibility on old graphics cards.",
                 "prepare": "empty.sh",
@@ -106,7 +106,7 @@
             },
             {
                 "id": 200,
-                "title": "NVIDIA Open Source Driver",
+                "title": "Use NVIDIA open source driver",
                 "name": "NVIDIA Open Source Driver",
                 "description": "Unstable in some graphics cards withweaker performance.",
                 "prepare": "nvidia_intel/prepare_nouveau_intel.sh",
@@ -114,7 +114,7 @@
             },
             {
                 "id": 300,
-                "title": "NVIDIA Closed Source Driver",
+                "title": "Use NVIDIA closed source driver",
                 "name": "NVIDIA Closed Source Driver",
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
                 "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
@@ -123,9 +123,9 @@
             },
             {
                 "id": 400,
-                "title": "Bumblebee Solution",
+                "title": "Use Bumblebee solution",
                 "name": "Bumblebee Solution",
-                "description": "显卡架构支持大黄蜂，哈哈",
+                "description": "Power saving to improve the ability to hold a charge",
                 "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
                 "condition":"nvidia_intel/bumblebee.sh",
                 "install": "nvidia_intel/install_nvidia_intel_bumblebee.sh"

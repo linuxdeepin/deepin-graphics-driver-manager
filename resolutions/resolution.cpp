@@ -9,21 +9,27 @@ static const char *translates[] = {
     QT_TRANSLATE_NOOP("Resolution", "For special needs. Auto determine the acceleration mode without external configuration."),
 
     QT_TRANSLATE_NOOP("Resolution", "NVIDIA Default Driver"),
+    QT_TRANSLATE_NOOP("Resolution", "Use NVIDIA default driver"),
     QT_TRANSLATE_NOOP("Resolution", "NVIDIA card driver is not detected in the current environment, and will be in gray"),
-    QT_TRANSLATE_NOOP("Resolution", "Use Open Source Driver"),
     QT_TRANSLATE_NOOP("Resolution", "NVIDIA Open Source Driver"),
+    QT_TRANSLATE_NOOP("Resolution", "Use NVIDIA open source driver"),
     QT_TRANSLATE_NOOP("Resolution", "Unstable in some graphics cards withweaker performance."),
     QT_TRANSLATE_NOOP("Resolution", "NVIDIA Closed Source Driver"),
+    QT_TRANSLATE_NOOP("Resolution", "Use NVIDIA closed source driver"),
     QT_TRANSLATE_NOOP("Resolution", "Only adaptive to parts of distributions and graphics cards, may occur black screen"),
 
     QT_TRANSLATE_NOOP("Resolution", "Intel Default Driver"),
+    QT_TRANSLATE_NOOP("Resolution", "Use Intel default driver"),
     QT_TRANSLATE_NOOP("Resolution", "Uses glamor as the default acceleration mode with low compatibility on old graphics cards."),
     QT_TRANSLATE_NOOP("Resolution", "Intel Compatible Mode"),
+    QT_TRANSLATE_NOOP("Resolution", "Use Intel compatible mode"),
     QT_TRANSLATE_NOOP("Resolution", "Speed up the graphics card with better performance, but unstable with screen splash after tested."),
     QT_TRANSLATE_NOOP("Resolution", "Intel Acceleration Mode"),
+    QT_TRANSLATE_NOOP("Resolution", "Use Intel acceleration mode"),
     QT_TRANSLATE_NOOP("Resolution", "A more ancient and mature acceleration mode with the best compatibility and weaker performance."),
 
-    QT_TRANSLATE_NOOP("Resolution", "Bumblebee Solution")
+    QT_TRANSLATE_NOOP("Resolution", "Bumblebee Solution"),
+    QT_TRANSLATE_NOOP("Resolution", "Power saving to improve the ability to hold a charge")
 };
 
 Resolution::Resolution(const QJsonObject &info)

@@ -63,10 +63,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use Open Source Driver</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>NVIDIA Open Source Driver</source>
         <translation type="unfinished"></translation>
     </message>
@@ -110,11 +106,43 @@
         <source>Bumblebee Solution</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Use NVIDIA default driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use NVIDIA open source driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use NVIDIA closed source driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Intel default driver</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Intel compatible mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Intel acceleration mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Power saving to improve the ability to hold a charge</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Deepin Graphics Driver Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
