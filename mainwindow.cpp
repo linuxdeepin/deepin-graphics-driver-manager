@@ -215,7 +215,7 @@ void MainWindow::onPolicyKitPassed()
     // toggle UI
     m_topTips->setText(tr("Switching"));
     m_topTips->setVisible(true);
-    m_botTips->setText(tr("Switching to %1, please wait").arg(new_driver_name));
+    m_botTips->setText(tr("Switching to %1, please wait......").arg(new_driver_name));
     m_botTips->setVisible(true);
     m_vendorIcon->setVisible(false);
     m_vendorName->setVisible(false);

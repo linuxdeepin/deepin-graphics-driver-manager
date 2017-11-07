@@ -40,7 +40,7 @@
                 "id": 200,
                 "title": "Use NVIDIA open source driver",
                 "name": "NVIDIA Open Source Driver",
-                "description": "Unstable in some graphics cards withweaker performance.",
+                "description": "Unstable in some graphics cards with weaker performance.",
                 "prepare": "nvidia/prepare_nouveau_opensource.sh",
                 "install": "nvidia/install_nouveau.sh"
             },

@@ -24,10 +24,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Switching to %1, please wait</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Download failed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -41,6 +37,10 @@
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switching to %1, please wait......</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -64,10 +64,6 @@
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unstable in some graphics cards withweaker performance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -132,6 +128,10 @@
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unstable in some graphics cards with weaker performance.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -13,7 +13,7 @@ static const char *translates[] = {
     QT_TRANSLATE_NOOP("Resolution", "NVIDIA card driver is not detected in the current environment, and will be in gray"),
     QT_TRANSLATE_NOOP("Resolution", "NVIDIA Open Source Driver"),
     QT_TRANSLATE_NOOP("Resolution", "Use NVIDIA open source driver"),
-    QT_TRANSLATE_NOOP("Resolution", "Unstable in some graphics cards withweaker performance."),
+    QT_TRANSLATE_NOOP("Resolution", "Unstable in some graphics cards with weaker performance."),
     QT_TRANSLATE_NOOP("Resolution", "NVIDIA Closed Source Driver"),
     QT_TRANSLATE_NOOP("Resolution", "Use NVIDIA closed source driver"),
     QT_TRANSLATE_NOOP("Resolution", "Only adaptive to parts of distributions and graphics cards, may occur black screen"),
