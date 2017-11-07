@@ -22,10 +22,6 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Switching to %1, please wait</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
         <source>Download failed</source>
         <translation type="unfinished"/>
     </message>
@@ -39,6 +35,10 @@
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Switching to %1, please wait......</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -61,15 +61,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Use Open Source Driver</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>Unstable in some graphics cards withweaker performance.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -108,11 +100,47 @@
         <source>Bumblebee Solution</source>
         <translation type="unfinished"/>
     </message>
+    <message>
+        <source>Use NVIDIA default driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Use NVIDIA open source driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Use NVIDIA closed source driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Use Intel default driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Use Intel compatible mode</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Use Intel acceleration mode</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Power saving to improve the ability to hold a charge</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Unstable in some graphics cards with weaker performance.</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Deepin Graphics Driver Manager</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
         <translation type="unfinished"/>
     </message>
 </context>
