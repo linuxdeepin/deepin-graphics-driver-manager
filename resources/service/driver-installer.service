@@ -7,6 +7,8 @@ ConditionFileIsExecutable=/usr/bin/deepin-graphics-driver-installer.sh
 [Service]
 Type=oneshot
 Environment=LC_ALL=C
+ExecStartPre=-/usr/bin/xset s 0 0
+ExecStartPre=-/usr/bin/xset s off
 ExecStart=/usr/lib/deepin-graphics-driver-manager/dgradvrmgr.sh
 StandardInput=tty-force
 StandardOutput=inherit
