@@ -31,6 +31,20 @@ GraphicsDeviceInfo::GraphicsDeviceInfo() :
     init();
 }
 
+int GraphicsDeviceInfo::deviceNums() const
+{
+    int flag = m_sysDevFlag;
+    int ret = 0;
+
+    while (flag)
+    {
+        ret += flag & 0x1;
+        flag >>= 1;
+    }
+
+    return ret;
+}
+
 void GraphicsDeviceInfo::init()
 {
     struct pci_access *pacc;

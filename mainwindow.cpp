@@ -258,7 +258,10 @@ void MainWindow::onPrepareFinished(const int exitCode)
     else
     {
         m_topTips->setText(tr("Download Succeeded"));
-        m_botTips->setText(tr("Please reboot to enter installation progress"));
+        if (m_devInfo.deviceNums() > 1)
+            m_botTips->setText(tr("Please reboot to enter installation progress\n\nPlease confirm whether the monitor output port is connected correctly if no signal"));
+        else
+            m_botTips->setText(tr("Please reboot to enter installation progress"));
         m_tipsIcon->setPixmap(hidpiPixmap(":/resources/icons/success.svg", QSize(128, 128)));
         m_rebootButton->setVisible(true);
     }
