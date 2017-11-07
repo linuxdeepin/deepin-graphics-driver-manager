@@ -38,8 +38,8 @@ int GraphicsDeviceInfo::deviceNums() const
 
     while (flag)
     {
-        ret += flag & 0x1;
-        flag >>= 1;
+        flag &= flag - 1;
+        ++ret;
     }
 
     return ret;
