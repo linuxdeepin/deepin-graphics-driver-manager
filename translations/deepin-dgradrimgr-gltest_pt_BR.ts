@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt_BR" version="2.1">
 <context>
     <name>GLTestWindow</name>
     <message>
@@ -14,7 +14,7 @@
     <message>
         <location filename="../gltest/main.cpp" line="103"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation>Asegúrese de que su pantalla funcione sin desenfoques ni rasgados por el controlador</translation>
+        <translation>Certifique-se de que o driver funciona normalmente sem tela borrada ou cortada</translation>
     </message>
 </context>
 </TS>

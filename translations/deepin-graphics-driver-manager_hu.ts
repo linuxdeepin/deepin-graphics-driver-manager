@@ -1,41 +1,41 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="hu" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
         <source>Toggle</source>
-        <translation>Umschalten</translation>
+        <translation>Váltás</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>Ok</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Neustarten</translation>
+        <translation>Újraindítás</translation>
     </message>
     <message>
         <source>The current hardware combination not supported, please wait for future version</source>
-        <translation type="unfinished"/>
+        <translation>A jelenlegi hardver sajnos nem támogatott, kérjük várjon a jövőbeli verzióra</translation>
     </message>
     <message>
         <source>Switching</source>
-        <translation>Wechseln</translation>
+        <translation>Átkapcsolás</translation>
     </message>
     <message>
         <source>Download failed</source>
-        <translation type="unfinished"/>
+        <translation>A letöltés sikertelen</translation>
     </message>
     <message>
         <source>Sorry, switch failed</source>
-        <translation>Leider ist der Wechsel fehlgeschlagen</translation>
+        <translation>Sajnálom, az átkapcsolás nem sikerült</translation>
     </message>
     <message>
         <source>Download Succeeded</source>
-        <translation type="unfinished"/>
+        <translation>A letöltés sikeres</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
-        <translation type="unfinished"/>
+        <translation>Kérem, indítsa újra a számítógépet a telepítés befejezéséhez</translation>
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
@@ -46,27 +46,27 @@
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation type="unfinished"/>
+        <translation>Használjon AMD illesztőprogramot</translation>
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation type="unfinished"/>
+        <translation>Különleges igényekhez; automatikusan határozza meg a gyorsítási módot.</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA alapértelmezett illesztőprogram</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA kártya meghajtót nem észlel az aktuális környezetben, és szürke lesz</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA nyílt forráskódú meghajtóprogram</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA zárt forráskódú meghajtóprogram</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
@@ -137,7 +137,7 @@
     <name>main</name>
     <message>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Deepin Grafiktreiberverwaltung</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
