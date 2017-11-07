@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>select</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8,1 C4.15,1 1,4.15 1,8 C1,11.85 4.15,15 8,15 C11.85,15 15,11.85 15,8 C15,4.15 11.85,1 8,1 L8,1 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="select">
+            <g id="select_active-2-copy-2">
+                <use fill="#01BDFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <path stroke="#FFFFFF" stroke-width="1" d="M8,0.5 C12.1261424,0.5 15.5,3.87385763 15.5,8 C15.5,12.1261424 12.1261424,15.5 8,15.5 C3.87385763,15.5 0.5,12.1261424 0.5,8 C0.5,3.87385763 3.87385763,0.5 8,0.5 Z"></path>
+            </g>
+            <polygon id="Path" fill="#FFFEFE" points="6.6 11.5 3.1 8 4.08 7.02 6.6 9.54 11.92 4.22 12.9 5.2"></polygon>
+        </g>
+    </g>
+</svg>

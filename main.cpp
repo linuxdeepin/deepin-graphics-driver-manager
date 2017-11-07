@@ -13,10 +13,12 @@ int main(int argc, char *argv[])
     DApplication app(argc, argv);
     if (!app.setSingleInstance("dgradvrmgr"))
         return -1;
+    app.setAttribute(Qt::AA_UseHighDpiPixmaps);
     app.setOrganizationName("deepin");
     app.setApplicationName("deepin-graphics-driver-manager");
     app.setApplicationVersion("1.0");
     app.setApplicationAcknowledgementPage("https://www.deepin.org/acknowledgments/");
+    app.setProductIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
     app.loadTranslator();
     app.setProductName(QApplication::translate("main", "Deepin Graphics Driver Manager"));
     app.setApplicationDescription(QApplication::translate("main", "Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions."));

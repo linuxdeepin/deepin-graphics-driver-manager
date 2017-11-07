@@ -1,11 +1,12 @@
 <RCC>
     <qresource prefix="/">
-        <file>resources/icons/amd.png</file>
-        <file>resources/icons/intel.png</file>
-        <file>resources/icons/nvidia_intel.png</file>
-        <file>resources/icons/nvidia.png</file>
-        <file>resources/icons/select.png</file>
-        <file>resources/icons/success.png</file>
-        <file>resources/icons/fail.png</file>
+        <file>resources/icons/AMD.svg</file>
+        <file>resources/icons/Intel-NVIDIA.svg</file>
+        <file>resources/icons/Intel.svg</file>
+        <file>resources/icons/NVIDIA.svg</file>
+        <file>resources/icons/success.svg</file>
+        <file>resources/icons/select.svg</file>
+        <file>resources/icons/fail.svg</file>
+        <file>resources/icons/deepin-graphics-driver-manager-64px.svg</file>
     </qresource>
 </RCC>

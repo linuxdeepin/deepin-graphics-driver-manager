@@ -11,6 +11,16 @@
 #include <QLabel>
 
 #include <DTitlebar>
+#include <DSvgRenderer>
+
+const QPixmap hidpiPixmap(const QString &path, const QSize &sz)
+{
+    const auto ratio = qApp->devicePixelRatio();
+    QPixmap iconPix = DSvgRenderer::render(path, sz * ratio);
+    iconPix.setDevicePixelRatio(ratio);
+
+    return iconPix;
+}
 
 MainWindow::MainWindow(QWidget *parent) :
     DMainWindow(parent),
@@ -55,7 +65,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     m_vendorIcon = new QLabel;
     m_vendorIcon->setAlignment(Qt::AlignCenter);
-    m_vendorIcon->setPixmap(QPixmap(":/resources/icons/" + m_resolutions.iconName()));
+    m_vendorIcon->setPixmap(hidpiPixmap(":/resources/icons/" + m_resolutions.iconName(), QSize(128, 128)));
     m_vendorName = new QLabel;
     m_vendorName->setWordWrap(true);
     m_vendorName->setAlignment(Qt::AlignCenter);
@@ -126,7 +136,7 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 void MainWindow::noResolutions()
 {
     m_tipsIcon->setVisible(true);
-    m_tipsIcon->setPixmap(QPixmap(":/resources/icons/fail.png"));
+    m_tipsIcon->setPixmap(hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
     m_botTips->setText(tr("The current hardware combination not supported, please wait for future version"));
     m_botTips->setVisible(true);
     m_resolutionsWidget->setVisible(false);
@@ -238,14 +248,14 @@ void MainWindow::onPrepareFinished(const int exitCode)
     {
         m_topTips->setText(tr("Download failed"));
         m_botTips->setText(tr("Sorry, switch failed"));
-        m_tipsIcon->setPixmap(QPixmap(":/resources/icons/fail.png"));
+        m_tipsIcon->setPixmap(hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
         m_okButton->setVisible(true);
     }
     else
     {
         m_topTips->setText(tr("Download Succeeded"));
         m_botTips->setText(tr("Please reboot to enter installation progress"));
-        m_tipsIcon->setPixmap(QPixmap(":/resources/icons/success.png"));
+        m_tipsIcon->setPixmap(hidpiPixmap(":/resources/icons/success.svg", QSize(128, 128)));
         m_rebootButton->setVisible(true);
     }
 }

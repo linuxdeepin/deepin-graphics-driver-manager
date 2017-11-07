@@ -7,7 +7,7 @@
     {
         "type": 1,
         "name": "amd",
-        "icon_name": "amd.png",
+        "icon_name": "AMD.svg",
         "status": "default_stat.sh",
         "resolutions":
         [
@@ -24,7 +24,7 @@
     {
         "type": 2,
         "name": "nvidia",
-        "icon_name": "nvidia.png",
+        "icon_name": "NVIDIA.svg",
         "status": "nvidia/status_nvidia.sh",
         "resolutions":
         [
@@ -58,7 +58,7 @@
     {
         "type": 4,
         "name": "intel",
-        "icon_name": "intel.png",
+        "icon_name": "Intel.svg",
         "status": "intel/intel_stat.sh",
         "resolutions":
         [
@@ -92,7 +92,7 @@
     {
         "type": 6,
         "name": "nvidia_intel",
-        "icon_name": "nvidia_intel.png",
+        "icon_name": "Intel-NVIDIA.svg",
         "status": "nvidia_intel/status_nvidia_intel.sh",
         "resolutions":
         [

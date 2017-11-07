@@ -6,13 +6,21 @@
 #include <QMouseEvent>
 #include <QTimer>
 
+#include <DSvgRenderer>
+
+DWIDGET_USE_NAMESPACE
+
 ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
     QFrame(parent),
 
     m_resolution(r)
 {
+    const auto ratio = devicePixelRatioF();
+    QPixmap checkedPix = DSvgRenderer::render(":/resources/icons/select.svg", QSize(16, 16) * ratio);
+    checkedPix.setDevicePixelRatio(ratio);
+
     m_checkedBtn = new QLabel;
-    m_checkedBtn->setPixmap(QPixmap(":/resources/icons/select.png"));
+    m_checkedBtn->setPixmap(checkedPix);
     m_checkedBtn->setFixedSize(16, 16);
 
     m_title = new QLabel;
