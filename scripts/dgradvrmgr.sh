@@ -17,4 +17,8 @@ fi
 killall Xorg
 sleep 1
 
+if [ -e "/tmp/gltest-success" ]; then
+    /usr/lib/deepin-graphics-driver-manager/dgradvrmgr-post.sh
+fi
+
 reboot

@@ -46,6 +46,7 @@
             },
             {
                 "id": 300,
+                "exit_gltest": true,
                 "title": "Use NVIDIA closed source driver",
                 "name": "NVIDIA Closed Source Driver",
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
@@ -114,6 +115,7 @@
             },
             {
                 "id": 300,
+                "exit_gltest": true,
                 "title": "Use NVIDIA closed source driver",
                 "name": "NVIDIA Closed Source Driver",
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
@@ -123,6 +125,7 @@
             },
             {
                 "id": 400,
+                "exit_gltest": true,
                 "title": "Use Bumblebee solution",
                 "name": "Bumblebee Solution",
                 "description": "Power saving to improve the ability to hold a charge",

@@ -37,6 +37,7 @@ Resolution::Resolution(const QJsonObject &info)
     Q_UNUSED(translates)
 
     m_resId = info["id"].toInt();
+    m_exitGltest = info["exit_gltest"].toBool();
     m_resName = QApplication::translate("Resolution", info["name"].toString().toStdString().c_str());
     m_resTitle = QApplication::translate("Resolution", info["title"].toString().toStdString().c_str());
     m_resDescription = QApplication::translate("Resolution", info["description"].toString().toStdString().c_str());
