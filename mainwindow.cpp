@@ -173,7 +173,10 @@ void MainWindow::loadResolutions()
     m_usedIndex = index;
 
     if (index >= 0 && index < rwList.size())
+    {
+        rwList[index]->setUsing(true);
         emit rwList[index]->clicked();
+    }
 }
 
 void MainWindow::onResolutionSelected()

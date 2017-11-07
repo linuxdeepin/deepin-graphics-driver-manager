@@ -136,6 +136,13 @@
     </message>
 </context>
 <context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>%1(Using)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>main</name>
     <message>
         <source>Deepin Graphics Driver Manager</source>
