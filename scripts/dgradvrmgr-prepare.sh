@@ -7,6 +7,7 @@ OLD_DRIVER=$3
 NEW_DRIVER=$4
 
 USER_LANG=$5
+EXIT_TEST=$6
 
 echo $PREPARE
 echo $INSTALL
@@ -20,6 +21,7 @@ overlayroot-enable || exit 1
 
 echo "[General]
 lang=$USER_LANG
+exit_test=$EXIT_TEST
 old_driver=$OLD_DRIVER
 new_driver=$NEW_DRIVER
 success=false

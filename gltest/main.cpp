@@ -13,6 +13,8 @@
 #include <QScreen>
 #include <QLabel>
 #include <QProcess>
+#include <QSettings>
+#include <QTranslator>
 
 #include <GL/gl.h>
 #include <GL/glut.h>
@@ -126,6 +128,11 @@ public:
         connect(m_cancelBtn, &QPushButton::clicked, this, &GLTestWindow::onCancel);
     }
 
+    void setExitGLTest(const bool exit)
+    {
+        m_exit_gltest = exit;
+    }
+
 protected:
     void keyPressEvent(QKeyEvent *e)
     {
@@ -141,16 +148,25 @@ protected:
 private slots:
     void onAccept()
     {
-        m_cancelBtn->setVisible(false);
-        m_acceptBtn->setVisible(false);
-        m_tipsLabel->setText(tr("Syncing data to disk, 5-10 minutes needed, then auto reboot the system"));
+        if (m_exit_gltest)
+        {
+            QFile f("/tmp/gltest-success");
+            f.open(QIODevice::Append);
+            f.close();
 
-        QProcess *proc = new QProcess;
+            onPostFinished(0);
+        } else {
+            m_cancelBtn->setVisible(false);
+            m_acceptBtn->setVisible(false);
+            m_tipsLabel->setText(tr("Syncing data to disk, 5-10 minutes needed, then auto reboot the system"));
 
-        connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &GLTestWindow::onPostFinished);
-        connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), proc, &QProcess::deleteLater);
+            QProcess *proc = new QProcess;
 
-        proc->start("bash", QStringList() << "/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-post.sh");
+            connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &GLTestWindow::onPostFinished);
+            connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), proc, &QProcess::deleteLater);
+
+            proc->start("bash", QStringList() << "/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-post.sh");
+        }
     }
 
     void onCancel()
@@ -164,6 +180,7 @@ private slots:
     }
 
 private:
+    bool m_exit_gltest;
     GLTestWidget *m_glTestWidget;
     QLabel *m_tipsLabel;
     QPushButton *m_acceptBtn;
@@ -175,7 +192,18 @@ int main(int argc, char *argv[])
     glutInit(&argc, argv);
     QApplication app(argc, argv);
 
+    QSettings settings("/usr/lib/deepin-graphics-driver-manager/config.conf", QSettings::IniFormat);
+    const bool exit_gltest = settings.value("exit_test", false).toBool();
+    const QString lang = settings.value("lang", "en_US").toString();
+
+    QTranslator translator;
+    translator.load(QString("/usr/share/deepin-graphics-driver-manager/translations/deepin-dgradrimgr-gltest_%1.qm").arg(lang));
+    app.installTranslator(&translator);
+
+    QFile("/tmp/gltest-success").remove();
+
     GLTestWindow *w = new GLTestWindow;
+    w->setExitGLTest(exit_gltest);
     w->show();
 
     return app.exec();
