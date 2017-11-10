@@ -7,12 +7,16 @@ ConditionFileIsExecutable=/usr/bin/deepin-graphics-driver-installer.sh
 [Service]
 Type=oneshot
 Environment=LC_ALL=C
+ExecStartPre=-/usr/sbin/overlayroot-disable
+ExecStartPre=-/usr/sbin/overlayroot-chroot mv /usr/bin/deepin-graphics-driver-installer.sh /tmp/exe.sh
 ExecStartPre=-/usr/bin/xset s 0 0
 ExecStartPre=-/usr/bin/xset s off
+ExecStartPre=-/bin/dmesg --console-off
+ExecStartPre=-/bin/plymouth quit
 ExecStart=/usr/lib/deepin-graphics-driver-manager/dgradvrmgr.sh
 StandardInput=tty-force
-StandardOutput=inherit
-StandardError=inherit
+StandardOutput=journal
+StandardError=journal
 
 [Install]
 WantedBy=getty.target

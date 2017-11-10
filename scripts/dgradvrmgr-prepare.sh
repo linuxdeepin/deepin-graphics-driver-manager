@@ -17,6 +17,7 @@ echo $NEW_DRIVER
 
 bash -x $PREPARE || exit 1
 cp -f $INSTALL /usr/bin/deepin-graphics-driver-installer.sh || exit 1
+chmod +x /usr/bin/deepin-graphics-driver-installer.sh
 overlayroot-enable || exit 1
 
 echo "[General]
