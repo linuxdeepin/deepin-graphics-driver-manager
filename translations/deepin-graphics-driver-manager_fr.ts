@@ -23,7 +23,7 @@
     </message>
     <message>
         <source>Download failed</source>
-        <translation type="unfinished"/>
+        <translation>Échec du téléchargement</translation>
     </message>
     <message>
         <source>Sorry, switch failed</source>
@@ -31,7 +31,7 @@
     </message>
     <message>
         <source>Download Succeeded</source>
-        <translation type="unfinished"/>
+        <translation>Téléchargement réussi</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
@@ -39,6 +39,12 @@
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Please reboot to enter installation progress
+
+Please confirm whether the monitor output port is connected correctly if no signal</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -130,6 +136,13 @@
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>%1(Using)</source>
         <translation type="unfinished"/>
     </message>
 </context>

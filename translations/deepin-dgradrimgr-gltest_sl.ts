@@ -1,20 +1,20 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="da" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sl" version="2.1">
 <context>
     <name>GLTestWindow</name>
     <message>
         <location filename="../gltest/main.cpp" line="104"/>
         <source>Apply</source>
-        <translation>Anvend</translation>
+        <translation>Uporabi</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="105"/>
         <source>Cancel</source>
-        <translation>Annuller</translation>
+        <translation>Prekliči</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="106"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation>Sørg venligst for at driveren virker normalt uden at skærmer er uskarp eller iturevet.</translation>
+        <translation>Prosim, prepričajte se, da pogon deluje pravilno - brez meglitve ali trganja slike</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="161"/>
