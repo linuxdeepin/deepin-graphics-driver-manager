@@ -63,9 +63,9 @@ void init()
     if (!QFile(CONFIG).exists())
         return qApp->quit();
 
-//    const bool notified = SETTINGS->value("notified", true).toBool();
-//    if (notified)
-//        return qApp->quit();
+    const bool notified = SETTINGS->value("notified", true).toBool();
+    if (notified)
+        return qApp->quit();
 
     const bool succeed = SETTINGS->value("success").toBool();
     if (succeed)
