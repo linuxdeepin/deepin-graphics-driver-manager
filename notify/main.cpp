@@ -58,13 +58,14 @@ void mark()
 void init()
 {
     SETTINGS = new QSettings(CONFIG, QSettings::IniFormat);
+    SETTINGS->setIniCodec(QTextCodec::codecForName("UTF-8"));
 
     if (!QFile(CONFIG).exists())
         return qApp->quit();
 
-    const bool notified = SETTINGS->value("notified", true).toBool();
-    if (notified)
-        return qApp->quit();
+//    const bool notified = SETTINGS->value("notified", true).toBool();
+//    if (notified)
+//        return qApp->quit();
 
     const bool succeed = SETTINGS->value("success").toBool();
     if (succeed)

@@ -43,6 +43,12 @@
         <source>Switching to %1, please wait......</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Please reboot to enter installation progress
+
+Please confirm whether the monitor output port is connected correctly if no signal</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Resolution</name>
