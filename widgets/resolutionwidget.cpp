@@ -66,16 +66,6 @@ void ResolutionWidget::setChecked(const bool checked)
     m_checkedBtn->setVisible(checked);
 }
 
-void ResolutionWidget::setUsing(const bool using_)
-{
-    m_using = using_;
-
-    if (m_using)
-        m_title->setText(tr("%1(Using)").arg(m_resolution.title()));
-    else
-        m_title->setText(m_resolution.title());
-}
-
 void ResolutionWidget::mouseReleaseEvent(QMouseEvent *e)
 {
     e->accept();
