@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
     app.setTheme("light");
 
     DLogManager::registerConsoleAppender();
+    DLogManager::registerFileAppender();
 
     MainWindow w;
     w.show();
