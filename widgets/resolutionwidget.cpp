@@ -101,7 +101,7 @@ void ResolutionWidget::prepareInstall(const Resolution &old_resolution)
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &ResolutionWidget::prepareFinished);
     connect(proc, &QProcess::readyRead, this, [=] { emit policyKitPassed(); proc->disconnect(proc, &QProcess::readyRead, this, nullptr); });
 
-    const QString &exit_gltest = m_resolution.exit_gltest() ? "true" : "false";
+    const QString &exit_gltest = m_resolution.keep_gltest() ? "false" : "true";
     const QString &new_driver = m_resolution.name();
     const QString &lang = QLocale().name();
     const QString &sc = scriptAbsolutePath("dgradvrmgr-prepare.sh");

@@ -28,6 +28,7 @@ static const char *translates[] = {
     QT_TRANSLATE_NOOP("Resolution", "Use Intel acceleration mode"),
     QT_TRANSLATE_NOOP("Resolution", "A more ancient and mature acceleration mode with the best compatibility and weaker performance."),
 
+    QT_TRANSLATE_NOOP("Resolution", "Use Bumblebee Solution"),
     QT_TRANSLATE_NOOP("Resolution", "Bumblebee Solution"),
     QT_TRANSLATE_NOOP("Resolution", "Power saving to improve the ability to hold a charge")
 };
@@ -37,7 +38,7 @@ Resolution::Resolution(const QJsonObject &info)
     Q_UNUSED(translates)
 
     m_resId = info["id"].toInt();
-    m_exitGltest = info["exit_gltest"].toBool();
+    m_keepGLTest = info["keep_gltest"].toBool();
     m_resName = QApplication::translate("Resolution", info["name"].toString().toStdString().c_str());
     m_resTitle = QApplication::translate("Resolution", info["title"].toString().toStdString().c_str());
     m_resDescription = QApplication::translate("Resolution", info["description"].toString().toStdString().c_str());

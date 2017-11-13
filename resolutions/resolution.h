@@ -11,7 +11,7 @@ public:
     explicit Resolution(const QJsonObject &info);
 
     inline int id() const { return m_resId; }
-    inline bool exit_gltest() const { return m_exitGltest; }
+    inline bool keep_gltest() const { return m_keepGLTest; }
     inline const QString name() const { return m_resName; }
     inline const QString title() const { return m_resTitle; }
     inline const QString description() const { return m_resDescription; }
@@ -23,7 +23,7 @@ public:
 
 private:
     int m_resId;
-    bool m_exitGltest;
+    bool m_keepGLTest;
     QString m_resName;
     QString m_resTitle;
     QString m_resDescription;

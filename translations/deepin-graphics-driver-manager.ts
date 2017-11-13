@@ -140,11 +140,8 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <source>Unstable in some graphics cards with weaker performance.</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>ResolutionWidget</name>
     <message>
-        <source>%1(Using)</source>
+        <source>Use Bumblebee Solution</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
