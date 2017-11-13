@@ -36,7 +36,7 @@ void show_fail_dialog()
     const QString &new_driver = SETTINGS->value("new_driver").toString();
     const QString &message = qApp->translate("main", "Auto restore to %2 after failed to switch to %1");
 
-    show_dialog(message.arg(old_driver).arg(new_driver), "dialog-warning");
+    show_dialog(message.arg(new_driver).arg(old_driver), "dialog-warning");
 }
 
 void mark()
