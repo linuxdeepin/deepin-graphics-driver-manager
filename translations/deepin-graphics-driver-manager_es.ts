@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>Switching</source>
-        <translation>Intercambiando</translation>
+        <translation>Cambiando</translation>
     </message>
     <message>
         <source>Download failed</source>
@@ -39,6 +39,12 @@
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
+        <translation>Cambiando a %1, por favor espere......</translation>
+    </message>
+    <message>
+        <source>Please reboot to enter installation progress
+
+Please confirm whether the monitor output port is connected correctly if no signal</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -102,34 +108,41 @@
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar el controlador por defecto para NVIDIA</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar el controlador de código abierto para NVIDIA</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar el controlador de código privativo para NVIDIA</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar el controlador por defecto para Intel</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation type="unfinished"/>
+        <translation>Usar modo de compatibilidad Intel</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation type="unfinished"/>
+        <translation>Usar modo de acceleración Intel</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
-        <translation type="unfinished"/>
+        <translation>Ahorro de energía para mejorar la capacidad de carga</translation>
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
+        <translation>Inestabilidad en algunas tarjetas gráficas con rendimiento pobre</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>%1(Using)</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -141,7 +154,7 @@
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Graphics Driver Manager es una herramienta de gestión de controladores de gráficos compacta y fácil de usar. Incluye detección de hardware de tarjetas gráficas, instalación de controladores gráficos, cambio de solución de controlador gráfico, recuperación automática de controladores gráficos y otras funciones.</translation>
     </message>
 </context>
 </TS>

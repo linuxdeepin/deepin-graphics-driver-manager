@@ -39,6 +39,12 @@
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
+        <translation>%1&apos;e geçiliyor, lütfen bekleyiniz</translation>
+    </message>
+    <message>
+        <source>Please reboot to enter installation progress
+
+Please confirm whether the monitor output port is connected correctly if no signal</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -90,7 +96,7 @@
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation>Intel Hızlandırma Modu</translation>
+        <translation>Intel Hızlandırma Kipi</translation>
     </message>
     <message>
         <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
@@ -102,34 +108,41 @@
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA varsayılan sürücüsünü kullan</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA açık kaynak sürücüsü kullan</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA kapalı kaynak sürücüsünü kullan</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation type="unfinished"/>
+        <translation>Intel varsayılan sürücüyü kullan</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation type="unfinished"/>
+        <translation>İntel uyumlu kipi kullan</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel hızlandırma kipini kullan</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
-        <translation type="unfinished"/>
+        <translation>Şarj tutma becerisini artırmak için güç tasarrufu</translation>
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
+        <translation>Daha zayıf performansa sahip bazı ekran kartlarında dengesiz.</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>%1(Using)</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -141,7 +154,7 @@
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Grafik Sürücü Yönetici kompakt ve kullanımı kolay bir grafik sürücüsü yönetim aracıdır. Bu grafik kartı donanım algılama, grafik sürücüsü yükleme, grafik sürücüsü çözüm anahtarlama, grafik sürücüsü otomatik kurtarma ve diğer işlevleri içerir.</translation>
     </message>
 </context>
 </TS>

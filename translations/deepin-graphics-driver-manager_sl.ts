@@ -1,163 +1,160 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sl" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
         <source>Toggle</source>
-        <translation>Altri Drivers</translation>
+        <translation>Zamenjaj</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>V redu</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Riavvia</translation>
+        <translation>Ponovno zaženi</translation>
     </message>
     <message>
         <source>The current hardware combination not supported, please wait for future version</source>
-        <translation>La configurazione hardware attuale non è supportata, nell&apos;attesa della prossima release ricordati di aprire un Deepin User Feedback</translation>
+        <translation>Trenutna kombinacija strojne opreme ni podprta, prosimo počakajte na bodočo različico</translation>
     </message>
     <message>
         <source>Switching</source>
-        <translation>Modifica in corso</translation>
+        <translation>Preklapljanje</translation>
     </message>
     <message>
         <source>Download failed</source>
-        <translation>Download fallito</translation>
+        <translation>Prenos ni uspel</translation>
     </message>
     <message>
         <source>Sorry, switch failed</source>
-        <translation>Ops, attivazione fallita</translation>
+        <translation>Oprostite, preklop ni uspel</translation>
     </message>
     <message>
         <source>Download Succeeded</source>
-        <translation>Download completato</translation>
+        <translation>Prenos je uspel</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
-        <translation>Riavvia il sistema per proseguire l&apos;installazione</translation>
+        <translation>Za zagon namestitve ponovno zaženite napravo</translation>
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation>Attivazione di %1, attendere prego......</translation>
+        <translation>Preklapljam na %1, počakajte......</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation>Per cortesia riavvia per avviare il processo di installazione
-
-Verifica che la porta di collegamento del monitor sia collegata correttamente nel caso non vi sia segnale</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation>Utilizza i driver AMD</translation>
+        <translation>Uporabi gonilnik kartice AMD</translation>
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation>Per esigenze particolari. Determina autonomamente la modalità di accellerazione grafica senza utilizzare una configurazione esterna.</translation>
+        <translation>Za posebne potrebe. Samodejno določi način pospeška brez zunanje konfiguracije.</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
-        <translation>Driver di default NVIDIA</translation>
+        <translation>Privzeti gonilnik NVIDIA</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation>La scheda video NVIDIA non è riconosciuta attualmente, sarà quindi oscurata</translation>
+        <translation>V trenutnem okolju ne zaznavam gonilnika za kartico NVIDIA, zato bo obarvan sivo</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation>Driver Open Source NVIDIA</translation>
+        <translation>Odprtokodni gonilnik NVIDIA</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation>Driver proprietari NVIDIA</translation>
+        <translation>Zaprtokodni gonilnik NVIDIA</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation>Potrebbero sorgere schermate nere, il supporto è garantito solo su alcune parti della Distro e della scheda grafica</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation>Driver di default Intel</translation>
+        <translation>Privzeti gonilnik Intel</translation>
     </message>
     <message>
         <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation>Utilizza Glamor come modalità di accelerazione video predefinita con la schede grafiche obsolete poco compatibili.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation>Modalità di compatibilità Intel</translation>
+        <translation>Kompatibilni način Intel</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation>Velocizza la scheda video con migliori performance, ma è possibile possibile che si verifichi un&apos;instabilità nella splash screen, occorre testare la funzionalità.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation>Modalità con accelerazione Intel</translation>
+        <translation>Način pospeška Intel</translation>
     </message>
     <message>
         <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
-        <translation>Una modalità di accelerazione grafica più matura con migliore compatibilità ma prestazioni inferiori.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Bumblebee Solution</source>
-        <translation>Bumblebee Solution</translation>
+        <translation>Rešitev Bumblebee</translation>
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation>Utilizza i driver di default NVIDIA</translation>
+        <translation>Uporabi privzeti gonilnik NVIDIA</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation>Utilizza i driver open source NVIDIA</translation>
+        <translation>Uporabi odprtokodni gonilnik NVIDIA</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation>Utilizza i driver proprietari NVIDIA</translation>
+        <translation>Uporabi zaprtokodni gonilnik NVIDIA</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation>Utilizza i driver di default Intel</translation>
+        <translation>Uporabi privzeti gonilnik Intel</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation>Utilizza la modalità Intel Compatible</translation>
+        <translation>Uporabi kompatibilni način Intel</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation>Utilizza la modalità Intel Accelerated</translation>
+        <translation>Uporabi način pospeška Intel</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
-        <translation>Risparmio energetico per garantire buona autonomia</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation>Instabile in alcuni modelli di schede video con performance basse.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
     <message>
         <source>%1(Using)</source>
-        <translation>%1 (Using)</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Deepin Graphics Driver Manager</translation>
+        <translation>Upravitelj grafičnih gonilnikov Deepin</translation>
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin Graphics Driver Manager è un gestore driver semplice e facile da utilizzare. Include il rilevamento dell&apos;hardware presente, l&apos;installazione dei driver grafici, il supporto alle soluzioni dual graphics, ripristino automatico dei driver originari ed altro ancora.
-Localizzazione italiana a cura di Massimo A. Carofano.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

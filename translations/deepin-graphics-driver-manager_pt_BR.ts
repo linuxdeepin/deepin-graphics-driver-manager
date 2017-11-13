@@ -3,7 +3,7 @@
     <name>MainWindow</name>
     <message>
         <source>Toggle</source>
-        <translation>Alternar</translation>
+        <translation>Mudar</translation>
     </message>
     <message>
         <source>OK</source>
@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>Switching</source>
-        <translation>Alternando</translation>
+        <translation>Mudando</translation>
     </message>
     <message>
         <source>Download failed</source>
@@ -39,6 +39,12 @@
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
+        <translation>Mudando para %1, aguarde...</translation>
+    </message>
+    <message>
+        <source>Please reboot to enter installation progress
+
+Please confirm whether the monitor output port is connected correctly if no signal</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -46,7 +52,7 @@
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation>Usar o driver placa AMD</translation>
+        <translation>Usar o driver da AMD</translation>
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
@@ -74,7 +80,7 @@
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation>Driver padrão Intel</translation>
+        <translation>Driver padrão da Intel</translation>
     </message>
     <message>
         <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
@@ -82,7 +88,7 @@
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation>Modo compatível com Intel</translation>
+        <translation>Modo compatível da Intel</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
@@ -102,34 +108,41 @@
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar o driver padrão da NVIDIA</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar driver NVIDIA open source</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar driver NVIDIA proprietário</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar o driver padrão da Intel</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation type="unfinished"/>
+        <translation>Usar o modo compatível da Intel</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation type="unfinished"/>
+        <translation>Usar o modo de aceleração da Intel</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
-        <translation type="unfinished"/>
+        <translation>Economia de energia para melhorar a capacidade de duração da bateria</translation>
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
+        <translation>Instável em algumas placas gráficas com desempenho mais fraco.</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>%1(Using)</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -137,11 +150,11 @@
     <name>main</name>
     <message>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Gerenciador de driver gráfico do Deepin</translation>
+        <translation>Deepin Graphics Driver Manager</translation>
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Graphics Driver Manager é uma ferramenta de gerenciamento de driver de gráficos compacta e fácil de usar. Inclui detecção de hardware de placa gráfica, instalação de driver gráfico, troca de solução de driver gráfico, recuperação automática de driver gráfico e outras funções.</translation>
     </message>
 </context>
 </TS>

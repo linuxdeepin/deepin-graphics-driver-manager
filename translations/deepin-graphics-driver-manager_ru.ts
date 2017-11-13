@@ -39,7 +39,14 @@
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation type="unfinished"/>
+        <translation>Переключение на %1, пожалуйста ждите......</translation>
+    </message>
+    <message>
+        <source>Please reboot to enter installation progress
+
+Please confirm whether the monitor output port is connected correctly if no signal</source>
+        <translation>Пожалуйста, перезагрузитесь, чтобы начать установку. 
+Если нет сигнала, проверьте, правильно ли подключен порт вывода монитора, </translation>
     </message>
 </context>
 <context>
@@ -130,7 +137,14 @@
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Нестабильно в некоторых видеокартах, но более высокая производительность.</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>%1(Using)</source>
+        <translation>%1(Используется)</translation>
     </message>
 </context>
 <context>

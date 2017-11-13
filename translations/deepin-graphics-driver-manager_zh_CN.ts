@@ -41,6 +41,14 @@
         <source>Switching to %1, please wait......</source>
         <translation>正在切换到%1, 请稍后...</translation>
     </message>
+    <message>
+        <source>Please reboot to enter installation progress
+
+Please confirm whether the monitor output port is connected correctly if no signal</source>
+        <translation>请重启进入安装程序
+
+如果显示器无信号，请确认显示器输出端口是否连接正确。</translation>
+    </message>
 </context>
 <context>
     <name>Resolution</name>
@@ -131,6 +139,13 @@
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
         <translation>通过解析nvidia闭源驱动而得来的，性能比较弱，在部分显卡上不稳定。</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>%1(Using)</source>
+        <translation>%（正在使用）</translation>
     </message>
 </context>
 <context>
