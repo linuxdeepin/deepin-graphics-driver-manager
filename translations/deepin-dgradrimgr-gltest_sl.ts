@@ -19,7 +19,7 @@
     <message>
         <location filename="../gltest/main.cpp" line="161"/>
         <source>Syncing data to disk, 5-10 minutes needed, then auto reboot the system</source>
-        <translation type="unfinished"/>
+        <translation>Usklajujem podatke na disk - to bo trajalo 5-10 minut, potem pa se bo sistem samodejno zagnal</translation>
     </message>
 </context>
 </TS>

@@ -27,7 +27,7 @@
     </message>
     <message>
         <source>Sorry, switch failed</source>
-        <translation>Disculpe, cambio fallido</translation>
+        <translation>Lo sentimos, cambio fallido</translation>
     </message>
     <message>
         <source>Download Succeeded</source>
@@ -45,7 +45,9 @@
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation type="unfinished"/>
+        <translation>Reiniciar para terminar la instalación
+
+Confirme si el puerto de salida del monitor está conectado correctamente si no hay señal</translation>
     </message>
 </context>
 <context>
@@ -138,11 +140,8 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <source>Unstable in some graphics cards with weaker performance.</source>
         <translation>Inestabilidad en algunas tarjetas gráficas con rendimiento pobre</translation>
     </message>
-</context>
-<context>
-    <name>ResolutionWidget</name>
     <message>
-        <source>%1(Using)</source>
+        <source>Use Bumblebee Solution</source>
         <translation type="unfinished"/>
     </message>
 </context>

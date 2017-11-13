@@ -140,12 +140,9 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <source>Unstable in some graphics cards with weaker performance.</source>
         <translation>通过解析nvidia闭源驱动而得来的，性能比较弱，在部分显卡上不稳定。</translation>
     </message>
-</context>
-<context>
-    <name>ResolutionWidget</name>
     <message>
-        <source>%1(Using)</source>
-        <translation>%（正在使用）</translation>
+        <source>Use Bumblebee Solution</source>
+        <translation>使用大黄峰方案</translation>
     </message>
 </context>
 <context>

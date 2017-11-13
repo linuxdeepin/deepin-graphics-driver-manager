@@ -45,7 +45,9 @@
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation type="unfinished"/>
+        <translation>Reinicie para entrar no progresso da instalação
+
+Confirme se a porta de saída do monitor está conectada corretamente.</translation>
     </message>
 </context>
 <context>
@@ -138,12 +140,9 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <source>Unstable in some graphics cards with weaker performance.</source>
         <translation>Instável em algumas placas gráficas com desempenho mais fraco.</translation>
     </message>
-</context>
-<context>
-    <name>ResolutionWidget</name>
     <message>
-        <source>%1(Using)</source>
-        <translation type="unfinished"/>
+        <source>Use Bumblebee Solution</source>
+        <translation>Usar Bumblebee Solution</translation>
     </message>
 </context>
 <context>

@@ -45,7 +45,9 @@
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation type="unfinished"/>
+        <translation>Kurulum ilerleme durumunu girmek için lütfen yeniden başlatınız
+
+Hiçbir sinyal yok lütfen monitör çıkış portunun doğru bağlanıp bağlanmadığını teyit ediniz</translation>
     </message>
 </context>
 <context>
@@ -138,12 +140,9 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <source>Unstable in some graphics cards with weaker performance.</source>
         <translation>Daha zayıf performansa sahip bazı ekran kartlarında dengesiz.</translation>
     </message>
-</context>
-<context>
-    <name>ResolutionWidget</name>
     <message>
-        <source>%1(Using)</source>
-        <translation type="unfinished"/>
+        <source>Use Bumblebee Solution</source>
+        <translation>Bumblebee Çözümü Kullan</translation>
     </message>
 </context>
 <context>

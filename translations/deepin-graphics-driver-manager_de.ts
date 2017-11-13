@@ -7,72 +7,74 @@
     </message>
     <message>
         <source>OK</source>
-        <translation>Ok</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Neustarten</translation>
+        <translation>Neustart</translation>
     </message>
     <message>
         <source>The current hardware combination not supported, please wait for future version</source>
-        <translation type="unfinished"/>
+        <translation>Die aktuelle Hardwarekombination wird nicht unterstützt, bitte warten Sie auf zukünftige Versionen</translation>
     </message>
     <message>
         <source>Switching</source>
-        <translation>Wechseln</translation>
+        <translation>Umschalten</translation>
     </message>
     <message>
         <source>Download failed</source>
-        <translation type="unfinished"/>
+        <translation>Herunterladen fehlgeschlagen</translation>
     </message>
     <message>
         <source>Sorry, switch failed</source>
-        <translation>Leider ist der Wechsel fehlgeschlagen</translation>
+        <translation>Entschuldigung, Umschaltung fehlgeschlagen</translation>
     </message>
     <message>
         <source>Download Succeeded</source>
-        <translation type="unfinished"/>
+        <translation>Herunterladen erfolgreich</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
-        <translation type="unfinished"/>
+        <translation>Bitte starten Sie neu, um den Installationsvorgang zu starten</translation>
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation type="unfinished"/>
+        <translation>Umschalten auf %1, bitte warten........</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation type="unfinished"/>
+        <translation>Bitte starten Sie neu, um den Installationsvorgang zu starten
+
+Bitte überprüfen Sie, ob der Monitorausgang korrekt angeschlossen ist, wenn kein Signal anliegt.</translation>
     </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation type="unfinished"/>
+        <translation>AMD-Kartentreiber verwenden</translation>
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation type="unfinished"/>
+        <translation>Für besondere Bedürfnisse. Automatische Ermittlung des Beschleunigungsmodus ohne externe Konfiguration.</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA-Standardtreiber</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation type="unfinished"/>
+        <translation>Der NVIDIA-Kartentreiber wird in der aktuellen Umgebung nicht erkannt und ist grau unterlegt.</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>Quelloffener NVIDIA-Treiber</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>Proprietärer NVIDIA-Treiber</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
@@ -80,15 +82,15 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>Intel-Standardtreiber</translation>
     </message>
     <message>
         <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Verwendet Glamor als Standard-Beschleunigungsmodus mit geringer Kompatibilität auf alten Grafikkarten.</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel-kompatibler Modus</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
@@ -96,53 +98,50 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel-Beschleunigungsmodus</translation>
     </message>
     <message>
         <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Ein älterer und ausgereifter Beschleunigungsmodus mit bester Kompatibilität und geringerer Leistung.</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Bumblebee-Lösung</translation>
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA-Standardtreiber verwenden</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Quelloffenen NVIDIA-Treiber verwenden</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Proprietären NVIDIA-Treiber verwenden</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation type="unfinished"/>
+        <translation>Intel-Standardtreiber verwenden</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel-kompatiblen Modus verwenden</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel-Beschleunigungsmodus verwenden</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
-        <translation type="unfinished"/>
+        <translation>Energieeinsparung zur Verbesserung der Fähigkeit zum Erhalten einer Ladung</translation>
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Bei einigen Grafikkarten unstabil mit schwächerer Leistung.</translation>
     </message>
-</context>
-<context>
-    <name>ResolutionWidget</name>
     <message>
-        <source>%1(Using)</source>
+        <source>Use Bumblebee Solution</source>
         <translation type="unfinished"/>
     </message>
 </context>

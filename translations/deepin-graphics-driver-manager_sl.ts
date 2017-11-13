@@ -45,7 +45,9 @@
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation type="unfinished"/>
+        <translation>Prosim, ponovno zaženite napravno, da pričnete s postopkom namestitve
+
+Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo signal</translation>
     </message>
 </context>
 <context>
@@ -76,7 +78,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation type="unfinished"/>
+        <translation>Prilagojen samo za nekatere distribucije in grafične kartice, lahko pride do črnega zaslona</translation>
     </message>
     <message>
         <source>Intel Default Driver</source>
@@ -84,7 +86,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Uporablja metodo Glamor kot privzeti način pospeševanja, ki po večini ni združljiv s starejšimi grafičnimi karticami.</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
@@ -92,7 +94,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation type="unfinished"/>
+        <translation>Pospeši grafično kartico in nudi večjo zmogljivost, vendar je na pozdravnem zaslonu po testiranju nestabilen.</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
@@ -100,7 +102,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Starejši in razvitejši način pospeševanja z najboljšo združljivostjo in manjšo zmogljivostjo.</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
@@ -132,17 +134,14 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
-        <translation type="unfinished"/>
+        <translation>Varčevanje z energijo za daljši čas porabe baterije</translation>
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Nestabilen pri nekaterih grafičnih karticah s slabšo zmogljivostjo.</translation>
     </message>
-</context>
-<context>
-    <name>ResolutionWidget</name>
     <message>
-        <source>%1(Using)</source>
+        <source>Use Bumblebee Solution</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -154,7 +153,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Upravitelj grafičnih gonilnikov Deepin je kompaktno in preprosto orodje za upravljanje grafičnih gonilnikov. Zaznava grafične kartice, namešča grafične gonilnike, preklaplja med rešitvami grafičnih gonilnikov, samodejno obnavlja grafične gonilnike itd.</translation>
     </message>
 </context>
 </TS>

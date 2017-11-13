@@ -140,12 +140,9 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
         <source>Unstable in some graphics cards with weaker performance.</source>
         <translation>Instabile in alcuni modelli di schede video con performance basse.</translation>
     </message>
-</context>
-<context>
-    <name>ResolutionWidget</name>
     <message>
-        <source>%1(Using)</source>
-        <translation>%1 (Using)</translation>
+        <source>Use Bumblebee Solution</source>
+        <translation>Utilizza Bumblebee Solution</translation>
     </message>
 </context>
 <context>
