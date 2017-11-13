@@ -18,14 +18,14 @@ void show_dialog(const QString &message, const QString &iconName)
     DDialog d;
     d.setMessage(message);
     d.setIcon(QIcon::fromTheme(iconName).pixmap(QSize(64, 64)));
-    d.addButton(QT_TRANSLATE_NOOP("main", "Confirm"));
+    d.addButton(qApp->translate("main", "Confirm"));
     d.exec();
 }
 
 void show_success_dialog()
 {
     const QString &new_driver = SETTINGS->value("new_driver").toString();
-    const QString &message = QT_TRANSLATE_NOOP("main", "Congratulations, you have switched to %1.");
+    const QString &message = qApp->translate("main", "Congratulations, you have switched to %1.");
 
     show_dialog(message.arg(new_driver), "deepin-graphics-driver-manager");
 }
@@ -34,7 +34,7 @@ void show_fail_dialog()
 {
     const QString &old_driver = SETTINGS->value("old_driver").toString();
     const QString &new_driver = SETTINGS->value("new_driver").toString();
-    const QString &message = QT_TRANSLATE_NOOP("main", "Auto restore to %2 after failed to switch to %1");
+    const QString &message = qApp->translate("main", "Auto restore to %2 after failed to switch to %1");
 
     show_dialog(message.arg(old_driver).arg(new_driver), "dialog-warning");
 }
@@ -81,9 +81,15 @@ int main(int argc, char *args[])
     DApplication dapp(argc, args);
     dapp.setQuitOnLastWindowClosed(true);
 
+    QTranslator translator;
+    translator.load(QString("/usr/share/deepin-graphics-driver-manager/translations/deepin-dgradrimgr-notify_%1.qm").arg(QLocale::system().name()));
+    dapp.installTranslator(&translator);
+
     DLogManager::registerConsoleAppender();
 
     QTimer::singleShot(1, nullptr, init);
 
     return dapp.exec();
 }
+
+#include "main.moc"
