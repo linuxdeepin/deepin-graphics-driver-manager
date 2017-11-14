@@ -126,7 +126,7 @@
             {
                 "id": 400,
                 "keep_gltest": true,
-                "title": "Use Bumblebee solution",
+                "title": "Use Bumblebee Solution",
                 "name": "Bumblebee Solution",
                 "description": "Power saving to improve the ability to hold a charge",
                 "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
