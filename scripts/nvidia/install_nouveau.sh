@@ -25,7 +25,8 @@ if [ $1 == "post" ];then
 	find /media/root-rw/overlay/ -size 0 | xargs sudo rm -rf
 #	mount -o remount,rw $POSTOS /media/root-ro
 #	rsync -avz --progress /media/root-rw/overlay/* /media/root-ro/
-	overlayroot-chroot apt purge nvidia-* -y --allow-downgrades
+	overlayroot-chroot apt purge nvidia-driver -y 
+	overlayroot-chroot apt autoremove -y
 	sync
 	
 	overlayroot-chroot rm -rf /etc/X11/xorg.conf
