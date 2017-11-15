@@ -28,6 +28,7 @@ private:
 
 private Q_SLOTS:
     void loadResolutions();
+    void showHelp();
     void onResolutionSelected();
     void onToggleBtnClicked();
     void onRebootBtnClicked();
