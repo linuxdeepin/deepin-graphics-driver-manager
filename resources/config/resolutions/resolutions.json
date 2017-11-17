@@ -13,7 +13,8 @@
         [
             {
                 "id": 100,
-                "name": "Use AMD card driver",
+                "title": "Use AMD card driver",
+                "name": "AMD card driver",
                 "description": "For special needs. Auto determine the acceleration mode without external configuration.",
                 "prepare": "empty.sh",
                 "install": "empty.sh"
