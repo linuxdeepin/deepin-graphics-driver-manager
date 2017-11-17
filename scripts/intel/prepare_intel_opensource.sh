@@ -2,6 +2,8 @@
 COMMANDS=(
 	"apt-get update"
 	"apt-get install -d xserver-xorg-video-intel -y --allow-downgrades"
+	"apt-get install -d xserver-xorg-core -y --allow-downgrades"
+	"apt-get install -d xserver-xorg-input-all -y --allow-downgrades"
 	"overlayroot-enable"
 )    
 

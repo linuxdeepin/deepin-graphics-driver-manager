@@ -33,7 +33,7 @@
                 "title": "Use NVIDIA default driver",
                 "name": "NVIDIA Default Driver",
                 "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
-                "prepare": "empty.sh",
+                "prepare": "nvidia/prepare_nouveau_opensource.sh",
                 "install": "nvidia/install_glamor.sh"
             },
             {
