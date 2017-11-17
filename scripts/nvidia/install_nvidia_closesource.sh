@@ -57,6 +57,7 @@ else
 	apt install nvidia-driver -y --allow-downgrades 
 	apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
 	rm /etc/X11/xorg.conf.d/20-intel.conf
+	rm /etc/X11/xorg.conf.d/20-nouveau.conf
 	echo "Loading kernel modules......"
 	rmmod -f nouveau
 	modprobe nvidia-drm

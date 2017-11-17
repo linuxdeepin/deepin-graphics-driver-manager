@@ -27,7 +27,7 @@ if [ -n "$nvidia_mod" ]; then
 fi
 if [ x"$BATTERY" == x"true" ]; then
 	
-	echo "Support bumblebee,hahaha~~~"	
+	echo "Support bumblebee"	
 	[ -f /etc/bumblebee/bumblebee.conf ] && exit 3
 fi
 exit 0
