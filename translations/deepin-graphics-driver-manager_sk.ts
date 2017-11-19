@@ -2,10 +2,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Toggle</source>
-        <translation>Prepínač</translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -15,7 +11,7 @@
     </message>
     <message>
         <source>The current hardware combination not supported, please wait for future version</source>
-        <translation type="unfinished"/>
+        <translation>Aktuálna kombinácia hardvéru nie je podporovaná, prosím vyčkajte na budúcu verziu</translation>
     </message>
     <message>
         <source>Switching</source>
@@ -23,7 +19,7 @@
     </message>
     <message>
         <source>Download failed</source>
-        <translation type="unfinished"/>
+        <translation>Sťahovanie zlyhalo</translation>
     </message>
     <message>
         <source>Sorry, switch failed</source>
@@ -31,20 +27,30 @@
     </message>
     <message>
         <source>Download Succeeded</source>
-        <translation type="unfinished"/>
+        <translation>Sťahovanie úspešné</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
-        <translation type="unfinished"/>
+        <translation>Prosím reštartujte pre spustenie inštalačného procesu</translation>
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation type="unfinished"/>
+        <translation>Prepínam na %1, prosím čakajte......</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
+        <translation>Prosím reštartujte pre spustenie inštalačného procesu
+
+Ak nie je na obrazovke žiaden signál, overte, či je výstupný port monitora správne pripojený</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Help</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -52,94 +58,94 @@ Please confirm whether the monitor output port is connected correctly if no sign
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation type="unfinished"/>
+        <translation>Použiť ovládač AMD karty</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>Predvolený ovládač NVIDIA</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation type="unfinished"/>
+        <translation>Ovládač karty NVIDIA nie je detegovaný v aktuálnom prostredí a bude neaktívny</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA Open Source ovládač</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA Closed Source ovládač</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation type="unfinished"/>
+        <translation>Iba prispôsobené na niektoré časti distribúcií a grafických kariet, môže sa vyskytnúť čierna obrazovka</translation>
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Predvolený ovládač Intel</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Kompatibilný režim Intel </translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation type="unfinished"/>
+        <translation>Zrýchlite grafickú kartu s lepším výkonom, ale po testovaní s nestabilnou obrazovkou.</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Režim zrýchlenia Intel </translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Bumblebee riešenie</translation>
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation type="unfinished"/>
+        <translation>Použiť predvolený ovládač NVIDIA</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Použiť NVIDIA Open Source ovládač </translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Použiť NVIDIA Closed Source ovládač</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation type="unfinished"/>
+        <translation>Použiť predvolený ovládač Intel</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation type="unfinished"/>
+        <translation>Použiť kompatibilný režim Intel</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation type="unfinished"/>
+        <translation>Použiť režim zrýchlenia Intel</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
-        <translation type="unfinished"/>
+        <translation>Úspora energie na zlepšenie schopnosti nabíjania</translation>
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Nestabilné v niektorých grafických kartách so slabším výkonom.</translation>
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
+        <translation>Použiť Bumblebee riešenie</translation>
+    </message>
+    <message>
+        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -147,11 +153,11 @@ Please confirm whether the monitor output port is connected correctly if no sign
     <name>main</name>
     <message>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Deepin manažér grafického ovládača</translation>
+        <translation>Deepin Manažér grafického ovládača</translation>
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Manažér grafického ovládača je kompaktný a ľahko použiteľný nástroj na správu grafických ovládačov. Zahŕňa detekciu hardvéru grafickej karty, inštaláciu grafického ovládača, prepnutie riešenia grafických ovládačov, automatické obnovenie grafického ovládača a ďalšie funkcie.</translation>
     </message>
 </context>
 </TS>

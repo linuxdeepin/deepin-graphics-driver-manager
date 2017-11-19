@@ -2,10 +2,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Toggle</source>
-        <translation>Zamenjaj</translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation>V redu</translation>
     </message>
@@ -49,16 +45,20 @@ Please confirm whether the monitor output port is connected correctly if no sign
 
 Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo signal</translation>
     </message>
+    <message>
+        <source>Switch</source>
+        <translation>Preklopi</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Pomoč</translation>
+    </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
         <translation>Uporabi gonilnik kartice AMD</translation>
-    </message>
-    <message>
-        <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation>Za posebne potrebe. Samodejno določi način pospeška brez zunanje konfiguracije.</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
@@ -85,10 +85,6 @@ Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo 
         <translation>Privzeti gonilnik Intel</translation>
     </message>
     <message>
-        <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation>Uporablja metodo Glamor kot privzeti način pospeševanja, ki po večini ni združljiv s starejšimi grafičnimi karticami.</translation>
-    </message>
-    <message>
         <source>Intel Compatible Mode</source>
         <translation>Kompatibilni način Intel</translation>
     </message>
@@ -99,10 +95,6 @@ Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo 
     <message>
         <source>Intel Acceleration Mode</source>
         <translation>Način pospeška Intel</translation>
-    </message>
-    <message>
-        <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
-        <translation>Starejši in razvitejši način pospeševanja z najboljšo združljivostjo in manjšo zmogljivostjo.</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
@@ -142,7 +134,19 @@ Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo 
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Uporabi rešitev Bumblebee</translation>
+    </message>
+    <message>
+        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
+        <translation>Za posebne potrebe. Samodejno določi način pospeška brez zunanje konfiguracije.</translation>
+    </message>
+    <message>
+        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
+        <translation>Uporablja metodo Glamor kot privzeti način pospeševanja, ki po večini ni združljiv s starejšimi grafičnimi karticami.</translation>
+    </message>
+    <message>
+        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
+        <translation>Starejši in razvitejši način pospeševanja z najboljšo združljivostjo in manjšo zmogljivostjo.</translation>
     </message>
 </context>
 <context>

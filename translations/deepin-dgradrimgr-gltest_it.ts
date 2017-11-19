@@ -4,7 +4,7 @@
     <message>
         <location filename="../gltest/main.cpp" line="104"/>
         <source>Apply</source>
-        <translation>Applica</translation>
+        <translation>Conferma</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="105"/>
@@ -19,7 +19,7 @@
     <message>
         <location filename="../gltest/main.cpp" line="161"/>
         <source>Syncing data to disk, 5-10 minutes needed, then auto reboot the system</source>
-        <translation>Sincronizzazione dati sul Disco, questa operazione richiede 5-10 minuti, dopodiché sarà effettuato un riavvio automatico</translation>
+        <translation>Sincronizzazione dati sul Disco, questa operazione può richiedere anche 5-10 minuti, dopodiché sarà effettuato un riavvio automatico</translation>
     </message>
 </context>
 </TS>

@@ -14,7 +14,7 @@
     <message>
         <location filename="../notify/main.cpp" line="37"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
-        <translation>Ripristino automatico di %2 dopo il tentativo di attivazione di %1</translation>
+        <translation>Ripristino automatico di %2 dopo aver fallito l&apos;attivazione di %1</translation>
     </message>
 </context>
 </TS>

@@ -14,12 +14,12 @@
     <message>
         <location filename="../gltest/main.cpp" line="106"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation>Sørg venligst for at driveren virker normalt uden at skærmer er uskarp eller iturevet.</translation>
+        <translation>Sørg venligst for at driveren virker normalt uden at skærmen er uskarp eller iturevet</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="161"/>
         <source>Syncing data to disk, 5-10 minutes needed, then auto reboot the system</source>
-        <translation type="unfinished"/>
+        <translation>Synkroniserer data til disk. Det tager 5-10 minutter, hvorefter systemet genstartes automatisk</translation>
     </message>
 </context>
 </TS>

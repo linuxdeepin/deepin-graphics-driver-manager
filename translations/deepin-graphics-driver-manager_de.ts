@@ -2,10 +2,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Toggle</source>
-        <translation>Umschalten</translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -49,16 +45,20 @@ Please confirm whether the monitor output port is connected correctly if no sign
 
 Bitte überprüfen Sie, ob der Monitorausgang korrekt angeschlossen ist, wenn kein Signal anliegt.</translation>
     </message>
+    <message>
+        <source>Switch</source>
+        <translation>Wechseln</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Hilfe</translation>
+    </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
         <translation>AMD-Kartentreiber verwenden</translation>
-    </message>
-    <message>
-        <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation>Für besondere Bedürfnisse. Automatische Ermittlung des Beschleunigungsmodus ohne externe Konfiguration.</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
@@ -78,15 +78,11 @@ Bitte überprüfen Sie, ob der Monitorausgang korrekt angeschlossen ist, wenn ke
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation type="unfinished"/>
+        <translation>Nur bei bestimmten Ausgaben und Grafikkarten kann es zu einem schwarzen Bildschirm kommen.</translation>
     </message>
     <message>
         <source>Intel Default Driver</source>
         <translation>Intel-Standardtreiber</translation>
-    </message>
-    <message>
-        <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation>Verwendet Glamor als Standard-Beschleunigungsmodus mit geringer Kompatibilität auf alten Grafikkarten.</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
@@ -94,15 +90,11 @@ Bitte überprüfen Sie, ob der Monitorausgang korrekt angeschlossen ist, wenn ke
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation type="unfinished"/>
+        <translation>Grafikkarte auf Kosten von Stabilität auf Leistung optimieren.</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
         <translation>Intel-Beschleunigungsmodus</translation>
-    </message>
-    <message>
-        <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
-        <translation>Ein älterer und ausgereifter Beschleunigungsmodus mit bester Kompatibilität und geringerer Leistung.</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
@@ -142,7 +134,19 @@ Bitte überprüfen Sie, ob der Monitorausgang korrekt angeschlossen ist, wenn ke
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Bumblebee-Lösung verwenden</translation>
+    </message>
+    <message>
+        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
+        <translation>Für spezielle Anforderungen. Automatische Erkennung der passenden Beschleunigungsart ohne externe Konfiguration.</translation>
+    </message>
+    <message>
+        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
+        <translation>Verwendet glamor als Standardbeschleunigung mit schlechterer Kompatibilität bei alten Grafikkarten.</translation>
+    </message>
+    <message>
+        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
+        <translation>Eine altbewährte, ausgereifte Beschleunigung mit der besten Kompatibilität, aber schwächerer Leistung.</translation>
     </message>
 </context>
 <context>
@@ -153,7 +157,7 @@ Bitte überprüfen Sie, ob der Monitorausgang korrekt angeschlossen ist, wenn ke
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Die Deepin Grafiktreiberverwaltung ist ein einfach zu bedienendes Werkzeug zur Verwaltung der Grafiktreiber. Dazu gehören Grafikkartenerkennung, Grafikkartentreiberinstallation, Grafikchip-Switcher, automatische Wiederherstellung von Treibern und weitere Funktionen.</translation>
     </message>
 </context>
 </TS>

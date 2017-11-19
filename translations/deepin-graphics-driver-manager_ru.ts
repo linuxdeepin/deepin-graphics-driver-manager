@@ -2,10 +2,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Toggle</source>
-        <translation>Переключить</translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation>ОК</translation>
     </message>
@@ -48,6 +44,14 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <translation>Пожалуйста, перезагрузитесь, чтобы начать установку. 
 Если нет сигнала, проверьте, правильно ли подключен порт вывода монитора, </translation>
     </message>
+    <message>
+        <source>Switch</source>
+        <translation>Переключить</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Помощь</translation>
+    </message>
 </context>
 <context>
     <name>Resolution</name>
@@ -56,16 +60,12 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <translation>Использовать драйвер карты AMD</translation>
     </message>
     <message>
-        <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation>Для особых нужд. Автоматическое определение режима ускорения без внешней конфигурации.</translation>
-    </message>
-    <message>
         <source>NVIDIA Default Driver</source>
         <translation>Драйвер NVIDIA по Умолчанию</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation>Драйвер карты NVIDIA не обнаружен в текущей среде и будет серым</translation>
+        <translation>Драйвер карты NVIDIA не обнаружен в текущей среде и будет затемнён</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
@@ -84,10 +84,6 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <translation>Драйвер Intel по Умолчанию</translation>
     </message>
     <message>
-        <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation>Использует размытие в режиме ускорения по умолчанию с низкой совместимостью на старых видеокартах.</translation>
-    </message>
-    <message>
         <source>Intel Compatible Mode</source>
         <translation>Режим Совместимости Intel</translation>
     </message>
@@ -98,10 +94,6 @@ Please confirm whether the monitor output port is connected correctly if no sign
     <message>
         <source>Intel Acceleration Mode</source>
         <translation>Режим Ускорения Intel</translation>
-    </message>
-    <message>
-        <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
-        <translation>Более старый и проверенный режим ускорения с лучшей совместимостью и более слабой производительностью.</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
@@ -143,6 +135,18 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <source>Use Bumblebee Solution</source>
         <translation>Использовать Bumblebee Решение</translation>
     </message>
+    <message>
+        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
+        <translation>Для особых нужд. Автоматическое определение режима ускорения без внешней конфигурации.</translation>
+    </message>
+    <message>
+        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
+        <translation>Использует размытие в режиме ускорения по умолчанию с низкой совместимостью на старых видеокартах.</translation>
+    </message>
+    <message>
+        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
+        <translation>Более старый и проверенный режим ускорения с лучшей совместимостью и более слабой производительностью.</translation>
+    </message>
 </context>
 <context>
     <name>main</name>
@@ -152,7 +156,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin Graphics Driver Manager - это компактный и простой в использовании инструмент управления графическим драйвером. Он включает в себя обнаружение аппаратных средств графической карты, установку графического драйвера, графику переключения выбора драйвера, автоматическое восстановление графических драйверов и другие функции.</translation>
+        <translation>Deepin Graphics Driver Manager - это компактный и простой в использовании инструмент управления графическим драйвером. Он включает в себя обнаружение аппаратных средств графической карты, установку графического драйвера, переключение графики на выбранный драйвер, автоматическое восстановление графических драйверов и другие функции.</translation>
     </message>
 </context>
 </TS>

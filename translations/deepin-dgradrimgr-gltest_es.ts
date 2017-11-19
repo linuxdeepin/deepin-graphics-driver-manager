@@ -14,7 +14,7 @@
     <message>
         <location filename="../gltest/main.cpp" line="106"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation>Asegúrese de que su pantalla funcione sin desenfoques ni rasgados por el controlador</translation>
+        <translation>Asegúrese que el controlador funcione, sin desenfoques ni rasgados en la pantalla</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="161"/>

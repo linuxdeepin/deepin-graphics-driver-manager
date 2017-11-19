@@ -2,10 +2,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Toggle</source>
-        <translation>Değiştir</translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation>TAMAM</translation>
     </message>
@@ -49,16 +45,20 @@ Please confirm whether the monitor output port is connected correctly if no sign
 
 Hiçbir sinyal yok lütfen monitör çıkış portunun doğru bağlanıp bağlanmadığını teyit ediniz</translation>
     </message>
+    <message>
+        <source>Switch</source>
+        <translation>Değiştir</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Yardım</translation>
+    </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
         <translation>AMD kart sürücüsü kullan</translation>
-    </message>
-    <message>
-        <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation>Özel ihtiyaçlar için. Harici konfigürasyon olmaksızın hızlandırma kipini otomatik belirle.</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
@@ -85,10 +85,6 @@ Hiçbir sinyal yok lütfen monitör çıkış portunun doğru bağlanıp bağlan
         <translation>İntel Varsayılan Sürücü</translation>
     </message>
     <message>
-        <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation>Eski grafik kartlarında düşük uyumlulukla varsayılan hızlandırma kipi olarak sahte güzellik kullanır.</translation>
-    </message>
-    <message>
         <source>Intel Compatible Mode</source>
         <translation>İntel Uyumlu Kip</translation>
     </message>
@@ -99,10 +95,6 @@ Hiçbir sinyal yok lütfen monitör çıkış portunun doğru bağlanıp bağlan
     <message>
         <source>Intel Acceleration Mode</source>
         <translation>Intel Hızlandırma Kipi</translation>
-    </message>
-    <message>
-        <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
-        <translation>Daha eski ve olgun bir hızlandırma kipi, en iyi uyumluluk ve zayıf performans.</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
@@ -143,6 +135,18 @@ Hiçbir sinyal yok lütfen monitör çıkış portunun doğru bağlanıp bağlan
     <message>
         <source>Use Bumblebee Solution</source>
         <translation>Bumblebee Çözümü Kullan</translation>
+    </message>
+    <message>
+        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
+        <translation>Özel ihtiyaçlar için. Harici konfigürasyon olmaksızın hızlanma yolu otomatik olarak belirlenir.</translation>
+    </message>
+    <message>
+        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
+        <translation>Glamour&apos;u eski grafik kartlarında düşük uyumlulukla varsayılan hızlanma yolu olarak kullanır.</translation>
+    </message>
+    <message>
+        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
+        <translation>En iyi uyumluluk ve zayıf performans ile daha eski ve olgun hızlanma yolu.</translation>
     </message>
 </context>
 <context>

@@ -2,10 +2,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Toggle</source>
-        <translation>Perjungti</translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation>Gerai</translation>
     </message>
@@ -47,15 +43,19 @@
 Please confirm whether the monitor output port is connected correctly if no signal</source>
         <translation type="unfinished"/>
     </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -83,10 +83,6 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
         <source>Intel Compatible Mode</source>
         <translation type="unfinished"/>
     </message>
@@ -96,10 +92,6 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -140,6 +132,18 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation type="unfinished"/>
     </message>
 </context>

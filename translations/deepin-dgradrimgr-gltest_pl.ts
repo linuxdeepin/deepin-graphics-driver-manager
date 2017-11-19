@@ -1,25 +1,25 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sk" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" version="2.1">
 <context>
     <name>GLTestWindow</name>
     <message>
         <location filename="../gltest/main.cpp" line="104"/>
         <source>Apply</source>
-        <translation>Aplikovať</translation>
+        <translation>Zastosuj</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="105"/>
         <source>Cancel</source>
-        <translation>Zrušiť</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="106"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation>Uistite sa, že ovládač pracuje normálne bez rozmazaného obrazu a trasu obrazovky</translation>
+        <translation>Prosimy upewnić się, że sterownik pracuje normalnie - bez rozmywania czy śnieżenia obrazu</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="161"/>
         <source>Syncing data to disk, 5-10 minutes needed, then auto reboot the system</source>
-        <translation>Synchronizácia údajov na disk, je potrebných 5-10 minút, potom bude automaticky reštartovaný systém</translation>
+        <translation>Synchronizacja danych z dyskiem, potrzeba na to od 5-10 minut - następnie nastąpi automatyczne ponowne uruchomienie systemu</translation>
     </message>
 </context>
 </TS>

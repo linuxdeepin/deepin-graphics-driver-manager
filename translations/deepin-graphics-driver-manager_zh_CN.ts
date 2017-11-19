@@ -2,10 +2,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Toggle</source>
-        <translation>切换</translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation>确定</translation>
     </message>
@@ -49,16 +45,20 @@ Please confirm whether the monitor output port is connected correctly if no sign
 
 如果显示器无信号，请确认显示器输出端口是否连接正确。</translation>
     </message>
+    <message>
+        <source>Switch</source>
+        <translation>切换</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>帮助</translation>
+    </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation>使用ＡＭＤ显卡驱动</translation>
-    </message>
-    <message>
-        <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation> 只有特殊的专用需求才会用到闭源驱动的功能。ＡＭＤ显卡的加速方式驱动会自动判断，无需外部配置 。</translation>
+        <translation>使用AMD显卡驱动</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
@@ -85,10 +85,6 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <translation>Intel默认驱动</translation>
     </message>
     <message>
-        <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation>默认使用glamor加速方式，对部分旧显卡兼容差。</translation>
-    </message>
-    <message>
         <source>Intel Compatible Mode</source>
         <translation>Intel兼容模式</translation>
     </message>
@@ -99,10 +95,6 @@ Please confirm whether the monitor output port is connected correctly if no sign
     <message>
         <source>Intel Acceleration Mode</source>
         <translation>Intel加速模式</translation>
-    </message>
-    <message>
-        <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
-        <translation>比较古老的加速方式，兼容性最好，能满足所有Intel显卡实现加速，但性能相对较弱。</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
@@ -143,6 +135,18 @@ Please confirm whether the monitor output port is connected correctly if no sign
     <message>
         <source>Use Bumblebee Solution</source>
         <translation>使用大黄峰方案</translation>
+    </message>
+    <message>
+        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
+        <translation> 只有特殊的专用需求才会用到闭源驱动的功能。AMD显卡的加速方式驱动会自动判断，无需外部配置 。</translation>
+    </message>
+    <message>
+        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
+        <translation>默认使用glamor加速方式，对部分旧显卡兼容差。</translation>
+    </message>
+    <message>
+        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
+        <translation>比较古老的加速方式，兼容性最好，能满足所有Intel显卡实现加速，但性能相对较弱。</translation>
     </message>
 </context>
 <context>

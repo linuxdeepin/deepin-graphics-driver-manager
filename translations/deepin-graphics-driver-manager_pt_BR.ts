@@ -2,10 +2,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Toggle</source>
-        <translation>Mudar</translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -49,16 +45,20 @@ Please confirm whether the monitor output port is connected correctly if no sign
 
 Confirme se a porta de saída do monitor está conectada corretamente.</translation>
     </message>
+    <message>
+        <source>Switch</source>
+        <translation>Mudar</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Ajuda</translation>
+    </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
         <translation>Usar o driver da AMD</translation>
-    </message>
-    <message>
-        <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation>Para necessidades especiais. Auto determina o modo de aceleração sem configuração externa.</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
@@ -85,10 +85,6 @@ Confirme se a porta de saída do monitor está conectada corretamente.</translat
         <translation>Driver padrão da Intel</translation>
     </message>
     <message>
-        <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation>Usa o glamour como o modo de aceleração padrão com pouca compatibilidade em placas gráficas antigas.</translation>
-    </message>
-    <message>
         <source>Intel Compatible Mode</source>
         <translation>Modo compatível da Intel</translation>
     </message>
@@ -99,10 +95,6 @@ Confirme se a porta de saída do monitor está conectada corretamente.</translat
     <message>
         <source>Intel Acceleration Mode</source>
         <translation>Modo de aceleração Intel</translation>
-    </message>
-    <message>
-        <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
-        <translation>Um modo de aceleração mais antigo e estável com a melhor compatibilidade e desempenho mais fraco.</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
@@ -143,6 +135,18 @@ Confirme se a porta de saída do monitor está conectada corretamente.</translat
     <message>
         <source>Use Bumblebee Solution</source>
         <translation>Usar Bumblebee Solution</translation>
+    </message>
+    <message>
+        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
+        <translation>Para necessidades especiais. Auto determina o modo de aceleração sem configuração externa.</translation>
+    </message>
+    <message>
+        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
+        <translation>Usa o glamour como o modo de aceleração padrão com pouca compatibilidade em placas gráficas antigas.</translation>
+    </message>
+    <message>
+        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
+        <translation>Um modo de aceleração mais antigo e maduro com a melhor compatibilidade e desempenho mais fraco.</translation>
     </message>
 </context>
 <context>

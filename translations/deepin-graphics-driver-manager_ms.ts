@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ms" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
@@ -7,158 +7,157 @@
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Riavvia</translation>
+        <translation>But Semula</translation>
     </message>
     <message>
         <source>The current hardware combination not supported, please wait for future version</source>
-        <translation>La configurazione hardware attuale non è supportata, nell&apos;attesa della prossima release ricordati di aprire un Deepin User Feedback</translation>
+        <translation>Gabungan perkakasan semasa tidak disokong, tunggulah versi akan datang</translation>
     </message>
     <message>
         <source>Switching</source>
-        <translation>Modifica in corso</translation>
+        <translation>Menukar</translation>
     </message>
     <message>
         <source>Download failed</source>
-        <translation>Download fallito</translation>
+        <translation>Muat turun gagal</translation>
     </message>
     <message>
         <source>Sorry, switch failed</source>
-        <translation>Ops, attivazione fallita</translation>
+        <translation>Maaf, pertukaran gagal</translation>
     </message>
     <message>
         <source>Download Succeeded</source>
-        <translation>Download completato</translation>
+        <translation>Muat Turun Berjaya</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
-        <translation>Riavvia il sistema per proseguire l&apos;installazione</translation>
+        <translation>Sila but semula untuk pergi ke kemajuan pemasangan</translation>
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation>Attivazione di %1, attendere prego......</translation>
+        <translation>Bertukar ke %1, tunggu sebentar...</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation>Per cortesia riavvia per avviare il processo di attivazione dei nuovi driver
+        <translation>Sila but semula untuk pergi ke kemajuan pemasangan
 
-Verifica che la porta di collegamento del monitor sia collegata correttamente nel caso non vi sia segnale, non far caso ad eventuali errori nelle schermate di boot</translation>
+Sila sahkan sama ada port output monitor disambung dengan kemas jika tiada isyarat</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation>Cambia</translation>
+        <translation>Tukar</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Aiuto</translation>
+        <translation>Bantuan</translation>
     </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation>Utilizza i driver AMD</translation>
+        <translation>Guna pemacu kad AMD</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
-        <translation>Driver di default NVIDIA</translation>
+        <translation>Pemacu Lalai NVIDIA</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation>La scheda video NVIDIA non è attualmente riconosciuta, sarà quindi oscurata</translation>
+        <translation>Pemacu kad NVIDIA tidak dikesan dalam persekitaran semasa, dan akan menjadi kelabu</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation>Driver Open Source NVIDIA</translation>
+        <translation>Pemacu Sumber Terbuka NVIDIA</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation>Driver proprietari NVIDIA</translation>
+        <translation>Pemacu Sumber Tertutup NVIDIA</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation>Potrebbero sorgere schermate nere, il supporto non è garantito</translation>
+        <translation>Hanya serasi dengan sebahagian distribusi dan kad grafik, mungkin menyebabkan skrin gelap</translation>
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation>Driver di default Intel</translation>
+        <translation>Pemacu Lalai Intel</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation>Modalità di compatibilità Intel</translation>
+        <translation>Mod Serasi Intel</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation>Velocizza la scheda video con migliori performance, ma è possibile che si verifichi un&apos;instabilità nella splash screen, occorre testare la funzionalità.</translation>
+        <translation>Lajukan kad grafik dengan prestasi lebih baik, tetapi tidak stabil dengan percikan skrin selepas diuji.</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation>Modalità con accelerazione Intel</translation>
+        <translation>Mod Pemecutan Intel</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
-        <translation>Bumblebee Solution</translation>
+        <translation>Penyelesaian Bumblebee</translation>
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation>Utilizza i driver di default NVIDIA</translation>
+        <translation>Guna pemacu lalai NVIDIA</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation>Utilizza i driver open source NVIDIA</translation>
+        <translation>Guna pemacu sumber terbuka NVIDIA</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation>Utilizza i driver proprietari NVIDIA</translation>
+        <translation>Guna pemacu sumber tertutup NVIDIA</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation>Utilizza i driver di default Intel</translation>
+        <translation>Guna pemacu lalai Intel</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation>Utilizza la modalità Intel Compatible</translation>
+        <translation>Guna mod serasi Intel</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation>Utilizza la modalità Intel Accelerated</translation>
+        <translation>Guna mod pemecutan Intel</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
-        <translation>Risparmio energetico per garantire buona autonomia</translation>
+        <translation>Penjimatan kuasa untuk menambahbaik keupayaan menyimpan cas</translation>
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation>Instabile in alcuni modelli di schede video con performance basse.</translation>
+        <translation>Tidak stabil dalam sesetengah kad grafik yang berprestasi rendah.</translation>
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
-        <translation>Utilizza Bumblebee Solution</translation>
+        <translation>Guna Penyelesaian Bumblebee</translation>
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation>Per esigenze particolari. Determina autonomamente la modalità di accelerazione grafica senza utilizzare una configurazione esterna.</translation>
+        <translation>Untuk keperluan khas. Auto tentukan cara pemecutan tanpa konfigurasi luar.</translation>
     </message>
     <message>
         <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation>Utilizza Glamor come modalità di accelerazione video predefinita con la schede grafiche obsolete oppure non pienamente compatibili.</translation>
+        <translation>Guna glamor sebagai cara pemecutan lalai dengan keserasian rendah pada kad gradik lama.</translation>
     </message>
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation>Una modalità di accelerazione grafica più matura e migliore compatibilità ma anche possibili prestazioni inferiori.</translation>
+        <translation>Cara pemecutan lama yang lebih matang dengan keserasian terbaik tetapi prestasi lebih rendah.</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Deepin Graphics Driver Manager</translation>
+        <translation>Pengurus Pemacu Grafik Deepin</translation>
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin Graphics Driver Manager è un gestore driver semplice e facile da utilizzare. Include il rilevamento dell&apos;hardware, l&apos;installazione dei driver grafici, il supporto alle soluzioni dual graphics, il ripristino automatico dei driver originari ed altro ancora.
-Localizzazione italiana a cura di Massimo A. Carofano.</translation>
+        <translation>Pengurus Pemacu Grafik Deepin iaah alat pengurusan pemacu grafik yang ringkas dan mudah digunakan. Ia menawarkan pengesanan perkakasan kad grafik, pemasangan pemacu grafik, penukaran penyelesaian pemacu grafik, pemulihan automatik pemacu grafik dan lain-lain fungsi.</translation>
     </message>
 </context>
 </TS>

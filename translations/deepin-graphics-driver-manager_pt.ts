@@ -2,10 +2,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Toggle</source>
-        <translation>Alternar</translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation>OK</translation>
     </message>
@@ -15,7 +11,7 @@
     </message>
     <message>
         <source>The current hardware combination not supported, please wait for future version</source>
-        <translation type="unfinished"/>
+        <translation>A sua combinação de componentes não é suportada, por favor aguarde por uma versão futura.</translation>
     </message>
     <message>
         <source>Switching</source>
@@ -23,7 +19,7 @@
     </message>
     <message>
         <source>Download failed</source>
-        <translation type="unfinished"/>
+        <translation>Falha ao descarregar</translation>
     </message>
     <message>
         <source>Sorry, switch failed</source>
@@ -31,20 +27,30 @@
     </message>
     <message>
         <source>Download Succeeded</source>
-        <translation type="unfinished"/>
+        <translation>Sucesso ao descarregar</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
-        <translation type="unfinished"/>
+        <translation>Por favor reinicie para verificar o progresso de instalação</translation>
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation type="unfinished"/>
+        <translation>A mudar para %1, por favor aguarde</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
+        <translation>Por favor reinicie para verificar o progresso da instalação
+
+Por favor confirme que os cabos do monitor estão correctamente ligados se não existir sinal</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Help</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -52,94 +58,94 @@ Please confirm whether the monitor output port is connected correctly if no sign
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation type="unfinished"/>
+        <translation>Usar o driver da placa AMD</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>Driver NVIDIA por omissão</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation type="unfinished"/>
+        <translation>A placa de video NVIDEA não foi detectada no ambiente actual, e estará inactiva</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>Driver NVIDIA de Código Aberto</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>Driver NVIDIA de código proprietário</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation type="unfinished"/>
+        <translation>Apenas parcialmente funcional em distribuições e algumas placas gráficas, poderá resultar num ecrã preto</translation>
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Driver Intel por omissão</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Modo compatível da Intel</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation type="unfinished"/>
+        <translation>Acelera a performance da placa gráfica, mas oferece mais instabilidade, verificado após testes</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Modo de aceleração da Intel</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Solução Bumblebee</translation>
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar driver NVIDIA por omissão</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar Driver NVIDIA de Código Aberto</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar driver NVIDIA de código proprietário</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar driver da Intel</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation type="unfinished"/>
+        <translation>Usar modo compatível da Intel</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation type="unfinished"/>
+        <translation>Usar modo de aceleração da Intel</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
-        <translation type="unfinished"/>
+        <translation>Poupança de energia, para melhorar a duração da carga de bateria</translation>
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Instável em algumas placas com performance fraca.</translation>
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
+        <translation>Usar solução Bumblebee</translation>
+    </message>
+    <message>
+        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -151,7 +157,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>O Gestor de Drivers do Deepin é uma ferramenta de gestão compacta e fácil. Inclui detecção automática de placa gráfica, instalação de drivers, comutadores de solução gráfica, recuperação automática de drivers e outras funções.</translation>
     </message>
 </context>
 </TS>

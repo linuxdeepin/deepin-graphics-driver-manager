@@ -2,10 +2,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Toggle</source>
-        <translation>Intercambiar</translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation>Aceptar</translation>
     </message>
@@ -49,16 +45,20 @@ Please confirm whether the monitor output port is connected correctly if no sign
 
 Confirme si el puerto de salida del monitor está conectado correctamente si no hay señal</translation>
     </message>
+    <message>
+        <source>Switch</source>
+        <translation>Cambiar</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Ayuda</translation>
+    </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
         <translation>Usar el controlador para la tarjeta AMD</translation>
-    </message>
-    <message>
-        <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation>Para casos especiales. Determina automáticamente el modo de aceleración sin configuración externa.</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
@@ -85,24 +85,16 @@ Confirme si el puerto de salida del monitor está conectado correctamente si no 
         <translation>Controlador Intel por defecto</translation>
     </message>
     <message>
-        <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation>Utiliza glamor para el modo de aceleración predeterminado con poca compatibilidad con las tarjetas gráficas antiguas.</translation>
-    </message>
-    <message>
         <source>Intel Compatible Mode</source>
-        <translation>Modo compatible con Intel</translation>
+        <translation>Modo compatible para Intel</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation>Acelera la tarjeta gráfica con un mejor rendimiento pero inestable, con destellos en la pantalla incluso al pasar la prueba.</translation>
+        <translation>Acelera la tarjeta gráfica con un mejor rendimiento pero genera inestabilidad, con destellos en la pantalla incluso al pasar la prueba.</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation>Modo de aceleración de Intel</translation>
-    </message>
-    <message>
-        <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
-        <translation>Un modo de aceleración más veterano y maduro con la mejor compatibilidad y un rendimiento más débil.</translation>
+        <translation>Modo de aceleración para Intel</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
@@ -138,11 +130,23 @@ Confirme si el puerto de salida del monitor está conectado correctamente si no 
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation>Inestabilidad en algunas tarjetas gráficas con rendimiento pobre</translation>
+        <translation>Inestable en algunas tarjetas gráficas con rendimiento limitado.</translation>
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Utilizar la solución Bumblebee</translation>
+    </message>
+    <message>
+        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
+        <translation>Para necesidades especiales. Determine automáticamente el modo de aceleración sin configuración externa.</translation>
+    </message>
+    <message>
+        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
+        <translation>Utiliza glamour como la forma de aceleración predeterminada con baja compatibilidad en tarjetas gráficas antiguas.</translation>
+    </message>
+    <message>
+        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
+        <translation>Una forma de aceleración más antigua y madura con la mejor compatibilidad y un rendimiento más débil.</translation>
     </message>
 </context>
 <context>

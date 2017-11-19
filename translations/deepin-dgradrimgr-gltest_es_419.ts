@@ -14,12 +14,12 @@
     <message>
         <location filename="../gltest/main.cpp" line="106"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation>Por favor asegúrese que  el controlador  funciona correctamente sin  una imagen borrosa o sin parpadeos de la imagen</translation>
+        <translation>Asegúrese que el controlador funcione, sin desenfoques ni rasgados en la pantalla</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="161"/>
         <source>Syncing data to disk, 5-10 minutes needed, then auto reboot the system</source>
-        <translation type="unfinished"/>
+        <translation>Sincronizando datos en el disco, se requieren 5-10 minutos, luego el sistema reiniciara automáticamente</translation>
     </message>
 </context>
 </TS>

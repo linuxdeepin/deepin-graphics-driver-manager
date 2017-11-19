@@ -4,7 +4,7 @@
     <message>
         <location filename="../notify/main.cpp" line="21"/>
         <source>Confirm</source>
-        <translation>Подтвердить</translation>
+        <translation>Ок</translation>
     </message>
     <message>
         <location filename="../notify/main.cpp" line="28"/>

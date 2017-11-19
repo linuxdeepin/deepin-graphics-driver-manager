@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
@@ -7,158 +7,155 @@
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Riavvia</translation>
+        <translation>Uruchom ponownie</translation>
     </message>
     <message>
         <source>The current hardware combination not supported, please wait for future version</source>
-        <translation>La configurazione hardware attuale non è supportata, nell&apos;attesa della prossima release ricordati di aprire un Deepin User Feedback</translation>
+        <translation>Obecna kombinacja sprzętowa nie jest obsługiwana, prosimy czekać na następne wersje systemu</translation>
     </message>
     <message>
         <source>Switching</source>
-        <translation>Modifica in corso</translation>
+        <translation>Przełączanie</translation>
     </message>
     <message>
         <source>Download failed</source>
-        <translation>Download fallito</translation>
+        <translation>Błąd pobierania</translation>
     </message>
     <message>
         <source>Sorry, switch failed</source>
-        <translation>Ops, attivazione fallita</translation>
+        <translation>Przepraszamy, nie udało się przełączyć</translation>
     </message>
     <message>
         <source>Download Succeeded</source>
-        <translation>Download completato</translation>
+        <translation>Pomyślne pobranie</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
-        <translation>Riavvia il sistema per proseguire l&apos;installazione</translation>
+        <translation>Prosimy zrestartować, aby przejść do postępów instalacji</translation>
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation>Attivazione di %1, attendere prego......</translation>
+        <translation>Przełączanie na %1, prosimy czekać...</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation>Per cortesia riavvia per avviare il processo di attivazione dei nuovi driver
-
-Verifica che la porta di collegamento del monitor sia collegata correttamente nel caso non vi sia segnale, non far caso ad eventuali errori nelle schermate di boot</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Switch</source>
-        <translation>Cambia</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Help</source>
-        <translation>Aiuto</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation>Utilizza i driver AMD</translation>
+        <translation>Użyj sterownika kart AMD</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
-        <translation>Driver di default NVIDIA</translation>
+        <translation>Domyślny sterownik NVIDIA</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation>La scheda video NVIDIA non è attualmente riconosciuta, sarà quindi oscurata</translation>
+        <translation>W obecnym środowisku nie został wykryty sterownik kart NVIDIA, dlatego jest wyszarzony</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation>Driver Open Source NVIDIA</translation>
+        <translation>Otwartoźródłowy sterownik NVIDIA</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation>Driver proprietari NVIDIA</translation>
+        <translation>Sterownik NVIDIA o zamkniętych źródłach</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation>Potrebbero sorgere schermate nere, il supporto non è garantito</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation>Driver di default Intel</translation>
+        <translation>Domyślny sterownik Intela</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation>Modalità di compatibilità Intel</translation>
+        <translation>Tryb zgodności Intela</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation>Velocizza la scheda video con migliori performance, ma è possibile che si verifichi un&apos;instabilità nella splash screen, occorre testare la funzionalità.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation>Modalità con accelerazione Intel</translation>
+        <translation>Tryb akceleracji Intela</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
-        <translation>Bumblebee Solution</translation>
+        <translation>Rozwiązanie Bumblebee</translation>
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation>Utilizza i driver di default NVIDIA</translation>
+        <translation>Użyj domyślnego sterownika NVIDIA</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation>Utilizza i driver open source NVIDIA</translation>
+        <translation>Użyj otwartoźródłowego sterownika NVIDIA</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation>Utilizza i driver proprietari NVIDIA</translation>
+        <translation>Użyj sterownika NVIDIA o zamkniętych źródłach</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation>Utilizza i driver di default Intel</translation>
+        <translation>Użyj domyślnego sterownika Intela</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation>Utilizza la modalità Intel Compatible</translation>
+        <translation>Użyj trybu zgodności Intela</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation>Utilizza la modalità Intel Accelerated</translation>
+        <translation>Użyj trybu akceleracji Intela</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
-        <translation>Risparmio energetico per garantire buona autonomia</translation>
+        <translation>Oszczędność energii celem polepszenia wydajności ładowania</translation>
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation>Instabile in alcuni modelli di schede video con performance basse.</translation>
+        <translation>Niestabilne przy niektórych kartach graficznych i słabsza wydajność.</translation>
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
-        <translation>Utilizza Bumblebee Solution</translation>
+        <translation>Użyj rozwiązania Bumblebee</translation>
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation>Per esigenze particolari. Determina autonomamente la modalità di accelerazione grafica senza utilizzare una configurazione esterna.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation>Utilizza Glamor come modalità di accelerazione video predefinita con la schede grafiche obsolete oppure non pienamente compatibili.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation>Una modalità di accelerazione grafica più matura e migliore compatibilità ma anche possibili prestazioni inferiori.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Deepin Graphics Driver Manager</translation>
+        <translation>Zarządzanie sterownikami graficznymi Deepin</translation>
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin Graphics Driver Manager è un gestore driver semplice e facile da utilizzare. Include il rilevamento dell&apos;hardware, l&apos;installazione dei driver grafici, il supporto alle soluzioni dual graphics, il ripristino automatico dei driver originari ed altro ancora.
-Localizzazione italiana a cura di Massimo A. Carofano.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>
