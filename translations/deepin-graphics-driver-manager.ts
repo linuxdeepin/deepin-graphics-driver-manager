@@ -4,10 +4,6 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Toggle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
@@ -47,6 +43,14 @@
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     m_resolutions(ResolutionsBuilder(m_devInfo).build())
 {
     m_toggleButton = new QPushButton;
-    m_toggleButton->setText(tr("Toggle"));
+    m_toggleButton->setText(tr("Switch"));
     m_toggleButton->setFixedHeight(38);
 
     m_topTips = new QLabel;
