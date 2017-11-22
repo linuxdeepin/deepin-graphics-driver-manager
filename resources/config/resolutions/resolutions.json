@@ -76,7 +76,7 @@
                 "id": 200,
                 "title": "Use Intel compatible mode",
                 "name": "Intel Compatible Mode",
-                "description": "Speed up the graphics card with better performance, but unstable with screen splash after tested.",
+                "description": "A more ancient and mature acceleration mode with the best compatibility and weaker performance.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_sna.sh"
             },
@@ -84,7 +84,7 @@
                 "id": 300,
                 "title": "Use Intel acceleration mode",
                 "name": "Intel Acceleration Mode",
-                "description": "A more ancient and mature acceleration mode with the best compatibility and weaker performance.",
+                "description": "Speed up the graphics card with better performance, but unstable with screen splash after tested.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_uxa.sh"
             }
