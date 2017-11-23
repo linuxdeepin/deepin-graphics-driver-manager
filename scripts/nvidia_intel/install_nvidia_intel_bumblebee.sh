@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# dpkg -i 
-# overlayroot-disable
-
 if [ "$(id -u)" -ne "0" ];then
 	echo "Need root privileges."
 	exit 1
@@ -32,6 +29,7 @@ if [ $1 == "post" ];then
 	overlayroot-chroot rm /etc/systemd/system/bumblebeed.service
 	overlayroot-chroot rm /etc/X11/xorg.conf.d/20-intel.conf
 	overlayroot-chroot rm /etc/X11/xorg.conf.d/20-nouveau.conf
+	overlayroot-chroot apt-get purge xserver-xorg-video-nouveau -y
 	overlayroot-chroot apt-get install xserver-xorg-core --reinstall -y --allow-downgrades
 	overlayroot-chroot apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
 	sync
@@ -52,15 +50,12 @@ else
 		rmmod -f nvidia-modeset 
 		rmmod -f nvidia
 	fi
-#	apt install nvidia-driver -y --allow-downgrades 
 	apt install bumblebee-nvidia nvidia-driver -y --allow-downgrades 
 	apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
 	rm /etc/X11/xorg.conf.d/20-intel.conf
+	rm /etc/X11/xorg.conf.d/20-nouveau.conf
 	echo "Loading kernel modules......"
 	modprobe nvidia-drm
 	modprobe nvidia-current-drm
-	#echo "Now start desktop......"
-	#systemctl restart lightdm
 fi
 
-#sudo overlayroot-chroot apt-get install nvidia-driver -y --allow-downgrades

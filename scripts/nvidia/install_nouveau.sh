@@ -32,6 +32,10 @@ if [ $1 == "post" ];then
 	
 	overlayroot-chroot rm -rf /etc/X11/xorg.conf
 	overlayroot-chroot find /usr/lib/ -name libGLESv1_CM.so* | xargs overlayroot-chroot rm
+	overlayroot-chroot rm -rf /etc/X11/xorg.conf
+	overlayroot-chroot rm -rf /etc/modprobe.d/bumblebee.conf
+	overlayroot-chroot rm -rf /etc/bumblebee/bumblebee.conf
+	overlayroot-chroot rm -rf /etc/X11/xorg.conf.d/20-nvidia.conf
 	overlayroot-chroot apt install xserver-xorg-core --reinstall -y --allow-downgrades
 	overlayroot-chroot apt install libgl1-mesa-glx --reinstall -y --allow-downgrades
 	overlayroot-chroot apt install xserver-xorg-video-nouveau --reinstall -y --allow-downgrades

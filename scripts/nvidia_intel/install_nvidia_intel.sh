@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# dpkg -i 
-# overlayroot-disable
-
 if [ "$(id -u)" -ne "0" ];then
 	echo "Need root privileges."
 	exit 1
@@ -19,11 +16,6 @@ if [ $1 == "post" ];then
 	if [ -x /usr/bin/nvidia-installer ];then
 		overlayroot-chroot nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
 	fi
-#	rmmod -f nvidia-drm 
-#	rmmod -f nvidia-modeset 
-#	rmmod -f nvidia
-#	modprobe nouveau
-	sync
 
 	find /media/root-rw/overlay/ -size 0 | xargs rm -rf
 	mount -o remount,rw $POSTOS /media/root-ro
@@ -37,6 +29,7 @@ if [ $1 == "post" ];then
 	overlayroot-chroot rm /usr/lib/x86_64-linux-gnu/libGLESv2.so.2.0.0
 	overlayroot-chroot rm /etc/X11/xorg.conf.d/20-intel.conf
 	overlayroot-chroot rm /etc/X11/xorg.conf.d/20-nouveau.conf
+	overlayroot-chroot apt-get purge xserver-xorg-video-nouveau  -y
 	overlayroot-chroot apt-get install xserver-xorg-core --reinstall -y --allow-downgrades
 	overlayroot-chroot apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
 	sync
@@ -55,7 +48,9 @@ else
 	modprobe nouveau
 	apt install nvidia-driver -y --allow-downgrades 
 	apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
+	apt-get purge xserver-xorg-video-nouveau  -y
 	rm /etc/X11/xorg.conf.d/20-intel.conf
+	rm /etc/X11/xorg.conf.d/20-nouveau.conf
 	echo "Loading kernel modules......"
 	if [ -n "$nouveau_mod" ]; then
 		echo "Had already used nouveau,remove it instead by nvidia "
@@ -64,7 +59,5 @@ else
 	rmmod -f nouveau
 	modprobe nvidia-drm
 	modprobe nvidia-current-drm
-	#echo "Now start desktop......"
-	#systemctl restart lightdm
 fi
 
