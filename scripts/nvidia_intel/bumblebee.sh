@@ -7,6 +7,6 @@ then
     echo "cannot support bumblebee"	
     exit 1
 else
-    echo "Support bumblebee,haha"	
+    echo "Support bumblebee"	
     exit 0
 fi
