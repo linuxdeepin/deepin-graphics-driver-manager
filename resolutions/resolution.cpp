@@ -6,7 +6,7 @@
 
 static const char *translates[] = {
     QT_TRANSLATE_NOOP("Resolution", "Use AMD card driver"),
-    QT_TRANSLATE_NOOP("Resolution", "For special needs. Auto determine the acceleration mode without external configuration."),
+    QT_TRANSLATE_NOOP("Resolution", "For special needs. Auto determine the acceleration way without external configuration."),
 
     QT_TRANSLATE_NOOP("Resolution", "NVIDIA Default Driver"),
     QT_TRANSLATE_NOOP("Resolution", "Use NVIDIA default driver"),
@@ -20,13 +20,13 @@ static const char *translates[] = {
 
     QT_TRANSLATE_NOOP("Resolution", "Intel Default Driver"),
     QT_TRANSLATE_NOOP("Resolution", "Use Intel default driver"),
-    QT_TRANSLATE_NOOP("Resolution", "Uses glamor as the default acceleration mode with low compatibility on old graphics cards."),
+    QT_TRANSLATE_NOOP("Resolution", "Uses glamor as the default acceleration way with low compatibility on old graphics cards."),
     QT_TRANSLATE_NOOP("Resolution", "Intel Compatible Mode"),
     QT_TRANSLATE_NOOP("Resolution", "Use Intel compatible mode"),
     QT_TRANSLATE_NOOP("Resolution", "Speed up the graphics card with better performance, but unstable with screen splash after tested."),
     QT_TRANSLATE_NOOP("Resolution", "Intel Acceleration Mode"),
     QT_TRANSLATE_NOOP("Resolution", "Use Intel acceleration mode"),
-    QT_TRANSLATE_NOOP("Resolution", "A more ancient and mature acceleration mode with the best compatibility and weaker performance."),
+    QT_TRANSLATE_NOOP("Resolution", "A more ancient and mature acceleration way with the best compatibility and weaker performance."),
 
     QT_TRANSLATE_NOOP("Resolution", "Use Bumblebee Solution"),
     QT_TRANSLATE_NOOP("Resolution", "Bumblebee Solution"),

@@ -15,7 +15,7 @@
                 "id": 100,
                 "title": "Use AMD card driver",
                 "name": "AMD card driver",
-                "description": "For special needs. Auto determine the acceleration mode without external configuration.",
+                "description": "For special needs. Auto determine the acceleration way without external configuration.",
                 "prepare": "empty.sh",
                 "install": "empty.sh"
             }
@@ -68,7 +68,7 @@
                 "id": 100,
                 "title": "Use Intel default driver",
                 "name": "Intel Default Driver",
-                "description": "Uses glamor as the default acceleration mode with low compatibility on old graphics cards.",
+                "description": "Uses glamor as the default acceleration way with low compatibility on old graphics cards.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_glamor.sh"
             },
@@ -76,7 +76,7 @@
                 "id": 200,
                 "title": "Use Intel compatible mode",
                 "name": "Intel Compatible Mode",
-                "description": "A more ancient and mature acceleration mode with the best compatibility and weaker performance.",
+                "description": "A more ancient and mature acceleration way with the best compatibility and weaker performance.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_sna.sh"
             },

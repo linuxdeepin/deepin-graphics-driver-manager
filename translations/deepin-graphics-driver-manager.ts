@@ -61,10 +61,6 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>For special needs. Auto determine the acceleration mode without external configuration.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>NVIDIA Default Driver</source>
         <translation type="unfinished"></translation>
     </message>
@@ -89,10 +85,6 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Uses glamor as the default acceleration mode with low compatibility on old graphics cards.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Intel Compatible Mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -102,10 +94,6 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A more ancient and mature acceleration mode with the best compatibility and weaker performance.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -146,6 +134,18 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
