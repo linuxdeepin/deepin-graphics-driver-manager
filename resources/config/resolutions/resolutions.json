@@ -103,7 +103,7 @@
                 "title": "Use Intel default driver",
                 "name": "Intel Default Driver",
                 "description": "Uses glamor as the default acceleration mode with low compatibility on old graphics cards.",
-                "prepare": "empty.sh",
+                "prepare": "nvidia_intel/prepare_nouveau_intel.sh",
                 "install": "nvidia_intel/install_glamor.sh"
             },
             {
