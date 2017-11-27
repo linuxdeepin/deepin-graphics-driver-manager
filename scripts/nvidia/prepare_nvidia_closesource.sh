@@ -2,8 +2,8 @@
 
 COMMANDS=(
     "apt-get update"
-    "apt-get install -d nvidia-driver -y --allow-downgrades"
-#    "apt install -o Dir::Cache::Archives=/var/cache/nvidia/ -d nvidia-driver"
+    "apt-get install -d nvidia-driver --reinstall -y --allow-downgrades"
+    "apt-get install -o Dir::Cache::Archives=/var/cache/apt/archives -d nvidia-driver -y --allow-downgrades"
     "overlayroot-enable"
 #    "apt-get install nvidia-driver -y --allow-downgrades"
 #    "apt install -d deepin-deb-installer"
