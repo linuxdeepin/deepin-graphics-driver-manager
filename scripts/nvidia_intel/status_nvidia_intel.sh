@@ -17,17 +17,14 @@ if [ x"$BATTERY" == x"true" ]; then
 			echo "Default Mode"
 			exit 0
 		fi	
-	elif [ -n "$nvidia_mod" ]; then
-		if [ -f /etc/bumblebee/bumblebee.conf ]; then
+	else	
+		if [ -f /etc/modprobe.d/bumblebee.conf ]; then
 			echo "Bumblebee Mode"       
 			exit 3
 		else
 			echo "Can not find bumblebee conf"
-			echo 2	
+			echo 0	
 		fi
-	else
-		echo "Can not find any nv modules"
-		exit 0
 	fi	
 
 else
