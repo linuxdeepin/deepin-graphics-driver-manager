@@ -196,6 +196,10 @@ void MainWindow::onResolutionSelected()
     const bool changed = m_selectedIndex != m_usedIndex;
     m_toggleButton->setVisible(changed);
     m_okButton->setVisible(!changed);
+    if (changed)
+        m_toggleButton->setFocus();
+    else
+        m_okButton->setFocus();
 }
 
 void MainWindow::onToggleBtnClicked()
