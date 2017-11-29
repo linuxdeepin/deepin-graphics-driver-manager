@@ -15,9 +15,13 @@ QSettings *SETTINGS = nullptr;
 
 void show_dialog(const QString &message, const QString &iconName)
 {
+    const auto ratio = qApp->devicePixelRatio();
+    QPixmap iconPix = QIcon::fromTheme(iconName).pixmap(QSize(64, 64) * ratio);
+    iconPix.setDevicePixelRatio(ratio);
+
     DDialog d;
     d.setMessage(message);
-    d.setIcon(QIcon::fromTheme(iconName).pixmap(QSize(64, 64)));
+    d.setIcon(iconPix);
     d.addButton(qApp->translate("main", "Confirm"));
     d.exec();
 }
@@ -63,9 +67,11 @@ void init()
     if (!QFile(CONFIG).exists())
         return qApp->quit();
 
+#ifndef QT_DEBUG
     const bool notified = SETTINGS->value("notified", true).toBool();
     if (notified)
         return qApp->quit();
+#endif
 
     const bool succeed = SETTINGS->value("success").toBool();
     if (succeed)
