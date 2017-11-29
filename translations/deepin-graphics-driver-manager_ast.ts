@@ -47,10 +47,6 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <source>Switch</source>
         <translation type="unfinished"/>
     </message>
-    <message>
-        <source>Help</source>
-        <translation type="unfinished"/>
-    </message>
 </context>
 <context>
     <name>Resolution</name>
@@ -144,6 +140,13 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>Version: </source>
         <translation type="unfinished"/>
     </message>
 </context>

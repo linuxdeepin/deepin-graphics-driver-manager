@@ -49,10 +49,6 @@ Sila sahkan sama ada port output monitor disambung dengan kemas jika tiada isyar
         <source>Switch</source>
         <translation>Tukar</translation>
     </message>
-    <message>
-        <source>Help</source>
-        <translation>Bantuan</translation>
-    </message>
 </context>
 <context>
     <name>Resolution</name>
@@ -147,6 +143,13 @@ Sila sahkan sama ada port output monitor disambung dengan kemas jika tiada isyar
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation>Cara pemecutan lama yang lebih matang dengan keserasian terbaik tetapi prestasi lebih rendah.</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>Version: </source>
+        <translation>Versi: </translation>
     </message>
 </context>
 <context>

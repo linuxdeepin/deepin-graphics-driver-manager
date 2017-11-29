@@ -49,10 +49,6 @@ Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo 
         <source>Switch</source>
         <translation>Preklopi</translation>
     </message>
-    <message>
-        <source>Help</source>
-        <translation>Pomoč</translation>
-    </message>
 </context>
 <context>
     <name>Resolution</name>
@@ -147,6 +143,13 @@ Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo 
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation>Starejši in razvitejši način pospeševanja z najboljšo združljivostjo in manjšo zmogljivostjo.</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>Version: </source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

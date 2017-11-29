@@ -48,10 +48,6 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <source>Switch</source>
         <translation>Переключить</translation>
     </message>
-    <message>
-        <source>Help</source>
-        <translation>Помощь</translation>
-    </message>
 </context>
 <context>
     <name>Resolution</name>
@@ -146,6 +142,13 @@ Please confirm whether the monitor output port is connected correctly if no sign
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation>Более старый и проверенный режим ускорения с лучшей совместимостью и более слабой производительностью.</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>Version: </source>
+        <translation>Версия:</translation>
     </message>
 </context>
 <context>

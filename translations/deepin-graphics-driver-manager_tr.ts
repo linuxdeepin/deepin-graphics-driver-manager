@@ -49,10 +49,6 @@ Hiçbir sinyal yok lütfen monitör çıkış portunun doğru bağlanıp bağlan
         <source>Switch</source>
         <translation>Değiştir</translation>
     </message>
-    <message>
-        <source>Help</source>
-        <translation>Yardım</translation>
-    </message>
 </context>
 <context>
     <name>Resolution</name>
@@ -147,6 +143,13 @@ Hiçbir sinyal yok lütfen monitör çıkış portunun doğru bağlanıp bağlan
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation>En iyi uyumluluk ve zayıf performans ile daha eski ve olgun hızlanma yolu.</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>Version: </source>
+        <translation>Sürüm: </translation>
     </message>
 </context>
 <context>

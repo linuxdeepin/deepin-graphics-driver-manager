@@ -49,10 +49,6 @@ Confirme si el puerto de salida del monitor está conectado correctamente si no 
         <source>Switch</source>
         <translation>Cambiar</translation>
     </message>
-    <message>
-        <source>Help</source>
-        <translation>Ayuda</translation>
-    </message>
 </context>
 <context>
     <name>Resolution</name>
@@ -147,6 +143,13 @@ Confirme si el puerto de salida del monitor está conectado correctamente si no 
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation>Una forma de aceleración más antigua y madura con la mejor compatibilidad y un rendimiento más débil.</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>Version: </source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

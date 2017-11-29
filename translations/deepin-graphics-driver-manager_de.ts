@@ -49,10 +49,6 @@ Bitte überprüfen Sie, ob der Monitorausgang korrekt angeschlossen ist, wenn ke
         <source>Switch</source>
         <translation>Wechseln</translation>
     </message>
-    <message>
-        <source>Help</source>
-        <translation>Hilfe</translation>
-    </message>
 </context>
 <context>
     <name>Resolution</name>
@@ -147,6 +143,13 @@ Bitte überprüfen Sie, ob der Monitorausgang korrekt angeschlossen ist, wenn ke
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation>Eine altbewährte, ausgereifte Beschleunigung mit der besten Kompatibilität, aber schwächerer Leistung.</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>Version: </source>
+        <translation>Version: </translation>
     </message>
 </context>
 <context>

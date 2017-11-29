@@ -49,10 +49,6 @@ Assurez-vous que le port de sortie du moniteur est bien connecté en cas d&apos;
         <source>Switch</source>
         <translation>Basculer</translation>
     </message>
-    <message>
-        <source>Help</source>
-        <translation>Aide</translation>
-    </message>
 </context>
 <context>
     <name>Resolution</name>
@@ -147,6 +143,13 @@ Assurez-vous que le port de sortie du moniteur est bien connecté en cas d&apos;
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation>Un mode d&apos;accélération plus ancien et mature qui offre la meilleure compatibilité mais des performances réduites.</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>Version: </source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

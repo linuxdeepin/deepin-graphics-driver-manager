@@ -49,10 +49,6 @@ Please confirm whether the monitor output port is connected correctly if no sign
         <source>Switch</source>
         <translation>切换</translation>
     </message>
-    <message>
-        <source>Help</source>
-        <translation>帮助</translation>
-    </message>
 </context>
 <context>
     <name>Resolution</name>
@@ -147,6 +143,13 @@ Please confirm whether the monitor output port is connected correctly if no sign
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation>比较古老的加速方式，兼容性最好，能满足所有Intel显卡实现加速，但性能相对较弱。</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>Version: </source>
+        <translation>版本：</translation>
     </message>
 </context>
 <context>

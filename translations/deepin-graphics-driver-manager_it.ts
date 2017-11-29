@@ -49,10 +49,6 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
         <source>Switch</source>
         <translation>Cambia</translation>
     </message>
-    <message>
-        <source>Help</source>
-        <translation>Aiuto</translation>
-    </message>
 </context>
 <context>
     <name>Resolution</name>
@@ -147,6 +143,13 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
         <translation>Una modalità di accelerazione grafica più matura e migliore compatibilità ma anche possibili prestazioni inferiori.</translation>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <source>Version: </source>
+        <translation>Versione: </translation>
     </message>
 </context>
 <context>
