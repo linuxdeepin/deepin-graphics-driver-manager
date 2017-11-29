@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <QProcess>
 #include <QDir>
+#include <QLineEdit>
 
 inline const QString scriptAbsolutePath(const QString &scriptName)
 {
@@ -58,6 +59,7 @@ protected:
 
 private slots:
     void checkCondition();
+    void checkVersion();
 
 private:
     bool m_checked;
@@ -65,6 +67,7 @@ private:
     Resolution m_resolution;
     QLabel *m_checkedBtn;
     QLabel *m_title;
+    QLineEdit *m_version;
     QLabel *m_description;
 };
 

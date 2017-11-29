@@ -5,6 +5,7 @@
 #include <QVBoxLayout>
 #include <QMouseEvent>
 #include <QTimer>
+#include <QLineEdit>
 
 #include <DSvgRenderer>
 
@@ -25,19 +26,34 @@ ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
 
     m_title = new QLabel;
     m_title->setText(r.title());
-    m_title->setStyleSheet("QLabel {"
-                           "}");
+    m_title->setAlignment(Qt::AlignLeft | Qt::AlignBottom);
+    m_title->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+    m_version = new QLineEdit;
+    m_version->setVisible(false);
+    m_version->setReadOnly(true);
+    m_version->setAttribute(Qt::WA_TransparentForMouseEvents);
+    m_version->setEnabled(false);
+    m_version->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+    m_version->setStyleSheet("QLineEdit {"
+                             "color: #888;"
+                             "border: none;"
+                             "padding: 0;"
+                             "}");
+
     m_description = new QLabel;
     m_description->setText(r.description());
     m_description->setWordWrap(true);
     m_description->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_description->setAlignment(Qt::AlignTop | Qt::AlignLeft);
     m_description->setStyleSheet("QLabel {"
-                                 "font-size: 12px;"
+                                 "font-size: 9pt;"
                                  "color: #888;"
                                  "}");
 
     QVBoxLayout *infoLayout = new QVBoxLayout;
     infoLayout->addWidget(m_title);
+    infoLayout->addWidget(m_version);
     infoLayout->addWidget(m_description);
     infoLayout->setSpacing(0);
     infoLayout->setContentsMargins(0, 0, 0, 0);
@@ -45,18 +61,19 @@ ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
     QHBoxLayout *centralLayout = new QHBoxLayout;
     centralLayout->addLayout(infoLayout);
     centralLayout->addWidget(m_checkedBtn);
-    centralLayout->setAlignment(m_checkedBtn, Qt::AlignCenter);
+    centralLayout->setAlignment(m_checkedBtn, Qt::AlignVCenter | Qt::AlignRight);
     centralLayout->setSpacing(0);
     centralLayout->setContentsMargins(0, 0, 0, 0);
 
     QTimer::singleShot(1, this, &ResolutionWidget::checkCondition);
+    QTimer::singleShot(1, this, &ResolutionWidget::checkVersion);
 
     setLayout(centralLayout);
-    setFixedHeight(70);
+    setFixedHeight(80);
     setChecked(false);
     setObjectName("ResolutionWidget");
     setStyleSheet("QFrame#ResolutionWidget {"
-                //   "border: 1px solid red;"
+//                   "border: 1px solid red;"
                   "}");
 }
 
@@ -83,7 +100,26 @@ void ResolutionWidget::checkCondition()
     QPROCESS_DUMP(proc);
     QPROCESS_DELETE_SELF(proc);
 
-    connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), [=] (const int exitCode) { setVisible(!exitCode); });
+    connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, [=] (const int exitCode) { setVisible(!exitCode); });
+
+    EXECUTE_SCRIPT(proc, script);
+}
+
+void ResolutionWidget::checkVersion()
+{
+    const QString &script = m_resolution.versionScript();
+    if (script.isEmpty())
+        return;
+
+    QProcess *proc = new QProcess;
+    QPROCESS_DELETE_SELF(proc);
+
+    connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, [=] (const int exitCode) {
+        if (exitCode)
+            return;
+        m_version->setText(tr("Version: ") + proc->readAllStandardOutput());
+        m_version->setVisible(true);
+    });
 
     EXECUTE_SCRIPT(proc, script);
 }

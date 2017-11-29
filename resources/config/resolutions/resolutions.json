@@ -42,6 +42,7 @@
                 "title": "Use NVIDIA open source driver",
                 "name": "NVIDIA Open Source Driver",
                 "description": "Unstable in some graphics cards with weaker performance.",
+                "version": "nvidia/version_nouveau_driver.sh",
                 "prepare": "nvidia/prepare_nouveau_opensource.sh",
                 "install": "nvidia/install_nouveau.sh"
             },
@@ -51,6 +52,7 @@
                 "title": "Use NVIDIA closed source driver",
                 "name": "NVIDIA Closed Source Driver",
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
+                "version": "nvidia/version_nvidia_driver.sh",
                 "prepare": "nvidia/prepare_nvidia_closesource.sh",
                 "install": "nvidia/install_nvidia_closesource.sh"
             }
@@ -111,6 +113,7 @@
                 "title": "Use NVIDIA open source driver",
                 "name": "NVIDIA Open Source Driver",
                 "description": "Unstable in some graphics cards with weaker performance.",
+                "version": "nvidia/version_nouveau_driver.sh",
                 "prepare": "nvidia_intel/prepare_nouveau_intel.sh",
                 "install": "nvidia_intel/install_nouveau_intel.sh"
             },
@@ -119,6 +122,7 @@
                 "keep_gltest": true,
                 "title": "Use NVIDIA closed source driver",
                 "name": "NVIDIA Closed Source Driver",
+                "version": "nvidia/version_nvidia_driver.sh",
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
                 "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
                 "condition":"nvidia_intel/no_bumblebee.sh",
@@ -131,7 +135,8 @@
                 "name": "Bumblebee Solution",
                 "description": "Power saving to improve the ability to hold a charge",
                 "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
-                "condition":"nvidia_intel/bumblebee.sh",
+                "condition": "nvidia_intel/bumblebee.sh",
+                "version": "nvidia_intel/version_bumblebee.sh",
                 "install": "nvidia_intel/install_nvidia_intel_bumblebee.sh"
             }
         ]

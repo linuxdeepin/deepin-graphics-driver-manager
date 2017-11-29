@@ -18,6 +18,7 @@ public:
     inline const QString prepareScript() const { return m_prepareScript; }
     inline const QString installScript() const { return m_installScript; }
     inline const QString conditionScript() const { return m_conditionScript; }
+    inline const QString versionScript() const { return m_versionScript; }
 
     inline bool operator==(const Resolution &rhs) const { return m_resId == rhs.m_resId; }
 
@@ -30,6 +31,7 @@ private:
     QString m_prepareScript;
     QString m_installScript;
     QString m_conditionScript;
+    QString m_versionScript;
 };
 
 #endif

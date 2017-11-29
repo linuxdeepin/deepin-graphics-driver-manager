@@ -13,8 +13,8 @@ int main(int argc, char *argv[])
     DApplication app(argc, argv);
     if (!app.setSingleInstance("dgradvrmgr"))
         return -1;
-    app.loadTranslator();
-//    app.loadTranslator(QList<QLocale>() << QLocale("zh_CN"));
+//    app.loadTranslator();
+    app.loadTranslator(QList<QLocale>() << QLocale("zh_CN"));
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
     app.setOrganizationName("deepin");
     app.setApplicationName("deepin-graphics-driver-manager");
