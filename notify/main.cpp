@@ -13,17 +13,16 @@ DCORE_USE_NAMESPACE
 
 QSettings *SETTINGS = nullptr;
 
-void show_dialog(const QString &message, const QString &iconName)
+DDialog *dialog(const QString &message, const QString &iconName)
 {
     const auto ratio = qApp->devicePixelRatio();
     QPixmap iconPix = QIcon::fromTheme(iconName).pixmap(QSize(64, 64) * ratio);
     iconPix.setDevicePixelRatio(ratio);
 
-    DDialog d;
-    d.setMessage(message);
-    d.setIcon(iconPix);
-    d.addButton(qApp->translate("main", "Confirm"));
-    d.exec();
+    DDialog *d = new DDialog;
+    d->setMessage(message);
+    d->setIcon(iconPix);
+    return d;
 }
 
 void show_success_dialog()
@@ -31,7 +30,9 @@ void show_success_dialog()
     const QString &new_driver = SETTINGS->value("new_driver").toString();
     const QString &message = qApp->translate("main", "Congratulations, you have switched to %1.");
 
-    show_dialog(message.arg(new_driver), "deepin-graphics-driver-manager");
+    DDialog *d = dialog(message.arg(new_driver), "deepin-graphics-driver-manager");
+    d->addButton(qApp->translate("main", "Confirm"));
+    d->exec();
 }
 
 void show_fail_dialog()
@@ -40,7 +41,12 @@ void show_fail_dialog()
     const QString &new_driver = SETTINGS->value("new_driver").toString();
     const QString &message = qApp->translate("main", "Auto restore to %2 after failed to switch to %1");
 
-    show_dialog(message.arg(new_driver).arg(old_driver), "dialog-warning");
+    DDialog *d = dialog(message.arg(new_driver).arg(old_driver), "dialog-warning");
+    d->addButton(qApp->translate("main", "Feedback"));
+
+    QObject::connect(d, &DDialog::buttonClicked, [=] { QProcess::startDetached("deepin-feedback"); });
+
+    d->exec();
 }
 
 void mark()
