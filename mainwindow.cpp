@@ -101,14 +101,9 @@ MainWindow::MainWindow(QWidget *parent) :
     centralLayout->setSpacing(0);
     centralLayout->setContentsMargins(40, 0, 40, 30);
 
-    QAction *helpAct = new QAction(tr("Help"), this);
-    QMenu *titleMenu = new QMenu;
-    titleMenu->addAction(helpAct);
-
     DTitlebar *tbar = titlebar();
     tbar->setTitle(QString());
     tbar->setIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
-    tbar->setMenu(titleMenu);
 
     setCentralWidget(new QWidget);
     centralWidget()->setLayout(centralLayout);
@@ -116,7 +111,6 @@ MainWindow::MainWindow(QWidget *parent) :
     setFixedSize(440, 600);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
-    connect(helpAct, &QAction::triggered, this, &MainWindow::showHelp);
     connect(m_toggleButton, &QPushButton::clicked, this, &MainWindow::onToggleBtnClicked);
     connect(m_rebootButton, &QPushButton::clicked, this, &MainWindow::onRebootBtnClicked);
     connect(m_okButton, &QPushButton::clicked, qApp, &QApplication::quit);
@@ -181,11 +175,6 @@ void MainWindow::loadResolutions()
 
     if (index >= 0 && index < rwList.size())
         emit rwList[index]->clicked();
-}
-
-void MainWindow::showHelp()
-{
-    qDebug() << "show Help";
 }
 
 void MainWindow::onResolutionSelected()

@@ -81,6 +81,10 @@ endforeach ()
 install(FILES resources/icons/deepin-graphics-driver-manager-64px.svg
         DESTINATION share/icons/hicolor/scalable/apps)
 
+# manual files
+install(DIRECTORY dmanual/
+        DESTINATION share/dman/deepin-graphics-driver-manager)
+
 # policy kit
 install(FILES com.deepin.dgradvrmgr.policy
         DESTINATION share/polkit-1/actions/)
