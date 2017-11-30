@@ -35,7 +35,7 @@ if [ $1 == "post" ];then
 	overlayroot-chroot rm -rf /etc/bumblebee/bumblebee.conf
 	overlayroot-chroot rm -rf /etc/X11/xorg.conf.d/20-nouveau.conf
 	overlayroot-chroot rm -rf /etc/X11/xorg.conf.d/20-nvidia.conf
-	grep -l "blacklist nouveau" /etc/modprobe.d/* | xargs overlayroot-chroot sed -i 's:blacklist\ nouveau:#blacklist\ nouveau:'
+	grep -l "^blacklist nouveau" /etc/modprobe.d/* | xargs overlayroot-chroot sed -i 's:blacklist\ nouveau:#blacklist\ nouveau:'
 	sync
 	sleep 3
 	echo "Sync driver into disk ...... done"
