@@ -41,11 +41,13 @@
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation type="unfinished"/>
+        <translation>Uruchom ponownie, aby wprowadzić postęp instalacji.
+
+Potwierdź, jeśli nie ma sygnału czy port wyjściowy monitora jest prawidłowo podłączony</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation type="unfinished"/>
+        <translation>Przełącz</translation>
     </message>
 </context>
 <context>
@@ -72,7 +74,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation type="unfinished"/>
+        <translation>Tylko adaptacyjnych częściach dystrybucji i kart graficznych może pojawić się czarny ekran</translation>
     </message>
     <message>
         <source>Intel Default Driver</source>
@@ -132,22 +134,22 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation type="unfinished"/>
+        <translation>Na specjalne potrzeby. Automatycznie określ sposób przyspieszenia bez konfiguracji zewnętrznej.</translation>
     </message>
     <message>
         <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Wykorzystuje przepych jako domyślny sposób przyspieszania z niską zgodnością starych kart graficznych.</translation>
     </message>
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Bardziej starożytny i dojrzały sposób akceleracji z najlepszą kompatybilnością i słabszą wydajnością.</translation>
     </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
     <message>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Wersja:</translation>
     </message>
 </context>
 <context>
@@ -158,7 +160,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Graphics Driver Manager to niewielkie i łatwe w użyciu narzędzie do zarządzania sterownikami graficznymi. Obejmuje wykrywanie sprzętu karty graficznej, instalację sterownika grafiki, przełączanie sterowników grafiki, automatyczne przywracanie sterowników grafiki i inne funkcje.</translation>
     </message>
 </context>
 </TS>

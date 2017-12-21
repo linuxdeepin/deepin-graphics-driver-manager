@@ -11,7 +11,7 @@
     </message>
     <message>
         <source>The current hardware combination not supported, please wait for future version</source>
-        <translation type="unfinished"/>
+        <translation>Nun se sofita la combinación actual d&apos;hardware, espera por una futura versión</translation>
     </message>
     <message>
         <source>Switching</source>
@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>Download failed</source>
-        <translation type="unfinished"/>
+        <translation>Falló la descarga</translation>
     </message>
     <message>
         <source>Sorry, switch failed</source>
@@ -52,11 +52,11 @@ Please confirm whether the monitor output port is connected correctly if no sign
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar controlador de tarxeta AMD</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>Controlador predetermináu de NVIDIA</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
@@ -147,7 +147,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     <name>ResolutionWidget</name>
     <message>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Versión:</translation>
     </message>
 </context>
 <context>

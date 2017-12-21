@@ -149,7 +149,7 @@ Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo 
     <name>ResolutionWidget</name>
     <message>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Različica:</translation>
     </message>
 </context>
 <context>

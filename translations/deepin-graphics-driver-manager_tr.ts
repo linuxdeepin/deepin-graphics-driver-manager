@@ -54,7 +54,7 @@ Hiçbir sinyal yok lütfen monitör çıkış portunun doğru bağlanıp bağlan
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation>AMD kart sürücüsü kullan</translation>
+        <translation>AMD sürücüsünü kullan</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>

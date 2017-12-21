@@ -19,7 +19,7 @@
     <message>
         <location filename="../notify/main.cpp" line="45"/>
         <source>Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Retour d&apos;information</translation>
     </message>
 </context>
 </TS>

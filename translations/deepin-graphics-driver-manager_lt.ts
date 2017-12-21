@@ -11,7 +11,7 @@
     </message>
     <message>
         <source>The current hardware combination not supported, please wait for future version</source>
-        <translation type="unfinished"/>
+        <translation>Esama aparatinės įrangos kombinacija nepalaikoma, palaukite būsimos versijos</translation>
     </message>
     <message>
         <source>Switching</source>
@@ -19,7 +19,7 @@
     </message>
     <message>
         <source>Download failed</source>
-        <translation type="unfinished"/>
+        <translation>Atsiuntimas nepavyko</translation>
     </message>
     <message>
         <source>Sorry, switch failed</source>
@@ -27,48 +27,50 @@
     </message>
     <message>
         <source>Download Succeeded</source>
-        <translation type="unfinished"/>
+        <translation>Atsiuntimas pavyko</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
-        <translation type="unfinished"/>
+        <translation>Norėdami įžengti į diegimo eigą, paleiskite kompiuterį iš naujo</translation>
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation type="unfinished"/>
+        <translation>Perjungiama į %1, prašome palaukti......</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation type="unfinished"/>
+        <translation>Norėdami įžengti į diegimo eigą, paleiskite kompiuterį iš naujo
+
+Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai prijungta</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation type="unfinished"/>
+        <translation>Perjungti</translation>
     </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti AMD plokštės tvarkyklę</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA numatytoji tvarkyklė</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA plokštės tvarkyklė esamoje aplinkoje nėra aptikta ir bus rodoma pilka spalva</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA atvirojo kodo tvarkyklė</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA uždarojo kodo tvarkyklė</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
@@ -76,11 +78,11 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>Intel numatytoji tvarkyklė</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel suderinama veiksena</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
@@ -88,51 +90,51 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel spartinimo veiksena</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Bumblebee sprendimas</translation>
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti NVIDIA numatytąją tvarkyklę</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti NVIDIA atvirojo kodo tvarkyklę</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti NVIDIA uždarojo kodo tvarkyklę</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti Intel numatytąją tvarkyklę</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti Intel suderinamą veikseną</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti Intel spartinimo veikseną</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
-        <translation type="unfinished"/>
+        <translation>Energijos taupymas, skirtas pagerinti galimybę saugoti įkrovą</translation>
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Nestabili kai kuriose silpnesnio našumo grafikos plokštėse.</translation>
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti Bumblebee sprendimą</translation>
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation type="unfinished"/>
+        <translation>Ypatingiems poreikiams. Automatiškai nustatyti spartinimo būdą be išorinės konfigūracijos.</translation>
     </message>
     <message>
         <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
@@ -140,14 +142,14 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Senesnis ir brandesnis spartinimo būdas su geriausiu suderinamumu ir silpnesniu našumu.</translation>
     </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
     <message>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Versija: </translation>
     </message>
 </context>
 <context>

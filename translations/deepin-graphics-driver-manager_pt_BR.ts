@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Switching</source>
-        <translation>Mudando</translation>
+        <translation>Alterando</translation>
     </message>
     <message>
         <source>Download failed</source>
@@ -23,7 +23,7 @@
     </message>
     <message>
         <source>Sorry, switch failed</source>
-        <translation>Desculpe, a mudança falhou</translation>
+        <translation>Desculpe, a alteração falhou</translation>
     </message>
     <message>
         <source>Download Succeeded</source>
@@ -35,7 +35,7 @@
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation>Mudando para %1, aguarde...</translation>
+        <translation>Alterando para %1, aguarde...</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
@@ -47,7 +47,7 @@ Confirme se a porta de saída do monitor está conectada corretamente.</translat
     </message>
     <message>
         <source>Switch</source>
-        <translation>Mudar</translation>
+        <translation>Alterar</translation>
     </message>
 </context>
 <context>

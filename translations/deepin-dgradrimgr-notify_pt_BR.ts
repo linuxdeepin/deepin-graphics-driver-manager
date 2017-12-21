@@ -9,12 +9,12 @@
     <message>
         <location filename="../notify/main.cpp" line="31"/>
         <source>Congratulations, you have switched to %1.</source>
-        <translation>Parabéns, você mudou para %1.</translation>
+        <translation>Parabéns, você alterou para %1.</translation>
     </message>
     <message>
         <location filename="../notify/main.cpp" line="42"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
-        <translation>Restaurar automaticamente para %2 depois de falhar ao mudar para %1</translation>
+        <translation>Restaurar automaticamente para %2 depois de falhar ao alterar para %1</translation>
     </message>
     <message>
         <location filename="../notify/main.cpp" line="45"/>

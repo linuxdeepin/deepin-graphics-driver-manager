@@ -9,7 +9,7 @@
     <message>
         <location filename="../notify/main.cpp" line="31"/>
         <source>Congratulations, you have switched to %1.</source>
-        <translation>Parabéns, mudou para %1.</translation>
+        <translation>Parabéns, alterou para %1.</translation>
     </message>
     <message>
         <location filename="../notify/main.cpp" line="42"/>
@@ -19,7 +19,7 @@
     <message>
         <location filename="../notify/main.cpp" line="45"/>
         <source>Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Feedback</translation>
     </message>
 </context>
 </TS>

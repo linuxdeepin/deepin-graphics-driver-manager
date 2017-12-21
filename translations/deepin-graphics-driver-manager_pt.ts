@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Switching</source>
-        <translation>A mudar</translation>
+        <translation>A alterar</translation>
     </message>
     <message>
         <source>Download failed</source>
@@ -23,19 +23,19 @@
     </message>
     <message>
         <source>Sorry, switch failed</source>
-        <translation>Desculpe, a mudança falhou</translation>
+        <translation>Desculpe, a alteração falhou</translation>
     </message>
     <message>
         <source>Download Succeeded</source>
-        <translation>Sucesso ao descarregar</translation>
+        <translation>Transferido com sucesso</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
-        <translation>Por favor reinicie para verificar o progresso de instalação</translation>
+        <translation>Por favor reinicie para entrar no processo de instalação</translation>
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation>A mudar para %1, por favor aguarde</translation>
+        <translation>A alterar para %1, por favor aguarde</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
@@ -47,30 +47,30 @@ Por favor confirme que os cabos do monitor estão correctamente ligados se não 
     </message>
     <message>
         <source>Switch</source>
-        <translation type="unfinished"/>
+        <translation>Alterar</translation>
     </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation>Usar o driver da placa AMD</translation>
+        <translation>Usar o controlador da placa AMD</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
-        <translation>Driver NVIDIA por omissão</translation>
+        <translation>Controlador NVIDIA predefinido</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation>A placa de video NVIDEA não foi detectada no ambiente actual, e estará inactiva</translation>
+        <translation>O controlador da placa de vídeo NVIDIA não foi detetado no ambiente atual, por isso estará inativa</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation>Driver NVIDIA de Código Aberto</translation>
+        <translation>Controlador NVIDIA de Código Aberto</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation>Driver NVIDIA de código proprietário</translation>
+        <translation>Controlador NVIDIA de Código Proprietário</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
@@ -78,7 +78,7 @@ Por favor confirme que os cabos do monitor estão correctamente ligados se não 
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation>Driver Intel por omissão</translation>
+        <translation>Controlador Intel predefinido</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
@@ -86,7 +86,7 @@ Por favor confirme que os cabos do monitor estão correctamente ligados se não 
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation>Acelera a performance da placa gráfica, mas oferece mais instabilidade, verificado após testes</translation>
+        <translation>Aumenta o desempenho da placa gráfica, mas oferece maior instabilidade, verificado após testes</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
@@ -98,19 +98,19 @@ Por favor confirme que os cabos do monitor estão correctamente ligados se não 
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation>Usar driver NVIDIA por omissão</translation>
+        <translation>Usar controlador NVIDIA predefinido</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation>Usar Driver NVIDIA de Código Aberto</translation>
+        <translation>Usar controlador NVIDIA de código aberto</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation>Usar driver NVIDIA de código proprietário</translation>
+        <translation>Usar controlador NVIDIA de código proprietário</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation>Usar driver da Intel</translation>
+        <translation>Usar controlador Intel predefinido</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
@@ -134,33 +134,33 @@ Por favor confirme que os cabos do monitor estão correctamente ligados se não 
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation type="unfinished"/>
+        <translation>Para uso especial. Determina automaticamente o modo de aceleração sem configuração externa.</translation>
     </message>
     <message>
         <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Usar glamor como modo de aceleração predefinida com fraca compatibilidade em placas gráficas antigas.</translation>
     </message>
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Um modo de aceleração mais antigo e maduro com a melhor compatibilidade e desempenho mais fraco.</translation>
     </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
     <message>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Versão:</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Gestor de Controlador Gráfico Deepin</translation>
+        <translation>Deepin Graphics Driver Manager</translation>
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>O Gestor de Drivers do Deepin é uma ferramenta de gestão compacta e fácil. Inclui detecção automática de placa gráfica, instalação de drivers, comutadores de solução gráfica, recuperação automática de drivers e outras funções.</translation>
+        <translation>O Deepin Graphics Driver Manager é uma ferramenta de gestão compacta e fácil. Inclui deteção automática de placa gráfica, instalação de controladores, comutadores de solução gráfica, recuperação automática de controladores e outras funções.</translation>
     </message>
 </context>
 </TS>

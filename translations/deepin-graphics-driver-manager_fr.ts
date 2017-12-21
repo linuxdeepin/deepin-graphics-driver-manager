@@ -62,7 +62,7 @@ Assurez-vous que le port de sortie du moniteur est bien connecté en cas d&apos;
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation>Le pilote graphique NVIDIA n&apos;est pas détecté dans l&apos;environnement actuel, donc cette option sera de couleur grise.</translation>
+        <translation>Le pilote graphique NVIDIA n&apos;est pas détecté dans l&apos;environnement actuel, l&apos;option restera grisée</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
@@ -74,7 +74,7 @@ Assurez-vous que le port de sortie du moniteur est bien connecté en cas d&apos;
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation>Convient uniquement pour une partie des distributions et des cartes graphiques. L&apos;écran noir peut apparaître lorsque le pilote est incorrectement appliqué.</translation>
+        <translation>Convient uniquement pour certaines distributions et cartes graphiques. L&apos;écran noir peut apparaître lorsque le pilote est incorrectement appliqué.</translation>
     </message>
     <message>
         <source>Intel Default Driver</source>
@@ -138,18 +138,18 @@ Assurez-vous que le port de sortie du moniteur est bien connecté en cas d&apos;
     </message>
     <message>
         <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation>Un mode d&apos;accélération élégant mais offrant une compatibilité moindre avec les vieilles cartes graphiques.</translation>
+        <translation>Un mode d&apos;accélération offrant une compatibilité moindre avec les vieilles cartes graphiques.</translation>
     </message>
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation>Un mode d&apos;accélération plus ancien et mature qui offre la meilleure compatibilité mais des performances réduites.</translation>
+        <translation>Un mode d&apos;accélération plus ancien qui offre la meilleure compatibilité mais des performances réduites.</translation>
     </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
     <message>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Version : </translation>
     </message>
 </context>
 <context>

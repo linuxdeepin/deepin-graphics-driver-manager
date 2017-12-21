@@ -11,7 +11,7 @@
     </message>
     <message>
         <source>The current hardware combination not supported, please wait for future version</source>
-        <translation type="unfinished"/>
+        <translation>مجموعة عتاد الحاسوب الحالية غير مدعومة، يرجى انتظار النسخة المستقبلية</translation>
     </message>
     <message>
         <source>Switching</source>
@@ -35,7 +35,7 @@
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation type="unfinished"/>
+        <translation>يتم التبديل إلى %1 ، يرجى الانتظار ...</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
@@ -45,7 +45,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Switch</source>
-        <translation type="unfinished"/>
+        <translation>تبديل</translation>
     </message>
 </context>
 <context>
@@ -68,7 +68,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>تعريف إنفيديا مغلق المصدر</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
@@ -80,7 +80,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>الوضع المتوافق مع إنتل </translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
@@ -88,7 +88,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation type="unfinished"/>
+        <translation>وضع التسريع مع إنتل </translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
@@ -96,27 +96,27 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation type="unfinished"/>
+        <translation>استخدام تعريف إنفيديا الافتراضي</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation type="unfinished"/>
+        <translation>استخدام تعريف إنفيديا مفتوح المصدر</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>استخدام تعريف إنفيديا مغلق المصدر</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation type="unfinished"/>
+        <translation>استخدام تعريف إنتل الافتراضي</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation type="unfinished"/>
+        <translation>استخدام الوضع المتوافق مع إنتل </translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation type="unfinished"/>
+        <translation>استخدام وضع التسريع مع إنتل </translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
@@ -147,7 +147,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     <name>ResolutionWidget</name>
     <message>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>الإصدار :</translation>
     </message>
 </context>
 <context>

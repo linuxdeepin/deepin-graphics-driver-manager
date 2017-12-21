@@ -47,7 +47,7 @@ Ak nie je na obrazovke žiaden signál, overte, či je výstupný port monitora 
     </message>
     <message>
         <source>Switch</source>
-        <translation type="unfinished"/>
+        <translation>Prepínač</translation>
     </message>
 </context>
 <context>
@@ -134,22 +134,22 @@ Ak nie je na obrazovke žiaden signál, overte, či je výstupný port monitora 
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation type="unfinished"/>
+        <translation>Pre špeciálne potreby. Automaticky určí akceleráciu bez externej konfigurácie.</translation>
     </message>
     <message>
         <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Využíva grafické prostredie ako predvolený spôsob akcelerácie s nízkou kompatibilitou na starých grafických kartách.</translation>
     </message>
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Staršia a vyspelá akcelerácia s najlepšou kompatibilitou a slabším výkonom.</translation>
     </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
     <message>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Verzia:</translation>
     </message>
 </context>
 <context>

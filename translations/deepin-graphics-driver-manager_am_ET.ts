@@ -1,166 +1,166 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="da" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="am_ET" version="2.1">
 <context>
     <name>MainWindow</name>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>እሺ</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Genstart</translation>
+        <translation>እንደገና ማስነሻ</translation>
     </message>
     <message>
         <source>The current hardware combination not supported, please wait for future version</source>
-        <translation>Den nuværende hardwarekonfiguration understøttes ikke. Vent venligst på fremtidig version</translation>
+        <translation>የ አሁኑ ጠንካራ አካል ጥምረት የ ተገፈ አይደለም: እባክዎን ይጠብቁ ወደ ፊት የሚለቀቀውን</translation>
     </message>
     <message>
         <source>Switching</source>
-        <translation>Skifter</translation>
+        <translation>በ መቀየር ላይ</translation>
     </message>
     <message>
         <source>Download failed</source>
-        <translation>Download mislykkedes</translation>
+        <translation>ማውረድ አልተቻለም</translation>
     </message>
     <message>
         <source>Sorry, switch failed</source>
-        <translation>Beklager, skift mislykkedes</translation>
+        <translation>አዝናለሁ! መቀየር አልተቻለም</translation>
     </message>
     <message>
         <source>Download Succeeded</source>
-        <translation>Download lykkedes</translation>
+        <translation>ማውረድ ተሳክቷል</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
-        <translation>Genstart venligst for at komme i gang med installationsprocessen</translation>
+        <translation>እባክዎን እንደገና ያስነሱ ወደ መግጠሚያ ውስጥ ለ መግባት</translation>
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation>Skifter til %1, vent venligst......</translation>
+        <translation>በ መቀየር ላይ ወደ %1, እባክዎን ይቆዩ......</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation>Genstart venligst for at komme i gang med installationsprocessen
+        <translation>እባክዎን እንደገና ያስጀምሩ ወደ መግጠሚያ ሂደት ውስጥ ለ መግባት
 
-Bekræft venligst om skærmens outputport er forbundet korrekt, hvis der ikke er noget signal</translation>
+እናክዎን የ ሞኒተር ገመድ በ ትክክል መሰካቱን እና በ ትክክል እንደሚሰራ ያረጋግጡ</translation>
     </message>
     <message>
         <source>Switch</source>
-        <translation>Skift</translation>
+        <translation>መቀየሪያ</translation>
     </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
         <source>Use AMD card driver</source>
-        <translation>Brug AMD-kortdriver</translation>
+        <translation>የ AMD card driver ይጠቀሙ</translation>
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
-        <translation>NVIDIA standarddriver</translation>
+        <translation>NVIDIA Default Driver</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation>NVIDIA-kortdriver er ikke registreret i det nuværende miljø og vil være grå</translation>
+        <translation>የ NVIDIA card driver አልተገኘም በ አሁኑ አካባቢ ውስጥ እና ግራጫ ይሆናል</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation>NVIDIA open source-driver</translation>
+        <translation>NVIDIA Open Source Driver</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation>NVIDIA closed source-driver</translation>
+        <translation>NVIDIA Closed Source Driver</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation>Kun adaptiv til dele af distributioner og grafikkort. Kan give blank skærm</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation>Intel standarddriver</translation>
+        <translation>Intel Default Driver</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation>Intel kompatibel tilstand</translation>
+        <translation>Intel Compatible Mode</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation>Gør grafikkortet hurtigere med bedre ydelse, men ustabil med skærm-splash efter test.</translation>
+        <translation>ለ በለጠ አፈጻጸም የ graphics  ካርዱን ያፈጥነዋል: ነገር ግን አስታማማኝ አይደለም ለ መመከቻ splash ከ ተሞከረ በኋላ</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation>Intel accelerationstilstand</translation>
+        <translation>Intel Acceleration Mode</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
-        <translation>Bumblebee-løsning</translation>
+        <translation>Bumblebee Solution</translation>
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation>Brug NVIDIA standarddriver</translation>
+        <translation>የ NVIDIA default driver ይጠቀሙ</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation>Brug NVIDIA open source-driver</translation>
+        <translation>የ NVIDIA open source driver ይጠቀሙ</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation>Brug NVIDIA closed source-driver</translation>
+        <translation>የ NVIDIA closed source driver ይጠቀሙ</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation>Brug Intel standarddriver</translation>
+        <translation>የ Intel default driver ይጠቀሙ</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation>Brug Intel kompatibel tilstand</translation>
+        <translation>የ Intel compatible mode ይጠቀሙ</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation>Briug Intel accelerationstilstand</translation>
+        <translation>የ Intel acceleration mode ይጠቀሙ</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
-        <translation>Strømbesparelse for at forbedre evnen til at holde en opladning</translation>
+        <translation>ሐይል ማዳኛ ዘዴ ባትሪ ለ መቆጠብ</translation>
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation>Ustabil i nogle grafikkort med ringe ydelse.</translation>
+        <translation>በ አንዳንድ የ graphics ካርዶች ላይ አልመረጋጋት ይፈጥራል ከ ደካማ አፈጻሰም ጋር</translation>
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
-        <translation>Brug Bumblebee-løsning</translation>
+        <translation>የ Bumblebee Solution ይጠቀሙ</translation>
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation>Til særlige behov. Fastslå automatisk accelerationsmetoden uden ekstern konfiguration.</translation>
+        <translation>ለ ተለየ ፍላጎት በራሱ የ ፍጥነት መንገድ ይወስናል ማሰናጃው ሳይስፋፋ</translation>
     </message>
     <message>
         <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation>Bruger glamor som standardaccelerationmetode med lav kompatibilitet på gamle grafikkort.</translation>
+        <translation>ነባር የ ማፍጠኛ መንገድ ይጠቀማል በ አነስተኛ ተስማሚ ለ አሮጌ የ ግራፊክ ካርዶች</translation>
     </message>
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation>En ældre og moden accelerationsmetode med den bedste kompatibilitet og ringere ydelse.</translation>
+        <translation>አሮጌ የ ማፍጠኛ መንገድ ይጠቀማል በ አነስተኛ ተስማሚ ለ አሮጌ የ ግራፊክ ካርዶች እና ለ ደካማ አፈጻጸም</translation>
     </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
     <message>
         <source>Version: </source>
-        <translation>Version: </translation>
+        <translation>እትም</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Deepin grafikdriver-håndtering</translation>
+        <translation>ዲፕኢን የ Driver አስተዳዳሪ </translation>
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin grafikdriver-håndtering er et kompakt og letanvendeligt grafikdriver-håndteringsværktøj. Det inkluderer registrering af grafikkort-hardware, installation af grafikdriver, skift af grafikdriver-løsning, automatisk gendannelse og andre funktioner.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>
