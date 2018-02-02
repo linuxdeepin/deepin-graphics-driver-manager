@@ -104,6 +104,7 @@ MainWindow::MainWindow(QWidget *parent) :
     DTitlebar *tbar = titlebar();
     tbar->setTitle(QString());
     tbar->setIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
+    tbar->setBackgroundTransparent(true);
 
     setCentralWidget(new QWidget);
     centralWidget()->setLayout(centralLayout);
