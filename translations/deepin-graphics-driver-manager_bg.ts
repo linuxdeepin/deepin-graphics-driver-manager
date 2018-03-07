@@ -62,31 +62,31 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA драйвър не е намерен в настоящата среда, и ще бъде в сиво</translation>
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA Драйвър с Отворен Код</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA Драйвър със Затворен Код</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation type="unfinished"/>
+        <translation>Адаптивен единствено при част от дистрибуции и графични карти, може да възникне черен екран</translation>
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>Intel Драйвър по Подразбиране</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel-Съвместим Режим</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation type="unfinished"/>
+        <translation>Ускорете видеокартата с по-добра производителност, но е нестабилно с премигване на екрана след тест</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>

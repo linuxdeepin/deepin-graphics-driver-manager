@@ -31,11 +31,11 @@
     </message>
     <message>
         <source>Please reboot to enter installation progress</source>
-        <translation type="unfinished"/>
+        <translation>Reanicia pa entrar nel progresu d&apos;instalación</translation>
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation type="unfinished"/>
+        <translation>Camudando a %1, espera...</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
@@ -45,7 +45,7 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Switch</source>
-        <translation type="unfinished"/>
+        <translation>Camudar</translation>
     </message>
 </context>
 <context>
@@ -64,11 +64,11 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>Controlador de códigu llibre de NVIDIA</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>Controlador de códigu zarráu de NVIDIA</translation>
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
@@ -76,11 +76,11 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>Controlador predetermináu d&apos;Intel</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Mou compatible d&apos;Intel</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
@@ -88,35 +88,35 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation type="unfinished"/>
+        <translation>Mou d&apos;aceleración d&apos;Intel</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Solución de Bumblebee</translation>
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar el controlador predetermináu de NVIDIA</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar el controlador de códigu llibre de NVIDIA</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar el controlador de códigu zarráu de NVIDIA</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar el controlador predetermináu d&apos;Intel</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation type="unfinished"/>
+        <translation>Usar el mou compatible d&apos;Intel</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation type="unfinished"/>
+        <translation>Usar el mou d&apos;aceleración d&apos;Intel</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>

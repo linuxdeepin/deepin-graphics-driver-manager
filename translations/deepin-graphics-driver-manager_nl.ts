@@ -74,7 +74,7 @@ Controleer of de uitvoerpoort van de monitor correct is aangesloten als er geen 
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation type="unfinished"/>
+        <translation>Alleen adaptief voor delen van distributies en grafische kaarten, kan daarom soms leiden tot een zwart scherm</translation>
     </message>
     <message>
         <source>Intel Default Driver</source>
@@ -134,15 +134,15 @@ Controleer of de uitvoerpoort van de monitor correct is aangesloten als er geen 
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation type="unfinished"/>
+        <translation>Voor speciale behoeften. Bepaal automatisch de versnellingsmanier zonder externe configuratie.</translation>
     </message>
     <message>
         <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Gebruik glamor als de standaard versnellingsmanier, heeft lage compatibiliteit met oude grafische kaarten.</translation>
     </message>
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Een oudere en volwassen versnellingsmanier met de beste compatibiliteit, maar heeft daartegenover zwakkere prestaties.</translation>
     </message>
 </context>
 <context>
@@ -160,7 +160,7 @@ Controleer of de uitvoerpoort van de monitor correct is aangesloten als er geen 
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Grafisch Stuurprogramma Manager is een compact en gemakkelijk te gebruiken gereedschap voor het beheren van grafische stuurprogramma&apos;s. Het omvat hardwarematige detectie van grafische kaarten, installatie van grafische stuurprogramma&apos;s, schakelen tussen grafische stuurprogramma&apos;s, automatisch herstel van grafische stuurprogramma&apos;s en andere functies.</translation>
     </message>
 </context>
 </TS>

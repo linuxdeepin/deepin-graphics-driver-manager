@@ -149,7 +149,7 @@ Confirme si el puerto de salida del monitor está conectado correctamente si no 
     <name>ResolutionWidget</name>
     <message>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Versión:</translation>
     </message>
 </context>
 <context>

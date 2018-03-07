@@ -19,7 +19,7 @@
     <message>
         <location filename="../gltest/main.cpp" line="161"/>
         <source>Syncing data to disk, 5-10 minutes needed, then auto reboot the system</source>
-        <translation type="unfinished"/>
+        <translation>Adat szinkronizálása a lemezre, 5-10 percre van szükség, utána a rendszer automatikusan újraindul</translation>
     </message>
 </context>
 </TS>

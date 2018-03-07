@@ -41,9 +41,9 @@
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation>Uruchom ponownie, aby wprowadzić postęp instalacji.
+        <translation>Uruchom ponownie komputer, aby wejść w postęp instalacji.
 
-Potwierdź, jeśli nie ma sygnału czy port wyjściowy monitora jest prawidłowo podłączony</translation>
+Potwierdź, jeśli nie ma sygnału, czy port wyjściowy monitora jest prawidłowo podłączony.</translation>
     </message>
     <message>
         <source>Switch</source>
@@ -74,7 +74,7 @@ Potwierdź, jeśli nie ma sygnału czy port wyjściowy monitora jest prawidłowo
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation>Tylko adaptacyjnych częściach dystrybucji i kart graficznych może pojawić się czarny ekran</translation>
+        <translation>Tylko w adaptacyjnych częściach dystrybucji i kart graficznych może pojawić się czarny ekran</translation>
     </message>
     <message>
         <source>Intel Default Driver</source>
@@ -86,7 +86,7 @@ Potwierdź, jeśli nie ma sygnału czy port wyjściowy monitora jest prawidłowo
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation type="unfinished"/>
+        <translation>Przyśpieszenie działania kart graficznych z lepszą wydajnością, jednakże wykryta w testach niestabilna praca z błędami wyświetlania.</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
@@ -138,11 +138,11 @@ Potwierdź, jeśli nie ma sygnału czy port wyjściowy monitora jest prawidłowo
     </message>
     <message>
         <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation>Wykorzystuje przepych jako domyślny sposób przyspieszania z niską zgodnością starych kart graficznych.</translation>
+        <translation>Wykorzystuje tryb glamor jako domyślny sposób przyspieszania z niskim poziomem zgodności na starych kartach graficznych.</translation>
     </message>
     <message>
         <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation>Bardziej starożytny i dojrzały sposób akceleracji z najlepszą kompatybilnością i słabszą wydajnością.</translation>
+        <translation>Bardziej wiekowy i dojrzały sposób akceleracji z najlepszą kompatybilnością i słabszą wydajnością.</translation>
     </message>
 </context>
 <context>
@@ -160,7 +160,7 @@ Potwierdź, jeśli nie ma sygnału czy port wyjściowy monitora jest prawidłowo
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin Graphics Driver Manager to niewielkie i łatwe w użyciu narzędzie do zarządzania sterownikami graficznymi. Obejmuje wykrywanie sprzętu karty graficznej, instalację sterownika grafiki, przełączanie sterowników grafiki, automatyczne przywracanie sterowników grafiki i inne funkcje.</translation>
+        <translation>Zarządzanie sterownikami kart graficznych to niewielkie i łatwe w użyciu narzędzie do zarządzania sterownikami graficznymi. Obejmuje wykrywanie osprzętu karty graficznej, instalację sterownika grafiki, przełączanie sterowników grafiki, automatyczne przywracanie sterowników grafiki i inne funkcje.</translation>
     </message>
 </context>
 </TS>

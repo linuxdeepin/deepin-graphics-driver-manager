@@ -35,13 +35,15 @@
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation type="unfinished"/>
+        <translation>Váltás %1 -ra/re, kérem várjon......</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
 
 Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation type="unfinished"/>
+        <translation>Kérem indítsa újra az eszközt a telepítési folyamathoz
+
+Kérem bizonyosodjon meg róla, hogy a monitor kimeneti csatlakozója megfelelően csatlakoztatva van, amennyiben nincs jel.</translation>
     </message>
     <message>
         <source>Switch</source>
@@ -76,11 +78,11 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>Intel Alapértelmezett Vezérlőprogram</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel Kompatibilitási Mód</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
@@ -88,35 +90,35 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel Gyorsítási Mód</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Bumblebee Megoldás</translation>
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA alapértelmezett vezérlőprogram használata</translation>
     </message>
     <message>
         <source>Use NVIDIA open source driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA nyílt forráskódú vezérlőprogram használata</translation>
     </message>
     <message>
         <source>Use NVIDIA closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA zárt forráskódú vezérlőprogram használata</translation>
     </message>
     <message>
         <source>Use Intel default driver</source>
-        <translation type="unfinished"/>
+        <translation>Intel alapértelmezett vezérlőprogram használata</translation>
     </message>
     <message>
         <source>Use Intel compatible mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel kompatibilis mód használata</translation>
     </message>
     <message>
         <source>Use Intel acceleration mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel Gyorsítási Mód használata</translation>
     </message>
     <message>
         <source>Power saving to improve the ability to hold a charge</source>
@@ -124,11 +126,11 @@ Please confirm whether the monitor output port is connected correctly if no sign
     </message>
     <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Bizonyos gyengébb teljesítményű videokártyáknál instabil</translation>
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Bumblebee megoldás használata</translation>
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>
@@ -147,18 +149,18 @@ Please confirm whether the monitor output port is connected correctly if no sign
     <name>ResolutionWidget</name>
     <message>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Verzió:</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Deepin Graphics Driver Manager</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Grafikus Vezérlőprogram Kezelő</translation>
     </message>
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>A Deepin Grafikus Vezérlőprogram Kezelő egy kompakt és egyszerű eszköz a vezérlőrprogramok kezelésére. Tartalmaz automatikus videokártya érzékelést. grafikus vezérlőprogram telepítést, grafikus vezérlőprogram váltási opciókat, illetve automatikus helyreállítását a vezérlőprogramnak egyéb funkciók mellett.</translation>
     </message>
 </context>
 </TS>
