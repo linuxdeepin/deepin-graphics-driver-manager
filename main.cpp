@@ -1,5 +1,6 @@
 
 #include "mainwindow.h"
+#include "environments.h"
 
 #include <DApplication>
 #include <DLog>
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
     app.setOrganizationName("deepin");
     app.setApplicationName("deepin-graphics-driver-manager");
-    app.setApplicationVersion("1.0");
+    app.setApplicationVersion(VERSION);
     app.setApplicationAcknowledgementPage("https://www.deepin.org/acknowledgments/deepin-graphics-driver-manager/");
     app.setProductIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
     app.setProductName(QApplication::translate("main", "Deepin Graphics Driver Manager"));

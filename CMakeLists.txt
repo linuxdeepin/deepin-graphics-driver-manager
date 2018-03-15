@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.7)
 
-project(deepin-graphics-driver-manager
-        VERSION 1.0.0)
+if (NOT DEFINED VERSION)
+    set(VERSION 1.0.0)
+endif()
+
+project(deepin-graphics-driver-manager)
 
 set(BIN_NAME deepin-graphics-driver-manager)
 # set(CMAKE_VERBOSE_MAKEFILE ON)
@@ -9,15 +12,17 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-set(CMAKE_CXX_FLAGS -Wall)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
 if (NOT (${CMAKE_BUILD_TYPE} MATCHES "Debug"))
-    set(CMAKE_CXX_FLAGS -O3)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Ofast")
 
     # generate qm
     execute_process(COMMAND bash "translate_generation.sh"
                     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 endif ()
+
+configure_file(environments.h.in environments.h @ONLY)
 
 # Sources files
 file(GLOB SRCS "*.h" "*.cpp"
