@@ -165,7 +165,7 @@ private slots:
             connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &GLTestWindow::onPostFinished);
             connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), proc, &QProcess::deleteLater);
 
-            proc->start("bash", QStringList() << "/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-post.sh");
+            proc->start("/bin/bash", QStringList() << "/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-post.sh");
         }
     }
 

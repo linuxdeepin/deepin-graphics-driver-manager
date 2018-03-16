@@ -31,10 +31,10 @@ inline const QString scriptAbsolutePath(const QString &scriptName)
     connect(Process, static_cast<void (QProcess::*)(int)>(&QProcess::finished), Process, &QProcess::deleteLater);
 
 #define EXECUTE_SCRIPT(Process, Script) \
-    Process->start("bash", QStringList() << "-x" << scriptAbsolutePath(Script));
+    Process->start("/bin/bash", QStringList() << "-x" << scriptAbsolutePath(Script));
 
 #define EXECUTE_SCRIPT_ROOT(Process, Script) \
-    Process->start("pkexec", QStringList() << "bash" << "-x" << scriptAbsolutePath(Script));
+    Process->start("pkexec", QStringList() << "/bin/bash" << "-x" << scriptAbsolutePath(Script));
 
 class QLabel;
 class ResolutionWidget: public QFrame

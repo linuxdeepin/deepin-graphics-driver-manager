@@ -143,7 +143,7 @@ void ResolutionWidget::prepareInstall(const Resolution &old_resolution)
     const QString &sc = scriptAbsolutePath("dgradvrmgr-prepare.sh");
     const QString &old_driver = old_resolution.name();
 
-    QStringList args { "bash", "-x", sc, prepare, install, old_driver, new_driver, lang, exit_gltest };
+    QStringList args { "/bin/bash", "-x", sc, prepare, install, old_driver, new_driver, lang, exit_gltest };
 
     proc->start("pkexec", args);
 }
