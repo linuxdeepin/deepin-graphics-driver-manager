@@ -13,6 +13,12 @@ extern "C" {
 #define CLASSNAME_VGA   "VGA compatible controller"
 #define CLASSNAME_3D    "3D controller"
 
+// NOTE: see more info /usr/share/misc/pci.ids
+inline bool is_display_controller(const uint devClass)
+{
+    return (devClass & 0xff00) == 0x0300 || devClass == 0x0400;
+}
+
 GraphicsDeviceInfo::DeviceFlag GraphicsDeviceInfo::deviceType(const QString &devInfo)
 {
     if (devInfo.contains("Intel"))
@@ -57,8 +63,7 @@ void GraphicsDeviceInfo::init()
     for (dev = pacc->devices; dev; dev = dev->next)
     {
         pci_fill_info(dev, PCI_FILL_CLASS | PCI_FILL_IDENT);
-        const char *devClass = pci_lookup_name(pacc, namebuf, sizeof(namebuf), PCI_LOOKUP_CLASS, dev->device_class);
-        if (std::strcmp(devClass, CLASSNAME_VGA) && std::strcmp(devClass, CLASSNAME_3D))
+        if (!is_display_controller(dev->device_class))
             continue;
 
         const QString devInfo = pci_lookup_name(pacc, namebuf, sizeof(namebuf), PCI_LOOKUP_VENDOR | PCI_LOOKUP_DEVICE, dev->vendor_id, dev->device_id);
