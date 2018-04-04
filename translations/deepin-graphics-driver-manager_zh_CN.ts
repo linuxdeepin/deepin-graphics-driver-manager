@@ -35,7 +35,7 @@
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
-        <translation>正在切换到%1, 请稍后...</translation>
+        <translation>正在切换到%1, 请稍候...</translation>
     </message>
     <message>
         <source>Please reboot to enter installation progress
