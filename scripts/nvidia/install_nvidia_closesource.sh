@@ -59,6 +59,10 @@ else
 	rm /etc/X11/xorg.conf.d/20-intel.conf
 	rm /etc/X11/xorg.conf.d/20-nouveau.conf
 	echo "Loading kernel modules......"
+	echo 0 > /sys/class/vtconsole/vtcon0/bind
+	echo 0 > /sys/class/vtconsole/vtcon1/bind
+	echo 0 > /sys/class/vtconsole/vtcon2/bind
+	echo 0 > /sys/class/vtconsole/vtcon3/bind
 	rmmod -f nouveau
 	modprobe nvidia-drm
 	modprobe nvidia-current-drm
