@@ -18,10 +18,17 @@ if [ $? == 1 ]; then
 fi
 
 #bash -x /tmp/exe.sh test
-/tmp/exe-remove-old.sh "test"
-/tmp/exe.sh "test"
-/usr/bin/xinit /usr/lib/deepin-graphics-driver-manager/gltest
+/tmp/exe-remove-old.sh "test" || reboot
+/tmp/exe.sh "test" || reboot
+
+if [[ -e "/tmp/deepin-prime-gltest" ]]; then
+    /usr/bin/xinit /tmp/deepin-prime-gltest
+else
+    /usr/bin/xinit /usr/lib/deepin-graphics-driver-manager/gltest
+fi
+
 killall Xorg
+
 sleep 1
 
 if [ -e "/tmp/gltest-success" ]; then

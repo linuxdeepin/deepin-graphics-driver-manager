@@ -26,6 +26,12 @@ else
         xserver-xorg-core \
         xserver-xorg-video-nouveau
 
+    # repair glx alternative for nouveau
+    apt-get -y install --reinstall update-glx glx-diversions nvidia-installer-cleanup glx-alternative-mesa
+    apt-get -y install --reinstall libgl1-mesa-glx libgl1-mesa-glx:i386
+    apt-get -y install --reinstall libglx-mesa0 libglx-mesa0:i386
+    apt-get -y install --reinstall glx-diversions
+
     echo "Loading kernel modules......"
     modprobe nouveau
 fi

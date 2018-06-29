@@ -2,10 +2,22 @@
 
 COMMANDS=(
     "apt-get update"
-    "apt-get install -d xserver-xorg-video-nouveau --reinstall -y --allow-downgrades"
-    "apt-get install -d libgl1-mesa-glx --reinstall -y --allow-downgrades"
-    "apt-get install -d xserver-xorg-core --reinstall -y --allow-downgrades"
-    "apt-get install -d xserver-xorg-input-all --reinstall -y --allow-downgrades"
+    "apt-get install -d --reinstall -y --allow-downgrades \
+        xserver-xorg-core \
+        xserver-xorg-input-all \
+        libgl1-mesa-glx \
+        libegl-mesa0 \
+        libegl-mesa0:i386 \
+        libgbm1 \
+        libgbm1:i386 \
+        xserver-xorg-video-nouveau \
+        glx-alternative-mesa \
+        update-glx \
+        glx-diversions \
+        nvidia-installer-cleanup \
+        libgl1-mesa-glx:i386 \
+        libglx-mesa0 \
+        libglx-mesa0:i386"
 )
 
 for cmd in "${COMMANDS[@]}"

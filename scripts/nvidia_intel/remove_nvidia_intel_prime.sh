@@ -8,8 +8,8 @@ fi
 export DEBIAN_FRONTEND=noninteractive
 
 nvidia_mod=`lsmod | grep nvidia`
-# check the install script is for install PRIME resolution
-to_prime=`grep "deepin-nvidia-prime" /tmp/exe.sh`
+# check the install script is for install Bumblebee resolution
+to_bumblebee=`grep "bumblebee" /tmp/exe.sh`
 
 systemctl stop lightdm
 
@@ -25,13 +25,9 @@ if [ $1 == "post" ];then
     fi
 
     overlayroot-chroot apt-get -y purge \
-        bbswitch-dkms \
-        bumblebee \
-        bumblebee-nvidia \
-        primus \
-        primus-libs
+        deepin-nvidia-prime
 
-    if [ -z "$to_prime" ]; then
+    if [ -z "$to_bumblebee" ]; then
         echo "Removing other package about nvidia..."
         overlayroot-chroot apt-get -y purge \
             glx-alternative-nvidia \
@@ -53,14 +49,10 @@ else
     fi
 
     apt-get -y purge \
-        bbswitch-dkms \
-        bumblebee \
-        bumblebee-nvidia \
-        primus \
-        primus-libs
+        deepin-nvidia-prime
 
-    # remove glx-alternative-nvidia package if the new mode is NOT prime
-    if [ -z "$to_prime" ]; then
+    # remove glx-alternative-nvidia package if the new mode is NOT bumblebee
+    if [ -z "$to_bumblebee" ]; then
         echo "Removing other package about nvidia..."
         apt-get -y purge \
             glx-alternative-nvidia \

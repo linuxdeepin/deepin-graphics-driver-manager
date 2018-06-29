@@ -6,6 +6,7 @@ if [ "$(id -u)" -ne "0" ];then
 fi
 
 export DEBIAN_FRONTEND=noninteractive
+nouveau_mod=`lsmod | grep nouveau`
 POSTOS=`cat /proc/mounts | awk '{if ($2 == "/media/root-ro") print $1}'`
 
 systemctl stop lightdm
@@ -18,17 +19,26 @@ if [ $1 == "post" ];then
     rsync -avz --progress /media/root-rw/overlay/* /media/root-ro/
     sync
 
-    overlayroot-chroot update-alternatives --auto glx
-
     echo "Sync driver into disk ...... done"
 else
     apt-get -y --reinstall --allow-downgrades install \
-        bumblebee \
-        bumblebee-nvidia \
-        bbswitch-dkms \
-        primus \
-        primus-libs \
+        deepin-nvidia-prime \
         libgl1-nvidia-glx \
         libegl-nvidia0 \
         libegl1-nvidia
+
+    if [ -n "$nouveau_mod" ]; then
+        echo "Removing nouveau modules..."
+        rmmod -f nouveau
+    fi
+
+    echo "Loading kernel modules......"
+    modprobe nvidia-drm
+    modprobe nvidia-modeset
+    modprobe nvidia
+
+    #/usr/bin/update-alternatives --auto glx
+
+    echo -e '#!/bin/sh\n. /sbin/prime-offload\n/usr/lib/deepin-graphics-driver-manager/gltest\n' > /tmp/deepin-prime-gltest
+    chmod a+x /tmp/deepin-prime-gltest
 fi

@@ -31,6 +31,10 @@ static const char *translates[] = {
     QT_TRANSLATE_NOOP("Resolution", "Use Bumblebee Solution"),
     QT_TRANSLATE_NOOP("Resolution", "Bumblebee Solution"),
     QT_TRANSLATE_NOOP("Resolution", "Save power to reduce power consumption.")
+
+    QT_TRANSLATE_NOOP("Resolution", "Use PRIME Solution"),
+    QT_TRANSLATE_NOOP("Resolution", "PRIME Solution"),
+    QT_TRANSLATE_NOOP("Resolution", "For laptops with hybrid graphics, having best performance but must work with closed-source driver.")
 };
 
 Resolution::Resolution(const QJsonObject &info)
