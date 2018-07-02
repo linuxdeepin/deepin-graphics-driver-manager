@@ -8,6 +8,7 @@ ConditionFileIsExecutable=/usr/bin/deepin-graphics-driver-installer.sh
 Type=oneshot
 Environment=LC_ALL=C
 ExecStartPre=-/usr/sbin/overlayroot-disable
+ExecStartPre=-/usr/sbin/overlayroot-chroot mv /usr/bin/deepin-graphics-driver-remove-old.sh /tmp/exe-remove-old.sh
 ExecStartPre=-/usr/sbin/overlayroot-chroot mv /usr/bin/deepin-graphics-driver-installer.sh /tmp/exe.sh
 ExecStartPre=-/usr/bin/xset s 0 0
 ExecStartPre=-/usr/bin/xset s off

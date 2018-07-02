@@ -17,6 +17,7 @@ public:
     inline const QString description() const { return m_resDescription; }
     inline const QString prepareScript() const { return m_prepareScript; }
     inline const QString installScript() const { return m_installScript; }
+    inline const QString removeScript() const { return m_removeScript; }
     inline const QString conditionScript() const { return m_conditionScript; }
     inline const QString versionScript() const { return m_versionScript; }
 
@@ -30,6 +31,7 @@ private:
     QString m_resDescription;
     QString m_prepareScript;
     QString m_installScript;
+    QString m_removeScript;
     QString m_conditionScript;
     QString m_versionScript;
 };

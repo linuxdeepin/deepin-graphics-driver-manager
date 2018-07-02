@@ -1,14 +1,12 @@
 #!/bin/bash
 
-# dpkg -i 
-# overlayroot-disable
-
 if [ "$(id -u)" -ne "0" ];then
-	echo "Need root privileges."
-	exit 1
+    echo "Need root privileges."
+    exit 1
 fi
 
 export DEBIAN_FRONTEND=noninteractive
+POSTOS=`cat /proc/mounts | awk '{if ($2 == "/media/root-ro") print $1}'`
 
 # 0 ------ default is glamor
 # 1 ------ use SNA accel method
@@ -37,6 +35,7 @@ Option "AccelMethod" "sna"
 EndSection' | tee $INTEL_XORG_CONF
 apt-get install xserver-xorg-video-intel --reinstall -y --allow-downgrades
 }
+
 set_intel_accel_uxa_post() {
 INTEL_XORG_CONF="/etc/X11/xorg.conf.d/20-intel.conf"
 echo 'Section "Device"
@@ -60,65 +59,57 @@ Option "AccelMethod" "uxa"
 EndSection' | tee $INTEL_XORG_CONF
 apt-get install xserver-xorg-video-intel --reinstall -y --allow-downgrades
 }
-systemctl stop lightdm
-if [ $1 == "post" ];then
-#	overlayroot-chroot apt-get purge nvidia-* -y --allow-downgrades
-#	overlayroot-chroot apt-get purge xserver-xorg-video-nouveau -y --allow-downgrades
-	overlayroot-chroot apt-get install xserver-xorg-core --reinstall -y --allow-downgrades
-	overlayroot-chroot apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
-	overlayroot-chroot rm -f /etc/X11/xorg.conf
-	#根据需求调整显卡的加速方式，从而达到最优化
-	case $2 in
-		0)echo "Using default glamor accel method"
-			overlayroot-chroot rm -f /etc/X11/xorg.conf.d/20-intel.conf
-			overlayroot-chroot apt-get purge xserver-xorg-video-intel -y --allow-downgrades
-			;;
-		1)set_intel_accel_sna_post
-			;;
-		2)set_intel_accel_uxa_post
-#			overlayroot-chroot apt-get install xserver-xorg-video-intel -y --allow-downgrades
-			;;
-		*)
-			overlayroot-chroot rm -f /etc/X11/xorg.conf.d/20-intel.conf
-			overlayroot-chroot rm -f /etc/X11/xorg.conf
-			echo "You need to set an accel method,default glamor"
-			;;	
-	esac	
-	sync
-	sleep 3
-	echo "Sync driver into disk ...... done"
-else
 
-	rmmod -f nvidia-drm 
-	rmmod -f nvidia-modeset 
-	rmmod -f nvidia
-	rmmod -f nouveau
-	echo "Loading kernel modules......"
-	modprobe i915
-#	apt-get purge nvidia-* -y --allow-downgrades
-#	apt-get purge xserver-xorg-video-nouveau -y --allow-downgrades
-	[ -f /etc/X11/xorg.conf ] && rm -f /etc/X11/xorg.conf
-	apt-get install xserver-xorg-core --reinstall -y --allow-downgrades
-	apt-get install xserver-xorg-input-all --reinstall -y --allow-downgrades
-	#根据需求调整显卡的加速方式，从而达到最优化
-	case $2 in
-		0)
-			[ -f /etc/X11/xorg.conf.d/20-intel.conf ] && rm -f /etc/X11/xorg.conf.d/20-intel.conf
-			apt-get purge xserver-xorg-video-intel -y --allow-downgrades
-			echo "Using default glamor accel method overlay"
-			;;
-		1)set_intel_accel_sna_overlay
-#			apt-get install xserver-xorg-video-intel -y --allow-downgrades
-			;;
-		2)set_intel_accel_uxa_overlay
-#			apt-get install xserver-xorg-video-intel -y --allow-downgrades
-			;;
-		*)
-			rm /etc/X11/xorg.conf.d/20-intel.conf
-			[ -f /etc/X11/xorg.conf ] && rm /etc/X11/xorg.conf
-			echo "You need to set an accel method,default glamor"
-			;;	
-	esac	
-	#echo "Now start desktop......"
-	#systemctl restart lightdm
+systemctl stop lightdm
+
+if [ $1 == "post" ];then
+    echo "Sync driver into disk $POSTOS ...... "
+    overlayroot-chroot apt-get --reinstall -y --allow-downgrades install \
+        xserver-xorg-core \
+        xserver-xorg-input-all
+
+    #根据需求调整显卡的加速方式，从而达到最优化
+    case $2 in
+        0)
+            # it is glamor mode after config files and drivers of other modes has been removed
+            echo "Using default glamor accel method"
+            ;;
+        1)
+            set_intel_accel_sna_post
+            ;;
+        2)
+            set_intel_accel_uxa_post
+            ;;
+        *)
+            overlayroot-chroot rm -f /etc/X11/xorg.conf.d/20-intel.conf
+            overlayroot-chroot rm -f /etc/X11/xorg.conf
+            echo "You need to set an accel method,default glamor (post)"
+            ;;
+    esac
+
+    sync
+    echo "Sync driver into disk ...... done"
+else
+    apt-get --reinstall -y --allow-downgrades install \
+        xserver-xorg-core \
+        xserver-xorg-input-all
+
+    #根据需求调整显卡的加速方式，从而达到最优化
+    case $2 in
+        0)
+            # it is glamor mode after config files and drivers of other modes has been removed
+            echo "Using default glamor accel method overlay"
+            ;;
+        1)
+            set_intel_accel_sna_overlay
+            ;;
+        2)
+            set_intel_accel_uxa_overlay
+            ;;
+        *)
+            rm /etc/X11/xorg.conf.d/20-intel.conf
+            [ -f /etc/X11/xorg.conf ] && rm /etc/X11/xorg.conf
+            echo "You need to set an accel method,default glamor (overlay)"
+            ;;
+    esac
 fi

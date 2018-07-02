@@ -18,7 +18,8 @@ if [ $? == 1 ]; then
 fi
 
 #bash -x /tmp/exe.sh test
-/tmp/exe.sh test
+/tmp/exe-remove-old.sh "test"
+/tmp/exe.sh "test"
 /usr/bin/xinit /usr/lib/deepin-graphics-driver-manager/gltest
 killall Xorg
 sleep 1

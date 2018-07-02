@@ -17,7 +17,8 @@
                 "name": "AMD card driver",
                 "description": "For special needs. Auto determine the acceleration way without external configuration.",
                 "prepare": "empty.sh",
-                "install": "empty.sh"
+                "install": "empty.sh",
+                "remove": "empty.sh"
             }
         ]
     },
@@ -35,7 +36,8 @@
                 "name": "NVIDIA Default Driver",
                 "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
                 "prepare": "nvidia/prepare_nouveau_opensource.sh",
-                "install": "nvidia/install_glamor.sh"
+                "install": "nvidia/install_glamor.sh",
+                "remove": "nvidia/remove_glamor.sh"
             },
             {
                 "id": 200,
@@ -44,7 +46,8 @@
                 "description": "Unstable in some graphics cards with weaker performance.",
                 "version": "nvidia/version_nouveau_driver.sh",
                 "prepare": "nvidia/prepare_nouveau_opensource.sh",
-                "install": "nvidia/install_nouveau.sh"
+                "install": "nvidia/install_nouveau.sh",
+                "remove": "nvidia/remove_nouveau.sh"
             },
             {
                 "id": 300,
@@ -54,7 +57,8 @@
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
                 "version": "nvidia/version_nvidia_driver.sh",
                 "prepare": "nvidia/prepare_nvidia_closesource.sh",
-                "install": "nvidia/install_nvidia_closesource.sh"
+                "install": "nvidia/install_nvidia_closesource.sh",
+                "remove": "nvidia/remove_nvidia_closesource.sh"
             }
         ]
     },
@@ -72,7 +76,8 @@
                 "name": "Intel Default Driver",
                 "description": "Uses glamor as the default acceleration way with low compatibility on old graphics cards.",
                 "prepare": "intel/prepare_intel_opensource.sh",
-                "install": "intel/install_glamor.sh"
+                "install": "intel/install_glamor.sh",
+                "remove": "intel/remove_glamor.sh"
             },
             {
                 "id": 200,
@@ -80,7 +85,8 @@
                 "name": "Intel Compatible Mode",
                 "description": "A more ancient and mature acceleration way with the best compatibility and weaker performance.",
                 "prepare": "intel/prepare_intel_opensource.sh",
-                "install": "intel/install_sna.sh"
+                "install": "intel/install_sna.sh",
+                "remove": "intel/remove_sna.sh"
             },
             {
                 "id": 300,
@@ -88,7 +94,8 @@
                 "name": "Intel Acceleration Mode",
                 "description": "Speed up the graphics card with better performance, but unstable with screen splash after tested.",
                 "prepare": "intel/prepare_intel_opensource.sh",
-                "install": "intel/install_uxa.sh"
+                "install": "intel/install_uxa.sh",
+                "remove": "intel/remove_uxa.sh"
             }
         ]
     },
@@ -106,7 +113,8 @@
                 "name": "Intel Default Driver",
                 "description": "Uses glamor as the default acceleration way with low compatibility on old graphics cards.",
                 "prepare": "nvidia_intel/prepare_nouveau_intel.sh",
-                "install": "nvidia_intel/install_glamor.sh"
+                "install": "nvidia_intel/install_glamor.sh",
+                "remove": "nvidia_intel/remove_glamor.sh"
             },
             {
                 "id": 200,
@@ -115,7 +123,8 @@
                 "description": "Unstable in some graphics cards with weaker performance.",
                 "version": "nvidia/version_nouveau_driver.sh",
                 "prepare": "nvidia_intel/prepare_nouveau_intel.sh",
-                "install": "nvidia_intel/install_nouveau_intel.sh"
+                "install": "nvidia_intel/install_nouveau_intel.sh",
+                "remove": "nvidia_intel/remove_nouveau_intel.sh"
             },
             {
                 "id": 300,
@@ -126,7 +135,8 @@
                 "description": "Only adaptive to parts of distributions and graphics cards, may occur black screen",
                 "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
                 "condition":"nvidia_intel/no_bumblebee.sh",
-                "install": "nvidia_intel/install_nvidia_intel.sh"
+                "install": "nvidia_intel/install_nvidia_intel.sh",
+                "remove": "nvidia_intel/remove_nvidia_intel.sh"
             },
             {
                 "id": 400,
@@ -137,7 +147,8 @@
                 "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
                 "condition": "nvidia_intel/bumblebee.sh",
                 "version": "nvidia_intel/version_bumblebee.sh",
-                "install": "nvidia_intel/install_nvidia_intel_bumblebee.sh"
+                "install": "nvidia_intel/install_nvidia_intel_bumblebee.sh",
+                "remove": "nvidia_intel/remove_nvidia_intel_bumblebee.sh"
             }
         ]
     }
