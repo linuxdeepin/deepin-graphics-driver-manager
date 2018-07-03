@@ -75,10 +75,10 @@ if [ $1 == "post" ];then
             echo "Using default glamor accel method"
             ;;
         1)
-            set_intel_accel_sna_post
+            set_intel_accel_uxa_post
             ;;
         2)
-            set_intel_accel_uxa_post
+            set_intel_accel_sna_post
             ;;
         *)
             overlayroot-chroot rm -f /etc/X11/xorg.conf.d/20-intel.conf
@@ -101,10 +101,10 @@ else
             echo "Using default glamor accel method overlay"
             ;;
         1)
-            set_intel_accel_sna_overlay
+            set_intel_accel_uxa_overlay
             ;;
         2)
-            set_intel_accel_uxa_overlay
+            set_intel_accel_sna_overlay
             ;;
         *)
             rm /etc/X11/xorg.conf.d/20-intel.conf
