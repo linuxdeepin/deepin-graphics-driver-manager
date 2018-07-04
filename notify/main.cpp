@@ -10,6 +10,7 @@ DWIDGET_USE_NAMESPACE
 DCORE_USE_NAMESPACE
 
 #define CONFIG "/usr/lib/deepin-graphics-driver-manager/config.conf"
+#define DESKTOP_FILE "/.config/autostart/deepin-gradvrmgr-notify.desktop"
 
 QSettings *SETTINGS = nullptr;
 
@@ -65,6 +66,15 @@ void mark()
     f.close();
 }
 
+void removeDesktopFile()
+{
+    QFile desktopFile(QDir::homePath() + DESKTOP_FILE);
+    if (desktopFile.exists())
+        desktopFile.remove();
+    else
+        qDebug() << desktopFile.fileName() << "do not exists!";
+}
+
 void init()
 {
     SETTINGS = new QSettings(CONFIG, QSettings::IniFormat);
@@ -86,6 +96,8 @@ void init()
         show_fail_dialog();
 
     mark();
+
+    removeDesktopFile();
 }
 
 int main(int argc, char *args[])

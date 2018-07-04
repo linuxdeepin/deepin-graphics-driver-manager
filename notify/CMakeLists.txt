@@ -4,4 +4,4 @@ target_link_libraries(notify ${Qt5Widgets_LIBRARIES} ${DtkWidget_LIBRARIES})
 
 install(TARGETS notify DESTINATION lib/deepin-graphics-driver-manager)
 install(FILES deepin-gradvrmgr-notify.desktop
-        DESTINATION /etc/xdg/autostart)
+        DESTINATION lib/deepin-graphics-driver-manager)

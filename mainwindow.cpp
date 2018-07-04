@@ -14,6 +14,9 @@
 #include <DTitlebar>
 #include <DSvgRenderer>
 
+#define DESKTOP_FILE_SOURCE "/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-notify.desktop"
+#define DESKTOP_FILE_DEST "/.config/autostart/deepin-gradvrmgr-notify.desktop"
+
 const QPixmap hidpiPixmap(const QString &path, const QSize &sz)
 {
     const auto ratio = qApp->devicePixelRatio();
@@ -267,5 +270,12 @@ void MainWindow::onPrepareFinished(const int exitCode)
             m_botTips->setText(tr("Please reboot to enter installation progress"));
         m_tipsIcon->setPixmap(hidpiPixmap(":/resources/icons/success.svg", QSize(128, 128)));
         m_rebootButton->setVisible(true);
+
+
+        QFile desktopFileSource(DESKTOP_FILE_SOURCE);
+        if (desktopFileSource.exists())
+            desktopFileSource.copy(QDir::homePath() + DESKTOP_FILE_DEST);
+        else
+            qDebug() << DESKTOP_FILE_SOURCE << "do not exists!";
     }
 }
