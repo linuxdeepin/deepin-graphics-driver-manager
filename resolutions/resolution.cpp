@@ -16,21 +16,21 @@ static const char *translates[] = {
     QT_TRANSLATE_NOOP("Resolution", "Unstable in some graphics cards with weaker performance."),
     QT_TRANSLATE_NOOP("Resolution", "NVIDIA Closed Source Driver"),
     QT_TRANSLATE_NOOP("Resolution", "Use NVIDIA closed source driver"),
-    QT_TRANSLATE_NOOP("Resolution", "Only adaptive to parts of distributions and graphics cards, may occur black screen"),
+    QT_TRANSLATE_NOOP("Resolution", "Only adaptive to parts of distributions and graphics cards, may cause black screen."),
 
     QT_TRANSLATE_NOOP("Resolution", "Intel Default Driver"),
     QT_TRANSLATE_NOOP("Resolution", "Use Intel default driver"),
     QT_TRANSLATE_NOOP("Resolution", "Uses glamor as the default acceleration way with low compatibility on old graphics cards."),
     QT_TRANSLATE_NOOP("Resolution", "Intel Compatible Mode"),
     QT_TRANSLATE_NOOP("Resolution", "Use Intel compatible mode"),
-    QT_TRANSLATE_NOOP("Resolution", "Speed up the graphics card with better performance, but unstable with screen splash after tested."),
+    QT_TRANSLATE_NOOP("Resolution", "Speed up the graphics card with better performance, but unstable in some cards with screen flashing."),
     QT_TRANSLATE_NOOP("Resolution", "Intel Acceleration Mode"),
     QT_TRANSLATE_NOOP("Resolution", "Use Intel acceleration mode"),
-    QT_TRANSLATE_NOOP("Resolution", "A more ancient and mature acceleration way with the best compatibility and weaker performance."),
+    QT_TRANSLATE_NOOP("Resolution", "An ancient and mature acceleration way with best compatibility but weaker performance."),
 
     QT_TRANSLATE_NOOP("Resolution", "Use Bumblebee Solution"),
     QT_TRANSLATE_NOOP("Resolution", "Bumblebee Solution"),
-    QT_TRANSLATE_NOOP("Resolution", "Power saving to improve the ability to hold a charge")
+    QT_TRANSLATE_NOOP("Resolution", "Save power to reduce power consumption.")
 };
 
 Resolution::Resolution(const QJsonObject &info)

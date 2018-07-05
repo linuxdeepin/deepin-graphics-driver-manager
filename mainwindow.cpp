@@ -143,7 +143,7 @@ void MainWindow::noResolutions()
 {
     m_tipsIcon->setVisible(true);
     m_tipsIcon->setPixmap(hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
-    m_botTips->setText(tr("The current hardware combination not supported, please wait for future version"));
+    m_botTips->setText(tr("Your hardware is not supported currently, please wait for future version."));
     m_botTips->setVisible(true);
     m_resolutionsWidget->setVisible(false);
     m_toggleButton->setVisible(false);
@@ -265,9 +265,9 @@ void MainWindow::onPrepareFinished(const int exitCode)
     {
         m_topTips->setText(tr("Download Succeeded"));
         if (m_devInfo.deviceNums() > 1)
-            m_botTips->setText(tr("Please reboot to enter installation progress\n\nPlease confirm whether the monitor output port is connected correctly if no signal"));
+            m_botTips->setText(tr("Please reboot to start installation.\n\nIf no signal, please confirm whether the monitor output port is connected correctly."));
         else
-            m_botTips->setText(tr("Please reboot to enter installation progress"));
+            m_botTips->setText(tr("Please reboot to start installation"));
         m_tipsIcon->setPixmap(hidpiPixmap(":/resources/icons/success.svg", QSize(128, 128)));
         m_rebootButton->setVisible(true);
 

@@ -158,7 +158,7 @@ private slots:
         } else {
             m_cancelBtn->setVisible(false);
             m_acceptBtn->setVisible(false);
-            m_tipsLabel->setText(tr("Syncing data to disk, 5-10 minutes needed, then auto reboot the system"));
+            m_tipsLabel->setText(tr("Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot."));
 
             QProcess *proc = new QProcess;
 
