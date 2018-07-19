@@ -144,11 +144,23 @@
                 "title": "Use Bumblebee Solution",
                 "name": "Bumblebee Solution",
                 "description": "Save power to reduce power consumption.",
-                "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
+                "prepare": "nvidia_intel/prepare_nvidia_intel_bumblebee.sh",
                 "condition": "nvidia_intel/bumblebee.sh",
                 "version": "nvidia_intel/version_bumblebee.sh",
                 "install": "nvidia_intel/install_nvidia_intel_bumblebee.sh",
                 "remove": "nvidia_intel/remove_nvidia_intel_bumblebee.sh"
+            },
+            {
+                "id": 500,
+                "keep_gltest": true,
+                "title": "Use PRIME Solution",
+                "name": "PRIME Solution",
+                "description": "For laptops with hybrid graphics, having best performance but must work with closed-source driver.",
+                "prepare": "nvidia_intel/prepare_nvidia_intel_prime.sh",
+                "condition": "nvidia_intel/bumblebee.sh",
+                "version": "nvidia_intel/version_nvidia_prime.sh",
+                "install": "nvidia_intel/install_nvidia_intel_prime.sh",
+                "remove": "nvidia_intel/remove_nvidia_intel_prime.sh"
             }
         ]
     }
