@@ -41,4 +41,8 @@ else
 
     echo -e '#!/bin/sh\n. /sbin/prime-offload\n/usr/lib/deepin-graphics-driver-manager/gltest\n' > /tmp/deepin-prime-gltest
     chmod a+x /tmp/deepin-prime-gltest
+
+    echo "remove modules about nvidia from blacklist!"
+    overlayroot-chroot rm /etc/modprobe.d/deepin-blacklists-nvidia.conf
+    update-initramfs -u
 fi

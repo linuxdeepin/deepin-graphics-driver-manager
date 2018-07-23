@@ -44,3 +44,8 @@ do
         exit 1;
     fi
 done
+
+# to avoid rmmod or modprobe failed so blacklists modules about nvidia before reboot to overlay
+echo "blacklists modules about nvidia now!"
+echo -e "blacklist nouveau\nblacklist nvidia-drm\nblacklist nvidia-modeset\nblacklist nvidia\nblacklist nvidiafb" > /etc/modprobe.d/deepin-blacklists-nvidia.conf
+update-initramfs -u
