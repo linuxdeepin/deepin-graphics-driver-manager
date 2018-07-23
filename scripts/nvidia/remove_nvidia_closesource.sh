@@ -23,9 +23,8 @@ if [ $1 == "post" ];then
     fi
 
     overlayroot-chroot apt-get -y purge \
-        nvidia-driver \
-        xserver-xorg-video-nvidia \
-        glx-alternative-nvidia
+        glx-alternative-nvidia \
+        nvidia-alternative
 else
     if [ -x /usr/bin/nvidia-installer ];then
         nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
@@ -39,10 +38,10 @@ else
     fi
 
     apt-get -y purge \
-        glx-diversions \
         glx-alternative-nvidia \
-        nvidia-alternativ
+        nvidia-alternative
 
+    # TODO: test for remove #
     # repair glx alternative for nouveau
     apt-get -y install --reinstall update-glx glx-diversions nvidia-installer-cleanup glx-alternative-mesa
     apt-get -y install --reinstall libgl1-mesa-glx libgl1-mesa-glx:i386

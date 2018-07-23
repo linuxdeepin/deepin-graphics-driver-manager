@@ -17,7 +17,6 @@ if [ $? == 1 ]; then
 	reboot
 fi
 
-#bash -x /tmp/exe.sh test
 /tmp/exe-remove-old.sh "test" || reboot
 /tmp/exe.sh "test" || reboot
 
