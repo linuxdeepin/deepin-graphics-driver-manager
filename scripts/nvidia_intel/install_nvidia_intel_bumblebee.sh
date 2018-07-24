@@ -31,8 +31,4 @@ else
         libgl1-nvidia-glx \
         libegl-nvidia0 \
         libegl1-nvidia
-
-    echo "remove modules about nvidia from blacklist!"
-    overlayroot-chroot rm /etc/modprobe.d/deepin-blacklists-nvidia.conf
-    update-initramfs -u
 fi

@@ -28,8 +28,4 @@ else
 
     echo "Loading kernel modules......"
     modprobe nouveau
-
-    echo "remove modules about nvidia from blacklist!"
-    overlayroot-chroot rm /etc/modprobe.d/deepin-blacklists-nvidia.conf
-    update-initramfs -u
 fi

@@ -13,8 +13,15 @@ journalctl -f -u driver-installer.service >> /media/root-ro/var/log/dgradvrmgr.l
 # write to tty
 journalctl -f -u driver-installer.service | sed 's/$/\r/g' > /dev/tty1 2>&1 &
 
-if [ $? == 1 ]; then
-	reboot
+# TODO: may be is useless, remove #
+#if [ $? == 1 ]; then
+#	reboot
+#fi
+
+if [[ -e "/etc/modprobe.d/deepin-blacklists-nvidia.conf" ]]; then
+    echo "remove modules about nvidia from blacklist!"
+    overlayroot-chroot rm /etc/modprobe.d/deepin-blacklists-nvidia.conf
+    overlayroot-chroot update-initramfs -u
 fi
 
 /tmp/exe-remove-old.sh "test" || reboot

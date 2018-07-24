@@ -25,6 +25,10 @@ if [ $1 == "post" ];then
     overlayroot-chroot apt-get -y purge \
         glx-alternative-nvidia \
         nvidia-alternative
+
+    # TODO: remove after package problem fixed #
+    echo "Manual update initramfs ..."
+    overlayroot-chroot update-initramfs -u
 else
     if [ -x /usr/bin/nvidia-installer ];then
         nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
@@ -41,10 +45,7 @@ else
         glx-alternative-nvidia \
         nvidia-alternative
 
-    # TODO: test for remove #
-    # repair glx alternative for nouveau
-    apt-get -y install --reinstall update-glx glx-diversions nvidia-installer-cleanup glx-alternative-mesa
-    apt-get -y install --reinstall libgl1-mesa-glx libgl1-mesa-glx:i386
-    apt-get -y install --reinstall libglx-mesa0 libglx-mesa0:i386
-    apt-get -y install --reinstall glx-diversions
+    # TODO: remove after package problem fixed #
+    echo "Manual update initramfs ..."
+    update-initramfs -u
 fi

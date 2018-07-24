@@ -23,9 +23,12 @@ if [ $1 == "post" ];then
     fi
 
     overlayroot-chroot apt-get -y purge \
-        nvidia-driver \
-        xserver-xorg-video-nvidia \
-        glx-alternative-nvidia
+        glx-alternative-nvidia \
+        nvidia-alternative
+
+    # TODO: remove after package problem fixed #
+    echo "Manual update initramfs ..."
+    overlayroot-chroot update-initramfs -u
 else
     if [ -x /usr/bin/nvidia-installer ];then
         nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
@@ -39,7 +42,10 @@ else
     fi
 
     apt-get -y purge \
-        nvidia-driver \
-        xserver-xorg-video-nvidia \
-        glx-alternative-nvidia
+        glx-alternative-nvidia \
+        nvidia-alternative
+
+    # TODO: remove after package problem fixed #
+    echo "Manual update initramfs ..."
+    update-initramfs -u
 fi
