@@ -1,5 +1,24 @@
 <?xml version="1.0" ?><!DOCTYPE TS><TS language="sl" version="2.1">
 <context>
+    <name>GLTestWindow</name>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>OK</source>
@@ -8,10 +27,6 @@
     <message>
         <source>Reboot</source>
         <translation>Ponovno zaženi</translation>
-    </message>
-    <message>
-        <source>The current hardware combination not supported, please wait for future version</source>
-        <translation>Trenutna kombinacija strojne opreme ni podprta, prosimo počakajte na bodočo različico</translation>
     </message>
     <message>
         <source>Switching</source>
@@ -30,24 +45,26 @@
         <translation>Prenos je uspel</translation>
     </message>
     <message>
-        <source>Please reboot to enter installation progress</source>
-        <translation>Za zagon namestitve ponovno zaženite napravo</translation>
-    </message>
-    <message>
         <source>Switching to %1, please wait......</source>
         <translation>Preklapljam na %1, počakajte......</translation>
     </message>
     <message>
-        <source>Please reboot to enter installation progress
-
-Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation>Prosim, ponovno zaženite napravno, da pričnete s postopkom namestitve
-
-Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo signal</translation>
-    </message>
-    <message>
         <source>Switch</source>
         <translation>Preklopi</translation>
+    </message>
+    <message>
+        <source>Your hardware is not supported currently, please wait for future version.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Please reboot to start installation.
+
+If no signal, please confirm whether the monitor output port is connected correctly.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Please reboot to start installation</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -73,20 +90,12 @@ Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo 
         <translation>Zaprtokodni gonilnik NVIDIA</translation>
     </message>
     <message>
-        <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation>Prilagojen samo za nekatere distribucije in grafične kartice, lahko pride do črnega zaslona</translation>
-    </message>
-    <message>
         <source>Intel Default Driver</source>
         <translation>Privzeti gonilnik Intel</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
         <translation>Kompatibilni način Intel</translation>
-    </message>
-    <message>
-        <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation>Pospeši grafično kartico in nudi večjo zmogljivost, vendar je na pozdravnem zaslonu po testiranju nestabilen.</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
@@ -121,10 +130,6 @@ Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo 
         <translation>Uporabi način pospeška Intel</translation>
     </message>
     <message>
-        <source>Power saving to improve the ability to hold a charge</source>
-        <translation>Varčevanje z energijo za daljši čas porabe baterije</translation>
-    </message>
-    <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
         <translation>Nestabilen pri nekaterih grafičnih karticah s slabšo zmogljivostjo.</translation>
     </message>
@@ -141,8 +146,20 @@ Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo 
         <translation>Uporablja metodo Glamor kot privzeti način pospeševanja, ki po večini ni združljiv s starejšimi grafičnimi karticami.</translation>
     </message>
     <message>
-        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation>Starejši in razvitejši način pospeševanja z najboljšo združljivostjo in manjšo zmogljivostjo.</translation>
+        <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Save power to reduce power consumption.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -161,6 +178,22 @@ Prosim, potrdite ali so izhodna vrata za monitor pravilno povezana in prejemajo 
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
         <translation>Upravitelj grafičnih gonilnikov Deepin je kompaktno in preprosto orodje za upravljanje grafičnih gonilnikov. Zaznava grafične kartice, namešča grafične gonilnike, preklaplja med rešitvami grafičnih gonilnikov, samodejno obnavlja grafične gonilnike itd.</translation>
+    </message>
+    <message>
+        <source>Congratulations, you have switched to %1.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Auto restore to %2 after failed to switch to %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Feedback</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

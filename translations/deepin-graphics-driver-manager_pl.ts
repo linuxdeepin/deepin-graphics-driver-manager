@@ -1,5 +1,24 @@
 <?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" version="2.1">
 <context>
+    <name>GLTestWindow</name>
+    <message>
+        <source>Apply</source>
+        <translation>Zastosuj</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anuluj</translation>
+    </message>
+    <message>
+        <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
+        <translation>Prosimy upewnić się, że sterownik pracuje normalnie - bez rozmywania czy śnieżenia obrazu</translation>
+    </message>
+    <message>
+        <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
+        <translation>Synchronizacja danych z dyskiem, wymaga około 5-10 minut - po ukończeniu nastąpi automatyczne uruchomienie systemu.</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>OK</source>
@@ -8,10 +27,6 @@
     <message>
         <source>Reboot</source>
         <translation>Uruchom ponownie</translation>
-    </message>
-    <message>
-        <source>The current hardware combination not supported, please wait for future version</source>
-        <translation>Obecna kombinacja sprzętowa nie jest obsługiwana, prosimy czekać na następne wersje systemu</translation>
     </message>
     <message>
         <source>Switching</source>
@@ -30,24 +45,28 @@
         <translation>Pomyślne pobranie</translation>
     </message>
     <message>
-        <source>Please reboot to enter installation progress</source>
-        <translation>Prosimy zrestartować, aby przejść do postępów instalacji</translation>
-    </message>
-    <message>
         <source>Switching to %1, please wait......</source>
         <translation>Przełączanie na %1, prosimy czekać...</translation>
     </message>
     <message>
-        <source>Please reboot to enter installation progress
-
-Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation>Uruchom ponownie komputer, aby wejść w postęp instalacji.
-
-Potwierdź, jeśli nie ma sygnału, czy port wyjściowy monitora jest prawidłowo podłączony.</translation>
-    </message>
-    <message>
         <source>Switch</source>
         <translation>Przełącz</translation>
+    </message>
+    <message>
+        <source>Your hardware is not supported currently, please wait for future version.</source>
+        <translation>Obecna kombinacja sprzętowa nie jest obecnie obsługiwana, prosimy poczekać na następne wersje systemu.</translation>
+    </message>
+    <message>
+        <source>Please reboot to start installation.
+
+If no signal, please confirm whether the monitor output port is connected correctly.</source>
+        <translation>Uruchom ponownie komputer, aby rozpocząć instalację.
+
+Jeśli nie ma sygnału, upewnij się że port wyjściowy monitora jest prawidłowo podłączony.</translation>
+    </message>
+    <message>
+        <source>Please reboot to start installation</source>
+        <translation>Prosimy zrestartować, aby rozpocząć instalację</translation>
     </message>
 </context>
 <context>
@@ -73,20 +92,12 @@ Potwierdź, jeśli nie ma sygnału, czy port wyjściowy monitora jest prawidłow
         <translation>Sterownik NVIDIA o zamkniętych źródłach</translation>
     </message>
     <message>
-        <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation>Tylko w adaptacyjnych częściach dystrybucji i kart graficznych może pojawić się czarny ekran</translation>
-    </message>
-    <message>
         <source>Intel Default Driver</source>
         <translation>Domyślny sterownik Intela</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
         <translation>Tryb zgodności Intela</translation>
-    </message>
-    <message>
-        <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation>Przyśpieszenie działania kart graficznych z lepszą wydajnością, jednakże wykryta w testach niestabilna praca z błędami wyświetlania.</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
@@ -121,10 +132,6 @@ Potwierdź, jeśli nie ma sygnału, czy port wyjściowy monitora jest prawidłow
         <translation>Użyj trybu akceleracji Intela</translation>
     </message>
     <message>
-        <source>Power saving to improve the ability to hold a charge</source>
-        <translation>Oszczędność energii celem polepszenia wydajności ładowania</translation>
-    </message>
-    <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
         <translation>Niestabilne przy niektórych kartach graficznych i słabsza wydajność.</translation>
     </message>
@@ -141,8 +148,20 @@ Potwierdź, jeśli nie ma sygnału, czy port wyjściowy monitora jest prawidłow
         <translation>Wykorzystuje tryb glamor jako domyślny sposób przyspieszania z niskim poziomem zgodności na starych kartach graficznych.</translation>
     </message>
     <message>
-        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation>Bardziej wiekowy i dojrzały sposób akceleracji z najlepszą kompatybilnością i słabszą wydajnością.</translation>
+        <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
+        <translation>Tylko w adaptacyjnych częściach dystrybucji i kart graficznych może pojawić się czarny ekran</translation>
+    </message>
+    <message>
+        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
+        <translation>Przyśpieszenie działania kart graficznych z lepszą wydajnością, jednakże niestabilna praca na niektórych kartach z błędami w wyświetlaniu.</translation>
+    </message>
+    <message>
+        <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
+        <translation>Przestarzały ale dojrzały sposób akceleracji z najlepszą kompatybilnością lecz także ze słabszą wydajnością.</translation>
+    </message>
+    <message>
+        <source>Save power to reduce power consumption.</source>
+        <translation>Oszczędzaj energię, aby zredukować zapotrzebowanie na prąd.</translation>
     </message>
 </context>
 <context>
@@ -161,6 +180,22 @@ Potwierdź, jeśli nie ma sygnału, czy port wyjściowy monitora jest prawidłow
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
         <translation>Zarządzanie sterownikami kart graficznych to niewielkie i łatwe w użyciu narzędzie do zarządzania sterownikami graficznymi. Obejmuje wykrywanie osprzętu karty graficznej, instalację sterownika grafiki, przełączanie sterowników grafiki, automatyczne przywracanie sterowników grafiki i inne funkcje.</translation>
+    </message>
+    <message>
+        <source>Congratulations, you have switched to %1.</source>
+        <translation>Gratulacje, przełączyłeś się na %1.</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Potwierdź</translation>
+    </message>
+    <message>
+        <source>Auto restore to %2 after failed to switch to %1</source>
+        <translation>Automatyczne przywrócenie do %2 po niepomyślnym przełączeniu do %1</translation>
+    </message>
+    <message>
+        <source>Feedback</source>
+        <translation>Informacja zwrotna</translation>
     </message>
 </context>
 </TS>

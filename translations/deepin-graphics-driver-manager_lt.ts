@@ -1,5 +1,24 @@
 <?xml version="1.0" ?><!DOCTYPE TS><TS language="lt" version="2.1">
 <context>
+    <name>GLTestWindow</name>
+    <message>
+        <source>Apply</source>
+        <translation>Taikyti</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atsisakyti</translation>
+    </message>
+    <message>
+        <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
+        <translation>Įsitikinkite, kad tvarkyklė veikia normaliai, kad ekranas yra ryškus ir nėra perskiriamas</translation>
+    </message>
+    <message>
+        <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
+        <translation>Sinchronizuojami duomenys į diską, tai užims nuo 5 iki 10 minučių, o užbaigus kompiuteris bus paleistas iš naujo.</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>OK</source>
@@ -8,10 +27,6 @@
     <message>
         <source>Reboot</source>
         <translation>Paleisti iš naujo</translation>
-    </message>
-    <message>
-        <source>The current hardware combination not supported, please wait for future version</source>
-        <translation>Esama aparatinės įrangos kombinacija nepalaikoma, palaukite būsimos versijos</translation>
     </message>
     <message>
         <source>Switching</source>
@@ -30,24 +45,28 @@
         <translation>Atsiuntimas pavyko</translation>
     </message>
     <message>
-        <source>Please reboot to enter installation progress</source>
-        <translation>Norėdami įžengti į diegimo eigą, paleiskite kompiuterį iš naujo</translation>
-    </message>
-    <message>
         <source>Switching to %1, please wait......</source>
         <translation>Perjungiama į %1, prašome palaukti......</translation>
     </message>
     <message>
-        <source>Please reboot to enter installation progress
-
-Please confirm whether the monitor output port is connected correctly if no signal</source>
-        <translation>Norėdami įžengti į diegimo eigą, paleiskite kompiuterį iš naujo
-
-Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai prijungta</translation>
-    </message>
-    <message>
         <source>Switch</source>
         <translation>Perjungti</translation>
+    </message>
+    <message>
+        <source>Your hardware is not supported currently, please wait for future version.</source>
+        <translation>Jūsų aparatinė įranga šiuo metu nėra palaikoma, prašome palaukti būsimos versijos.</translation>
+    </message>
+    <message>
+        <source>Please reboot to start installation.
+
+If no signal, please confirm whether the monitor output port is connected correctly.</source>
+        <translation>Norėdami pradėti diegimą, paleiskite kompiuterį iš naujo.
+
+Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai prijungta.</translation>
+    </message>
+    <message>
+        <source>Please reboot to start installation</source>
+        <translation>Norėdami pradėti diegimą, paleiskite kompiuterį iš naujo</translation>
     </message>
 </context>
 <context>
@@ -73,20 +92,12 @@ Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai 
         <translation>NVIDIA uždarojo kodo tvarkyklė</translation>
     </message>
     <message>
-        <source>Only adaptive to parts of distributions and graphics cards, may occur black screen</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
         <source>Intel Default Driver</source>
         <translation>Intel numatytoji tvarkyklė</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
         <translation>Intel suderinama veiksena</translation>
-    </message>
-    <message>
-        <source>Speed up the graphics card with better performance, but unstable with screen splash after tested.</source>
-        <translation type="unfinished"/>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
@@ -121,10 +132,6 @@ Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai 
         <translation>Naudoti Intel spartinimo veikseną</translation>
     </message>
     <message>
-        <source>Power saving to improve the ability to hold a charge</source>
-        <translation>Energijos taupymas, skirtas pagerinti galimybę saugoti įkrovą</translation>
-    </message>
-    <message>
         <source>Unstable in some graphics cards with weaker performance.</source>
         <translation>Nestabili kai kuriose silpnesnio našumo grafikos plokštėse.</translation>
     </message>
@@ -141,8 +148,20 @@ Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai 
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>A more ancient and mature acceleration way with the best compatibility and weaker performance.</source>
-        <translation>Senesnis ir brandesnis spartinimo būdas su geriausiu suderinamumu ir silpnesniu našumu.</translation>
+        <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
+        <translation>Senas ir brandus spartinimo būdas su geriausiu suderinamumu, tačiau silpnesniu našumu.</translation>
+    </message>
+    <message>
+        <source>Save power to reduce power consumption.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -161,6 +180,22 @@ Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai 
     <message>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
         <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Congratulations, you have switched to %1.</source>
+        <translation>Sveikiname, persijungėte į %1.</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Patvirtinti</translation>
+    </message>
+    <message>
+        <source>Auto restore to %2 after failed to switch to %1</source>
+        <translation>Automatinis atkūrimas į %2 po to, kai nepavyko persijungti į %1</translation>
+    </message>
+    <message>
+        <source>Feedback</source>
+        <translation>Atsiliepimai</translation>
     </message>
 </context>
 </TS>
