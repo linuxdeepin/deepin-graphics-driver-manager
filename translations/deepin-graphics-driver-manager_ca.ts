@@ -3,19 +3,19 @@
     <name>GLTestWindow</name>
     <message>
         <source>Apply</source>
-        <translation type="unfinished"/>
+        <translation>Aplica</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Cancel·la</translation>
     </message>
     <message>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation type="unfinished"/>
+        <translation>Assegureu-vos que el controlador funcioni amb normalitat sense que la pantalla es vegi borrosa i sense parpelleig.</translation>
     </message>
     <message>
         <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation type="unfinished"/>
+        <translation>La sincronització de dades al disc trigarà uns 5 a 10 minuts, quan finalitzi, el sistema es reiniciarà automàticament.</translation>
     </message>
 </context>
 <context>
@@ -54,17 +54,19 @@
     </message>
     <message>
         <source>Your hardware is not supported currently, please wait for future version.</source>
-        <translation type="unfinished"/>
+        <translation>Actualment, el vostre maquinari no és compatible, espereu fins la propera versió.</translation>
     </message>
     <message>
         <source>Please reboot to start installation.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Reinicieu per iniciar la instal·lació.
+
+Si no hi ha cap senyal, confirmeu que el port de sortida del monitor està connectat correctament.</translation>
     </message>
     <message>
         <source>Please reboot to start installation</source>
-        <translation type="unfinished"/>
+        <translation>Reinicieu per iniciar la instal·lació</translation>
     </message>
 </context>
 <context>
@@ -147,18 +149,30 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation type="unfinished"/>
+        <translation>Només adaptable a parts de distribucions i targetes gràfiques, pot causar una pantalla negra.</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation type="unfinished"/>
+        <translation>Accelera la targeta gràfica amb un millor rendiment, però inestable en algunes targetes amb parpelleig.</translation>
     </message>
     <message>
         <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Una forma d&apos;acceleració antiga i madura amb la millor compatibilitat, però amb un rendiment més pobre.</translation>
     </message>
     <message>
         <source>Save power to reduce power consumption.</source>
+        <translation>Estalvi d&apos;energia per reduir el consum d&apos;energia.</translation>
+    </message>
+    <message>
+        <source>Use PRIME Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>PRIME Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -181,19 +195,19 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Congratulations, you have switched to %1.</source>
-        <translation type="unfinished"/>
+        <translation>Enhorabona, heu canviat a %1.</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation type="unfinished"/>
+        <translation>Confirma</translation>
     </message>
     <message>
         <source>Auto restore to %2 after failed to switch to %1</source>
-        <translation type="unfinished"/>
+        <translation>Restauració automàtica a %2 després que fallés el canvi a %1.</translation>
     </message>
     <message>
         <source>Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Comentaris</translation>
     </message>
 </context>
 </TS>

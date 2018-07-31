@@ -163,6 +163,18 @@ Ak nie je na obrazovke žiaden signál, overte, či je výstupný port monitora 
         <source>Save power to reduce power consumption.</source>
         <translation>Šetrite energiu, aby ste znížili spotrebu energie.</translation>
     </message>
+    <message>
+        <source>Use PRIME Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>PRIME Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>ResolutionWidget</name>

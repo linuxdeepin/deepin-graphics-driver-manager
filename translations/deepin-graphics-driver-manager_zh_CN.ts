@@ -163,6 +163,18 @@ If no signal, please confirm whether the monitor output port is connected correc
         <source>Save power to reduce power consumption.</source>
         <translation>省电，能提升续航能力。</translation>
     </message>
+    <message>
+        <source>Use PRIME Solution</source>
+        <translation>使用PRIME方案</translation>
+    </message>
+    <message>
+        <source>PRIME Solution</source>
+        <translation>PRIME方案</translation>
+    </message>
+    <message>
+        <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
+        <translation>笔记本混合显卡解决方案，性能最佳，依赖闭源驱动才能工作。</translation>
+    </message>
 </context>
 <context>
     <name>ResolutionWidget</name>

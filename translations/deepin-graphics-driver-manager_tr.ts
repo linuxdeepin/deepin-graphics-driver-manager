@@ -163,6 +163,18 @@ Herhangi bir görüntü yok ise ekran bağlantısının doğru yapılıp yapılm
         <source>Save power to reduce power consumption.</source>
         <translation>Güç tüketimini azaltmak için güç tasarrufu yapılır.</translation>
     </message>
+    <message>
+        <source>Use PRIME Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>PRIME Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>ResolutionWidget</name>

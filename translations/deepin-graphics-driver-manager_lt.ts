@@ -163,6 +163,18 @@ Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai 
         <source>Save power to reduce power consumption.</source>
         <translation type="unfinished"/>
     </message>
+    <message>
+        <source>Use PRIME Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>PRIME Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
