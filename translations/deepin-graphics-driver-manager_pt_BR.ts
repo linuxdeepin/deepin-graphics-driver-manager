@@ -163,6 +163,18 @@ Se não houver sinal, confirme se a porta de saída do monitor está conectada c
         <source>Save power to reduce power consumption.</source>
         <translation>Economizar energia para reduzir o consumo.</translation>
     </message>
+    <message>
+        <source>Use PRIME Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>PRIME Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
