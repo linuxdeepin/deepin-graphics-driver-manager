@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
     app.setProductIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
     app.setProductName(QApplication::translate("main", "Deepin Graphics Driver Manager"));
     app.setApplicationDescription(QApplication::translate("main", "Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions."));
-    app.setTheme("light");
 
     DLogManager::registerConsoleAppender();
     DLogManager::registerFileAppender();

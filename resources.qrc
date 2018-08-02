@@ -8,5 +8,7 @@
         <file>resources/icons/select.svg</file>
         <file>resources/icons/fail.svg</file>
         <file>resources/icons/deepin-graphics-driver-manager-64px.svg</file>
+        <file>resources/theme/light/light.qss</file>
+        <file>resources/theme/dark/dark.qss</file>
     </qresource>
 </RCC>

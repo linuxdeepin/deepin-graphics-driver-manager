@@ -6,13 +6,14 @@
 #include "resolutions/resolutions.h"
 
 #include <QVBoxLayout>
+#include <QSettings>
 
 #include <DMainWindow>
 #include <DWaterProgress>
+#include <DSuggestButton>
 
 DWIDGET_USE_NAMESPACE
 
-class QPushButton;
 class QLabel;
 class MainWindow : public DMainWindow
 {
@@ -27,6 +28,8 @@ private:
     void noResolutions();
 
 private Q_SLOTS:
+    void toggleDarkTheme(bool checked);
+    void reloadTheme();
     void loadResolutions();
     void onResolutionSelected();
     void onToggleBtnClicked();
@@ -49,9 +52,12 @@ private:
     QLabel *m_botTips;
     QWidget *m_resolutionsWidget;
     DWaterProgress *m_progress;
-    QPushButton *m_toggleButton;
-    QPushButton *m_okButton;
-    QPushButton *m_rebootButton;
+    DSuggestButton *m_toggleButton;
+    DSuggestButton *m_okButton;
+    DSuggestButton *m_rebootButton;
+    QSettings *m_qsettings;
+    QMenu *m_tbMenu;
+    QAction *m_darkThemeAction;
 };
 
 #endif
