@@ -25,21 +25,16 @@ if [ $1 == "post" ];then
     fi
 
     overlayroot-chroot apt-get -y purge \
-        bbswitch-dkms \
         bumblebee \
         bumblebee-nvidia \
         primus \
-        primus-libs
-
-    if [ -z "$to_prime" ]; then
-        echo "Removing other package about nvidia..."
-        overlayroot-chroot apt-get -y purge \
-            glx-alternative-nvidia \
-            libegl-nvidia0 \
-            libegl1-nvidia \
-            libgl1-nvidia-glx \
-            xserver-xorg-video-nvidia
-    fi
+        primus-libs \
+        bbswitch-dkms \
+        glx-alternative-nvidia \
+        nvidia-alternative \
+        nvidia-driver \
+        nvidia-driver-libs-nonglvnd \
+        xserver-xorg-video-nvidia
 else
     if [ -x /usr/bin/nvidia-installer ];then
         nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
@@ -53,20 +48,14 @@ else
     fi
 
     apt-get -y purge \
-        bbswitch-dkms \
         bumblebee \
         bumblebee-nvidia \
         primus \
-        primus-libs
-
-    # remove glx-alternative-nvidia package if the new mode is NOT prime
-    if [ -z "$to_prime" ]; then
-        echo "Removing other package about nvidia..."
-        apt-get -y purge \
-            glx-alternative-nvidia \
-            libegl-nvidia0 \
-            libegl1-nvidia \
-            libgl1-nvidia-glx \
-            xserver-xorg-video-nvidia
-    fi
+        primus-libs \
+        bbswitch-dkms \
+        glx-alternative-nvidia \
+        nvidia-alternative \
+        nvidia-driver \
+        nvidia-driver-libs-nonglvnd \
+        xserver-xorg-video-nvidia
 fi

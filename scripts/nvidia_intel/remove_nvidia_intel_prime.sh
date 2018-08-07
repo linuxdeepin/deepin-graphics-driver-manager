@@ -25,17 +25,12 @@ if [ $1 == "post" ];then
     fi
 
     overlayroot-chroot apt-get -y purge \
-        deepin-nvidia-prime
-
-    if [ -z "$to_bumblebee" ]; then
-        echo "Removing other package about nvidia..."
-        overlayroot-chroot apt-get -y purge \
-            glx-alternative-nvidia \
-            libegl-nvidia0 \
-            libegl1-nvidia \
-            libgl1-nvidia-glx \
-            xserver-xorg-video-nvidia
-    fi
+        deepin-nvidia-prime \
+        glx-alternative-nvidia \
+        nvidia-alternative \
+        nvidia-driver \
+        nvidia-driver-libs-nonglvnd \
+        xserver-xorg-video-nvidia
 else
     if [ -x /usr/bin/nvidia-installer ];then
         nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
@@ -49,16 +44,10 @@ else
     fi
 
     apt-get -y purge \
-        deepin-nvidia-prime
-
-    # remove glx-alternative-nvidia package if the new mode is NOT bumblebee
-    if [ -z "$to_bumblebee" ]; then
-        echo "Removing other package about nvidia..."
-        apt-get -y purge \
-            glx-alternative-nvidia \
-            libegl-nvidia0 \
-            libegl1-nvidia \
-            libgl1-nvidia-glx \
-            xserver-xorg-video-nvidia
-    fi
+        deepin-nvidia-prime \
+        glx-alternative-nvidia \
+        nvidia-alternative \
+        nvidia-driver \
+        nvidia-driver-libs-nonglvnd \
+        xserver-xorg-video-nvidia
 fi

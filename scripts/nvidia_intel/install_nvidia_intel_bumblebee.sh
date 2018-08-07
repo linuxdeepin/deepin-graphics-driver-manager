@@ -25,10 +25,7 @@ else
     apt-get -y --reinstall --allow-downgrades install \
         bumblebee \
         bumblebee-nvidia \
-        bbswitch-dkms \
         primus \
-        primus-libs \
-        libgl1-nvidia-glx \
-        libegl-nvidia0 \
-        libegl1-nvidia
+        nvidia-driver \
+        nvidia-driver-libs-nonglvnd
 fi

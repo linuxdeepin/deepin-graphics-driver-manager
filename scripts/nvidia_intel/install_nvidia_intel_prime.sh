@@ -23,9 +23,8 @@ if [ $1 == "post" ];then
 else
     apt-get -y --reinstall --allow-downgrades install \
         deepin-nvidia-prime \
-        libgl1-nvidia-glx \
-        libegl-nvidia0 \
-        libegl1-nvidia
+        nvidia-driver \
+        nvidia-driver-libs-nonglvnd
 
     if [ -n "$nouveau_mod" ]; then
         echo "Removing nouveau modules..."
