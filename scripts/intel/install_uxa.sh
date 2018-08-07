@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/usr/lib/deepin-graphics-driver-manager/intel/install_intel_opensource.sh $1 2
+/usr/lib/deepin-graphics-driver-manager/intel/install_intel_opensource.sh $1 1

@@ -85,8 +85,8 @@
                 "name": "Intel Compatible Mode",
                 "description": "An ancient and mature acceleration way with best compatibility but weaker performance.",
                 "prepare": "intel/prepare_intel_opensource.sh",
-                "install": "intel/install_sna.sh",
-                "remove": "intel/remove_sna.sh"
+                "install": "intel/install_uxa.sh",
+                "remove": "intel/remove_uxa.sh"
             },
             {
                 "id": 300,
@@ -94,8 +94,8 @@
                 "name": "Intel Acceleration Mode",
                 "description": "Speed up the graphics card with better performance, but unstable in some cards with screen flashing.",
                 "prepare": "intel/prepare_intel_opensource.sh",
-                "install": "intel/install_uxa.sh",
-                "remove": "intel/remove_uxa.sh"
+                "install": "intel/install_sna.sh",
+                "remove": "intel/remove_sna.sh"
             }
         ]
     },

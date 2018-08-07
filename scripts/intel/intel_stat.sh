@@ -12,12 +12,12 @@ intel_accel_method_sna=`cat /var/log/Xorg.0.log | grep SNA`
 intel_accel_method_uxa=`cat /var/log/Xorg.0.log | grep UXA`
 if [ -n "$intel_accel_method_sna" ];then
 	echo "now intel accel mode is : SNA"
-	intel_accel_method=1
-	exit 1
-elif [ -n "$intel_accel_method_uxa" ];then
-	echo "now intel accel mode is : UXA"
 	intel_accel_method=2
 	exit 2
+elif [ -n "$intel_accel_method_uxa" ];then
+	echo "now intel accel mode is : UXA"
+	intel_accel_method=1
+	exit 1
 else
 	echo "now intel accel mode is : glamor(default)"
 	intel_accel_method=0
