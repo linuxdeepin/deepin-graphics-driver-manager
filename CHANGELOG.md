@@ -1,3 +1,14 @@
+<a name="1.0.6"></a>
+### 1.0.6 (2018-08-08)
+
+
+#### Bug Fixes
+
+*   bumblebee prime install remove ([edc9df72](edc9df72))
+*   missing depends package ([0aadf86d](0aadf86d))
+
+
+
 <a name="1.0.5"></a>
 ### 1.0.5 (2018-08-07)
 
