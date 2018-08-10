@@ -36,6 +36,7 @@ ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
     m_version->setEnabled(false);
     m_version->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     m_version->setStyleSheet("QLineEdit {"
+                             "font-size: 9pt;"
                              "color: #888;"
                              "border: none;"
                              "padding: 0;"
