@@ -165,11 +165,11 @@ Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai 
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti PRIME sprendimą</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>PRIME sprendimas</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>

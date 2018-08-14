@@ -165,15 +165,15 @@ Jeśli nie ma sygnału, upewnij się że port wyjściowy monitora jest prawidło
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Użyj rozwiązania PRIME</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Rozwiązanie PRIME</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Przeznaczone dla laptopów z grafiką hybrydową, pracujących z najlepszą wydajnością, muszących działać na sterownikach o zamkbiętych źródłach.</translation>
     </message>
 </context>
 <context>

@@ -14,7 +14,7 @@
     <message>
         <location filename="../notify/main.cpp" line="42"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
-        <translation>Самостално врати на %2 након неуспешног преласка на %1</translation>
+        <translation>Аутоматски врати на %2 након неуспешног преласка на %1</translation>
     </message>
     <message>
         <location filename="../notify/main.cpp" line="45"/>

@@ -165,15 +165,15 @@ Si no hi ha cap senyal, confirmeu que el port de sortida del monitor està conne
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Usa la solució PRIME</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Solució PRIME</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Pel que fa a portàtils amb gràfics híbrids, per tenir-ne el millor rendiment cal usar el controlador de codi tancat.</translation>
     </message>
 </context>
 <context>

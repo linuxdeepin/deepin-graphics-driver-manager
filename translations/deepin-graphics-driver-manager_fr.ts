@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation>Synchroniser les données sur le disque, ce qui prend environ 5 à 10 minutes, une fois terminé, il redémarre automatiquement.</translation>
+        <translation>Synchronisation des données sur le disque, cela va prendre environ 5 à 10 minutes, une fois terminé, il redémarrera automatiquement.</translation>
     </message>
 </context>
 <context>
@@ -62,7 +62,7 @@
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
         <translation>Veuillez redémarrer pour démarrer l&apos;installation.
 
-Si aucun signal, veuillez confirmer si le port de sortie du moniteur est correctement connecté.</translation>
+Si aucun signal, veuillez verifier si le port de sortie du moniteur est correctement connecté.</translation>
     </message>
     <message>
         <source>Please reboot to start installation</source>
@@ -149,19 +149,19 @@ Si aucun signal, veuillez confirmer si le port de sortie du moniteur est correct
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation>Seulement adaptable à des parties de distributions et de cartes graphiques, peut causer un écran noir.</translation>
+        <translation>Convient uniquement pour certaines cartes graphiques. Un écran noir peut apparaître si pilote non compatible.</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Accélérer la carte graphique avec de meilleures performances, mais instable dans certaines cartes avec écran clignotant.</translation>
+        <translation>Augmente les performances de la carte graphique, mais des flash à l&apos;écran peuvent apparaitre avec certaines cartes.</translation>
     </message>
     <message>
         <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
-        <translation>Une voie d&apos;accélération ancienne et mature avec la meilleure compatibilité mais des performances plus faibles.</translation>
+        <translation>Un mode d&apos;accélération plus ancien qui offre la meilleure compatibilité mais des performances réduites. </translation>
     </message>
     <message>
         <source>Save power to reduce power consumption.</source>
-        <translation>Économisez de l&apos;énergie pour réduire la consommation d&apos;énergie.</translation>
+        <translation>Économisez de l&apos;énergie pour réduire la consommation d&apos;électricité.</translation>
     </message>
     <message>
         <source>Use PRIME Solution</source>

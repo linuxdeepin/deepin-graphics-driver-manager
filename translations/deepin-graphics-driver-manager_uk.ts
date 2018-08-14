@@ -3,26 +3,26 @@
     <name>GLTestWindow</name>
     <message>
         <source>Apply</source>
-        <translation type="unfinished"/>
+        <translation>Застосувати</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Скасувати</translation>
     </message>
     <message>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation type="unfinished"/>
+        <translation>Переконайтеся, що драйвер працює нормально без розмиття та розривів у зображенні</translation>
     </message>
     <message>
         <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation type="unfinished"/>
+        <translation>Синхронізація даних на диску триватиме близько 5-10 хвилин. Після її завершення комп&apos;ютер буде автоматично перезавантажено.</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>Гаразд</translation>
     </message>
     <message>
         <source>Reboot</source>
@@ -54,17 +54,19 @@
     </message>
     <message>
         <source>Your hardware is not supported currently, please wait for future version.</source>
-        <translation type="unfinished"/>
+        <translation>У поточній версії системи не передбачено підтримки вашого обладнання. Будь ласка, зачекайте на наступну версію.</translation>
     </message>
     <message>
         <source>Please reboot to start installation.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Будь ласка, перезавантажте комп&apos;ютер, щоб розпочати встановлення.
+
+Якщо сигнал не з&apos;явиться, перевірте, чи з&apos;єднано монітор із портом виведення даних належним чином.</translation>
     </message>
     <message>
         <source>Please reboot to start installation</source>
-        <translation type="unfinished"/>
+        <translation>Будь ласка, перезавантажте комп&apos;ютер, щоб розпочати встановлення</translation>
     </message>
 </context>
 <context>
@@ -147,31 +149,31 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation type="unfinished"/>
+        <translation>Пристосований лише до частини дистрибутивів та деяких графічних карток. Може призвести до відсутності зображення.</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation type="unfinished"/>
+        <translation>Надає можливість скористатися усією потужністю графічної картки, але працює нестабільно із деякими картками, може спричиняти блимання зображення.</translation>
     </message>
     <message>
         <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Апаратне прискорення на застарілих і старих картках. Найкраща сумісність, але слабка швидкодія.</translation>
     </message>
     <message>
         <source>Save power to reduce power consumption.</source>
-        <translation type="unfinished"/>
+        <translation>Заощадження енергії для зменшення її споживання.</translation>
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Рішення PRIME</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Рішення PRIME</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Для ноутбуків із гібридною графічною підсистемою. Найкраща швидкодія, але потрібен драйвер із закритим кодом.</translation>
     </message>
 </context>
 <context>
@@ -193,19 +195,19 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Congratulations, you have switched to %1.</source>
-        <translation type="unfinished"/>
+        <translation>Вітаємо, ви перемкнулися на %1.</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation type="unfinished"/>
+        <translation>Підтвердити</translation>
     </message>
     <message>
         <source>Auto restore to %2 after failed to switch to %1</source>
-        <translation type="unfinished"/>
+        <translation>Автоматичне відновлення %2 після невдалої спроби перемкнутися на %1</translation>
     </message>
     <message>
         <source>Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Зворотній зв&apos;язок</translation>
     </message>
 </context>
 </TS>

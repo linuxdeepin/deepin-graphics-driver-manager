@@ -105,7 +105,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Bumblebee Solution</source>
-        <translation>大黄峰方案</translation>
+        <translation>大黄蜂方案</translation>
     </message>
     <message>
         <source>Use NVIDIA default driver</source>
@@ -137,7 +137,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Use Bumblebee Solution</source>
-        <translation>使用大黄峰方案</translation>
+        <translation>使用大黄蜂方案</translation>
     </message>
     <message>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>

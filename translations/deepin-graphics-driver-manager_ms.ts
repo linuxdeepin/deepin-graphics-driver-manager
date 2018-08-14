@@ -3,19 +3,19 @@
     <name>GLTestWindow</name>
     <message>
         <source>Apply</source>
-        <translation type="unfinished"/>
+        <translation>Laksana</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Batal</translation>
     </message>
     <message>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation type="unfinished"/>
+        <translation>Sila pastikan pemacu berfungsi baik tanpa skrin menjadi kabur dan kelihatan terkoyak</translation>
     </message>
     <message>
         <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation type="unfinished"/>
+        <translation>Menyegerak data dengan cakera, kira-kira 5-10 minit diperlukan, kemudian but semula sistem secara automatik.</translation>
     </message>
 </context>
 <context>
@@ -54,17 +54,19 @@
     </message>
     <message>
         <source>Your hardware is not supported currently, please wait for future version.</source>
-        <translation type="unfinished"/>
+        <translation>Perkakasan anda tidak disokong buat masa ini, tunggulah versi akan datang.</translation>
     </message>
     <message>
         <source>Please reboot to start installation.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Sila but semula untuk memulakan pemasangan
+
+Jika tiada isyarat, sila sahkan sama ada port output monitor disambung dengan kemas.</translation>
     </message>
     <message>
         <source>Please reboot to start installation</source>
-        <translation type="unfinished"/>
+        <translation>Sila but semula untuk memulakan pemasangan</translation>
     </message>
 </context>
 <context>
@@ -147,31 +149,31 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation type="unfinished"/>
+        <translation>Hanya serasi dengan sebahagian distribusi dan kad grafik, mungkin menyebabkan skrin gelap.</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation type="unfinished"/>
+        <translation>Lajukan kad grafik dengan prestasi lebih baik, tetapi tidak stabil dengan percikan skrin pada beberapa kad.</translation>
     </message>
     <message>
         <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Cara pemecutan lama yang lebih matang dengan keserasian terbaik tetapi prestasi lebih rendah.</translation>
     </message>
     <message>
         <source>Save power to reduce power consumption.</source>
-        <translation type="unfinished"/>
+        <translation>Simpan kuasa untuk kurangkan penggunaan kuasa.</translation>
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Guna Penyelesaian PRIME</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Penyelesaian PRIME</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Bagi komputer riba dengan grafik hidbrid, perlu prestasi terbaik tetapi berfungsi dengan pemacu sumber-tertutup.</translation>
     </message>
 </context>
 <context>
@@ -193,19 +195,19 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Congratulations, you have switched to %1.</source>
-        <translation type="unfinished"/>
+        <translation>Tahniah, anda telah bertukar ke %1.</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation type="unfinished"/>
+        <translation>Sahkan</translation>
     </message>
     <message>
         <source>Auto restore to %2 after failed to switch to %1</source>
-        <translation type="unfinished"/>
+        <translation>Auto pulih ke %2 selepas gagal bertukar ke %1</translation>
     </message>
     <message>
         <source>Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Maklumbalas</translation>
     </message>
 </context>
 </TS>

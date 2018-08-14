@@ -165,15 +165,15 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Utilizza Prime Solution</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>PRIME Solution</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Per dispositivi con grafica ibrida, si ottengono le migliori prestazioni ma con driver Closed Source.</translation>
     </message>
 </context>
 <context>

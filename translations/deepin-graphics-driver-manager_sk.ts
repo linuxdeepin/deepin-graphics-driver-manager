@@ -165,15 +165,15 @@ Ak nie je na obrazovke žiaden signál, overte, či je výstupný port monitora 
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Použite PRIME riešenie</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>PRIME riešenie</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Pre notebooky s hybridnou grafikou, ktoré majú najlepší výkon, ale musia pracovať s ovládačom s uzavretým zdrojovým kódom.</translation>
     </message>
 </context>
 <context>

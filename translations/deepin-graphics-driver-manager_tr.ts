@@ -165,15 +165,15 @@ Herhangi bir görüntü yok ise ekran bağlantısının doğru yapılıp yapılm
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>PRIME Çözümü Kullanılsın</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>PRIME Çözümü</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Birden fazla grafik kartına sahip taşınabilir bilgisayarlar için en iyi başarımı sunar ancak kapalı kaynaklı bir sürücü kullanılması gerekir.</translation>
     </message>
 </context>
 <context>

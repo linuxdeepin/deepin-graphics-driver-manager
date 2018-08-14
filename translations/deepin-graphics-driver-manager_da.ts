@@ -3,19 +3,19 @@
     <name>GLTestWindow</name>
     <message>
         <source>Apply</source>
-        <translation type="unfinished"/>
+        <translation>Anvend</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Annuller</translation>
     </message>
     <message>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation type="unfinished"/>
+        <translation>Sørg venligst for at driveren virker normalt uden sløret eller iturevet skærm</translation>
     </message>
     <message>
         <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation type="unfinished"/>
+        <translation>Synkroniser data til disk, hvilket taget omkring 5 til 10 minutter. Den genstarter automatisk når den er færdig.</translation>
     </message>
 </context>
 <context>
@@ -54,17 +54,19 @@
     </message>
     <message>
         <source>Your hardware is not supported currently, please wait for future version.</source>
-        <translation type="unfinished"/>
+        <translation>Din hardware understøttes ikke på nuværende tidspunkt. Vent venligt på en fremtidig version.</translation>
     </message>
     <message>
         <source>Please reboot to start installation.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Genstart venligst for at starte installationen.
+
+Hvis der ikke er noget signal, så bekræft venligst om monitorens outputport er tilsluttet korrekt.</translation>
     </message>
     <message>
         <source>Please reboot to start installation</source>
-        <translation type="unfinished"/>
+        <translation>Genstart venligst for at starte installationen</translation>
     </message>
 </context>
 <context>
@@ -147,31 +149,31 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation type="unfinished"/>
+        <translation>Passer kun til dele af distributioner og grafikkort. Kan forårsage sort skærm.</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation type="unfinished"/>
+        <translation>Giver hurtigere grafikort med bedre ydelse, men ustabil i nogle kort med blinkende skærm.</translation>
     </message>
     <message>
         <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>An ældgammel og stabil accelerationsmåde med den bedste kompatibilitet men lavere ydelse.</translation>
     </message>
     <message>
         <source>Save power to reduce power consumption.</source>
-        <translation type="unfinished"/>
+        <translation>Spar på strømmen for at reducere strømforbruget.</translation>
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Brug PRIME-løsning</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>PRIME-løsning</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Til bærbare med hybridgrafik, som giver den bedste ydelse men skal arbejde med driver der bruger lukket kilde.</translation>
     </message>
 </context>
 <context>
@@ -193,19 +195,19 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Congratulations, you have switched to %1.</source>
-        <translation type="unfinished"/>
+        <translation>Tillykke, du har skiftet til %1.</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation type="unfinished"/>
+        <translation>Bekræft</translation>
     </message>
     <message>
         <source>Auto restore to %2 after failed to switch to %1</source>
-        <translation type="unfinished"/>
+        <translation>Automatisk gendannelse til %2 efter skift til %1 mislykkedes</translation>
     </message>
     <message>
         <source>Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Feedback</translation>
     </message>
 </context>
 </TS>

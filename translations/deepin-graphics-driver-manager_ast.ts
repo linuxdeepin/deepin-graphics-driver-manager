@@ -197,7 +197,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Confirm</source>
-        <translation type="unfinished"/>
+        <translation>Confirmar</translation>
     </message>
     <message>
         <source>Auto restore to %2 after failed to switch to %1</source>

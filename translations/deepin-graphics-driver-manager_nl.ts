@@ -165,15 +165,15 @@ Als er geen signaal is, controleer dan of de uitvoerpoort van de monitor correct
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>PRIME-oplossing gebruiken</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>PRIME-oplossing</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Als je een laptop hebt met hybride grafische kaarten, dan verkrijg je de beste prestaties door het gesloten stuurprogramma te gebruiken.</translation>
     </message>
 </context>
 <context>

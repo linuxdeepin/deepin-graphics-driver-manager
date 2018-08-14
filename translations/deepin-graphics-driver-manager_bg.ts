@@ -165,15 +165,15 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Използване на PRIME Solution</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>PRIME Solution</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>За лаптопи с хибридна графика, за най-добро представяне, но трябва да работят с драйвер със затворен код.</translation>
     </message>
 </context>
 <context>

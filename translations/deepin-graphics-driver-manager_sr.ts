@@ -22,7 +22,7 @@
     <name>MainWindow</name>
     <message>
         <source>OK</source>
-        <translation>У РЕДУ</translation>
+        <translation>У реду</translation>
     </message>
     <message>
         <source>Reboot</source>
@@ -42,7 +42,7 @@
     </message>
     <message>
         <source>Download Succeeded</source>
-        <translation>Успешно Преузето</translation>
+        <translation>Успешно преузето</translation>
     </message>
     <message>
         <source>Switching to %1, please wait......</source>
@@ -77,7 +77,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>NVIDIA Default Driver</source>
-        <translation>NVIDIA Подразумевани Управљач</translation>
+        <translation>NVIDIA Подразумевани управљач</translation>
     </message>
     <message>
         <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
@@ -85,23 +85,23 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>NVIDIA Open Source Driver</source>
-        <translation>NVIDIA Управљач Отвореног Кода</translation>
+        <translation>NVIDIA Управљач отвореног кода</translation>
     </message>
     <message>
         <source>NVIDIA Closed Source Driver</source>
-        <translation>NVIDIA Власнички Управљач</translation>
+        <translation>NVIDIA Власнички управљач</translation>
     </message>
     <message>
         <source>Intel Default Driver</source>
-        <translation>Intel Подразумевани Управљач</translation>
+        <translation>Intel Подразумевани управљач</translation>
     </message>
     <message>
         <source>Intel Compatible Mode</source>
-        <translation>Intel Режим Компатибилности</translation>
+        <translation>Intel Режим компатибилности</translation>
     </message>
     <message>
         <source>Intel Acceleration Mode</source>
-        <translation>Intel Режим Убрзања</translation>
+        <translation>Intel Режим убрзања</translation>
     </message>
     <message>
         <source>Bumblebee Solution</source>
@@ -157,7 +157,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
-        <translation>Старији и зрелији начин убрзања са најбољом компатибилношћу али са слабијим учинком.</translation>
+        <translation>Старији и зрелији начин убрзања са најбољом компатибилношћу, али са слабијим учинком.</translation>
     </message>
     <message>
         <source>Save power to reduce power consumption.</source>
@@ -165,15 +165,15 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Користи PRIME Решење</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>PRIME Решење</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>За преносне рачунаре са хибридном графиком. Има најбољи учинак, али мора радити са власничким управљачким програмом.</translation>
     </message>
 </context>
 <context>
@@ -203,7 +203,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Auto restore to %2 after failed to switch to %1</source>
-        <translation>Самостално врати на %2 након неуспешног преласка на %1</translation>
+        <translation>Аутоматски врати на %2 након неуспешног преласка на %1</translation>
     </message>
     <message>
         <source>Feedback</source>

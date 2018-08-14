@@ -3,19 +3,19 @@
     <name>GLTestWindow</name>
     <message>
         <source>Apply</source>
-        <translation type="unfinished"/>
+        <translation>Aplicar</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation type="unfinished"/>
+        <translation>Por favor certifique-se que o controlador funciona normalmente sem ecrã esborratado ou com rasgos</translation>
     </message>
     <message>
         <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation type="unfinished"/>
+        <translation>A sincronizar dados para o disco, isto leva entre 5 a 10 minutos, quando estiver concluído reiniciará automaticamente.</translation>
     </message>
 </context>
 <context>
@@ -54,17 +54,19 @@
     </message>
     <message>
         <source>Your hardware is not supported currently, please wait for future version.</source>
-        <translation type="unfinished"/>
+        <translation>Atualmente este hardware não é suportado, por favor espere pela nova versão.</translation>
     </message>
     <message>
         <source>Please reboot to start installation.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Por favor reinicie para iniciar a instalação.
+
+Se não obtiver nenhum sinal, confirme que o monitor esta corretamente ligado à porta.</translation>
     </message>
     <message>
         <source>Please reboot to start installation</source>
-        <translation type="unfinished"/>
+        <translation>Por favor reinicie para iniciar a instalação</translation>
     </message>
 </context>
 <context>
@@ -147,31 +149,31 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation type="unfinished"/>
+        <translation>Apenas parcialmente funcional em algumas distribuições e placas gráficas, poderá resultar num ecrã preto</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation type="unfinished"/>
+        <translation>Aumenta a velocidade da placa gráfica aumentando o seu desempenho, mas instável em alguns casos resultando num ecrã a piscar.</translation>
     </message>
     <message>
         <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
-        <translation type="unfinished"/>
+        <translation>Um modo de aceleração mais antigo e maduro com melhor compatibilidade mas desempenho mais fraco.</translation>
     </message>
     <message>
         <source>Save power to reduce power consumption.</source>
-        <translation type="unfinished"/>
+        <translation>Poupe energia reduzindo o consumo da mesma.</translation>
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Use a solução PRIME</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Solução PRIME</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Para portáteis com gráficos híbridos, obtém um melhor desempenho mas tem de trabalhar com controladores de código fonte fechado.</translation>
     </message>
 </context>
 <context>
@@ -193,19 +195,19 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <source>Congratulations, you have switched to %1.</source>
-        <translation type="unfinished"/>
+        <translation>Parabéns, alterou para %1.</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation type="unfinished"/>
+        <translation>Confirmar</translation>
     </message>
     <message>
         <source>Auto restore to %2 after failed to switch to %1</source>
-        <translation type="unfinished"/>
+        <translation>Restaurar automaticamente para %2 depois de falhar mudança para %1</translation>
     </message>
     <message>
         <source>Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Feedback</translation>
     </message>
 </context>
 </TS>

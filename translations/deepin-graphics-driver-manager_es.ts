@@ -149,7 +149,7 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
     </message>
     <message>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation>Solo compatible con algunas tarjetas gráficas, puede causar una pantalla negra.</translation>
+        <translation>Solo compatible con algunas tarjetas gráficas, podría ocurrir pantallazos oscuros.</translation>
     </message>
     <message>
         <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
@@ -165,15 +165,15 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Utilizar la solución PRIME</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Solución PRIME</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Para computadoras portátiles con gráficos híbridos, permite obtener el mejor rendimiento pero utiliza un controlador de código privativo.</translation>
     </message>
 </context>
 <context>
@@ -195,7 +195,7 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
     </message>
     <message>
         <source>Congratulations, you have switched to %1.</source>
-        <translation>En hora buena, has cambiado a %1.</translation>
+        <translation>Felicidades, has cambiado a %1.</translation>
     </message>
     <message>
         <source>Confirm</source>

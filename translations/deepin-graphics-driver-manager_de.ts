@@ -165,15 +165,15 @@ Wenn Sie die Nachricht &apos;kein Signal&apos; erhalten, stellen Sie sicher, das
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>PRIME-Lösung benutzen</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>PRIME-Lösung</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Für Laptops mit Hybrid-Grafik, bietet beste Performance aber benutzt Closed-Source-Treiber</translation>
     </message>
 </context>
 <context>

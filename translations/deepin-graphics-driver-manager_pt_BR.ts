@@ -165,15 +165,15 @@ Se não houver sinal, confirme se a porta de saída do monitor está conectada c
     </message>
     <message>
         <source>Use PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Usar Solução PRIME</translation>
     </message>
     <message>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Solução PRIME</translation>
     </message>
     <message>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Para laptops com gráficos híbridos, com melhor desempenho, mas deve funcionar com um driver de código fechado.</translation>
     </message>
 </context>
 <context>
