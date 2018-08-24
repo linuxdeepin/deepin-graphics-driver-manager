@@ -1,6 +1,7 @@
 
 #include "mainwindow.h"
 #include "widgets/resolutionwidget.h"
+#include "utils.h"
 
 #include <QApplication>
 #include <QScreen>
@@ -12,7 +13,6 @@
 #include <QAction>
 
 #include <DTitlebar>
-#include <DSvgRenderer>
 
 #define DESKTOP_FILE_SOURCE "/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-notify.desktop"
 #define DESKTOP_FILE_DEST "/.config/autostart/deepin-gradvrmgr-notify.desktop"
@@ -20,7 +20,7 @@
 const QPixmap hidpiPixmap(const QString &path, const QSize &sz)
 {
     const auto ratio = qApp->devicePixelRatio();
-    QPixmap iconPix = DSvgRenderer::render(path, sz * ratio);
+    QPixmap iconPix = Utils::renderSVG(path, sz * ratio);
     iconPix.setDevicePixelRatio(ratio);
 
     return iconPix;

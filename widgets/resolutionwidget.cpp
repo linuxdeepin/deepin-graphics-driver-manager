@@ -1,5 +1,6 @@
 
 #include "resolutionwidget.h"
+#include "utils.h"
 
 #include <QLabel>
 #include <QVBoxLayout>
@@ -7,17 +8,13 @@
 #include <QTimer>
 #include <QLineEdit>
 
-#include <DSvgRenderer>
-
-DWIDGET_USE_NAMESPACE
-
 ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
     QFrame(parent),
 
     m_resolution(r)
 {
     const auto ratio = devicePixelRatioF();
-    QPixmap checkedPix = DSvgRenderer::render(":/resources/icons/select.svg", QSize(16, 16) * ratio);
+    QPixmap checkedPix = Utils::renderSVG(":/resources/icons/select.svg", QSize(16, 16) * ratio);
     checkedPix.setDevicePixelRatio(ratio);
 
     m_checkedBtn = new QLabel;
