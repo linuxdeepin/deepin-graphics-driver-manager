@@ -35,6 +35,8 @@ if [ $1 == "post" ];then
         nvidia-driver \
         nvidia-driver-libs-nonglvnd \
         xserver-xorg-video-nvidia
+
+    overlayroot-chroot rm -rf /etc/modprobe.d/bumblebee.conf
 else
     if [ -x /usr/bin/nvidia-installer ];then
         nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
@@ -58,4 +60,6 @@ else
         nvidia-driver \
         nvidia-driver-libs-nonglvnd \
         xserver-xorg-video-nvidia
+
+    rm -rf /etc/modprobe.d/bumblebee.conf
 fi

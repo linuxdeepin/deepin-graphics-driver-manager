@@ -5,6 +5,7 @@
 # exit 2 ------ use private nvidia driver
 nouveau_mod=`lsmod | grep nouveau`
 nvidia_mod=`lsmod | grep nvidia`
+bumblebee_exist=`dpkg -l | grep bumblebee`
 prime_exist=`dpkg -l | grep deepin-nvidia-prime`
 BATTERY=`qdbus com.deepin.daemon.InputDevices /com/deepin/daemon/Power com.deepin.daemon.Power.LidIsPresent`
 
@@ -19,7 +20,7 @@ if [ x"$BATTERY" == x"true" ]; then
             exit 0
         fi
     else
-        if [ -f /etc/modprobe.d/bumblebee.conf ]; then
+        if [ -n "$bumblebee_exist" ]; then
             echo "Bumblebee Mode"
             exit 3
         elif [ -n "$prime_exist" ]; then
