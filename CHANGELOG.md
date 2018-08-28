@@ -1,3 +1,13 @@
+<a name="1.0.8"></a>
+### 1.0.7.1 (2018-08-28)
+
+
+#### Bug Fixes
+
+*   bumblebee resolution identify ([9c87dfd0](9c87dfd0))
+
+
+
 <a name="1.0.7"></a>
 ### 1.0.7 (2018-08-12)
 
