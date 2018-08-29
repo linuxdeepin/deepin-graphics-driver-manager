@@ -18,8 +18,6 @@ if [ $1 == "post" ];then
     rsync -avz --progress /media/root-rw/overlay/* /media/root-ro/
     sync
 
-    overlayroot-chroot update-alternatives --auto glx
-
     echo "Sync driver into disk ...... done"
 else
     apt-get -y --reinstall --allow-downgrades install \
