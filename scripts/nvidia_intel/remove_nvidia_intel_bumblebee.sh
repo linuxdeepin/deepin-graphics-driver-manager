@@ -8,8 +8,6 @@ fi
 export DEBIAN_FRONTEND=noninteractive
 
 nvidia_mod=`lsmod | grep nvidia`
-# check the install script is for install PRIME resolution
-to_prime=`grep "deepin-nvidia-prime" /tmp/exe.sh`
 
 systemctl stop lightdm
 
@@ -24,6 +22,8 @@ if [ $1 == "post" ];then
         overlayroot-chroot rmmod -f nvidia
     fi
 
+    overlayroot-chroot rm -rf /etc/modprobe.d/bumblebee.conf
+
     overlayroot-chroot apt-get -y purge \
         bumblebee \
         bumblebee-nvidia \
@@ -35,8 +35,6 @@ if [ $1 == "post" ];then
         nvidia-driver \
         nvidia-driver-libs-nonglvnd \
         xserver-xorg-video-nvidia
-
-    overlayroot-chroot rm -rf /etc/modprobe.d/bumblebee.conf
 else
     if [ -x /usr/bin/nvidia-installer ];then
         nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
@@ -49,6 +47,8 @@ else
         rmmod -f nvidia
     fi
 
+    rm -rf /etc/modprobe.d/bumblebee.conf
+
     apt-get -y purge \
         bumblebee \
         bumblebee-nvidia \
@@ -60,6 +60,4 @@ else
         nvidia-driver \
         nvidia-driver-libs-nonglvnd \
         xserver-xorg-video-nvidia
-
-    rm -rf /etc/modprobe.d/bumblebee.conf
 fi

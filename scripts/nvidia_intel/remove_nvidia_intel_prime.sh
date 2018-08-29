@@ -8,8 +8,6 @@ fi
 export DEBIAN_FRONTEND=noninteractive
 
 nvidia_mod=`lsmod | grep nvidia`
-# check the install script is for install Bumblebee resolution
-to_bumblebee=`grep "bumblebee" /tmp/exe.sh`
 
 systemctl stop lightdm
 

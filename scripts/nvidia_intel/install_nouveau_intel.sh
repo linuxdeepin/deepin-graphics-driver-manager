@@ -26,6 +26,11 @@ else
         xserver-xorg-core \
         xserver-xorg-video-nouveau
 
+    if [[ $? -ne 0 ]]; then
+        echo "apt-get execute failed!"
+        exit 1
+    fi
+
     echo "Loading kernel modules......"
     modprobe nouveau
 fi
