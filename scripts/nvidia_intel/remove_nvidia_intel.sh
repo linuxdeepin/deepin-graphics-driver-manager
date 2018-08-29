@@ -26,6 +26,11 @@ if [ $1 == "post" ];then
         glx-alternative-nvidia \
         nvidia-alternative
 
+    if [[ $? -ne 0 ]]; then
+        echo "apt-get execute failed!"
+        exit 1
+    fi
+
     # TODO: remove after package problem fixed #
     echo "Manual update initramfs ..."
     overlayroot-chroot update-initramfs -u
@@ -44,6 +49,11 @@ else
     apt-get -y purge \
         glx-alternative-nvidia \
         nvidia-alternative
+
+    if [[ $? -ne 0 ]]; then
+        echo "apt-get execute failed!"
+        exit 1
+    fi
 
     # TODO: remove after package problem fixed #
     echo "Manual update initramfs ..."

@@ -25,6 +25,11 @@ else
         xserver-xorg-core \
         xserver-xorg-input-all
 
+    if [[ $? -ne 0 ]]; then
+        echo "apt-get execute failed!"
+        exit 1
+    fi
+
     echo "Loading kernel modules......"
     modprobe nvidia-drm
     modprobe nvidia-modeset

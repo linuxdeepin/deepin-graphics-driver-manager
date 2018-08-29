@@ -26,11 +26,26 @@ else
         xserver-xorg-core \
         xserver-xorg-video-nouveau
 
+    if [[ $? -ne 0 ]]; then
+        echo "apt-get execute failed!"
+        exit 1
+    fi
+
     # repair glx alternative for nouveau
-    apt-get -y install --reinstall update-glx glx-diversions nvidia-installer-cleanup glx-alternative-mesa
-    apt-get -y install --reinstall libgl1-mesa-glx libgl1-mesa-glx:i386
-    apt-get -y install --reinstall libglx-mesa0 libglx-mesa0:i386
-    apt-get -y install --reinstall glx-diversions
+    apt-get --reinstall -y --allow-downgrades install \
+        update-glx \
+        nvidia-installer-cleanup \
+        glx-alternative-mesa \
+        libgl1-mesa-glx \
+        libgl1-mesa-glx:i386 \
+        libglx-mesa0 \
+        libglx-mesa0:i386 \
+        glx-diversions
+
+    if [[ $? -ne 0 ]]; then
+        echo "apt-get execute for repair failed!"
+        exit 1
+    fi
 
     echo "Loading kernel modules......"
     modprobe nouveau

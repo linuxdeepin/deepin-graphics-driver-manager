@@ -26,6 +26,11 @@ else
         nvidia-driver \
         nvidia-driver-libs-nonglvnd
 
+    if [[ $? -ne 0 ]]; then
+        echo "apt-get execute failed!"
+        exit 1
+    fi
+
     if [ -n "$nouveau_mod" ]; then
         echo "Removing nouveau modules..."
         rmmod -f nouveau
@@ -35,8 +40,6 @@ else
     modprobe nvidia-drm
     modprobe nvidia-modeset
     modprobe nvidia
-
-    #/usr/bin/update-alternatives --auto glx
 
     echo -e '#!/bin/sh\n. /sbin/prime-offload\n/usr/lib/deepin-graphics-driver-manager/gltest\n' > /tmp/deepin-prime-gltest
     chmod a+x /tmp/deepin-prime-gltest

@@ -24,8 +24,8 @@ if [[ -e "/etc/modprobe.d/deepin-blacklists-nvidia.conf" ]]; then
     overlayroot-chroot update-initramfs -u
 fi
 
-/tmp/exe-remove-old.sh "test" || reboot
-/tmp/exe.sh "test" || reboot
+/tmp/exe-remove-old.sh "test" || (echo "test remove old driver failed!" && sync && reboot)
+/tmp/exe.sh "test" || (echo "test install new driver failed!" && sync && reboot)
 
 if [[ -e "/tmp/deepin-prime-gltest" ]]; then
     /usr/bin/xinit /tmp/deepin-prime-gltest
