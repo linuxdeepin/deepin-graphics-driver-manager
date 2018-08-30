@@ -1,0 +1,259 @@
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sl" version="2.1">
+<context>
+    <name>GLTestWindow</name>
+    <message>
+        <location filename="../gltest/main.cpp" line="104"/>
+        <source>Apply</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../gltest/main.cpp" line="105"/>
+        <source>Cancel</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../gltest/main.cpp" line="106"/>
+        <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../gltest/main.cpp" line="161"/>
+        <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <location filename="../mainwindow.cpp" line="35"/>
+        <source>Switch</source>
+        <translation>Preklopi</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="56"/>
+        <source>OK</source>
+        <translation>V redu</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="60"/>
+        <source>Reboot</source>
+        <translation>Ponovno zaženi</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="146"/>
+        <source>Your hardware is not supported currently, please wait for future version.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="236"/>
+        <source>Switching</source>
+        <translation>Preklapljanje</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="238"/>
+        <source>Switching to %1, please wait......</source>
+        <translation>Preklapljam na %1, počakajte......</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="259"/>
+        <source>Download failed</source>
+        <translation>Prenos ni uspel</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="260"/>
+        <source>Sorry, switch failed</source>
+        <translation>Oprostite, preklop ni uspel</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="266"/>
+        <source>Download Succeeded</source>
+        <translation>Prenos je uspel</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="268"/>
+        <source>Please reboot to start installation.
+
+If no signal, please confirm whether the monitor output port is connected correctly.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="270"/>
+        <source>Please reboot to start installation</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>Resolution</name>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="8"/>
+        <source>Use AMD card driver</source>
+        <translation>Uporabi gonilnik kartice AMD</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="9"/>
+        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
+        <translation>Za posebne potrebe. Samodejno določi način pospeška brez zunanje konfiguracije.</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="11"/>
+        <source>NVIDIA Default Driver</source>
+        <translation>Privzeti gonilnik NVIDIA</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="12"/>
+        <source>Use NVIDIA default driver</source>
+        <translation>Uporabi privzeti gonilnik NVIDIA</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="13"/>
+        <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
+        <translation>V trenutnem okolju ne zaznavam gonilnika za kartico NVIDIA, zato bo obarvan sivo</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="14"/>
+        <source>NVIDIA Open Source Driver</source>
+        <translation>Odprtokodni gonilnik NVIDIA</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="15"/>
+        <source>Use NVIDIA open source driver</source>
+        <translation>Uporabi odprtokodni gonilnik NVIDIA</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="16"/>
+        <source>Unstable in some graphics cards with weaker performance.</source>
+        <translation>Nestabilen pri nekaterih grafičnih karticah s slabšo zmogljivostjo.</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="17"/>
+        <source>NVIDIA Closed Source Driver</source>
+        <translation>Zaprtokodni gonilnik NVIDIA</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="18"/>
+        <source>Use NVIDIA closed source driver</source>
+        <translation>Uporabi zaprtokodni gonilnik NVIDIA</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="19"/>
+        <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="21"/>
+        <source>Intel Default Driver</source>
+        <translation>Privzeti gonilnik Intel</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="22"/>
+        <source>Use Intel default driver</source>
+        <translation>Uporabi privzeti gonilnik Intel</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="23"/>
+        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
+        <translation>Uporablja metodo Glamor kot privzeti način pospeševanja, ki po večini ni združljiv s starejšimi grafičnimi karticami.</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="24"/>
+        <source>Intel Compatible Mode</source>
+        <translation>Kompatibilni način Intel</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="25"/>
+        <source>Use Intel compatible mode</source>
+        <translation>Uporabi kompatibilni način Intel</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="26"/>
+        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="27"/>
+        <source>Intel Acceleration Mode</source>
+        <translation>Način pospeška Intel</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="28"/>
+        <source>Use Intel acceleration mode</source>
+        <translation>Uporabi način pospeška Intel</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="29"/>
+        <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="31"/>
+        <source>Use Bumblebee Solution</source>
+        <translation>Uporabi rešitev Bumblebee</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="32"/>
+        <source>Bumblebee Solution</source>
+        <translation>Rešitev Bumblebee</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="33"/>
+        <source>Save power to reduce power consumption.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="35"/>
+        <source>Use PRIME Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="36"/>
+        <source>PRIME Solution</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="37"/>
+        <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>ResolutionWidget</name>
+    <message>
+        <location filename="../widgets/resolutionwidget.cpp" line="118"/>
+        <source>Version: </source>
+        <translation>Različica:</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <location filename="../notify/main.cpp" line="32"/>
+        <source>Congratulations, you have switched to %1.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../notify/main.cpp" line="35"/>
+        <source>Confirm</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../notify/main.cpp" line="43"/>
+        <source>Auto restore to %2 after failed to switch to %1</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../notify/main.cpp" line="46"/>
+        <source>Feedback</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="25"/>
+        <source>Deepin Graphics Driver Manager</source>
+        <translation>Upravitelj grafičnih gonilnikov Deepin</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="26"/>
+        <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation>Upravitelj grafičnih gonilnikov Deepin je kompaktno in preprosto orodje za upravljanje grafičnih gonilnikov. Zaznava grafične kartice, namešča grafične gonilnike, preklaplja med rešitvami grafičnih gonilnikov, samodejno obnavlja grafične gonilnike itd.</translation>
+    </message>
+</context>
+</TS>
