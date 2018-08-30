@@ -197,7 +197,7 @@ int main(int argc, char *argv[])
     const QString lang = settings.value("lang", "en_US").toString();
 
     QTranslator translator;
-    translator.load(QString("/usr/share/deepin-graphics-driver-manager/translations/deepin-dgradrimgr-gltest_%1.qm").arg(lang));
+    translator.load(QString("/usr/share/deepin-graphics-driver-manager/translations/deepin-graphics-driver-manager_%1.qm").arg(lang));
     app.installTranslator(&translator);
 
     QFile("/tmp/gltest-success").remove();
