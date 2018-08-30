@@ -106,7 +106,7 @@ int main(int argc, char *args[])
     dapp.setQuitOnLastWindowClosed(true);
 
     QTranslator translator;
-    translator.load(QString("/usr/share/deepin-graphics-driver-manager/translations/deepin-dgradrimgr-notify_%1.qm").arg(QLocale::system().name()));
+    translator.load(QString("/usr/share/deepin-graphics-driver-manager/translations/deepin-graphics-driver-manager_%1.qm").arg(QLocale::system().name()));
     dapp.installTranslator(&translator);
 
     DLogManager::registerConsoleAppender();
