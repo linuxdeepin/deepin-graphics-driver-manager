@@ -51,6 +51,7 @@
             },
             {
                 "id": 300,
+                "keep_gltest": true,
                 "title": "Use NVIDIA closed source driver",
                 "name": "NVIDIA Closed Source Driver",
                 "description": "Only adaptive to parts of distributions and graphics cards, may cause black screen.",
@@ -127,6 +128,7 @@
             },
             {
                 "id": 300,
+                "keep_gltest": true,
                 "title": "Use NVIDIA closed source driver",
                 "name": "NVIDIA Closed Source Driver",
                 "version": "nvidia/version_nvidia_driver.sh",
@@ -138,6 +140,7 @@
             },
             {
                 "id": 400,
+                "keep_gltest": true,
                 "title": "Use Bumblebee Solution",
                 "name": "Bumblebee Solution",
                 "description": "Save power to reduce power consumption.",
@@ -149,6 +152,7 @@
             },
             {
                 "id": 500,
+                "keep_gltest": true,
                 "title": "Use PRIME Solution",
                 "name": "PRIME Solution",
                 "description": "For laptops with hybrid graphics, having best performance but must work with closed-source driver.",
