@@ -24,7 +24,7 @@ else
     apt-get -y --reinstall --allow-downgrades install \
         deepin-nvidia-prime \
         nvidia-driver \
-        nvidia-driver-libs-nonglvnd
+        nvidia-driver-libs
 
     if [[ $? -ne 0 ]]; then
         echo "apt-get execute failed!"

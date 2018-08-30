@@ -21,7 +21,7 @@ journalctl -f -u driver-installer.service | sed 's/$/\r/g' > /dev/tty1 2>&1 &
 if [[ -e "/etc/modprobe.d/deepin-blacklists-nvidia.conf" ]]; then
     echo "remove modules about nvidia from blacklist!"
     overlayroot-chroot rm /etc/modprobe.d/deepin-blacklists-nvidia.conf
-    overlayroot-chroot update-initramfs -u
+    overlayroot-chroot update-initramfs -u -t
 fi
 
 /tmp/exe-remove-old.sh "test" || (echo "test remove old driver failed!" && sync && reboot)

@@ -7,7 +7,7 @@ COMMANDS=(
     "apt-get update"
     "apt-get install -d --reinstall -y --allow-downgrades \
         nvidia-driver \
-        nvidia-driver-libs-nonglvnd"
+        nvidia-driver-libs"
     "cd /var/cache/apt/archives"
     "apt-get download \
         deepin-nvidia-prime \
@@ -16,6 +16,10 @@ COMMANDS=(
         glx-diversions \
         libegl-nvidia0 \
         libegl-nvidia0:i386 \
+        libegl1 \
+        libegl1:i386 \
+        libgl1-nvidia-glvnd-glx \
+        libgl1-nvidia-glvnd-glx:i386 \
         libegl1-nvidia \
         libegl1-nvidia:i386 \
         libgl1-nvidia-glx \
@@ -37,6 +41,8 @@ COMMANDS=(
         libnvidia-glcore \
         libnvidia-glcore:i386 \
         libnvidia-ml1 \
+        libopengl0 \
+        libopengl0:i386 \
         libxnvctrl0 \
         libvulkan1 \
         libvulkan1:i386 \
@@ -46,12 +52,13 @@ COMMANDS=(
         libwayland-server0:i386 \
         nvidia-driver \
         nvidia-driver-bin \
-        nvidia-driver-libs-nonglvnd \
-        nvidia-driver-libs-nonglvnd:i386 \
-        nvidia-driver-libs-nonglvnd-i386:i386 \
+        nvidia-driver-libs \
+        nvidia-driver-libs:i386 \
+        nvidia-driver-libs-i386:i386 \
         nvidia-alternative \
         nvidia-egl-common \
         nvidia-egl-icd \
+        nvidia-egl-icd:i386 \
         nvidia-egl-wayland-common \
         nvidia-egl-wayland-icd \
         nvidia-egl-wayland-icd:i386 \
@@ -68,6 +75,9 @@ COMMANDS=(
         nvidia-settings \
         nvidia-support \
         nvidia-vdpau-driver \
+        nvidia-vulkan-common \
+        nvidia-vulkan-icd \
+        nvidia-vulkan-icd:i386 \
         update-glx \
         xserver-xorg-video-nvidia"
 )
@@ -85,4 +95,4 @@ done
 # to avoid rmmod or modprobe failed so blacklists modules about nvidia before reboot to overlay
 echo "blacklists modules about nvidia now!"
 echo -e "blacklist nouveau\nblacklist nvidia-drm\nblacklist nvidia-modeset\nblacklist nvidia\nblacklist nvidiafb" > /etc/modprobe.d/deepin-blacklists-nvidia.conf
-update-initramfs -u
+update-initramfs -u -t
