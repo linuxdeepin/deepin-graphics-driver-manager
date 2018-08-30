@@ -33,7 +33,7 @@ if [ $1 == "post" ];then
 
     # TODO: remove after package problem fixed #
     echo "Manual update initramfs ..."
-    overlayroot-chroot update-initramfs -u
+    overlayroot-chroot update-initramfs -u -t
 else
     if [ -x /usr/bin/nvidia-installer ];then
         nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
@@ -57,5 +57,5 @@ else
 
     # TODO: remove after package problem fixed #
     echo "Manual update initramfs ..."
-    update-initramfs -u
+    update-initramfs -u -t
 fi

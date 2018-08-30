@@ -13,6 +13,7 @@
         [
             {
                 "id": 100,
+                "keep_gltest": true,
                 "title": "Use AMD card driver",
                 "name": "AMD card driver",
                 "description": "For special needs. Auto determine the acceleration way without external configuration.",
@@ -32,6 +33,7 @@
         [
             {
                 "id": 100,
+                "keep_gltest": true,
                 "title": "Use NVIDIA default driver",
                 "name": "NVIDIA Default Driver",
                 "description": "NVIDIA card driver is not detected in the current environment, and will be in gray",
@@ -41,6 +43,7 @@
             },
             {
                 "id": 200,
+                "keep_gltest": true,
                 "title": "Use NVIDIA open source driver",
                 "name": "NVIDIA Open Source Driver",
                 "description": "Unstable in some graphics cards with weaker performance.",
@@ -72,6 +75,7 @@
         [
             {
                 "id": 100,
+                "keep_gltest": true,
                 "title": "Use Intel default driver",
                 "name": "Intel Default Driver",
                 "description": "Uses glamor as the default acceleration way with low compatibility on old graphics cards.",
@@ -81,6 +85,7 @@
             },
             {
                 "id": 200,
+                "keep_gltest": true,
                 "title": "Use Intel compatible mode",
                 "name": "Intel Compatible Mode",
                 "description": "An ancient and mature acceleration way with best compatibility but weaker performance.",
@@ -90,6 +95,7 @@
             },
             {
                 "id": 300,
+                "keep_gltest": true,
                 "title": "Use Intel acceleration mode",
                 "name": "Intel Acceleration Mode",
                 "description": "Speed up the graphics card with better performance, but unstable in some cards with screen flashing.",
@@ -109,6 +115,7 @@
         [
             {
                 "id": 100,
+                "keep_gltest": true,
                 "title": "Use Intel default driver",
                 "name": "Intel Default Driver",
                 "description": "Uses glamor as the default acceleration way with low compatibility on old graphics cards.",
@@ -118,6 +125,7 @@
             },
             {
                 "id": 200,
+                "keep_gltest": true,
                 "title": "Use NVIDIA open source driver",
                 "name": "NVIDIA Open Source Driver",
                 "description": "Unstable in some graphics cards with weaker performance.",

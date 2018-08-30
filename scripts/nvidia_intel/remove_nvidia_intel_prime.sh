@@ -27,7 +27,6 @@ if [ $1 == "post" ];then
         glx-alternative-nvidia \
         nvidia-alternative \
         nvidia-driver \
-        nvidia-driver-libs-nonglvnd \
         xserver-xorg-video-nvidia
 else
     if [ -x /usr/bin/nvidia-installer ];then
@@ -46,6 +45,5 @@ else
         glx-alternative-nvidia \
         nvidia-alternative \
         nvidia-driver \
-        nvidia-driver-libs-nonglvnd \
         xserver-xorg-video-nvidia
 fi
