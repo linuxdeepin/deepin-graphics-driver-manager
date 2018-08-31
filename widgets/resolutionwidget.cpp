@@ -14,7 +14,7 @@ ResolutionWidget::ResolutionWidget(const Resolution &r, QWidget *parent) :
     m_resolution(r)
 {
     const auto ratio = devicePixelRatioF();
-    QPixmap checkedPix = Utils::renderSVG(":/resources/icons/select.svg", QSize(16, 16) * ratio);
+    QPixmap checkedPix = Utils::renderSVG(":/resources/icons/select.svg", QSize(16, 16));
     checkedPix.setDevicePixelRatio(ratio);
 
     m_checkedBtn = new QLabel;

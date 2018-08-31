@@ -20,7 +20,7 @@
 const QPixmap hidpiPixmap(const QString &path, const QSize &sz)
 {
     const auto ratio = qApp->devicePixelRatio();
-    QPixmap iconPix = Utils::renderSVG(path, sz * ratio);
+    QPixmap iconPix = Utils::renderSVG(path, sz);
     iconPix.setDevicePixelRatio(ratio);
 
     return iconPix;
