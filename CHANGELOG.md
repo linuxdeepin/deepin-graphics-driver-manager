@@ -1,3 +1,15 @@
+<a name="1.0.8"></a>
+## 1.0.8 (2018-08-31)
+
+
+#### Bug Fixes
+
+*   prime solution using glvnd drivers ([ea222683](ea222683))
+*   bumblebee resolution identify ([51fb17bd](51fb17bd))
+*   fix translations ([f88005be](f88005be))
+
+
+
 <a name="1.0.7"></a>
 ### 1.0.7 (2018-08-12)
 
