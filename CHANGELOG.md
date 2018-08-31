@@ -1,4 +1,16 @@
-<a name="1.0.8"></a>
+<a name="1.0.7.2"></a>
+## 1.0.7.2 (2018-08-31)
+
+
+#### Bug Fixes
+
+*   add more debug info ([8d6e3264](8d6e3264))
+*   merge translations ([afd01891](afd01891))
+*   prime solution using glvnd drivers ([6415df62](6415df62))
+
+
+
+<a name="1.0.7.1"></a>
 ### 1.0.7.1 (2018-08-28)
 
 
