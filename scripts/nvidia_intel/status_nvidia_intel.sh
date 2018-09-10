@@ -32,7 +32,7 @@ if [ x"$BATTERY" == x"true" ]; then
         fi
     fi
 else
-    echo "Unsupport bumblebee"
+    echo "Doesn't support bumblebee"
     if [ -n "$nouveau_mod" ]; then
         if [ -f /usr/lib/xorg/modules/drivers/nouveau_drv.so ];then
             echo "Nouveau Mode"
