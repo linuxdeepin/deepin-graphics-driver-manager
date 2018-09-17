@@ -5,8 +5,8 @@
 # exit 2 ------ use private nvidia driver
 nouveau_mod=`lsmod | grep nouveau`
 nvidia_mod=`lsmod | grep nvidia`
-bumblebee_exist=`dpkg -l | grep bumblebee`
-prime_exist=`dpkg -l | grep deepin-nvidia-prime`
+bumblebee_exist=`dpkg -s bumblebee 2>/dev/null | grep "Status: install ok installed"`
+prime_exist=`dpkg -s deepin-nvidia-prime 2>/dev/null | grep "Status: install ok installed"`
 BATTERY=`qdbus com.deepin.daemon.InputDevices /com/deepin/daemon/Power com.deepin.daemon.Power.LidIsPresent`
 
 if [ x"$BATTERY" == x"true" ]; then
