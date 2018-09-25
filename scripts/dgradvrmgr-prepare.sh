@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. /usr/lib/deepin-graphics-driver-manager/error_func.sh
+
 PREPARE=$1
 REMOVEOLD=$2
 INSTALL=$3
@@ -17,12 +19,12 @@ echo $INSTALL
 echo $OLD_DRIVER
 echo $NEW_DRIVER
 
-bash -x $PREPARE || (echo "prepare for $NEW_DRIVER failed!" && exit 1)
-cp -f $REMOVEOLD /usr/bin/deepin-graphics-driver-remove-old.sh || (echo "copy $REMOVEOLD failed!" && exit 1)
-cp -f $INSTALL /usr/bin/deepin-graphics-driver-installer.sh || (echo "copy $INSTALL failed!" && exit 1)
+bash -x $PREPARE || error_exit_dgm "prepare for $NEW_DRIVER failed!" 1
+cp -f $REMOVEOLD /usr/bin/deepin-graphics-driver-remove-old.sh || error_exit_dgm "copy $REMOVEOLD failed!" 1
+cp -f $INSTALL /usr/bin/deepin-graphics-driver-installer.sh || error_exit_dgm "copy $INSTALL failed!"  1
 chmod +x /usr/bin/deepin-graphics-driver-remove-old.sh
 chmod +x /usr/bin/deepin-graphics-driver-installer.sh
-overlayroot-enable || (echo "overlayroot-enable failed!" && exit 1)
+overlayroot-enable || error_exit_dgm "overlayroot-enable failed!" 1
 
 echo "[General]
 lang=$USER_LANG

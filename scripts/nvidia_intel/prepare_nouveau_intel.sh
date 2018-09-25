@@ -2,18 +2,20 @@
 
 COMMANDS=(
     "apt-get update"
-    "apt-get install -d xserver-xorg-video-nouveau --reinstall -y --allow-downgrades"
-    "apt-get install -d xserver-xorg-core --reinstall -y --allow-downgrades"
-    "apt-get install -d xserver-xorg-input-all --reinstall -y --allow-downgrades"
-    "apt-get install -d libgl1-mesa-glx --reinstall -y --allow-downgrades"
-    "apt-get install -o Dir::Cache::Archives=/var/cache/apt/archives -d libgl1-mesa-glx -y --allow-downgrades"
-    "apt-get install -o Dir::Cache::Archives=/var/cache/apt/archives -d xserver-xorg-input-all -y --allow-downgrades"
-    "apt-get install -o Dir::Cache::Archives=/var/cache/apt/archives -d xserver-xorg-core -y --allow-downgrades"
-    "apt-get install -o Dir::Cache::Archives=/var/cache/apt/archives -d xserver-xorg-video-nouveau -y --allow-downgrades"
-#    "apt install -o Dir::Cache::Archives=/var/cache/nvidia/ -d nvidia-driver"
-    "overlayroot-enable"
-#    "apt-get install nvidia-driver -y --allow-downgrades"
-#    "apt install -d deepin-deb-installer"
+    "apt-get install -d --reinstall -y --allow-downgrades \
+        xserver-xorg-video-nouveau"
+    "cd /var/cache/apt/archives"
+    "apt-get download \
+        xserver-xorg-video-nouveau \
+        xserver-xorg-core \
+        xserver-xorg-input-all \
+        libegl-mesa0 \
+        libegl-mesa0:i386 \
+        libgbm1 \
+        libgbm1:i386 \
+        libgl1-mesa-glx \
+        libgl1-mesa-glx:i386"
+
 )
 
 for cmd in "${COMMANDS[@]}"
