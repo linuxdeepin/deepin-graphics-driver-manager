@@ -2,11 +2,28 @@
 ## 1.0.8 (2018-08-31)
 
 
+<a name="1.0.7.2"></a>
+## 1.0.7.2 (2018-08-31)
+
+
 #### Bug Fixes
 
 *   prime solution using glvnd drivers ([ea222683](ea222683))
 *   bumblebee resolution identify ([51fb17bd](51fb17bd))
 *   fix translations ([f88005be](f88005be))
+*   add more debug info ([8d6e3264](8d6e3264))
+*   merge translations ([afd01891](afd01891))
+*   prime solution using glvnd drivers ([6415df62](6415df62))
+
+
+
+<a name="1.0.7.1"></a>
+### 1.0.7.1 (2018-08-28)
+
+
+#### Bug Fixes
+
+*   bumblebee resolution identify ([9c87dfd0](9c87dfd0))
 
 
 
