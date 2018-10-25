@@ -1,3 +1,16 @@
+<a name="1.0.9"></a>
+## 1.0.9 (2018-10-25)
+
+
+#### Bug Fixes
+
+*   error handling ([df43fd20](df43fd20))
+*   avoid false positive in package detection ([15f854d5](15f854d5))
+*   hidpi render svg ([5743c50a](5743c50a))
+*   bumblebee resolution identify ([9c87dfd0](9c87dfd0))
+
+
+
 <a name="1.0.8"></a>
 ## 1.0.8 (2018-08-31)
 
