@@ -102,39 +102,14 @@ Hvis der ikke er noget signal, så bekræft venligst om monitorens outputport er
         <translation>NVIDIA standarddriver</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="12"/>
-        <source>Use NVIDIA default driver</source>
-        <translation>Brug NVIDIA standarddriver</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="13"/>
-        <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation>NVIDIA-kortdriver er ikke registreret i det nuværende miljø og vil være grå</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="14"/>
         <source>NVIDIA Open Source Driver</source>
         <translation>NVIDIA open source-driver</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="15"/>
-        <source>Use NVIDIA open source driver</source>
-        <translation>Brug NVIDIA open source-driver</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="16"/>
-        <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation>Ustabil i nogle grafikkort med ringe ydelse.</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="17"/>
         <source>NVIDIA Closed Source Driver</source>
         <translation>NVIDIA closed source-driver</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="18"/>
-        <source>Use NVIDIA closed source driver</source>
-        <translation>Brug NVIDIA closed source-driver</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
@@ -147,19 +122,9 @@ Hvis der ikke er noget signal, så bekræft venligst om monitorens outputport er
         <translation>Intel standarddriver</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="22"/>
-        <source>Use Intel default driver</source>
-        <translation>Brug Intel standarddriver</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="23"/>
-        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation>Bruger glamor som standardaccelerationmetode med lav kompatibilitet på gamle grafikkort.</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation>Intel kompatibel tilstand</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -167,9 +132,44 @@ Hvis der ikke er noget signal, så bekræft venligst om monitorens outputport er
         <translation>Brug Intel kompatibel tilstand</translation>
     </message>
     <message>
+        <location filename="../resolutions/resolution.cpp" line="12"/>
+        <source>Use default driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="13"/>
+        <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="15"/>
+        <source>Use open source driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="16"/>
+        <source>Poor performance, unstable in some graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="18"/>
+        <source>Use closed source driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="22"/>
+        <source>Use Intel default driver</source>
+        <translation>Brug Intel standarddriver</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="23"/>
+        <source>Poor compatibility for parts of old graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
-        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Giver hurtigere grafikort med bedre ydelse, men ustabil i nogle kort med blinkende skærm.</translation>
+        <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -183,8 +183,8 @@ Hvis der ikke er noget signal, så bekræft venligst om monitorens outputport er
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="29"/>
-        <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
-        <translation>An ældgammel og stabil accelerationsmåde med den bedste kompatibilitet men lavere ydelse.</translation>
+        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
+        <translation>Giver hurtigere grafikort med bedre ydelse, men ustabil i nogle kort med blinkende skærm.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
@@ -203,8 +203,8 @@ Hvis der ikke er noget signal, så bekræft venligst om monitorens outputport er
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
-        <source>Use PRIME Solution</source>
-        <translation>Brug PRIME-løsning</translation>
+        <source>Use NV-PRIME Solution</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>

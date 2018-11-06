@@ -102,39 +102,14 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
         <translation>Pilote NVIDIA par défaut </translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="12"/>
-        <source>Use NVIDIA default driver</source>
-        <translation>Utiliser le pilote par défaut NVIDIA</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="13"/>
-        <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation>Le pilote graphique NVIDIA n&apos;est pas détecté dans l&apos;environnement actuel, l&apos;option restera grisée</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="14"/>
         <source>NVIDIA Open Source Driver</source>
         <translation>Pilote NVIDIA Open Source</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="15"/>
-        <source>Use NVIDIA open source driver</source>
-        <translation>Utiliser le pilote open source NVIDIA</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="16"/>
-        <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation>Instable dans certaines cartes graphiques avec des performances inférieures.</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="17"/>
         <source>NVIDIA Closed Source Driver</source>
         <translation>Pilote NVIDIA de source fermée</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="18"/>
-        <source>Use NVIDIA closed source driver</source>
-        <translation>Utiliser le pilote de source fermée NVIDIA</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
@@ -147,19 +122,9 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
         <translation>Pilote Intel par défaut</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="22"/>
-        <source>Use Intel default driver</source>
-        <translation>Utiliser le pilote par défaut Intel</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="23"/>
-        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation>Un mode d&apos;accélération offrant une compatibilité moindre avec les vieilles cartes graphiques.</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation>Mode compatible Intel</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -167,9 +132,44 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
         <translation>Utiliser le mode compatible Intel</translation>
     </message>
     <message>
+        <location filename="../resolutions/resolution.cpp" line="12"/>
+        <source>Use default driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="13"/>
+        <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="15"/>
+        <source>Use open source driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="16"/>
+        <source>Poor performance, unstable in some graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="18"/>
+        <source>Use closed source driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="22"/>
+        <source>Use Intel default driver</source>
+        <translation>Utiliser le pilote par défaut Intel</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="23"/>
+        <source>Poor compatibility for parts of old graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
-        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Augmente les performances de la carte graphique, mais des flash à l&apos;écran peuvent apparaitre avec certaines cartes.</translation>
+        <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -183,8 +183,8 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="29"/>
-        <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
-        <translation>Un mode d&apos;accélération plus ancien qui offre la meilleure compatibilité mais des performances réduites. </translation>
+        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
+        <translation>Augmente les performances de la carte graphique, mais des flash à l&apos;écran peuvent apparaitre avec certaines cartes.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
@@ -203,18 +203,18 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
-        <source>Use PRIME Solution</source>
+        <source>Use NV-PRIME Solution</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>La solution PRIME</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="37"/>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Pour les ordinateurs portables avec des cartes graphiques hybrides, possède les meilleures performances, mais fonctionne avec un driver propriétaire.</translation>
     </message>
 </context>
 <context>

@@ -102,39 +102,14 @@ Wenn Sie die Nachricht &apos;kein Signal&apos; erhalten, stellen Sie sicher, das
         <translation>NVIDIA-Standardtreiber</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="12"/>
-        <source>Use NVIDIA default driver</source>
-        <translation>NVIDIA-Standardtreiber verwenden</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="13"/>
-        <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation>Der NVIDIA-Kartentreiber wird in der aktuellen Umgebung nicht erkannt und ist grau unterlegt.</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="14"/>
         <source>NVIDIA Open Source Driver</source>
         <translation>Quelloffener NVIDIA-Treiber</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="15"/>
-        <source>Use NVIDIA open source driver</source>
-        <translation>Quelloffenen NVIDIA-Treiber verwenden</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="16"/>
-        <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation>Bei einigen Grafikkarten unstabil mit schwächerer Leistung.</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="17"/>
         <source>NVIDIA Closed Source Driver</source>
         <translation>Proprietärer NVIDIA-Treiber</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="18"/>
-        <source>Use NVIDIA closed source driver</source>
-        <translation>Proprietären NVIDIA-Treiber verwenden</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
@@ -147,19 +122,9 @@ Wenn Sie die Nachricht &apos;kein Signal&apos; erhalten, stellen Sie sicher, das
         <translation>Intel-Standardtreiber</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="22"/>
-        <source>Use Intel default driver</source>
-        <translation>Intel-Standardtreiber verwenden</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="23"/>
-        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation>Verwendet glamor als Standardbeschleunigung mit schlechterer Kompatibilität bei alten Grafikkarten.</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation>Intel-kompatibler Modus</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -167,9 +132,44 @@ Wenn Sie die Nachricht &apos;kein Signal&apos; erhalten, stellen Sie sicher, das
         <translation>Intel-kompatiblen Modus verwenden</translation>
     </message>
     <message>
+        <location filename="../resolutions/resolution.cpp" line="12"/>
+        <source>Use default driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="13"/>
+        <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="15"/>
+        <source>Use open source driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="16"/>
+        <source>Poor performance, unstable in some graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="18"/>
+        <source>Use closed source driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="22"/>
+        <source>Use Intel default driver</source>
+        <translation>Intel-Standardtreiber verwenden</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="23"/>
+        <source>Poor compatibility for parts of old graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
-        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Beschleunigt die Grafikkarte durch bessere Leistung, kann bei einigen Karten aber instabil sein und Bildschirmflimmern verursachen.</translation>
+        <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -183,8 +183,8 @@ Wenn Sie die Nachricht &apos;kein Signal&apos; erhalten, stellen Sie sicher, das
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="29"/>
-        <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
-        <translation>Ein alter und ausgereifter Beschleunigungs-Mechanismus mit bester Kompatibilität, aber schwächerer Leistung.</translation>
+        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
+        <translation>Beschleunigt die Grafikkarte durch bessere Leistung, kann bei einigen Karten aber instabil sein und Bildschirmflimmern verursachen.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
@@ -203,8 +203,8 @@ Wenn Sie die Nachricht &apos;kein Signal&apos; erhalten, stellen Sie sicher, das
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
-        <source>Use PRIME Solution</source>
-        <translation>PRIME-Lösung benutzen</translation>
+        <source>Use NV-PRIME Solution</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>

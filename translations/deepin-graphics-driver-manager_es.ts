@@ -102,39 +102,14 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
         <translation>Controlador NVIDIA predeterminado</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="12"/>
-        <source>Use NVIDIA default driver</source>
-        <translation>Usar el controlador por defecto para NVIDIA</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="13"/>
-        <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation>El entorno actual no detectó el controlador para la tarjeta NVIDIA, y se mostrará en gris</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="14"/>
         <source>NVIDIA Open Source Driver</source>
         <translation>Controlador NVIDIA de código abierto</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="15"/>
-        <source>Use NVIDIA open source driver</source>
-        <translation>Usar el controlador de código abierto para NVIDIA</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="16"/>
-        <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation>Inestable en algunas tarjetas gráficas con rendimiento limitado.</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="17"/>
         <source>NVIDIA Closed Source Driver</source>
         <translation>Controlador NVIDIA de código privativo</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="18"/>
-        <source>Use NVIDIA closed source driver</source>
-        <translation>Usar el controlador de código privativo para NVIDIA</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
@@ -147,19 +122,9 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
         <translation>Controlador Intel por defecto</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="22"/>
-        <source>Use Intel default driver</source>
-        <translation>Usar el controlador por defecto para Intel</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="23"/>
-        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation>Utiliza glamour como la forma de aceleración predeterminada con baja compatibilidad en tarjetas gráficas antiguas.</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation>Modo compatible para Intel</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -167,9 +132,44 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
         <translation>Usar modo de compatibilidad Intel</translation>
     </message>
     <message>
+        <location filename="../resolutions/resolution.cpp" line="12"/>
+        <source>Use default driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="13"/>
+        <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="15"/>
+        <source>Use open source driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="16"/>
+        <source>Poor performance, unstable in some graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="18"/>
+        <source>Use closed source driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="22"/>
+        <source>Use Intel default driver</source>
+        <translation>Usar el controlador por defecto para Intel</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="23"/>
+        <source>Poor compatibility for parts of old graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
-        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Acelera la tarjeta gráfica para un mejor rendimiento pero puede generar inestabilidad y destellos en la pantalla.</translation>
+        <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -183,8 +183,8 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="29"/>
-        <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
-        <translation>Un modo de aceleración más antiguo y maduro con mayor compatibilidad pero menor  rendimiento.</translation>
+        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
+        <translation>Acelera la tarjeta gráfica para un mejor rendimiento pero puede generar inestabilidad y destellos en la pantalla.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
@@ -203,8 +203,8 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
-        <source>Use PRIME Solution</source>
-        <translation>Utilizar la solución PRIME</translation>
+        <source>Use NV-PRIME Solution</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
@@ -250,7 +250,7 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
     <message>
         <location filename="../main.cpp" line="25"/>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Gestor de controladores gráficos Deepin</translation>
+        <translation>Gestor de controlador gráfico Deepin</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>

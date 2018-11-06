@@ -102,39 +102,14 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
         <translation>Driver di default NVIDIA</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="12"/>
-        <source>Use NVIDIA default driver</source>
-        <translation>Utilizza i driver di default NVIDIA</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="13"/>
-        <source>NVIDIA card driver is not detected in the current environment, and will be in gray</source>
-        <translation>La scheda video NVIDIA non è attualmente riconosciuta, sarà quindi oscurata</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="14"/>
         <source>NVIDIA Open Source Driver</source>
         <translation>Driver Open Source NVIDIA</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="15"/>
-        <source>Use NVIDIA open source driver</source>
-        <translation>Utilizza i driver open source NVIDIA</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="16"/>
-        <source>Unstable in some graphics cards with weaker performance.</source>
-        <translation>Instabile in alcuni modelli di schede video con performance basse.</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="17"/>
         <source>NVIDIA Closed Source Driver</source>
         <translation>Driver proprietari NVIDIA</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="18"/>
-        <source>Use NVIDIA closed source driver</source>
-        <translation>Utilizza i driver proprietari NVIDIA</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
@@ -147,19 +122,9 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
         <translation>Driver di default Intel</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="22"/>
-        <source>Use Intel default driver</source>
-        <translation>Utilizza i driver di default Intel</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="23"/>
-        <source>Uses glamor as the default acceleration way with low compatibility on old graphics cards.</source>
-        <translation>Utilizza Glamor come modalità di accelerazione video predefinita con la schede grafiche obsolete oppure non pienamente compatibili.</translation>
-    </message>
-    <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation>Modalità di compatibilità Intel</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -167,9 +132,44 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
         <translation>Utilizza la modalità Intel Compatible</translation>
     </message>
     <message>
+        <location filename="../resolutions/resolution.cpp" line="12"/>
+        <source>Use default driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="13"/>
+        <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="15"/>
+        <source>Use open source driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="16"/>
+        <source>Poor performance, unstable in some graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="18"/>
+        <source>Use closed source driver</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="22"/>
+        <source>Use Intel default driver</source>
+        <translation>Utilizza i driver di default Intel</translation>
+    </message>
+    <message>
+        <location filename="../resolutions/resolution.cpp" line="23"/>
+        <source>Poor compatibility for parts of old graphics cards.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
-        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Velocizza la scheda video con migliori performance, ma è possibile che si verifichi un&apos;instabilità nella splash screen, occorre testare la funzionalità.</translation>
+        <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -183,8 +183,8 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="29"/>
-        <source>An ancient and mature acceleration way with best compatibility but weaker performance.</source>
-        <translation>Una modalità di accelerazione grafica più matura e migliore compatibilità ma con prestazioni forse inferiori.</translation>
+        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
+        <translation>Velocizza la scheda video con migliori performance, ma è possibile che si verifichi un&apos;instabilità nella splash screen, occorre testare la funzionalità.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
@@ -203,8 +203,8 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
-        <source>Use PRIME Solution</source>
-        <translation>Utilizza Prime Solution</translation>
+        <source>Use NV-PRIME Solution</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
