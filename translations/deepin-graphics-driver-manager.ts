@@ -122,6 +122,11 @@ If no signal, please confirm whether the monitor output port is connected correc
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../resolutions/resolution.cpp" line="24"/>
+        <source>Intel Compatible Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
         <source>Use Intel compatible mode</source>
         <translation type="unfinished"></translation>
@@ -159,11 +164,6 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="24"/>
-        <source>Intel Intel compatible Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

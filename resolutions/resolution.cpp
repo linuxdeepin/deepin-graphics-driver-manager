@@ -21,7 +21,7 @@ static const char *translates[] = {
     QT_TRANSLATE_NOOP("Resolution", "Intel Default Driver"),
     QT_TRANSLATE_NOOP("Resolution", "Use Intel default driver"),
     QT_TRANSLATE_NOOP("Resolution", "Poor compatibility for parts of old graphics cards."),
-    QT_TRANSLATE_NOOP("Resolution", "Intel Intel compatible Mode"),
+    QT_TRANSLATE_NOOP("Resolution", "Intel Compatible Mode"),
     QT_TRANSLATE_NOOP("Resolution", "Use Intel compatible mode"),
     QT_TRANSLATE_NOOP("Resolution", "Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak."),
     QT_TRANSLATE_NOOP("Resolution", "Intel Acceleration Mode"),
