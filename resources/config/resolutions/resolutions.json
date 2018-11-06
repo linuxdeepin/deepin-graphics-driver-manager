@@ -137,7 +137,7 @@
             {
                 "id": 300,
                 "keep_gltest": true,
-                "title": "Use source driver",
+                "title": "Use closed source driver",
                 "name": "NVIDIA Closed Source Driver",
                 "version": "nvidia/version_nvidia_driver.sh",
                 "description": "Only adaptive to parts of distributions and graphics cards, may cause black screen.",
