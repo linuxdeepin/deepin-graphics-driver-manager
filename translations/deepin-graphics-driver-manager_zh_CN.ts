@@ -124,7 +124,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel兼容模式</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>

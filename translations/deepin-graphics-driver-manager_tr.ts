@@ -124,7 +124,7 @@ Herhangi bir görüntü yok ise ekran bağlantısının doğru yapılıp yapılm
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>İntel Uyumlu Kip</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
