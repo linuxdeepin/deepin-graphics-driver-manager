@@ -124,7 +124,7 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Modalità compatibilità Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -134,27 +134,27 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Usa driver di default</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation type="unfinished"/>
+        <translation>Driver nVidia non identificati nell&apos;attuale Sistema, la scheda nVidia non sta lavorando come dovrebbe.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Usa driver open source</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Prestazioni inferiori, non stabile su alcune schede grafiche.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Usa driver closed source</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -164,12 +164,12 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Compativilità inferiore per alcune schede grafiche vecchie.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation type="unfinished"/>
+        <translation>Migliore compatibilità per tutte le schede grafiche Intel, ma con performance relativamente basse.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -204,7 +204,7 @@ Verifica che la porta di collegamento del monitor sia collegata correttamente ne
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Usa NV-Prime Solution</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>

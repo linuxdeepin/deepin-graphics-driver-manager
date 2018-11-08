@@ -124,7 +124,7 @@ Als er geen signaal is, controleer dan of de uitvoerpoort van de monitor correct
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel-compatibele modus</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -134,27 +134,27 @@ Als er geen signaal is, controleer dan of de uitvoerpoort van de monitor correct
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Standaard stuurprogramma gebruiken</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation type="unfinished"/>
+        <translation>Het stuurprogramma NVIDIA-kaarten is niet aangetroffen in de huidige omgeving; de kaart zal daardoor niet goed werken.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Open source-stuurprogramma gebruiken</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Slechte prestaties en soms instabiel.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Closed source-stuurprogramma gebruiken</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -164,12 +164,12 @@ Als er geen signaal is, controleer dan of de uitvoerpoort van de monitor correct
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Slechte comptabiliteit met sommige oude grafische kaarten.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation type="unfinished"/>
+        <translation>Beste comptabiliteit voor alle grafische kaarten van Intel, maar de prestaties zijn niet al te best.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -204,7 +204,7 @@ Als er geen signaal is, controleer dan of de uitvoerpoort van de monitor correct
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>NV-PRIME-oplossing gebruiken</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>

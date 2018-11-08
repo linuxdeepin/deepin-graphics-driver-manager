@@ -134,7 +134,7 @@ Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai 
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti numatytąją tvarkyklę</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
@@ -144,7 +144,7 @@ Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai 
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti atvirojo kodo tvarkyklę</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
@@ -154,7 +154,7 @@ Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai 
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti uždarojo kodo tvarkyklę</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -204,7 +204,7 @@ Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai 
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Naudoti NV-PRIME sprendimą</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>

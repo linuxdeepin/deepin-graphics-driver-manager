@@ -123,7 +123,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Режим Совместимости Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -133,27 +133,27 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Использовать драйвер по умолчанию</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation type="unfinished"/>
+        <translation>Драйвер NVIDIA не обнаружен в текущей среде, и карта NVIDIA не будет работать должным образом.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Использовать драйвер с открытым исходным кодом</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Плохая производительность, нестабильна на некоторых видеокартах.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Использовать драйвер с закрытым исходным кодом</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -163,12 +163,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Плохая совместимость на некоторых старых видеокартах.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation type="unfinished"/>
+        <translation>Лучшая совместимость для всех видеокарт Intel для ускорения, но производительность относительно слабая.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -203,7 +203,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Использовать NV-PRIME Решение</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>

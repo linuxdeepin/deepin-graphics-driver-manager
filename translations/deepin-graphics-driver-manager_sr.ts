@@ -114,7 +114,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation>Прилагодљив само деловима дистрибуција и графичких картица, може изазвати црни екран.</translation>
+        <translation>Прилагодљив само делу дистрибуција и графичких картица, може изазвати црни екран.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="21"/>
@@ -124,7 +124,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel Режим компатибилности</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -134,27 +134,27 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Користи подразумевани управљач</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA управљач није откривен у тренутном окружењу и NVIDIA картица неће правилно радити.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Користи управљач отвореног кода</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Слаб учинак, нестабилан са неким графичким картицама.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Користи власнички управљач</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -164,12 +164,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Слаба компатибилност са делом старијих графичких картица.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation type="unfinished"/>
+        <translation>Највећа компатибилност за убрзање са свим Интеловим графичким картицама, али учинак је релативно слаб.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -204,7 +204,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Користи NV-PRIME Решење</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
@@ -255,7 +255,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Дипин Управник Управљачких Програма је лак за коришћење и компактан алат за управљање графичким управљачким програмима. То укључује откривање графичких картица, инсталацију графичких управљача, пребацивање између решења графичких управљача, самостални опоравак графичких управљача и друге функције.</translation>
+        <translation>Дипин Управник Управљачких Програма је лак за коришћење и компактан алат за управљање графичким управљачким програмима. То укључује откривање графичких картица, инсталацију графичких управљача, пребацивање између решења графичких управљача, самосталан опоравак графичких управљача и друге функције.</translation>
     </message>
 </context>
 </TS>

@@ -144,7 +144,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Използвай драйвер с отворен код</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>

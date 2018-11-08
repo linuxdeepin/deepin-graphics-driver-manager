@@ -124,7 +124,7 @@ Si no hi ha cap senyal, confirmeu que el port de sortida del monitor està conne
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Mode compatible d&apos;Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -134,27 +134,27 @@ Si no hi ha cap senyal, confirmeu que el port de sortida del monitor està conne
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Utilitza el controlador Intel per defecte</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation type="unfinished"/>
+        <translation>El controlador NVIDIA no es detecta en l&apos;entorn actual, i la targeta NVIDIA no funcionarà correctament.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Utilitza el controlador de codi obert</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Baix rendiment, inestable en algunes targetes gràfiques.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Utilitza el controlador de codi tancat</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -164,12 +164,12 @@ Si no hi ha cap senyal, confirmeu que el port de sortida del monitor està conne
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Poca compatibilitat amb les targetes gràfiques antigues.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation type="unfinished"/>
+        <translation>La millor compatibilitat per a totes les targetes gràfiques d&apos;Intel amb acceleració, però el rendiment és relativament baix</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -204,7 +204,7 @@ Si no hi ha cap senyal, confirmeu que el port de sortida del monitor està conne
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Utilitza la solució NV-PRIME</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
