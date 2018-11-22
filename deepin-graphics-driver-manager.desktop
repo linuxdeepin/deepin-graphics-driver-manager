@@ -12,3 +12,5 @@ Type=Application
 Categories=System;
 StartupNotify=true
 Keywords=package;install;driver;graphics
+GenericName=Graphics Driver Manager
+X-Deepin-Vendor=deepin
