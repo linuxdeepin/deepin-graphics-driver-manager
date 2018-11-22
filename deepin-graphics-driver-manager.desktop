@@ -1,9 +1,9 @@
 [Desktop Entry]
 Name=Deepin Graphics Driver Manager
 Name[zh_CN]=深度显卡驱动管理器
-GenericName=Deepin Graphics Driver Manager
-GenericName[zh_CN]=深度显卡驱动管理器
-Comment=Deepin
+GenericName=Graphics Driver Manager
+GenericName[zh_CN]=显卡驱动管理器
+Comment=Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool.
 Comment[zh_CN]=深度
 Exec=deepin-graphics-driver-manager
 Icon=deepin-graphics-driver-manager
@@ -11,6 +11,4 @@ Terminal=false
 Type=Application
 Categories=System;
 StartupNotify=true
-Keywords=package;install;driver;graphics
-GenericName=Graphics Driver Manager
 X-Deepin-Vendor=deepin
