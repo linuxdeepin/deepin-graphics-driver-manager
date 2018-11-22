@@ -20,6 +20,8 @@ if (NOT (${CMAKE_BUILD_TYPE} MATCHES "Debug"))
     # generate qm
     execute_process(COMMAND bash "translate_generation.sh"
                     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+    execute_process(COMMAND bash "translate_ts2desktop.sh"
+                    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 endif ()
 
 configure_file(environments.h.in environments.h @ONLY)
