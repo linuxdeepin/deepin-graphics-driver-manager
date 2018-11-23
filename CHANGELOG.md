@@ -1,3 +1,18 @@
+<a name="1.1.1"></a>
+## 1.1.1 (2018-11-23)
+
+
+#### Bug Fixes
+
+*   nvidia glamor start X failed ([b911ee80](b911ee80))
+
+#### Features
+
+*   add ts2desktop ([212716b8](212716b8))
+*   add genericName ([04aff9e5](04aff9e5))
+
+
+
 <a name="1.1.0"></a>
 ## 1.1.0 (2018-11-09)
 
