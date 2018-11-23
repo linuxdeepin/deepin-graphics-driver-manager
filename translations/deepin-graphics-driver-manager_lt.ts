@@ -25,52 +25,57 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="35"/>
+        <location filename="../mainwindow.cpp" line="38"/>
+        <source>Dark Theme</source>
+        <translation>Tamsi tema</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
         <translation>Perjungti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="56"/>
+        <location filename="../mainwindow.cpp" line="58"/>
         <source>OK</source>
         <translation>Gerai</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="60"/>
+        <location filename="../mainwindow.cpp" line="62"/>
         <source>Reboot</source>
         <translation>Paleisti iš naujo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
+        <location filename="../mainwindow.cpp" line="177"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
         <translation>Jūsų aparatinė įranga šiuo metu nėra palaikoma, prašome palaukti būsimos versijos.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="236"/>
+        <location filename="../mainwindow.cpp" line="267"/>
         <source>Switching</source>
         <translation>Perjungiama</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="238"/>
+        <location filename="../mainwindow.cpp" line="269"/>
         <source>Switching to %1, please wait......</source>
         <translation>Perjungiama į %1, prašome palaukti......</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="259"/>
+        <location filename="../mainwindow.cpp" line="290"/>
         <source>Download failed</source>
         <translation>Atsiuntimas nepavyko</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="260"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
         <translation>Atleiskite, perjungimas nepavyko</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="266"/>
+        <location filename="../mainwindow.cpp" line="297"/>
         <source>Download Succeeded</source>
         <translation>Atsiuntimas pavyko</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="299"/>
         <source>Please reboot to start installation.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
@@ -79,7 +84,7 @@ If no signal, please confirm whether the monitor output port is connected correc
 Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai prijungta.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="270"/>
+        <location filename="../mainwindow.cpp" line="301"/>
         <source>Please reboot to start installation</source>
         <translation>Norėdami pradėti diegimą, paleiskite kompiuterį iš naujo</translation>
     </message>

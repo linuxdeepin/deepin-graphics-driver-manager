@@ -25,52 +25,57 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="35"/>
+        <location filename="../mainwindow.cpp" line="38"/>
+        <source>Dark Theme</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
         <translation>Перемикач</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="56"/>
+        <location filename="../mainwindow.cpp" line="58"/>
         <source>OK</source>
         <translation>Гаразд</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="60"/>
+        <location filename="../mainwindow.cpp" line="62"/>
         <source>Reboot</source>
         <translation>Перезавантажити</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
+        <location filename="../mainwindow.cpp" line="177"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
         <translation>У поточній версії системи не передбачено підтримки вашого обладнання. Будь ласка, зачекайте на наступну версію.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="236"/>
+        <location filename="../mainwindow.cpp" line="267"/>
         <source>Switching</source>
         <translation>Перемикання</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="238"/>
+        <location filename="../mainwindow.cpp" line="269"/>
         <source>Switching to %1, please wait......</source>
         <translation>Перемикання на %1, будь ласка, зачекайте......</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="259"/>
+        <location filename="../mainwindow.cpp" line="290"/>
         <source>Download failed</source>
         <translation>Помилка завантаження</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="260"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
         <translation>На жаль, пермкнути невдалось</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="266"/>
+        <location filename="../mainwindow.cpp" line="297"/>
         <source>Download Succeeded</source>
         <translation>Download Succeeded</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="299"/>
         <source>Please reboot to start installation.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
@@ -79,7 +84,7 @@ If no signal, please confirm whether the monitor output port is connected correc
 Якщо сигнал не з&apos;явиться, перевірте, чи з&apos;єднано монітор із портом виведення даних належним чином.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="270"/>
+        <location filename="../mainwindow.cpp" line="301"/>
         <source>Please reboot to start installation</source>
         <translation>Будь ласка, перезавантажте комп&apos;ютер, щоб розпочати встановлення</translation>
     </message>

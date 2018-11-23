@@ -25,52 +25,57 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="35"/>
+        <location filename="../mainwindow.cpp" line="38"/>
+        <source>Dark Theme</source>
+        <translation>Donker thema</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
         <translation>Overschakelen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="56"/>
+        <location filename="../mainwindow.cpp" line="58"/>
         <source>OK</source>
         <translation>Oké</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="60"/>
+        <location filename="../mainwindow.cpp" line="62"/>
         <source>Reboot</source>
         <translation>Herstarten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
+        <location filename="../mainwindow.cpp" line="177"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
         <translation>Je hardware wordt momenteel niet ondersteund. Wacht op een toekomstige versie.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="236"/>
+        <location filename="../mainwindow.cpp" line="267"/>
         <source>Switching</source>
         <translation>Bezig met overschakelen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="238"/>
+        <location filename="../mainwindow.cpp" line="269"/>
         <source>Switching to %1, please wait......</source>
         <translation>Bezig met overschakelen naar %1; even geduld...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="259"/>
+        <location filename="../mainwindow.cpp" line="290"/>
         <source>Download failed</source>
         <translation>Downloaden mislukt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="260"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
         <translation>Sorry, overschakelen mislukt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="266"/>
+        <location filename="../mainwindow.cpp" line="297"/>
         <source>Download Succeeded</source>
         <translation>Downloaden voltooid</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="299"/>
         <source>Please reboot to start installation.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
@@ -79,7 +84,7 @@ If no signal, please confirm whether the monitor output port is connected correc
 Als er geen signaal is, controleer dan of de uitvoerpoort van de monitor correct is aangesloten.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="270"/>
+        <location filename="../mainwindow.cpp" line="301"/>
         <source>Please reboot to start installation</source>
         <translation>Herstart om de installatie te beginnen</translation>
     </message>

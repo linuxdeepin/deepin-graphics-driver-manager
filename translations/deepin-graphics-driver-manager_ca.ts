@@ -25,52 +25,57 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="35"/>
+        <location filename="../mainwindow.cpp" line="38"/>
+        <source>Dark Theme</source>
+        <translation>Tema fosc</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
         <translation>Canvia</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="56"/>
+        <location filename="../mainwindow.cpp" line="58"/>
         <source>OK</source>
         <translation>D&apos;acord</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="60"/>
+        <location filename="../mainwindow.cpp" line="62"/>
         <source>Reboot</source>
         <translation>Reincia</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
+        <location filename="../mainwindow.cpp" line="177"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
         <translation>Actualment, el vostre maquinari no és compatible, espereu fins la propera versió.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="236"/>
+        <location filename="../mainwindow.cpp" line="267"/>
         <source>Switching</source>
         <translation>Canvi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="238"/>
+        <location filename="../mainwindow.cpp" line="269"/>
         <source>Switching to %1, please wait......</source>
         <translation>Canviant a %1. Espereu, si us plau...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="259"/>
+        <location filename="../mainwindow.cpp" line="290"/>
         <source>Download failed</source>
         <translation>Ha fallat la baixada.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="260"/>
+        <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
         <translation>Perdoneu, ha fallat el canvi.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="266"/>
+        <location filename="../mainwindow.cpp" line="297"/>
         <source>Download Succeeded</source>
         <translation>Baixada correcta</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="299"/>
         <source>Please reboot to start installation.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
@@ -79,7 +84,7 @@ If no signal, please confirm whether the monitor output port is connected correc
 Si no hi ha cap senyal, confirmeu que el port de sortida del monitor està connectat correctament.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="270"/>
+        <location filename="../mainwindow.cpp" line="301"/>
         <source>Please reboot to start installation</source>
         <translation>Reinicieu per iniciar la instal·lació</translation>
     </message>

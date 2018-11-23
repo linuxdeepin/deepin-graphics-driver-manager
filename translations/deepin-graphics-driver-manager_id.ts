@@ -1,25 +1,25 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="hr" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="id" version="2.1">
 <context>
     <name>GLTestWindow</name>
     <message>
         <location filename="../gltest/main.cpp" line="104"/>
         <source>Apply</source>
-        <translation type="unfinished"/>
+        <translation>Terapkan</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="105"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Batal</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="106"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation type="unfinished"/>
+        <translation>Harap pastikan driver bekerja tanpa adanya buram dan efek terbelah pada layar</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="161"/>
         <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation type="unfinished"/>
+        <translation>Mensinkron data ke disk, membutuhkan 5-10 menit, kemudian sistem memuat ulang otomatis</translation>
     </message>
 </context>
 <context>
@@ -27,64 +27,66 @@
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark Theme</source>
-        <translation type="unfinished"/>
+        <translation>Tema Gelap</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
-        <translation type="unfinished"/>
+        <translation>Alihkan</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="58"/>
         <source>OK</source>
-        <translation>U redu</translation>
+        <translation>Oke</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="62"/>
         <source>Reboot</source>
-        <translation>Ponovno pokreni sustav</translation>
+        <translation>Muat ulang</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="177"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
-        <translation type="unfinished"/>
+        <translation>Perangkat anda saat ini tidak didukung, harap menunggu versi yang akan datang</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Switching</source>
-        <translation>Prebacivanje</translation>
+        <translation>Mengalihkan</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Switching to %1, please wait......</source>
-        <translation type="unfinished"/>
+        <translation>Mengalihkan ke %1, harap tunggu......</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
         <source>Download failed</source>
-        <translation type="unfinished"/>
+        <translation>Unduhan gagal</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
-        <translation>Oprostite, prebacivanje je neuspjelo</translation>
+        <translation>Maaf, gagal mengalihkan</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="297"/>
         <source>Download Succeeded</source>
-        <translation type="unfinished"/>
+        <translation>Unduh berhasil</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="299"/>
         <source>Please reboot to start installation.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Harap muat ulang untuk memulai installasi.
+
+Jika tidak ada sinyal, harap cek apakah port keluaran monitor terhubung dengan benar.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
         <source>Please reboot to start installation</source>
-        <translation type="unfinished"/>
+        <translation>Harap muat ulang untuk memulai installasi</translation>
     </message>
 </context>
 <context>
@@ -92,7 +94,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="8"/>
         <source>Use AMD card driver</source>
-        <translation type="unfinished"/>
+        <translation>Gunakan kartu grafis AMD</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="9"/>
@@ -107,12 +109,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="14"/>
         <source>NVIDIA Open Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>Driver sumber terbuka NVIDIA</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="17"/>
         <source>NVIDIA Closed Source Driver</source>
-        <translation type="unfinished"/>
+        <translation>Driver sumber tertutup NVIDIA</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
@@ -253,7 +255,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../main.cpp" line="25"/>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Deepin upravitelj grafičkim upravljačkim programom</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>
