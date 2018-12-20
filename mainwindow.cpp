@@ -291,6 +291,7 @@ void MainWindow::onPrepareFinished(const int exitCode)
         m_botTips->setText(tr("Sorry, switch failed"));
         m_tipsIcon->setPixmap(hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
         m_okButton->setVisible(true);
+        m_okButton->setFocus();
     }
     else
     {
@@ -301,6 +302,7 @@ void MainWindow::onPrepareFinished(const int exitCode)
             m_botTips->setText(tr("Please reboot to start installation"));
         m_tipsIcon->setPixmap(hidpiPixmap(":/resources/icons/success.svg", QSize(128, 128)));
         m_rebootButton->setVisible(true);
+        m_rebootButton->setFocus();
 
 
         QFile desktopFileSource(DESKTOP_FILE_SOURCE);
