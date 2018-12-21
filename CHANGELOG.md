@@ -1,3 +1,13 @@
+<a name="1.1.2"></a>
+## 1.1.2 (2018-12-21)
+
+
+#### Bug Fixes
+
+*   focus still on toggle button after reboot/ok button is visible ([636a2b03](636a2b03))
+
+
+
 <a name="1.1.1"></a>
 ## 1.1.1 (2018-11-23)
 
