@@ -16,7 +16,7 @@ if [ $1 == "post" ];then
 
     find /media/root-rw/overlay/ -size 0 | xargs rm -rf
     mount -o remount,rw $POSTOS /media/root-ro
-    rsync -avz --progress /media/root-rw/overlay/* /media/root-ro/
+    rsync -avzl --progress /media/root-rw/overlay/* /media/root-ro/
     sync
 
     echo "Sync driver into disk ...... done"
