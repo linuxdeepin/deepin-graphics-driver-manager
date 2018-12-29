@@ -1,3 +1,13 @@
+<a name="1.1.3"></a>
+## 1.1.3 (2018-12-29)
+
+
+#### Bug Fixes
+
+*   rsync conmmand hanlde link-file ([e4964a99](e4964a99))
+
+
+
 <a name="1.1.2"></a>
 ## 1.1.2 (2018-12-21)
 
