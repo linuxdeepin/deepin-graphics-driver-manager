@@ -14,12 +14,12 @@
     <message>
         <location filename="../gltest/main.cpp" line="106"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation>Lütfen sürücünün ekranda bulanık ya da bölünmüş bir görüntü oluşturmadan normal şekilde çalıştığından emin olun</translation>
+        <translation>Lütfen yeni sürücünün ekranda bulanık ya da bölünmüş bir görüntü oluşturmadığından ve normal şekilde çalıştığından emin olun</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="161"/>
         <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation>Veriler disk ile eşitleniyor. Bu işlem 5-10 dakika sürecek tamamlandığında bilgisayar otomatik olarak yeniden başlatılacak.</translation>
+        <translation>Veriler disk ile eşitleniyor. Bu işlem 5-10 dakika kadar sürebilir ve tamamlandığında bilgisayar otomatik olarak yeniden başlatılır.</translation>
     </message>
 </context>
 <context>
@@ -154,7 +154,7 @@ Herhangi bir görüntü yok ise ekran bağlantısının doğru yapılıp yapılm
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation>Düşük başarım, bazı görüntü aygıtlarında kararsızlığa neden olabilir.</translation>
+        <translation>Başarımı düşüktür, bazı görüntü aygıtlarında kararsızlığa neden olabilir.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
@@ -169,12 +169,12 @@ Herhangi bir görüntü yok ise ekran bağlantısının doğru yapılıp yapılm
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation>Eski görüntü aygıtı bileşenleri ile uyumluluk sorunları.</translation>
+        <translation>Eski görüntü aygıtı bileşenleri ile uyumluluk sorunları olabilir.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation>Tüm Intel görüntü aygıtlarını hızlandırmak için en iyi uyumluluk ancak göreceli olarak düşük başarım.</translation>
+        <translation>Tüm Intel görüntü aygıtlarını hızlandırmak için en iyi uyumluluğu sağlar ancak göreceli olarak başarımı daha düşüktür.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -189,7 +189,7 @@ Herhangi bir görüntü yok ise ekran bağlantısının doğru yapılıp yapılm
     <message>
         <location filename="../resolutions/resolution.cpp" line="29"/>
         <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Daha iyi başarım için görüntü aygıtını hızlandırır ancak bazı donanımlarda görüntünün gelip gitmesine neden olan bir kararsızlığa yol açabilir.</translation>
+        <translation>Daha iyi başarım için görüntü aygıtını hızlandırır ancak bazı donanımlarda görüntünün gelip gitmesine neden olan bir soruna yol açabilir.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>

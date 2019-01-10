@@ -27,7 +27,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark Theme</source>
-        <translation type="unfinished"/>
+        <translation>Tume teema</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
@@ -42,7 +42,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="62"/>
         <source>Reboot</source>
-        <translation type="unfinished"/>
+        <translation>Taaskäivita</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="177"/>
@@ -84,7 +84,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
         <source>Please reboot to start installation</source>
-        <translation type="unfinished"/>
+        <translation>Käivitamise alustamiseks tee palun taaskäivitus</translation>
     </message>
 </context>
 <context>
@@ -102,7 +102,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="11"/>
         <source>NVIDIA Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA vaikimisi draiver</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="14"/>
@@ -137,7 +137,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Kasuta vaikimisi draiverit</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
@@ -147,7 +147,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Kasuta avatud koodiga draiverit</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
@@ -157,7 +157,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Kasuta suletud lähtekoodiga draiverit</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -192,12 +192,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
         <source>Use Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Kasuta Bumblebee Solution-it</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="32"/>
         <source>Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Bumblebee Solution</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="33"/>
@@ -253,7 +253,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../main.cpp" line="25"/>
         <source>Deepin Graphics Driver Manager</source>
-        <translation type="unfinished"/>
+        <translation>Deepin videokaardi draiverite haldamine</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>

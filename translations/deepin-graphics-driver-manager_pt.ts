@@ -19,7 +19,7 @@
     <message>
         <location filename="../gltest/main.cpp" line="161"/>
         <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation>A sincronizar dados para o disco, isto leva entre 5 a 10 minutos, quando estiver concluído reiniciará automaticamente.</translation>
+        <translation>A sincronizar dados para o disco, leva cerca de 5 a 10 minutos, quando estiver concluído reiniciará automaticamente.</translation>
     </message>
 </context>
 <context>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark Theme</source>
-        <translation type="unfinished"/>
+        <translation>Tema Escuro</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="177"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
-        <translation>Atualmente este hardware não é suportado, por favor espere pela nova versão.</translation>
+        <translation>Atualmente o seu hardware não é suportado, por favor espere pela versão futura.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
         <source>Download failed</source>
-        <translation>Falha ao descarregar</translation>
+        <translation>Descarga falhou</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
@@ -81,7 +81,7 @@
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
         <translation>Por favor reinicie para iniciar a instalação.
 
-Se não obtiver nenhum sinal, confirme que o monitor esta corretamente ligado à porta.</translation>
+Se não obtiver nenhum sinal, por favor confirme se o porto do monitor de saída está conectado corretamente.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
@@ -119,7 +119,7 @@ Se não obtiver nenhum sinal, confirme que o monitor esta corretamente ligado à
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation>Apenas parcialmente funcional em algumas distribuições e placas gráficas, poderá resultar num ecrã preto</translation>
+        <translation>Apenas adaptado a partes de distribuições e placas gráficas, pode causar ecrã preto.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="21"/>
@@ -129,7 +129,7 @@ Se não obtiver nenhum sinal, confirme que o monitor esta corretamente ligado à
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Modo compatível da Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -139,47 +139,47 @@ Se não obtiver nenhum sinal, confirme que o monitor esta corretamente ligado à
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar controlador padrão</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation type="unfinished"/>
+        <translation>O controlador da placa de vídeo NVIDIA não é detetado no ambiente atual, e a placa NVIDIA não funcionará corretamente.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar controlador de código aberto</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Baixo desempenho, instável em algumas placas de vídeo.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Usar controlador proprietário </translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
         <source>Use Intel default driver</source>
-        <translation>Usar controlador Intel predefinido</translation>
+        <translation>Usar controlador Intel padrão</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Baixa compatibilidade em placas de vídeos antigas.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation type="unfinished"/>
+        <translation>Boa compatibilidade para todas as placas de gráficas Intel para acelerar, mas o desempenho é relativamente fraco.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
         <source>Intel Acceleration Mode</source>
-        <translation>Modo de aceleração da Intel</translation>
+        <translation>Modo de Aceleração da Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="28"/>
@@ -189,12 +189,12 @@ Se não obtiver nenhum sinal, confirme que o monitor esta corretamente ligado à
     <message>
         <location filename="../resolutions/resolution.cpp" line="29"/>
         <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Aumenta a velocidade da placa gráfica aumentando o seu desempenho, mas instável em alguns casos resultando num ecrã a piscar.</translation>
+        <translation>Aumenta a velocidade da placa gráfica com melhor desempenho, mas instável nalgumas placas resultando num ecrã a piscar.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
         <source>Use Bumblebee Solution</source>
-        <translation>Usar solução Bumblebee</translation>
+        <translation>Usar Solução Bumblebee</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="32"/>
@@ -204,12 +204,12 @@ Se não obtiver nenhum sinal, confirme que o monitor esta corretamente ligado à
     <message>
         <location filename="../resolutions/resolution.cpp" line="33"/>
         <source>Save power to reduce power consumption.</source>
-        <translation>Poupe energia reduzindo o consumo da mesma.</translation>
+        <translation>Poupar energia para reduzir o consumo da mesma.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Usar Solução NV-PRIME</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
@@ -260,7 +260,7 @@ Se não obtiver nenhum sinal, confirme que o monitor esta corretamente ligado à
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>O Deepin Graphics Driver Manager é uma ferramenta de gestão compacta e fácil. Inclui deteção automática de placa gráfica, instalação de controladores, comutadores de solução gráfica, recuperação automática de controladores e outras funções.</translation>
+        <translation>O Deepin Graphics Driver Manager é uma ferramenta de gestão de controladores gráficos fácil e compacta. Inclui deteção automática de placa gráfica, instalação de controladores, comutadores de solução gráfica, recuperação automática de controladores e outras funções.</translation>
     </message>
 </context>
 </TS>

@@ -27,7 +27,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark Theme</source>
-        <translation type="unfinished"/>
+        <translation>Tmavý vzhled</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
@@ -129,7 +129,7 @@ Ověřte, prosím, pokud není signál, zda je výstupní konektor monitoru spr�
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Kompatibilní režim Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -139,27 +139,27 @@ Ověřte, prosím, pokud není signál, zda je výstupní konektor monitoru spr�
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Použít výchozí ovladač</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation type="unfinished"/>
+        <translation>Ovladač NVIDIA není v aktuálním prostředí rozpoznán a karta NVIDIA nebude pracovat řádně.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Použít ovladač s otevřeným zdrojovým kódem</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Ne zcela dostatečný výkon. U některých grafických karet nestálý.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Použít ovladač s uzavřeným zdrojovým kódem</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -169,12 +169,12 @@ Ověřte, prosím, pokud není signál, zda je výstupní konektor monitoru spr�
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Ne zcela dostatečný výkon u částí starých grafických karet.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation type="unfinished"/>
+        <translation>Nejlepší kompatibilita při zrychlení všech grafických karet Intel, výkon je však poměrně slabý.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -209,7 +209,7 @@ Ověřte, prosím, pokud není signál, zda je výstupní konektor monitoru spr�
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Použít řešení NV-PRIME</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>

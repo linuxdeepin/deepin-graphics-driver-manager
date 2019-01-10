@@ -144,7 +144,7 @@ Jeśli nie ma sygnału, upewnij się że port wyjściowy monitora jest prawidło
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation type="unfinished"/>
+        <translation>W obecnym środowisku nie został wykryty sterownik kart NVIDIA i karta nie będzie działać prawidłowo.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
@@ -154,7 +154,7 @@ Jeśli nie ma sygnału, upewnij się że port wyjściowy monitora jest prawidło
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Słaba wydajność, niestabilne w niektórych kartach graficznych.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
@@ -169,12 +169,12 @@ Jeśli nie ma sygnału, upewnij się że port wyjściowy monitora jest prawidło
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Słaba kompatybilność dla części starych kart graficznych.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation type="unfinished"/>
+        <translation>Najlepsza kompatybilność dla wszystkich kart graficznych Intela przy akceleracji sprzętowej, ale wydajność jest stosunkowo słaba.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>

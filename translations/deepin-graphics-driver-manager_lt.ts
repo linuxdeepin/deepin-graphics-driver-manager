@@ -129,7 +129,7 @@ Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai 
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel suderinama veiksena</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -144,7 +144,7 @@ Jei nebus signalo, patikrinkite ar monitoriaus išvesties jungtis yra teisingai 
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation type="unfinished"/>
+        <translation>NVIDIA tvarkyklė šioje aplinkoje neaptikta, ir NVIDIA plokštė neveiks tinkamai.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>

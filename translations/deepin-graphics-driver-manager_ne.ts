@@ -1,25 +1,25 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="bg" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ne" version="2.1">
 <context>
     <name>GLTestWindow</name>
     <message>
         <location filename="../gltest/main.cpp" line="104"/>
         <source>Apply</source>
-        <translation>Приложи</translation>
+        <translation>एप्लाई</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="105"/>
         <source>Cancel</source>
-        <translation>Отказ</translation>
+        <translation>रद्द गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="106"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation>Моля уверете се, че драйвера работи нормално без някакви проблеми в картината</translation>
+        <translation>रद्द गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="161"/>
         <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation>Синхронизиране на данните в диска, нужни са 5-10 мин., следва автоматично рестартиране на системата</translation>
+        <translation>डिस्कमा डेटा सिङ्क गर्दै, 5-10 मिनेट आवश्यक छ, त्यसपछि स्वत: प्रणाली पुनःबुट गर्नुहोस्</translation>
     </message>
 </context>
 <context>
@@ -27,66 +27,64 @@
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark Theme</source>
-        <translation>Тъмна тема</translation>
+        <translation>डार्क थिम</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
-        <translation>Превключване</translation>
+        <translation>स्विच गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="58"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>ठिक छ</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="62"/>
         <source>Reboot</source>
-        <translation>Рестарт</translation>
+        <translation>रिबुट गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="177"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
-        <translation>Текущата хардуерна комбинация не се подържа, изчакайте за бъдеща версия.</translation>
+        <translation>तपाईंको हार्डवेयर हाललाई समर्थित छैन, कृपया भविष्यको संस्करणको प्रतीक्षा गर्नुहोस्।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Switching</source>
-        <translation>Превключване</translation>
+        <translation>स्विच गर्दै</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Switching to %1, please wait......</source>
-        <translation>Превключване на %1, моля изчакайте...</translation>
+        <translation>% 1 मा स्विच गर्दै, कृपया प्रतीक्षा गर्नुहोस् ......</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
         <source>Download failed</source>
-        <translation>Неуспешно сваляне</translation>
+        <translation>डाउनलोड असफल भयो</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
-        <translation>Съжалявам, превключването е неуспешно</translation>
+        <translation>क्षमा गर्नुहोस्, स्विच असफल भयो</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="297"/>
         <source>Download Succeeded</source>
-        <translation>Свалянето е успешно</translation>
+        <translation>डाउनलोड सफल भयो</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="299"/>
         <source>Please reboot to start installation.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation>Рестартирайте, за да влезете в инсталационния процес
-
-Ако няма сигнал, уверете се дали кабелите на монитора са включени.</translation>
+        <translation>स्थापना सुरू गर्न कृपया रिबुट गर्नुहोस्। कुनै सङ्केत भएमा कृपया पुष्टि गर्नुहोस् कि मनिटर आउटपुट पोर्ट सही रूपमा जडान भएको छ कि छैन</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
         <source>Please reboot to start installation</source>
-        <translation>Рестартирайте, за да влезете в инсталационния процес</translation>
+        <translation>स्थापना सुरु गर्न कृपया रिबुट गर्नुहोस्</translation>
     </message>
 </context>
 <context>
@@ -94,132 +92,132 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="8"/>
         <source>Use AMD card driver</source>
-        <translation>Използвай драйвери на AMD</translation>
+        <translation>AMD कार्ड ड्राइभर प्रयोग गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="9"/>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation>За специални нужди. Автоматично определяне на ускорението без външна конфигурация.</translation>
+        <translation>विशेष आवश्यकताहरूको लागि। external कन्फिगरेसन बिना एक्स्लेरेसन मार्ग निर्धारित गर्दछ।</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="11"/>
         <source>NVIDIA Default Driver</source>
-        <translation>Подразбиращ NVIDIA драйвер</translation>
+        <translation>NVIDIA पूर्वनिर्धारित Driver</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="14"/>
         <source>NVIDIA Open Source Driver</source>
-        <translation>NVIDIA Драйвър с Отворен Код</translation>
+        <translation>NVIDIA खुला स्रोत ड्राइभर</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="17"/>
         <source>NVIDIA Closed Source Driver</source>
-        <translation>NVIDIA Драйвър със Затворен Код</translation>
+        <translation>NVIDIA Closed स्रोत ड्राइभर</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation>Адаптивен единствено при част от дистрибуции и графични карти, може да възникне черен екран.</translation>
+        <translation>वितरण र ग्राफिक्स कार्डहरूको भागहरूमा मात्र अनुकूली, कालो स्क्रीन हुन सक्छ</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="21"/>
         <source>Intel Default Driver</source>
-        <translation>Intel Драйвър по Подразбиране</translation>
+        <translation>इंटेल पूर्वनिर्धारित Driver</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation>Intel Съвместим Режим</translation>
+        <translation>इंटेल संग मिल्दो मोड</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
         <source>Use Intel compatible mode</source>
-        <translation>Използвай Intel съвместим режим</translation>
+        <translation>इंटेल संग मिल्दो मोड प्रयोग गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation>Използвай драйвер по подразбиране</translation>
+        <translation>पूर्वनिर्धारित ड्राइभर प्रयोग गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation>NVIDIA драйверът не се разпознава в текущата среда, а NVIDIA картата няма да работи правилно.</translation>
+        <translation>हालको वातावरणमा NVIDIA ड्राइभर पत्ता लगाइएको छैन, र NVIDIA कार्ड सही काम गर्दैन</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation>Използвай драйвер с отворен код</translation>
+        <translation>खुला स्रोत ड्राइभर प्रयोग गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation>Лошо изпълнение, нестабилонст при някои графични карти.</translation>
+        <translation>केहि ग्राफिक्स कार्डहरूमा खराब प्रदर्शन,अस्थिर हुन्छ</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation>Използвай драйвер със затворен отворен код</translation>
+        <translation>बन्द स्रोत ड्राइभर प्रयोग गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
         <source>Use Intel default driver</source>
-        <translation>Използвай Intel драйвер по подразбиране</translation>
+        <translation>इंटेल पूर्वनिर्धारित ड्राइभर प्रयोग गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation>Лоша съвместимост за част от старите графични карти.</translation>
+        <translation>पुरानो ग्राफिक्स कार्डका भागहरूको लागि गरिब अनुकूलता।</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation>Най-добра съвместимост за всички графични карти на Intel за ускоряване, но производителността е относително слаба.</translation>
+        <translation>तीव्र गतिमा सबै इंटेल ग्राफिक्स कार्डहरूको लागि उत्तम अनुकूलता, तर प्रदर्शन अपेक्षाकृत कमजोर हुनसक्छ </translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
         <source>Intel Acceleration Mode</source>
-        <translation>Intel Acceleration Mode</translation>
+        <translation>इंटेल एक्सेलेरेशन मोड</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="28"/>
         <source>Use Intel acceleration mode</source>
-        <translation>Използвай Intel ускорен режим</translation>
+        <translation>इंटेल एक्सेलेरेशन मोड प्रयोग गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="29"/>
         <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Ускорете видеокартата с по-добра производителност, но е нестабилно с премигване на екрана.</translation>
+        <translation>राम्रो प्रदर्शनको साथ ग्राफिक्स कार्डमा गति लिनुहोस्, तर स्क्रिन फ्ल्यासिंगका साथ केही कार्डहरूमा अस्थिर हुनसक्छ </translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
         <source>Use Bumblebee Solution</source>
-        <translation>Използване на Bumblebee Solution</translation>
+        <translation>Bumblebee समाधान प्रयोग गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="32"/>
         <source>Bumblebee Solution</source>
-        <translation>Bumblebee Solution</translation>
+        <translation>Bumblebee समाधान</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="33"/>
         <source>Save power to reduce power consumption.</source>
-        <translation>Запази енергия, за намаляване на консумацията.</translation>
+        <translation>पावर खपत कम गर्न पावर बचत गर्नुहोस्।</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation>Използване на NV-PRIME решение</translation>
+        <translation>NV-प्रईम समाधान प्रयोग गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
         <source>PRIME Solution</source>
-        <translation>PRIME Solution</translation>
+        <translation>प्रईम समाधान</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="37"/>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation>За лаптопи с хибридна графика, за най-добро представяне, но трябва да работят с драйвер със затворен код.</translation>
+        <translation>हाइब्रिड ग्राफिक्स भएको ल्याप्टपहरूका लागि, राम्रो प्रदर्शन भएको छ तर बन्द-स्रोत ड्राइभरसँग काम गर्नुपर्छ।</translation>
     </message>
 </context>
 <context>
@@ -227,7 +225,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../widgets/resolutionwidget.cpp" line="118"/>
         <source>Version: </source>
-        <translation>Версия:</translation>
+        <translation>संस्करण</translation>
     </message>
 </context>
 <context>
@@ -235,32 +233,32 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../notify/main.cpp" line="32"/>
         <source>Congratulations, you have switched to %1.</source>
-        <translation>Поздравления, преминахте към %1.</translation>
+        <translation>बधाई छ, तपाई% 1 मा स्विच गर्नुभयो।</translation>
     </message>
     <message>
         <location filename="../notify/main.cpp" line="35"/>
         <source>Confirm</source>
-        <translation>Потвърди</translation>
+        <translation>पक्का गर्नु</translation>
     </message>
     <message>
         <location filename="../notify/main.cpp" line="43"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
-        <translation>Автоматични възстановяване на %2 след неуспешно преминаване към %1</translation>
+        <translation>% 2 मा स्वत: बहाल गर्न% 1 मा स्विच गर्न असफल भयो</translation>
     </message>
     <message>
         <location filename="../notify/main.cpp" line="46"/>
         <source>Feedback</source>
-        <translation>Отзиви</translation>
+        <translation>प्रतिक्रिया</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Deepin диспечер на графичен драйвер</translation>
+        <translation>Deepin ग्राफिक्स Driver Manager</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin диспечер на графичен драйвер е компактен и лесен за използване инструмент за управление на графични драйвери. Включва откриване на хардуер на графична карта, инсталиране на драйвери за графики, превключване на драйвери за графични карти, автоматично възстановяване на графичните драйвери и други функции</translation>
+        <translation>ग्राफिक्स ड्राइभर प्रबन्धक एक कम्पैक्ट र ग्राफिक चालक प्रबन्ध उपकरण हो | येस्लाईप्रयोग गर्न सजिलो छ। यसमा ग्राफिक्स कार्ड हार्डवेयर पत्ता लगाउने, ग्राफिक्स चालक स्थापना, ग्राफिक्स चालक समाधान स्विचन, ग्राफिक्स चालक स्वत: प्राप्ति र अन्य कार्यहरू समावेश गर्दछ।</translation>
     </message>
 </context>
 </TS>

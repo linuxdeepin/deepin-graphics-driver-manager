@@ -47,7 +47,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="177"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
-        <translation>Perangkat anda saat ini tidak didukung, harap menunggu versi yang akan datang</translation>
+        <translation>Perangkat keras anda saat ini tidak didukung, harap menunggu versi yang akan datang</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
@@ -99,12 +99,12 @@ Jika tidak ada sinyal, harap cek apakah port keluaran monitor terhubung dengan b
     <message>
         <location filename="../resolutions/resolution.cpp" line="9"/>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation type="unfinished"/>
+        <translation>Untuk kebutuhan istimewa. Penentuan akselerasi secara otomatis tanpa dengan konfigurasi eksternal. </translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="11"/>
         <source>NVIDIA Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>Driver Baku NVIDIA</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="14"/>
@@ -119,107 +119,107 @@ Jika tidak ada sinyal, harap cek apakah port keluaran monitor terhubung dengan b
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation type="unfinished"/>
+        <translation>Hanya adaptif ke bagian distribusi dan kartu grafis, dapat menyebabkan layar hitam.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="21"/>
         <source>Intel Default Driver</source>
-        <translation type="unfinished"/>
+        <translation>Driver Baku Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Mode Kompatibel Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
         <source>Use Intel compatible mode</source>
-        <translation type="unfinished"/>
+        <translation>Gunakan Mode Kompatibel Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Gunakan Driver Baku</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation type="unfinished"/>
+        <translation>Driver NVIDIA tidak terdeteksi dilingkungan saat ini, dan kartu NVIDIA tidak akan bekerja secara benar.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Gunakan driver sumber terbuka</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Kinerja yang jelek, tidak stabil di beberapa kartu graphis.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Gunakan driver sumber tertutup</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
         <source>Use Intel default driver</source>
-        <translation type="unfinished"/>
+        <translation>Gunakan driver baku Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Kompatibelitas yang jelek untuk beberapa bagian pada kartu-kartu graphis yang lama.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation type="unfinished"/>
+        <translation>Kompatibelitas terbaik untuk semua kartu graphis Intel untuk berakselerasi, tetapi kinerja relatif lemah.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
         <source>Intel Acceleration Mode</source>
-        <translation type="unfinished"/>
+        <translation>Akselerasi Mode Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="28"/>
         <source>Use Intel acceleration mode</source>
-        <translation type="unfinished"/>
+        <translation>Gunakan Akselerasi Mode Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="29"/>
         <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation type="unfinished"/>
+        <translation>Percepat kartu graphis dengan kinerja terbaik, tetap tidak stabil di beberapa kartu dengan layar berkedip.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
         <source>Use Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Gunakan Solusi Bumblebee</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="32"/>
         <source>Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>Solusi Bumblebee</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="33"/>
         <source>Save power to reduce power consumption.</source>
-        <translation type="unfinished"/>
+        <translation>Hemat listrik untuk mengurangi konsumpsi listrik.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Gunakan Solusi NV-PRIME</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Solusi NV-PRIME</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="37"/>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Untuk laptop dengan baterai hybrid, mempunyai kinerja terbaik tetapi harus bekerja dengan driver sumber tertutup.</translation>
     </message>
 </context>
 <context>
@@ -227,7 +227,7 @@ Jika tidak ada sinyal, harap cek apakah port keluaran monitor terhubung dengan b
     <message>
         <location filename="../widgets/resolutionwidget.cpp" line="118"/>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Versi: </translation>
     </message>
 </context>
 <context>
@@ -235,32 +235,32 @@ Jika tidak ada sinyal, harap cek apakah port keluaran monitor terhubung dengan b
     <message>
         <location filename="../notify/main.cpp" line="32"/>
         <source>Congratulations, you have switched to %1.</source>
-        <translation type="unfinished"/>
+        <translation>Selamat, anda sudah beralih ke %1.</translation>
     </message>
     <message>
         <location filename="../notify/main.cpp" line="35"/>
         <source>Confirm</source>
-        <translation type="unfinished"/>
+        <translation>Konfirmasi</translation>
     </message>
     <message>
         <location filename="../notify/main.cpp" line="43"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
-        <translation type="unfinished"/>
+        <translation>Pemulihan otomatis ke %2 setelah gagal beralih ke %1</translation>
     </message>
     <message>
         <location filename="../notify/main.cpp" line="46"/>
         <source>Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Umpan balik</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
         <source>Deepin Graphics Driver Manager</source>
-        <translation type="unfinished"/>
+        <translation>Manajer Driver Graphis Deepin</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Manajer Driver Graphis Deepin adalah sebuah kompak dan alat kelola yang mudah untuk digunakan oleh driver graphis. Sudah termasuk deteksi perangkat keras kartu graphis, installasi driver graphis, solusi peralihan driver graphis, pemulihan driver graphis secara otomatis dan beserta fungsi lainnya.</translation>
     </message>
 </context>
 </TS>

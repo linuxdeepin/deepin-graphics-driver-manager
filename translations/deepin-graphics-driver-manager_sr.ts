@@ -104,17 +104,17 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="11"/>
         <source>NVIDIA Default Driver</source>
-        <translation>NVIDIA Подразумевани управљач</translation>
+        <translation>NVIDIA подразумевани управљач</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="14"/>
         <source>NVIDIA Open Source Driver</source>
-        <translation>NVIDIA Управљач отвореног кода</translation>
+        <translation>NVIDIA управљач отвореног кода</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="17"/>
         <source>NVIDIA Closed Source Driver</source>
-        <translation>NVIDIA Власнички управљач</translation>
+        <translation>NVIDIA власнички управљач</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
@@ -124,12 +124,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="21"/>
         <source>Intel Default Driver</source>
-        <translation>Intel Подразумевани управљач</translation>
+        <translation>Intel подразумевани управљач</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation>Intel Режим компатибилности</translation>
+        <translation>Intel режим компатибилности</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -179,7 +179,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
         <source>Intel Acceleration Mode</source>
-        <translation>Intel Режим убрзања</translation>
+        <translation>Intel режим убрзања</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="28"/>
@@ -194,12 +194,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
         <source>Use Bumblebee Solution</source>
-        <translation>Користи Bumblebee Решење</translation>
+        <translation>Користи Bumblebee решење</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="32"/>
         <source>Bumblebee Solution</source>
-        <translation>Bumblebee Решење</translation>
+        <translation>Bumblebee решење</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="33"/>
@@ -209,12 +209,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation>Користи NV-PRIME Решење</translation>
+        <translation>Користи NV-PRIME решење</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
         <source>PRIME Solution</source>
-        <translation>PRIME Решење</translation>
+        <translation>PRIME решење</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="37"/>
@@ -255,7 +255,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../main.cpp" line="25"/>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Дипин Управник Управљачких Програма</translation>
+        <translation>Управник Управљачких Програма</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>

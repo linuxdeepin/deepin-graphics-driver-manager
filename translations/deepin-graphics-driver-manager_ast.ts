@@ -27,7 +27,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark Theme</source>
-        <translation type="unfinished"/>
+        <translation>Estilu escuru</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="177"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
-        <translation type="unfinished"/>
+        <translation>Nun se sofita la combinación actual de hardware, espera por una versión futura.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
@@ -127,7 +127,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Mou de compatibilidáa d&apos;Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -248,12 +248,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../notify/main.cpp" line="46"/>
         <source>Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Comentarios</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
         <source>Deepin Graphics Driver Manager</source>
-        <translation>Xestor Deepin de controladores gráficos</translation>
+        <translation>Deepin Graphics Driver Manager</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>

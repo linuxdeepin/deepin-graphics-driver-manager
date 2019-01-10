@@ -27,7 +27,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark Theme</source>
-        <translation type="unfinished"/>
+        <translation>Thème sombre</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
@@ -52,12 +52,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Switching</source>
-        <translation>Commutation du pilote</translation>
+        <translation>Basculer</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Switching to %1, please wait......</source>
-        <translation>Commutation du pilote sur %1, veuillez patienter ......</translation>
+        <translation>Basculer vers %1, veuillez patienter ......</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -81,7 +81,7 @@
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
         <translation>Veuillez redémarrer pour démarrer l&apos;installation.
 
-Si aucun signal, veuillez verifier si le port de sortie du moniteur est correctement connecté.</translation>
+Si aucun signal, vérifiez si le port de sortie du moniteur est correctement connecté.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="301"/>
@@ -104,7 +104,7 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
     <message>
         <location filename="../resolutions/resolution.cpp" line="11"/>
         <source>NVIDIA Default Driver</source>
-        <translation>Pilote NVIDIA par défaut </translation>
+        <translation>Pilote NVIDIA par défaut</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="14"/>
@@ -114,12 +114,12 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
     <message>
         <location filename="../resolutions/resolution.cpp" line="17"/>
         <source>NVIDIA Closed Source Driver</source>
-        <translation>Pilote NVIDIA de source fermée</translation>
+        <translation>Pilote NVIDIA propriétaire </translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation>Convient uniquement pour certaines cartes graphiques. Un écran noir peut apparaître si pilote non compatible.</translation>
+        <translation>Convient uniquement pour certaines cartes graphiques. Un écran noir peut apparaître si le pilote est non compatible.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="21"/>
@@ -129,7 +129,7 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Mode compatibilité Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -139,27 +139,27 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Utiliser le pilote par défaut</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation type="unfinished"/>
+        <translation>Le pilote graphique NVIDIA n&apos;est pas détecté dans l&apos;environnement actuel, la carte NVIDIA ne fonctionnera pas correctement.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Utiliser le pilote open source</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Performances faibles, instables sur certaines cartes graphiques.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Utiliser le pilote propiétaire</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -169,12 +169,12 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Mauvaise compatibilité avec certaines anciennes cartes graphiques.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation type="unfinished"/>
+        <translation>Meilleure compatibilité pour toutes les cartes graphiques Intel, mais les performances sont relativement faibles.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -209,7 +209,7 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Utiliser la solution NV-PRIME</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
@@ -227,7 +227,7 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
     <message>
         <location filename="../widgets/resolutionwidget.cpp" line="118"/>
         <source>Version: </source>
-        <translation>Version : </translation>
+        <translation>Version: </translation>
     </message>
 </context>
 <context>
@@ -260,7 +260,7 @@ Si aucun signal, veuillez verifier si le port de sortie du moniteur est correcte
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Gestionnaire de pilotes graphiques Deepin est un outil de gestion de pilote graphique, compact et facile à utiliser. Il est capable pour la détection du matériel de la carte graphique, l&apos;installation du pilote graphique, la commutation du pilote graphique, la récupération automatique du pilote graphique, etc.</translation>
+        <translation>Gestionnaire de pilotes graphiques Deepin est un outil de gestion de pilote graphique compact et facile à utiliser. Il est capable, entre autres, de détecter, installer, changer et récupérer les pilotes graphiques.</translation>
     </message>
 </context>
 </TS>

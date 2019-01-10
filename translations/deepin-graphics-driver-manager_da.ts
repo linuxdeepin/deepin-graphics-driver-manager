@@ -27,7 +27,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark Theme</source>
-        <translation type="unfinished"/>
+        <translation>Mørkt tema</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>

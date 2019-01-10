@@ -27,7 +27,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark Theme</source>
-        <translation type="unfinished"/>
+        <translation>Tema Gelap</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
@@ -129,7 +129,7 @@ Jika tiada isyarat, sila sahkan sama ada port output monitor disambung dengan ke
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Mod Serasi Intel</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -139,27 +139,27 @@ Jika tiada isyarat, sila sahkan sama ada port output monitor disambung dengan ke
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Guna pemacu lalai</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
         <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation type="unfinished"/>
+        <translation>Pemacu kad NVIDIA tidak dikesan dalam persekitaran semasa, dan kad NVIDIA tidak akan berfungsi dengan baik.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Guna pemacu sumber terbuka</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Prestasi lemah, tidak stabil untuk beberapa jenis kad grafik.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Guna pemacu sumber tertutup</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -169,12 +169,12 @@ Jika tiada isyarat, sila sahkan sama ada port output monitor disambung dengan ke
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Keserasian lemah bagi sebahagian kad grafik lama.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation type="unfinished"/>
+        <translation>Keserasian terbaik untuk semua kad grafik Intel untuk dipecutkan, tetapi prestasi masih lemah.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -209,7 +209,7 @@ Jika tiada isyarat, sila sahkan sama ada port output monitor disambung dengan ke
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>Guna Penyelesaian NV-PRIME</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
@@ -260,7 +260,7 @@ Jika tiada isyarat, sila sahkan sama ada port output monitor disambung dengan ke
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Pengurus Pemacu Grafik Deepin iaah alat pengurusan pemacu grafik yang ringkas dan mudah digunakan. Ia menawarkan pengesanan perkakasan kad grafik, pemasangan pemacu grafik, penukaran penyelesaian pemacu grafik, pemulihan automatik pemacu grafik dan lain-lain fungsi.</translation>
+        <translation>Pengurus Pemacu Grafik Deepin ialah alat pengurusan pemacu grafik yang ringkas dan mudah digunakan. Ia menawarkan pengesanan perkakasan kad grafik, pemasangan pemacu grafik, penukaran penyelesaian pemacu grafik, pemulihan automatik pemacu grafik dan lain-lain fungsi.</translation>
     </message>
 </context>
 </TS>

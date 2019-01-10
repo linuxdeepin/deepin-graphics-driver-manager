@@ -19,7 +19,7 @@
     <message>
         <location filename="../gltest/main.cpp" line="161"/>
         <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation>Sincronizar los datos al disco, tomara de 5 a 10 minutos, Al terminar se reiniciará automáticamente.</translation>
+        <translation>Sincroniza los datos al disco, tomará de 5 a 10 minutos, Al terminar se reiniciará automáticamente.</translation>
     </message>
 </context>
 <context>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark Theme</source>
-        <translation type="unfinished"/>
+        <translation>Tema oscuro</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
@@ -99,7 +99,7 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
     <message>
         <location filename="../resolutions/resolution.cpp" line="9"/>
         <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation>Para necesidades especiales. Determine automáticamente el modo de aceleración sin configuración externa.</translation>
+        <translation>Para necesidades especiales. Determina automáticamente el modo de aceleración sin configuración externa.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="11"/>
@@ -139,7 +139,7 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation>Usar controladores por defecto</translation>
+        <translation>Usar controlador predeterminado</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
@@ -149,7 +149,7 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation>Utilice el controlador de código abierto</translation>
+        <translation>Usar controlador de código abierto</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
@@ -159,7 +159,7 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation>Utilizar controlador de código cerrado</translation>
+        <translation>Usar controlador de código cerrado</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -194,7 +194,7 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
         <source>Use Bumblebee Solution</source>
-        <translation>Utilizar la solución Bumblebee</translation>
+        <translation>Usar la solución Bumblebee</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="32"/>
@@ -209,7 +209,7 @@ Si no hay señal, verifique que el puerto de salida del monitor está conectado 
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation>Utilice la solución NV-PRIME</translation>
+        <translation>Usar la solución NV-PRIME</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
