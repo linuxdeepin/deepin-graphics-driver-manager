@@ -1,11 +1,11 @@
 #!/usr/bin/make -f
 
-VERSION ?= $(shell dpkg-parsechangelog -ldebian/changelog -SVersion | awk -F'-' '{print $$1}')
+include /usr/share/dpkg/default.mk
 
 %:
 	dh $@ --with systemd --parallel
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DVERSION=$(VERSION)
+	dh_auto_configure -- -DVERSION=$(DEB_VERSION_UPSTREAM)
 
 
