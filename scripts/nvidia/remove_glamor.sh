@@ -7,10 +7,4 @@ fi
 
 export DEBIAN_FRONTEND=noninteractive
 
-systemctl stop lightdm
-
-if [ $1 == "post" ];then
-    echo "Nothing to remove... (post)"
-else
-    echo "Nothing to remove... (overlay)"
-fi
+echo "Nothing to remove..."

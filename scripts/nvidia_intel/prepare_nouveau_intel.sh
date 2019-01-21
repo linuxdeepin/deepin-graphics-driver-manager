@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 COMMANDS=(
     "apt-get update"

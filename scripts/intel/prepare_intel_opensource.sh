@@ -1,10 +1,11 @@
-#!/bin/sh
+#!/bin/bash
+
 COMMANDS=(
 	"apt-get update"
-	"apt-get install -d xserver-xorg-video-intel --reinstall -y --allow-downgrades"
-	"apt-get install -d xserver-xorg-core --reinstall -y --allow-downgrades"
-	"apt-get install -d xserver-xorg-input-all --reinstall -y --allow-downgrades"
-	"overlayroot-enable"
+    "apt-get install -d --reinstall -y --allow-downgrades \
+        xserver-xorg-video-intel \
+        xserver-xorg-core \
+        xserver-xorg-input-all"
 )    
 
 for cmd in "${COMMANDS[@]}"

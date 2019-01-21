@@ -50,11 +50,8 @@ target_link_libraries(${BIN_NAME}
     ${Qt5Concurrent_LIBRARIES}
 )
 
-# gltest
 add_subdirectory(gltest)
-
-# notify
-add_subdirectory(notify)
+add_subdirectory(installer)
 
 # Test settings
 enable_testing()

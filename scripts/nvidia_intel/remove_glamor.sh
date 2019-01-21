@@ -5,12 +5,4 @@ if [ "$(id -u)" -ne "0" ];then
     exit 1
 fi
 
-export DEBIAN_FRONTEND=noninteractive
-
-systemctl stop lightdm
-
-if [ $1 == "post" ];then
-    echo "Nothing to remove... (post)"
-else
-    echo "Nothing to remove... (overlay)"
-fi
+echo "Nothing to remove..."

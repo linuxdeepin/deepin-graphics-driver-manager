@@ -15,8 +15,8 @@
 #include <DSvgRenderer>
 #include <DThemeManager>
 
-#define DESKTOP_FILE_SOURCE "/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-notify.desktop"
-#define DESKTOP_FILE_DEST "/.config/autostart/deepin-gradvrmgr-notify.desktop"
+#define INSTALLER_DESKTOP_FILE_SOURCE "/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-installer.desktop"
+#define INSTALLER_DESKTOP_FILE_DEST "/.config/autostart/deepin-gradvrmgr-installer.desktop"
 
 #define THEME_DARK "dark"
 #define THEME_LIGHT "light"
@@ -264,9 +264,9 @@ void MainWindow::onPolicyKitPassed()
     const QString &new_driver_name = new_driver_widget->resolution().name();
 
     // toggle UI
-    m_topTips->setText(tr("Switching"));
+    m_topTips->setText(tr("Downloading"));
     m_topTips->setVisible(true);
-    m_botTips->setText(tr("Switching to %1, please wait......").arg(new_driver_name));
+    m_botTips->setText(tr("Downloading the driver for %1, please wait...").arg(new_driver_name));
     m_botTips->setVisible(true);
     m_vendorIcon->setVisible(false);
     m_vendorName->setVisible(false);
@@ -297,18 +297,17 @@ void MainWindow::onPrepareFinished(const int exitCode)
     {
         m_topTips->setText(tr("Download Succeeded"));
         if (m_devInfo.deviceNums() > 1)
-            m_botTips->setText(tr("Please reboot to start installation.\n\nIf no signal, please confirm whether the monitor output port is connected correctly."));
+            m_botTips->setText(tr("Please reboot to test the driver.\n\nIf no signal, please confirm whether the monitor output port is connected correctly."));
         else
-            m_botTips->setText(tr("Please reboot to start installation"));
+            m_botTips->setText(tr("Please reboot to test the driver"));
         m_tipsIcon->setPixmap(hidpiPixmap(":/resources/icons/success.svg", QSize(128, 128)));
         m_rebootButton->setVisible(true);
         m_rebootButton->setFocus();
 
-
-        QFile desktopFileSource(DESKTOP_FILE_SOURCE);
-        if (desktopFileSource.exists())
-            desktopFileSource.copy(QDir::homePath() + DESKTOP_FILE_DEST);
+        QFile installerDesktopFileSource(INSTALLER_DESKTOP_FILE_SOURCE);
+        if (installerDesktopFileSource.exists())
+            installerDesktopFileSource.copy(QDir::homePath() + INSTALLER_DESKTOP_FILE_DEST);
         else
-            qDebug() << DESKTOP_FILE_SOURCE << "do not exists!";
+            qDebug() << INSTALLER_DESKTOP_FILE_SOURCE << "do not exists!";
     }
 }

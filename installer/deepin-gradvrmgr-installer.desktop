@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=Deepin graphics driver manager - notify
-GenericName=Deepin graphics driver manager - notify
-Comment=Send Notify
-Exec=/usr/lib/deepin-graphics-driver-manager/notify
+Name=Deepin graphics driver manager - installer
+GenericName=Deepin graphics driver manager - installer
+Comment=Install drivers
+Exec=/usr/lib/deepin-graphics-driver-manager/installer
 Icon=deepin-graphics-driver-manager
 Terminal=false
 Type=Application

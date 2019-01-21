@@ -148,35 +148,13 @@ protected:
 private slots:
     void onAccept()
     {
-        if (m_exit_gltest)
-        {
-            QFile f("/tmp/gltest-success");
-            f.open(QIODevice::Append);
-            f.close();
-
-            onPostFinished(0);
-        } else {
-            m_cancelBtn->setVisible(false);
-            m_acceptBtn->setVisible(false);
-            m_tipsLabel->setText(tr("Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot."));
-
-            QProcess *proc = new QProcess;
-
-            connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &GLTestWindow::onPostFinished);
-            connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), proc, &QProcess::deleteLater);
-
-            proc->start("/bin/bash", QStringList() << "/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-post.sh");
-        }
+        QProcess::execute("/usr/lib/deepin-graphics-driver-manager/gltest-set-success.sh");
+        qApp->exit(0);
     }
 
     void onCancel()
     {
         qApp->exit(-1);
-    }
-
-    void onPostFinished(const int exitCode)
-    {
-        qApp->exit(exitCode);
     }
 
 private:
@@ -192,15 +170,13 @@ int main(int argc, char *argv[])
     glutInit(&argc, argv);
     QApplication app(argc, argv);
 
-    QSettings settings("/usr/lib/deepin-graphics-driver-manager/config.conf", QSettings::IniFormat);
+    QSettings settings("/usr/lib/deepin-graphics-driver-manager/working-dir/config.conf", QSettings::IniFormat);
     const bool exit_gltest = settings.value("exit_test", false).toBool();
     const QString lang = settings.value("lang", "en_US").toString();
 
     QTranslator translator;
     translator.load(QString("/usr/share/deepin-graphics-driver-manager/translations/deepin-graphics-driver-manager_%1.qm").arg(lang));
     app.installTranslator(&translator);
-
-    QFile("/tmp/gltest-success").remove();
 
     GLTestWindow *w = new GLTestWindow;
     w->setExitGLTest(exit_gltest);
