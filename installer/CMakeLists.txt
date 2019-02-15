@@ -1,4 +1,4 @@
-add_executable(installer main.cpp)
+add_executable(installer main.cpp resources.qrc)
 
 find_package(Qt5DBus REQUIRED)
 

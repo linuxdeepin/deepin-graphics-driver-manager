@@ -36,7 +36,7 @@ void show_success_dialog()
     const QString &new_driver = SETTINGS->value("new_driver").toString();
     const QString &message = qApp->translate("main", "Congratulations, you have switched to %1, please reboot to take effect.");
 
-    DDialog *d = dialog(message.arg(new_driver), "deepin-graphics-driver-manager");
+    DDialog *d = dialog(message.arg(new_driver), "://resources/icons/deepin-graphics-driver-manager-success.svg");
     d->addButton(qApp->translate("main", "Cancel"));
     d->addButton(qApp->translate("main", "Reboot"));
     d->setDefaultButton(1);
@@ -66,7 +66,7 @@ void show_fail_dialog()
 }
 
 int show_install_dialog() {
-    DDialog *installDialog = dialog(qApp->translate("main", "Updating the driver, please wait..."), "dialog-warning");
+    DDialog *installDialog = dialog(qApp->translate("main", "Updating the driver, please wait..."), "://resources/icons/deepin-graphics-driver-manager-installing.svg");
 
     QProcess *removeProc = new QProcess;
     removeProc->connect(removeProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), removeProc, &QProcess::deleteLater);

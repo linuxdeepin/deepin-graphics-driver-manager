@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/icons/deepin-graphics-driver-manager-installing.svg</file>
+        <file>resources/icons/deepin-graphics-driver-manager-success.svg</file>
+    </qresource>
+</RCC>
