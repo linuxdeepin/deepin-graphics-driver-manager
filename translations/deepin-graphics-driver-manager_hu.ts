@@ -16,23 +16,18 @@
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation type="unfinished"/>
     </message>
-    <message>
-        <location filename="../gltest/main.cpp" line="161"/>
-        <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation type="unfinished"/>
-    </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark Theme</source>
-        <translation type="unfinished"/>
+        <translation>Sötét téma</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
-        <translation type="unfinished"/>
+        <translation>Váltás</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="58"/>
@@ -47,17 +42,29 @@
     <message>
         <location filename="../mainwindow.cpp" line="177"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
-        <translation>Az Ön hardvere jelenleg nem támogatott, kérem próbálkozzon újra egy újabb verzióval.</translation>
+        <translation>A jelenlegi hardver sajnos nem támogatott, kérlek várj a jövőbeli verzióra</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
-        <source>Switching</source>
-        <translation>Átkapcsolás</translation>
+        <source>Downloading</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
-        <source>Switching to %1, please wait......</source>
-        <translation>Váltás %1 -ra/re, kérem várjon......</translation>
+        <source>Downloading the driver for %1, please wait...</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="300"/>
+        <source>Please reboot to test the driver.
+
+If no signal, please confirm whether the monitor output port is connected correctly.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Please reboot to test the driver</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -70,21 +77,9 @@
         <translation>Sajnálom, az átkapcsolás nem sikerült</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="297"/>
+        <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Succeeded</source>
         <translation>A letöltés sikeres</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="299"/>
-        <source>Please reboot to start installation.
-
-If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="301"/>
-        <source>Please reboot to start installation</source>
-        <translation>Indítsa újra a telepítés megkezdéséhez</translation>
     </message>
 </context>
 <context>
@@ -127,7 +122,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>Intel kompatibilis mód</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -137,7 +132,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>Alapértelmezett illesztőprogram használata</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
@@ -147,17 +142,17 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>Nyílt forráskódú illesztőprogram használata</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Rossz teljesítmény, instabil néhány grafikus kártyán.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>Zárt forráskódú illesztőprogram használata</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -231,24 +226,34 @@ If no signal, please confirm whether the monitor output port is connected correc
 <context>
     <name>main</name>
     <message>
-        <location filename="../notify/main.cpp" line="32"/>
-        <source>Congratulations, you have switched to %1.</source>
+        <location filename="../installer/main.cpp" line="37"/>
+        <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../notify/main.cpp" line="35"/>
-        <source>Confirm</source>
-        <translation>Megerősítés</translation>
+        <location filename="../installer/main.cpp" line="40"/>
+        <source>Cancel</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../notify/main.cpp" line="43"/>
+        <location filename="../installer/main.cpp" line="41"/>
+        <source>Reboot</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../installer/main.cpp" line="58"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../notify/main.cpp" line="46"/>
+        <location filename="../installer/main.cpp" line="61"/>
         <source>Feedback</source>
         <translation>Visszajelzés</translation>
+    </message>
+    <message>
+        <location filename="../installer/main.cpp" line="69"/>
+        <source>Updating the driver, please wait...</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>

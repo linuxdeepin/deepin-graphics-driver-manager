@@ -16,11 +16,6 @@
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Пожалуйста убедитесь, что драйвер работает нормально, без размытия и разрыва экрана</translation>
     </message>
-    <message>
-        <location filename="../gltest/main.cpp" line="161"/>
-        <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation>Синхронизации данных на диск, требуется 5-10 минут, затем произойдет автоматическая перезагрузка системы</translation>
-    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -51,13 +46,25 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
-        <source>Switching</source>
-        <translation>Переключение</translation>
+        <source>Downloading</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
-        <source>Switching to %1, please wait......</source>
-        <translation>Переключение на %1, пожалуйста ждите......</translation>
+        <source>Downloading the driver for %1, please wait...</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="300"/>
+        <source>Please reboot to test the driver.
+
+If no signal, please confirm whether the monitor output port is connected correctly.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Please reboot to test the driver</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -70,22 +77,9 @@
         <translation>Извините, переключить не удалось</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="297"/>
+        <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Succeeded</source>
         <translation>Загружено Успешно</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="299"/>
-        <source>Please reboot to start installation.
-
-If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation>Пожалуйста, перезагрузитесь, чтобы начать установку. 
-Если нет сигнала, проверьте, правильно ли подключен порт вывода монитора, </translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="301"/>
-        <source>Please reboot to start installation</source>
-        <translation>Перезагрузитесь, чтобы начать установку</translation>
     </message>
 </context>
 <context>
@@ -232,24 +226,34 @@ If no signal, please confirm whether the monitor output port is connected correc
 <context>
     <name>main</name>
     <message>
-        <location filename="../notify/main.cpp" line="32"/>
-        <source>Congratulations, you have switched to %1.</source>
-        <translation>Поздравляем, Вы переключились на %1</translation>
+        <location filename="../installer/main.cpp" line="37"/>
+        <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../notify/main.cpp" line="35"/>
-        <source>Confirm</source>
-        <translation>Ок</translation>
+        <location filename="../installer/main.cpp" line="40"/>
+        <source>Cancel</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../notify/main.cpp" line="43"/>
+        <location filename="../installer/main.cpp" line="41"/>
+        <source>Reboot</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../installer/main.cpp" line="58"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
         <translation>Авто-восстановление на %2 после того, как не удалось переключиться на %1</translation>
     </message>
     <message>
-        <location filename="../notify/main.cpp" line="46"/>
+        <location filename="../installer/main.cpp" line="61"/>
         <source>Feedback</source>
         <translation>Обратная связь</translation>
+    </message>
+    <message>
+        <location filename="../installer/main.cpp" line="69"/>
+        <source>Updating the driver, please wait...</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>

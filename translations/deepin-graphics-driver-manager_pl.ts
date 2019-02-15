@@ -16,11 +16,6 @@
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Prosimy upewnić się, że sterownik pracuje normalnie - bez rozmywania czy śnieżenia obrazu</translation>
     </message>
-    <message>
-        <location filename="../gltest/main.cpp" line="161"/>
-        <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation>Synchronizacja danych z dyskiem, wymaga około 5-10 minut - po ukończeniu nastąpi automatyczne uruchomienie systemu.</translation>
-    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -51,13 +46,25 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
-        <source>Switching</source>
-        <translation>Przełączanie</translation>
+        <source>Downloading</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
-        <source>Switching to %1, please wait......</source>
-        <translation>Przełączanie na %1, prosimy czekać...</translation>
+        <source>Downloading the driver for %1, please wait...</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="300"/>
+        <source>Please reboot to test the driver.
+
+If no signal, please confirm whether the monitor output port is connected correctly.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Please reboot to test the driver</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -70,23 +77,9 @@
         <translation>Przepraszamy, nie udało się przełączyć</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="297"/>
+        <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Succeeded</source>
         <translation>Pomyślne pobranie</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="299"/>
-        <source>Please reboot to start installation.
-
-If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation>Uruchom ponownie komputer, aby rozpocząć instalację.
-
-Jeśli nie ma sygnału, upewnij się że port wyjściowy monitora jest prawidłowo podłączony.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="301"/>
-        <source>Please reboot to start installation</source>
-        <translation>Prosimy zrestartować, aby rozpocząć instalację</translation>
     </message>
 </context>
 <context>
@@ -233,24 +226,34 @@ Jeśli nie ma sygnału, upewnij się że port wyjściowy monitora jest prawidło
 <context>
     <name>main</name>
     <message>
-        <location filename="../notify/main.cpp" line="32"/>
-        <source>Congratulations, you have switched to %1.</source>
-        <translation>Gratulacje, przełączyłeś się na %1.</translation>
+        <location filename="../installer/main.cpp" line="37"/>
+        <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../notify/main.cpp" line="35"/>
-        <source>Confirm</source>
-        <translation>Potwierdź</translation>
+        <location filename="../installer/main.cpp" line="40"/>
+        <source>Cancel</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../notify/main.cpp" line="43"/>
+        <location filename="../installer/main.cpp" line="41"/>
+        <source>Reboot</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../installer/main.cpp" line="58"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
         <translation>Automatyczne przywrócenie do %2 po niepomyślnym przełączeniu do %1</translation>
     </message>
     <message>
-        <location filename="../notify/main.cpp" line="46"/>
+        <location filename="../installer/main.cpp" line="61"/>
         <source>Feedback</source>
         <translation>Informacja zwrotna</translation>
+    </message>
+    <message>
+        <location filename="../installer/main.cpp" line="69"/>
+        <source>Updating the driver, please wait...</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>

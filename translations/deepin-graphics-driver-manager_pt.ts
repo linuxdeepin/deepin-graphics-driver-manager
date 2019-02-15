@@ -16,11 +16,6 @@
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Por favor certifique-se que o controlador funciona normalmente sem ecrã esborratado ou com rasgos</translation>
     </message>
-    <message>
-        <location filename="../gltest/main.cpp" line="161"/>
-        <source>Syncing data to disk, taking about 5 to 10 minutes, when finished it will auto reboot.</source>
-        <translation>A sincronizar dados para o disco, leva cerca de 5 a 10 minutos, quando estiver concluído reiniciará automaticamente.</translation>
-    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -51,18 +46,30 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
-        <source>Switching</source>
-        <translation>A alterar</translation>
+        <source>Downloading</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
-        <source>Switching to %1, please wait......</source>
-        <translation>A alterar para %1, por favor aguarde</translation>
+        <source>Downloading the driver for %1, please wait...</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="300"/>
+        <source>Please reboot to test the driver.
+
+If no signal, please confirm whether the monitor output port is connected correctly.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="302"/>
+        <source>Please reboot to test the driver</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
         <source>Download failed</source>
-        <translation>Descarga falhou</translation>
+        <translation>Falha na transferência</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
@@ -70,23 +77,9 @@
         <translation>Desculpe, a alteração falhou</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="297"/>
+        <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Succeeded</source>
         <translation>Transferido com sucesso</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="299"/>
-        <source>Please reboot to start installation.
-
-If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation>Por favor reinicie para iniciar a instalação.
-
-Se não obtiver nenhum sinal, por favor confirme se o porto do monitor de saída está conectado corretamente.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="301"/>
-        <source>Please reboot to start installation</source>
-        <translation>Por favor reinicie para iniciar a instalação</translation>
     </message>
 </context>
 <context>
@@ -174,7 +167,7 @@ Se não obtiver nenhum sinal, por favor confirme se o porto do monitor de saída
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation>Boa compatibilidade para todas as placas de gráficas Intel para acelerar, mas o desempenho é relativamente fraco.</translation>
+        <translation>Boa compatibilidade para todas as placas gráficas Intel para acelerar, mas o desempenho é relativamente fraco.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -219,7 +212,7 @@ Se não obtiver nenhum sinal, por favor confirme se o porto do monitor de saída
     <message>
         <location filename="../resolutions/resolution.cpp" line="37"/>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation>Para portáteis com gráficos híbridos, obtém um melhor desempenho mas tem de trabalhar com controladores de código fonte fechado.</translation>
+        <translation>Para portáteis com gráficos híbridos, obtém um melhor desempenho mas tem de trabalhar com controladores de código-fonte fechado.</translation>
     </message>
 </context>
 <context>
@@ -233,24 +226,34 @@ Se não obtiver nenhum sinal, por favor confirme se o porto do monitor de saída
 <context>
     <name>main</name>
     <message>
-        <location filename="../notify/main.cpp" line="32"/>
-        <source>Congratulations, you have switched to %1.</source>
-        <translation>Parabéns, alterou para %1.</translation>
+        <location filename="../installer/main.cpp" line="37"/>
+        <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../notify/main.cpp" line="35"/>
-        <source>Confirm</source>
-        <translation>Confirmar</translation>
+        <location filename="../installer/main.cpp" line="40"/>
+        <source>Cancel</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../notify/main.cpp" line="43"/>
+        <location filename="../installer/main.cpp" line="41"/>
+        <source>Reboot</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../installer/main.cpp" line="58"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
         <translation>Restaurar automaticamente para %2 depois de falhar mudança para %1</translation>
     </message>
     <message>
-        <location filename="../notify/main.cpp" line="46"/>
+        <location filename="../installer/main.cpp" line="61"/>
         <source>Feedback</source>
         <translation>Feedback</translation>
+    </message>
+    <message>
+        <location filename="../installer/main.cpp" line="69"/>
+        <source>Updating the driver, please wait...</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
