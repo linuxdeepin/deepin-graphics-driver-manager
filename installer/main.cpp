@@ -86,11 +86,11 @@ int show_install_dialog() {
     });
     QStringList removeArgs {"/bin/bash", "-x", "/usr/lib/deepin-graphics-driver-manager/working-dir/remove_old.sh"};
 
-    if (DbusConnInter->isServiceRegistered(AuthAgentDbusService)) {
-        qDebug() << "start remove process";
-        removeProc->start("pkexec", removeArgs);
-    } else {
-        qDebug() << AuthAgentDbusService << "daemon has not started, waiting for signal";
+    //if (DbusConnInter->isServiceRegistered(AuthAgentDbusService)) {
+    //    qDebug() << "start remove process";
+    //    removeProc->start("pkexec", removeArgs);
+    //} else {
+    //    qDebug() << AuthAgentDbusService << "daemon has not started, waiting for signal";
         QTimer *timer = new QTimer;
         timer->setSingleShot(false);
         timer->setInterval(6000);
@@ -113,7 +113,7 @@ int show_install_dialog() {
             }
         });
         timer->start();
-    }
+    //}
 
     return installDialog->exec();
 }

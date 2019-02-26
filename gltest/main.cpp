@@ -15,6 +15,8 @@
 #include <QProcess>
 #include <QSettings>
 #include <QTranslator>
+#include <QThread>
+#include <QProcess>
 
 #include <GL/gl.h>
 #include <GL/glut.h>
@@ -27,6 +29,24 @@ public:
     explicit GLTestWidget(QWidget *parent = nullptr)
         : QOpenGLWidget(parent)
     {
+        QThread *auto_quit_thread = new QThread();
+        QTimer *auto_quit_timer = new QTimer();
+        QTimer *restart_auto_quit_timer = new QTimer();
+
+        auto_quit_timer->moveToThread(auto_quit_thread);
+        auto_quit_thread->start();
+
+        QObject::connect(auto_quit_timer, &QTimer::timeout, [=] {
+            qDebug() << "detect the main thread may stuck one minute, killing";
+            QProcess::startDetached("killall", QStringList() << "gltest");
+        });
+        QObject::connect(restart_auto_quit_timer, &QTimer::timeout,  [=] {
+            auto_quit_timer->metaObject()->invokeMethod(auto_quit_timer, "start", Q_ARG(int, 60000));
+        });
+
+        auto_quit_timer->metaObject()->invokeMethod(auto_quit_timer, "start", Q_ARG(int, 60000));
+        restart_auto_quit_timer->start(5000);
+
         m_xRotated = m_yRotated = m_zRotated = 0;
 
         QTimer *t = new QTimer(this);
