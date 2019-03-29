@@ -1,3 +1,13 @@
+<a name="1.1.7.1"></a>
+## 1.1.7.1 (2019-03-29)
+
+
+#### Bug Fixes
+
+*   overlay disable not work when download required packages failed ([58ff63ff](58ff63ff))
+
+
+
 <a name="1.1.7"></a>
 ## 1.1.7 (2019-03-28)
 
