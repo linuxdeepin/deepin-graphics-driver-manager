@@ -19,10 +19,6 @@ echo $INSTALL
 echo $OLD_DRIVER
 echo $NEW_DRIVER
 
-# overlayroot will take effect after reboot
-# overlayroot-disable will excute when driver-installer service startup or some error occured
-overlayroot-enable || error_exit_dgm "overlayroot-enable failed!" 1
-
 # execute prepare script for new solution
 bash -x $PREPARE || error_exit_dgm "prepare for $NEW_DRIVER failed!" 1
 
@@ -48,3 +44,8 @@ notified=false
 " | tee $CONFIG_FILE_G
 
 chmod 666 $CONFIG_FILE_G
+
+# Warning: overlayroot-disable command only works in system is already in overlay mode
+# overlayroot will take effect after reboot
+# overlayroot-disable will excute when driver-installer service startup or some error occured
+overlayroot-enable || error_exit_dgm "overlayroot-enable failed!" 1
