@@ -2,7 +2,7 @@
 
 systemctl stop lightdm
 
-# run this comman again here to avoid disable overlayroot in service not work
+# run this command again here to avoid disable overlayroot in service not work
 overlayroot-disable
 
 . /usr/lib/deepin-graphics-driver-manager/common.sh
@@ -43,7 +43,7 @@ fi
 
 killall Xorg
 
-# run this comman again here to avoid disable overlayroot in service not work
+# run this command again here to avoid disable overlayroot in service not work
 # same as above
 overlayroot-disable
 
