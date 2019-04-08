@@ -35,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent) :
     m_resolutions(ResolutionsBuilder(m_devInfo).build()),
     m_qsettings(new QSettings(this)),
     m_tbMenu(new QMenu(this)),
-    m_darkThemeAction(new QAction(tr("Dark Theme"), this))
+    m_darkThemeAction(new QAction(tr("Dark theme"), this))
 {
     m_toggleButton = new DSuggestButton;
     m_toggleButton->setText(tr("Switch"));
@@ -295,7 +295,7 @@ void MainWindow::onPrepareFinished(const int exitCode)
     }
     else
     {
-        m_topTips->setText(tr("Download Succeeded"));
+        m_topTips->setText(tr("Download Successful"));
         if (m_devInfo.deviceNums() > 1)
             m_botTips->setText(tr("Please reboot to test the driver.\n\nIf no signal, please confirm whether the monitor output port is connected correctly."));
         else

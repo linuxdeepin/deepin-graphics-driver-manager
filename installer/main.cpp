@@ -58,7 +58,7 @@ void show_fail_dialog()
     const QString &message = qApp->translate("main", "Auto restore to %2 after failed to switch to %1");
 
     DDialog *d = dialog(message.arg(new_driver).arg(old_driver), "dialog-warning");
-    d->addButton(qApp->translate("main", "Feedback"));
+    d->addButton(qApp->translate("main", "Submit Feedback"));
 
     QObject::connect(d, &DDialog::buttonClicked, [=] { QProcess::startDetached("deepin-feedback"); });
 
