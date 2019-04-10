@@ -2,28 +2,23 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/main.cpp" line="104"/>
+        <location filename="../gltest/main.cpp" line="124"/>
         <source>Apply</source>
         <translation>एप्लाई</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="105"/>
+        <location filename="../gltest/main.cpp" line="125"/>
         <source>Cancel</source>
         <translation>रद्द गर्नुहोस्</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="106"/>
+        <location filename="../gltest/main.cpp" line="126"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>रद्द गर्नुहोस्</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <location filename="../mainwindow.cpp" line="38"/>
-        <source>Dark Theme</source>
-        <translation>डार्क थिम</translation>
-    </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
@@ -55,6 +50,11 @@
         <translation type="unfinished"/>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="298"/>
+        <source>Download Successful</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="300"/>
         <source>Please reboot to test the driver.
 
@@ -72,14 +72,14 @@ If no signal, please confirm whether the monitor output port is connected correc
         <translation>डाउनलोड असफल भयो</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="38"/>
+        <source>Dark theme</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
         <translation>क्षमा गर्नुहोस्, स्विच असफल भयो</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="298"/>
-        <source>Download Succeeded</source>
-        <translation>डाउनलोड सफल भयो</translation>
     </message>
 </context>
 <context>
@@ -247,8 +247,8 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../installer/main.cpp" line="61"/>
-        <source>Feedback</source>
-        <translation>प्रतिक्रिया</translation>
+        <source>Submit Feedback</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
@@ -262,8 +262,8 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>ग्राफिक्स ड्राइभर प्रबन्धक एक कम्पैक्ट र ग्राफिक चालक प्रबन्ध उपकरण हो | येस्लाईप्रयोग गर्न सजिलो छ। यसमा ग्राफिक्स कार्ड हार्डवेयर पत्ता लगाउने, ग्राफिक्स चालक स्थापना, ग्राफिक्स चालक समाधान स्विचन, ग्राफिक्स चालक स्वत: प्राप्ति र अन्य कार्यहरू समावेश गर्दछ।</translation>
+        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

@@ -2,28 +2,23 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/main.cpp" line="104"/>
+        <location filename="../gltest/main.cpp" line="124"/>
         <source>Apply</source>
         <translation>Käytä</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="105"/>
+        <location filename="../gltest/main.cpp" line="125"/>
         <source>Cancel</source>
         <translation>Peru</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="106"/>
+        <location filename="../gltest/main.cpp" line="126"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation>Varmista, että ajuri toimii normaalisti ilman epäselvää näyttöä ja näytön välkkymistä</translation>
+        <translation>Varmista, että ajuri toimii normaalisti ilman epäselvää näyttöä tai välkkymistä</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <location filename="../mainwindow.cpp" line="38"/>
-        <source>Dark Theme</source>
-        <translation>Tumma teema</translation>
-    </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
@@ -37,7 +32,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="62"/>
         <source>Reboot</source>
-        <translation>Uudelleenkäynnistys</translation>
+        <translation>Käynnistä</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="177"/>
@@ -47,24 +42,31 @@
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Downloading</source>
-        <translation type="unfinished"/>
+        <translation>Ladataan</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Downloading the driver for %1, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>Ohjaimen lataaminen %1 , odota ...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="298"/>
+        <source>Download Successful</source>
+        <translation>Lataus onnistunut</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
         <source>Please reboot to test the driver.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Käynnistä uudelleen, jotta voit testata ohjainta.
+
+Jos signaalia ei tule niin varmista, että monitorin kaapeli on kytketty oikein.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="302"/>
         <source>Please reboot to test the driver</source>
-        <translation type="unfinished"/>
+        <translation>Käynnistä uudelleen, niin ohjaimen testi alkaa.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -72,14 +74,14 @@ If no signal, please confirm whether the monitor output port is connected correc
         <translation>Lataus epäonnistui</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="38"/>
+        <source>Dark theme</source>
+        <translation>Tumma teema</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
         <translation>Valitettavasti vaihto epäonnistui</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="298"/>
-        <source>Download Succeeded</source>
-        <translation>Lataus onnistunut</translation>
     </message>
 </context>
 <context>
@@ -212,7 +214,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="37"/>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation>Kannettavat tietokoneet, joissa on hybridigrafiikka, joilla on paras suorituskyky, mutta joiden on toimittava suljetun lähdekoodin ohjaimen kanssa.</translation>
+        <translation>Kannettavat, joissa on hybridigrafiikka, saadaan paras suorituskyky, mutta toimivat suljetun lähdekoodin ohjaimilla.</translation>
     </message>
 </context>
 <context>
@@ -228,17 +230,17 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="37"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
-        <translation type="unfinished"/>
+        <translation>Onnittelut, olet vaihtanut %1. Käynnistä järjestelmä uudelleen.</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="40"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Peru</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="41"/>
         <source>Reboot</source>
-        <translation type="unfinished"/>
+        <translation>Käynnistä</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="58"/>
@@ -247,13 +249,13 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../installer/main.cpp" line="61"/>
-        <source>Feedback</source>
-        <translation>Palaute</translation>
+        <source>Submit Feedback</source>
+        <translation>Antaa palautetta</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
         <source>Updating the driver, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>Päivitetään ohjainta, odota ...</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
@@ -262,8 +264,8 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin näytönohjaimen hallinta on pienikokoinen ja helppokäyttöinen grafiikkaohjaimen hallintatyökalu. Se sisältää grafiikkakortin laitteiston havaitsemisen, grafiikkaohjaimen asennuksen, grafiikkaohjaimen automaattisen palautuksen ja muut toiminnot.</translation>
+        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation>Deepin näytönohjaimen hallinta on helppokäyttöinen grafiikkaohjaimen hallintatyökalu. Se sisältää näytönohjaimen laitteiston havaitsemisen, grafiikkaohjaimen asennuksen, grafiikkaohjaimen ratkaisun vaihtamisen, grafiikkaohjaimen automaattisen palautuksen ja muut toiminnot.</translation>
     </message>
 </context>
 </TS>

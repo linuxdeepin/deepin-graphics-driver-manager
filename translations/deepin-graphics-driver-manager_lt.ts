@@ -2,28 +2,23 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/main.cpp" line="104"/>
+        <location filename="../gltest/main.cpp" line="124"/>
         <source>Apply</source>
         <translation>Taikyti</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="105"/>
+        <location filename="../gltest/main.cpp" line="125"/>
         <source>Cancel</source>
         <translation>Atsisakyti</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="106"/>
+        <location filename="../gltest/main.cpp" line="126"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Įsitikinkite, kad tvarkyklė veikia normaliai, kad ekranas yra ryškus ir nėra perskiriamas</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <location filename="../mainwindow.cpp" line="38"/>
-        <source>Dark Theme</source>
-        <translation>Tamsi tema</translation>
-    </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
@@ -47,24 +42,31 @@
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Downloading</source>
-        <translation type="unfinished"/>
+        <translation>Atsisiunčiama</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Downloading the driver for %1, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>Atsisiunčiama tvarkyklė, skirta %1, palaukite...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="298"/>
+        <source>Download Successful</source>
+        <translation>Atsiuntimas sėkmingas</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
         <source>Please reboot to test the driver.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Norėdami išbandyti tvarkyklę, paleiskite kompiuterį iš naujo.
+
+Jeigu nebus jokio signalo, įsitikinkite, kad monitoriaus išvesties jungtis yra prijungta teisingai.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="302"/>
         <source>Please reboot to test the driver</source>
-        <translation type="unfinished"/>
+        <translation>Norėdami išbandyti tvarkyklę, paleiskite kompiuterį iš naujo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -72,14 +74,14 @@ If no signal, please confirm whether the monitor output port is connected correc
         <translation>Atsiuntimas nepavyko</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="38"/>
+        <source>Dark theme</source>
+        <translation>Tamsi tema</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
         <translation>Atleiskite, perjungimas nepavyko</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="298"/>
-        <source>Download Succeeded</source>
-        <translation>Atsiuntimas pavyko</translation>
     </message>
 </context>
 <context>
@@ -112,7 +114,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="19"/>
         <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation type="unfinished"/>
+        <translation>Pritaikoma tik kai kuriems platinimams ir grafikos plokštėms, gali sąlygoti juodą ekraną.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="21"/>
@@ -147,7 +149,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
         <source>Poor performance, unstable in some graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Kai kuriose grafikos plokštėse blogas našumas ir nestabilumas.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
@@ -162,12 +164,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="23"/>
         <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation type="unfinished"/>
+        <translation>Blogas suderinamumas su kai kuriomis senomis grafikos plokštėmis.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="26"/>
         <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation type="unfinished"/>
+        <translation>Geriausias suderinamumas spartinti visas Intel grafikos plokštes, bet našumas yra santykinai mažas.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="27"/>
@@ -182,7 +184,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="29"/>
         <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation type="unfinished"/>
+        <translation>Pagreitinti grafikos plokštę geresniu našumu, tačiau kai kuriose plokštėse nestabili ir sukelia ekrano blykčiojimą.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
@@ -197,7 +199,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="33"/>
         <source>Save power to reduce power consumption.</source>
-        <translation type="unfinished"/>
+        <translation>Taupyti el. energiją, kad būtų sumažintas el. energijos naudojimas.</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
@@ -212,7 +214,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="37"/>
         <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation type="unfinished"/>
+        <translation>Nešiojamiesiems kompiuteriams su hibridine grafika, turi geriausią našumą, tačiau privalo veikti su uždarojo kodo tvarkykle.</translation>
     </message>
 </context>
 <context>
@@ -228,17 +230,17 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="37"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
-        <translation type="unfinished"/>
+        <translation>Sveikiname, persijungėte į %1. Tam, kad įsigaliotų pakeitimai, paleiskite kompiuterį iš naujo.</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="40"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Atsisakyti</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="41"/>
         <source>Reboot</source>
-        <translation type="unfinished"/>
+        <translation>Paleisti iš naujo</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="58"/>
@@ -247,13 +249,13 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../installer/main.cpp" line="61"/>
-        <source>Feedback</source>
-        <translation>Atsiliepimai</translation>
+        <source>Submit Feedback</source>
+        <translation>Pateikti atsiliepimą</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
         <source>Updating the driver, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>Atnaujinama tvarkyklė, palaukite...</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
@@ -262,8 +264,8 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation>Deepin grafikos tvarkyklių tvarkytuvė yra kompaktiškas ir lengvas naudoti grafikos tvarkyklių tvarkymo įrankis. Jame yra grafikos plokščių aparatinės įrangos aptikimas, grafikos tvarkyklių diegimas, grafikos tvarkyklių sprendimų perjungimas, grafikos tvarkyklių automatinis atkūrimas ir kitos funkcijos.</translation>
     </message>
 </context>
 </TS>
