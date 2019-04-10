@@ -2,28 +2,23 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/main.cpp" line="104"/>
+        <location filename="../gltest/main.cpp" line="124"/>
         <source>Apply</source>
         <translation>Aplicar</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="105"/>
+        <location filename="../gltest/main.cpp" line="125"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="106"/>
+        <location filename="../gltest/main.cpp" line="126"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Certifique-se de que o driver funciona normalmente sem tela borrada ou cortada</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <location filename="../mainwindow.cpp" line="38"/>
-        <source>Dark Theme</source>
-        <translation>Tema Escuro</translation>
-    </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
@@ -47,24 +42,31 @@
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Downloading</source>
-        <translation type="unfinished"/>
+        <translation>Baixando</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Downloading the driver for %1, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>Baixando o driver para %1, aguarde...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="298"/>
+        <source>Download Successful</source>
+        <translation>Download Finalizado</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
         <source>Please reboot to test the driver.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Reinicie para testar o driver.
+
+Se ficar sem sinal, confirme se a saída do monitor está conectada corretamente.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="302"/>
         <source>Please reboot to test the driver</source>
-        <translation type="unfinished"/>
+        <translation>Reinicie para testar o driver</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -72,14 +74,14 @@ If no signal, please confirm whether the monitor output port is connected correc
         <translation>Falha no download</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="38"/>
+        <source>Dark theme</source>
+        <translation>Tema escuro</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
         <translation>Desculpe, a alteração falhou</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="298"/>
-        <source>Download Succeeded</source>
-        <translation>Download realizado com sucesso</translation>
     </message>
 </context>
 <context>
@@ -228,17 +230,17 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="37"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
-        <translation type="unfinished"/>
+        <translation>Parabéns, você mudou para %1, reinicie para efetivar a mudança.</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="40"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="41"/>
         <source>Reboot</source>
-        <translation type="unfinished"/>
+        <translation>Reiniciar</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="58"/>
@@ -247,13 +249,13 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../installer/main.cpp" line="61"/>
-        <source>Feedback</source>
-        <translation>Feedback</translation>
+        <source>Submit Feedback</source>
+        <translation>Enviar Feedback</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
         <source>Updating the driver, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>Atualizando o driver, aguarde...</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
@@ -262,8 +264,8 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin Graphics Driver Manager é uma ferramenta de gerenciamento de driver de gráficos compacta e fácil de usar. Inclui detecção de hardware de placa gráfica, instalação de driver gráfico, troca de solução de driver gráfico, recuperação automática de driver gráfico e outras funções.</translation>
+        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation>Deepin Graphics Driver Manager é uma ferramenta de gerenciamento de driver de gráficos compacta e fácil de usar. Inclui detecção do hardware da placa de vídeo, instalação do driver, comutação de drivers, recuperação automática de driver e outras funções.</translation>
     </message>
 </context>
 </TS>

@@ -2,28 +2,23 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/main.cpp" line="104"/>
+        <location filename="../gltest/main.cpp" line="124"/>
         <source>Apply</source>
         <translation>套用</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="105"/>
+        <location filename="../gltest/main.cpp" line="125"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="106"/>
+        <location filename="../gltest/main.cpp" line="126"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>確保驅動運作正常，且畫面沒有模糊與撕裂</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <location filename="../mainwindow.cpp" line="38"/>
-        <source>Dark Theme</source>
-        <translation>暗色主題</translation>
-    </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
@@ -47,11 +42,16 @@
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Downloading</source>
-        <translation type="unfinished"/>
+        <translation>下載中</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Downloading the driver for %1, please wait...</source>
+        <translation>正在下載 %1 的驅動程式，請稍候…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="298"/>
+        <source>Download Successful</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -59,12 +59,14 @@
         <source>Please reboot to test the driver.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>請重開機測試驅動。
+
+若顯示器沒有訊號，請確認是不是顯示器的輸出埠沒接好。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="302"/>
         <source>Please reboot to test the driver</source>
-        <translation type="unfinished"/>
+        <translation>請重開機測試驅動</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -72,14 +74,14 @@ If no signal, please confirm whether the monitor output port is connected correc
         <translation>下載失敗</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="38"/>
+        <source>Dark theme</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
         <translation>切換失敗</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="298"/>
-        <source>Download Succeeded</source>
-        <translation>下載成功</translation>
     </message>
 </context>
 <context>
@@ -228,17 +230,17 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="37"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
-        <translation type="unfinished"/>
+        <translation>恭喜，您已切換到 %1。請重開機以套用變更。</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="40"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="41"/>
         <source>Reboot</source>
-        <translation type="unfinished"/>
+        <translation>重啟</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="58"/>
@@ -247,13 +249,13 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../installer/main.cpp" line="61"/>
-        <source>Feedback</source>
-        <translation>意見回應</translation>
+        <source>Submit Feedback</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
         <source>Updating the driver, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>正在更新驅動，請稍候…</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
@@ -262,8 +264,8 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin 顯示卡管理器是個嚴謹且易用的圖形驅動管理程序。其包含顯卡硬體偵測、顯卡驅動安裝、顯卡方案切換、顯卡自動還原等其他功能。</translation>
+        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

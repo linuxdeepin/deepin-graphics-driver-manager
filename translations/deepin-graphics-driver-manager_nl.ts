@@ -2,28 +2,23 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/main.cpp" line="104"/>
+        <location filename="../gltest/main.cpp" line="124"/>
         <source>Apply</source>
         <translation>Toepassen</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="105"/>
+        <location filename="../gltest/main.cpp" line="125"/>
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="106"/>
+        <location filename="../gltest/main.cpp" line="126"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Zorg ervoor dat het stuurprogramma normaal werkt en geen wazig scherm en/of scheuren oplevert</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <location filename="../mainwindow.cpp" line="38"/>
-        <source>Dark Theme</source>
-        <translation>Donker thema</translation>
-    </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
@@ -47,24 +42,31 @@
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Downloading</source>
-        <translation type="unfinished"/>
+        <translation>Bezig met downloaden</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Downloading the driver for %1, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>Bezig met downloaden van stuurprogramma voor %1; even geduld...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="298"/>
+        <source>Download Successful</source>
+        <translation>Downloaden voltooid</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
         <source>Please reboot to test the driver.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Start opnieuw op om het stuurprogramma te testen.
+
+Als er geen signaal is, controleer dan of de uitvoerpoort van de monitor correct is aangesloten.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="302"/>
         <source>Please reboot to test the driver</source>
-        <translation type="unfinished"/>
+        <translation>Start opnieuw op om het stuurprogramma te testen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -72,14 +74,14 @@ If no signal, please confirm whether the monitor output port is connected correc
         <translation>Downloaden mislukt</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="38"/>
+        <source>Dark theme</source>
+        <translation>Donker thema</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
         <translation>Sorry, overschakelen mislukt</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="298"/>
-        <source>Download Succeeded</source>
-        <translation>Downloaden voltooid</translation>
     </message>
 </context>
 <context>
@@ -228,17 +230,17 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="37"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
-        <translation type="unfinished"/>
+        <translation>Gefeliciteerd! Je bent overgeschakeld naar %1. Start opnieuw op dit toe te passen.</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="40"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Annuleren</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="41"/>
         <source>Reboot</source>
-        <translation type="unfinished"/>
+        <translation>Herstarten</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="58"/>
@@ -247,13 +249,13 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../installer/main.cpp" line="61"/>
-        <source>Feedback</source>
-        <translation>Feedback</translation>
+        <source>Submit Feedback</source>
+        <translation>Feedback versturen</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
         <source>Updating the driver, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>Bezig met bijwerken van stuurprogramma; even geduld...</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
@@ -262,7 +264,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
         <translation>Deepin Grafisch Stuurprogrammabeheer is een compact en eenvoudig te gebruiken hulpmiddel voor het beheren van grafische stuurprogramma&apos;s. Het omvat hardwarematige detectie van grafische kaarten en installatie/herstel van en schakelen tussen grafische stuurprogramma&apos;s.</translation>
     </message>
 </context>

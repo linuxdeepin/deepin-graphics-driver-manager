@@ -2,28 +2,23 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/main.cpp" line="104"/>
+        <location filename="../gltest/main.cpp" line="124"/>
         <source>Apply</source>
         <translation>Laksana</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="105"/>
+        <location filename="../gltest/main.cpp" line="125"/>
         <source>Cancel</source>
         <translation>Batal</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="106"/>
+        <location filename="../gltest/main.cpp" line="126"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Sila pastikan pemacu berfungsi baik tanpa skrin menjadi kabur dan kelihatan terkoyak</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <location filename="../mainwindow.cpp" line="38"/>
-        <source>Dark Theme</source>
-        <translation>Tema Gelap</translation>
-    </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
@@ -47,11 +42,16 @@
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Downloading</source>
-        <translation type="unfinished"/>
+        <translation>Memuat Turun</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Downloading the driver for %1, please wait...</source>
+        <translation>Memuat turun pemacu untuk %1, tunggu sebentar...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="298"/>
+        <source>Download Successful</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -59,12 +59,14 @@
         <source>Please reboot to test the driver.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Sila but semula untuk menguji pemacu ini.
+
+Jika tiada apa-apa isyarat, sila sahkan sama ada port output monitor bersambung atau sebaliknya.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="302"/>
         <source>Please reboot to test the driver</source>
-        <translation type="unfinished"/>
+        <translation>Sila but semula untuk menguji pemacu</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -72,14 +74,14 @@ If no signal, please confirm whether the monitor output port is connected correc
         <translation>Muat turun gagal</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="38"/>
+        <source>Dark theme</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
         <translation>Maaf, pertukaran gagal</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="298"/>
-        <source>Download Succeeded</source>
-        <translation>Muat Turun Berjaya</translation>
     </message>
 </context>
 <context>
@@ -228,17 +230,17 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="37"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
-        <translation type="unfinished"/>
+        <translation>Tahniah, anda telah beralih ke %1, sila but semula supaya perubahan ini berkesan.</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="40"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Batal</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="41"/>
         <source>Reboot</source>
-        <translation type="unfinished"/>
+        <translation>But Semula</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="58"/>
@@ -247,13 +249,13 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../installer/main.cpp" line="61"/>
-        <source>Feedback</source>
-        <translation>Maklumbalas</translation>
+        <source>Submit Feedback</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
         <source>Updating the driver, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>Mengemaskini pemacu, tunggu sebentar...</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
@@ -262,8 +264,8 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Pengurus Pemacu Grafik Deepin ialah alat pengurusan pemacu grafik yang ringkas dan mudah digunakan. Ia menawarkan pengesanan perkakasan kad grafik, pemasangan pemacu grafik, penukaran penyelesaian pemacu grafik, pemulihan automatik pemacu grafik dan lain-lain fungsi.</translation>
+        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

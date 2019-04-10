@@ -2,28 +2,23 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/main.cpp" line="104"/>
+        <location filename="../gltest/main.cpp" line="124"/>
         <source>Apply</source>
         <translation>Aplica</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="105"/>
+        <location filename="../gltest/main.cpp" line="125"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="106"/>
+        <location filename="../gltest/main.cpp" line="126"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Assegureu-vos que el controlador funcioni amb normalitat sense que la pantalla es vegi borrosa i sense parpelleig.</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <location filename="../mainwindow.cpp" line="38"/>
-        <source>Dark Theme</source>
-        <translation>Tema fosc</translation>
-    </message>
     <message>
         <location filename="../mainwindow.cpp" line="41"/>
         <source>Switch</source>
@@ -47,11 +42,16 @@
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Downloading</source>
-        <translation type="unfinished"/>
+        <translation>Es baixa</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Downloading the driver for %1, please wait...</source>
+        <translation>Es baixa el controlador per a %1. Espereu, si us plau...</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="298"/>
+        <source>Download Successful</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -59,12 +59,14 @@
         <source>Please reboot to test the driver.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Si us plau, reinicieu el sistema per provar el controlador.
+
+Si no hi ha senyal, comproveu que el cable de vídeo estigui connectat a la sortida correcta.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="302"/>
         <source>Please reboot to test the driver</source>
-        <translation type="unfinished"/>
+        <translation>Si us plau, reinicieu el sistema per provar el controlador.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -72,14 +74,14 @@ If no signal, please confirm whether the monitor output port is connected correc
         <translation>Ha fallat la baixada.</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="38"/>
+        <source>Dark theme</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <source>Sorry, switch failed</source>
         <translation>Perdoneu, ha fallat el canvi.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="298"/>
-        <source>Download Succeeded</source>
-        <translation>Baixada correcta</translation>
     </message>
 </context>
 <context>
@@ -228,17 +230,17 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="37"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
-        <translation type="unfinished"/>
+        <translation>Enhorabona, heu canviat a %1. Si us plau, reinicieu el sistema perquè tingui efecte.</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="40"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Cancel·la</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="41"/>
         <source>Reboot</source>
-        <translation type="unfinished"/>
+        <translation>Reincia</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="58"/>
@@ -247,13 +249,13 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../installer/main.cpp" line="61"/>
-        <source>Feedback</source>
-        <translation>Comentaris</translation>
+        <source>Submit Feedback</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
         <source>Updating the driver, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>S&apos;actualitza el controlador. Espereu, si us plau...</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
@@ -262,8 +264,8 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>El Gestor de controladors gràfics del Deepin és una eina de gestió de controladors gràfics compacta i fàcil de fer servir. Inclou detecció de targetes gràfiques, instal·lació de controladors, canvi de controladors, recuperació automàtica de controladors i altres funcions.</translation>
+        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>
