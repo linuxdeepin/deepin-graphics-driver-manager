@@ -57,8 +57,12 @@ Resolutions ResolutionsBuilder::build()
     r.m_iconName = resolutionsObject["icon_name"].toString();
     r.m_statusScript = resolutionsObject["status"].toString();
 
-    for (const auto res : resolutionsObject["resolutions"].toArray())
-        r.m_resolutions.append(Resolution(res.toObject()));
+    for (const auto res : resolutionsObject["resolutions"].toArray()) {
+        Resolution solution(res.toObject());
+        if (solution.display()) {
+            r.m_resolutions.append(solution);
+        }
+    }
 
     return r;
 }

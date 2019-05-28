@@ -160,6 +160,7 @@
             },
             {
                 "id": 500,
+                "display": false,
                 "keep_gltest": true,
                 "title": "Use NV-PRIME Solution",
                 "name": "PRIME Solution",
