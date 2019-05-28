@@ -41,6 +41,13 @@ Resolution::Resolution(const QJsonObject &info)
 {
     Q_UNUSED(translates)
 
+    QJsonValue shouldDisplay = info.value("display");
+    if (shouldDisplay == QJsonValue::Undefined) {
+        m_display = true;
+    } else {
+        m_display = shouldDisplay.toBool();
+    }
+
     m_resId = info["id"].toInt();
     m_keepGLTest = info["keep_gltest"].toBool();
     m_resName = QApplication::translate("Resolution", info["name"].toString().toStdString().c_str());
