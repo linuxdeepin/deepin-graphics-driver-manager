@@ -1,3 +1,13 @@
+<a name="1.1.9"></a>
+## 1.1.9 (2019-06-01)
+
+
+#### Features
+
+*   allow avoid a solution display in solution list ([dc79289f](https://github.com/linuxdeepin/deepin-graphics-driver-manager/commit/dc79289fe87472c81ef0902b50f326b18b50b5b4))
+
+
+
 <a name="1.1.8"></a>
 ## 1.1.8 (2019-04-10)
 
