@@ -12,4 +12,5 @@ apt-get -y --reinstall --allow-downgrades install \
     bumblebee-nvidia \
     primus \
     nvidia-driver \
+    xserver-xorg-video-nvidia \
     nvidia-driver-libs-nonglvnd

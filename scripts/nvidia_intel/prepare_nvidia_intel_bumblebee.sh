@@ -7,6 +7,7 @@ COMMANDS=(
     "apt-get update"
     "apt-get install -d --reinstall -y --allow-downgrades \
         nvidia-driver \
+        xserver-xorg-video-nvidia \
         nvidia-driver-libs-nonglvnd"
     "cd /var/cache/apt/archives"
     "apt-get download \
