@@ -52,7 +52,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Successful</source>
-        <translation type="unfinished"/>
+        <translation>Download erfolgreich</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
@@ -76,7 +76,7 @@ Wenn kein Signal anliegt, überprüfen Sie bitte, ob der Monitoranschluss korrek
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark theme</source>
-        <translation type="unfinished"/>
+        <translation>Dunkles Thema</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
@@ -250,7 +250,7 @@ Wenn kein Signal anliegt, überprüfen Sie bitte, ob der Monitoranschluss korrek
     <message>
         <location filename="../installer/main.cpp" line="61"/>
         <source>Submit Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Feedback einreichen</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
@@ -265,7 +265,7 @@ Wenn kein Signal anliegt, überprüfen Sie bitte, ob der Monitoranschluss korrek
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Der Deepin Graphics Driver Manager ist ein kompaktes und einfach zu bedienendes Grafiktreiber-Verwaltungstool. Es umfasst Hardware-Erkennung von Grafikkarten, Installation von Grafiktreibern, Umschalten der Grafiktreiberlösung, automatische Wiederherstellung von Grafiktreibern und andere Funktionen.</translation>
     </message>
 </context>
 </TS>

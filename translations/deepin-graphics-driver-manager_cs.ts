@@ -52,7 +52,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Successful</source>
-        <translation type="unfinished"/>
+        <translation>Stahování úspěšné</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
@@ -76,7 +76,7 @@ Ověřte, prosím, pokud není signál, zda je výstupní konektor monitoru spr�
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark theme</source>
-        <translation type="unfinished"/>
+        <translation>Tmavý vzhled</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
@@ -250,7 +250,7 @@ Ověřte, prosím, pokud není signál, zda je výstupní konektor monitoru spr�
     <message>
         <location filename="../installer/main.cpp" line="61"/>
         <source>Submit Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Odeslat zpětnou vazbu</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
@@ -265,7 +265,7 @@ Ověřte, prosím, pokud není signál, zda je výstupní konektor monitoru spr�
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Graphics Driver Manager je kompaktní a snadno použitelný nástroj pro správu grafického ovladače. Zahrnuje detekci hardwaru grafické karty, instalaci grafického ovladače, přepínání grafického ovladače, automatické obnovení grafického ovladače a další funkce.</translation>
     </message>
 </context>
 </TS>

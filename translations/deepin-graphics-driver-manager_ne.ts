@@ -42,29 +42,29 @@
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Downloading</source>
-        <translation type="unfinished"/>
+        <translation>डाउनलोड गर्दै</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Downloading the driver for %1, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>% 1 का लागि ड्राइभर डाउनलोड गर्दै, कृपया प्रतीक्षा गर्नुहोस् ...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Successful</source>
-        <translation type="unfinished"/>
+        <translation>डाउनलोड सफल भयो</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
         <source>Please reboot to test the driver.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>स्थापना सुरू गर्न कृपया रिबुट गर्नुहोस्। कुनै सङ्केत भएमा कृपया पुष्टि गर्नुहोस् कि मनिटर आउटपुट पोर्ट सही रूपमा जडान भएको छ कि छैन</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="302"/>
         <source>Please reboot to test the driver</source>
-        <translation type="unfinished"/>
+        <translation>ड्राइभर सुरु गर्न कृपया रिबुट गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -74,7 +74,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark theme</source>
-        <translation type="unfinished"/>
+        <translation>डार्क थिम</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
@@ -228,17 +228,17 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="37"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
-        <translation type="unfinished"/>
+        <translation>बधाई छ, तपाई% 1 मा स्विच गर्नुभयो, कृपया प्रभाव लिनको लागि पुनःबुट गर्नुहोस्।</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="40"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>रद्द गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="41"/>
         <source>Reboot</source>
-        <translation type="unfinished"/>
+        <translation>रिबुट गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="58"/>
@@ -248,12 +248,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="61"/>
         <source>Submit Feedback</source>
-        <translation type="unfinished"/>
+        <translation>प्रतिक्रिया पेश गर्नुहोस्</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
         <source>Updating the driver, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>ड्राइभर अपडेट गर्दै, कृपया पर्खनुहोस् ...</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
@@ -263,7 +263,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>ग्राफिक्स ड्राइभर प्रबन्धक एक कम्पैक्ट र ग्राफिक चालक प्रबन्ध उपकरण हो | येस्लाईप्रयोग गर्न सजिलो छ। यसमा ग्राफिक्स कार्ड हार्डवेयर पत्ता लगाउने, ग्राफिक्स चालक स्थापना, ग्राफिक्स चालक समाधान स्विचन, ग्राफिक्स चालक स्वत: प्राप्ति र अन्य कार्यहरू समावेश गर्दछ।</translation>
     </message>
 </context>
 </TS>

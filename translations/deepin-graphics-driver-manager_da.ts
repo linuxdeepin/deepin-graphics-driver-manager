@@ -52,7 +52,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Successful</source>
-        <translation type="unfinished"/>
+        <translation>Download lykkedes</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
@@ -76,7 +76,7 @@ Hvis der ikke er noget signal, så tjek om outputporten til skærmen er tilslutt
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark theme</source>
-        <translation type="unfinished"/>
+        <translation>Mørkt tema</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
@@ -250,7 +250,7 @@ Hvis der ikke er noget signal, så tjek om outputporten til skærmen er tilslutt
     <message>
         <location filename="../installer/main.cpp" line="61"/>
         <source>Submit Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Indsend feedback</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
@@ -265,7 +265,7 @@ Hvis der ikke er noget signal, så tjek om outputporten til skærmen er tilslutt
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin grafikdriver-håndtering er et kompakt og letanvendeligt grafikdriver-håndteringsværktøj. Det inkluderer registrering af grafikkort-hardware, installation af grafikdriver, skift af grafikdriver-løsning, automatisk gendannelse og andre funktioner.</translation>
     </message>
 </context>
 </TS>

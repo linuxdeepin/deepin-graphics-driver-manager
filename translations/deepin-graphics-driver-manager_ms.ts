@@ -52,7 +52,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Successful</source>
-        <translation type="unfinished"/>
+        <translation>Muat Turun Berjaya</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
@@ -76,7 +76,7 @@ Jika tiada apa-apa isyarat, sila sahkan sama ada port output monitor bersambung 
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark theme</source>
-        <translation type="unfinished"/>
+        <translation>Tema gelap</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
@@ -250,7 +250,7 @@ Jika tiada apa-apa isyarat, sila sahkan sama ada port output monitor bersambung 
     <message>
         <location filename="../installer/main.cpp" line="61"/>
         <source>Submit Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Serah Maklumbalas</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
@@ -265,7 +265,7 @@ Jika tiada apa-apa isyarat, sila sahkan sama ada port output monitor bersambung 
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Pengurus Pemacu Grafik Deepin ialah alat pengurusan pemacu grafik yang ringkas dan mudah digunakan. Ia menawarkan pengesanan perkakasan kad grafik, pemasangan pemacu grafik, penukaran penyelesaian pemacu grafik, pemulihan automatik pemacu grafik dan lain-lain fungsi.</translation>
     </message>
 </context>
 </TS>
