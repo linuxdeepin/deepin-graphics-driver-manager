@@ -52,7 +52,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Successful</source>
-        <translation type="unfinished"/>
+        <translation>Pobieranie pomyślne</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
@@ -76,7 +76,7 @@ Przy braku sygnału proszę sprawdzić, czy port wyjścia monitora jest poprawni
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark theme</source>
-        <translation type="unfinished"/>
+        <translation>Ciemny motyw</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
@@ -250,7 +250,7 @@ Przy braku sygnału proszę sprawdzić, czy port wyjścia monitora jest poprawni
     <message>
         <location filename="../installer/main.cpp" line="61"/>
         <source>Submit Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Prześlij opinię</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
@@ -265,7 +265,7 @@ Przy braku sygnału proszę sprawdzić, czy port wyjścia monitora jest poprawni
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Graphics Driver Manager to kompaktowe i łatwe w użyciu narzędzie do zarządzania sterownikami graficznymi. Obejmuje wykrywanie sprzętu karty graficznej, instalację sterownika graficznego, przełączanie sterowników karty graficznej, automatyczne odzyskiwanie sterownika karty graficznej i inne funkcje.</translation>
     </message>
 </context>
 </TS>

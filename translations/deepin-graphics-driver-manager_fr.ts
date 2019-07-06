@@ -222,7 +222,7 @@ Si aucun signal apparait, vérifiez que le port de sortie du moniteur soit corre
     <message>
         <location filename="../widgets/resolutionwidget.cpp" line="118"/>
         <source>Version: </source>
-        <translation>Version: </translation>
+        <translation>Version : </translation>
     </message>
 </context>
 <context>
@@ -265,7 +265,7 @@ Si aucun signal apparait, vérifiez que le port de sortie du moniteur soit corre
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin Graphics Driver Manager est un outil de gestion de pilote graphique compact et facile à utiliser. Il comprend la détection matérielle de la carte graphique, l’installation du pilote graphique, le changement de solution du pilote graphique, la récupération automatique du pilote graphique et d’autres fonctions.</translation>
+        <translation>Deepin Graphics Driver Manager est un outil de gestion de pilotes graphiques compact et facile à utiliser. Il comprend la détection matérielle de la carte graphique, l’installation du pilote graphique, le changement de solution du pilote graphique, la récupération automatique du pilote graphique et d’autres fonctions.</translation>
     </message>
 </context>
 </TS>

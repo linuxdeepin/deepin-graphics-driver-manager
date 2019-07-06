@@ -4,17 +4,17 @@
     <message>
         <location filename="../gltest/main.cpp" line="124"/>
         <source>Apply</source>
-        <translation type="unfinished"/>
+        <translation>تطبيق</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="125"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>إلغاء</translation>
     </message>
     <message>
         <location filename="../gltest/main.cpp" line="126"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
-        <translation type="unfinished"/>
+        <translation>الرجاء التأكد من أن التعريف يعمل بشكل طبيعي بدون شاشة مشوشة ومفصلة</translation>
     </message>
 </context>
 <context>
@@ -37,22 +37,22 @@
     <message>
         <location filename="../mainwindow.cpp" line="177"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
-        <translation type="unfinished"/>
+        <translation>مجموعة عتاد الحاسوب الحالية غير مدعومة، يرجى انتظار النسخة المستقبلية</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Downloading</source>
-        <translation type="unfinished"/>
+        <translation>جارى التنزيل</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Downloading the driver for %1, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>جارى تنزيل التعريف 1% , الرجاء الإنتظار...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Successful</source>
-        <translation type="unfinished"/>
+        <translation>تم التنزيل بنجاح</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
@@ -64,7 +64,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../mainwindow.cpp" line="302"/>
         <source>Please reboot to test the driver</source>
-        <translation type="unfinished"/>
+        <translation>الرجاء إعادة التشغيل لإختبار التعريف</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -74,7 +74,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark theme</source>
-        <translation type="unfinished"/>
+        <translation>الموضوع الداكن</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
@@ -122,7 +122,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="24"/>
         <source>Intel Compatible Mode</source>
-        <translation type="unfinished"/>
+        <translation>الوضع المتوافق مع إنتل </translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="25"/>
@@ -132,7 +132,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="12"/>
         <source>Use default driver</source>
-        <translation type="unfinished"/>
+        <translation>استخدام التعريف الافتراضي</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="13"/>
@@ -142,7 +142,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="15"/>
         <source>Use open source driver</source>
-        <translation type="unfinished"/>
+        <translation>استخدام تعريف مفتوح المصدر</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="16"/>
@@ -152,7 +152,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="18"/>
         <source>Use closed source driver</source>
-        <translation type="unfinished"/>
+        <translation>استخدام تعريف مغلق المصدر</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="22"/>
@@ -187,12 +187,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="31"/>
         <source>Use Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>استخدم حل الطنانة</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="32"/>
         <source>Bumblebee Solution</source>
-        <translation type="unfinished"/>
+        <translation>حل الطنانة</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="33"/>
@@ -202,12 +202,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../resolutions/resolution.cpp" line="35"/>
         <source>Use NV-PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>استخدم حل نيفيديا بريم</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="36"/>
         <source>PRIME Solution</source>
-        <translation type="unfinished"/>
+        <translation>حل أولى</translation>
     </message>
     <message>
         <location filename="../resolutions/resolution.cpp" line="37"/>
@@ -228,17 +228,17 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="37"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
-        <translation type="unfinished"/>
+        <translation>تهانينا، لقد انتقلت إلى  %1, الرجاء إعادة التشغيل ليظهر التأثير</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="40"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>إلغاء</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="41"/>
         <source>Reboot</source>
-        <translation type="unfinished"/>
+        <translation>إعادة التشغيل</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="58"/>
@@ -248,12 +248,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="61"/>
         <source>Submit Feedback</source>
-        <translation type="unfinished"/>
+        <translation>ارسال الإنطباع</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
         <source>Updating the driver, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>جارى تحديث التعريف , الرجاء الإنتظار...</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>

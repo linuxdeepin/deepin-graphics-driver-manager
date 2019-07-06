@@ -52,7 +52,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Successful</source>
-        <translation type="unfinished"/>
+        <translation>Baixada correcta.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
@@ -76,7 +76,7 @@ Si no hi ha senyal, comproveu que el cable de vídeo estigui connectat a la sort
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark theme</source>
-        <translation type="unfinished"/>
+        <translation>Tema fosc</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
@@ -250,7 +250,7 @@ Si no hi ha senyal, comproveu que el cable de vídeo estigui connectat a la sort
     <message>
         <location filename="../installer/main.cpp" line="61"/>
         <source>Submit Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Envia la informació de retorn.</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
@@ -265,7 +265,7 @@ Si no hi ha senyal, comproveu que el cable de vídeo estigui connectat a la sort
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>El Gestor de controladors gràfics del Deepin és una eina de gestió de controladors compacta i fàcil d&apos;usar. Inclou la detecció de maquinari de targetes gràfiques, la instal·lació, el canvi i la recuperació automàtica de controladors, i altres funcions.</translation>
     </message>
 </context>
 </TS>

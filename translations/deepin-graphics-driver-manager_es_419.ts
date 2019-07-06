@@ -42,29 +42,29 @@
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Downloading</source>
-        <translation type="unfinished"/>
+        <translation>Descargando</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="269"/>
         <source>Downloading the driver for %1, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>Descragando el controlador para %1, espere por favor...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="298"/>
         <source>Download Successful</source>
-        <translation type="unfinished"/>
+        <translation>Descarga exitosa</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="300"/>
         <source>Please reboot to test the driver.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation type="unfinished"/>
+        <translation>Por favor reinicie el sistema para verificar el funcionamiento del controlador, si no hay señal de video, por favor Asegúrese de que el monitor este conectado correctamente</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="302"/>
         <source>Please reboot to test the driver</source>
-        <translation type="unfinished"/>
+        <translation>Por favor reinicie el sistema para verificar el funcionamiento del controlador</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
@@ -74,7 +74,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../mainwindow.cpp" line="38"/>
         <source>Dark theme</source>
-        <translation type="unfinished"/>
+        <translation>Tema oscuro</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
@@ -228,17 +228,17 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="37"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
-        <translation type="unfinished"/>
+        <translation>Felicitaciones, se ha cambiado a %1, por favor reinicie el sistema para que los cambios tengan efecto</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="40"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="41"/>
         <source>Reboot</source>
-        <translation type="unfinished"/>
+        <translation>Reiniciar</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="58"/>
@@ -248,12 +248,12 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../installer/main.cpp" line="61"/>
         <source>Submit Feedback</source>
-        <translation type="unfinished"/>
+        <translation>Enviar comentario</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="69"/>
         <source>Updating the driver, please wait...</source>
-        <translation type="unfinished"/>
+        <translation>Actualixando el controlador, espere por favor</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
@@ -263,7 +263,7 @@ If no signal, please confirm whether the monitor output port is connected correc
     <message>
         <location filename="../main.cpp" line="26"/>
         <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation type="unfinished"/>
+        <translation>El manejador de controlares de video de Deepin es una herramienta de gestión de controladores de video compacta y fácil de usar. Incluye detección de hardware de placas de video, instalación de controladores de video, cambio de solución, recuperación automática de los controladores de video y otras funciones. </translation>
     </message>
 </context>
 </TS>
