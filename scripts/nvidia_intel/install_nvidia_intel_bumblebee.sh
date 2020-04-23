@@ -10,7 +10,5 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get -y --reinstall --allow-downgrades install \
     bumblebee \
     bumblebee-nvidia \
-    primus \
     nvidia-driver \
-    xserver-xorg-video-nvidia \
-    nvidia-driver-libs-nonglvnd
+    xserver-xorg-video-nvidia

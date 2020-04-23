@@ -5,7 +5,7 @@ COMMANDS=(
     "apt-get install -d --reinstall -y --allow-downgrades \
         xserver-xorg-video-nouveau"
     "cd /var/cache/apt/archives"
-    "apt-get download \
+    "apt-get -y -d install \
         xserver-xorg-video-nouveau \
         xserver-xorg-core \
         xserver-xorg-input-all \
