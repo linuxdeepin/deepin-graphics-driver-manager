@@ -17,7 +17,10 @@ COMMANDS=(
         nvidia-installer-cleanup \
         libgl1-mesa-glx:i386 \
         libglx-mesa0 \
-        libglx-mesa0:i386"
+        libglx-mesa0:i386 \
+	glx-alternative-nvidia:i386 \
+	libnvidia-legacy-390xx-cfg1 \
+	nvidia-legacy-390xx-alternative"
 )
 
 for cmd in "${COMMANDS[@]}"

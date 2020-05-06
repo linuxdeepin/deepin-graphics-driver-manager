@@ -8,7 +8,10 @@ COMMANDS=(
         nvidia-driver \
         libgl1-mesa-glx \
         glx-alternative-nvidia \
-        xserver-xorg-video-nvidia"
+        xserver-xorg-video-nvidia \
+	glx-alternative-nvidia:i386 \
+	libnvidia-legacy-390xx-cfg1 \
+	nvidia-legacy-390xx-alternative"
 )
 
 for cmd in "${COMMANDS[@]}"
