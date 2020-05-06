@@ -14,7 +14,9 @@ COMMANDS=(
         libgl1-mesa-glx \
         libgl1-mesa-glx:i386 \
         libglx-mesa0 \
-        libglx-mesa0:i386"
+        libglx-mesa0:i386 \
+	xserver-xorg-core \
+	xserver-xorg-input-all"
 )
 
 for cmd in "${COMMANDS[@]}"

@@ -12,7 +12,9 @@ COMMANDS=(
     "apt-get -y -d install \
         bbswitch-dkms \
         bumblebee-nvidia \
-        nvidia-driver"
+        nvidia-driver \
+	xserver-xorg-input-all \
+	xserver-xorg-core"
 )
 
 for cmd in "${COMMANDS[@]}"

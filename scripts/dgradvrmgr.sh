@@ -1,5 +1,4 @@
 #!/bin/bash
-sleep 8
 systemctl stop lightdm
 
 # run this command again here to avoid disable overlayroot in service not work
