@@ -28,8 +28,6 @@ private:
     void noResolutions();
 
 private Q_SLOTS:
-    void toggleDarkTheme(bool checked);
-    void reloadTheme();
     void loadResolutions();
     void onResolutionSelected();
     void onToggleBtnClicked();
@@ -55,9 +53,6 @@ private:
     DSuggestButton *m_toggleButton;
     DSuggestButton *m_okButton;
     DSuggestButton *m_rebootButton;
-    QSettings *m_qsettings;
-    QMenu *m_tbMenu;
-    QAction *m_darkThemeAction;
 };
 
 #endif
