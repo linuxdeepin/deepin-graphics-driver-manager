@@ -16,7 +16,7 @@
 #include <DThemeManager>
 
 #define INSTALLER_DESKTOP_FILE_SOURCE "/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-installer.desktop"
-#define INSTALLER_DESKTOP_FILE_DEST "/.config/autostart/deepin-gradvrmgr-installer.desktop"
+#define INSTALLER_ROOT_DESKTOP_FILE_DEST "etc/xdg/autostart/deepin-gradvrmgr-installer.desktop"
 
 #define THEME_DARK "dark"
 #define THEME_LIGHT "light"
@@ -253,7 +253,7 @@ void MainWindow::onToggleBtnClicked()
 
 void MainWindow::onRebootBtnClicked()
 {
-    QProcess::startDetached("dbus-send --print-reply --dest=com.deepin.dde.shutdownFront /com/deepin/dde/shutdownFront com.deepin.dde.shutdownFront.Restart");
+    QProcess::startDetached("dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true");
 }
 
 void MainWindow::onPolicyKitPassed()
@@ -306,7 +306,7 @@ void MainWindow::onPrepareFinished(const int exitCode)
 
         QFile installerDesktopFileSource(INSTALLER_DESKTOP_FILE_SOURCE);
         if (installerDesktopFileSource.exists())
-            installerDesktopFileSource.copy(QDir::homePath() + INSTALLER_DESKTOP_FILE_DEST);
+            installerDesktopFileSource.copy(QDir::rootPath() + INSTALLER_ROOT_DESKTOP_FILE_DEST);
         else
             qDebug() << INSTALLER_DESKTOP_FILE_SOURCE << "do not exists!";
     }

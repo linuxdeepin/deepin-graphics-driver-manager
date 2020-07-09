@@ -7,6 +7,8 @@ endif()
 project(deepin-graphics-driver-manager)
 
 set(BIN_NAME deepin-graphics-driver-manager)
+set(SHELL_NAME deepin-graphics-driver-manager-waraper)
+
 # set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -72,6 +74,7 @@ endif ()
 
 # bin
 install(TARGETS ${BIN_NAME} DESTINATION bin)
+install(FILES ${SHELL_NAME} DESTINATION bin)
 
 # desktop
 install(FILES deepin-graphics-driver-manager.desktop DESTINATION share/applications)
