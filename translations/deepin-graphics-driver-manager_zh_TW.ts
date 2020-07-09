@@ -32,7 +32,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="62"/>
         <source>Reboot</source>
-        <translation>重新啟動</translation>
+        <translation>立即重新啟動</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="177"/>

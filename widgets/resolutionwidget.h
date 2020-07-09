@@ -34,7 +34,7 @@ inline const QString scriptAbsolutePath(const QString &scriptName)
     Process->start("/bin/bash", QStringList() << "-x" << scriptAbsolutePath(Script));
 
 #define EXECUTE_SCRIPT_ROOT(Process, Script) \
-    Process->start("pkexec", QStringList() << "/bin/bash" << "-x" << scriptAbsolutePath(Script));
+    Process->start(QStringList() << "/bin/bash" << "-x" << scriptAbsolutePath(Script));
 
 class QLabel;
 class ResolutionWidget: public QFrame

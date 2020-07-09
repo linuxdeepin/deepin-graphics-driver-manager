@@ -11,7 +11,7 @@ DWIDGET_USE_NAMESPACE
 DCORE_USE_NAMESPACE
 
 #define CONFIG "/usr/lib/deepin-graphics-driver-manager/working-dir/config.conf"
-#define DESKTOP_FILE "/.config/autostart/deepin-gradvrmgr-installer.desktop"
+#define ROOT_RESKTOP_FILE "etc/xdg/autostart/deepin-gradvrmgr-installer.desktop"
 #define AuthAgentDbusService "com.deepin.Polkit1AuthAgent"
 
 QSettings *SETTINGS = nullptr;
@@ -80,11 +80,11 @@ int show_install_dialog() {
         QProcess *installProc = new QProcess;
         installProc->connect(installProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), installProc, &QProcess::deleteLater);
         installProc->connect(installProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), installDialog, &DDialog::done);
-        QStringList installArgs {"/bin/bash", "-x", "/usr/lib/deepin-graphics-driver-manager/working-dir/install_new.sh"};
+        QStringList installArgs {"/usr/lib/deepin-graphics-driver-manager/control_driver.sh", "install"};
         qDebug() << "start install process";
         installProc->start("pkexec", installArgs);
     });
-    QStringList removeArgs {"/bin/bash", "-x", "/usr/lib/deepin-graphics-driver-manager/working-dir/remove_old.sh"};
+    QStringList removeArgs {"/usr/lib/deepin-graphics-driver-manager/control_driver.sh", "remove"};
 
     //if (DbusConnInter->isServiceRegistered(AuthAgentDbusService)) {
     //    qDebug() << "start remove process";
@@ -120,7 +120,7 @@ int show_install_dialog() {
 
 void removeDesktopFile()
 {
-    QFile desktopFile(QDir::homePath() + DESKTOP_FILE);
+    QFile desktopFile(QDir::rootPath() + ROOT_RESKTOP_FILE);
     if (desktopFile.exists())
         desktopFile.remove();
     else
@@ -157,7 +157,7 @@ void init()
 
 int main(int argc, char *args[])
 {
-    removeDesktopFile();
+    //removeDesktopFile();
 
     DApplication dapp(argc, args);
     dapp.setQuitOnLastWindowClosed(true);

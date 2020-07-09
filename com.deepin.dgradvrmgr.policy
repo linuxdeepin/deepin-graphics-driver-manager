@@ -14,7 +14,7 @@
     </defaults>
     <message xml:lang="zh_CN">切换显卡驱动需要授权</message>
     <annotate key="org.freedesktop.policykit.exec.path">/bin/bash</annotate>
-    <annotate key="org.freedesktop.policykit.exec.argv1">/usr/bin/deepin-graphics-driver-manager</annotate>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/deepin-graphics-driver-manager</annotate>
     <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
   </action>
 
