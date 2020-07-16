@@ -18,8 +18,6 @@
 #define INSTALLER_DESKTOP_FILE_SOURCE "/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-installer.desktop"
 #define INSTALLER_ROOT_DESKTOP_FILE_DEST "etc/xdg/autostart/deepin-gradvrmgr-installer.desktop"
 
-#define THEME_DARK "dark"
-#define THEME_LIGHT "light"
 
 const QPixmap hidpiPixmap(const QString &path, const QSize &sz)
 {
@@ -32,10 +30,7 @@ const QPixmap hidpiPixmap(const QString &path, const QSize &sz)
 
 MainWindow::MainWindow(QWidget *parent) :
     DMainWindow(parent),
-    m_resolutions(ResolutionsBuilder(m_devInfo).build()),
-    m_qsettings(new QSettings(this)),
-    m_tbMenu(new QMenu(this)),
-    m_darkThemeAction(new QAction(tr("Dark theme"), this))
+    m_resolutions(ResolutionsBuilder(m_devInfo).build())
 {
     m_toggleButton = new DSuggestButton;
     m_toggleButton->setText(tr("Switch"));
@@ -102,15 +97,6 @@ MainWindow::MainWindow(QWidget *parent) :
     centralLayout->setSpacing(0);
     centralLayout->setContentsMargins(40, 0, 40, 30);
 
-    DTitlebar *tbar = titlebar();
-    tbar->setTitle(QString());
-    tbar->setIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
-    tbar->setBackgroundTransparent(true);
-    tbar->setMenu(m_tbMenu);
-    m_tbMenu->addAction(m_darkThemeAction);
-    m_tbMenu->addSeparator();
-
-    m_darkThemeAction->setCheckable(true);
 
     setCentralWidget(new QWidget);
     centralWidget()->setLayout(centralLayout);
@@ -121,40 +107,12 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(m_toggleButton, &DSuggestButton::clicked, this, &MainWindow::onToggleBtnClicked);
     connect(m_rebootButton, &DSuggestButton::clicked, this, &MainWindow::onRebootBtnClicked);
     connect(m_okButton, &DSuggestButton::clicked, qApp, &QApplication::quit);
-    connect(m_darkThemeAction, &QAction::toggled, this, &MainWindow::toggleDarkTheme);
 
-    reloadTheme();
     QTimer::singleShot(0, this, &MainWindow::loadResolutions);
 }
 
 MainWindow::~MainWindow()
 {
-}
-
-void MainWindow::toggleDarkTheme(bool checked)
-{
-    m_qsettings->setValue("theme", checked ? THEME_DARK : THEME_LIGHT);
-    reloadTheme();
-}
-
-void MainWindow::reloadTheme()
-{
-    QString theme = m_qsettings->value("theme").toString();
-    if (theme.isEmpty()) {
-        theme = THEME_LIGHT;
-        m_qsettings->setValue("theme", THEME_LIGHT);
-    }
-
-    m_darkThemeAction->setChecked(theme == THEME_DARK);
-
-    QFile themeFile(theme == THEME_DARK ? ":/resources/theme/dark/dark.qss" : ":/resources/theme/light/light.qss");
-    if (!themeFile.open(QFile::ReadOnly)) {
-        qDebug() << "theme file not find!" << themeFile.fileName();
-    }
-
-    setStyleSheet(themeFile.readAll());
-
-    DThemeManager::instance()->setTheme(theme);
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *e)
