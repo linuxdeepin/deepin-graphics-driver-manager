@@ -1,3 +1,4 @@
 #!/bin/bash
-pkexec /usr/bin/deepin-graphics-driver-manager 
+LANGUAGE=`locale |grep LANGUAGE` |cut -d "=" -f2
+pkexec /usr/bin/deepin-graphics-driver-manager $LANGUAGE
 
