@@ -129,12 +129,25 @@ void ResolutionWidget::prepareInstall(const Resolution &old_resolution)
     const QString removeOld = scriptAbsolutePath(old_resolution.removeScript());
     Q_ASSERT(!prepare.isEmpty() && !install.isEmpty());
 
-    QProcess *proc = new QProcess;
-    QPROCESS_DUMP(proc);
+    QProcess *proc = new QProcess(this);
     QPROCESS_DELETE_SELF(proc);
+    proc->setProcessChannelMode(QProcess::MergedChannels);
 
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &ResolutionWidget::prepareFinished);
-    connect(proc, &QProcess::readyRead, this, [=] { emit policyKitPassed(); proc->disconnect(proc, &QProcess::readyRead, this, nullptr); });
+    connect(proc, &QProcess::started, this, [=] {
+        Q_EMIT policyKitPassed();
+        Q_EMIT progress(5);
+    });
+    connect(proc, &QProcess::readyReadStandardOutput, this, [=]() {
+        QString out = proc->readAllStandardOutput();
+        qDebug() << "program: " << proc->program() << " output1: " << out;
+        if (out.contains("PROGRESS:")) {
+            bool ok = false;
+            int number = out.replace("PROGRESS:", "").toInt(&ok);
+            qDebug() << "number = " << number;
+            if (ok) Q_EMIT progress(number);
+        }
+    });
 
     const QString &exit_gltest = m_resolution.keep_gltest() ? "false" : "true";
     const QString &new_driver = m_resolution.name();
@@ -142,7 +155,8 @@ void ResolutionWidget::prepareInstall(const Resolution &old_resolution)
     const QString &sc = scriptAbsolutePath("dgradvrmgr-prepare.sh");
     const QString &old_driver = old_resolution.name();
 
-    QStringList args {"-x", sc, prepare, removeOld, install, old_driver, new_driver, lang, exit_gltest };
+//    proc->start("/home/zdd/work/Project/zdd-test/test.sh");
 
-    proc->start("/bin/bash", args);
+    QString cmd = QString("%1 %2 %3 %4 %5 %6 %7 %8").arg(sc, prepare, removeOld, install, old_driver, new_driver, lang, exit_gltest);
+    proc->start(cmd);
 }
