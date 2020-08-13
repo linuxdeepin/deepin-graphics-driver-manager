@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 //    app.loadTranslator(QList<QLocale>() << QLocale("zh_CN"));
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
     app.setOrganizationName("deepin");
-    app.setApplicationName("deepin-graphics-driver-manager");
+    app.setApplicationName(" ");
     app.setApplicationVersion(VERSION);
     app.setApplicationAcknowledgementPage("https://www.deepin.org/acknowledgments/deepin-graphics-driver-manager/");
     app.setProductIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
