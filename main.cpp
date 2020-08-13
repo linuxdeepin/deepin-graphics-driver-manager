@@ -1,8 +1,10 @@
 
 #include "mainwindow.h"
 #include "environments.h"
-
+#include <QTranslator>
 #include <DApplication>
+#include <QLocale>
+
 #include <DLog>
 
 DWIDGET_USE_NAMESPACE
@@ -12,10 +14,19 @@ int main(int argc, char *argv[])
 {
     DApplication::loadDXcbPlugin();
     DApplication app(argc, argv);
+
+    QString loc = QLocale::system().name();
+    if (argc == 2) {
+        loc = QString(argv[1]);
+    }
+    QString loc_tr_file = QString("/usr/share/deepin-graphics-driver-manager/translations/deepin-graphics-driver-manager_%1.qm");
+    QTranslator trans;
+    trans.load(loc_tr_file.arg(loc));
+    app.installTranslator(&trans);
+
+
     if (!app.setSingleInstance("dgradvrmgr"))
         return -1;
-    app.loadTranslator();
-//    app.loadTranslator(QList<QLocale>() << QLocale("zh_CN"));
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
     app.setOrganizationName("deepin");
     app.setApplicationName(" ");
