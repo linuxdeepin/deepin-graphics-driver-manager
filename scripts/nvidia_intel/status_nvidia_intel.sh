@@ -7,7 +7,7 @@ nouveau_mod=`lsmod | grep nouveau`
 nvidia_mod=`lsmod | grep nvidia`
 bumblebee_exist=`dpkg -s bumblebee 2>/dev/null | grep "Status: install ok installed"`
 prime_exist=`dpkg -s deepin-nvidia-prime 2>/dev/null | grep "Status: install ok installed"`
-BATTERY=`qdbus com.deepin.daemon.InputDevices /com/deepin/daemon/Power com.deepin.daemon.Power.LidIsPresent`
+BATTERY=`qdbus --system org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.LidIsPresent`
 
 if [ x"$BATTERY" == x"true" ]; then
     echo "Support bumblebee"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BATTERY=`qdbus com.deepin.daemon.InputDevices /com/deepin/daemon/Power com.deepin.daemon.Power.LidIsPresent`
+BATTERY=`qdbus --system org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.LidIsPresent`
 
 if [ x"$BATTERY" == x"false" ]
 then
