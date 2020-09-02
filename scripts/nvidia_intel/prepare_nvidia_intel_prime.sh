@@ -5,13 +5,11 @@
 
 COMMANDS=(
     "apt-get update"
+    "apt-get install  --fix-missing"
     "apt-get install -d --reinstall -y --allow-downgrades \
         nvidia-driver \
-        nvidia-driver-libs"
-    "cd /var/cache/apt/archives"
-    "apt-get -y -d install \
-        deepin-nvidia-prime \
-        nvidia-driver"
+        nvidia-driver-libs \
+        deepin-nvidia-prime "
 )
 
 for cmd in "${COMMANDS[@]}"

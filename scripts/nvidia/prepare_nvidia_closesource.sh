@@ -2,6 +2,7 @@
 
 COMMANDS=(
     "apt-get update"
+    "apt-get install  --fix-missing"
     "apt-get install -d --reinstall -y --allow-downgrades \
         nvidia-driver \
         xserver-xorg-video-nvidia \
