@@ -2,10 +2,8 @@
 
 COMMANDS=(
     "apt-get update"
+    "apt-get install  --fix-missing"
     "apt-get install -d --reinstall -y --allow-downgrades \
-        xserver-xorg-video-nouveau"
-    "cd /var/cache/apt/archives"
-    "apt-get -y -d install \
         xserver-xorg-video-nouveau \
         xserver-xorg-core \
         xserver-xorg-input-all \
@@ -14,7 +12,10 @@ COMMANDS=(
         libgbm1 \
         libgbm1:i386 \
         libgl1-mesa-glx \
-        libgl1-mesa-glx:i386"
+        libgl1-mesa-glx:i386 \
+        glx-alternative-nvidia:i386 \
+        libnvidia-legacy-390xx-cfg1 \
+        nvidia-legacy-390xx-alternative"
 
 )
 

@@ -5,16 +5,14 @@
 
 COMMANDS=(
     "apt-get update"
+    "apt-get install  --fix-missing"
     "apt-get install -d --reinstall -y --allow-downgrades \
         nvidia-driver \
-        xserver-xorg-video-nvidia"
-    "cd /var/cache/apt/archives"
-    "apt-get -y -d install \
+        xserver-xorg-video-nvidia \
         bbswitch-dkms \
         bumblebee-nvidia \
-        nvidia-driver \
-	xserver-xorg-input-all \
-	xserver-xorg-core"
+	    xserver-xorg-input-all \
+	    xserver-xorg-core"
 )
 
 for cmd in "${COMMANDS[@]}"
