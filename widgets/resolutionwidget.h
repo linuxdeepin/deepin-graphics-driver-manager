@@ -53,6 +53,7 @@ signals:
     void clicked() const;
     void policyKitPassed();
     void prepareFinished(const int exitCode);
+    void progress(int progress);
 
 protected:
     void mouseReleaseEvent(QMouseEvent *e);

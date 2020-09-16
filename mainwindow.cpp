@@ -59,9 +59,9 @@ MainWindow::MainWindow(QWidget *parent) :
     m_rebootButton->setVisible(false);
 
     m_progress = new DWaterProgress;
-    m_progress->setTextVisible(false);
+    m_progress->setTextVisible(true);
     m_progress->setFixedSize(100, 100);
-    m_progress->setValue(50);
+    m_progress->setValue(0);
     m_progress->setVisible(false);
 
     m_vendorIcon = new QLabel;
@@ -207,6 +207,7 @@ void MainWindow::onToggleBtnClicked()
 
     connect(new_driver_widget, &ResolutionWidget::prepareFinished, this, &MainWindow::onPrepareFinished);
     connect(new_driver_widget, &ResolutionWidget::policyKitPassed, this, &MainWindow::onPolicyKitPassed);
+    connect(new_driver_widget, &ResolutionWidget::progress, m_progress, &DWaterProgress::setValue);
 }
 
 void MainWindow::onRebootBtnClicked()
@@ -269,3 +270,4 @@ void MainWindow::onPrepareFinished(const int exitCode)
             qDebug() << INSTALLER_DESKTOP_FILE_SOURCE << "do not exists!";
     }
 }
+
