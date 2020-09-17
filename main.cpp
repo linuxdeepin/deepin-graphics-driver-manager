@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 
     if (!app.setSingleInstance("dgradvrmgr"))
         return -1;
+    app.loadTranslator();
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
     app.setOrganizationName("deepin");
     app.setApplicationName(" ");
