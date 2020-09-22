@@ -97,7 +97,7 @@ MainWindow::MainWindow(QWidget *parent) :
     centralLayout->setSpacing(0);
     centralLayout->setContentsMargins(40, 0, 40, 30);
 
-
+    titlebar()->setTitle(" ");
     setCentralWidget(new QWidget);
     centralWidget()->setLayout(centralLayout);
 
