@@ -92,6 +92,10 @@ install(FILES resources/icons/deepin-graphics-driver-manager-64px.svg
 install(FILES com.deepin.dgradvrmgr.policy
         DESTINATION share/polkit-1/actions/)
 
+install(FILES com.deepin.dgradvrmgr-installer.policy
+        DESTINATION share/polkit-1/actions/)
+
+
 # resolutions.json
 install(FILES resources/config/resolutions/resolutions.json
         DESTINATION lib/deepin-graphics-driver-manager)

@@ -44,7 +44,7 @@ void show_success_dialog()
     QObject::connect(d, &DDialog::buttonClicked, [=](int index, const QString &text) {
         Q_UNUSED(text);
         if (index == 1) {
-            QProcess::startDetached("dbus-send --print-reply --dest=com.deepin.dde.shutdownFront /com/deepin/dde/shutdownFront com.deepin.dde.shutdownFront.Restart");
+            QProcess::startDetached("dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true");
         }
     });
 
@@ -80,41 +80,13 @@ int show_install_dialog() {
         QProcess *installProc = new QProcess;
         installProc->connect(installProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), installProc, &QProcess::deleteLater);
         installProc->connect(installProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), installDialog, &DDialog::done);
-        QStringList installArgs {"/usr/lib/deepin-graphics-driver-manager/control_driver.sh", "install"};
+        QStringList installArgs {"-x", "/usr/lib/deepin-graphics-driver-manager/control_driver.sh", "install"};
         qDebug() << "start install process";
-        installProc->start("pkexec", installArgs);
+        installProc->start("/bin/bash", installArgs);
     });
-    QStringList removeArgs {"/usr/lib/deepin-graphics-driver-manager/control_driver.sh", "remove"};
-
-    //if (DbusConnInter->isServiceRegistered(AuthAgentDbusService)) {
-    //    qDebug() << "start remove process";
-    //    removeProc->start("pkexec", removeArgs);
-    //} else {
-    //    qDebug() << AuthAgentDbusService << "daemon has not started, waiting for signal";
-        QTimer *timer = new QTimer;
-        timer->setSingleShot(false);
-        timer->setInterval(6000);
-        QObject::connect(timer, &QTimer::timeout, [=] {
-            if (DbusConnInter->isServiceRegistered(AuthAgentDbusService)) {
-                timer->stop();
-                timer->deleteLater();
-                WaitingAuthAgentTimes = 0;
-                qDebug() << "start remove process";
-                removeProc->start("pkexec", removeArgs);
-                return;
-            }
-            WaitingAuthAgentTimes++;
-            qDebug() << "Waiting for AuthAgent service" << WaitingAuthAgentTimes << "times";
-            if (WaitingAuthAgentTimes > 10) {
-                qDebug() << "AuthAgent service timeout...";
-                timer->stop();
-                timer->deleteLater();
-                installDialog->done(-1);
-            }
-        });
-        timer->start();
-    //}
-
+    QStringList removeArgs {"-x", "/usr/lib/deepin-graphics-driver-manager/control_driver.sh", "remove"};
+    qDebug() << "start remove process";
+    removeProc->start("/bin/bash", removeArgs);
     return installDialog->exec();
 }
 

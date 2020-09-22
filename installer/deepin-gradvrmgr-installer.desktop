@@ -2,7 +2,7 @@
 Name=Deepin graphics driver manager - installer
 GenericName=Deepin graphics driver manager - installer
 Comment=Install drivers
-Exec=/usr/lib/deepin-graphics-driver-manager/installer
+Exec=/usr/lib/deepin-graphics-driver-manager/installer-waraper
 Icon=deepin-graphics-driver-manager
 Terminal=false
 Type=Application
