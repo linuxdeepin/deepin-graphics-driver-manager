@@ -19,14 +19,6 @@ journalctl -f -u driver-installer.service >> /media/root-ro/var/log/dgradvrmgr.l
 # write to tty
 journalctl -f -u driver-installer.service | sed 's/$/\r/g' > /dev/tty1 2>&1 &
 
-# all nvidia modules will be disable when prepare for nvidia about solutions
-# so we need restore here
-if [[ -e "/etc/modprobe.d/deepin-blacklists-nvidia.conf" ]]; then
-    echo "remove modules about nvidia from blacklist!"
-    overlayroot-chroot rm -rf /etc/modprobe.d/deepin-blacklists-nvidia.conf
-    overlayroot-chroot update-initramfs -u -t
-fi
-
 # test remove/install drivers
 $REMOVE_OLD_G || error_reboot "test remove old driver failed!"
 $INSTALL_NEW_G || error_reboot "test install new driver failed!"
@@ -41,6 +33,16 @@ else
 fi
 
 killall Xorg
+
+# all nvidia modules will be disable when prepare for nvidia about solutions
+# so we need restore here
+if [[ -e "/etc/modprobe.d/deepin-blacklists-nvidia.conf" ]]; then
+    echo "remove modules about nvidia from blacklist!"
+    overlayroot-chroot rm -rf /etc/modprobe.d/deepin-blacklists-nvidia.conf
+    for v in $(linux-version list);do
+        overlayroot-chroot update-initramfs -u -t -k $v
+    done
+fi
 
 # run this command again here to avoid disable overlayroot in service not work
 # same as above

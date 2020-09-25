@@ -18,6 +18,9 @@ cleanWorking() {
         /usr/sbin/overlayroot-chroot rm -rf $REMOVE_OLD_G
         /usr/sbin/overlayroot-chroot rm -rf $INSTALL_NEW_G
         /usr/sbin/overlayroot-chroot rm -rf /etc/modprobe.d/deepin-blacklists-nvidia.conf
+        for v in $(linux-version list);do
+            overlayroot-chroot update-initramfs -u -t -k $v
+        done
         /usr/sbin/overlayroot-disable
     fi
 }
