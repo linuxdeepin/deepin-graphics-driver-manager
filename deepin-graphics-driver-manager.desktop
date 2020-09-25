@@ -1,10 +1,10 @@
 [Desktop Entry]
 Categories=System;
-Comment=Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool.
+Comment=Graphics Driver Manager is a compact and easy  to use graphics driver managing tool.
 Exec=deepin-graphics-driver-manager-waraper
 GenericName=Graphics Driver Manager
 Icon=deepin-graphics-driver-manager
-Name=Deepin Graphics Driver Manager
+Name=Graphics Driver Manager
 StartupNotify=true
 Terminal=false
 Type=Application
@@ -39,8 +39,8 @@ Comment[sq]=Përgjegjësi Deepin i Përudhësve Grafikë është një mjet kompa
 Comment[sr]=Дипин Управник Управљачких Програма је компактан и лак за коришћење алат за управљање управљачим програмима.
 Comment[tr]=Deepin Görüntü Aygıtı Sürücüsü Yöneticisi küçük ve basit bir görüntü aygıtı sürücüsü yönetimi aracıdır.
 Comment[uk]=Керування графічними картками Deepin — компактний і простий у користуванні засіб для керування драйверами до графічних карток.
-Comment[zh_CN]=深度显卡驱动管理器是一款小巧易用的显卡驱动管理工具。
-Comment[zh_TW]=Deepin 顯示卡管理器是個嚴謹且易用的顯卡驅動管理程序。
+Comment[zh_CN]=显卡驱动管理器是一款小巧易用的显卡驱动管理工具。
+Comment[zh_TW]=顯示卡管理器是個嚴謹且易用的顯卡驅動管理程序。
 GenericName[ar]=مدير تعريف الرسوميات 
 GenericName[ast]=Xestor de controladores gráficos
 GenericName[bg]=Диспечер на графичен драйвер
@@ -98,6 +98,6 @@ Name[sq]=Përgjegjës Deepin Përudhësish Grafikë
 Name[sr]=Дипин Управник Управљачких Програма
 Name[tr]=Deepin Görüntü Aygıtı Sürücüsü Yöneticisi
 Name[uk]=Керування драйверами графіки Deepin
-Name[zh_CN]=深度显卡驱动管理器
-Name[zh_TW]=Deepin 顯示卡管理器
+Name[zh_CN]=显卡驱动管理器
+Name[zh_TW]=顯示卡管理器
 

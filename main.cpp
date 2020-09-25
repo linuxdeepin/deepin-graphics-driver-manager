@@ -34,8 +34,8 @@ int main(int argc, char *argv[])
     app.setApplicationVersion(VERSION);
     app.setApplicationAcknowledgementPage("https://www.deepin.org/acknowledgments/deepin-graphics-driver-manager/");
     app.setProductIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
-    app.setProductName(QApplication::translate("main", "Deepin Graphics Driver Manager"));
-    app.setApplicationDescription(QApplication::translate("main", "Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions."));
+    app.setProductName(QApplication::translate("main", "Graphics Driver Manager"));
+    app.setApplicationDescription(QApplication::translate("main", "Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions."));
 
     DLogManager::registerConsoleAppender();
     DLogManager::registerFileAppender();

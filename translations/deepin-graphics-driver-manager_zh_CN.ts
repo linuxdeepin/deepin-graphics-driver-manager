@@ -259,13 +259,13 @@ If no signal, please confirm whether the monitor output port is connected correc
     </message>
     <message>
         <location filename="../main.cpp" line="25"/>
-        <source>Deepin Graphics Driver Manager</source>
-        <translation>深度显卡驱动管理器</translation>
+        <source>Graphics Driver Manager</source>
+        <translation>显卡驱动管理器</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>深度显卡驱动管理器是一款小巧易用的显卡驱动管理工具，包括显卡硬件探测、显卡驱动安装、显卡驱动方案切换、显卡驱动自动恢复等功能。</translation>
+        <source>Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation>显卡驱动管理器是一款小巧易用的显卡驱动管理工具，包括显卡硬件探测、显卡驱动安装、显卡驱动方案切换、显卡驱动自动恢复等功能。</translation>
     </message>
 </context>
 </TS>
