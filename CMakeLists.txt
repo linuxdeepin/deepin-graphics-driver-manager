@@ -6,110 +6,25 @@ endif()
 
 project(deepin-graphics-driver-manager)
 
-set(BIN_NAME deepin-graphics-driver-manager)
-set(SHELL_NAME deepin-graphics-driver-manager-waraper)
-
-# set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
-if (NOT (${CMAKE_BUILD_TYPE} MATCHES "Debug"))
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Ofast")
+execute_process(COMMAND bash "-c" "qdbuscpp2xml -A server/graphicsdriverinterface.h -o com.deepin.daemon.GraphicsDriver.xml"
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 
-    # generate qm
-    execute_process(COMMAND bash "translate_generation.sh"
-                    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
-    execute_process(COMMAND bash "translate_ts2desktop.sh"
-                    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
-endif ()
+execute_process(COMMAND bash "-c" "qdbusxml2cpp ../com.deepin.daemon.GraphicsDriver.xml -i graphicsdriverinterface.h -a graphicsdriveradaptor"
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/server)
 
-configure_file(environments.h.in environments.h @ONLY)
+execute_process(COMMAND bash "-c" "qdbusxml2cpp ../com.deepin.daemon.GraphicsDriver.xml -p graphicsdriverproxy"
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/utils)
 
-# Sources files
-file(GLOB SRCS "*.h" "*.cpp"
-               "widgets/*.h" "widgets/*.cpp"
-               "resolutions/*.h" "resolutions/*.cpp")
+file(GLOB UTILS_FILES "${CMAKE_SOURCE_DIR}/utils/*.h" "${CMAKE_SOURCE_DIR}/utils/*.cpp")
 
-# Find the library
-find_package(PkgConfig REQUIRED)
-find_package(Qt5Widgets REQUIRED)
-find_package(OpenGL REQUIRED)
-find_package(GLUT REQUIRED)
-
-pkg_check_modules(DtkWidget REQUIRED dtkwidget)
-pkg_check_modules(PCI REQUIRED libpci)
-
-# driver-manager
-add_executable(${BIN_NAME} ${SRCS} resources.qrc)
-target_include_directories(${BIN_NAME} PUBLIC ${DtkWidget_INCLUDE_DIRS} ${PCI_INCLUDE_DIRS})
-target_link_libraries(${BIN_NAME}
-    ${DtkWidget_LIBRARIES}
-    ${PCI_LIBRARIES}
-    ${Qt5Widgets_LIBRARIES}
-    ${Qt5Concurrent_LIBRARIES}
-)
-
-add_subdirectory(gltest)
+add_subdirectory(server)
+add_subdirectory(prepare)
 add_subdirectory(installer)
+add_subdirectory(gltest)
 
-# Test settings
-enable_testing()
-add_executable(Test tests/test.cpp
-                    graphicsdeviceinfo.h graphicsdeviceinfo.cpp
-                    resolutions/resolution.h resolutions/resolution.cpp
-)
-target_link_libraries(Test
-    ${Qt5Widgets_LIBRARIES}
-    ${PCI_LIBRARIES}
-)
-add_test(NAME Test COMMAND Test)
-
-# Install settings
-if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-set(CMAKE_INSTALL_PREFIX /usr)
-endif ()
-
-# bin
-install(TARGETS ${BIN_NAME} DESTINATION bin)
-install(FILES ${SHELL_NAME} DESTINATION bin)
-
-# desktop
-install(FILES deepin-graphics-driver-manager.desktop DESTINATION share/applications)
-
-# icons
-foreach (ICON_SIZE 64)
-    install(FILES resources/icons/deepin-graphics-driver-manager-${ICON_SIZE}px.svg
-            RENAME deepin-graphics-driver-manager.svg
-            DESTINATION share/icons/hicolor/${ICON_SIZE}x${ICON_SIZE}/apps)
-endforeach ()
-install(FILES resources/icons/deepin-graphics-driver-manager-64px.svg
-        DESTINATION share/icons/hicolor/scalable/apps)
-
-# policy kit
-install(FILES com.deepin.dgradvrmgr.policy
-        DESTINATION share/polkit-1/actions/)
-
-install(FILES com.deepin.dgradvrmgr-installer.policy
-        DESTINATION share/polkit-1/actions/)
-
-
-# resolutions.json
-install(FILES resources/config/resolutions/resolutions.json
-        DESTINATION lib/deepin-graphics-driver-manager)
-
-# systemd servies
-install(FILES resources/service/driver-installer.service
-        DESTINATION /lib/systemd/system)
-
-# scripts
-install(DIRECTORY scripts/
-        DESTINATION lib/deepin-graphics-driver-manager
-        FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
-
-# qm files
-file(GLOB QM_FILES "translations/*.qm")
-install(FILES ${QM_FILES}
-        DESTINATION share/deepin-graphics-driver-manager/translations)

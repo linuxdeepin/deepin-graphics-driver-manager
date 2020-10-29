@@ -1,0 +1,35 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="com.deepin.daemon.GraphicsDriver">
+    <signal name="removeDriverResult">
+      <arg type="i" direction="out"/>
+    </signal>
+    <signal name="installDriverResult">
+      <arg type="i" direction="out"/>
+    </signal>
+    <method name="getDeviceFlag">
+      <arg type="i" direction="out"/>
+    </method>
+    <method name="getDevice">
+      <arg type="as" direction="out"/>
+    </method>
+    <method name="getInstallStatus">
+      <arg type="i" direction="out"/>
+    </method>
+    <method name="isTestSuccess">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="newDriver">
+      <arg type="s" direction="out"/>
+    </method>
+    <method name="OldDriver">
+      <arg type="s" direction="out"/>
+    </method>
+    <method name="reboot">
+    </method>
+    <method name="removeDriver">
+    </method>
+    <method name="installDriver">
+    </method>
+  </interface>
+</node>

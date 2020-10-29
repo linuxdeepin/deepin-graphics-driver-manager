@@ -1,23 +1,21 @@
 
 #include <DApplication>
 #include <DLog>
-#include <ddialog.h>
-
-#include <QSettings>
+#include <DDialog>
 #include <QDebug>
-#include <QDBusConnectionInterface>
+#include "graphicsdriverproxy.h"
+#include <QObject>
 
 DWIDGET_USE_NAMESPACE
 DCORE_USE_NAMESPACE
 
 #define CONFIG "/usr/lib/deepin-graphics-driver-manager/working-dir/config.conf"
 #define ROOT_RESKTOP_FILE "etc/xdg/autostart/deepin-gradvrmgr-installer.desktop"
-#define AuthAgentDbusService "com.deepin.Polkit1AuthAgent"
 
-QSettings *SETTINGS = nullptr;
-QDBusConnectionInterface *DbusConnInter = nullptr;
 
-int WaitingAuthAgentTimes = 0;
+const QString GraphicsDriverDbusService = "com.deepin.daemon.GraphicsDriver";
+
+ComDeepinDaemonGraphicsDriverInterface *g_graphicsDriver = nullptr;
 
 DDialog *dialog(const QString &message, const QString &iconName)
 {
@@ -33,7 +31,14 @@ DDialog *dialog(const QString &message, const QString &iconName)
 
 void show_success_dialog()
 {
-    const QString &new_driver = SETTINGS->value("new_driver").toString();
+    QString new_driver = "new_driver";
+    QDBusPendingReply<bool> reply = g_graphicsDriver->newDriver();
+    reply.waitForFinished();
+    if (reply.isValid())
+    {
+        new_driver = reply.value();
+    }
+
     const QString &message = qApp->translate("main", "Congratulations, you have switched to %1, please reboot to take effect.");
 
     DDialog *d = dialog(message.arg(new_driver), "://resources/icons/deepin-graphics-driver-manager-success.svg");
@@ -43,8 +48,9 @@ void show_success_dialog()
 
     QObject::connect(d, &DDialog::buttonClicked, [=](int index, const QString &text) {
         Q_UNUSED(text);
-        if (index == 1) {
-            QProcess::startDetached("dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true");
+        if (index == 1)
+        {
+            g_graphicsDriver->reboot();
         }
     });
 
@@ -53,8 +59,21 @@ void show_success_dialog()
 
 void show_fail_dialog()
 {
-    const QString &old_driver = SETTINGS->value("old_driver").toString();
-    const QString &new_driver = SETTINGS->value("new_driver").toString();
+    QString old_driver = "old_driver";
+    QString new_driver = "new_driver";
+    QDBusPendingReply<QString> oldDriverReply = g_graphicsDriver->OldDriver();
+    oldDriverReply.waitForFinished();
+    if (oldDriverReply.isValid())
+    {
+        old_driver = oldDriverReply.value();
+    }
+
+    QDBusPendingReply<QString> newDriverReply = g_graphicsDriver->newDriver();
+    if (newDriverReply.isValid())
+    {
+        new_driver = newDriverReply.value();
+    }
+
     const QString &message = qApp->translate("main", "Auto restore to %2 after failed to switch to %1");
 
     DDialog *d = dialog(message.arg(new_driver).arg(old_driver), "dialog-warning");
@@ -68,25 +87,21 @@ void show_fail_dialog()
 int show_install_dialog() {
     DDialog *installDialog = dialog(qApp->translate("main", "Updating the driver, please wait..."), "://resources/icons/deepin-graphics-driver-manager-installing.svg");
 
-    QProcess *removeProc = new QProcess;
-    removeProc->connect(removeProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), removeProc, &QProcess::deleteLater);
-    removeProc->connect(removeProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), [=](int exitCode) {
-        qDebug() << "remove process exitCode" << exitCode;
-        if (exitCode != 0) {
-            installDialog->done(exitCode);
+    g_graphicsDriver->removeDriver();
+    QObject::connect(g_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::removeDriverResult, [=](int result) {
+        qDebug() << "remove driver result " << result;
+        if (result != 0)
+        {
+            installDialog->done(result);
             return;
         }
 
-        QProcess *installProc = new QProcess;
-        installProc->connect(installProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), installProc, &QProcess::deleteLater);
-        installProc->connect(installProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), installDialog, &DDialog::done);
-        QStringList installArgs {"-x", "/usr/lib/deepin-graphics-driver-manager/control_driver.sh", "install"};
-        qDebug() << "start install process";
-        installProc->start("/bin/bash", installArgs);
+        QObject::connect(g_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::installDriverResult, [=](int result) {
+            installDialog->done(result);
+        });
+        g_graphicsDriver->installDriver();
+
     });
-    QStringList removeArgs {"-x", "/usr/lib/deepin-graphics-driver-manager/control_driver.sh", "remove"};
-    qDebug() << "start remove process";
-    removeProc->start("/bin/bash", removeArgs);
     return installDialog->exec();
 }
 
@@ -101,27 +116,32 @@ void removeDesktopFile()
 
 void init()
 {
-    if (!QFile(CONFIG).exists())
-        return qApp->quit();
+    bool testSuccess = false;
+    QDBusPendingReply<bool> reply = g_graphicsDriver->isTestSuccess();
+    reply.waitForFinished();
+    if (reply.isValid())
+    {
+        testSuccess = reply.value();
+    }
 
-    SETTINGS = new QSettings(CONFIG, QSettings::IniFormat);
-    SETTINGS->setIniCodec(QTextCodec::codecForName("UTF-8"));
-
-    DbusConnInter = QDBusConnection::sessionBus().interface();
-
-    const bool gltestSuccess = SETTINGS->value("gltest-success", false).toBool();
-    qDebug() << "gltestSuccess is:" << gltestSuccess;
-    if (gltestSuccess) {
+    qDebug() << "testSuccess is:" << testSuccess;
+    if (testSuccess)
+    {
         const int exitCode = show_install_dialog();
         qDebug() << "show_install_dialog exitCode" << exitCode;
-        if (exitCode == 0) {
+        if (exitCode == 0)
+        {
             qDebug() << "show_success_dialog";
             show_success_dialog();
-        } else {
+        }
+        else
+        {
             qDebug() << "show_fail_dialog1";
             show_fail_dialog();
         }
-    } else {
+    }
+    else
+    {
         qDebug() << "show_fail_dialog2";
         show_fail_dialog();
     }
@@ -129,8 +149,6 @@ void init()
 
 int main(int argc, char *args[])
 {
-    //removeDesktopFile();
-
     DApplication dapp(argc, args);
     dapp.setQuitOnLastWindowClosed(true);
     dapp.setOrganizationName("deepin");
@@ -143,9 +161,13 @@ int main(int argc, char *args[])
     DLogManager::registerConsoleAppender();
     DLogManager::registerFileAppender();
 
+    g_graphicsDriver = new ComDeepinDaemonGraphicsDriverInterface(
+                "com.deepin.daemon.GraphicsDriver",
+                "/GraphicsDriver",
+                QDBusConnection::sessionBus());
+
     QTimer::singleShot(1, nullptr, init);
 
     return dapp.exec();
 }
 
-#include "main.moc"

@@ -1,0 +1,29 @@
+
+#include "resolution.h"
+
+#include <QDebug>
+
+
+
+
+Resolution::Resolution(const QJsonObject &info)
+{
+
+    QJsonValue shouldDisplay = info.value("display");
+    if (shouldDisplay == QJsonValue::Undefined) {
+        m_display = true;
+    } else {
+        m_display = shouldDisplay.toBool();
+    }
+
+    m_resId = info["id"].toInt();
+    m_keepGLTest = info["keep_gltest"].toBool();
+    m_resName = info["name"].toString();
+    m_resTitle = info["title"].toString();
+    m_resDescription = info["description"].toString();
+    m_prepareScript = info["prepare"].toString();
+    m_installScript = info["install"].toString();
+    m_removeScript = info["remove"].toString();
+    m_conditionScript = info["condition"].toString();
+    m_versionScript = info["version"].toString();
+}
