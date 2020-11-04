@@ -15,7 +15,7 @@ int	main(int argc, char **argv)
     DLogManager::registerFileAppender();
 
 
-    QDBusConnection connection = QDBusConnection::sessionBus();
+    QDBusConnection connection = QDBusConnection::systemBus();
     
     GraphicsDriverInterface interface;
     GraphicsDriverAdaptor adaptor(&interface);

@@ -33,69 +33,61 @@ GraphicsDriverAdaptor::~GraphicsDriverAdaptor()
     // destructor
 }
 
-QString GraphicsDriverAdaptor::OldDriver()
+QStringList GraphicsDriverAdaptor::GetDevice()
 {
-    // handle method call com.deepin.daemon.GraphicsDriver.OldDriver
-    QString out0;
-    QMetaObject::invokeMethod(parent(), "OldDriver", Q_RETURN_ARG(QString, out0));
-    return out0;
-}
-
-QStringList GraphicsDriverAdaptor::getDevice()
-{
-    // handle method call com.deepin.daemon.GraphicsDriver.getDevice
+    // handle method call com.deepin.daemon.GraphicsDriver.GetDevice
     QStringList out0;
-    QMetaObject::invokeMethod(parent(), "getDevice", Q_RETURN_ARG(QStringList, out0));
+    QMetaObject::invokeMethod(parent(), "GetDevice", Q_RETURN_ARG(QStringList, out0));
     return out0;
 }
 
-int GraphicsDriverAdaptor::getDeviceFlag()
+QString GraphicsDriverAdaptor::GetNewDriverName()
 {
-    // handle method call com.deepin.daemon.GraphicsDriver.getDeviceFlag
-    int out0;
-    QMetaObject::invokeMethod(parent(), "getDeviceFlag", Q_RETURN_ARG(int, out0));
-    return out0;
-}
-
-int GraphicsDriverAdaptor::getInstallStatus()
-{
-    // handle method call com.deepin.daemon.GraphicsDriver.getInstallStatus
-    int out0;
-    QMetaObject::invokeMethod(parent(), "getInstallStatus", Q_RETURN_ARG(int, out0));
-    return out0;
-}
-
-void GraphicsDriverAdaptor::installDriver()
-{
-    // handle method call com.deepin.daemon.GraphicsDriver.installDriver
-    QMetaObject::invokeMethod(parent(), "installDriver");
-}
-
-bool GraphicsDriverAdaptor::isTestSuccess()
-{
-    // handle method call com.deepin.daemon.GraphicsDriver.isTestSuccess
-    bool out0;
-    QMetaObject::invokeMethod(parent(), "isTestSuccess", Q_RETURN_ARG(bool, out0));
-    return out0;
-}
-
-QString GraphicsDriverAdaptor::newDriver()
-{
-    // handle method call com.deepin.daemon.GraphicsDriver.newDriver
+    // handle method call com.deepin.daemon.GraphicsDriver.GetNewDriverName
     QString out0;
-    QMetaObject::invokeMethod(parent(), "newDriver", Q_RETURN_ARG(QString, out0));
+    QMetaObject::invokeMethod(parent(), "GetNewDriverName", Q_RETURN_ARG(QString, out0));
     return out0;
 }
 
-void GraphicsDriverAdaptor::reboot()
+QString GraphicsDriverAdaptor::GetOldDriverName()
 {
-    // handle method call com.deepin.daemon.GraphicsDriver.reboot
-    QMetaObject::invokeMethod(parent(), "reboot");
+    // handle method call com.deepin.daemon.GraphicsDriver.GetOldDriverName
+    QString out0;
+    QMetaObject::invokeMethod(parent(), "GetOldDriverName", Q_RETURN_ARG(QString, out0));
+    return out0;
 }
 
-void GraphicsDriverAdaptor::removeDriver()
+QString GraphicsDriverAdaptor::GetResolutionTitle()
 {
-    // handle method call com.deepin.daemon.GraphicsDriver.removeDriver
-    QMetaObject::invokeMethod(parent(), "removeDriver");
+    // handle method call com.deepin.daemon.GraphicsDriver.GetResolutionTitle
+    QString out0;
+    QMetaObject::invokeMethod(parent(), "GetResolutionTitle", Q_RETURN_ARG(QString, out0));
+    return out0;
+}
+
+bool GraphicsDriverAdaptor::IsTestSuccess()
+{
+    // handle method call com.deepin.daemon.GraphicsDriver.IsTestSuccess
+    bool out0;
+    QMetaObject::invokeMethod(parent(), "IsTestSuccess", Q_RETURN_ARG(bool, out0));
+    return out0;
+}
+
+void GraphicsDriverAdaptor::PrepareInstall(int resolutionId)
+{
+    // handle method call com.deepin.daemon.GraphicsDriver.PrepareInstall
+    QMetaObject::invokeMethod(parent(), "PrepareInstall", Q_ARG(int, resolutionId));
+}
+
+void GraphicsDriverAdaptor::RealInstaller()
+{
+    // handle method call com.deepin.daemon.GraphicsDriver.RealInstaller
+    QMetaObject::invokeMethod(parent(), "RealInstaller");
+}
+
+void GraphicsDriverAdaptor::TestInstall()
+{
+    // handle method call com.deepin.daemon.GraphicsDriver.TestInstall
+    QMetaObject::invokeMethod(parent(), "TestInstall");
 }
 

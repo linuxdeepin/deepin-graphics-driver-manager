@@ -32,7 +32,7 @@ DDialog *dialog(const QString &message, const QString &iconName)
 void show_success_dialog()
 {
     QString new_driver = "new_driver";
-    QDBusPendingReply<bool> reply = g_graphicsDriver->newDriver();
+    QDBusPendingReply<bool> reply = g_graphicsDriver->GetNewDriverName();
     reply.waitForFinished();
     if (reply.isValid())
     {
@@ -50,7 +50,7 @@ void show_success_dialog()
         Q_UNUSED(text);
         if (index == 1)
         {
-            g_graphicsDriver->reboot();
+            //g_graphicsDriver->reboot();
         }
     });
 
@@ -61,14 +61,14 @@ void show_fail_dialog()
 {
     QString old_driver = "old_driver";
     QString new_driver = "new_driver";
-    QDBusPendingReply<QString> oldDriverReply = g_graphicsDriver->OldDriver();
+    QDBusPendingReply<QString> oldDriverReply = g_graphicsDriver->GetOldDriverName();
     oldDriverReply.waitForFinished();
     if (oldDriverReply.isValid())
     {
         old_driver = oldDriverReply.value();
     }
 
-    QDBusPendingReply<QString> newDriverReply = g_graphicsDriver->newDriver();
+    QDBusPendingReply<QString> newDriverReply = g_graphicsDriver->GetNewDriverName();
     if (newDriverReply.isValid())
     {
         new_driver = newDriverReply.value();
@@ -87,21 +87,21 @@ void show_fail_dialog()
 int show_install_dialog() {
     DDialog *installDialog = dialog(qApp->translate("main", "Updating the driver, please wait..."), "://resources/icons/deepin-graphics-driver-manager-installing.svg");
 
-    g_graphicsDriver->removeDriver();
-    QObject::connect(g_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::removeDriverResult, [=](int result) {
-        qDebug() << "remove driver result " << result;
-        if (result != 0)
-        {
-            installDialog->done(result);
-            return;
-        }
+    g_graphicsDriver->RealInstaller();
+//    QObject::connect(g_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::removeDriverResult, [=](int result) {
+//        qDebug() << "remove driver result " << result;
+//        if (result != 0)
+//        {
+//            installDialog->done(result);
+//            return;
+//        }
 
-        QObject::connect(g_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::installDriverResult, [=](int result) {
-            installDialog->done(result);
-        });
-        g_graphicsDriver->installDriver();
+//        QObject::connect(g_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::installDriverResult, [=](int result) {
+//            installDialog->done(result);
+//        });
+//        g_graphicsDriver->installDriver();
 
-    });
+//    });
     return installDialog->exec();
 }
 
@@ -117,7 +117,7 @@ void removeDesktopFile()
 void init()
 {
     bool testSuccess = false;
-    QDBusPendingReply<bool> reply = g_graphicsDriver->isTestSuccess();
+    QDBusPendingReply<bool> reply = g_graphicsDriver->IsTestSuccess();
     reply.waitForFinished();
     if (reply.isValid())
     {

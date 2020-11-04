@@ -33,33 +33,32 @@ class GraphicsDriverAdaptor: public QDBusAbstractAdaptor
     Q_CLASSINFO("D-Bus Interface", "com.deepin.daemon.GraphicsDriver")
     Q_CLASSINFO("D-Bus Introspection", ""
 "  <interface name=\"com.deepin.daemon.GraphicsDriver\">\n"
-"    <signal name=\"removeDriverResult\">\n"
-"      <arg direction=\"out\" type=\"i\"/>\n"
+"    <signal name=\"PreInstallState\">\n"
+"      <arg direction=\"out\" type=\"s\" name=\"state\"/>\n"
 "    </signal>\n"
-"    <signal name=\"installDriverResult\">\n"
-"      <arg direction=\"out\" type=\"i\"/>\n"
+"    <signal name=\"RealInstallState\">\n"
+"      <arg direction=\"out\" type=\"s\" name=\"state\"/>\n"
 "    </signal>\n"
-"    <method name=\"getDeviceFlag\">\n"
-"      <arg direction=\"out\" type=\"i\"/>\n"
-"    </method>\n"
-"    <method name=\"getDevice\">\n"
+"    <method name=\"GetDevice\">\n"
 "      <arg direction=\"out\" type=\"as\"/>\n"
 "    </method>\n"
-"    <method name=\"getInstallStatus\">\n"
-"      <arg direction=\"out\" type=\"i\"/>\n"
+"    <method name=\"GetResolutionTitle\">\n"
+"      <arg direction=\"out\" type=\"s\"/>\n"
 "    </method>\n"
-"    <method name=\"isTestSuccess\">\n"
+"    <method name=\"PrepareInstall\">\n"
+"      <arg direction=\"in\" type=\"i\" name=\"resolutionId\"/>\n"
+"    </method>\n"
+"    <method name=\"TestInstall\"/>\n"
+"    <method name=\"IsTestSuccess\">\n"
 "      <arg direction=\"out\" type=\"b\"/>\n"
 "    </method>\n"
-"    <method name=\"newDriver\">\n"
+"    <method name=\"RealInstaller\"/>\n"
+"    <method name=\"GetNewDriverName\">\n"
 "      <arg direction=\"out\" type=\"s\"/>\n"
 "    </method>\n"
-"    <method name=\"OldDriver\">\n"
+"    <method name=\"GetOldDriverName\">\n"
 "      <arg direction=\"out\" type=\"s\"/>\n"
 "    </method>\n"
-"    <method name=\"reboot\"/>\n"
-"    <method name=\"removeDriver\"/>\n"
-"    <method name=\"installDriver\"/>\n"
 "  </interface>\n"
         "")
 public:
@@ -68,18 +67,17 @@ public:
 
 public: // PROPERTIES
 public Q_SLOTS: // METHODS
-    QString OldDriver();
-    QStringList getDevice();
-    int getDeviceFlag();
-    int getInstallStatus();
-    void installDriver();
-    bool isTestSuccess();
-    QString newDriver();
-    void reboot();
-    void removeDriver();
+    QStringList GetDevice();
+    QString GetNewDriverName();
+    QString GetOldDriverName();
+    QString GetResolutionTitle();
+    bool IsTestSuccess();
+    void PrepareInstall(int resolutionId);
+    void RealInstaller();
+    void TestInstall();
 Q_SIGNALS: // SIGNALS
-    void installDriverResult(int in0);
-    void removeDriverResult(int in0);
+    void PreInstallState(const QString &state);
+    void RealInstallState(const QString &state);
 };
 
 #endif
