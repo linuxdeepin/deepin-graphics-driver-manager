@@ -1,35 +1,33 @@
 <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
   <interface name="com.deepin.daemon.GraphicsDriver">
-    <signal name="removeDriverResult">
-      <arg type="i" direction="out"/>
+    <signal name="PreInstallState">
+      <arg name="state" type="s" direction="out"/>
     </signal>
-    <signal name="installDriverResult">
-      <arg type="i" direction="out"/>
+    <signal name="RealInstallState">
+      <arg name="state" type="s" direction="out"/>
     </signal>
-    <method name="getDeviceFlag">
-      <arg type="i" direction="out"/>
-    </method>
-    <method name="getDevice">
+    <method name="GetDevice">
       <arg type="as" direction="out"/>
     </method>
-    <method name="getInstallStatus">
-      <arg type="i" direction="out"/>
+    <method name="GetResolutionTitle">
+      <arg type="s" direction="out"/>
     </method>
-    <method name="isTestSuccess">
+    <method name="PrepareInstall">
+      <arg name="resolutionId" type="i" direction="in"/>
+    </method>
+    <method name="TestInstall">
+    </method>
+    <method name="IsTestSuccess">
       <arg type="b" direction="out"/>
     </method>
-    <method name="newDriver">
+    <method name="RealInstaller">
+    </method>
+    <method name="GetNewDriverName">
       <arg type="s" direction="out"/>
     </method>
-    <method name="OldDriver">
+    <method name="GetOldDriverName">
       <arg type="s" direction="out"/>
-    </method>
-    <method name="reboot">
-    </method>
-    <method name="removeDriver">
-    </method>
-    <method name="installDriver">
     </method>
   </interface>
 </node>

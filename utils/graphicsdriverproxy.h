@@ -36,63 +36,58 @@ public:
     ~ComDeepinDaemonGraphicsDriverInterface();
 
 public Q_SLOTS: // METHODS
-    inline QDBusPendingReply<QString> OldDriver()
+    inline QDBusPendingReply<QStringList> GetDevice()
     {
         QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("OldDriver"), argumentList);
+        return asyncCallWithArgumentList(QStringLiteral("GetDevice"), argumentList);
     }
 
-    inline QDBusPendingReply<QStringList> getDevice()
+    inline QDBusPendingReply<QString> GetNewDriverName()
     {
         QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("getDevice"), argumentList);
+        return asyncCallWithArgumentList(QStringLiteral("GetNewDriverName"), argumentList);
     }
 
-    inline QDBusPendingReply<int> getDeviceFlag()
+    inline QDBusPendingReply<QString> GetOldDriverName()
     {
         QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("getDeviceFlag"), argumentList);
+        return asyncCallWithArgumentList(QStringLiteral("GetOldDriverName"), argumentList);
     }
 
-    inline QDBusPendingReply<int> getInstallStatus()
+    inline QDBusPendingReply<QString> GetResolutionTitle()
     {
         QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("getInstallStatus"), argumentList);
+        return asyncCallWithArgumentList(QStringLiteral("GetResolutionTitle"), argumentList);
     }
 
-    inline QDBusPendingReply<> installDriver()
+    inline QDBusPendingReply<bool> IsTestSuccess()
     {
         QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("installDriver"), argumentList);
+        return asyncCallWithArgumentList(QStringLiteral("IsTestSuccess"), argumentList);
     }
 
-    inline QDBusPendingReply<bool> isTestSuccess()
+    inline QDBusPendingReply<> PrepareInstall(int resolutionId)
     {
         QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("isTestSuccess"), argumentList);
+        argumentList << QVariant::fromValue(resolutionId);
+        return asyncCallWithArgumentList(QStringLiteral("PrepareInstall"), argumentList);
     }
 
-    inline QDBusPendingReply<QString> newDriver()
+    inline QDBusPendingReply<> RealInstaller()
     {
         QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("newDriver"), argumentList);
+        return asyncCallWithArgumentList(QStringLiteral("RealInstaller"), argumentList);
     }
 
-    inline QDBusPendingReply<> reboot()
+    inline QDBusPendingReply<> TestInstall()
     {
         QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("reboot"), argumentList);
-    }
-
-    inline QDBusPendingReply<> removeDriver()
-    {
-        QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("removeDriver"), argumentList);
+        return asyncCallWithArgumentList(QStringLiteral("TestInstall"), argumentList);
     }
 
 Q_SIGNALS: // SIGNALS
-    void installDriverResult(int in0);
-    void removeDriverResult(int in0);
+    void PreInstallState(const QString &state);
+    void RealInstallState(const QString &state);
 };
 
 namespace com {

@@ -15,54 +15,61 @@ GraphicsDriverInterface::~GraphicsDriverInterface()
     // TODO: Needs implementation
 }
 
-int GraphicsDriverInterface::getDeviceFlag()
+QStringList GraphicsDriverInterface::GetDevice()
 {
-    return  m_devInfo.deviceFlag();
+    return QStringList();
 }
 
-QStringList GraphicsDriverInterface::getDevice()
+QString GraphicsDriverInterface::GetResolutionTitle()
 {
-    QStringList devices;
-    return  devices;
+    return QString();
 }
 
-
-int GraphicsDriverInterface::getInstallStatus()
+void GraphicsDriverInterface::PrepareInstall(int resolutionId)
 {
-    return m_installStatus;
+
 }
 
-bool GraphicsDriverInterface::isTestSuccess()
+void GraphicsDriverInterface::TestInstall()
 {
-    QTime now = QTime::currentTime();
-    return now.minute() % 2 == 0;
+
 }
 
-QString GraphicsDriverInterface::newDriver()
+bool GraphicsDriverInterface::IsTestSuccess()
+{
+    return true;
+}
+
+void GraphicsDriverInterface::RealInstaller()
+{
+
+}
+
+QString GraphicsDriverInterface::GetNewDriverName()
 {
     return QString("new driver");
 }
 
-QString GraphicsDriverInterface::OldDriver()
+QString GraphicsDriverInterface::GetOldDriverName()
 {
     return QString("old driver");
 }
 
-void GraphicsDriverInterface::reboot()
+void GraphicsDriverInterface::BuildResolution()
 {
 
 }
 
-void GraphicsDriverInterface::removeDriver()
+void GraphicsDriverInterface::InstallDriver(int resolutionId)
 {
-    QThread::sleep(5);
-    emit removeDriverResult(0);
+
 }
 
-void GraphicsDriverInterface::installDriver()
+void GraphicsDriverInterface::RemoveDriver(int resolutionId)
 {
-    QThread::sleep(5);
-    emit installDriverResult(0);
+
 }
+
+
 
 
