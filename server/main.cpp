@@ -7,6 +7,9 @@
 
 DCORE_USE_NAMESPACE
 
+const QString GraphicMangerServiceName = "com.deepin.graphicmanger";
+const QString GraphicMangerPath = "/com/deepin/graphicmanger";
+
 int	main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);
@@ -20,13 +23,13 @@ int	main(int argc, char **argv)
     GraphicsDriverInterface interface;
     GraphicsDriverAdaptor adaptor(&interface);
 
-    if (!connection.registerService("com.deepin.daemon.GraphicsDriver"))
+    if (!connection.registerService(GraphicMangerServiceName))
         {
             qDebug() << connection.lastError().message();
             exit(1);
         }
 
-        connection.registerObject("/GraphicsDriver", &interface, QDBusConnection::ExportAllContents);
+        connection.registerObject(GraphicMangerPath, &interface, QDBusConnection::ExportAllContents);
 
     return app.exec();
 }
