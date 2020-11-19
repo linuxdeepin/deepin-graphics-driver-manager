@@ -23,7 +23,7 @@ public slots:
     Return:         // 函数返回值的说明
     Others:         // 其它说明
     *************************************************/
-    QStringList GetDevice();
+    QJsonArray GetDevice();
 
 
     /*************************************************

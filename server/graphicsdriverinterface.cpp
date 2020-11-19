@@ -1,6 +1,8 @@
 #include "graphicsdriverinterface.h"
 #include <QTime>
 #include <QThread>
+#include <QJsonArray>
+#include <QJsonObject>
 
 using namespace std;
 
@@ -15,9 +17,16 @@ GraphicsDriverInterface::~GraphicsDriverInterface()
     // TODO: Needs implementation
 }
 
-QStringList GraphicsDriverInterface::GetDevice()
+QJsonArray GraphicsDriverInterface::GetDevice()
 {
-    return QStringList();
+    QJsonArray jsonArray;
+    foreach (const Device device, m_devInfo.devices()){
+        QJsonObject object;
+        object.insert("name", device.m_name);
+        object.insert("info", device.m_info);
+        jsonArray.append(object);
+    }
+    return jsonArray;
 }
 
 QString GraphicsDriverInterface::GetResolutionTitle()
