@@ -36,12 +36,6 @@ public:
     ~ComDeepinDaemonGraphicsDriverInterface();
 
 public Q_SLOTS: // METHODS
-    inline QDBusPendingReply<QStringList> GetDevice()
-    {
-        QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("GetDevice"), argumentList);
-    }
-
     inline QDBusPendingReply<QString> GetNewDriverName()
     {
         QList<QVariant> argumentList;

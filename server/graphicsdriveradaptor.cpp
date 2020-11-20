@@ -33,14 +33,6 @@ GraphicsDriverAdaptor::~GraphicsDriverAdaptor()
     // destructor
 }
 
-QStringList GraphicsDriverAdaptor::GetDevice()
-{
-    // handle method call com.deepin.daemon.GraphicsDriver.GetDevice
-    QStringList out0;
-    QMetaObject::invokeMethod(parent(), "GetDevice", Q_RETURN_ARG(QStringList, out0));
-    return out0;
-}
-
 QString GraphicsDriverAdaptor::GetNewDriverName()
 {
     // handle method call com.deepin.daemon.GraphicsDriver.GetNewDriverName

@@ -7,9 +7,6 @@
     <signal name="RealInstallState">
       <arg name="state" type="s" direction="out"/>
     </signal>
-    <method name="GetDevice">
-      <arg type="as" direction="out"/>
-    </method>
     <method name="GetResolutionTitle">
       <arg type="s" direction="out"/>
     </method>
