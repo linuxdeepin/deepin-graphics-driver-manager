@@ -4,7 +4,36 @@
 #include <QObject>
 #include <QStringList>
 #include "graphicsdeviceinfo.h"
+#include "resolutions.h"
+#include <QProcess>
+#include <QDebug>
+#include <QDir>
 
+inline const QString scriptAbsolutePath(const QString &scriptName)
+{
+#ifdef QT_DEBUG
+    return QDir::currentPath() + "/scripts/" + scriptName;
+#else
+    return "/usr/lib/deepin-graphics-driver-manager/" + scriptName;
+#endif
+}
+
+// #ifdef QT_DEBUG
+#define QPROCESS_DUMP(Process) \
+    connect(Process, &QProcess::readyReadStandardOutput, Process, [=] { qDebug().noquote() << proc->readAllStandardOutput(); }); \
+    connect(Process, &QProcess::readyReadStandardError, Process, [=] { qWarning().noquote() << proc->readAllStandardError(); });
+// #else
+// #define QPROCESS_DUMP(Process) Q_UNUSED(Process)
+// #endif
+
+#define QPROCESS_DELETE_SELF(Process) \
+    connect(Process, static_cast<void (QProcess::*)(int)>(&QProcess::finished), Process, &QProcess::deleteLater);
+
+#define EXECUTE_SCRIPT(Process, Script) \
+    Process->start("/bin/bash", QStringList() << "-x" << scriptAbsolutePath(Script));
+
+#define EXECUTE_SCRIPT_ROOT(Process, Script) \
+    Process->start(QStringList() << "/bin/bash" << "-x" << scriptAbsolutePath(Script));
 
 
 class GraphicsDriverInterface : public QObject
@@ -23,7 +52,7 @@ public slots:
     Return:         // 函数返回值的说明
     Others:         // 其它说明
     *************************************************/
-    QJsonArray GetDevice();
+    QString GetDevice();
 
 
     /*************************************************
@@ -44,7 +73,7 @@ public slots:
     Return:         // 函数返回值的说明
     Others:         // 其它说明
     *************************************************/
-    void PrepareInstall(int resolutionId);
+    void PrepareInstall(QString name);
 
     /*************************************************
     Function:       // 函数名称
@@ -131,6 +160,7 @@ private:
     void RemoveDriver(int resolutionId);
 private:
     GraphicsDeviceInfo m_devInfo;
+    Resolutions m_resolutions;
 };
 
 #endif

@@ -36,6 +36,12 @@ public:
     ~ComDeepinDaemonGraphicsDriverInterface();
 
 public Q_SLOTS: // METHODS
+    inline QDBusPendingReply<QString> GetDevice()
+    {
+        QList<QVariant> argumentList;
+        return asyncCallWithArgumentList(QStringLiteral("GetDevice"), argumentList);
+    }
+
     inline QDBusPendingReply<QString> GetNewDriverName()
     {
         QList<QVariant> argumentList;
@@ -60,10 +66,10 @@ public Q_SLOTS: // METHODS
         return asyncCallWithArgumentList(QStringLiteral("IsTestSuccess"), argumentList);
     }
 
-    inline QDBusPendingReply<> PrepareInstall(int resolutionId)
+    inline QDBusPendingReply<> PrepareInstall(const QString &name)
     {
         QList<QVariant> argumentList;
-        argumentList << QVariant::fromValue(resolutionId);
+        argumentList << QVariant::fromValue(name);
         return asyncCallWithArgumentList(QStringLiteral("PrepareInstall"), argumentList);
     }
 

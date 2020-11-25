@@ -39,11 +39,14 @@ class GraphicsDriverAdaptor: public QDBusAbstractAdaptor
 "    <signal name=\"RealInstallState\">\n"
 "      <arg direction=\"out\" type=\"s\" name=\"state\"/>\n"
 "    </signal>\n"
+"    <method name=\"GetDevice\">\n"
+"      <arg direction=\"out\" type=\"s\"/>\n"
+"    </method>\n"
 "    <method name=\"GetResolutionTitle\">\n"
 "      <arg direction=\"out\" type=\"s\"/>\n"
 "    </method>\n"
 "    <method name=\"PrepareInstall\">\n"
-"      <arg direction=\"in\" type=\"i\" name=\"resolutionId\"/>\n"
+"      <arg direction=\"in\" type=\"s\" name=\"name\"/>\n"
 "    </method>\n"
 "    <method name=\"TestInstall\"/>\n"
 "    <method name=\"IsTestSuccess\">\n"
@@ -64,11 +67,12 @@ public:
 
 public: // PROPERTIES
 public Q_SLOTS: // METHODS
+    QString GetDevice();
     QString GetNewDriverName();
     QString GetOldDriverName();
     QString GetResolutionTitle();
     bool IsTestSuccess();
-    void PrepareInstall(int resolutionId);
+    void PrepareInstall(const QString &name);
     void RealInstaller();
     void TestInstall();
 Q_SIGNALS: // SIGNALS

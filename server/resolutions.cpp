@@ -14,35 +14,15 @@ Resolutions::Resolutions()
 
 }
 
-// int Resolutions::type()
-// {
-//     int flag = m_devInfo.deviceFlag();
-//     switch(flag)
-//     {
-//         case GraphicsDeviceInfo::AMD:
-//             return  AMD; 
-//             break;
-//         case GraphicsDeviceInfo::INTEL:
-//             return INTEL;
-//             break;
-//         case GraphicsDeviceInfo::NVIDIA:
-//             return NVIDIA;
-//             break;
-//         case (GraphicsDeviceInfo::NVIDIA | GraphicsDeviceInfo::INTEL):
-//             if (m_devInfo.isNotebook()){
-//                 return INTEL_NVIDIA;
-//             }else{
-//                 if (GraphicsDeviceInfo::INTEL == m_devInfo.CurrWorkingDevice())
-//                     return  INTEL_NVIDIA_USE_INTEL;
-//                 else if (GraphicsDeviceInfo::NVIDIA == m_devInfo.CurrWorkingDevice())
-//                     return INTEL_NVIDIA_USE_NVIDIA;
-//                 else return NoResolution;
-//             }
-//             break;
-//         default:
-//             break;
-//     }
-// }
+Resolution Resolutions::getResolutionByName(QString name){
+    Resolution resolution;
+    foreach (const Resolution &resl, m_resolutions){
+        if( name == resl.name()){
+            resolution = resl;
+        } 
+    }
+    return resolution;
+}
 
 ResolutionsBuilder::ResolutionsBuilder(const GraphicsDeviceInfo &devInfo) :
     m_config(RESOLUTIONS_DIR"/resolutions.json"),
@@ -74,7 +54,6 @@ Resolutions ResolutionsBuilder::build()
         const int type = object["type"].toInt();
         if (type != deviceType)
             continue;
-        //r.m_type=type();
         r.m_name = object["name"].toString();
         r.m_iconName = object["icon_name"].toString();
         r.m_statusScript = object["status"].toString();

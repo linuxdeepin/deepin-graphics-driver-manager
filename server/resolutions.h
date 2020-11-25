@@ -25,11 +25,13 @@ public:
     };
     Q_DECLARE_FLAGS(ResolutionsType, Type)
 
+    inline const int type() const { return m_type; }
     inline const QString name() const { return m_name; }
     inline const QString iconName() const { return m_iconName; }
     inline const QString description() const { return m_description; }
     inline const QString statusScript() const { return m_statusScript; }
-    const QList<Resolution> resolutions() const { return m_resolutions; }
+    QList<Resolution> resolutions() const { return m_resolutions; }
+    Resolution getResolutionByName(QString name);
 private:
     explicit Resolutions();
 

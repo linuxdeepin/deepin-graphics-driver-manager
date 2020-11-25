@@ -4,7 +4,15 @@
 #include <QDebug>
 
 
+Resolution::Resolution()
+{
+    
+}
 
+
+bool Resolution::isNull() {
+    return m_resName.isEmpty();
+}
 
 Resolution::Resolution(const QJsonObject &info)
 {

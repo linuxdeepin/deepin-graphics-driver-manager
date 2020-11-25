@@ -8,7 +8,9 @@
 class Resolution
 {
 public:
+    Resolution();
     explicit Resolution(const QJsonObject &info);
+    bool isNull();
 
     inline int id() const { return m_resId; }
     inline bool display() const { return m_display; }
@@ -22,7 +24,7 @@ public:
     inline const QString conditionScript() const { return m_conditionScript; }
     inline const QString versionScript() const { return m_versionScript; }
 
-    inline bool operator==(const Resolution &rhs) const { return m_resId == rhs.m_resId; }
+    inline bool operator==(const Resolution &rhs) const { return m_resName == rhs.m_resName; }
 
 private:
     int m_resId;

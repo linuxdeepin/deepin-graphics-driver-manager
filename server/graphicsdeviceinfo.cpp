@@ -83,7 +83,7 @@ void GraphicsDeviceInfo::init()
             continue;
 
         const QString devInfo = pci_lookup_name(pacc, namebuf, sizeof(namebuf), PCI_LOOKUP_VENDOR | PCI_LOOKUP_DEVICE, dev->vendor_id, dev->device_id);
-
+        qDebug() << devInfo;
         flag = deviceType(devInfo);
         switch(flag)
         {
@@ -107,8 +107,9 @@ void GraphicsDeviceInfo::init()
     if (!file.isOpen()) {
         return;
     }
-    while (!file.atEnd()) {
-        QString line = file.readLine();
+    QString line = file.readLine();
+    do {
+        qDebug() << line;
         if (line.contains("DRIVER")) {
             QString driver = line.section('=', 1, 1).trimmed();
             qDebug()<<"driver:"<<driver;
@@ -121,6 +122,8 @@ void GraphicsDeviceInfo::init()
             }else{
                 m_curDevFlag = GraphicsDeviceInfo::NoDevice;
             }
+            break;
         }
-    }
+        line = file.readLine();
+    }while(!line.isNull());
 }
