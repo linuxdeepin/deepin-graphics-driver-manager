@@ -4,6 +4,18 @@
 
 #include <QSet>
 
+class Device
+{
+public:
+    Device(const QString &name, const QString &info)
+    {
+        m_name = name;
+        m_info = info;
+    }
+    QString m_name;
+    QString m_info;
+};
+
 class GraphicsDeviceInfo
 {
 public:
@@ -19,17 +31,18 @@ public:
     explicit GraphicsDeviceInfo();
 
     int deviceFlag() const { return m_sysDevFlag; }
+    int curDeviceFlag() const { return m_curDevFlag; }
     int deviceNums() const;
-    const QSet<QString> devices() const { return m_devices; }
-
+    const QList<Device> devices() const { return m_devices; }
+    bool isNotebook();
     static GraphicsDeviceInfo::DeviceFlag deviceType(const QString &devInfo);
-
 private:
     void init();
 
 private:
     DeviceFlags m_sysDevFlag;
-    QSet<QString> m_devices;
+    DeviceFlags m_curDevFlag;
+    QList<Device> m_devices;
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(GraphicsDeviceInfo::DeviceFlags)

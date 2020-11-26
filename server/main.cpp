@@ -24,12 +24,12 @@ int	main(int argc, char **argv)
     GraphicsDriverAdaptor adaptor(&interface);
 
     if (!connection.registerService(GraphicMangerServiceName))
-        {
-            qDebug() << connection.lastError().message();
-            exit(1);
-        }
+    {
+        qDebug() << connection.lastError().message();
+        exit(1);
+    }
 
-        connection.registerObject(GraphicMangerPath, &interface, QDBusConnection::ExportAllContents);
+    connection.registerObject(GraphicMangerPath, &interface, QDBusConnection::ExportAllContents);
 
     return app.exec();
 }

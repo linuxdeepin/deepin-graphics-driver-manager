@@ -8,13 +8,13 @@
       <arg name="state" type="s" direction="out"/>
     </signal>
     <method name="GetDevice">
-      <arg type="as" direction="out"/>
+      <arg type="s" direction="out"/>
     </method>
     <method name="GetResolutionTitle">
       <arg type="s" direction="out"/>
     </method>
     <method name="PrepareInstall">
-      <arg name="resolutionId" type="i" direction="in"/>
+      <arg name="name" type="s" direction="in"/>
     </method>
     <method name="TestInstall">
     </method>

@@ -33,11 +33,11 @@ GraphicsDriverAdaptor::~GraphicsDriverAdaptor()
     // destructor
 }
 
-QStringList GraphicsDriverAdaptor::GetDevice()
+QString GraphicsDriverAdaptor::GetDevice()
 {
     // handle method call com.deepin.daemon.GraphicsDriver.GetDevice
-    QStringList out0;
-    QMetaObject::invokeMethod(parent(), "GetDevice", Q_RETURN_ARG(QStringList, out0));
+    QString out0;
+    QMetaObject::invokeMethod(parent(), "GetDevice", Q_RETURN_ARG(QString, out0));
     return out0;
 }
 
@@ -73,10 +73,10 @@ bool GraphicsDriverAdaptor::IsTestSuccess()
     return out0;
 }
 
-void GraphicsDriverAdaptor::PrepareInstall(int resolutionId)
+void GraphicsDriverAdaptor::PrepareInstall(const QString &name)
 {
     // handle method call com.deepin.daemon.GraphicsDriver.PrepareInstall
-    QMetaObject::invokeMethod(parent(), "PrepareInstall", Q_ARG(int, resolutionId));
+    QMetaObject::invokeMethod(parent(), "PrepareInstall", Q_ARG(QString, name));
 }
 
 void GraphicsDriverAdaptor::RealInstaller()
