@@ -5,17 +5,24 @@
     },
 
     {
-        "type": 1,
         "name": "amd",
         "icon_name": "AMD.svg",
         "status": "default_stat.sh",
         "resolutions":
         [
             {
-                "id": 100,
+                "name": "amdgpu",
+                "title": "Use AMDGPU driver",
                 "keep_gltest": true,
-                "title": "Use AMD card driver",
-                "name": "AMD card driver",
+                "description": "For special needs. Auto determine the acceleration way without external configuration.",
+                "prepare": "empty.sh",
+                "install": "empty.sh",
+                "remove": "empty.sh"
+            },
+            {
+                "name": "raedon",
+                "title": "Use Raedon driver",
+                "keep_gltest": true,
                 "description": "For special needs. Auto determine the acceleration way without external configuration.",
                 "prepare": "empty.sh",
                 "install": "empty.sh",
@@ -25,27 +32,15 @@
     },
 
     {
-        "type": 2,
         "name": "nvidia",
         "icon_name": "NVIDIA.svg",
         "status": "nvidia/status_nvidia.sh",
         "resolutions":
         [
             {
-                "id": 100,
-                "keep_gltest": true,
-                "title": "Use default driver",
-                "name": "NVIDIA Default Driver",
-                "description": "NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.",
-                "prepare": "nvidia/prepare_nouveau_opensource.sh",
-                "install": "nvidia/install_glamor.sh",
-                "remove": "nvidia/remove_glamor.sh"
-            },
-            {
-                "id": 200,
-                "keep_gltest": true,
+                "name": "nouveau",
                 "title": "Use open source driver",
-                "name": "NVIDIA Open Source Driver",
+                "keep_gltest": true,
                 "description": "Poor performance, unstable in some graphics cards.",
                 "version": "nvidia/version_nouveau_driver.sh",
                 "prepare": "nvidia/prepare_nouveau_opensource.sh",
@@ -53,10 +48,9 @@
                 "remove": "nvidia/remove_nouveau.sh"
             },
             {
-                "id": 300,
-                "keep_gltest": true,
+                "name": "nvidia",
                 "title": "Use closed source driver",
-                "name": "NVIDIA Closed Source Driver",
+                "keep_gltest": true,
                 "description": "Only adaptive to parts of distributions and graphics cards, may cause black screen.",
                 "version": "nvidia/version_nvidia_driver.sh",
                 "prepare": "nvidia/prepare_nvidia_closesource.sh",
@@ -67,37 +61,33 @@
     },
 
     {
-        "type": 4,
         "name": "intel",
         "icon_name": "Intel.svg",
         "status": "intel/intel_stat.sh",
         "resolutions":
         [
             {
-                "id": 100,
-                "keep_gltest": true,
+                "name": "glamor",
                 "title": "Use Intel default driver",
-                "name": "Intel Default Driver",
+                "keep_gltest": true,
                 "description": "Poor compatibility for parts of old graphics cards.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_glamor.sh",
                 "remove": "intel/remove_glamor.sh"
             },
             {
-                "id": 200,
-                "keep_gltest": true,
+                "name": "uxa",
                 "title": "Use Intel compatible mode",
-                "name": "Intel Compatible Mode",
+                "keep_gltest": true,
                 "description": "Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_uxa.sh",
                 "remove": "intel/remove_uxa.sh"
             },
             {
-                "id": 300,
-                "keep_gltest": true,
+                "name": "sna",
                 "title": "Use Intel acceleration mode",
-                "name": "Intel Acceleration Mode",
+                "keep_gltest": true,
                 "description": "Speed up the graphics card with better performance, but unstable in some cards with screen flashing.",
                 "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_sna.sh",
@@ -107,50 +97,15 @@
     },
 
     {
-        "type": 6,
         "name": "nvidia_intel",
         "icon_name": "Intel-NVIDIA.svg",
         "status": "nvidia_intel/status_nvidia_intel.sh",
         "resolutions":
         [
             {
-                "id": 100,
-                "keep_gltest": true,
-                "title": "Use Intel default driver",
-                "name": "Intel Default Driver",
-                "description": "Poor compatibility for parts of old graphics cards.",
-                "prepare": "nvidia_intel/prepare_nouveau_intel.sh",
-                "install": "nvidia_intel/install_glamor.sh",
-                "remove": "nvidia_intel/remove_glamor.sh"
-            },
-            {
-                "id": 200,
-                "keep_gltest": true,
-                "title": "Use open source driver",
-                "name": "NVIDIA Open Source Driver",
-                "description": "Poor performance, unstable in some graphics cards.",
-                "version": "nvidia/version_nouveau_driver.sh",
-                "prepare": "nvidia_intel/prepare_nouveau_intel.sh",
-                "install": "nvidia_intel/install_nouveau_intel.sh",
-                "remove": "nvidia_intel/remove_nouveau_intel.sh"
-            },
-            {
-                "id": 300,
-                "keep_gltest": true,
-                "title": "Use closed source driver",
-                "name": "NVIDIA Closed Source Driver",
-                "version": "nvidia/version_nvidia_driver.sh",
-                "description": "Only adaptive to parts of distributions and graphics cards, may cause black screen.",
-                "prepare": "nvidia_intel/prepare_nvidia_intel.sh",
-                "condition":"nvidia_intel/no_bumblebee.sh",
-                "install": "nvidia_intel/install_nvidia_intel.sh",
-                "remove": "nvidia_intel/remove_nvidia_intel.sh"
-            },
-            {
-                "id": 400,
-                "keep_gltest": true,
+                "name": "bumblebee",
                 "title": "Use Bumblebee Solution",
-                "name": "Bumblebee Solution",
+                "keep_gltest": true,
                 "description": "Save power to reduce power consumption.",
                 "prepare": "nvidia_intel/prepare_nvidia_intel_bumblebee.sh",
                 "condition": "nvidia_intel/bumblebee.sh",
@@ -159,11 +114,9 @@
                 "remove": "nvidia_intel/remove_nvidia_intel_bumblebee.sh"
             },
             {
-                "id": 500,
-                "display": false,
-                "keep_gltest": true,
+                "name": "prime",
                 "title": "Use NV-PRIME Solution",
-                "name": "PRIME Solution",
+                "keep_gltest": true,
                 "description": "For laptops with hybrid graphics, having best performance but must work with closed-source driver.",
                 "prepare": "nvidia_intel/prepare_nvidia_intel_prime.sh",
                 "condition": "nvidia_intel/bumblebee.sh",

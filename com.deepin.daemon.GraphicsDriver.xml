@@ -23,9 +23,6 @@
     </method>
     <method name="RealInstaller">
     </method>
-    <method name="GetNewDriverName">
-      <arg type="s" direction="out"/>
-    </method>
     <method name="GetOldDriverName">
       <arg type="s" direction="out"/>
     </method>

@@ -154,11 +154,6 @@ void GraphicsDriverInterface::RealInstaller()
     return;
 }
 
-QString GraphicsDriverInterface::GetNewDriverName()
-{
-    return QString("new driver");
-}
-
 QString GraphicsDriverInterface::GetOldDriverName()
 {
     QString statusScript = m_resolutions.statusScript();
@@ -222,22 +217,3 @@ QString GraphicsDriverInterface::GetOldDriverName()
     }
     return NULL;
 }
-
-void GraphicsDriverInterface::BuildResolution()
-{
-
-}
-
-void GraphicsDriverInterface::InstallDriver(int resolutionId)
-{
-
-}
-
-void GraphicsDriverInterface::RemoveDriver(int resolutionId)
-{
-
-}
-
-
-
-
