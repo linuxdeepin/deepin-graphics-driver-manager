@@ -1,51 +1,28 @@
 #!/bin/bash
 
-# exit 0 ------ no driver,use default glamor
-# exit 1 ------ use open nouveau driver
-# exit 2 ------ use private nvidia driver
-nouveau_mod=`lsmod | grep nouveau`
-nvidia_mod=`lsmod | grep nvidia`
+# exit 0 ------ Intel Glamor Accel Mode
+# exit 1 ------ Intel Uxa Accel Mode
+# exit 2 ------ Intel Sna Accel Mode
+# exit 3 ------ Bumblebee Mode
+# exit 3 ------ Prime Mode
+
 bumblebee_exist=`dpkg -s bumblebee 2>/dev/null | grep "Status: install ok installed"`
 prime_exist=`dpkg -s deepin-nvidia-prime 2>/dev/null | grep "Status: install ok installed"`
-BATTERY=`qdbus --system org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.LidIsPresent`
+intel_accel_method_sna=`cat /var/log/Xorg.0.log | grep SNA`
+intel_accel_method_uxa=`cat /var/log/Xorg.0.log | grep UXA`
 
-if [ x"$BATTERY" == x"true" ]; then
-    echo "Support bumblebee"
-    if [ -n "$nouveau_mod" ]; then
-        if [ -f /usr/lib/xorg/modules/drivers/nouveau_drv.so ];then
-            echo "Nouveau Mode"
-            exit 1
-        else
-            echo "Default Mode"
-            exit 0
-        fi
-    else
-        if [ -n "$bumblebee_exist" ]; then
-            echo "Bumblebee Mode"
-            exit 3
-        elif [ -n "$prime_exist" ]; then
-            echo "Prime Mode"
-            exit 4
-        else
-            echo "Can not find bumblebee or prime conf"
-            echo 0
-        fi
-    fi
+if [ -n "$prime_exist" ]; then
+    echo "Prime Mode"
+    exit 4
+elif [ -n "$bumblebee_exist" ]; then
+    echo "Bumblebee Mode"
+    exit 3
+elif [ -n "$intel_accel_method_sna" ];then
+    echo "Intel Sna Accel Mode"
+	exit 2
+elif [ -n "$intel_accel_method_uxa" ];then
+    echo "Intel Uxa Accel Mode"
+    exit 1
 else
-    echo "Doesn't support bumblebee"
-    if [ -n "$nouveau_mod" ]; then
-        if [ -f /usr/lib/xorg/modules/drivers/nouveau_drv.so ];then
-            echo "Nouveau Mode"
-            exit 1
-        else
-            echo "Default Mode"
-            exit 0
-        fi
-    elif [ -n "$nvidia_mod" ]; then
-            echo "Private Mode"
-            exit 2
-    else
-        echo "can not find any nvidia modules"
-        exit 0
-    fi
-fi
+    echo "Intel Glamor Accel Mode"
+    exit 0

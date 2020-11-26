@@ -42,12 +42,6 @@ public Q_SLOTS: // METHODS
         return asyncCallWithArgumentList(QStringLiteral("GetDevice"), argumentList);
     }
 
-    inline QDBusPendingReply<QString> GetNewDriverName()
-    {
-        QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("GetNewDriverName"), argumentList);
-    }
-
     inline QDBusPendingReply<QString> GetOldDriverName()
     {
         QList<QVariant> argumentList;

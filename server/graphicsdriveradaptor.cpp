@@ -41,14 +41,6 @@ QString GraphicsDriverAdaptor::GetDevice()
     return out0;
 }
 
-QString GraphicsDriverAdaptor::GetNewDriverName()
-{
-    // handle method call com.deepin.daemon.GraphicsDriver.GetNewDriverName
-    QString out0;
-    QMetaObject::invokeMethod(parent(), "GetNewDriverName", Q_RETURN_ARG(QString, out0));
-    return out0;
-}
-
 QString GraphicsDriverAdaptor::GetOldDriverName()
 {
     // handle method call com.deepin.daemon.GraphicsDriver.GetOldDriverName
