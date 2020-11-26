@@ -115,6 +115,26 @@ public slots:
     *************************************************/
     QString GetOldDriverName();
 
+    /*************************************************
+    Function:       // 函数名称
+    Description:    // 函数功能、性能等的描述
+    Input:          // 输入参数说明，包括每个参数的作用、取值说明及参数间关系。
+    Output:         // 对输出参数的说明。
+    Return:         // 函数返回值的说明
+    Others:         // 其它说明
+    *************************************************/
+    QString GetNewDriverName();
+
+    /*************************************************
+    Function:       // 函数名称
+    Description:    // 函数功能、性能等的描述
+    Input:          // 输入参数说明，包括每个参数的作用、取值说明及参数间关系。
+    Output:         // 对输出参数的说明。
+    Return:         // 函数返回值的说明
+    Others:         // 其它说明
+    *************************************************/
+    QString GetCurrDriverName();
+
 Q_SIGNALS:
     void PreInstallState(QString state);
     void RealInstallState(QString state);

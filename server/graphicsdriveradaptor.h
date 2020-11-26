@@ -56,6 +56,12 @@ class GraphicsDriverAdaptor: public QDBusAbstractAdaptor
 "    <method name=\"GetOldDriverName\">\n"
 "      <arg direction=\"out\" type=\"s\"/>\n"
 "    </method>\n"
+"    <method name=\"GetNewDriverName\">\n"
+"      <arg direction=\"out\" type=\"s\"/>\n"
+"    </method>\n"
+"    <method name=\"GetCurrDriverName\">\n"
+"      <arg direction=\"out\" type=\"s\"/>\n"
+"    </method>\n"
 "  </interface>\n"
         "")
 public:
@@ -64,7 +70,9 @@ public:
 
 public: // PROPERTIES
 public Q_SLOTS: // METHODS
+    QString GetCurrDriverName();
     QString GetDevice();
+    QString GetNewDriverName();
     QString GetOldDriverName();
     QString GetResolutionTitle();
     bool IsTestSuccess();

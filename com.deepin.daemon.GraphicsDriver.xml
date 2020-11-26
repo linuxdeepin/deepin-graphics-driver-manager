@@ -26,5 +26,11 @@
     <method name="GetOldDriverName">
       <arg type="s" direction="out"/>
     </method>
+    <method name="GetNewDriverName">
+      <arg type="s" direction="out"/>
+    </method>
+    <method name="GetCurrDriverName">
+      <arg type="s" direction="out"/>
+    </method>
   </interface>
 </node>

@@ -1,0 +1,5 @@
+deepin-graphics-driver-manager (1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- unknown <dong@dong-PC>  Thu, 26 Nov 2020 16:04:06 +0800

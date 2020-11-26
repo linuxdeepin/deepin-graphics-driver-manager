@@ -33,11 +33,27 @@ GraphicsDriverAdaptor::~GraphicsDriverAdaptor()
     // destructor
 }
 
+QString GraphicsDriverAdaptor::GetCurrDriverName()
+{
+    // handle method call com.deepin.daemon.GraphicsDriver.GetCurrDriverName
+    QString out0;
+    QMetaObject::invokeMethod(parent(), "GetCurrDriverName", Q_RETURN_ARG(QString, out0));
+    return out0;
+}
+
 QString GraphicsDriverAdaptor::GetDevice()
 {
     // handle method call com.deepin.daemon.GraphicsDriver.GetDevice
     QString out0;
     QMetaObject::invokeMethod(parent(), "GetDevice", Q_RETURN_ARG(QString, out0));
+    return out0;
+}
+
+QString GraphicsDriverAdaptor::GetNewDriverName()
+{
+    // handle method call com.deepin.daemon.GraphicsDriver.GetNewDriverName
+    QString out0;
+    QMetaObject::invokeMethod(parent(), "GetNewDriverName", Q_RETURN_ARG(QString, out0));
     return out0;
 }
 
