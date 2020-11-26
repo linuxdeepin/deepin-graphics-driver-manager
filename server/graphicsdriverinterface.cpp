@@ -55,14 +55,21 @@ void GraphicsDriverInterface::PrepareInstall(QString name)
     Resolution old_resl;
     QString old_name = GetOldDriverName();
     if ( name.isEmpty() || old_name.isEmpty() ){
+        qWarning("Resolution name is invalid!");
         return;
     }
     if ( name == old_name ){
+        qWarning("The new resolution and the old one cannot be the same!");
         return;
     }
     new_resl = m_resolutions.getResolutionByName(name);
+    if ( new_resl.isNull() ){
+        qWarning("Faild to get new resolution!");
+        return;
+    }
     old_resl = m_resolutions.getResolutionByName(old_name);
-    if ( new_resl.isNull() || old_resl.isNull()){
+    if ( old_resl.isNull() ){
+        qWarning("Faild to get old resolution!");
         return;
     }
 
