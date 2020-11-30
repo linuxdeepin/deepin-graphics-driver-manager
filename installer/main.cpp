@@ -32,12 +32,12 @@ DDialog *dialog(const QString &message, const QString &iconName)
 void show_success_dialog()
 {
     QString new_driver = "new_driver";
-    QDBusPendingReply<bool> reply = g_graphicsDriver->GetNewDriverName();
-    reply.waitForFinished();
-    if (reply.isValid())
-    {
-        new_driver = reply.value();
-    }
+    //QDBusPendingReply<bool> reply = g_graphicsDriver->GetNewDriverName();
+    //reply.waitForFinished();
+//    if (reply.isValid())
+//    {
+//        new_driver = reply.value();
+//    }
 
     const QString &message = qApp->translate("main", "Congratulations, you have switched to %1, please reboot to take effect.");
 
@@ -68,11 +68,11 @@ void show_fail_dialog()
         old_driver = oldDriverReply.value();
     }
 
-    QDBusPendingReply<QString> newDriverReply = g_graphicsDriver->GetNewDriverName();
-    if (newDriverReply.isValid())
-    {
-        new_driver = newDriverReply.value();
-    }
+//    QDBusPendingReply<QString> newDriverReply = g_graphicsDriver->GetNewDriverName();
+//    if (newDriverReply.isValid())
+//    {
+//        new_driver = newDriverReply.value();
+//    }
 
     const QString &message = qApp->translate("main", "Auto restore to %2 after failed to switch to %1");
 

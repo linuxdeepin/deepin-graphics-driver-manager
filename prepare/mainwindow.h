@@ -11,10 +11,13 @@
 #include <DSuggestButton>
 #include <QStackedLayout>
 #include "graphicsdriverproxy.h"
+#include "device.h"
 
 
 
 DWIDGET_USE_NAMESPACE
+
+#define TEST_UI
 
 class QLabel;
 class MainWindow : public DMainWindow
@@ -27,9 +30,16 @@ public:
 private:
     void keyPressEvent(QKeyEvent *e);
     void noResolutions();
+    void loadDevice();
+    void setVendorIcon();
 
 private Q_SLOTS:
     void loadResolutions();
+    void onResolutionSelected();
+    void onToggleBtnClicked();
+    void onRebootBtnClicked();
+    void onPolicyKitPassed();
+    void onPrepareFinished(bool success);
 
 private:
     int m_usedIndex;
@@ -50,6 +60,8 @@ private:
     DSuggestButton *m_okButton;
     DSuggestButton *m_rebootButton;
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver = nullptr;
+    DeviceList m_devices;
+
 };
 
 #endif

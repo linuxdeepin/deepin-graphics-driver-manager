@@ -5,7 +5,7 @@ set(BIN_NAME deepin-graphics-driver-manager-server)
 # Defines path to resource directories
 if (CMAKE_BUILD_TYPE MATCHES Debug)
   add_definitions("-DSCRIPTS_DIR=\"${CMAKE_SOURCE_DIR}/scripts/\"")
-  add_definitions("-DRESOLUTIONS_DIR=\"${CMAKE_SOURCE_DIR}/resources/config/resolutions/\"")
+  add_definitions("-DRESOLUTIONS_DIR=\"${CMAKE_SOURCE_DIR}/server/resources/config/resolutions/\"")
 else()
   add_definitions("-DSCRIPTS_DIR=\"${CMAKE_INSTALL_PREFIX}/lib/deepin-graphics-driver-manager/\"")
   add_definitions("-DRESOLUTIONS_DIR=\"${CMAKE_INSTALL_PREFIX}/lib/deepin-graphics-driver-manager/\"")

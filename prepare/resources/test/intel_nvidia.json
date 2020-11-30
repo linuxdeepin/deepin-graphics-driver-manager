@@ -1,0 +1,24 @@
+ {
+    "name": "nvidia_intel",
+    "type": 4,
+    "resolutions":
+    [
+        {
+            "name": "bumblebee",
+            "title": "Use Bumblebee Solution",
+            "description": "Save power to reduce power consumption.",
+            "driver": "xxx",
+            "currVersion": "yyy",
+            "repVersion": "zzz",
+            "enable": true
+        },
+        {
+            "name": "prime",
+            "title": "Use NV-PRIME Solution",
+            "description": "For laptops with hybrid graphics, having best performance but must work with closed-source driver.",
+            "currVersion": "yyy",
+            "repVersion": "zzz",
+            "enable": true
+        }
+    ]
+}

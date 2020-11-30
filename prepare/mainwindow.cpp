@@ -1,7 +1,7 @@
 
 #include "mainwindow.h"
 #include "resolutionwidget.h"
-
+#include "utils.h"
 
 #include <QApplication>
 #include <QScreen>
@@ -10,22 +10,25 @@
 #include <QTimer>
 #include <QLabel>
 #include <QAction>
-
 #include <DTitlebar>
 #include <DSvgRenderer>
 #include <DThemeManager>
+#include <QJsonObject>
+#include <QJsonDocument>
 
-
-#define INSTALLER_DESKTOP_FILE_SOURCE "/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-installer.desktop"
-#define INSTALLER_ROOT_DESKTOP_FILE_DEST "etc/xdg/autostart/deepin-gradvrmgr-installer.desktop"
-
-
-
+const QString GraphicMangerServiceName = "com.deepin.graphicmanger";
+const QString GraphicMangerPath = "/com/deepin/graphicmanger";
 
 
 MainWindow::MainWindow(QWidget *parent)
     : DMainWindow(parent)
 {
+
+    m_graphicsDriver = new ComDeepinDaemonGraphicsDriverInterface(
+                   GraphicMangerServiceName,
+                   GraphicMangerPath,
+                   QDBusConnection::systemBus());
+
     m_toggleButton = new DSuggestButton;
     m_toggleButton->setText(tr("Switch"));
     m_toggleButton->setFixedHeight(38);
@@ -60,7 +63,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_vendorIcon = new QLabel;
     m_vendorIcon->setAlignment(Qt::AlignCenter);
-    //m_vendorIcon->setPixmap(hidpiPixmap(":/resources/icons/" + m_resolutions.iconName(), QSize(128, 128)));
     m_vendorName = new QLabel;
     m_vendorName->setWordWrap(true);
     m_vendorName->setAlignment(Qt::AlignCenter);
@@ -103,7 +105,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_okButton, &DSuggestButton::clicked, qApp, &QApplication::quit);
 
     QTimer::singleShot(0, this, &MainWindow::loadResolutions);
-
 }
 
 MainWindow::~MainWindow()
@@ -121,7 +122,115 @@ void MainWindow::noResolutions()
 
 }
 
+void MainWindow::loadDevice()
+{
+    QString devices;
+#ifdef TEST_UI
+    QString path = RESOURCES_DIR"/test/device.json";
+    QFile file(path);
+    if (file.exists()) {
+       file.open(QIODevice::ReadOnly);
+       devices = QString(file.readAll());
+    }
+#else
+    QDBusPendingReply<QString> getDeviceReply = m_graphicsDriver->GetDevice();
+    getDeviceReply.waitForFinished();
+    if (!getDeviceReply.isValid()) {
+        qDebug() << getDeviceReply.error();
+        return;
+    }
+    devices = getDeviceReply.value();
+#endif
+    const QJsonObject devObj = Utils::QStringToJson(devices);
+    for (const auto d : devObj["devices"].toArray()) {
+        Device device(d.toObject());
+        if (device.name().isEmpty() || device.info().isEmpty()) {
+            return;
+        }
+        m_devices.push_back(device);
+    }
+    setVendorIcon();
+}
+
+void MainWindow::setVendorIcon()
+{
+    bool bIntel = false;
+    bool bAmd = false;
+    bool bNvidia = false;
+
+    QStringList devInfo;
+    foreach(const auto dev, m_devices) {
+        if (dev.name().contains("intel", Qt::CaseInsensitive)) {
+            bIntel = true;
+        }
+
+        if (dev.name().contains("amd", Qt::CaseInsensitive)) {
+            bAmd = true;
+        }
+
+        if (dev.name().contains("nvidia", Qt::CaseInsensitive)) {
+            bNvidia = true;
+        }
+        devInfo << dev.info();
+    }
+
+    QString iconPath;
+    if (bIntel && !bAmd && !bNvidia) {
+       iconPath = RESOURCES_DIR"/icons/Intel.svg";
+    }
+
+    if (bAmd && !bIntel && !bNvidia) {
+        iconPath = RESOURCES_DIR"/icons/AMD.svg";
+    }
+
+    if (bNvidia && !bIntel && !bAmd) {
+        iconPath = RESOURCES_DIR"/icons/NVIDIA.svg";
+    }
+
+    if (bIntel && bNvidia && !bAmd) {
+        iconPath = RESOURCES_DIR"/icons/Intel-NVIDIA.svg";
+    }
+
+    m_vendorIcon->setPixmap(Utils::hidpiPixmap(iconPath, QSize(128, 128)));
+    m_vendorName->setText(devInfo.join('\n'));
+
+}
+
 void MainWindow::loadResolutions()
+{
+    loadDevice();
+    QString strResolution;
+    QDBusPendingReply<QString> resolutionReply = m_graphicsDriver->GetResolutionTitle();
+    resolutionReply.waitForFinished();
+    if (!resolutionReply.isValid()) {
+        qDebug() << resolutionReply.error();
+    }
+
+    strResolution = resolutionReply.value();
+    qDebug() << strResolution;
+}
+
+void MainWindow::onResolutionSelected()
+{
+
+}
+
+void MainWindow::onToggleBtnClicked()
+{
+
+}
+
+void MainWindow::onRebootBtnClicked()
+{
+
+}
+
+void MainWindow::onPolicyKitPassed()
+{
+
+}
+
+void MainWindow::onPrepareFinished(bool success)
 {
 
 }

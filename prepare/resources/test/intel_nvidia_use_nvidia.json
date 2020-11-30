@@ -1,0 +1,27 @@
+{
+    "type": 6,
+    "name": "intel_nvidia_use_nvidia",
+    "resolutions":
+    [
+        {
+            "title": "Use open source driver",
+            "name": "NVIDIA Open Source Driver",
+            "description": "Poor performance, unstable in some graphics cards.",
+            "driver": "xxx",
+            "currVersion": "yyy",
+            "repVersion": "zzz",
+            "enable": true
+        },
+        {
+            "id": 300,
+            "keep_gltest": true,
+            "title": "Use closed source driver",
+            "name": "NVIDIA Closed Source Driver",
+            "description": "Only adaptive to parts of distributions and graphics cards, may cause black screen.",
+            "driver": "xxx",
+            "currVersion": "yyy",
+            "repVersion": "zzz",
+            "enable": false
+        }
+    ]
+}

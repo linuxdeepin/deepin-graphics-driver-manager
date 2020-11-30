@@ -3,7 +3,7 @@ set(BIN_NAME deepin-graphics-driver-manager)
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
   add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_SOURCE_DIR}/translations/\"")
-
+  add_definitions("-DRESOURCES_DIR=\"${CMAKE_SOURCE_DIR}/prepare/resources\"")
 else()
   add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_INSTALL_PREFIX}/share/deepin-graphics-driver-manager/translations/\"")
 endif()
