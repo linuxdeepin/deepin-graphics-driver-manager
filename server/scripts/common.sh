@@ -12,15 +12,10 @@ cleanWorking() {
         rm -rf $TEST_IN_OVERLAY_G
         rm -rf $REMOVE_OLD_G
         rm -rf $INSTALL_NEW_G
-        rm -rf /etc/modprobe.d/deepin-blacklists-nvidia.conf
     else
         /usr/sbin/overlayroot-chroot rm -rf $TEST_IN_OVERLAY_G
         /usr/sbin/overlayroot-chroot rm -rf $REMOVE_OLD_G
         /usr/sbin/overlayroot-chroot rm -rf $INSTALL_NEW_G
-        /usr/sbin/overlayroot-chroot rm -rf /etc/modprobe.d/deepin-blacklists-nvidia.conf
-        for v in $(linux-version list);do
-            overlayroot-chroot update-initramfs -u -t -k $v
-        done
         /usr/sbin/overlayroot-disable
     fi
 }
@@ -42,7 +37,7 @@ package_download() {
     pkg_list=$1
     len=$(($2+2))
     index=0
-    
+
     ratio=0
     echo "PROGRESS:${ratio}"
 

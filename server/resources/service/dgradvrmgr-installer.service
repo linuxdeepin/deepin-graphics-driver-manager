@@ -8,13 +8,13 @@ ConditionPathExists=/usr/lib/deepin-graphics-driver-manager/working-dir/test_in_
 [Service]
 Type=oneshot
 Environment=LC_ALL=C
-ExecStartPre=-/usr/sbin/overlayroot-disable
 ExecStartPre=-/usr/sbin/overlayroot-chroot rm -f /usr/lib/deepin-graphics-driver-manager/working-dir/test_in_overlay_flag
 ExecStartPre=-/usr/bin/xset s 0 0
 ExecStartPre=-/usr/bin/xset s off
 ExecStartPre=-/bin/dmesg --console-off
 ExecStartPre=-/bin/plymouth quit
-ExecStart=/usr/lib/deepin-graphics-driver-manager/dgradvrmgr.sh
+ExecStart=/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-test-install.sh
+ExecStartPost=-/usr/bin/touch /usr/lib/deepin-graphics-driver-manager/working-dir/dgradvrmgr_gltest_flag
 StandardInput=tty-force
 StandardOutput=journal
 StandardError=journal

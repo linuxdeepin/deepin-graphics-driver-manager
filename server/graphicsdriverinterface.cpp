@@ -105,10 +105,10 @@ void GraphicsDriverInterface::TestInstall()
 
     connect(proc, &QProcess::readyReadStandardOutput, this, [=]() {
         QString out = proc->readAllStandardOutput();
-        qDebug() << proc->program() << "Prepare Install:" << out;
+        qDebug() << proc->program() << "Test Install:" << out;
     });
     
-    const QString &cmd = scriptAbsolutePath("dgradvrmgr.sh");
+    const QString &cmd = scriptAbsolutePath("dgradvrmgr-test-install.sh");
 
     proc->start(cmd);
 }
@@ -130,27 +130,18 @@ bool GraphicsDriverInterface::IsTestSuccess()
 
 void GraphicsDriverInterface::RealInstaller()
 {
-    QProcess *removeProc = new QProcess;
-    const QString &sc = scriptAbsolutePath("dgradvrmgr-prepare.sh");
-    removeProc->connect(removeProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), removeProc, &QProcess::deleteLater);
-    removeProc->connect(removeProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), [=](int exitCode) {
-        if (exitCode != 0) {
-            qWarning() << "RealInstaller exitCode" << exitCode;
-            return;
-        }
+    QProcess *proc = new QProcess(this);
+    QPROCESS_DELETE_SELF(proc);
+    proc->setProcessChannelMode(QProcess::MergedChannels);
 
-        QProcess *installProc = new QProcess;
-        installProc->connect(installProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), installProc, &QProcess::deleteLater);
-        installProc->connect(installProc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), [=](int exitCode){
-            if (exitCode != 0) {
-                qWarning() << "RealInstaller exitCode" << exitCode;
-                return;
-            }
-        });
-        QString cmd = QString("%1 %2").arg(sc, "install");
-        installProc->start(cmd);
+    connect(proc, &QProcess::readyReadStandardOutput, this, [=]() {
+        QString out = proc->readAllStandardOutput();
+        qDebug() << proc->program() << "Real Install:" << out;
     });
-    QString cmd = QString("%1 %2").arg(sc, "remove");
+    
+    const QString &cmd = scriptAbsolutePath("dgradvrmgr-real-install.sh");
+
+    proc->start(cmd);
     return;
 }
 
