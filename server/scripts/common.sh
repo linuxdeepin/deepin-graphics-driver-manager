@@ -37,3 +37,34 @@ error_reboot() {
     sync
     reboot
 }
+
+package_download() {
+    pkg_list=$1
+    len=$(($2+2))
+    index=0
+    
+    ratio=0
+    echo "PROGRESS:${ratio}"
+
+    apt-get update
+    let index++
+    ratio=$(($index*100/$len))
+    echo "PROGRESS:${ratio}"
+
+    apt-get install  --fix-missing
+    let index++
+    ratio=$(($index*100/$len))
+    echo "PROGRESS:${ratio}"
+
+    for pkg in ${pkg_list[@]}
+    do
+        apt-get install -d --reinstall -y --allow-downgrades ${pkg};
+        if [ $? != 0 ]; then
+            echo "Download ${pkg} failed"
+            exit 1;
+        fi
+        let index++;
+        ratio=$(($index*100/$len))
+        echo "PROGRESS:${ratio}"
+    done
+}

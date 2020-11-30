@@ -2,25 +2,15 @@
 
 # The first download is to download missing packages based on dependencies.
 # The second time is to download packages that may be missing during the overlay phase.
+. /usr/lib/deepin-graphics-driver-manager/common.sh
 
-COMMANDS=(
-    "apt-get update"
-    "apt-get install  --fix-missing"
-    "apt-get install -d --reinstall -y --allow-downgrades \
-        nvidia-driver \
-        nvidia-driver-libs \
-        deepin-nvidia-prime "
+packages=(
+    "nvidia-driver"
+    "nvidia-driver-libs"
+    "deepin-nvidia-prime"
 )
 
-for cmd in "${COMMANDS[@]}"
-do
-    command ${cmd};
-
-    if [ $? != 0 ]; then
-        echo "### Failed in command '${cmd}'"
-        exit 1;
-    fi
-done
+package_download "${packages[*]}" "${#packages[*]}"
 
 # to avoid rmmod or modprobe failed so blacklists modules about nvidia before reboot to overlay
 echo "blacklists modules about nvidia now!"
