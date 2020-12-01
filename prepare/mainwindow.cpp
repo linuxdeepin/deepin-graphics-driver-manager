@@ -2,6 +2,7 @@
 #include "mainwindow.h"
 #include "resolutionwidget.h"
 #include "utils.h"
+#include "resolution.h"
 
 #include <QApplication>
 #include <QScreen>
@@ -32,6 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_toggleButton = new DSuggestButton;
     m_toggleButton->setText(tr("Switch"));
     m_toggleButton->setFixedHeight(38);
+    m_toggleButton->setVisible(false);
 
     m_topTips = new QLabel;
     m_topTips->setAlignment(Qt::AlignHCenter);
@@ -44,11 +46,22 @@ MainWindow::MainWindow(QWidget *parent)
     m_botTips->setWordWrap(true);
     m_botTips->setObjectName("BottomTips");
 
+    m_warnning = new QLabel;
+    m_warnning->setAlignment(Qt::AlignHCenter);
+    m_warnning->setVisible(false);
+    m_warnning->setWordWrap(true);
+    m_warnning->setObjectName("Warnning");
+
     m_tipsIcon = new QLabel;
 
     m_okButton = new DSuggestButton;
     m_okButton->setText(tr("OK"));
     m_okButton->setFixedHeight(38);
+
+    m_updateButton = new DSuggestButton;
+    m_updateButton->setText(tr("Update"));
+    m_updateButton->setFixedHeight(38);
+    m_updateButton->setVisible(false);
 
     m_rebootButton = new DSuggestButton;
     m_rebootButton->setText(tr("Reboot"));
@@ -66,7 +79,6 @@ MainWindow::MainWindow(QWidget *parent)
     m_vendorName = new QLabel;
     m_vendorName->setWordWrap(true);
     m_vendorName->setAlignment(Qt::AlignCenter);
-    //m_vendorName->setText(m_devInfo.devices().toList().join('\n'));
 
     m_resolutionsLayout = new QVBoxLayout;
     m_resolutionsLayout->setContentsMargins(8, 8, 8, 8);
@@ -87,8 +99,11 @@ MainWindow::MainWindow(QWidget *parent)
     centralLayout->setAlignment(m_progress, Qt::AlignHCenter);
     centralLayout->addWidget(m_botTips);
     centralLayout->addStretch();
+    centralLayout->addWidget(m_warnning);
+    centralLayout->addSpacing(10);
     centralLayout->addWidget(m_toggleButton);
     centralLayout->addWidget(m_okButton);
+    centralLayout->addWidget(m_updateButton);
     centralLayout->addWidget(m_rebootButton);
     centralLayout->setSpacing(0);
     centralLayout->setContentsMargins(40, 0, 40, 30);
@@ -100,7 +115,7 @@ MainWindow::MainWindow(QWidget *parent)
     setFixedSize(440, 600);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
-    //connect(m_toggleButton, &DSuggestButton::clicked, this, &MainWindow::onToggleBtnClicked);
+    connect(m_toggleButton, &DSuggestButton::clicked, this, &MainWindow::onToggleBtnClicked);
     //connect(m_rebootButton, &DSuggestButton::clicked, this, &MainWindow::onRebootBtnClicked);
     connect(m_okButton, &DSuggestButton::clicked, qApp, &QApplication::quit);
 
@@ -119,7 +134,12 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
 
 void MainWindow::noResolutions()
 {
-
+    m_tipsIcon->setVisible(true);
+    m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
+    m_botTips->setText(tr("Your hardware is not supported currently, please wait for future version."));
+    m_botTips->setVisible(true);
+    m_resolutionsWidget->setVisible(false);
+    m_toggleButton->setVisible(false);
 }
 
 void MainWindow::loadDevice()
@@ -200,17 +220,111 @@ void MainWindow::loadResolutions()
 {
     loadDevice();
     QString strResolution;
+
+#ifdef TEST_UI
+    QString path = RESOURCES_DIR"/test/intel_nvidia.json";
+    QFile file(path);
+    if (file.exists()) {
+       file.open(QIODevice::ReadOnly);
+       strResolution = QString(file.readAll());
+    }
+#else
+
     QDBusPendingReply<QString> resolutionReply = m_graphicsDriver->GetResolutionTitle();
     resolutionReply.waitForFinished();
     if (!resolutionReply.isValid()) {
         qDebug() << resolutionReply.error();
     }
-
     strResolution = resolutionReply.value();
+#endif
+
     qDebug() << strResolution;
+    QJsonObject resolutionRoot = Utils::QStringToJson(strResolution);
+
+    QJsonArray resolutions = resolutionRoot["resolutions"].toArray();
+    if (resolutions.empty()) {
+        noResolutions();
+        return;
+    }
+
+
+    if (resolutionRoot["type"].toInt() == INTEL_NVIDIA_USE_INTEL) {
+        m_warnning->setVisible(true);
+        m_warnning->setText(tr("The current access is the integrated graphics card interface. "
+                               "If you want to switch to the independent graphics card interface, the screen may appear black."));
+
+    } else if (resolutionRoot["type"].toInt() == INTEL_NVIDIA_USE_NVIDIA) {
+        m_warnning->setVisible(true);
+        m_warnning->setText(tr("The current access is an independent graphics card interface. "
+                               "If you want to switch to the integrated graphics card interface, the screen may appear black."));
+    }
+
+    int index = 0;
+    for (const auto res : resolutions) {
+        Resolution solution(res.toObject());
+        ResolutionWidget *rw = new ResolutionWidget(m_graphicsDriver, solution);
+        m_resolutionsLayout->addWidget(rw);
+        connect(rw, &ResolutionWidget::clicked, this, &MainWindow::onResolutionSelected);
+        if (solution.enable()) {
+            m_usedIndex = index;
+
+            if (rw->canUpdate()) {
+                m_updateButton->setVisible(true);
+                m_okButton->setVisible(false);
+                m_toggleButton->setVisible(false);
+            }
+        }
+
+        index++;
+    }
 }
 
 void MainWindow::onResolutionSelected()
+{
+    ResolutionWidget *rw = static_cast<ResolutionWidget *>(sender());
+    qDebug() << "Resolution selected: " << rw->resolution().name();
+
+    const int idx = m_resolutionsLayout->indexOf(rw);
+    Q_ASSERT(idx != -1);
+
+    m_selectedIndex = idx;
+
+    for (int i = 0; i != m_resolutionsLayout->count(); ++i)
+    {
+        ResolutionWidget *w = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(i)->widget());
+        w->setChecked(i == idx);
+    }
+
+    const bool changed = m_selectedIndex != m_usedIndex;
+
+    if (changed) {
+        if (rw->resolution().enable() && rw->canUpdate()) {
+            m_toggleButton->setVisible(false);
+            m_okButton->setVisible(false);
+            m_updateButton->setVisible(true);
+            m_updateButton->setFocus();
+        } else {
+            m_toggleButton->setVisible(true);
+            m_toggleButton->setFocus();
+            m_updateButton->setVisible(false);
+
+        }
+
+    } else {
+        if (rw->canUpdate()) {
+            m_toggleButton->setVisible(false);
+            m_okButton->setVisible(false);
+            m_updateButton->setVisible(true);
+            m_updateButton->setFocus();
+        } else {
+            m_okButton->setFocus();
+            m_toggleButton->setVisible(true);
+        }
+
+    }
+}
+
+void MainWindow::onUpdateBtnClicked()
 {
 
 }

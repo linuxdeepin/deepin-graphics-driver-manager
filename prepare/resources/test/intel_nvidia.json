@@ -8,8 +8,8 @@
             "title": "Use Bumblebee Solution",
             "description": "Save power to reduce power consumption.",
             "driver": "xxx",
-            "currVersion": "yyy",
-            "repVersion": "zzz",
+            "currVersion": "1.1",
+            "repVersion": "1.2",
             "enable": true
         },
         {
@@ -18,7 +18,7 @@
             "description": "For laptops with hybrid graphics, having best performance but must work with closed-source driver.",
             "currVersion": "yyy",
             "repVersion": "zzz",
-            "enable": true
+            "enable": false
         }
     ]
 }

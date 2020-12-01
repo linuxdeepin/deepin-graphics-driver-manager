@@ -25,6 +25,15 @@ class MainWindow : public DMainWindow
     Q_OBJECT
 
 public:
+    enum SolutionType {
+        NoResolution = 0,
+        AMD,
+        NVIDIA,
+        INTEL,
+        INTEL_NVIDIA,
+        INTEL_NVIDIA_USE_INTEL,
+        INTEL_NVIDIA_USE_NVIDIA
+    };
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 private:
@@ -36,6 +45,7 @@ private:
 private Q_SLOTS:
     void loadResolutions();
     void onResolutionSelected();
+    void onUpdateBtnClicked();
     void onToggleBtnClicked();
     void onRebootBtnClicked();
     void onPolicyKitPassed();
@@ -53,11 +63,13 @@ private:
     QLabel *m_vendorIcon;
     QLabel *m_vendorName;
     QLabel *m_tipsIcon;
+    QLabel *m_warnning;
     QLabel *m_botTips;
     QWidget *m_resolutionsWidget;
     DWaterProgress *m_progress;
     DSuggestButton *m_toggleButton;
     DSuggestButton *m_okButton;
+    DSuggestButton *m_updateButton;
     DSuggestButton *m_rebootButton;
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver = nullptr;
     DeviceList m_devices;

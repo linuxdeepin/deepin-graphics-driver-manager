@@ -3,6 +3,7 @@
 
 #include <QJsonObject>
 #include <QString>
+#include <QList>
 
 class Resolution
 {
@@ -21,7 +22,7 @@ public:
     inline const QString name() const { return m_name; }
     inline const QString title() const { return m_title; }
     inline const QString description() const { return m_description; }
-    inline const QString driver() const { return m_name; }
+    inline const QString driver() const { return m_driver; }
     inline const QString currVersion() const { return m_currVersion; }
     inline const QString repVersion() const { return m_repVersion; }
     inline bool enable() const { return m_enable; }
