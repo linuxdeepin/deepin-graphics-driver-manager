@@ -70,6 +70,7 @@ private:
     DSuggestButton *m_okButton;
     DSuggestButton *m_updateButton;
     DSuggestButton *m_rebootButton;
+    DSuggestButton *m_rebootLaterButton;
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver = nullptr;
     DeviceList m_devices;
 

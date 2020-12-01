@@ -68,6 +68,11 @@ MainWindow::MainWindow(QWidget *parent)
     m_rebootButton->setFixedHeight(38);
     m_rebootButton->setVisible(false);
 
+    m_rebootLaterButton = new DSuggestButton;
+    m_rebootLaterButton->setText(tr("Reboot later"));
+    m_rebootLaterButton->setFixedHeight(38);
+    m_rebootLaterButton->setVisible(false);
+
     m_progress = new DWaterProgress;
     m_progress->setTextVisible(true);
     m_progress->setFixedSize(100, 100);
@@ -104,7 +109,13 @@ MainWindow::MainWindow(QWidget *parent)
     centralLayout->addWidget(m_toggleButton);
     centralLayout->addWidget(m_okButton);
     centralLayout->addWidget(m_updateButton);
-    centralLayout->addWidget(m_rebootButton);
+
+    QHBoxLayout *hBoxLayout = new QHBoxLayout;
+    hBoxLayout->addWidget(m_rebootLaterButton);
+    hBoxLayout->addSpacing(10);
+    hBoxLayout->addWidget(m_rebootButton);
+
+    centralLayout->addLayout(hBoxLayout);
     centralLayout->setSpacing(0);
     centralLayout->setContentsMargins(40, 0, 40, 30);
 
@@ -112,12 +123,13 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(new QWidget);
     centralWidget()->setLayout(centralLayout);
 
-    setFixedSize(440, 600);
+    setFixedSize(484, 682);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
     connect(m_toggleButton, &DSuggestButton::clicked, this, &MainWindow::onToggleBtnClicked);
-    //connect(m_rebootButton, &DSuggestButton::clicked, this, &MainWindow::onRebootBtnClicked);
+    connect(m_rebootButton, &DSuggestButton::clicked, this, &MainWindow::onRebootBtnClicked);
     connect(m_okButton, &DSuggestButton::clicked, qApp, &QApplication::quit);
+    connect(m_rebootLaterButton, &DSuggestButton::clicked, qApp, &QApplication::quit);
 
     QTimer::singleShot(0, this, &MainWindow::loadResolutions);
 }
@@ -250,13 +262,11 @@ void MainWindow::loadResolutions()
 
     if (resolutionRoot["type"].toInt() == INTEL_NVIDIA_USE_INTEL) {
         m_warnning->setVisible(true);
-        m_warnning->setText(tr("The current access is the integrated graphics card interface. "
-                               "If you want to switch to the independent graphics card interface, the screen may appear black."));
+        m_warnning->setText(tr("Switching to the discrete graphics interface may cause a black screen."));
 
     } else if (resolutionRoot["type"].toInt() == INTEL_NVIDIA_USE_NVIDIA) {
         m_warnning->setVisible(true);
-        m_warnning->setText(tr("The current access is an independent graphics card interface. "
-                               "If you want to switch to the integrated graphics card interface, the screen may appear black."));
+        m_warnning->setText(tr("Switching to the integrated graphics interface may cause a black screen."));
     }
 
     int index = 0;
@@ -302,10 +312,10 @@ void MainWindow::onResolutionSelected()
             m_toggleButton->setVisible(false);
             m_okButton->setVisible(false);
             m_updateButton->setVisible(true);
-            m_updateButton->setFocus();
+            //m_updateButton->setFocus();
         } else {
             m_toggleButton->setVisible(true);
-            m_toggleButton->setFocus();
+            //m_toggleButton->setFocus();
             m_updateButton->setVisible(false);
 
         }
@@ -315,9 +325,9 @@ void MainWindow::onResolutionSelected()
             m_toggleButton->setVisible(false);
             m_okButton->setVisible(false);
             m_updateButton->setVisible(true);
-            m_updateButton->setFocus();
+            //m_updateButton->setFocus();
         } else {
-            m_okButton->setFocus();
+            //m_okButton->setFocus();
             m_toggleButton->setVisible(true);
         }
 
@@ -386,7 +396,7 @@ void MainWindow::onPrepareFinished(bool success)
        m_botTips->setText(tr("Sorry, switch failed"));
        m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
        m_okButton->setVisible(true);
-       m_okButton->setFocus();
+       //m_okButton->setFocus();
     } else {
        m_topTips->setText(tr("Download Successful"));
        if (!m_devices.empty())
@@ -395,7 +405,8 @@ void MainWindow::onPrepareFinished(bool success)
            m_botTips->setText(tr("Please reboot to test the driver"));
        m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/success.svg", QSize(128, 128)));
        m_rebootButton->setVisible(true);
-       m_rebootButton->setFocus();
+       m_rebootLaterButton->setVisible(true);
+       //m_rebootButton->setFocus();
 
 //       QFile installerDesktopFileSource(INSTALLER_DESKTOP_FILE_SOURCE);
 //       if (installerDesktopFileSource.exists())

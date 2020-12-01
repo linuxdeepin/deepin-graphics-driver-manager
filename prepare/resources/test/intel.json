@@ -4,7 +4,7 @@
     "resolutions":
     [
         {
-            "title": "Use Intel default driver",
+            "title": "Integrated graphics driver",
             "name": "glamor",
             "description": "Poor compatibility for parts of old graphics cards.",
             "driver": "xxx",
@@ -14,7 +14,7 @@
         },
 
         {
-            "title": "Use Intel compatible mode",
+            "title": "Integrated graphics driver",
             "name": "uxa",
             "description": "Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.",
             "driver": "xxx",
@@ -25,7 +25,7 @@
 
         {
             "name": "sna",
-            "title": "Use Intel acceleration mode",
+            "title": "Integrated graphics driver",
             "description": "Speed up the graphics card with better performance, but unstable in some cards with screen flashing.",
             "driver": "xxx",
             "currVersion": "yyy",

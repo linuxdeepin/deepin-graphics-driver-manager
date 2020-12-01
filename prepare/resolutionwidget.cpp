@@ -24,7 +24,7 @@ ResolutionWidget::ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graph
        m_title->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
 
        m_version = new QLabel;
-       m_version->setText(tr("dirver/version: %1/%2").arg(resolution.driver()).arg(resolution.currVersion()));
+       m_version->setText(tr("Dirver/Version: %1/%2").arg(resolution.driver()).arg(resolution.currVersion()));
        m_version->setWordWrap(true);
        m_version->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
        m_version->setAlignment(Qt::AlignTop | Qt::AlignLeft);
@@ -78,7 +78,7 @@ void ResolutionWidget::setChecked(const bool checked)
 void ResolutionWidget::prepareInstall()
 {
 #ifdef TEST_UI
-    m_timer.setInterval(100);
+    m_timer.setInterval(50);
     m_timer.start();
     m_process = 0;
     connect(&m_timer, &QTimer::timeout, this, &ResolutionWidget::onTimeout);
