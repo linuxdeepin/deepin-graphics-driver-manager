@@ -11,7 +11,9 @@
 #include <QProcess>
 #include <QDir>
 #include <QLineEdit>
+#include <QTimer>
 
+#define TEST_UI
 
 class QLabel;
 class ResolutionWidget: public QFrame
@@ -22,7 +24,7 @@ public:
     explicit ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graphicsDriver, Resolution &resolution,  QWidget *parent = nullptr);
 
     void setChecked(const bool checked);
-    void prepareInstall(const Resolution &old_resolution);
+    void prepareInstall();
     bool checked() const { return m_checked; }
     const Resolution resolution() const { return m_resolution; }
     bool canUpdate();
@@ -30,16 +32,12 @@ public:
 
 signals:
     void clicked() const;
-    void policyKitPassed();
-    void prepareFinished(const int exitCode);
-
+    void policyKitPassed(const QString &state);
+    void prepareFinished(const bool success);
 
 
 protected:
     void mouseReleaseEvent(QMouseEvent *e);
-
-private slots:
-    void checkVersion();
 
 private:
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver;
@@ -50,6 +48,14 @@ private:
     QLabel *m_title;
     QLabel *m_version;
     QLabel *m_description;
+#ifdef TEST_UI
+private slots:
+    void onTimeout();
+private:
+    QTimer m_timer;
+    int m_process;
+#endif
+
 };
 
 #endif

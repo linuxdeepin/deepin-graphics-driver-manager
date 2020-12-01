@@ -59,9 +59,6 @@ ResolutionWidget::ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graph
        centralLayout->setSpacing(0);
        centralLayout->setContentsMargins(0, 0, 0, 0);
 
-
-       QTimer::singleShot(1, this, &ResolutionWidget::checkVersion);
-
        setLayout(centralLayout);
        setFixedHeight(80);
        setChecked(resolution.enable());
@@ -69,12 +66,31 @@ ResolutionWidget::ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graph
        setStyleSheet("QFrame#ResolutionWidget {"
    //                   "border: 1px solid red;"
                      "}");
+
 }
 
 void ResolutionWidget::setChecked(const bool checked)
 {
     m_checked = checked;
     m_checkedBtn->setVisible(checked);
+}
+
+void ResolutionWidget::prepareInstall()
+{
+#ifdef TEST_UI
+    m_timer.setInterval(100);
+    m_timer.start();
+    m_process = 0;
+    connect(&m_timer, &QTimer::timeout, this, &ResolutionWidget::onTimeout);
+#else
+    QDBusPendingReply<void> preInstallReply = m_graphicsDriver->PrepareInstall(m_resolution.name());
+    if (!preInstallReply.isValid()) {
+        qDebug() << preInstallReply.error();
+        emit prepareFinished(false);
+        return;
+    }
+    connect(m_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::PreInstallState, this, &ResolutionWidget::policyKitPassed);
+#endif
 }
 
 bool ResolutionWidget::canUpdate()
@@ -88,8 +104,15 @@ void ResolutionWidget::mouseReleaseEvent(QMouseEvent *e)
     emit clicked();
 }
 
-void ResolutionWidget::checkVersion()
+void ResolutionWidget::onTimeout()
 {
-
+    m_process++;
+    QString state = QString("%1").arg(m_process);
+    emit policyKitPassed(state);
+    if (m_process >= 100) {
+        m_process = 0;
+        emit prepareFinished(true);
+    }
 }
+
 

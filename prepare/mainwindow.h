@@ -17,7 +17,6 @@
 
 DWIDGET_USE_NAMESPACE
 
-#define TEST_UI
 
 class QLabel;
 class MainWindow : public DMainWindow
@@ -48,7 +47,7 @@ private Q_SLOTS:
     void onUpdateBtnClicked();
     void onToggleBtnClicked();
     void onRebootBtnClicked();
-    void onPolicyKitPassed();
+    void onPolicyKitPassed(const QString &state);
     void onPrepareFinished(bool success);
 
 private:

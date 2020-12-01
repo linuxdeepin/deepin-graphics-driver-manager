@@ -331,7 +331,15 @@ void MainWindow::onUpdateBtnClicked()
 
 void MainWindow::onToggleBtnClicked()
 {
+    Q_ASSERT(m_selectedIndex != m_usedIndex);
 
+    m_started = false;
+
+    ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
+    new_driver_widget->prepareInstall();
+
+    connect(new_driver_widget, &ResolutionWidget::prepareFinished, this, &MainWindow::onPrepareFinished);
+    connect(new_driver_widget, &ResolutionWidget::policyKitPassed, this, &MainWindow::onPolicyKitPassed);
 }
 
 void MainWindow::onRebootBtnClicked()
@@ -339,12 +347,60 @@ void MainWindow::onRebootBtnClicked()
 
 }
 
-void MainWindow::onPolicyKitPassed()
+void MainWindow::onPolicyKitPassed(const QString &state)
 {
+    ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
+    const QString &new_driver_name = new_driver_widget->resolution().name();
+
+    if (!m_started) {
+        m_started = true;
+        // toggle UI
+        m_topTips->setText(tr("Downloading"));
+        m_topTips->setVisible(true);
+        m_botTips->setText(tr("Downloading the driver for %1, please wait...").arg(new_driver_name));
+        m_botTips->setVisible(true);
+        m_vendorIcon->setVisible(false);
+        m_vendorName->setVisible(false);
+        m_resolutionsWidget->setVisible(false);
+        m_toggleButton->setVisible(false);
+        m_progress->setVisible(true);
+        m_progress->start();
+    } else {
+        int processValue = state.toInt();
+        m_progress->setValue(processValue);
+    }
 
 }
 
 void MainWindow::onPrepareFinished(bool success)
 {
+    if (!m_started)
+           return;
 
+    m_progress->setVisible(false);
+    m_progress->stop();
+    m_tipsIcon->setVisible(true);
+
+    if (!success) {
+       m_topTips->setText(tr("Download failed"));
+       m_botTips->setText(tr("Sorry, switch failed"));
+       m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
+       m_okButton->setVisible(true);
+       m_okButton->setFocus();
+    } else {
+       m_topTips->setText(tr("Download Successful"));
+       if (!m_devices.empty())
+           m_botTips->setText(tr("Please reboot to test the driver.\n\nIf no signal, please confirm whether the monitor output port is connected correctly."));
+       else
+           m_botTips->setText(tr("Please reboot to test the driver"));
+       m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/success.svg", QSize(128, 128)));
+       m_rebootButton->setVisible(true);
+       m_rebootButton->setFocus();
+
+//       QFile installerDesktopFileSource(INSTALLER_DESKTOP_FILE_SOURCE);
+//       if (installerDesktopFileSource.exists())
+//           installerDesktopFileSource.copy(QDir::rootPath() + INSTALLER_ROOT_DESKTOP_FILE_DEST);
+//       else
+//           qDebug() << INSTALLER_DESKTOP_FILE_SOURCE << "do not exists!";
+    }
 }
