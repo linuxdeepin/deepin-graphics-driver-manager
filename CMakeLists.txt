@@ -21,6 +21,18 @@ execute_process(COMMAND bash "-c" "qdbusxml2cpp ../com.deepin.daemon.GraphicsDri
 execute_process(COMMAND bash "-c" "qdbusxml2cpp ../com.deepin.daemon.GraphicsDriver.xml -p graphicsdriverproxy"
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/utils)
 
+if (NOT (${CMAKE_BUILD_TYPE} MATCHES "Debug"))
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Ofast")
+
+    # generate qm
+    execute_process(COMMAND bash "translate_generation.sh"
+                    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+    execute_process(COMMAND bash "translate_ts2desktop.sh"
+                    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+endif ()
+
+
+
 file(GLOB UTILS_FILES "${CMAKE_SOURCE_DIR}/utils/*.h" "${CMAKE_SOURCE_DIR}/utils/*.cpp")
 
 add_subdirectory(server)

@@ -10,8 +10,6 @@ endif()
 
 find_package(PkgConfig REQUIRED)
 find_package(Qt5Widgets REQUIRED)
-find_package(OpenGL REQUIRED)
-find_package(GLUT REQUIRED)
 find_package(Qt5DBus REQUIRED)
 
 pkg_check_modules(DtkWidget REQUIRED dtkwidget)
@@ -28,8 +26,6 @@ target_include_directories(${BIN_NAME} PUBLIC
 
 target_link_libraries(${BIN_NAME}
     ${Qt5DBus_LIBRARIES}
-    ${OPENGL_LIBRARIES}
-    ${GLUT_LIBRARIES}
     ${Qt5Widgets_LIBRARIES}
     ${DtkWidget_LIBRARIES}
 )

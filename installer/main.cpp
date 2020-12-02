@@ -87,21 +87,13 @@ void show_fail_dialog()
 int show_install_dialog() {
     DDialog *installDialog = dialog(qApp->translate("main", "Updating the driver, please wait..."), "://resources/icons/deepin-graphics-driver-manager-installing.svg");
 
-    g_graphicsDriver->RealInstaller();
-//    QObject::connect(g_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::removeDriverResult, [=](int result) {
-//        qDebug() << "remove driver result " << result;
-//        if (result != 0)
-//        {
-//            installDialog->done(result);
-//            return;
-//        }
+    QDBusPendingReply<void> realInstallReply =  g_graphicsDriver->RealInstaller();
+    if (realInstallReply.isValid()) {
+        installDialog->done(0);
+    } else {
+        installDialog->done(1);
+    }
 
-//        QObject::connect(g_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::installDriverResult, [=](int result) {
-//            installDialog->done(result);
-//        });
-//        g_graphicsDriver->installDriver();
-
-//    });
     return installDialog->exec();
 }
 

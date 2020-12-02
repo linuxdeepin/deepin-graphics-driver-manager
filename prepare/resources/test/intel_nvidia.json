@@ -20,7 +20,7 @@
             "driver": "xxx",
             "currVersion": "1.1",
             "repVersion": "1.2",
-            "enable": true
+            "enable": false
         },
         {
             "name": "prime",

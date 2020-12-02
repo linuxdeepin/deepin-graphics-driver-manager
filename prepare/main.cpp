@@ -7,15 +7,18 @@
 
 DCORE_USE_NAMESPACE
 
+QString getUserName()
+{
+    QString userPath = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
+    return userPath.section("/", -1, -1);
+}
 
 int main(int argc, char* argv[])
 {
     DApplication app(argc, argv);
-
+    app.loadTranslator();
     QString loc = QLocale::system().name();
-    if (argc == 2) {
-        loc = QString(argv[1]);
-    }
+
     QString loc_tr_file = QString(TRANSLATIONS_DIR"/deepin-graphics-driver-manager_%1.qm");
 
     QTranslator trans;
@@ -25,9 +28,7 @@ int main(int argc, char* argv[])
     if (!app.setSingleInstance("dgradvrmgr"))
         return -1;
 
-    QList<QLocale> locale;
-    locale << QLocale(loc);
-    app.loadTranslator(locale);
+
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
     app.setOrganizationName("deepin");
     app.setApplicationName(" ");
@@ -37,11 +38,21 @@ int main(int argc, char* argv[])
     app.setProductName(QApplication::translate("main", "Graphics Driver Manager"));
     app.setApplicationDescription(QApplication::translate("main", "Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions."));
 
-    DLogManager::registerConsoleAppender();
-    DLogManager::registerFileAppender();
+    //设置日志
+    const QString logFormat = "[%{time}{yyyy-MM-dd, HH:mm:ss.zzz}] [%{type:-7}] [%{file}=>%{function}: %{line}] %{message}\n";
+    const QString log_file(QString("/home/%1/deepin-graphics-driver-manager.log").arg(getUserName()));
+    ConsoleAppender *consoleAppender = new ConsoleAppender;
+    consoleAppender->setFormat(logFormat);
+    RollingFileAppender *rollingFileAppender = new RollingFileAppender(log_file);
+    rollingFileAppender->setFormat(logFormat);
+    rollingFileAppender->setLogFilesLimit(5);
+    rollingFileAppender->setDatePattern(RollingFileAppender::MinutelyRollover);
+
+    logger->registerAppender(consoleAppender);
+    logger->registerAppender(rollingFileAppender);
 
     MainWindow w;
     w.show();
 
-   return app.exec();
+    return app.exec();
 }
