@@ -1,6 +1,5 @@
 [
     {
-        "type": 0,
         "name": "none"
     },
 
@@ -12,6 +11,7 @@
         [
             {
                 "name": "amdgpu",
+                "driver": "amdgpu",
                 "title": "Use AMDGPU driver",
                 "keep_gltest": true,
                 "description": "For special needs. Auto determine the acceleration way without external configuration.",
@@ -21,6 +21,7 @@
             },
             {
                 "name": "raedon",
+                "driver": "raedon",
                 "title": "Use Raedon driver",
                 "keep_gltest": true,
                 "description": "For special needs. Auto determine the acceleration way without external configuration.",
@@ -39,6 +40,7 @@
         [
             {
                 "name": "nouveau",
+                "driver": "nouveau",
                 "title": "Use open source driver",
                 "keep_gltest": true,
                 "description": "Poor performance, unstable in some graphics cards.",
@@ -49,6 +51,7 @@
             },
             {
                 "name": "nvidia",
+                "driver": "nvidia",
                 "title": "Use closed source driver",
                 "keep_gltest": true,
                 "description": "Only adaptive to parts of distributions and graphics cards, may cause black screen.",
@@ -68,6 +71,7 @@
         [
             {
                 "name": "glamor",
+                "driver": "i915",
                 "title": "Use Intel default driver",
                 "keep_gltest": true,
                 "description": "Poor compatibility for parts of old graphics cards.",
@@ -77,6 +81,7 @@
             },
             {
                 "name": "uxa",
+                "driver": "i915",
                 "title": "Use Intel compatible mode",
                 "keep_gltest": true,
                 "description": "Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.",
@@ -86,6 +91,7 @@
             },
             {
                 "name": "sna",
+                "driver": "i915",
                 "title": "Use Intel acceleration mode",
                 "keep_gltest": true,
                 "description": "Speed up the graphics card with better performance, but unstable in some cards with screen flashing.",
@@ -104,6 +110,7 @@
         [
             {
                 "name": "bumblebee",
+                "driver": "nvidia",
                 "title": "Use Bumblebee Solution",
                 "keep_gltest": true,
                 "description": "Save power to reduce power consumption.",
@@ -115,6 +122,7 @@
             },
             {
                 "name": "prime",
+                "driver": "nvidia",
                 "title": "Use NV-PRIME Solution",
                 "keep_gltest": true,
                 "description": "For laptops with hybrid graphics, having best performance but must work with closed-source driver.",

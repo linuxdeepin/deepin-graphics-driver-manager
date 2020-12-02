@@ -101,7 +101,6 @@ void GraphicsDeviceInfo::init()
         m_sysDevFlag |= flag;
     }
     pci_cleanup(pacc);
-
     QFile file("/sys/class/graphics/fb0/device/uevent");
     file.open(QIODevice::ReadOnly);
     if (!file.isOpen()) {

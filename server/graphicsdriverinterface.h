@@ -8,13 +8,14 @@
 #include <QProcess>
 #include <QDebug>
 #include <QDir>
+#include <functional>
 
 inline const QString scriptAbsolutePath(const QString &scriptName)
 {
 #ifdef QT_DEBUG
-    return QDir::currentPath() + "/scripts/" + scriptName;
+    return QDir::currentPath() + "/server/scripts/" + scriptName;
 #else
-    return "/usr/lib/deepin-graphics-driver-manager/" + scriptName;
+    return "/usr/lib/deepin-graphics-driver-manager/scripts/" + scriptName;
 #endif
 }
 
@@ -135,9 +136,16 @@ public slots:
     *************************************************/
     QString GetCurrDriverName();
 
+private:
+    QString GetKernelVersion();
+    QString GetCurrPackageVersion(QString pkg_name);
+    QString GetDepoPackageVersion(QString pkg_name);
+    bool command(const QString &cmd, const QStringList &args, QString &output);
+
 Q_SIGNALS:
     void PreInstallState(QString state);
     void RealInstallState(QString state);
+    void ReportProgress(int ratio);
    
 private:
     GraphicsDeviceInfo m_devInfo;

@@ -16,6 +16,7 @@ public:
     inline bool display() const { return m_display; }
     inline bool keep_gltest() const { return m_keepGLTest; }
     inline const QString name() const { return m_resName; }
+    inline const QString driver() const { return m_resdriver; }
     inline const QString title() const { return m_resTitle; }
     inline const QString description() const { return m_resDescription; }
     inline const QString prepareScript() const { return m_prepareScript; }
@@ -31,6 +32,7 @@ private:
     bool m_display;
     bool m_keepGLTest;
     QString m_resName;
+    QString m_resdriver;
     QString m_resTitle;
     QString m_resDescription;
     QString m_prepareScript;

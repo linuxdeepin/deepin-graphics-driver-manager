@@ -27,6 +27,7 @@ Resolution::Resolution(const QJsonObject &info)
     m_resId = info["id"].toInt();
     m_keepGLTest = info["keep_gltest"].toBool();
     m_resName = info["name"].toString();
+    m_resdriver = info["driver"].toString();
     m_resTitle = info["title"].toString();
     m_resDescription = info["description"].toString();
     m_prepareScript = info["prepare"].toString();

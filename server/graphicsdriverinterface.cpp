@@ -7,6 +7,7 @@
 #include <QSettings>
 #include <QTextCodec>
 #include <QFile>
+#include <QJsonArray>
 
 using namespace std;
 
@@ -22,15 +23,86 @@ GraphicsDriverInterface::~GraphicsDriverInterface()
     // TODO: Needs implementation
 }
 
+bool GraphicsDriverInterface::command(const QString &cmd, const QStringList &args, QString &output) {
+    QProcess *proc = new QProcess(this);
+    proc->setProcessChannelMode(QProcess::MergedChannels);
+
+    connect(proc, &QProcess::readyReadStandardOutput, this, [&]() {
+        QString out = proc->readAllStandardOutput();
+        //qDebug() << "comand out:" << out;
+        output += out;
+    });
+    proc->start(cmd, args);
+    proc->waitForStarted(-1);
+    proc->waitForFinished();
+    if ( QProcess::NormalExit != proc->exitStatus()  || proc->error() < QProcess::UnknownError){
+        qWarning("Excute the comand(%s) failed!", qPrintable(cmd));
+        qWarning() << "Error:" << proc->error();
+        qWarning() << "Status:" << proc->exitStatus();
+        return false;
+    }
+    return true;
+}
+
+
+QString GraphicsDriverInterface::GetKernelVersion() {
+    QString output;
+    if (!command("uname", QStringList() << "-r", output)){
+        return nullptr;
+    }
+    return output.split("-")[0];
+}
+
+QString GraphicsDriverInterface::GetCurrPackageVersion(QString pkg_name){
+    QString output;
+    QStringList args;
+    args << "-s" << pkg_name;
+    if (!command("dpkg", args, output)){
+        return nullptr;
+    }
+    QStringList line_list = output.split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
+    int index = 0;
+    for(; index < line_list.size(); index++){
+        if (line_list[index].contains("Version: "))
+            break;
+    }
+    if ( index == line_list.size()){
+        return nullptr;
+    }
+    return line_list[index].split(" ")[1].split("-")[0];
+}
+
+QString GraphicsDriverInterface::GetDepoPackageVersion(QString pkg_name){
+    QString output;
+    QStringList args;
+    args << "show" << pkg_name;
+    if (!command("apt", args, output)){
+        return nullptr;
+    }
+    QStringList line_list = output.split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
+    int index = 0;
+    for(; index < line_list.size(); index++){
+        if (line_list[index].contains("Version: "))
+            break;
+    }
+    if ( index == line_list.size()){
+        return nullptr;
+    }
+    return line_list[index].split(" ")[1].split("-")[0];
+}
+
+
 QString GraphicsDriverInterface::GetDevice()
 {
     QJsonObject devices;
+    QJsonArray json_array;
     foreach (const Device device, m_devInfo.devices()){
         QJsonObject devObj;
         devObj.insert("name", device.m_name);
         devObj.insert("info", device.m_info);
-        devices.insert("devices", devObj);
+        json_array.append(devObj);
     }
+    devices.insert("devices", json_array);
     return QString(QJsonDocument(devices).toJson());
 }
 
@@ -39,14 +111,33 @@ QString GraphicsDriverInterface::GetResolutionTitle()
     QJsonObject ResolutionTitle;
     ResolutionTitle.insert("name", m_resolutions.name());
     ResolutionTitle.insert("type", m_resolutions.type());
-    ResolutionTitle.insert("description", m_resolutions.description());
+    QJsonArray json_array;
     foreach (const Resolution resl, m_resolutions.resolutions()){
         QJsonObject reslObj;
         reslObj.insert("name", resl.name());
+        reslObj.insert("driver", resl.driver());
         reslObj.insert("title", resl.title());
         reslObj.insert("description", resl.description());
-        ResolutionTitle.insert("resolutions", reslObj);
+        QString curr_version;
+        QString depo_version;
+        if ("nvidia" == resl.driver()){
+            curr_version = GetCurrPackageVersion("nvidia-driver");
+            depo_version = GetDepoPackageVersion("nvidia-driver");
+        }else{
+            curr_version = GetKernelVersion();
+            depo_version = GetKernelVersion();
+        }
+        reslObj.insert("currVersion", curr_version);
+        reslObj.insert("depoVersion", depo_version);
+
+        if(resl.name() == GetCurrDriverName()){
+            reslObj.insert("enable", "true");
+        }else{
+            reslObj.insert("enable", "false");
+        }
+        json_array.append(reslObj);
     } 
+    ResolutionTitle.insert("resolutions", json_array);
     return QString(QJsonDocument(ResolutionTitle).toJson());
 }
 
@@ -86,6 +177,12 @@ void GraphicsDriverInterface::PrepareInstall(QString name)
     connect(proc, &QProcess::readyReadStandardOutput, this, [=]() {
         QString out = proc->readAllStandardOutput();
         qDebug() << proc->program() << "Prepare Install:" << out;
+        if (out.contains("PROGRESS:")) {
+            bool ok = false;
+            int number = out.replace("PROGRESS:", "").toInt(&ok);
+            qDebug() << "number = " << number;
+            if (ok) Q_EMIT ReportProgress(number);
+        }
     });
 
     const QString &exit_gltest = new_resl.keep_gltest() ? "false" : "true";
@@ -151,12 +248,11 @@ QString GraphicsDriverInterface::GetCurrDriverName()
     QString statusScript = m_resolutions.statusScript();
     QString name = m_resolutions.name();
     if (statusScript.isEmpty())
-        return NULL;
+        return nullptr;
     
     QProcess *proc = new QProcess;
     QPROCESS_DUMP(proc);
     QPROCESS_DELETE_SELF(proc);
-
     EXECUTE_SCRIPT(proc, statusScript);
     proc->waitForFinished();
     const int status = proc->exitCode();
@@ -167,7 +263,7 @@ QString GraphicsDriverInterface::GetCurrDriverName()
             case 1:
                 return "raedon";
             default:
-                return NULL;
+                return nullptr;
         }
 
     }else if( "intel" == name ){
@@ -179,7 +275,7 @@ QString GraphicsDriverInterface::GetCurrDriverName()
             case 2:
                 return "sna";
             default:
-                return NULL;
+                return nullptr;
         }
     }else if("nvidia" == name ){
         switch(status){
@@ -188,7 +284,7 @@ QString GraphicsDriverInterface::GetCurrDriverName()
             case 1:
                 return "nvidia";
             default:
-                return NULL;
+                return nullptr;
         }
 
     }else if("nvidia_intel" == name){
@@ -207,15 +303,33 @@ QString GraphicsDriverInterface::GetCurrDriverName()
                 break;
         }
     }
-    return NULL;
+    return nullptr;
 }
 
 QString GraphicsDriverInterface::GetOldDriverName()
 {
-    return QString("old driver");
+    const QString &config_file = scriptAbsolutePath("working-dir/config.conf");
+    if (!QFile(config_file).exists()){
+        qWarning("The file %s is not exists!", "working-dir/config.conf");
+        return  nullptr;
+    }
+    
+    QSettings *settings = new QSettings(config_file, QSettings::IniFormat);
+    settings->setIniCodec(QTextCodec::codecForName("UTF-8"));
+
+    return settings->value("old_driver").toString();
 }
 
 QString GraphicsDriverInterface::GetNewDriverName()
 {
-    return QString("new driver");
+    const QString &config_file = scriptAbsolutePath("working-dir/config.conf");
+    if (!QFile(config_file).exists()){
+        qWarning("The file %s is not exists!", "working-dir/config.conf");
+        return  nullptr;
+    }
+
+    QSettings *settings = new QSettings(config_file, QSettings::IniFormat);
+    settings->setIniCodec(QTextCodec::codecForName("UTF-8"));
+
+    return settings->value("new_driver").toString();
 }

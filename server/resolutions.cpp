@@ -28,7 +28,7 @@ ResolutionsBuilder::ResolutionsBuilder(const GraphicsDeviceInfo &devInfo) :
     m_config(RESOLUTIONS_DIR"/resolutions.json"),
     m_devInfo(devInfo)
 {
-
+    qDebug() <<"Resolutions json file:"<< RESOLUTIONS_DIR"/resolutions.json";
 }
 
 ResolutionsBuilder ResolutionsBuilder::config(const QString &config)
@@ -51,21 +51,18 @@ Resolutions ResolutionsBuilder::build()
     for (const auto res : doc.array())
     {
         const auto object = res.toObject();
-        const int type = object["type"].toInt();
-        if (type != deviceType)
-            continue;
-        r.m_name = object["name"].toString();
-        r.m_iconName = object["icon_name"].toString();
-        r.m_statusScript = object["status"].toString();
         for (const auto resl : object["resolutions"].toArray()) {
             Resolution solution(resl.toObject());
             switch (deviceType)
             {
             case GraphicsDeviceInfo::AMD:
-                if(r.m_type == Resolutions::NoResolution){
-                    r.m_type = Resolutions::AMD;
-                }
                 if(object["name"].toString() == "amd"){
+                    if(r.m_type == Resolutions::NoResolution){
+                        r.m_type = Resolutions::AMD;
+                        r.m_name = object["name"].toString();
+                        r.m_iconName = object["icon_name"].toString();
+                        r.m_statusScript = object["status"].toString();
+                    }
                     //根据白名单确认使用amdgpu还是raedon，目前这里默认使用amdgpu
                     if(solution.name() == "amdgpu"){
                         r.m_resolutions.append(solution);
@@ -73,10 +70,13 @@ Resolutions ResolutionsBuilder::build()
                 }
                 break;
             case GraphicsDeviceInfo::INTEL:
-                if(r.m_type == Resolutions::NoResolution){
-                    r.m_type = Resolutions::INTEL;
-                }
                 if(object["name"].toString() == "intel"){
+                    if(r.m_type == Resolutions::NoResolution){
+                        r.m_type = Resolutions::INTEL;
+                        r.m_name = object["name"].toString();
+                        r.m_iconName = object["icon_name"].toString();
+                        r.m_statusScript = object["status"].toString();
+                    }
                     //根据白名单确认使用glamor、uxa、sna三者中的一个，目前这了默认使用glamor
                     if(solution.name() == "glamor"){
                         r.m_resolutions.append(solution);
@@ -84,10 +84,13 @@ Resolutions ResolutionsBuilder::build()
                 }
                 break;
             case GraphicsDeviceInfo::NVIDIA:
-                if(r.m_type == Resolutions::NoResolution){
-                    r.m_type = Resolutions::NVIDIA;
-                }
                 if(object["name"].toString() == "nvidia"){
+                    if(r.m_type == Resolutions::NoResolution){
+                        r.m_type = Resolutions::NVIDIA;
+                        r.m_name = object["name"].toString();
+                        r.m_iconName = object["icon_name"].toString();
+                        r.m_statusScript = object["status"].toString();
+                    }
                     if(solution.name() == "nvidia" || solution.name() == "nouveau"){
                         r.m_resolutions.append(solution);
                     }
@@ -98,29 +101,32 @@ Resolutions ResolutionsBuilder::build()
                 {
                     if (GraphicsDeviceInfo::INTEL == m_devInfo.curDeviceFlag())
                     {
-                        if(r.m_type == Resolutions::NoResolution){
-                            r.m_type = Resolutions::INTEL_NVIDIA_USE_INTEL;
-                        }
                         if(object["name"].toString() == "intel"){
+                            if(r.m_type == Resolutions::NoResolution){
+                                r.m_type = Resolutions::INTEL_NVIDIA_USE_INTEL;
+                                r.m_name = object["name"].toString();
+                                r.m_iconName = object["icon_name"].toString();
+                                r.m_statusScript = object["status"].toString();
+                            }
                             //根据白名单确认使用glamor、uxa、sna三者中的一个，目前这了默认使用glamor
                             if(solution.name() == "glamor"){
                                 r.m_resolutions.append(solution);
                             }
                         }
                     }else if (GraphicsDeviceInfo::NVIDIA == m_devInfo.curDeviceFlag()){
-                        if(r.m_type == Resolutions::NoResolution){
-                            r.m_type = Resolutions::INTEL_NVIDIA_USE_NVIDIA;
-                        }
                         if(object["name"].toString() == "nvidia"){
+                            if(r.m_type == Resolutions::NoResolution){
+                                r.m_type = Resolutions::INTEL_NVIDIA_USE_NVIDIA;
+                                r.m_name = object["name"].toString();
+                                r.m_iconName = object["icon_name"].toString();
+                                r.m_statusScript = object["status"].toString();
+                            }
                             if(solution.name() == "nvidia" || solution.name() == "nouveau"){
                                 r.m_resolutions.append(solution);
                             }
                         }
                     }
                 }else{
-                    if(r.m_type == Resolutions::NoResolution){
-                        r.m_type = Resolutions::INTEL_NVIDIA;
-                    }
                     if(object["name"].toString() == "intel"){
                         //根据白名单确认使用glamor、uxa、sna三者中的一个，目前这了默认使用glamor
                         if(solution.name() == "glamor"){
@@ -128,6 +134,12 @@ Resolutions ResolutionsBuilder::build()
                         }
                     }
                     if(object["name"].toString() == "nvidia_intel"){
+                        if(r.m_type == Resolutions::NoResolution){
+                            r.m_type = Resolutions::INTEL_NVIDIA;
+                            r.m_name = object["name"].toString();
+                            r.m_iconName = object["icon_name"].toString();
+                            r.m_statusScript = object["status"].toString();
+                        }
                         if(solution.name() == "bumblebee" || solution.name() == "prime"){
                             r.m_resolutions.append(solution);
                         }
