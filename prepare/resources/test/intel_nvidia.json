@@ -1,0 +1,34 @@
+ {
+    "name": "nvidia_intel",
+    "type": 4,
+    "resolutions":
+    [
+        {
+            "title": "Integrated graphics driver",
+            "name": "glamor",
+            "description": "Poor compatibility for parts of old graphics cards.",
+            "driver": "xxx",
+            "currVersion": "yyy",
+            "repVersion": "zzz",
+            "enable": true
+        },
+
+        {
+            "name": "bumblebee",
+            "title": "Use Bumblebee Solution",
+            "description": "Save power to reduce power consumption.",
+            "driver": "xxx",
+            "currVersion": "1.1",
+            "repVersion": "1.2",
+            "enable": true
+        },
+        {
+            "name": "prime",
+            "title": "Use NV-PRIME Solution",
+            "description": "For laptops with hybrid graphics, having best performance but must work with closed-source driver.",
+            "currVersion": "yyy",
+            "repVersion": "zzz",
+            "enable": false
+        }
+    ]
+}

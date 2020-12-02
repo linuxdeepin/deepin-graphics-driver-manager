@@ -11,10 +11,12 @@
 #include <DSuggestButton>
 #include <QStackedLayout>
 #include "graphicsdriverproxy.h"
+#include "device.h"
 
 
 
 DWIDGET_USE_NAMESPACE
+
 
 class QLabel;
 class MainWindow : public DMainWindow
@@ -22,14 +24,31 @@ class MainWindow : public DMainWindow
     Q_OBJECT
 
 public:
+    enum SolutionType {
+        NoResolution = 0,
+        AMD,
+        NVIDIA,
+        INTEL,
+        INTEL_NVIDIA,
+        INTEL_NVIDIA_USE_INTEL,
+        INTEL_NVIDIA_USE_NVIDIA
+    };
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 private:
     void keyPressEvent(QKeyEvent *e);
     void noResolutions();
+    void loadDevice();
+    void setVendorIcon();
 
 private Q_SLOTS:
     void loadResolutions();
+    void onResolutionSelected();
+    void onUpdateBtnClicked();
+    void onToggleBtnClicked();
+    void onRebootBtnClicked();
+    void onPolicyKitPassed(const QString &state);
+    void onPrepareFinished(bool success);
 
 private:
     int m_usedIndex;
@@ -43,13 +62,18 @@ private:
     QLabel *m_vendorIcon;
     QLabel *m_vendorName;
     QLabel *m_tipsIcon;
+    QLabel *m_warnning;
     QLabel *m_botTips;
     QWidget *m_resolutionsWidget;
     DWaterProgress *m_progress;
     DSuggestButton *m_toggleButton;
     DSuggestButton *m_okButton;
+    DSuggestButton *m_updateButton;
     DSuggestButton *m_rebootButton;
+    DSuggestButton *m_rebootLaterButton;
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver = nullptr;
+    DeviceList m_devices;
+
 };
 
 #endif

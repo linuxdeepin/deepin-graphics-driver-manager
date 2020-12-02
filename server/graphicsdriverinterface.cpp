@@ -6,6 +6,7 @@
 #include <QProcess>
 #include <QSettings>
 #include <QTextCodec>
+#include <QFile>
 
 using namespace std;
 
