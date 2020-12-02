@@ -29,17 +29,17 @@ GLTestWidget::GLTestWidget(QWidget *parent)
     t->start();
 
     connect(t, &QTimer::timeout, this, [=] {
-        m_xRotated += 1.0;
-        m_yRotated += 1.0;
-        m_zRotated += 1.0;
+        m_xRotated += 1.0f;
+        m_yRotated += 1.0f;
+        m_zRotated += 1.0f;
         update();
     });
 }
 
 void GLTestWidget::initializeGL()
 {
-    glClearColor(0.3, 0.3, 0.6, 1);
-    glClearDepth(1.0f);
+    glClearColor(0.3f, 0.3f, 0.6f, 1);
+    glClearDepth(1.0);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
@@ -78,7 +78,7 @@ void GLTestWidget::paintGL()
     glRotatef(m_xRotated, 1.0, 0.0, 0.0);
     glRotatef(m_yRotated, 0.0, 1.0, 0.0);
     glRotatef(m_zRotated, 0.0, 0.0, 1.0);
-    glScalef(.4, .4, .4);
-    glColor3f(0.3, 0.4, 0.4);
-    glutSolidTeapot(1.0f);
+    glScalef(.4f, .4f, .4f);
+    glColor3f(0.3f, 0.4f, 0.4f);
+    glutSolidTeapot(1.0);
 }

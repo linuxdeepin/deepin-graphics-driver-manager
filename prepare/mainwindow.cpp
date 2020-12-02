@@ -163,6 +163,7 @@ void MainWindow::loadDevice()
     if (file.exists()) {
        file.open(QIODevice::ReadOnly);
        devices = QString(file.readAll());
+       qDebug() << devices;
     }
 #else
     QDBusPendingReply<QString> getDeviceReply = m_graphicsDriver->GetDevice();

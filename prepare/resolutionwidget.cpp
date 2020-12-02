@@ -8,7 +8,7 @@
 #include <QTimer>
 #include <QLineEdit>
 
-ResolutionWidget::ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graphicsDriver, Resolution &resolution,  QWidget *parent)
+ResolutionWidget::ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graphicsDriver, const Resolution &resolution,  QWidget *parent)
     : QFrame(parent),
       m_graphicsDriver(graphicsDriver),
       m_resolution(resolution)

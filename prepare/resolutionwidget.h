@@ -21,7 +21,7 @@ class ResolutionWidget: public QFrame
     Q_OBJECT
 
 public:
-    explicit ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graphicsDriver, Resolution &resolution,  QWidget *parent = nullptr);
+    explicit ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graphicsDriver, const Resolution &resolution,  QWidget *parent = nullptr);
 
     void setChecked(const bool checked);
     void prepareInstall();
