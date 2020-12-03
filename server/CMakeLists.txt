@@ -9,6 +9,7 @@ if (CMAKE_BUILD_TYPE MATCHES Debug)
 else()
   add_definitions("-DSCRIPTS_DIR=\"${CMAKE_INSTALL_PREFIX}/lib/deepin-graphics-driver-manager/\"")
   add_definitions("-DRESOLUTIONS_DIR=\"${CMAKE_INSTALL_PREFIX}/lib/deepin-graphics-driver-manager/\"")
+  add_definitions("-DRESOLUTIONS_DIR=\"${CMAKE_INSTALL_PREFIX}/lib/deepin-graphics-driver-manager/\"")
 endif()
 
 
@@ -32,3 +33,20 @@ target_link_libraries(${BIN_NAME}
     ${DtkWidget_LIBRARIES}
     ${Qt5DBus_LIBRARIES}
 )
+
+# policy kit
+#install(FILES com.deepin.dgradvrmgr.policy
+#        DESTINATION share/polkit-1/actions/)
+
+# resolutions.json
+#install(FILES resources/config/resolutions/resolutions.json
+#        DESTINATION lib/deepin-graphics-driver-manager)
+
+# systemd servies
+#install(FILES resources/service/driver-installer.service
+#        DESTINATION /lib/systemd/system)
+
+# scripts
+#install(DIRECTORY scripts/
+#        DESTINATION lib/deepin-graphics-driver-manager
+#        FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)

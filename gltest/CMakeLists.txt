@@ -27,4 +27,5 @@ target_include_directories(installer PUBLIC
 
 )
 
-install(TARGETS gltest DESTINATION lib/deepin-graphics-driver-manager)
+install(TARGETS installer DESTINATION lib/deepin-graphics-driver-manager)
+#install(FILES deepin-gradvrmgr-installer.desktop DESTINATION lib/deepin-graphics-driver-manager)
