@@ -26,3 +26,4 @@ elif [ -n "$intel_accel_method_uxa" ];then
 else
     echo "Intel Glamor Accel Mode"
     exit 0
+fi

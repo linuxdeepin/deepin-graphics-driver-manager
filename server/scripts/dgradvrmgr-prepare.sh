@@ -35,8 +35,6 @@ cp -f $INSTALL $INSTALL_NEW_G || error_exit_dgm "copy $INSTALL failed!"  1
 
 chmod +x $REMOVE_OLD_G
 chmod +x $INSTALL_NEW_G
-sleep 1
-sleep 1
 # generate config file
 echo "[General]
 lang=$USER_LANG

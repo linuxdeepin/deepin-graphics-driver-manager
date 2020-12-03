@@ -56,10 +56,12 @@ package_download() {
         apt-get install -d --reinstall -y --allow-downgrades ${pkg};
         if [ $? != 0 ]; then
             echo "Download ${pkg} failed"
+            echo "PROGRESS:${-1}"
             exit 1;
         fi
         let index++;
         ratio=$(($index*100/$len))
+        let ratio-=1
         echo "PROGRESS:${ratio}"
     done
 }

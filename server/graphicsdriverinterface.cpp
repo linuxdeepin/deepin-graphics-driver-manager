@@ -8,7 +8,7 @@
 #include <QTextCodec>
 #include <QFile>
 #include <QJsonArray>
-
+#include <QRegExp>
 using namespace std;
 
 GraphicsDriverInterface::GraphicsDriverInterface(QObject* parent)
@@ -145,7 +145,7 @@ void GraphicsDriverInterface::PrepareInstall(QString name)
 {
     Resolution new_resl;
     Resolution old_resl;
-    QString old_name = GetOldDriverName();
+    QString old_name = GetCurrDriverName();
     if ( name.isEmpty() || old_name.isEmpty() ){
         qWarning("Resolution name is invalid!");
         return;
@@ -168,20 +168,39 @@ void GraphicsDriverInterface::PrepareInstall(QString name)
     const QString prepare = scriptAbsolutePath(new_resl.prepareScript());
     const QString install = scriptAbsolutePath(new_resl.installScript());
     const QString removeOld = scriptAbsolutePath(old_resl.removeScript());
-    Q_ASSERT(!prepare.isEmpty() && !install.isEmpty() && removeOld.isEmpty());
+    Q_ASSERT(!prepare.isEmpty() && !install.isEmpty() && !removeOld.isEmpty());
 
     QProcess *proc = new QProcess(this);
     QPROCESS_DELETE_SELF(proc);
     proc->setProcessChannelMode(QProcess::MergedChannels);
 
+    connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, [=](int exitCode) {
+        if (exitCode){ //失败
+            qWarning() << "ExitCode: " << exitCode;
+            Q_EMIT ReportProgress("-1");
+        }else{ //成功
+            Q_EMIT ReportProgress("100");
+        }
+    });
+
+    connect(proc, &QProcess::started, this, [=] {
+        qDebug() << "PrepareInstall start!"; 
+        Q_EMIT ReportProgress("0");//开始
+    });
+
     connect(proc, &QProcess::readyReadStandardOutput, this, [=]() {
         QString out = proc->readAllStandardOutput();
-        qDebug() << proc->program() << "Prepare Install:" << out;
-        if (out.contains("PROGRESS:")) {
-            bool ok = false;
-            int number = out.replace("PROGRESS:", "").toInt(&ok);
-            qDebug() << "number = " << number;
-            if (ok) Q_EMIT ReportProgress(number);
+        QStringList line_list = out.split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
+        for(int i=0; i < line_list.size(); i++){
+            QString line_str = line_list[i];
+            QRegExp rx("^PROGRESS:[ /t/n]?[0-9]{1,3}");
+            int pos = line_str.indexOf(rx);
+            if (pos < 0) continue;
+            else{
+                QString ratio = rx.cap(0).split(QRegExp(":[ /t/n]?"))[1];
+                qDebug() << "ratio:" <<ratio;
+                if (!ratio.isEmpty()) Q_EMIT ReportProgress(ratio);
+            }
         }
     });
 
@@ -232,13 +251,26 @@ void GraphicsDriverInterface::RealInstaller()
     QPROCESS_DELETE_SELF(proc);
     proc->setProcessChannelMode(QProcess::MergedChannels);
 
+    connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, [=](int exitCode) {
+        if (exitCode){ //失败
+            qWarning() << "ExitCode: " << exitCode;
+            Q_EMIT ReportProgress("-1");
+        }else{ //成功
+            Q_EMIT ReportProgress("100");
+        }
+    });
+
+    connect(proc, &QProcess::started, this, [=] {
+        qDebug() << "PrepareInstall start!"; 
+        Q_EMIT ReportProgress("0");//开始
+    });
+
     connect(proc, &QProcess::readyReadStandardOutput, this, [=]() {
         QString out = proc->readAllStandardOutput();
-        qDebug() << proc->program() << "Real Install:" << out;
+        qDebug() << out;
     });
-    
-    const QString &cmd = scriptAbsolutePath("dgradvrmgr-real-install.sh");
 
+    const QString &cmd = scriptAbsolutePath("dgradvrmgr-real-install.sh");
     proc->start(cmd);
     return;
 }

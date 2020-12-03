@@ -145,7 +145,7 @@ private:
 Q_SIGNALS:
     void PreInstallState(QString state);
     void RealInstallState(QString state);
-    void ReportProgress(int ratio);
+    void ReportProgress(QString ratio);
    
 private:
     GraphicsDeviceInfo m_devInfo;
