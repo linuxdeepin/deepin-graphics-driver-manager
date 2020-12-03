@@ -12,6 +12,11 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
+# Install settings
+
+set(CMAKE_INSTALL_PREFIX /usr)
+
+
 execute_process(COMMAND bash "-c" "qdbuscpp2xml -A server/graphicsdriverinterface.h -o com.deepin.daemon.GraphicsDriver.xml"
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 

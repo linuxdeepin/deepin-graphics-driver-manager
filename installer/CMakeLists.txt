@@ -21,6 +21,4 @@ target_link_libraries(installer
 
 
 install(TARGETS installer DESTINATION lib/deepin-graphics-driver-manager)
-install(FILES installer-waraper DESTINATION lib/deepin-graphics-driver-manager PERMISSIONS OWNER_EXECUTE OWNER_READ GROUP_READ WORLD_READ)
-install(FILES deepin-gradvrmgr-installer.desktop
-        DESTINATION lib/deepin-graphics-driver-manager)
+install(FILES deepin-gradvrmgr-installer.desktop DESTINATION lib/deepin-graphics-driver-manager)
