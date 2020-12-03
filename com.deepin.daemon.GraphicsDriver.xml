@@ -8,7 +8,7 @@
       <arg name="state" type="s" direction="out"/>
     </signal>
     <signal name="ReportProgress">
-      <arg name="ratio" type="i" direction="out"/>
+      <arg name="ratio" type="s" direction="out"/>
     </signal>
     <method name="GetDevice">
       <arg type="s" direction="out"/>

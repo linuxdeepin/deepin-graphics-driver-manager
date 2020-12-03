@@ -1,5 +1,5 @@
 
-set(BIN_NAME deepin-graphics-driver-manager-server)
+set(BIN_NAME deepin-graphics-driver-manager-service)
 
 
 # Defines path to resource directories
@@ -34,19 +34,29 @@ target_link_libraries(${BIN_NAME}
     ${Qt5DBus_LIBRARIES}
 )
 
-# policy kit
-#install(FILES com.deepin.dgradvrmgr.policy
-#        DESTINATION share/polkit-1/actions/)
+# bin
+install(TARGETS ${BIN_NAME} DESTINATION lib/deepin-daemon)
+
+# dbus conf
+install(FILES data/com.deepin.graphicmanger.conf
+        DESTINATION share/dbus-1/system.d/)
+
+#dbus service
+install(FILES data/com.deepin.graphicmanger.service
+        DESTINATION share/dbus-1/system-services/)
 
 # resolutions.json
-#install(FILES resources/config/resolutions/resolutions.json
-#        DESTINATION lib/deepin-graphics-driver-manager)
+install(FILES resources/config/resolutions/resolutions.json
+        DESTINATION deepin-graphics-driver-manager)
 
 # systemd servies
-#install(FILES resources/service/driver-installer.service
-#        DESTINATION /lib/systemd/system)
+install(FILES resources/service/dgradvrmgr-gltest.service
+        DESTINATION lib/systemd/system)
+
+install(FILES resources/service/dgradvrmgr-installer.service
+        DESTINATION lib/systemd/system)
 
 # scripts
-#install(DIRECTORY scripts/
-#        DESTINATION lib/deepin-graphics-driver-manager
-#        FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+install(DIRECTORY scripts/
+        DESTINATION lib/deepin-graphics-driver-manager
+        FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)

@@ -94,7 +94,7 @@ public Q_SLOTS: // METHODS
 Q_SIGNALS: // SIGNALS
     void PreInstallState(const QString &state);
     void RealInstallState(const QString &state);
-    void ReportProgress(int ratio);
+    void ReportProgress(const QString &ratio);
 };
 
 namespace com {

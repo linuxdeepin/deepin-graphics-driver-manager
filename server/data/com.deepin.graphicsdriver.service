@@ -1,4 +1,0 @@
-[D-BUS Service]
-Name=com.deepin.graphicmanger
-Exec=/usr/lib/deepin-daemon/deepin-graphics-driver-manager-server
-User=root
