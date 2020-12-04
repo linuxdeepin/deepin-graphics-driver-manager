@@ -1,7 +1,7 @@
 [Desktop Entry]
 Categories=System;
 Comment=Deepin Graphics Driver Manager is a compact and easy  to use graphics driver managing tool.
-Exec=deepin-graphics-driver-manager-waraper
+Exec=deepin-graphics-driver-manager
 GenericName=Graphics Driver Manager
 Icon=deepin-graphics-driver-manager
 Name=Deepin Graphics Driver Manager

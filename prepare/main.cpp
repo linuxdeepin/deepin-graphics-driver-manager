@@ -1,9 +1,12 @@
 
+#include "environments.h"
+#include "mainwindow.h"
+
 #include <QTranslator>
 #include <DApplication>
 #include <QLocale>
 #include <DLog>
-#include "mainwindow.h"
+
 
 DCORE_USE_NAMESPACE
 
@@ -32,7 +35,7 @@ int main(int argc, char* argv[])
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
     app.setOrganizationName("deepin");
     app.setApplicationName(" ");
-    //app.setApplicationVersion(VERSION);
+    app.setApplicationVersion(VERSION);
     app.setApplicationAcknowledgementPage("https://www.deepin.org/acknowledgments/deepin-graphics-driver-manager/");
     app.setProductIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
     app.setProductName(QApplication::translate("main", "Graphics Driver Manager"));

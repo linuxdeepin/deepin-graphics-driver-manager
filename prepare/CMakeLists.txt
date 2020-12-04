@@ -6,8 +6,10 @@ if (CMAKE_BUILD_TYPE MATCHES Debug)
   add_definitions("-DRESOURCES_DIR=\"${CMAKE_SOURCE_DIR}/prepare/resources\"")
 else()
   add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_INSTALL_PREFIX}/share/deepin-graphics-driver-manager/translations/\"")
-  add_definitions("-DRESOURCES_DIR=\"${CMAKE_INSTALL_PREFIX}/share/deepin-graphics-driver-manager/prepare/resources/\"")
+  add_definitions("-DRESOURCES_DIR=\"${CMAKE_INSTALL_PREFIX}/share/deepin-graphics-driver-manager/prepare/\"")
 endif()
+
+configure_file(environments.h.in environments.h @ONLY)
 
 find_package(PkgConfig REQUIRED)
 find_package(Qt5Widgets REQUIRED)
@@ -46,8 +48,13 @@ endforeach ()
 install(FILES resources/icons/deepin-graphics-driver-manager-64px.svg
         DESTINATION share/icons/hicolor/scalable/apps)
 
+#test file
+file(GLOB TEST_FILE "resources/test/*")
+install(FILES ${TEST_FILE}
+        DESTINATION share/deepin-graphics-driver-manager/prepare/test/)
+
 # qm files
-file(GLOB QM_FILES "translations/*.qm")
+file(GLOB QM_FILES "../translations/*.qm")
 install(FILES ${QM_FILES}
         DESTINATION share/deepin-graphics-driver-manager/translations)
 
