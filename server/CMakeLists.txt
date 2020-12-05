@@ -51,10 +51,10 @@ install(FILES resources/config/resolutions/resolutions.json
 
 # systemd servies
 install(FILES resources/service/dgradvrmgr-gltest.service
-        DESTINATION lib/systemd/system)
+        DESTINATION /lib/systemd/system)
 
 install(FILES resources/service/dgradvrmgr-installer.service
-        DESTINATION lib/systemd/system)
+        DESTINATION /lib/systemd/system)
 
 # scripts
 install(DIRECTORY scripts/
