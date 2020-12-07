@@ -176,9 +176,10 @@ void GraphicsDriverInterface::PrepareInstall(QString name)
 
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, [=](int exitCode) {
         if (exitCode){ //失败
-            qWarning() << "ExitCode: " << exitCode;
+            qWarning() << "Prepare install failed, ExitCode: " << exitCode;
             Q_EMIT ReportProgress("-1");
         }else{ //成功
+            qDebug() << "Prepare install scucess!"; 
             Q_EMIT ReportProgress("100");
         }
     });
@@ -253,9 +254,10 @@ void GraphicsDriverInterface::RealInstaller()
 
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, [=](int exitCode) {
         if (exitCode){ //失败
-            qWarning() << "ExitCode: " << exitCode;
+            qWarning() << "Real install failed, ExitCode: " << exitCode;
             Q_EMIT ReportProgress("-1");
         }else{ //成功
+            qDebug() << "Real install success!"; 
             Q_EMIT ReportProgress("100");
         }
     });

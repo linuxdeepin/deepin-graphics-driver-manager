@@ -53,10 +53,14 @@ install(FILES resources/config/resolutions/resolutions.json
 install(FILES resources/service/dgradvrmgr-gltest.service
         DESTINATION /lib/systemd/system)
 
-install(FILES resources/service/dgradvrmgr-installer.service
+install(FILES resources/service/dgradvrmgr-test-installer.service
         DESTINATION /lib/systemd/system)
 
 # scripts
 install(DIRECTORY scripts/
         DESTINATION lib/deepin-graphics-driver-manager
         FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+
+# resolutions.json
+install(FILES resources/config/resolutions/resolutions.json
+        DESTINATION lib/deepin-graphics-driver-manager)

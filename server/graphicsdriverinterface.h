@@ -15,7 +15,7 @@ inline const QString scriptAbsolutePath(const QString &scriptName)
 #ifdef QT_DEBUG
     return QDir::currentPath() + "/server/scripts/" + scriptName;
 #else
-    return "/usr/lib/deepin-graphics-driver-manager/scripts/" + scriptName;
+    return "/usr/lib/deepin-graphics-driver-manager/" + scriptName;
 #endif
 }
 
