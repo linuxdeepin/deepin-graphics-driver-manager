@@ -35,6 +35,7 @@ public:
     int deviceNums() const;
     const QList<Device> devices() const { return m_devices; }
     bool isNotebook();
+    QString curDriver();
     static GraphicsDeviceInfo::DeviceFlag deviceType(const QString &devInfo);
 private:
     void init();

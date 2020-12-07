@@ -67,6 +67,28 @@ bool GraphicsDeviceInfo::isNotebook()
     return defaultDevice.toBool();
 }
 
+QString GraphicsDeviceInfo::curDriver()
+{
+    QFile file("/sys/class/graphics/fb0/device/uevent");
+    file.open(QIODevice::ReadOnly);
+    if (!file.isOpen()) {
+        qWarning("Open the file /sys/class/graphics/fb0/device/uevent failed!");
+        return nullptr;
+    }
+    QString line = file.readLine();
+    do {
+        qDebug() << line;
+        if (line.contains("DRIVER")) {
+            QString driver = line.section('=', 1, 1).trimmed();
+            qDebug()<<"driver:"<<driver;
+            return driver;
+        }
+        line = file.readLine();
+    }while(!line.isNull());
+
+    return nullptr;
+}
+
 void GraphicsDeviceInfo::init()
 {
     struct pci_access *pacc;
@@ -101,28 +123,15 @@ void GraphicsDeviceInfo::init()
         m_sysDevFlag |= flag;
     }
     pci_cleanup(pacc);
-    QFile file("/sys/class/graphics/fb0/device/uevent");
-    file.open(QIODevice::ReadOnly);
-    if (!file.isOpen()) {
-        return;
+
+    QString driver = curDriver();
+    if (driver == "i915"){
+        m_curDevFlag = GraphicsDeviceInfo::INTEL;
+    }else if (driver == "nouveau" || driver == "nvidia"){
+        m_curDevFlag = GraphicsDeviceInfo::NVIDIA;
+    }else if (driver == "amdgpu" || driver == "raedon"){
+        m_curDevFlag = GraphicsDeviceInfo::AMD;
+    }else{
+        m_curDevFlag = GraphicsDeviceInfo::NoDevice;
     }
-    QString line = file.readLine();
-    do {
-        qDebug() << line;
-        if (line.contains("DRIVER")) {
-            QString driver = line.section('=', 1, 1).trimmed();
-            qDebug()<<"driver:"<<driver;
-            if (driver == "i915"){
-                m_curDevFlag = GraphicsDeviceInfo::INTEL;
-            }else if (driver == "nouveau" || driver == "nvidia"){
-                m_curDevFlag = GraphicsDeviceInfo::NVIDIA;
-            }else if (driver == "amdgpu" || driver == "raedon"){
-                m_curDevFlag = GraphicsDeviceInfo::AMD;
-            }else{
-                m_curDevFlag = GraphicsDeviceInfo::NoDevice;
-            }
-            break;
-        }
-        line = file.readLine();
-    }while(!line.isNull());
 }

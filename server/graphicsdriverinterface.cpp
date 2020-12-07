@@ -302,15 +302,7 @@ QString GraphicsDriverInterface::GetCurrDriverName()
     proc->waitForFinished();
     const int status = proc->exitCode();
     if ( "amd" == name ){
-        switch(status){
-            case 0:
-                return "amdgpu";
-            case 1:
-                return "raedon";
-            default:
-                return nullptr;
-        }
-
+        return m_devInfo.curDriver();
     }else if( "intel" == name ){
         switch(status){
             case 0:

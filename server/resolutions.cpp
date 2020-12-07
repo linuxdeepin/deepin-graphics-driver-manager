@@ -63,9 +63,11 @@ Resolutions ResolutionsBuilder::build()
                         r.m_iconName = object["icon_name"].toString();
                         r.m_statusScript = object["status"].toString();
                     }
-                    //根据白名单确认使用amdgpu还是raedon，目前这里默认使用amdgpu
-                    if(solution.name() == "amdgpu"){
-                        r.m_resolutions.append(solution);
+                    
+                    if (m_devInfo.curDriver() == "amdgpu"){
+                        if(solution.name() == "amdgpu") r.m_resolutions.append(solution);
+                    }else {
+                        if(solution.name() == "radeon") r.m_resolutions.append(solution);
                     }
                 }
                 break;
