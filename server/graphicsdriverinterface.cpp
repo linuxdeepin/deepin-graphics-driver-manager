@@ -11,6 +11,10 @@
 #include <QRegExp>
 using namespace std;
 
+#define INSTALLER_DESKTOP_FILE_SOURCE "/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-installer.desktop"
+#define INSTALLER_ROOT_DESKTOP_FILE_DEST "etc/xdg/autostart/deepin-gradvrmgr-installer.desktop"
+
+
 GraphicsDriverInterface::GraphicsDriverInterface(QObject* parent)
     : QObject(parent),
       m_resolutions(ResolutionsBuilder(m_devInfo).build())
@@ -179,8 +183,15 @@ void GraphicsDriverInterface::PrepareInstall(QString name)
             qWarning() << "Prepare install failed, ExitCode: " << exitCode;
             Q_EMIT ReportProgress("-1");
         }else{ //成功
-            qDebug() << "Prepare install scucess!"; 
-            Q_EMIT ReportProgress("100");
+            QFile installerDesktopFileSource(INSTALLER_DESKTOP_FILE_SOURCE);
+            if (installerDesktopFileSource.exists()){
+                installerDesktopFileSource.copy(QDir::rootPath() + INSTALLER_ROOT_DESKTOP_FILE_DEST);
+                qDebug() << "Prepare install scucess!"; 
+                Q_EMIT ReportProgress("100");
+            }else{
+                qWarning() << INSTALLER_DESKTOP_FILE_SOURCE << "do not exists!";
+                Q_EMIT ReportProgress("-1");
+            }
         }
     });
 
