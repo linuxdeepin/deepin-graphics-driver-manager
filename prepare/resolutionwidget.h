@@ -13,7 +13,7 @@
 #include <QLineEdit>
 #include <QTimer>
 
-#define TEST_UI
+//#define TEST_UI
 
 class QLabel;
 class ResolutionWidget: public QFrame
