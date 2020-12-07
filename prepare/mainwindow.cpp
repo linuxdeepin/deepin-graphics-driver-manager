@@ -407,12 +407,5 @@ void MainWindow::onPrepareFinished(bool success)
        m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/success.svg", QSize(128, 128)));
        m_rebootButton->setVisible(true);
        m_rebootLaterButton->setVisible(true);
-       //m_rebootButton->setFocus();
-
-//       QFile installerDesktopFileSource(INSTALLER_DESKTOP_FILE_SOURCE);
-//       if (installerDesktopFileSource.exists())
-//           installerDesktopFileSource.copy(QDir::rootPath() + INSTALLER_ROOT_DESKTOP_FILE_DEST);
-//       else
-//           qDebug() << INSTALLER_DESKTOP_FILE_SOURCE << "do not exists!";
     }
 }

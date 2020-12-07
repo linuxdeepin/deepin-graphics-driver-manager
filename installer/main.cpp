@@ -9,11 +9,10 @@
 DWIDGET_USE_NAMESPACE
 DCORE_USE_NAMESPACE
 
-#define CONFIG "/usr/lib/deepin-graphics-driver-manager/working-dir/config.conf"
-#define ROOT_RESKTOP_FILE "etc/xdg/autostart/deepin-gradvrmgr-installer.desktop"
 
 
-const QString GraphicsDriverDbusService = "com.deepin.daemon.GraphicsDriver";
+const QString GraphicMangerServiceName = "com.deepin.graphicmanger";
+const QString GraphicMangerPath = "/com/deepin/graphicmanger";
 
 ComDeepinDaemonGraphicsDriverInterface *g_graphicsDriver = nullptr;
 
@@ -32,12 +31,12 @@ DDialog *dialog(const QString &message, const QString &iconName)
 void show_success_dialog()
 {
     QString new_driver = "new_driver";
-    //QDBusPendingReply<bool> reply = g_graphicsDriver->GetNewDriverName();
-    //reply.waitForFinished();
-//    if (reply.isValid())
-//    {
-//        new_driver = reply.value();
-//    }
+    QDBusPendingReply<bool> reply = g_graphicsDriver->GetNewDriverName();
+    reply.waitForFinished();
+    if (reply.isValid())
+    {
+        new_driver = reply.value();
+    }
 
     const QString &message = qApp->translate("main", "Congratulations, you have switched to %1, please reboot to take effect.");
 
@@ -63,16 +62,18 @@ void show_fail_dialog()
     QString new_driver = "new_driver";
     QDBusPendingReply<QString> oldDriverReply = g_graphicsDriver->GetOldDriverName();
     oldDriverReply.waitForFinished();
-    if (oldDriverReply.isValid())
-    {
+    if (oldDriverReply.isValid()) {
         old_driver = oldDriverReply.value();
+    } else {
+        qDebug() << oldDriverReply.error();
     }
 
-//    QDBusPendingReply<QString> newDriverReply = g_graphicsDriver->GetNewDriverName();
-//    if (newDriverReply.isValid())
-//    {
-//        new_driver = newDriverReply.value();
-//    }
+    QDBusPendingReply<QString> newDriverReply = g_graphicsDriver->GetNewDriverName();
+    if (newDriverReply.isValid()) {
+        new_driver = newDriverReply.value();
+    } else {
+        qDebug() << newDriverReply.error();
+    }
 
     const QString &message = qApp->translate("main", "Auto restore to %2 after failed to switch to %1");
 
@@ -88,52 +89,47 @@ int show_install_dialog() {
     DDialog *installDialog = dialog(qApp->translate("main", "Updating the driver, please wait..."), "://resources/icons/deepin-graphics-driver-manager-installing.svg");
 
     QDBusPendingReply<void> realInstallReply =  g_graphicsDriver->RealInstaller();
+    realInstallReply.waitForFinished();
     if (realInstallReply.isValid()) {
-        installDialog->done(0);
+        QObject::connect(g_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::ReportProgress, [=](QString ratio){
+            if (ratio.toInt() >= 100) {
+                installDialog->done(0);
+            } else if (ratio.toInt() < 0) {
+                installDialog->done(1);
+            }
+        });
     } else {
-        installDialog->done(1);
+        qDebug() << realInstallReply.error();
     }
 
     return installDialog->exec();
 }
 
-void removeDesktopFile()
-{
-    QFile desktopFile(QDir::rootPath() + ROOT_RESKTOP_FILE);
-    if (desktopFile.exists())
-        desktopFile.remove();
-    else
-        qDebug() << desktopFile.fileName() << "do not exists!";
-}
 
 void init()
 {
     bool testSuccess = false;
     QDBusPendingReply<bool> reply = g_graphicsDriver->IsTestSuccess();
     reply.waitForFinished();
-    if (reply.isValid())
-    {
+    if (reply.isValid()) {
         testSuccess = reply.value();
+    } else {
+        qDebug() << reply.error();
     }
 
     qDebug() << "testSuccess is:" << testSuccess;
-    if (testSuccess)
-    {
+    if (testSuccess) {
         const int exitCode = show_install_dialog();
         qDebug() << "show_install_dialog exitCode" << exitCode;
-        if (exitCode == 0)
-        {
+        if (exitCode == 0) {
             qDebug() << "show_success_dialog";
             show_success_dialog();
-        }
-        else
-        {
+        } else {
             qDebug() << "show_fail_dialog1";
             show_fail_dialog();
         }
     }
-    else
-    {
+    else {
         qDebug() << "show_fail_dialog2";
         show_fail_dialog();
     }
@@ -154,9 +150,9 @@ int main(int argc, char *args[])
     DLogManager::registerFileAppender();
 
     g_graphicsDriver = new ComDeepinDaemonGraphicsDriverInterface(
-                "com.deepin.daemon.GraphicsDriver",
-                "/GraphicsDriver",
-                QDBusConnection::sessionBus());
+                GraphicMangerServiceName,
+                GraphicMangerPath,
+                QDBusConnection::systemBus());
 
     QTimer::singleShot(1, nullptr, init);
 

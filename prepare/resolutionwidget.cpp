@@ -89,7 +89,7 @@ void ResolutionWidget::prepareInstall()
         emit prepareFinished(false);
         return;
     }
-    connect(m_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::PreInstallState, this, &ResolutionWidget::policyKitPassed);
+    connect(m_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::ReportProgress, this, &ResolutionWidget::policyKitPassed);
 #endif
 }
 
@@ -104,6 +104,7 @@ void ResolutionWidget::mouseReleaseEvent(QMouseEvent *e)
     emit clicked();
 }
 
+#ifdef TEST_UI
 void ResolutionWidget::onTimeout()
 {
     m_process++;
@@ -114,5 +115,6 @@ void ResolutionWidget::onTimeout()
         emit prepareFinished(true);
     }
 }
+#endif
 
 
