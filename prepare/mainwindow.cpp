@@ -209,19 +209,19 @@ void MainWindow::setVendorIcon()
 
     QString iconPath;
     if (bIntel && !bAmd && !bNvidia) {
-       iconPath = RESOURCES_DIR"/icons/Intel.svg";
+       iconPath = ":/resources/icons/Intel.svg";
     }
 
     if (bAmd && !bIntel && !bNvidia) {
-        iconPath = RESOURCES_DIR"/icons/AMD.svg";
+        iconPath = ":/resources/icons/AMD.svg";
     }
 
     if (bNvidia && !bIntel && !bAmd) {
-        iconPath = RESOURCES_DIR"/icons/NVIDIA.svg";
+        iconPath = ":/resources/icons/NVIDIA.svg";
     }
 
     if (bIntel && bNvidia && !bAmd) {
-        iconPath = RESOURCES_DIR"/icons/Intel-NVIDIA.svg";
+        iconPath = ":/resources/icons/Intel-NVIDIA.svg";
     }
 
     m_vendorIcon->setPixmap(Utils::hidpiPixmap(iconPath, QSize(128, 128)));
