@@ -9,7 +9,7 @@
             "description": "Poor compatibility for parts of old graphics cards.",
             "driver": "xxx",
             "currVersion": "yyy",
-            "repVersion": "zzz",
+            "depoVersion": "zzz",
             "enable": true
         },
 
@@ -19,7 +19,7 @@
             "description": "Save power to reduce power consumption.",
             "driver": "xxx",
             "currVersion": "1.1",
-            "repVersion": "1.2",
+            "depoVersion": "1.2",
             "enable": false
         },
         {
@@ -27,7 +27,7 @@
             "title": "Use NV-PRIME Solution",
             "description": "For laptops with hybrid graphics, having best performance but must work with closed-source driver.",
             "currVersion": "yyy",
-            "repVersion": "zzz",
+            "depoVersion": "zzz",
             "enable": false
         }
     ]

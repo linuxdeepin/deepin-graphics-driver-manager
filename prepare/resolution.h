@@ -29,7 +29,7 @@ public:
         m_driver = info["driver"].toString();
         m_description = QApplication::translate("Resolution", info["description"].toString().toStdString().c_str());
         m_currVersion = info["currVersion"].toString();
-        m_repVersion = info["repVersion"].toString();
+        m_repVersion = info["depoVersion"].toString();
         m_enable = info["enable"].toBool();
     }
 

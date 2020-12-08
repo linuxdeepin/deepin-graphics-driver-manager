@@ -9,7 +9,7 @@
             "description": "For special needs. Auto determine the acceleration way without external configuration.",
             "driver": "xxx",
             "currVersion": "yyy",
-            "repVersion": "zzz",
+            "depoVersion": "zzz",
             "enable": true
         },
 
@@ -19,7 +19,7 @@
             "description": "For special needs. Auto determine the acceleration way without external configuration.",
             "driver": "xxx",
             "currVersion": "yyy",
-            "repVersion": "zzz",
+            "depoVersion": "zzz",
             "enable": false
         }
     ]
