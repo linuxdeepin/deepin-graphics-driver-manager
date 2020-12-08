@@ -135,9 +135,9 @@ QString GraphicsDriverInterface::GetResolutionTitle()
         reslObj.insert("depoVersion", depo_version);
 
         if(resl.name() == GetCurrDriverName()){
-            reslObj.insert("enable", "true");
+            reslObj.insert("enable", true);
         }else{
-            reslObj.insert("enable", "false");
+            reslObj.insert("enable", false);
         }
         json_array.append(reslObj);
     } 
