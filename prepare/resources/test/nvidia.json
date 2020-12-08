@@ -9,7 +9,7 @@
             "description": "Poor performance, unstable in some graphics cards.",
             "driver": "xxx",
             "currVersion": "yyy",
-            "repVersion": "zzz",
+            "depoVersion": "zzz",
             "enable": true
         },
         {
@@ -18,7 +18,7 @@
             "description": "Only adaptive to parts of distributions and graphics cards, may cause black screen.",
             "driver": "xxx",
             "currVersion": "yyy",
-            "repVersion": "zzz",
+            "depoVersion": "zzz",
             "enable": false
         }
     ]

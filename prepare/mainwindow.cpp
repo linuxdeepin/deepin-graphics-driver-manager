@@ -260,7 +260,6 @@ void MainWindow::loadResolutions()
         return;
     }
 
-
     if (resolutionRoot["type"].toInt() == INTEL_NVIDIA_USE_INTEL) {
         m_warnning->setVisible(true);
         m_warnning->setText(tr("Switching to the discrete graphics interface may cause a black screen."));
@@ -268,6 +267,10 @@ void MainWindow::loadResolutions()
     } else if (resolutionRoot["type"].toInt() == INTEL_NVIDIA_USE_NVIDIA) {
         m_warnning->setVisible(true);
         m_warnning->setText(tr("Switching to the integrated graphics interface may cause a black screen."));
+    }
+
+    if (resolutions.size() == 1) {
+        m_usedIndex = 0;
     }
 
     int index = 0;
@@ -329,7 +332,8 @@ void MainWindow::onResolutionSelected()
             //m_updateButton->setFocus();
         } else {
             //m_okButton->setFocus();
-            m_toggleButton->setVisible(true);
+            m_toggleButton->setVisible(false);
+            m_okButton->setVisible(true);
         }
 
     }
