@@ -22,7 +22,7 @@ fi
 
 apt-get -y purge \
     deepin-nvidia-prime \
+    nvidia-driver \
     glx-alternative-nvidia \
     nvidia-alternative \
-    nvidia-driver \
     xserver-xorg-video-nvidia
