@@ -370,7 +370,7 @@ void MainWindow::onToggleBtnClicked()
 
 void MainWindow::onRebootBtnClicked()
 {
-
+     QProcess::startDetached("dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true");
 }
 
 void MainWindow::onPolicyKitPassed(const QString &state)
