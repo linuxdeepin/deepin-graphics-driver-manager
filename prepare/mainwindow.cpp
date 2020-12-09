@@ -1,6 +1,7 @@
 
 #include "mainwindow.h"
 #include "resolutionwidget.h"
+#include "singleresolutionwidget.h"
 #include "utils.h"
 #include "resolution.h"
 
@@ -30,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
                    GraphicMangerPath,
                    QDBusConnection::systemBus());
 
-    m_toggleButton = new DSuggestButton;
+    m_toggleButton = new QPushButton;
     m_toggleButton->setText(tr("Switch"));
     m_toggleButton->setFixedHeight(38);
     m_toggleButton->setVisible(false);
@@ -54,21 +55,21 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_tipsIcon = new QLabel;
 
-    m_okButton = new DSuggestButton;
+    m_okButton = new QPushButton;
     m_okButton->setText(tr("OK"));
     m_okButton->setFixedHeight(38);
 
-    m_updateButton = new DSuggestButton;
+    m_updateButton = new QPushButton;
     m_updateButton->setText(tr("Update"));
     m_updateButton->setFixedHeight(38);
     m_updateButton->setVisible(false);
 
-    m_rebootButton = new DSuggestButton;
+    m_rebootButton = new QPushButton;
     m_rebootButton->setText(tr("Reboot"));
     m_rebootButton->setFixedHeight(38);
     m_rebootButton->setVisible(false);
 
-    m_rebootLaterButton = new DSuggestButton;
+    m_rebootLaterButton = new QPushButton;
     m_rebootLaterButton->setText(tr("Reboot later"));
     m_rebootLaterButton->setFixedHeight(38);
     m_rebootLaterButton->setVisible(false);
@@ -86,11 +87,10 @@ MainWindow::MainWindow(QWidget *parent)
     m_vendorName->setAlignment(Qt::AlignCenter);
 
     m_resolutionsLayout = new QVBoxLayout;
-    m_resolutionsLayout->setContentsMargins(8, 8, 8, 8);
-    m_resolutionsLayout->setSpacing(1);
+    m_resolutionsLayout->setContentsMargins(0, 8, 0, 8);
+    m_resolutionsLayout->setSpacing(10);
     m_resolutionsWidget = new QWidget;
     m_resolutionsWidget->setLayout(m_resolutionsLayout);
-    m_resolutionsWidget->setObjectName("ResolutionsWidget");
 
     QVBoxLayout *centralLayout = new QVBoxLayout;
     centralLayout->addWidget(m_topTips);
@@ -117,21 +117,22 @@ MainWindow::MainWindow(QWidget *parent)
 
     centralLayout->addLayout(hBoxLayout);
     centralLayout->setSpacing(0);
-    centralLayout->setContentsMargins(40, 0, 40, 30);
-
+    centralLayout->setContentsMargins(20, 10, 20, 10);
     titlebar()->setTitle(" ");
+    titlebar()->setIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
     setCentralWidget(new QWidget);
     centralWidget()->setLayout(centralLayout);
 
     setFixedSize(484, 682);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
-    connect(m_toggleButton, &DSuggestButton::clicked, this, &MainWindow::onToggleBtnClicked);
-    connect(m_rebootButton, &DSuggestButton::clicked, this, &MainWindow::onRebootBtnClicked);
-    connect(m_okButton, &DSuggestButton::clicked, qApp, &QApplication::quit);
-    connect(m_rebootLaterButton, &DSuggestButton::clicked, qApp, &QApplication::quit);
+    connect(m_toggleButton, &QPushButton::clicked, this, &MainWindow::onToggleBtnClicked);
+    connect(m_rebootButton, &QPushButton::clicked, this, &MainWindow::onRebootBtnClicked);
+    connect(m_okButton, &QPushButton::clicked, qApp, &QApplication::quit);
+    connect(m_rebootLaterButton, &QPushButton::clicked, qApp, &QApplication::quit);
 
     QTimer::singleShot(0, this, &MainWindow::loadResolutions);
+
 }
 
 MainWindow::~MainWindow()
@@ -233,7 +234,6 @@ void MainWindow::loadResolutions()
 {
     loadDevice();
     QString strResolution;
-
 #ifdef TEST_UI
     QString path = RESOURCES_DIR"/test/intel_nvidia.json";
     QFile file(path);
@@ -271,25 +271,36 @@ void MainWindow::loadResolutions()
 
     if (resolutions.size() == 1) {
         m_usedIndex = 0;
-    }
-
-    int index = 0;
-    for (const auto res : resolutions) {
-        Resolution solution(res.toObject());
-        ResolutionWidget *rw = new ResolutionWidget(m_graphicsDriver, solution);
+        Resolution solution(resolutions[0].toObject());
+        ResolutionWidget *rw = new SingleResolutionWidget(m_graphicsDriver, solution);
+        rw->initUI();
         m_resolutionsLayout->addWidget(rw);
         connect(rw, &ResolutionWidget::clicked, this, &MainWindow::onResolutionSelected);
-        if (solution.enable()) {
-            m_usedIndex = index;
-
-            if (rw->canUpdate()) {
-                m_updateButton->setVisible(true);
-                m_okButton->setVisible(false);
-                m_toggleButton->setVisible(false);
-            }
+        if (rw->canUpdate()) {
+            m_updateButton->setVisible(true);
+            m_okButton->setVisible(false);
+            m_toggleButton->setVisible(false);
         }
+    } else {
+        int index = 0;
+        for (const auto res : resolutions) {
+            Resolution solution(res.toObject());
+            ResolutionWidget *rw = new ResolutionWidget(m_graphicsDriver, solution);
+            rw->initUI();
+            m_resolutionsLayout->addWidget(rw);
+            connect(rw, &ResolutionWidget::clicked, this, &MainWindow::onResolutionSelected);
+            if (solution.enable()) {
+                m_usedIndex = index;
 
-        index++;
+                if (rw->canUpdate()) {
+                    m_updateButton->setVisible(true);
+                    m_okButton->setVisible(false);
+                    m_toggleButton->setVisible(false);
+                }
+            }
+
+            index++;
+        }
     }
 }
 

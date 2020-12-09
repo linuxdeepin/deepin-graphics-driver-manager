@@ -14,59 +14,70 @@ ResolutionWidget::ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graph
       m_resolution(resolution)
 {
 
-       m_checkedBtn = new QLabel;
-       m_checkedBtn->setPixmap(Utils::hidpiPixmap(":/resources/icons/select.svg", QSize(16, 16)));
-       m_checkedBtn->setFixedSize(16, 16);
+}
 
-       m_title = new QLabel;
-       m_title->setText(resolution.title());
-       m_title->setAlignment(Qt::AlignLeft | Qt::AlignBottom);
-       m_title->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+ResolutionWidget::~ResolutionWidget()
+{
 
-       m_version = new QLabel;
-       m_version->setText(tr("Dirver/Version: %1/%2").arg(resolution.driver()).arg(resolution.currVersion()));
-       m_version->setWordWrap(true);
-       m_version->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
-       m_version->setAlignment(Qt::AlignTop | Qt::AlignLeft);
-       m_version->setStyleSheet("QLabel {"
-                                    "font-size: 9pt;"
-                                    "color: #888;"
-                                    "}");
+}
 
+void ResolutionWidget::initUI()
+{
+    m_checkedBtn = new QLabel;
+    m_checkedBtn->setPixmap(Utils::hidpiPixmap(":/resources/icons/select.svg", QSize(24, 24)));
+    m_checkedBtn->setFixedSize(24, 24);
 
+    m_title = new QLabel;
+    m_title->setText(m_resolution.title());
+    m_title->setAlignment(Qt::AlignLeft | Qt::AlignBottom);
+    m_title->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+    m_title->setStyleSheet("QLabel {"
+                           "font-size: 14px;"
+                           "color: #414d68;"
+                           "}");
 
-       m_description = new QLabel;
-       m_description->setText(resolution.description());
-       m_description->setWordWrap(true);
-       m_description->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-       m_description->setAlignment(Qt::AlignTop | Qt::AlignLeft);
-       m_description->setStyleSheet("QLabel {"
-                                    "font-size: 9pt;"
-                                    "color: #888;"
-                                    "}");
+    m_version = new QLabel;
+    m_version->setText(tr("Dirver/Version: %1/%2").arg(m_resolution.driver()).arg(m_resolution.currVersion()));
+    m_version->setWordWrap(true);
+    m_version->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+    m_version->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    m_version->setStyleSheet("QLabel {"
+                                 "font-size: 12px;"
+                                 "color: #c0c6d4;"
+                                 "}");
 
-       QVBoxLayout *infoLayout = new QVBoxLayout;
-       infoLayout->addWidget(m_title);
-       infoLayout->addWidget(m_version);
-       infoLayout->addWidget(m_description);
-       infoLayout->setSpacing(0);
-       infoLayout->setContentsMargins(0, 0, 0, 0);
+    m_description = new QLabel;
+    m_description->setText(m_resolution.description());
+    m_description->setWordWrap(true);
+    m_description->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_description->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    m_description->setStyleSheet("QLabel {"
+                                 "font-size: 12px;"
+                                 "color: #526a7f;"
+                                 "}");
 
-       QHBoxLayout *centralLayout = new QHBoxLayout;
-       centralLayout->addLayout(infoLayout);
-       centralLayout->addWidget(m_checkedBtn);
-       centralLayout->setAlignment(m_checkedBtn, Qt::AlignVCenter | Qt::AlignRight);
-       centralLayout->setSpacing(0);
-       centralLayout->setContentsMargins(0, 0, 0, 0);
+    QVBoxLayout *infoLayout = new QVBoxLayout;
+    infoLayout->addWidget(m_title);
+    infoLayout->addWidget(m_version);
+    infoLayout->addWidget(m_description);
+    infoLayout->setSpacing(3);
+    infoLayout->setContentsMargins(0, 0, 0, 0);
 
-       setLayout(centralLayout);
-       setFixedHeight(80);
-       setChecked(resolution.enable());
-       setObjectName("ResolutionWidget");
-       setStyleSheet("QFrame#ResolutionWidget {"
-   //                   "border: 1px solid red;"
-                     "}");
+    QHBoxLayout *centralLayout = new QHBoxLayout;
+    centralLayout->addLayout(infoLayout);
+    centralLayout->addWidget(m_checkedBtn);
+    centralLayout->setAlignment(m_checkedBtn, Qt::AlignVCenter | Qt::AlignRight);
+    centralLayout->setSpacing(0);
+    //centralLayout->setContentsMargins(10, 10, 10, 10);
 
+    setLayout(centralLayout);
+    setFixedHeight(80);
+    setChecked(m_resolution.enable());
+    setObjectName("ResolutionWidget");
+    setStyleSheet("QFrame#ResolutionWidget {"
+                  "background-color: rgba(0, 0, 0, 0.03);"
+                  "border-radius: 8px"
+                  "}");
 }
 
 void ResolutionWidget::setChecked(const bool checked)

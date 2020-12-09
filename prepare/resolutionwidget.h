@@ -22,12 +22,13 @@ class ResolutionWidget: public QFrame
 
 public:
     explicit ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graphicsDriver, const Resolution &resolution,  QWidget *parent = nullptr);
-
-    void setChecked(const bool checked);
-    void prepareInstall();
-    bool checked() const { return m_checked; }
-    const Resolution resolution() const { return m_resolution; }
-    bool canUpdate();
+    virtual ~ResolutionWidget();
+    virtual void initUI();
+    virtual void setChecked(const bool checked);
+    virtual void prepareInstall();
+    virtual bool checked() const { return m_checked; }
+    virtual const Resolution resolution() const { return m_resolution; }
+    virtual bool canUpdate();
 
 
 signals:
@@ -39,7 +40,7 @@ signals:
 protected:
     void mouseReleaseEvent(QMouseEvent *e);
 
-private:
+protected:
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver;
     Resolution m_resolution;
     bool m_checked;

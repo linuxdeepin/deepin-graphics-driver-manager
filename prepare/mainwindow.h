@@ -2,16 +2,17 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "graphicsdriverproxy.h"
+#include "device.h"
 
 #include <QVBoxLayout>
 #include <QSettings>
-
 #include <DMainWindow>
 #include <DWaterProgress>
-#include <DSuggestButton>
+#include <QPushButton>
 #include <QStackedLayout>
-#include "graphicsdriverproxy.h"
-#include "device.h"
+#include <DThemeManager>
+
 
 
 
@@ -66,11 +67,11 @@ private:
     QLabel *m_botTips;
     QWidget *m_resolutionsWidget;
     DWaterProgress *m_progress;
-    DSuggestButton *m_toggleButton;
-    DSuggestButton *m_okButton;
-    DSuggestButton *m_updateButton;
-    DSuggestButton *m_rebootButton;
-    DSuggestButton *m_rebootLaterButton;
+    QPushButton *m_toggleButton;
+    QPushButton *m_okButton;
+    QPushButton *m_updateButton;
+    QPushButton *m_rebootButton;
+    QPushButton *m_rebootLaterButton;
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver = nullptr;
     DeviceList m_devices;
 
