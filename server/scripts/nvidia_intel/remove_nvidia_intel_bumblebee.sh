@@ -29,6 +29,5 @@ apt-get -y purge \
     primus-libs \
     bbswitch-dkms \
     nvidia-driver \
-    glx-alternative-nvidia \
     nvidia-alternative \
     xserver-xorg-video-nvidia

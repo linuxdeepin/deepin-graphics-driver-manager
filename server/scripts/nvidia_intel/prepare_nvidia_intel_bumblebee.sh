@@ -10,6 +10,8 @@ packages=(
     "bumblebee-nvidia"
     "xserver-xorg-input-all"
     "xserver-xorg-core"
+    "libnvidia-legacy-390xx-cfg1"
+    "nvidia-legacy-390xx-alternative"
 )
 
 package_download "${packages[*]}" "${#packages[*]}"

@@ -42,11 +42,21 @@ package_download() {
     echo "PROGRESS:${ratio}"
 
     apt-get update
+    if [ $? != 0 ]; then
+        echo "Excute apt-get update failed"
+        echo "PROGRESS:${-1}"
+        exit 1;
+    fi
     let index++
     ratio=$(($index*100/$len))
     echo "PROGRESS:${ratio}"
 
     apt-get install  --fix-missing
+    if [ $? != 0 ]; then
+        echo "Excute --fix-missing failed"
+        echo "PROGRESS:${-1}"
+        exit 1;
+    fi
     let index++
     ratio=$(($index*100/$len))
     echo "PROGRESS:${ratio}"
