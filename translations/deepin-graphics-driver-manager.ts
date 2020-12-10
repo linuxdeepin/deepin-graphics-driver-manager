@@ -22,79 +22,79 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="34"/>
+        <location filename="../prepare/mainwindow.cpp" line="35"/>
         <source>Switch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="58"/>
+        <location filename="../prepare/mainwindow.cpp" line="59"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="62"/>
+        <location filename="../prepare/mainwindow.cpp" line="63"/>
         <source>Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="67"/>
+        <location filename="../prepare/mainwindow.cpp" line="68"/>
         <source>Reboot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="72"/>
+        <location filename="../prepare/mainwindow.cpp" line="73"/>
         <source>Reboot later</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="151"/>
+        <location filename="../prepare/mainwindow.cpp" line="152"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="266"/>
+        <location filename="../prepare/mainwindow.cpp" line="265"/>
         <source>Switching to the discrete graphics interface may cause a black screen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="270"/>
+        <location filename="../prepare/mainwindow.cpp" line="269"/>
         <source>Switching to the integrated graphics interface may cause a black screen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="369"/>
+        <location filename="../prepare/mainwindow.cpp" line="384"/>
         <source>Downloading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="371"/>
+        <location filename="../prepare/mainwindow.cpp" line="386"/>
         <source>Downloading the driver for %1, please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="396"/>
+        <location filename="../prepare/mainwindow.cpp" line="411"/>
         <source>Download failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="397"/>
+        <location filename="../prepare/mainwindow.cpp" line="412"/>
         <source>Sorry, switch failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="402"/>
+        <location filename="../prepare/mainwindow.cpp" line="417"/>
         <source>Download Successful</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="404"/>
+        <location filename="../prepare/mainwindow.cpp" line="419"/>
         <source>Please reboot to test the driver.
 
 If no signal, please confirm whether the monitor output port is connected correctly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="406"/>
+        <location filename="../prepare/mainwindow.cpp" line="421"/>
         <source>Please reboot to test the driver</source>
         <translation type="unfinished"></translation>
     </message>
@@ -140,7 +140,7 @@ If no signal, please confirm whether the monitor output port is connected correc
 <context>
     <name>ResolutionWidget</name>
     <message>
-        <location filename="../prepare/resolutionwidget.cpp" line="27"/>
+        <location filename="../prepare/resolutionwidget.cpp" line="40"/>
         <source>Dirver/Version: %1/%2</source>
         <translation type="unfinished"></translation>
     </message>
