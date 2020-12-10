@@ -95,22 +95,26 @@ void ResolutionWidget::prepareInstall()
     connect(&m_timer, &QTimer::timeout, this, &ResolutionWidget::onTimeout);
 #else
     QDBusPendingReply<void> preInstallReply = m_graphicsDriver->PrepareInstall(m_resolution.name());
+    preInstallReply.waitForFinished();
     qDebug() << "m_resolution.name = " << m_resolution.name();
     if (!preInstallReply.isValid()) {
-        qDebug() << preInstallReply.error();
+        qDebug() << "prepareInstall error:" << preInstallReply.error();
         Q_EMIT prepareFinished(false);
         return;
     }
+
     connect(m_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::ReportProgress, [=](QString ratio){
-        int process = ratio.toInt();
-        if (process <= 0) {
-            Q_EMIT prepareFinished(false);
-        } else if (process >= 100) {
-            Q_EMIT prepareFinished(true);
-        } else {
-            Q_EMIT policyKitPassed(ratio);
+        if (m_checked) {
+            int process = ratio.toInt();
+            if (process < 0) {
+                Q_EMIT prepareFinished(false);
+            } else if (process >= 100) {
+                Q_EMIT prepareFinished(true);
+            } else {
+                Q_EMIT policyKitPassed(ratio);
+            }
+            qDebug() << "prepare install process: " << ratio;
         }
-        qDebug() << "prepare install process: " << ratio;
     });
 #endif
 }

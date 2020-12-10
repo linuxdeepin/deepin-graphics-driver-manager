@@ -380,7 +380,12 @@ void MainWindow::onRebootBtnClicked()
 
 void MainWindow::onPolicyKitPassed(const QString &state)
 {
+    ResolutionWidget *rw = static_cast<ResolutionWidget *>(sender());
     ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
+    if (rw != new_driver_widget) {
+        return;
+    }
+
     const QString &new_driver_name = new_driver_widget->resolution().name();
 
     if (!m_started) {
@@ -405,8 +410,21 @@ void MainWindow::onPolicyKitPassed(const QString &state)
 
 void MainWindow::onPrepareFinished(bool success)
 {
-    if (!m_started)
-           return;
+    qDebug() << "onPrepareFinished = " << success;
+    ResolutionWidget *rw = static_cast<ResolutionWidget *>(sender());
+    ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
+    if (rw != new_driver_widget) {
+        return;
+    }
+
+    if (!m_started) {
+        m_botTips->setText(tr("Sorry, switch failed"));
+        m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
+        m_okButton->setVisible(true);
+        m_rebootButton->setVisible(false);
+        m_rebootLaterButton->setVisible(false);
+    }
+
 
     m_progress->setVisible(false);
     m_progress->stop();
