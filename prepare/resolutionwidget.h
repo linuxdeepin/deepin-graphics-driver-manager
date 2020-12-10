@@ -43,7 +43,7 @@ protected:
 protected:
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver;
     Resolution m_resolution;
-    bool m_checked;
+    bool m_checked = false;
     bool m_using;
     QLabel *m_checkedBtn;
     QLabel *m_title;
