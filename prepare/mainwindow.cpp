@@ -292,15 +292,17 @@ void MainWindow::loadResolutions()
             if (solution.enable()) {
                 m_usedIndex = index;
 
+                qDebug() << "m_usedIndex = " << m_usedIndex;
                 if (rw->canUpdate()) {
                     m_updateButton->setVisible(true);
                     m_okButton->setVisible(false);
                     m_toggleButton->setVisible(false);
                 }
             }
-
+            qDebug() << "index = " << index;
             index++;
         }
+
     }
 }
 
@@ -319,7 +321,8 @@ void MainWindow::onResolutionSelected()
         ResolutionWidget *w = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(i)->widget());
         w->setChecked(i == idx);
     }
-
+    qDebug() << "m_usedIndex = " << m_usedIndex;
+    qDebug() << "m_selectedIndex = " << m_selectedIndex;
     const bool changed = m_selectedIndex != m_usedIndex;
 
     if (changed) {
@@ -330,6 +333,7 @@ void MainWindow::onResolutionSelected()
             //m_updateButton->setFocus();
         } else {
             m_toggleButton->setVisible(true);
+            m_okButton->setVisible(false);
             //m_toggleButton->setFocus();
             m_updateButton->setVisible(false);
 
@@ -345,6 +349,7 @@ void MainWindow::onResolutionSelected()
             //m_okButton->setFocus();
             m_toggleButton->setVisible(false);
             m_okButton->setVisible(true);
+            m_updateButton->setVisible(false);
         }
 
     }
@@ -412,6 +417,8 @@ void MainWindow::onPrepareFinished(bool success)
        m_botTips->setText(tr("Sorry, switch failed"));
        m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
        m_okButton->setVisible(true);
+       m_rebootButton->setVisible(false);
+       m_rebootLaterButton->setVisible(false);
        //m_okButton->setFocus();
     } else {
        m_topTips->setText(tr("Download Successful"));

@@ -95,12 +95,23 @@ void ResolutionWidget::prepareInstall()
     connect(&m_timer, &QTimer::timeout, this, &ResolutionWidget::onTimeout);
 #else
     QDBusPendingReply<void> preInstallReply = m_graphicsDriver->PrepareInstall(m_resolution.name());
+    qDebug() << "m_resolution.name = " << m_resolution.name();
     if (!preInstallReply.isValid()) {
         qDebug() << preInstallReply.error();
-        emit prepareFinished(false);
+        Q_EMIT prepareFinished(false);
         return;
     }
-    connect(m_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::ReportProgress, this, &ResolutionWidget::policyKitPassed);
+    connect(m_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::ReportProgress, [=](QString ratio){
+        int process = ratio.toInt();
+        if (process <= 0) {
+            Q_EMIT prepareFinished(false);
+        } else if (process >= 100) {
+            Q_EMIT prepareFinished(true);
+        } else {
+            Q_EMIT policyKitPassed(ratio);
+        }
+        qDebug() << "prepare install process: " << ratio;
+    });
 #endif
 }
 
@@ -112,7 +123,7 @@ bool ResolutionWidget::canUpdate()
 void ResolutionWidget::mouseReleaseEvent(QMouseEvent *e)
 {
     e->accept();
-    emit clicked();
+    Q_EMIT clicked();
 }
 
 #ifdef TEST_UI
@@ -120,10 +131,10 @@ void ResolutionWidget::onTimeout()
 {
     m_process++;
     QString state = QString("%1").arg(m_process);
-    emit policyKitPassed(state);
+    Q_EMIT policyKitPassed(state);
     if (m_process >= 100) {
         m_process = 0;
-        emit prepareFinished(true);
+        Q_EMIT prepareFinished(true);
     }
 }
 #endif

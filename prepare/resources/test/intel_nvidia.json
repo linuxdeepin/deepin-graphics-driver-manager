@@ -10,7 +10,7 @@
             "driver": "xxx",
             "currVersion": "yyy",
             "depoVersion": "zzz",
-            "enable": true
+            "enable": false
         },
 
         {
@@ -20,7 +20,7 @@
             "driver": "xxx",
             "currVersion": "1.1",
             "depoVersion": "1.2",
-            "enable": false
+            "enable": true
         },
         {
             "name": "prime",

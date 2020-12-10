@@ -202,6 +202,7 @@ void GraphicsDriverInterface::PrepareInstall(QString name)
 
     connect(proc, &QProcess::readyReadStandardOutput, this, [=]() {
         QString out = proc->readAllStandardOutput();
+        qDebug() << out;
         QStringList line_list = out.split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
         for(int i=0; i < line_list.size(); i++){
             QString line_str = line_list[i];
