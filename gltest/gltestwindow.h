@@ -16,8 +16,6 @@ class GLTestWindow : public QWidget
 public:
     explicit GLTestWindow(QWidget *parent = nullptr);
 
-    void setExitGLTest(const bool exit);
-
 protected:
     void keyPressEvent(QKeyEvent *e);
 
