@@ -7,14 +7,19 @@
 #include <QApplication>
 
 static const char *translates[] = {
-    QT_TRANSLATE_NOOP("Resolution", "Integrated graphics driver"),
-    QT_TRANSLATE_NOOP("Resolution", "Use Bumblebee Solution."),
-
-    QT_TRANSLATE_NOOP("Resolution", "Use NV-PRIME Solution"),
-    QT_TRANSLATE_NOOP("Resolution", "Unofficial driver"),
-    QT_TRANSLATE_NOOP("Resolution", "Poor performance, unstable in some graphics cards.."),
+    QT_TRANSLATE_NOOP("Resolution", "Integrated Graphics"),
+    QT_TRANSLATE_NOOP("Resolution", "Switching to the discrete graphics interface may cause a black screen"),
     QT_TRANSLATE_NOOP("Resolution", "Official driver"),
-    QT_TRANSLATE_NOOP("Resolution", "Only adaptive to parts of distributions and graphics cards, may cause black screen.")
+    QT_TRANSLATE_NOOP("Resolution", "Unofficial driver"),
+    QT_TRANSLATE_NOOP("Resolution", "Only adaptive to parts of distributions and graphics cards, and it may cause a black screen"),
+    QT_TRANSLATE_NOOP("Resolution", "Poor performance, unstable in some graphics cards"),
+    QT_TRANSLATE_NOOP("Resolution", "Switching to the integrated graphics interface may cause a black screen"),
+    QT_TRANSLATE_NOOP("Resolution", "Integrated Graphics"),
+    QT_TRANSLATE_NOOP("Resolution", "Integrated graphics driver"),
+    QT_TRANSLATE_NOOP("Resolution", "Bumblebee"),
+    QT_TRANSLATE_NOOP("Resolution", "Save power to reduce power consumption"),
+    QT_TRANSLATE_NOOP("Resolution", "PRIME"),
+    QT_TRANSLATE_NOOP("Resolution", "Best performance, for computers with hybrid graphics"),
 };
 
 

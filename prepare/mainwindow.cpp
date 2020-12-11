@@ -65,12 +65,12 @@ MainWindow::MainWindow(QWidget *parent)
     m_updateButton->setVisible(false);
 
     m_rebootButton = new QPushButton;
-    m_rebootButton->setText(tr("Reboot"));
+    m_rebootButton->setText(tr("Reboot Now"));
     m_rebootButton->setFixedHeight(38);
     m_rebootButton->setVisible(false);
 
     m_rebootLaterButton = new QPushButton;
-    m_rebootLaterButton->setText(tr("Reboot later"));
+    m_rebootLaterButton->setText(tr("Later"));
     m_rebootLaterButton->setFixedHeight(38);
     m_rebootLaterButton->setVisible(false);
 
@@ -386,14 +386,14 @@ void MainWindow::onPolicyKitPassed(const QString &state)
         return;
     }
 
-    const QString &new_driver_name = new_driver_widget->resolution().name();
+    const QString &new_driver_title = new_driver_widget->resolution().title();
 
     if (!m_started) {
         m_started = true;
         // toggle UI
-        m_topTips->setText(tr("Downloading"));
+        m_topTips->setText(tr("Downloading %1").arg(new_driver_title));
         m_topTips->setVisible(true);
-        m_botTips->setText(tr("Downloading the driver for %1, please wait...").arg(new_driver_name));
+        m_botTips->setText(tr("Downloading the driver for %1, please wait...").arg(new_driver_title));
         m_botTips->setVisible(true);
         m_vendorIcon->setVisible(false);
         m_vendorName->setVisible(false);
@@ -439,9 +439,9 @@ void MainWindow::onPrepareFinished(bool success)
        m_rebootLaterButton->setVisible(false);
        //m_okButton->setFocus();
     } else {
-       m_topTips->setText(tr("Download Successful"));
+       m_topTips->setText(tr("Download successful"));
        if (!m_devices.empty())
-           m_botTips->setText(tr("Please reboot to test the driver.\n\nIf no signal, please confirm whether the monitor output port is connected correctly."));
+           m_botTips->setText(tr("Please reboot to test the driver. If no signal, please confirm whether the monitor output port is connected correctly."));
        else
            m_botTips->setText(tr("Please reboot to test the driver"));
        m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/success.svg", QSize(128, 128)));
