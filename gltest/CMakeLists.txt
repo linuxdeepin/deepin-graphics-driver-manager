@@ -5,6 +5,13 @@ find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
 pkg_check_modules(DtkWidget REQUIRED dtkwidget)
 
+if (CMAKE_BUILD_TYPE MATCHES Debug)
+  add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_SOURCE_DIR}/translations/\"")
+else()
+  add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_INSTALL_PREFIX}/share/deepin-graphics-driver-manager/translations/\"")
+endif()
+
+
 file(GLOB SRCS "*.h" "*.cpp")
 
 include_directories(${CMAKE_SOURCE_DIR}/utils/)

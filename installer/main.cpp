@@ -38,6 +38,8 @@ void show_success_dialog()
         new_driver = reply.value();
     }
 
+    qDebug() << "new_driver = " << new_driver;
+
     const QString &message = qApp->translate("main", "Congratulations, you have switched to %1, please reboot to take effect.");
 
     DDialog *d = dialog(message.arg(new_driver), "://resources/icons/deepin-graphics-driver-manager-success.svg");
@@ -49,7 +51,7 @@ void show_success_dialog()
         Q_UNUSED(text);
         if (index == 1)
         {
-            //g_graphicsDriver->reboot();
+            QProcess::startDetached("dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true");
         }
     });
 
@@ -69,6 +71,7 @@ void show_fail_dialog()
     }
 
     QDBusPendingReply<QString> newDriverReply = g_graphicsDriver->GetNewDriverName();
+    newDriverReply.waitForFinished();
     if (newDriverReply.isValid()) {
         new_driver = newDriverReply.value();
     } else {

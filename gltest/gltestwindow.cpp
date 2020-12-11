@@ -44,10 +44,6 @@ void GLTestWindow::keyPressEvent(QKeyEvent *e)
     }
 }
 
-void GLTestWindow::setExitGLTest(const bool exit)
-{
-    m_exit_gltest = exit;
-}
 
 void GLTestWindow::onAccept()
 {
