@@ -303,7 +303,8 @@ QString GraphicsDriverInterface::GetCurrDriverName()
     proc->waitForFinished();
     const int status = proc->exitCode();
     if ( "amd" == name ){
-        return m_devInfo.curDriver();
+        //return m_devInfo.curDriver();
+        return m_devInfo.curDevice().m_driver;
     }else if( "intel" == name ){
         switch(status){
             case 0:

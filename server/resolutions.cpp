@@ -55,7 +55,7 @@ Resolutions ResolutionsBuilder::build()
             Resolution solution(resl.toObject());
             switch (deviceType)
             {
-            case GraphicsDeviceInfo::AMD:
+            case DeviceFlag::AMD:
                 if(object["name"].toString() == "amd"){
                     if(r.m_type == Resolutions::NoResolution){
                         r.m_type = Resolutions::AMD;
@@ -64,14 +64,14 @@ Resolutions ResolutionsBuilder::build()
                         r.m_statusScript = object["status"].toString();
                     }
                     
-                    if (m_devInfo.curDriver() == "amdgpu"){
+                    if (m_devInfo.curDevice().m_driver == "amdgpu"){
                         if(solution.name() == "amdgpu") r.m_resolutions.append(solution);
                     }else {
                         if(solution.name() == "radeon") r.m_resolutions.append(solution);
                     }
                 }
                 break;
-            case GraphicsDeviceInfo::INTEL:
+            case DeviceFlag::INTEL:
                 if(object["name"].toString() == "intel"){
                     if(r.m_type == Resolutions::NoResolution){
                         r.m_type = Resolutions::INTEL;
@@ -85,7 +85,7 @@ Resolutions ResolutionsBuilder::build()
                     }
                 }
                 break;
-            case GraphicsDeviceInfo::NVIDIA:
+            case DeviceFlag::NVIDIA:
                 if(object["name"].toString() == "nvidia"){
                     if(r.m_type == Resolutions::NoResolution){
                         r.m_type = Resolutions::NVIDIA;
@@ -98,10 +98,10 @@ Resolutions ResolutionsBuilder::build()
                     }
                 }
                 break;
-            case (GraphicsDeviceInfo::INTEL | GraphicsDeviceInfo::NVIDIA):
+            case (DeviceFlag::INTEL | DeviceFlag::NVIDIA):
                 if(!m_devInfo.isNotebook())
                 {
-                    if (GraphicsDeviceInfo::INTEL == m_devInfo.curDeviceFlag())
+                    if (DeviceFlag::INTEL == m_devInfo.curDevice().m_flag)
                     {
                         if(object["name"].toString() == "intel"){
                             if(r.m_type == Resolutions::NoResolution){
@@ -115,7 +115,7 @@ Resolutions ResolutionsBuilder::build()
                                 r.m_resolutions.append(solution);
                             }
                         }
-                    }else if (GraphicsDeviceInfo::NVIDIA == m_devInfo.curDeviceFlag()){
+                    }else if (DeviceFlag::NVIDIA == m_devInfo.curDevice().m_flag){
                         if(object["name"].toString() == "nvidia"){
                             if(r.m_type == Resolutions::NoResolution){
                                 r.m_type = Resolutions::INTEL_NVIDIA_USE_NVIDIA;

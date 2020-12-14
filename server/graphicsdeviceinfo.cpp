@@ -17,40 +17,27 @@ extern "C" {
 // NOTE: see more info /usr/share/misc/pci.ids
 inline bool is_display_controller(const uint devClass)
 {
+    qDebug() << "device_class：　"<< devClass;
     return (devClass & 0xff00) == 0x0300 || devClass == 0x0400;
 }
 
-GraphicsDeviceInfo::DeviceFlag GraphicsDeviceInfo::deviceType(const QString &devInfo)
+DeviceFlag GraphicsDeviceInfo::deviceType(const QString &devInfo)
 {
     if (devInfo.contains("Intel"))
-        return GraphicsDeviceInfo::INTEL;
+        return DeviceFlag::INTEL;
     else if (devInfo.contains("NVIDIA"))
-        return GraphicsDeviceInfo::NVIDIA;
+        return DeviceFlag::NVIDIA;
     else if (devInfo.contains("AMD"))
-        return GraphicsDeviceInfo::AMD;
+        return DeviceFlag::AMD;
     else
-        return GraphicsDeviceInfo::NoDevice;
+        return DeviceFlag::NoDevice;
 }
 
-GraphicsDeviceInfo::GraphicsDeviceInfo() :
-    m_sysDevFlag(NoDevice)
+GraphicsDeviceInfo::GraphicsDeviceInfo()
 {
     init();
 }
 
-int GraphicsDeviceInfo::deviceNums() const
-{
-    int flag = m_sysDevFlag;
-    int ret = 0;
-
-    while (flag)
-    {
-        flag &= flag - 1;
-        ++ret;
-    }
-
-    return ret;
-}
 
 bool GraphicsDeviceInfo::isNotebook()
 {
@@ -67,71 +54,76 @@ bool GraphicsDeviceInfo::isNotebook()
     return defaultDevice.toBool();
 }
 
-QString GraphicsDeviceInfo::curDriver()
-{
-    QFile file("/sys/class/graphics/fb0/device/uevent");
-    file.open(QIODevice::ReadOnly);
-    if (!file.isOpen()) {
-        qWarning("Open the file /sys/class/graphics/fb0/device/uevent failed!");
-        return nullptr;
-    }
-    QString line = file.readLine();
-    do {
-        qDebug() << line;
-        if (line.contains("DRIVER")) {
-            QString driver = line.section('=', 1, 1).trimmed();
-            qDebug()<<"driver:"<<driver;
-            return driver;
-        }
-        line = file.readLine();
-    }while(!line.isNull());
 
-    return nullptr;
-}
 
 void GraphicsDeviceInfo::init()
 {
     struct pci_access *pacc;
     struct pci_dev *dev;
     char namebuf[1024];
-    DeviceFlag flag;
+    char path[1024], *base;
+    int n;
     pacc = pci_alloc();
     pci_init(pacc);
     pci_scan_bus(pacc);
     for (dev = pacc->devices; dev; dev = dev->next)
     {
-        pci_fill_info(dev, PCI_FILL_CLASS | PCI_FILL_IDENT);
+        //pci_fill_info(dev, PCI_FILL_PHYS_SLOT | PCI_FILL_CLASS | PCI_FILL_IDENT);
+        pci_fill_info(dev, PCI_FILL_PHYS_SLOT | PCI_FILL_IDENT);
         if (!is_display_controller(dev->device_class))
             continue;
+        base = pci_get_param(dev->access, "sysfs.path");
+        if (!base || !base[0]){
+            qWarning()<<"Get sysfs.path failed!";
+            return;
+        }
 
+        n = snprintf(path, sizeof(path), "%s/devices/%04x:%02x:%02x.%d/",
+            base, dev->domain, dev->bus, dev->dev, dev->func);
+        if (n < 0 || n >= (int)sizeof(path)){
+            qWarning("sysfs device name too long, why?");
+            return;
+        }
+        qDebug()<<"path:" <<path;
+
+        QFile file1(QString(path)+"driver");
+
+        QString filename = file1.readLink();
+        QString driver = filename.split("/")[filename.split("/").length()-1];
+
+        bool boot_vga = false;
+        QFile file2(QString(path)+"boot_vga");
+        if (file2.exists()){
+            file2.open(QIODevice::ReadOnly);
+            if (!file2.isOpen()) {
+                return;
+            }
+            QString str = file2.readAll();
+            str.remove("\n");
+            if( "1" == str){
+                boot_vga = true;
+             }
+        }
+
+        QString devName;
+        DeviceFlag flag;
         const QString devInfo = pci_lookup_name(pacc, namebuf, sizeof(namebuf), PCI_LOOKUP_VENDOR | PCI_LOOKUP_DEVICE, dev->vendor_id, dev->device_id);
-        qDebug() << devInfo;
-        flag = deviceType(devInfo);
-        switch(flag)
-        {
-            case NVIDIA:
-                m_devices.append(Device("NVIDIA", devInfo));
-                break;
-            case INTEL:
-                m_devices.append(Device("INTEL", devInfo));
-                break;
-            case AMD:
-                m_devices.append(Device("AMD", devInfo));
-                break;
-            default:break;
+        if (devInfo.contains("Intel")){
+            devName = "INTEL";
+            flag = DeviceFlag::INTEL;
+        }else if (devInfo.contains("NVIDIA")){
+            devName = "NVIDIA";
+            flag= DeviceFlag::NVIDIA;
+        }else if (devInfo.contains("AMD")){
+            devName = "AMD";
+            flag= DeviceFlag::AMD;
         }
         m_sysDevFlag |= flag;
+        Device device = Device(devName, devInfo, driver, boot_vga, flag);
+        m_devices.append(device);
+        if(boot_vga){
+            m_curDevice = device;
+        } 
     }
     pci_cleanup(pacc);
-
-    QString driver = curDriver();
-    if (driver == "i915"){
-        m_curDevFlag = GraphicsDeviceInfo::INTEL;
-    }else if (driver == "nouveau" || driver == "nvidia"){
-        m_curDevFlag = GraphicsDeviceInfo::NVIDIA;
-    }else if (driver == "amdgpu" || driver == "raedon"){
-        m_curDevFlag = GraphicsDeviceInfo::AMD;
-    }else{
-        m_curDevFlag = GraphicsDeviceInfo::NoDevice;
-    }
 }
