@@ -5,8 +5,8 @@
     [
         {
             "title": "Unofficial driver",
-            "name": "NVIDIA Open Source Driver",
-            "description": "Poor performance, unstable in some graphics cards.",
+            "name": "nouveau",
+            "description": "Poor performance, unstable in some graphics cards",
             "driver": "xxx",
             "currVersion": "yyy",
             "depoVersion": "zzz",
@@ -14,8 +14,8 @@
         },
         {
             "title": "Official driver",
-            "name": "NVIDIA Closed Source Driver",
-            "description": "Only adaptive to parts of distributions and graphics cards, may cause black screen.",
+            "name": "nvidia",
+            "description": "Only adaptive to parts of distributions and graphics cards, and it may cause a black screen",
             "driver": "xxx",
             "currVersion": "yyy",
             "depoVersion": "zzz",

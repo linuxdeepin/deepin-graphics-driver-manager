@@ -52,6 +52,10 @@ MainWindow::MainWindow(QWidget *parent)
     m_warnning->setVisible(false);
     m_warnning->setWordWrap(true);
     m_warnning->setObjectName("Warnning");
+    m_warnning->setStyleSheet("QLabel {"
+                                 "font-size: 12px;"
+                                 "color: #526a7f;"
+                                 "}");
 
     m_tipsIcon = new QLabel;
 
@@ -235,7 +239,7 @@ void MainWindow::loadResolutions()
     loadDevice();
     QString strResolution;
 #ifdef TEST_UI
-    QString path = RESOURCES_DIR"/test/intel_nvidia.json";
+    QString path = RESOURCES_DIR"/test/intel_nvidia_use_nvidia.json";
     QFile file(path);
     if (file.exists()) {
        file.open(QIODevice::ReadOnly);
