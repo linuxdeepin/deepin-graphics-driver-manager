@@ -9,28 +9,8 @@
             "description": "Poor compatibility for parts of old graphics cards.",
             "driver": "xxx",
             "currVersion": "yyy",
-            "depoVersion": "zzz",
+            "depoVersion": "yyy",
             "enable": true
-        },
-
-        {
-            "title": "Integrated graphics driver",
-            "name": "uxa",
-            "description": "Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.",
-            "driver": "xxx",
-            "currVersion": "yyy",
-            "depoVersion": "zzz",
-            "enable": false
-        },
-
-        {
-            "name": "sna",
-            "title": "Integrated graphics driver",
-            "description": "Speed up the graphics card with better performance, but unstable in some cards with screen flashing.",
-            "driver": "xxx",
-            "currVersion": "yyy",
-            "depoVersion": "zzz",
-            "enable": false
         }
     ]  
 }

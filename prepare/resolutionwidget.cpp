@@ -29,6 +29,7 @@ void ResolutionWidget::initUI()
 
     m_title = new QLabel;
     m_title->setText(m_resolution.title());
+
     m_title->setAlignment(Qt::AlignLeft | Qt::AlignBottom);
     m_title->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     m_title->setStyleSheet("QLabel {"
@@ -46,6 +47,7 @@ void ResolutionWidget::initUI()
                                  "color: #c0c6d4;"
                                  "}");
 
+
     m_description = new QLabel;
     m_description->setText(m_resolution.description());
     m_description->setWordWrap(true);
@@ -55,6 +57,10 @@ void ResolutionWidget::initUI()
                                  "font-size: 12px;"
                                  "color: #526a7f;"
                                  "}");
+    if (m_resolution.name().contains("glamor") || m_resolution.name().contains("uxa") || m_resolution.name().contains("sna")) {
+        m_description->setVisible(false);
+    }
+
 
     QVBoxLayout *infoLayout = new QVBoxLayout;
     infoLayout->addWidget(m_title);
@@ -68,7 +74,7 @@ void ResolutionWidget::initUI()
     centralLayout->addWidget(m_checkedBtn);
     centralLayout->setAlignment(m_checkedBtn, Qt::AlignVCenter | Qt::AlignRight);
     centralLayout->setSpacing(0);
-    //centralLayout->setContentsMargins(10, 10, 10, 10);
+    centralLayout->setContentsMargins(10, 10, 0, 10);
 
     setLayout(centralLayout);
     setFixedHeight(80);

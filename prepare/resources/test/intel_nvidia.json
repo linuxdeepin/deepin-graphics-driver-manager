@@ -15,17 +15,18 @@
 
         {
             "name": "bumblebee",
-            "title": "Use Bumblebee Solution",
-            "description": "Save power to reduce power consumption.",
-            "driver": "xxx",
+            "title": "Bumblebee",
+            "description": "Save power to reduce power consumption",
+            "driver": "nvidia",
             "currVersion": "1.1",
             "depoVersion": "1.2",
             "enable": true
         },
         {
             "name": "prime",
-            "title": "Use NV-PRIME Solution",
-            "description": "For laptops with hybrid graphics, having best performance but must work with closed-source driver.",
+            "title": "PRIME",
+            "description": "Best performance, for computers with hybrid graphics",
+            "driver": "nvidia",
             "currVersion": "yyy",
             "depoVersion": "zzz",
             "enable": false
