@@ -145,7 +145,7 @@ QString GraphicsDriverInterface::GetResolutionTitle()
     return QString(QJsonDocument(ResolutionTitle).toJson());
 }
 
-void GraphicsDriverInterface::PrepareInstall(QString name)
+void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
 {
     Resolution new_resl;
     Resolution old_resl;
@@ -219,7 +219,7 @@ void GraphicsDriverInterface::PrepareInstall(QString name)
 
     const QString &exit_gltest = new_resl.keep_gltest() ? "false" : "true";
     const QString &new_driver = new_resl.name();
-    const QString &lang = QLocale().name();
+    //const QString &lang = QLocale().name();
     const QString &sc = scriptAbsolutePath("dgradvrmgr-prepare.sh");
     const QString &old_driver = old_resl.name();
 

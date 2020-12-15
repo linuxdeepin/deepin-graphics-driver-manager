@@ -74,7 +74,7 @@ public slots:
     Return:         // 函数返回值的说明
     Others:         // 其它说明
     *************************************************/
-    void PrepareInstall(QString name);
+    void PrepareInstall(QString name, QString language);
 
     /*************************************************
     Function:       // 函数名称
