@@ -7,6 +7,7 @@
 #include <QMouseEvent>
 #include <QTimer>
 #include <QLineEdit>
+#include <QLocale>
 
 ResolutionWidget::ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graphicsDriver, const Resolution &resolution,  QWidget *parent)
     : QFrame(parent),
@@ -100,7 +101,7 @@ void ResolutionWidget::prepareInstall()
     m_process = 0;
     connect(&m_timer, &QTimer::timeout, this, &ResolutionWidget::onTimeout);
 #else
-    QDBusPendingReply<void> preInstallReply = m_graphicsDriver->PrepareInstall(m_resolution.name());
+    QDBusPendingReply<void> preInstallReply = m_graphicsDriver->PrepareInstall(m_resolution.name(), QLocale::system().name());
     preInstallReply.waitForFinished();
     qDebug() << "m_resolution.name = " << m_resolution.name();
     if (!preInstallReply.isValid()) {

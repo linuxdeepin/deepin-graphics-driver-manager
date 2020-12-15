@@ -81,10 +81,10 @@ bool GraphicsDriverAdaptor::IsTestSuccess()
     return out0;
 }
 
-void GraphicsDriverAdaptor::PrepareInstall(const QString &name)
+void GraphicsDriverAdaptor::PrepareInstall(const QString &name, const QString &language)
 {
     // handle method call com.deepin.daemon.GraphicsDriver.PrepareInstall
-    QMetaObject::invokeMethod(parent(), "PrepareInstall", Q_ARG(QString, name));
+    QMetaObject::invokeMethod(parent(), "PrepareInstall", Q_ARG(QString, name), Q_ARG(QString, language));
 }
 
 void GraphicsDriverAdaptor::RealInstaller()

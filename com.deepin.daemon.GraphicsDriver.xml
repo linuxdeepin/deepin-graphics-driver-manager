@@ -18,6 +18,7 @@
     </method>
     <method name="PrepareInstall">
       <arg name="name" type="s" direction="in"/>
+      <arg name="language" type="s" direction="in"/>
     </method>
     <method name="TestInstall">
     </method>

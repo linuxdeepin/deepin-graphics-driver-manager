@@ -72,10 +72,10 @@ public Q_SLOTS: // METHODS
         return asyncCallWithArgumentList(QStringLiteral("IsTestSuccess"), argumentList);
     }
 
-    inline QDBusPendingReply<> PrepareInstall(const QString &name)
+    inline QDBusPendingReply<> PrepareInstall(const QString &name, const QString &language)
     {
         QList<QVariant> argumentList;
-        argumentList << QVariant::fromValue(name);
+        argumentList << QVariant::fromValue(name) << QVariant::fromValue(language);
         return asyncCallWithArgumentList(QStringLiteral("PrepareInstall"), argumentList);
     }
 
