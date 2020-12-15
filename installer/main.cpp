@@ -31,11 +31,12 @@ DDialog *dialog(const QString &message, const QString &iconName)
 void show_success_dialog()
 {
     QString new_driver = "new_driver";
-    QDBusPendingReply<bool> reply = g_graphicsDriver->GetNewDriverName();
+    QDBusPendingReply<QString> reply = g_graphicsDriver->GetNewDriverName();
     reply.waitForFinished();
-    if (reply.isValid())
-    {
+    if (reply.isValid()) {
         new_driver = reply.value();
+    } else {
+        qDebug() << reply.error();
     }
 
     qDebug() << "new_driver = " << new_driver;
