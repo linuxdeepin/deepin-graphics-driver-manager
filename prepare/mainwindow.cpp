@@ -78,6 +78,11 @@ MainWindow::MainWindow(QWidget *parent)
     m_rebootLaterButton->setFixedHeight(38);
     m_rebootLaterButton->setVisible(false);
 
+    m_cancelButtion = new QPushButton;
+    m_cancelButtion->setText(tr("Cancel"));
+    m_cancelButtion->setFixedHeight(38);
+    m_cancelButtion->setVisible(false);
+
     m_progress = new DWaterProgress;
     m_progress->setTextVisible(true);
     m_progress->setFixedSize(100, 100);
@@ -113,6 +118,7 @@ MainWindow::MainWindow(QWidget *parent)
     centralLayout->addWidget(m_toggleButton);
     centralLayout->addWidget(m_okButton);
     centralLayout->addWidget(m_updateButton);
+    centralLayout->addWidget(m_cancelButtion);
 
     QHBoxLayout *hBoxLayout = new QHBoxLayout;
     hBoxLayout->addWidget(m_rebootLaterButton);
@@ -131,9 +137,11 @@ MainWindow::MainWindow(QWidget *parent)
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
     connect(m_toggleButton, &QPushButton::clicked, this, &MainWindow::onToggleBtnClicked);
+    connect(m_updateButton, &QPushButton::clicked, this, &MainWindow::onUpdateBtnClicked);
     connect(m_rebootButton, &QPushButton::clicked, this, &MainWindow::onRebootBtnClicked);
     connect(m_okButton, &QPushButton::clicked, qApp, &QApplication::quit);
     connect(m_rebootLaterButton, &QPushButton::clicked, qApp, &QApplication::quit);
+    connect(m_cancelButtion, &QPushButton::clicked, this, &MainWindow::onCancelBtnClicked);
 
     QTimer::singleShot(0, this, &MainWindow::loadResolutions);
 
@@ -361,7 +369,13 @@ void MainWindow::onResolutionSelected()
 
 void MainWindow::onUpdateBtnClicked()
 {
-
+    ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_usedIndex)->widget());
+    new_driver_widget->prepareInstall();
+    m_toggleButton->setVisible(false);
+    m_okButton->setVisible(false);
+    m_updateButton->setVisible(false);
+    connect(new_driver_widget, &ResolutionWidget::prepareFinished, this, &MainWindow::onPrepareFinished);
+    connect(new_driver_widget, &ResolutionWidget::policyKitPassed, this, &MainWindow::onPolicyKitPassed);
 }
 
 void MainWindow::onToggleBtnClicked()
@@ -379,7 +393,14 @@ void MainWindow::onToggleBtnClicked()
 
 void MainWindow::onRebootBtnClicked()
 {
-     QProcess::startDetached("dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true");
+    QProcess::startDetached("dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true");
+}
+
+void MainWindow::onCancelBtnClicked()
+{
+    QDBusPendingReply<void> reply = m_graphicsDriver->CancelInstall();
+    reply.waitForFinished();
+    qApp->quit();
 }
 
 void MainWindow::onPolicyKitPassed(const QString &state)
@@ -403,6 +424,7 @@ void MainWindow::onPolicyKitPassed(const QString &state)
         m_vendorName->setVisible(false);
         m_resolutionsWidget->setVisible(false);
         m_toggleButton->setVisible(false);
+        m_cancelButtion->setVisible(true);
         m_progress->setVisible(true);
         m_progress->start();
     } else {
@@ -452,4 +474,6 @@ void MainWindow::onPrepareFinished(bool success)
        m_rebootButton->setVisible(true);
        m_rebootLaterButton->setVisible(true);
     }
+
+    m_cancelButtion->setVisible(false);
 }

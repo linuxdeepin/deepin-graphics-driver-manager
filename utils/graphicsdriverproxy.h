@@ -36,6 +36,12 @@ public:
     ~ComDeepinDaemonGraphicsDriverInterface();
 
 public Q_SLOTS: // METHODS
+    inline QDBusPendingReply<> CancelInstall()
+    {
+        QList<QVariant> argumentList;
+        return asyncCallWithArgumentList(QStringLiteral("CancelInstall"), argumentList);
+    }
+
     inline QDBusPendingReply<QString> GetCurrDriverName()
     {
         QList<QVariant> argumentList;

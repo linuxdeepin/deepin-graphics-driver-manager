@@ -224,7 +224,12 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
     const QString &old_driver = old_resl.name();
 
     QString cmd = QString("%1 %2 %3 %4 %5 %6 %7 %8").arg(sc, prepare, removeOld, install, old_driver, new_driver, language, exit_gltest);
-    proc->start(cmd); 
+    proc->start(cmd);
+}
+
+void GraphicsDriverInterface::CancelInstall()
+{
+
 }
 
 void GraphicsDriverInterface::TestInstall()

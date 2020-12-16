@@ -48,6 +48,7 @@ private Q_SLOTS:
     void onUpdateBtnClicked();
     void onToggleBtnClicked();
     void onRebootBtnClicked();
+    void onCancelBtnClicked();
     void onPolicyKitPassed(const QString &state);
     void onPrepareFinished(bool success);
 
@@ -72,6 +73,7 @@ private:
     QPushButton *m_updateButton;
     QPushButton *m_rebootButton;
     QPushButton *m_rebootLaterButton;
+    QPushButton *m_cancelButtion;
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver = nullptr;
     DeviceList m_devices;
 
