@@ -20,6 +20,8 @@
       <arg name="name" type="s" direction="in"/>
       <arg name="language" type="s" direction="in"/>
     </method>
+    <method name="CancelInstall">
+    </method>
     <method name="TestInstall">
     </method>
     <method name="IsTestSuccess">

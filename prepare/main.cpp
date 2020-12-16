@@ -8,6 +8,7 @@
 #include <DLog>
 
 
+
 DCORE_USE_NAMESPACE
 
 QString getUserName()
@@ -42,7 +43,7 @@ int main(int argc, char* argv[])
     app.setApplicationDescription(QApplication::translate("main", "Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions."));
 
     //设置日志
-    const QString logFormat = "[%{time}{yyyy-MM-dd, HH:mm:ss.zzz}] [%{type:-7}] [%{file}=>%{function}: %{line}] %{message}\n";
+    const QString logFormat = "[%{time}{yyyy-MM-dd, HH:mm:ss.zzz}] [%{type:1}] [%{file}=>%{function}: %{line}] %{message}\n";
     const QString log_file(QString("/home/%1/deepin-graphics-driver-manager.log").arg(getUserName()));
     ConsoleAppender *consoleAppender = new ConsoleAppender;
     consoleAppender->setFormat(logFormat);

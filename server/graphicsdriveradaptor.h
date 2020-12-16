@@ -52,6 +52,7 @@ class GraphicsDriverAdaptor: public QDBusAbstractAdaptor
 "      <arg direction=\"in\" type=\"s\" name=\"name\"/>\n"
 "      <arg direction=\"in\" type=\"s\" name=\"language\"/>\n"
 "    </method>\n"
+"    <method name=\"CancelInstall\"/>\n"
 "    <method name=\"TestInstall\"/>\n"
 "    <method name=\"IsTestSuccess\">\n"
 "      <arg direction=\"out\" type=\"b\"/>\n"
@@ -74,6 +75,7 @@ public:
 
 public: // PROPERTIES
 public Q_SLOTS: // METHODS
+    void CancelInstall();
     QString GetCurrDriverName();
     QString GetDevice();
     QString GetNewDriverName();

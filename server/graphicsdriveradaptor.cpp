@@ -33,6 +33,12 @@ GraphicsDriverAdaptor::~GraphicsDriverAdaptor()
     // destructor
 }
 
+void GraphicsDriverAdaptor::CancelInstall()
+{
+    // handle method call com.deepin.daemon.GraphicsDriver.CancelInstall
+    QMetaObject::invokeMethod(parent(), "CancelInstall");
+}
+
 QString GraphicsDriverAdaptor::GetCurrDriverName()
 {
     // handle method call com.deepin.daemon.GraphicsDriver.GetCurrDriverName
