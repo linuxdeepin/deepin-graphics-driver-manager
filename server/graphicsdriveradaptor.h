@@ -42,6 +42,7 @@ class GraphicsDriverAdaptor: public QDBusAbstractAdaptor
 "    <signal name=\"ReportProgress\">\n"
 "      <arg direction=\"out\" type=\"s\" name=\"ratio\"/>\n"
 "    </signal>\n"
+"    <signal name=\"Cancel\"/>\n"
 "    <method name=\"GetDevice\">\n"
 "      <arg direction=\"out\" type=\"s\"/>\n"
 "    </method>\n"
@@ -86,6 +87,7 @@ public Q_SLOTS: // METHODS
     void RealInstaller();
     void TestInstall();
 Q_SIGNALS: // SIGNALS
+    void Cancel();
     void PreInstallState(const QString &state);
     void RealInstallState(const QString &state);
     void ReportProgress(const QString &ratio);

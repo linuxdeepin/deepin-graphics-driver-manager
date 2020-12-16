@@ -195,6 +195,12 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
         }
     });
 
+    connect(this, &GraphicsDriverInterface::Cancel, proc, [=]{
+        qDebug()<< "Cancel prepare install!!!";
+        proc->kill();
+        proc->waitForFinished(1000);
+    });
+
     connect(proc, &QProcess::started, this, [=] {
         qDebug() << "PrepareInstall start!"; 
         Q_EMIT ReportProgress("0");//开始
@@ -229,7 +235,7 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
 
 void GraphicsDriverInterface::CancelInstall()
 {
-
+    Q_EMIT Cancel();
 }
 
 void GraphicsDriverInterface::TestInstall()

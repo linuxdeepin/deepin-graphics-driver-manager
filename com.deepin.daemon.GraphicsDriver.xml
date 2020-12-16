@@ -10,6 +10,8 @@
     <signal name="ReportProgress">
       <arg name="ratio" type="s" direction="out"/>
     </signal>
+    <signal name="Cancel">
+    </signal>
     <method name="GetDevice">
       <arg type="s" direction="out"/>
     </method>

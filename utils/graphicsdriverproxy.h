@@ -98,6 +98,7 @@ public Q_SLOTS: // METHODS
     }
 
 Q_SIGNALS: // SIGNALS
+    void Cancel();
     void PreInstallState(const QString &state);
     void RealInstallState(const QString &state);
     void ReportProgress(const QString &ratio);
