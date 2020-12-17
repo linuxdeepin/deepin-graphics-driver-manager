@@ -8,5 +8,5 @@ Homepage: https://www.deepin.org
 
 Package: deepin-graphics-driver-manager
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, dialog, overlayroot, rsync, sed, qdbus-qt5, xinit
+Depends: ${shlibs:Depends}, ${misc:Depends}, dialog, overlayroot, rsync, sed, qdbus-qt5, xinit, deepin-feedback
 Description: deepin driver manager
