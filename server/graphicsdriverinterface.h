@@ -148,6 +148,7 @@ public slots:
 
 
 private:
+    QString GetDriverName(QString type);
     QString GetKernelVersion();
     QString GetCurrPackageVersion(QString pkg_name);
     QString GetDepoPackageVersion(QString pkg_name);

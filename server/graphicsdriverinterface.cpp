@@ -356,8 +356,12 @@ QString GraphicsDriverInterface::GetCurrDriverName()
     return nullptr;
 }
 
-QString GraphicsDriverInterface::GetOldDriverName()
+QString GraphicsDriverInterface::GetDriverName(QString type)
 {
+    if((type !=  "old_driver") && (type !=  "new_driver")){
+        qWarning("The dirver type is invalid!");
+        return nullptr;
+    }
     const QString &config_file = scriptAbsolutePath("working-dir/config.conf");
     if (!QFile(config_file).exists()){
         qWarning("The file %s is not exists!", "working-dir/config.conf");
@@ -367,19 +371,26 @@ QString GraphicsDriverInterface::GetOldDriverName()
     QSettings *settings = new QSettings(config_file, QSettings::IniFormat);
     settings->setIniCodec(QTextCodec::codecForName("UTF-8"));
 
-    return settings->value("old_driver").toString();
+    QString driver_name = settings->value(type).toString();
+
+    foreach (const Resolution resl, m_resolutions.resolutions()){
+        QJsonObject reslObj;
+        if(driver_name == resl.name()){
+            reslObj.insert("name", resl.name());
+            reslObj.insert("title", resl.title());
+            return QString(QJsonDocument(reslObj).toJson(QJsonDocument::Compact));
+        }
+    }
+    return nullptr;
+}
+
+
+QString GraphicsDriverInterface::GetOldDriverName()
+{
+    return GetDriverName("old_driver");
 }
 
 QString GraphicsDriverInterface::GetNewDriverName()
 {
-    const QString &config_file = scriptAbsolutePath("working-dir/config.conf");
-    if (!QFile(config_file).exists()){
-        qWarning("The file %s is not exists!", "working-dir/config.conf");
-        return  nullptr;
-    }
-
-    QSettings *settings = new QSettings(config_file, QSettings::IniFormat);
-    settings->setIniCodec(QTextCodec::codecForName("UTF-8"));
-
-    return settings->value("new_driver").toString();
+    return GetDriverName("new_driver");
 }
