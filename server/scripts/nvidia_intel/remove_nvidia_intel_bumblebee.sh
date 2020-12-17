@@ -13,12 +13,6 @@ if [ -x /usr/bin/nvidia-installer ];then
     nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
 fi
 
-# if [ -n "$nvidia_mod" ]; then
-#     echo "Removing nvidia modules..."
-#     rmmod -f nvidia-drm
-#     rmmod -f nvidia-modeset
-#     rmmod -f nvidia
-# fi
 
 rm -rf /etc/modprobe.d/bumblebee.conf
 

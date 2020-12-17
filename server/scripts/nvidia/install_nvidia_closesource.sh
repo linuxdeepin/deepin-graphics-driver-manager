@@ -17,9 +17,4 @@ if [[ $? -ne 0 ]]; then
     exit 1
 fi
 
-echo "Loading kernel modules......"
-modprobe nvidia-drm
-modprobe nvidia-modeset
-modprobe nvidia
-
 exit 0
