@@ -1,3 +1,5 @@
+#include "utils.h"
+
 
 #include <DApplication>
 #include <DLog>
@@ -35,12 +37,14 @@ void show_success_dialog()
     reply.waitForFinished();
     if (reply.isValid()) {
         new_driver = reply.value();
+        qDebug() << "new dirver" << new_driver;
+        new_driver = Utils::QStringToJson(new_driver)["title"].toString();
     } else {
         qDebug() << reply.error();
     }
 
     qDebug() << "new_driver = " << new_driver;
-
+    new_driver = qApp->translate("Resolution", new_driver.toStdString().c_str());
     const QString &message = qApp->translate("main", "Congratulations, you have switched to %1, please reboot to take effect.");
 
     DDialog *d = dialog(message.arg(new_driver), "://resources/icons/deepin-graphics-driver-manager-success.svg");
@@ -61,12 +65,14 @@ void show_success_dialog()
 
 void show_fail_dialog()
 {
-    QString old_driver = "old_driver";
-    QString new_driver = "new_driver";
+    QString old_driver;
+    QString new_driver;
     QDBusPendingReply<QString> oldDriverReply = g_graphicsDriver->GetOldDriverName();
     oldDriverReply.waitForFinished();
     if (oldDriverReply.isValid()) {
         old_driver = oldDriverReply.value();
+        qDebug() << "old driver" << old_driver;
+        old_driver = Utils::QStringToJson(old_driver)["title"].toString();
     } else {
         qDebug() << oldDriverReply.error();
     }
@@ -75,12 +81,16 @@ void show_fail_dialog()
     newDriverReply.waitForFinished();
     if (newDriverReply.isValid()) {
         new_driver = newDriverReply.value();
+        qDebug() << "new dirver" << new_driver;
+        new_driver = Utils::QStringToJson(new_driver)["title"].toString();
     } else {
         qDebug() << newDriverReply.error();
     }
 
     const QString &message = qApp->translate("main", "Auto restore to %2 after failed to switch to %1");
 
+    new_driver = qApp->translate("Resolution", new_driver.toStdString().c_str());
+    old_driver = qApp->translate("Resolution", old_driver.toStdString().c_str());
     DDialog *d = dialog(message.arg(new_driver).arg(old_driver), "dialog-warning");
     d->addButton(qApp->translate("main", "Submit Feedback"));
 
@@ -147,7 +157,7 @@ int main(int argc, char *args[])
     dapp.setApplicationName("deepin-graphics-driver-manager-installer");
 
     QTranslator translator;
-    translator.load(QString("/usr/share/deepin-graphics-driver-manager/translations/deepin-graphics-driver-manager_%1.qm").arg(QLocale::system().name()));
+    translator.load(QString(TRANSLATIONS_DIR"deepin-graphics-driver-manager_%1.qm").arg(QLocale::system().name()));
     dapp.installTranslator(&translator);
 
     DLogManager::registerConsoleAppender();
