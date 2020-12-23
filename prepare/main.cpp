@@ -44,7 +44,13 @@ int main(int argc, char* argv[])
 
     //设置日志
     const QString logFormat = "[%{time}{yyyy-MM-dd, HH:mm:ss.zzz}] [%{type:1}] [%{file}=>%{function}: %{line}] %{message}\n";
-    const QString log_file(QString("/home/%1/deepin-graphics-driver-manager.log").arg(getUserName()));
+
+    QString log_file(QString("/home/%1/.cache/deepin/deepin-graphics-driver-manager/").arg(getUserName()));
+    QDir dir(log_file);
+    if (!dir.exists()) {
+        dir.mkpath(log_file);
+    }
+    log_file += "deepin-graphics-driver-manager.log";
     ConsoleAppender *consoleAppender = new ConsoleAppender;
     consoleAppender->setFormat(logFormat);
     RollingFileAppender *rollingFileAppender = new RollingFileAppender(log_file);
@@ -54,7 +60,7 @@ int main(int argc, char* argv[])
 
     logger->registerAppender(consoleAppender);
     logger->registerAppender(rollingFileAppender);
-
+    qDebug() << "VERSION: " << VERSION;
     MainWindow w;
     w.show();
 

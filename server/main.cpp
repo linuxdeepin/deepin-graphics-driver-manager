@@ -4,7 +4,9 @@
 #include <DLog>
 #include "graphicsdriverinterface.h"
 #include "graphicsdriveradaptor.h"
-#include "LogManager.h"
+#include <Logger.h>
+#include <ConsoleAppender.h>
+#include <RollingFileAppender.h>
 
 DCORE_USE_NAMESPACE
 
@@ -28,14 +30,18 @@ int	main(int argc, char **argv)
     app.setOrganizationName("deepin");
     app.setApplicationName("deepin-graphics-driver-manager-server");
 
-    const QString m_format = "%{time}{yyyyMMdd.HH:mm:ss.zzz}[%{type:1}][%{function:-35} %{line:-4} %{threadid} ] %{message}\n";
-    DRMLogManager::setSystemLog(true);
-    DRMLogManager::setLogFormat(m_format);
-    DRMLogManager::registerFileAppender();
-    DRMLogManager::registerConsoleAppender();
+    //设置日志
+    const QString logFormat = "%{time}{yyyyMMdd.HH:mm:ss.zzz}[%{type:1}][%{function:-35} %{line:-4} %{threadid} ] %{message}\n";
+    const QString log_file(QString("/var/log/deepin/deepin-graphics-driver-manager-server.log"));
+    ConsoleAppender *consoleAppender = new ConsoleAppender;
+    consoleAppender->setFormat(logFormat);
+    RollingFileAppender *rollingFileAppender = new RollingFileAppender(log_file);
+    rollingFileAppender->setFormat(logFormat);
+    rollingFileAppender->setLogFilesLimit(5);
+    rollingFileAppender->setDatePattern(RollingFileAppender::DailyRollover);
 
-    qDebug() << "write log to" << DRMLogManager::getlogFilePath();
-    qDebug() << PATH;
+    logger->registerAppender(consoleAppender);
+    logger->registerAppender(rollingFileAppender);
 
     QDBusConnection connection = QDBusConnection::systemBus();
     
