@@ -25,73 +25,78 @@
         <translation>切换</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="59"/>
+        <location filename="../prepare/mainwindow.cpp" line="63"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="63"/>
+        <location filename="../prepare/mainwindow.cpp" line="67"/>
         <source>Update</source>
         <translation>有更新</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="68"/>
+        <location filename="../prepare/mainwindow.cpp" line="72"/>
         <source>Reboot Now</source>
         <translation>立即重启</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="73"/>
+        <location filename="../prepare/mainwindow.cpp" line="77"/>
         <source>Later</source>
         <translation>稍后重启</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="152"/>
+        <location filename="../prepare/mainwindow.cpp" line="82"/>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="164"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
         <translation>当前硬件组合暂不支持，请期待后续版本！</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="265"/>
+        <location filename="../prepare/mainwindow.cpp" line="277"/>
         <source>Switching to the discrete graphics interface may cause a black screen.</source>
         <translation>当前接入的是集成显卡接口，如果切换到独立显卡接口，可能会导致黑屏。</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="269"/>
+        <location filename="../prepare/mainwindow.cpp" line="281"/>
         <source>Switching to the integrated graphics interface may cause a black screen.</source>
         <translation>当前接入的是独立显卡接口，如果切换到集成显卡接口，可能会导致黑屏。</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="394"/>
+        <location filename="../prepare/mainwindow.cpp" line="419"/>
         <source>Downloading %1</source>
         <translation>正在下载%1</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="396"/>
+        <location filename="../prepare/mainwindow.cpp" line="421"/>
         <source>Downloading the driver for %1, please wait...</source>
         <translation>正在下载%1的驱动，请稍候...</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="421"/>
-        <location filename="../prepare/mainwindow.cpp" line="435"/>
+        <location filename="../prepare/mainwindow.cpp" line="447"/>
+        <location filename="../prepare/mainwindow.cpp" line="461"/>
         <source>Sorry, switch failed</source>
         <translation>抱歉，切换失败</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="434"/>
+        <location filename="../prepare/mainwindow.cpp" line="460"/>
         <source>Download failed</source>
         <translation>下载失败</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="442"/>
+        <location filename="../prepare/mainwindow.cpp" line="468"/>
         <source>Download successful</source>
         <translation>下载成功</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="444"/>
+        <location filename="../prepare/mainwindow.cpp" line="470"/>
         <source>Please reboot to test the driver. If no signal, please confirm whether the monitor output port is connected correctly.</source>
         <translation>请重启进入测试程序。如果显示器无信号，请确认显示器输出端口是否连接正确。</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="446"/>
+        <location filename="../prepare/mainwindow.cpp" line="472"/>
         <source>Please reboot to test the driver</source>
         <translation>请重启后进入测试程序</translation>
     </message>
@@ -163,7 +168,7 @@
 <context>
     <name>ResolutionWidget</name>
     <message>
-        <location filename="../prepare/resolutionwidget.cpp" line="40"/>
+        <location filename="../prepare/resolutionwidget.cpp" line="42"/>
         <source>Driver/Version: %1/%2</source>
         <translation>驱动名称/版本号：%1/%2</translation>
     </message>
@@ -171,42 +176,42 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../prepare/main.cpp" line="41"/>
+        <location filename="../prepare/main.cpp" line="42"/>
         <source>Graphics Driver Manager</source>
         <translation>显卡驱动管理器</translation>
     </message>
     <message>
-        <location filename="../prepare/main.cpp" line="42"/>
+        <location filename="../prepare/main.cpp" line="43"/>
         <source>Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
         <translation>显卡驱动管理器是一款小巧易用的显卡驱动管理工具，包括显卡硬件探测、显卡驱动安装、显卡驱动方案切换、显卡驱动自动恢复等功能。</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="41"/>
+        <location filename="../installer/main.cpp" line="48"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
         <translation>恭喜您成功切换到%1 ，重启后生效。</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="44"/>
+        <location filename="../installer/main.cpp" line="51"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="45"/>
+        <location filename="../installer/main.cpp" line="52"/>
         <source>Reboot</source>
         <translation>重启</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="78"/>
+        <location filename="../installer/main.cpp" line="90"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
         <translation>切换到%1失败，系统已自动恢复到%2。</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="81"/>
+        <location filename="../installer/main.cpp" line="95"/>
         <source>Submit Feedback</source>
         <translation>提交反馈</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="89"/>
+        <location filename="../installer/main.cpp" line="103"/>
         <source>Updating the driver, please wait...</source>
         <translation>正在更新驱动，请稍候...</translation>
     </message>
