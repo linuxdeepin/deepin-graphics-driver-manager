@@ -63,7 +63,6 @@ Resolutions ResolutionsBuilder::build()
                         r.m_iconName = object["icon_name"].toString();
                         r.m_statusScript = object["status"].toString();
                     }
-                    
                     if (m_devInfo.curDevice().m_driver == "amdgpu"){
                         if(solution.name() == "amdgpu") r.m_resolutions.append(solution);
                     }else {

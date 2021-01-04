@@ -20,9 +20,9 @@
                 "remove": "empty.sh"
             },
             {
-                "name": "raedon",
-                "driver": "raedon",
-                "title": "Use Raedon driver",
+                "name": "radeon",
+                "driver": "radeon",
+                "title": "Use Radeon driver",
                 "keep_gltest": true,
                 "description": "For special needs. Auto determine the acceleration way without external configuration.",
                 "prepare": "empty.sh",
