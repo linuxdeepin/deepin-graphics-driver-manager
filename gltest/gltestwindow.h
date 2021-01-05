@@ -1,12 +1,13 @@
 #ifndef GLTESTWINDOW_H
 #define GLTESTWINDOW_H
 
+#include "gltestwidget.h"
+#include "graphicsdriverproxy.h"
 
 #include <QWidget>
 #include <QPushButton>
 #include <QLabel>
 #include <QHBoxLayout>
-#include "gltestwidget.h"
 
 
 class GLTestWindow : public QWidget
@@ -30,6 +31,7 @@ private:
     QLabel *m_tipsLabel;
     QPushButton *m_acceptBtn;
     QPushButton *m_cancelBtn;
+    ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver = nullptr;
 };
 
 #endif

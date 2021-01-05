@@ -16,7 +16,7 @@ file(GLOB SRCS "*.h" "*.cpp")
 
 include_directories(${CMAKE_SOURCE_DIR}/utils/)
 
-add_executable(gltest ${SRCS})
+add_executable(gltest ${SRCS} ${UTILS_FILES})
 target_link_libraries(gltest
     ${OPENGL_LIBRARIES}
     ${GLUT_LIBRARIES}

@@ -33,12 +33,6 @@ class GraphicsDriverAdaptor: public QDBusAbstractAdaptor
     Q_CLASSINFO("D-Bus Interface", "com.deepin.daemon.GraphicsDriver")
     Q_CLASSINFO("D-Bus Introspection", ""
 "  <interface name=\"com.deepin.daemon.GraphicsDriver\">\n"
-"    <signal name=\"PreInstallState\">\n"
-"      <arg direction=\"out\" type=\"s\" name=\"state\"/>\n"
-"    </signal>\n"
-"    <signal name=\"RealInstallState\">\n"
-"      <arg direction=\"out\" type=\"s\" name=\"state\"/>\n"
-"    </signal>\n"
 "    <signal name=\"ReportProgress\">\n"
 "      <arg direction=\"out\" type=\"s\" name=\"ratio\"/>\n"
 "    </signal>\n"
@@ -54,7 +48,7 @@ class GraphicsDriverAdaptor: public QDBusAbstractAdaptor
 "      <arg direction=\"in\" type=\"s\" name=\"language\"/>\n"
 "    </method>\n"
 "    <method name=\"CancelInstall\"/>\n"
-"    <method name=\"TestInstall\"/>\n"
+"    <method name=\"TestSuccess\"/>\n"
 "    <method name=\"IsTestSuccess\">\n"
 "      <arg direction=\"out\" type=\"b\"/>\n"
 "    </method>\n"
@@ -85,11 +79,9 @@ public Q_SLOTS: // METHODS
     bool IsTestSuccess();
     void PrepareInstall(const QString &name, const QString &language);
     void RealInstaller();
-    void TestInstall();
+    void TestSuccess();
 Q_SIGNALS: // SIGNALS
     void Cancel();
-    void PreInstallState(const QString &state);
-    void RealInstallState(const QString &state);
     void ReportProgress(const QString &ratio);
 };
 

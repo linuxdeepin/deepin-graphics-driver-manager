@@ -94,7 +94,7 @@ public slots:
     Return:         // 函数返回值的说明
     Others:         // 其它说明
     *************************************************/
-    void TestInstall();
+    void TestSuccess();
 
     /*************************************************
     Function:       // 函数名称
@@ -153,10 +153,9 @@ private:
     QString GetCurrPackageVersion(QString pkg_name);
     QString GetDepoPackageVersion(QString pkg_name);
     bool command(const QString &cmd, const QStringList &args, QString &output);
+    bool isInOverlayRoot();
 
 Q_SIGNALS:
-    void PreInstallState(QString state);
-    void RealInstallState(QString state);
     void ReportProgress(QString ratio);
     void Cancel();
 private:

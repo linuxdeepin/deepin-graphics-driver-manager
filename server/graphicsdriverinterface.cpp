@@ -233,25 +233,53 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
     proc->start(cmd);
 }
 
+bool GraphicsDriverInterface::isInOverlayRoot()
+{
+    QString output;
+    QStringList args;
+    args << "-h";
+    if (!command("df", args, output)){
+        qWarning() << "Execute df -h failed!";
+        return false;
+    }
+    qDebug() << "output: " << output;
+    QStringList line_list = output.split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
+    int index = 0;
+    for(; index < line_list.size(); index++){
+        if (line_list[index].contains("overlayroot"))
+            return true;
+    }
+    return false;
+}
+
 void GraphicsDriverInterface::CancelInstall()
 {
+    if (QFile(INSTALLER_ROOT_DESKTOP_FILE_DEST).exists()){
+        QString output;
+        QString cmd;
+        QStringList args;
+
+        if(isInOverlayRoot()){
+            cmd = "overlayroot-chroot";
+            args << "rm" << "-f" << INSTALLER_ROOT_DESKTOP_FILE_DEST;
+        }else{
+            cmd = "rm";
+            args << "-f" << INSTALLER_ROOT_DESKTOP_FILE_DEST;
+        }
+        if (!command(cmd, args, output)){
+            qWarning() << output;
+        }
+    }
+
     Q_EMIT Cancel();
 }
 
-void GraphicsDriverInterface::TestInstall()
+void GraphicsDriverInterface::TestSuccess()
 {
     QProcess *proc = new QProcess(this);
     QPROCESS_DELETE_SELF(proc);
     proc->setProcessChannelMode(QProcess::MergedChannels);
-
-    connect(proc, &QProcess::readyReadStandardOutput, this, [=]() {
-        QString out = proc->readAllStandardOutput();
-        qDebug() << proc->program() << "Test Install:" << out;
-    });
-    
-    const QString &cmd = scriptAbsolutePath("dgradvrmgr-test-install.sh");
-
-    proc->start(cmd);
+    proc->execute("/usr/lib/deepin-graphics-driver-manager/gltest-set-success.sh");
 }
 
 bool GraphicsDriverInterface::IsTestSuccess()

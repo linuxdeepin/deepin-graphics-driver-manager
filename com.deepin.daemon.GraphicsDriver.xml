@@ -1,12 +1,6 @@
 <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
   <interface name="com.deepin.daemon.GraphicsDriver">
-    <signal name="PreInstallState">
-      <arg name="state" type="s" direction="out"/>
-    </signal>
-    <signal name="RealInstallState">
-      <arg name="state" type="s" direction="out"/>
-    </signal>
     <signal name="ReportProgress">
       <arg name="ratio" type="s" direction="out"/>
     </signal>
@@ -24,7 +18,7 @@
     </method>
     <method name="CancelInstall">
     </method>
-    <method name="TestInstall">
+    <method name="TestSuccess">
     </method>
     <method name="IsTestSuccess">
       <arg type="b" direction="out"/>

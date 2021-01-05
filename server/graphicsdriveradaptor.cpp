@@ -99,9 +99,9 @@ void GraphicsDriverAdaptor::RealInstaller()
     QMetaObject::invokeMethod(parent(), "RealInstaller");
 }
 
-void GraphicsDriverAdaptor::TestInstall()
+void GraphicsDriverAdaptor::TestSuccess()
 {
-    // handle method call com.deepin.daemon.GraphicsDriver.TestInstall
-    QMetaObject::invokeMethod(parent(), "TestInstall");
+    // handle method call com.deepin.daemon.GraphicsDriver.TestSuccess
+    QMetaObject::invokeMethod(parent(), "TestSuccess");
 }
 

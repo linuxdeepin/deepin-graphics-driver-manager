@@ -3,9 +3,18 @@
 #include <QKeyEvent>
 #include <QScreen>
 
+const QString GraphicMangerServiceName = "com.deepin.graphicmanger";
+const QString GraphicMangerPath = "/com/deepin/graphicmanger";
+
 GLTestWindow::GLTestWindow(QWidget *parent)
     : QWidget(parent)
 {
+    m_graphicsDriver = new ComDeepinDaemonGraphicsDriverInterface(
+                GraphicMangerServiceName,
+                GraphicMangerPath,
+                QDBusConnection::systemBus(),
+                nullptr);
+
     m_acceptBtn = new QPushButton(tr("Apply"));
     m_cancelBtn = new QPushButton(tr("Cancel"));
     m_tipsLabel = new QLabel(tr("Please ensure the driver works normally without blurred screen and screen tearing"));
@@ -47,11 +56,14 @@ void GLTestWindow::keyPressEvent(QKeyEvent *e)
 
 void GLTestWindow::onAccept()
 {
-    QProcess::execute("/usr/lib/deepin-graphics-driver-manager/gltest-set-success.sh");
+    QDBusPendingReply<void> reply = m_graphicsDriver->TestSuccess();
+    reply.waitForFinished();
     qApp->exit(0);
 }
 
 void GLTestWindow::onCancel()
 {
+    QDBusPendingReply<void> reply = m_graphicsDriver->CancelInstall();
+    reply.waitForFinished();
     qApp->exit(-1);
 }

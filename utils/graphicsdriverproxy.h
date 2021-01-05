@@ -91,16 +91,14 @@ public Q_SLOTS: // METHODS
         return asyncCallWithArgumentList(QStringLiteral("RealInstaller"), argumentList);
     }
 
-    inline QDBusPendingReply<> TestInstall()
+    inline QDBusPendingReply<> TestSuccess()
     {
         QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("TestInstall"), argumentList);
+        return asyncCallWithArgumentList(QStringLiteral("TestSuccess"), argumentList);
     }
 
 Q_SIGNALS: // SIGNALS
     void Cancel();
-    void PreInstallState(const QString &state);
-    void RealInstallState(const QString &state);
     void ReportProgress(const QString &ratio);
 };
 
