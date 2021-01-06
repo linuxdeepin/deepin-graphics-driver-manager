@@ -284,6 +284,11 @@ void GraphicsDriverInterface::TestSuccess()
 
 bool GraphicsDriverInterface::IsTestSuccess()
 {
+    QFile desktop_file("/etc/xdg/autostart/deepin-gradvrmgr-installer.desktop");
+    if (desktop_file.exists())
+	{
+		desktop_file.remove();
+    }
     const QString &config_file = scriptAbsolutePath("working-dir/config.conf");
     if (!QFile(config_file).exists())
         return  false;

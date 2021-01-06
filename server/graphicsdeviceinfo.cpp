@@ -68,7 +68,6 @@ void GraphicsDeviceInfo::init()
     pci_scan_bus(pacc);
     for (dev = pacc->devices; dev; dev = dev->next)
     {
-        //pci_fill_info(dev, PCI_FILL_PHYS_SLOT | PCI_FILL_CLASS | PCI_FILL_IDENT);
         pci_fill_info(dev, PCI_FILL_PHYS_SLOT | PCI_FILL_IDENT);
         if (!is_display_controller(dev->device_class))
             continue;
@@ -106,7 +105,7 @@ void GraphicsDeviceInfo::init()
         }
 
         QString devName;
-        DeviceFlag flag;
+        DeviceFlag flag = DeviceFlag::NoDevice;
         const QString devInfo = pci_lookup_name(pacc, namebuf, sizeof(namebuf), PCI_LOOKUP_VENDOR | PCI_LOOKUP_DEVICE, dev->vendor_id, dev->device_id);
         if (devInfo.contains("Intel")){
             devName = "INTEL";

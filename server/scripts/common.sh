@@ -44,8 +44,8 @@ error_exit_dgm() {
 
 error_reboot() {
     echo "$1"
+    nvidia_blacklist_recoverys
     cleanWorking
-    nvidia_blacklist_recovery
     sync
     reboot
 }
