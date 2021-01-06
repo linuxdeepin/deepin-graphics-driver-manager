@@ -7,7 +7,7 @@ export INSTALL_NEW_G=$WORKING_DIR_G/install_new.sh
 export CONFIG_FILE_G=$WORKING_DIR_G/config.conf
 
 cleanWorking() {
-    isInOverlayRoot="$(df -h | grep -e "^overlay.*/$")"
+    isInOverlayRoot="$(df -h | grep -e "^overlayroot.*/$")"
     if [[ -z "${isInOverlayRoot}" ]]; then
         rm -rf $TEST_IN_OVERLAY_G
         rm -rf $REMOVE_OLD_G
@@ -20,6 +20,22 @@ cleanWorking() {
     fi
 }
 
+ nvidia_blacklist_recovery(){
+     nvidia_blacklist_file="/etc/modprobe.d/nvidia-blacklists-nouveau.conf"
+     upperdir="/media/root-rw/overlay/"
+     lowerdir="/media/root-ro/"
+     if [ -e "${upperdir}/${nvidia_blacklist_file}" ]; then
+        if [ -f "${nvidia_blacklist_file}" ]; then
+            # Create blacklist file
+            rm -f ${nvidia_blacklist_file}
+        else
+            # Delete blacklist file
+            cp -f ${lowerdir}/${nvidia_blacklist_file} ${nvidia_blacklist_file}
+        fi
+        update-initramfs -u
+     fi
+ }
+
 error_exit_dgm() {
     echo "$1"
     cleanWorking
@@ -29,6 +45,7 @@ error_exit_dgm() {
 error_reboot() {
     echo "$1"
     cleanWorking
+    nvidia_blacklist_recovery
     sync
     reboot
 }

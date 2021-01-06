@@ -20,6 +20,8 @@ fi
 
 killall Xorg
 
+nvidia_blacklist_recovery
+
 # run this command again here to avoid disable overlayroot in service not work
 # same as above
 overlayroot-disable
