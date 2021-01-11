@@ -1,31 +1,29 @@
 #!/bin/bash
 
-if [ "$(id -u)" -ne "0" ];then
-    echo "Need root privileges."
-    exit 1
-fi
+/usr/lib/deepin-graphics-driver-manager/nvidia/install_nvidia_closesource.sh
 
-export DEBIAN_FRONTEND=noninteractive
-nouveau_mod=`lsmod | grep nouveau`
+cat  > /etc/X11/xorg.conf.d/70-nvidia.conf <<EOF
+Section "ServerLayout"
+  Identifier "layout"
+  #Screen 0 "iGPU"
+  Option "AllowNVIDIAGPUScreens"
+EndSection
 
-apt-get -y --reinstall --allow-downgrades install \
-    deepin-nvidia-prime \
-    nvidia-driver
+Section "Device"
+  Identifier "iGPU"
+  Driver "modesetting"
+EndSection
 
-if [[ $? -ne 0 ]]; then
-    echo "apt-get execute failed!"
-    exit 1
-fi
+Section "Screen"
+  Identifier "iGPU"
+  Device "iGPU"
+EndSection
 
-if [ -n "$nouveau_mod" ]; then
-    echo "Removing nouveau modules..."
-    rmmod -f nouveau
-fi
+Section "Device"
+  Identifier "dGPU"
+  Driver "nvidia"
+EndSection
+EOF
 
-echo "Loading kernel modules......"
-modprobe nvidia-drm
-modprobe nvidia-modeset
-modprobe nvidia
-
-echo -e '#!/bin/sh\n. /sbin/prime-offload\n/usr/lib/deepin-graphics-driver-manager/gltest\n' > /tmp/deepin-prime-gltest
+echo -e '#!/bin/sh\nexport __NV_PRIME_RENDER_OFFLOAD=1\nexport __GLX_VENDOR_LIBRARY_NAME=nvidia\n/usr/lib/deepin-graphics-driver-manager/gltest\n' > /tmp/deepin-prime-gltest
 chmod a+x /tmp/deepin-prime-gltest

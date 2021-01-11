@@ -7,11 +7,11 @@
 # exit 3 ------ Prime Mode
 
 bumblebee_exist=`dpkg -s bumblebee 2>/dev/null | grep "Status: install ok installed"`
-prime_exist=`dpkg -s deepin-nvidia-prime 2>/dev/null | grep "Status: install ok installed"`
+#prime_exist=`dpkg -s deepin-nvidia-prime 2>/dev/null | grep "Status: install ok installed"`
 intel_accel_method_sna=`cat /var/log/Xorg.0.log | grep SNA`
 intel_accel_method_uxa=`cat /var/log/Xorg.0.log | grep UXA`
 
-if [ -n "$prime_exist" ]; then
+if [ -f "/etc/X11/xorg.conf.d/70-nvidia.conf" ]; then
     echo "Prime Mode"
     exit 4
 elif [ -n "$bumblebee_exist" ]; then
