@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
 
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
     app.setOrganizationName("deepin");
-    app.setApplicationName(" ");
+    app.setApplicationName("deepin-graphics-driver-manager");
     app.setApplicationVersion(VERSION);
     app.setApplicationAcknowledgementPage("https://www.deepin.org/acknowledgments/deepin-graphics-driver-manager/");
     app.setProductIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
