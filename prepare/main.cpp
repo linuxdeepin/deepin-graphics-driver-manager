@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
 
     logger->registerAppender(consoleAppender);
     logger->registerAppender(rollingFileAppender);
-    qDebug() << "VERSION: " << VERSION;
+    qInfo() << "VERSION: " << VERSION;
     MainWindow w;
     w.show();
 

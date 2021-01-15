@@ -103,9 +103,9 @@ void ResolutionWidget::prepareInstall()
 #else
     QDBusPendingReply<void> preInstallReply = m_graphicsDriver->PrepareInstall(m_resolution.name(), QLocale::system().name());
     preInstallReply.waitForFinished();
-    qDebug() << "m_resolution.name = " << m_resolution.name();
+    qInfo() << "m_resolution.name = " << m_resolution.name();
     if (!preInstallReply.isValid()) {
-        qDebug() << "prepareInstall error:" << preInstallReply.error();
+        qCritical() << "prepareInstall error:" << preInstallReply.error();
         Q_EMIT prepareFinished(false);
         return;
     }
@@ -120,7 +120,7 @@ void ResolutionWidget::prepareInstall()
             } else {
                 Q_EMIT policyKitPassed(ratio);
             }
-            qDebug() << "prepare install process: " << ratio;
+            qInfo() << "prepare install process: " << ratio;
         }
     });
 #endif

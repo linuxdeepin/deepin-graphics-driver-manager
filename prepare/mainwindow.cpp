@@ -8,13 +8,11 @@
 #include <QApplication>
 #include <QScreen>
 #include <QKeyEvent>
-#include <QDebug>
 #include <QTimer>
 #include <QLabel>
 #include <QAction>
 #include <DTitlebar>
 #include <DSvgRenderer>
-#include <DThemeManager>
 #include <QJsonObject>
 #include <QJsonDocument>
 
@@ -176,13 +174,13 @@ void MainWindow::loadDevice()
     if (file.exists()) {
        file.open(QIODevice::ReadOnly);
        devices = QString(file.readAll());
-       qDebug() << devices;
+       qInfo() << devices;
     }
 #else
     QDBusPendingReply<QString> getDeviceReply = m_graphicsDriver->GetDevice();
     getDeviceReply.waitForFinished();
     if (!getDeviceReply.isValid()) {
-        qDebug() << getDeviceReply.error();
+        qCritical() << getDeviceReply.error();
         return;
     }
     devices = getDeviceReply.value();
@@ -258,12 +256,12 @@ void MainWindow::loadResolutions()
     QDBusPendingReply<QString> resolutionReply = m_graphicsDriver->GetResolutionTitle();
     resolutionReply.waitForFinished();
     if (!resolutionReply.isValid()) {
-        qDebug() << resolutionReply.error();
+        qCritical() << resolutionReply.error();
     }
     strResolution = resolutionReply.value();
 #endif
 
-    qDebug() << strResolution;
+    qInfo() << strResolution;
     QJsonObject resolutionRoot = Utils::QStringToJson(strResolution);
 
     QJsonArray resolutions = resolutionRoot["resolutions"].toArray();
@@ -304,14 +302,14 @@ void MainWindow::loadResolutions()
             if (solution.enable()) {
                 m_usedIndex = index;
 
-                qDebug() << "m_usedIndex = " << m_usedIndex;
+                qInfo() << "m_usedIndex = " << m_usedIndex;
                 if (rw->canUpdate()) {
                     m_updateButton->setVisible(true);
                     m_okButton->setVisible(false);
                     m_toggleButton->setVisible(false);
                 }
             }
-            qDebug() << "index = " << index;
+            qInfo() << "index = " << index;
             index++;
         }
 
@@ -321,7 +319,7 @@ void MainWindow::loadResolutions()
 void MainWindow::onResolutionSelected()
 {
     ResolutionWidget *rw = static_cast<ResolutionWidget *>(sender());
-    qDebug() << "Resolution selected: " << rw->resolution().name();
+    qInfo() << "Resolution selected: " << rw->resolution().name();
 
     const int idx = m_resolutionsLayout->indexOf(rw);
     Q_ASSERT(idx != -1);
@@ -333,8 +331,8 @@ void MainWindow::onResolutionSelected()
         ResolutionWidget *w = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(i)->widget());
         w->setChecked(i == idx);
     }
-    qDebug() << "m_usedIndex = " << m_usedIndex;
-    qDebug() << "m_selectedIndex = " << m_selectedIndex;
+    qInfo() << "m_usedIndex = " << m_usedIndex;
+    qInfo() << "m_selectedIndex = " << m_selectedIndex;
     const bool changed = m_selectedIndex != m_usedIndex;
 
     if (changed) {
@@ -436,7 +434,7 @@ void MainWindow::onPolicyKitPassed(const QString &state)
 
 void MainWindow::onPrepareFinished(bool success)
 {
-    qDebug() << "onPrepareFinished = " << success;
+    qInfo() << "onPrepareFinished = " << success;
     ResolutionWidget *rw = static_cast<ResolutionWidget *>(sender());
     ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
     if (rw != new_driver_widget) {
