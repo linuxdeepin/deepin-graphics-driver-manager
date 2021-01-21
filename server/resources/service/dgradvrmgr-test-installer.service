@@ -14,7 +14,6 @@ ExecStartPre=-/usr/bin/xset s off
 ExecStartPre=-/bin/dmesg --console-off
 ExecStartPre=-/bin/plymouth quit
 ExecStart=/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-test-install.sh
-ExecStartPost=-/usr/bin/touch /usr/lib/deepin-graphics-driver-manager/working-dir/dgradvrmgr_gltest_flag
 StandardInput=tty-force
 StandardOutput=journal
 StandardError=journal

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/usr/lib/deepin-graphics-driver-manager/nvidia/install_nvidia_closesource.sh
+/usr/lib/deepin-graphics-driver-manager/nvidia/install_nvidia_closesource.sh || exit 1
 
 cat  > /etc/X11/xorg.conf.d/70-nvidia.conf <<EOF
 Section "ServerLayout"
