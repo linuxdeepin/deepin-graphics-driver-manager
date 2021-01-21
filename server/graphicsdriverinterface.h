@@ -46,103 +46,103 @@ public:
     virtual ~GraphicsDriverInterface();
 public slots:
     /*************************************************
-    Function:       // 函数名称
-    Description:    // 函数功能、性能等的描述
-    Input:          // 输入参数说明，包括每个参数的作用、取值说明及参数间关系。
-    Output:         // 对输出参数的说明。
-    Return:         // 函数返回值的说明
-    Others:         // 其它说明
+    Function:       GetDevice
+    Description:    获取系统上所有显卡设备信息
+    Input:          无
+    Output:         无
+    Return:         显卡设备信息列表(json格式)
+    Others:         无
     *************************************************/
     QString GetDevice();
 
 
     /*************************************************
-    Function:       // 函数名称
-    Description:    // 函数功能、性能等的描述
-    Input:          // 输入参数说明，包括每个参数的作用、取值说明及参数间关系。
-    Output:         // 对输出参数的说明。
-    Return:         // 函数返回值的说明
-    Others:         // 其它说明
+    Function:       GetResolutionTitle
+    Description:    获取所有可选方案信息
+    Input:          无
+    Output:         无
+    Return:         可选方案信息列表(json 格式)
+    Others:         无
     *************************************************/
     QString GetResolutionTitle();
 
     /*************************************************
-    Function:       // 函数名称
-    Description:    // 函数功能、性能等的描述
-    Input:          // 输入参数说明，包括每个参数的作用、取值说明及参数间关系。
-    Output:         // 对输出参数的说明。
-    Return:         // 函数返回值的说明
-    Others:         // 其它说明
+    Function:       PrepareInstall
+    Description:    完成切换前下载安装依赖包等准备工作
+    Input:          name:方案名称; language:用户语言类型
+    Output:         无
+    Return:         空
+    Others:         无
     *************************************************/
     void PrepareInstall(QString name, QString language);
 
     /*************************************************
-    Function:       // 函数名称
-    Description:    // 函数功能、性能等的描述
-    Input:          // 输入参数说明，包括每个参数的作用、取值说明及参数间关系。
-    Output:         // 对输出参数的说明。
-    Return:         // 函数返回值的说明
-    Others:         // 其它说明
+    Function:       CancelInstall
+    Description:    实现取消切换动作
+    Input:          无
+    Output:         无
+    Return:         空
+    Others:         无
     *************************************************/
     void CancelInstall();
 
     /*************************************************
-    Function:       // 函数名称
-    Description:    // 函数功能、性能等的描述
-    Input:          // 输入参数说明，包括每个参数的作用、取值说明及参数间关系。
-    Output:         // 对输出参数的说明。
-    Return:         // 函数返回值的说明
-    Others:         // 其它说明
+    Function:       TestSuccess
+    Description:    设置测试结果
+    Input:          无
+    Output:         无
+    Return:         空
+    Others:         无
     *************************************************/
     void TestSuccess();
 
     /*************************************************
-    Function:       // 函数名称
-    Description:    // 函数功能、性能等的描述
-    Input:          // 输入参数说明，包括每个参数的作用、取值说明及参数间关系。
-    Output:         // 对输出参数的说明。
-    Return:         // 函数返回值的说明
-    Others:         // 其它说明
+    Function:       IsTestSuccess
+    Description:    查询测试结果
+    Input:          无
+    Output:         无
+    Return:         空
+    Others:         无
     *************************************************/
     bool IsTestSuccess();
 
     /*************************************************
-    Function:       // 函数名称
-    Description:    // 函数功能、性能等的描述
-    Input:          // 输入参数说明，包括每个参数的作用、取值说明及参数间关系。
-    Output:         // 对输出参数的说明。
-    Return:         // 函数返回值的说明
-    Others:         // 其它说明
+    Function:       RealInstaller
+    Description:    正式安装
+    Input:          无
+    Output:         无
+    Return:         空
+    Others:         无
     *************************************************/
     void RealInstaller();
     
     /*************************************************
-    Function:       // 函数名称
-    Description:    // 函数功能、性能等的描述
-    Input:          // 输入参数说明，包括每个参数的作用、取值说明及参数间关系。
-    Output:         // 对输出参数的说明。
-    Return:         // 函数返回值的说明
-    Others:         // 其它说明
+    Function:       GetOldDriverName
+    Description:    获取老方案名称
+    Input:          无
+    Output:         无
+    Return:         方案名称
+    Others:         无
     *************************************************/
     QString GetOldDriverName();
 
     /*************************************************
-    Function:       // 函数名称
-    Description:    // 函数功能、性能等的描述
-    Input:          // 输入参数说明，包括每个参数的作用、取值说明及参数间关系。
-    Output:         // 对输出参数的说明。
-    Return:         // 函数返回值的说明
-    Others:         // 其它说明
+    Function:       GetNewDriverName
+    Description:    获取新方案名称
+    Input:          无
+    Output:         无
+    Return:         空
+    Others:         无
     *************************************************/
     QString GetNewDriverName();
 
     /*************************************************
-    Function:       // 函数名称
-    Description:    // 函数功能、性能等的描述
-    Input:          // 输入参数说明，包括每个参数的作用、取值说明及参数间关系。
-    Output:         // 对输出参数的说明。
-    Return:         // 函数返回值的说明
-    Others:         // 其它说明
+    Function:       GetCurrDriverName
+    Description:    获取当前方案名称
+    Input:          无
+    Output:         无
+    Return:         空
+    Others:         无
     *************************************************/
     QString GetCurrDriverName();
 
