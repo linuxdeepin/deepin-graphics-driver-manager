@@ -48,6 +48,6 @@ add_subdirectory(installer)
 add_subdirectory(gltest)
 
 # Install help document
-install(DIRECTORY assets/deepin-graphics-driver-manager
-    DESTINATION /usr/share/deepin-manual/manual-assets/application/)
+#install(DIRECTORY assets/deepin-graphics-driver-manager
+#    DESTINATION /usr/share/deepin-manual/manual-assets/application/)
 
