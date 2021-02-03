@@ -12,8 +12,7 @@
 #include <QPushButton>
 #include <QStackedLayout>
 #include <DThemeManager>
-
-
+#include <DSuggestButton>
 
 
 DWIDGET_USE_NAMESPACE
@@ -38,6 +37,7 @@ public:
     ~MainWindow();
 private:
     void keyPressEvent(QKeyEvent *e);
+    void paintEvent(QPaintEvent *event);
     void noResolutions();
     void loadDevice();
     void setVendorIcon();
@@ -52,6 +52,8 @@ private Q_SLOTS:
     void onPolicyKitPassed(const QString &state);
     void onPrepareFinished(bool success);
 
+
+
 private:
     int m_usedIndex;
     int m_selectedIndex;
@@ -59,6 +61,7 @@ private:
     //GraphicsDeviceInfo m_devInfo;
     //Resolutions m_resolutions;
 
+    QWidget *m_centerWidget;
     QVBoxLayout *m_resolutionsLayout;
     QLabel *m_topTips;
     QLabel *m_vendorIcon;
@@ -71,7 +74,7 @@ private:
     QPushButton *m_toggleButton;
     QPushButton *m_okButton;
     QPushButton *m_updateButton;
-    QPushButton *m_rebootButton;
+    DSuggestButton *m_rebootButton;
     QPushButton *m_rebootLaterButton;
     QPushButton *m_cancelButtion;
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver = nullptr;

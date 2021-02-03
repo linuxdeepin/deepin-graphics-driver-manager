@@ -30,6 +30,8 @@ public:
     virtual const Resolution resolution() const { return m_resolution; }
     virtual bool canUpdate();
 
+private:
+    void paintEvent(QPaintEvent *event);
 
 signals:
     void clicked() const;

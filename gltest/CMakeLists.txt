@@ -33,6 +33,5 @@ target_include_directories(installer PUBLIC
     ${Qt5DBus_INCLUDE_DIRS}
 
 )
-
 install(TARGETS gltest DESTINATION lib/deepin-graphics-driver-manager)
 #install(FILES deepin-gradvrmgr-installer.desktop DESTINATION lib/deepin-graphics-driver-manager)

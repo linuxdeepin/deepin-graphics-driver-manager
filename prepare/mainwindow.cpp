@@ -15,6 +15,8 @@
 #include <DSvgRenderer>
 #include <QJsonObject>
 #include <QJsonDocument>
+#include <DApplicationHelper>
+
 
 const QString GraphicMangerServiceName = "com.deepin.graphicmanger";
 const QString GraphicMangerPath = "/com/deepin/graphicmanger";
@@ -44,16 +46,14 @@ MainWindow::MainWindow(QWidget *parent)
     m_botTips->setVisible(false);
     m_botTips->setWordWrap(true);
     m_botTips->setObjectName("BottomTips");
+    m_botTips->setFixedSize(302, m_botTips->height());
+
 
     m_warnning = new QLabel;
     m_warnning->setAlignment(Qt::AlignHCenter);
     m_warnning->setVisible(false);
     m_warnning->setWordWrap(true);
     m_warnning->setObjectName("Warnning");
-    m_warnning->setStyleSheet("QLabel {"
-                                 "font-size: 12px;"
-                                 "color: #526a7f;"
-                                 "}");
 
     m_tipsIcon = new QLabel;
 
@@ -66,7 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_updateButton->setFixedHeight(38);
     m_updateButton->setVisible(false);
 
-    m_rebootButton = new QPushButton;
+    m_rebootButton = new DSuggestButton;
     m_rebootButton->setText(tr("Reboot Now"));
     m_rebootButton->setFixedHeight(38);
     m_rebootButton->setVisible(false);
@@ -99,8 +99,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_resolutionsWidget = new QWidget;
     m_resolutionsWidget->setLayout(m_resolutionsLayout);
 
-    QVBoxLayout *centralLayout = new QVBoxLayout;
-    centralLayout->addWidget(m_topTips);
+    auto *centralLayout = new QVBoxLayout;
     centralLayout->addWidget(m_vendorIcon);
     centralLayout->addWidget(m_vendorName);
     centralLayout->addStretch();
@@ -108,8 +107,12 @@ MainWindow::MainWindow(QWidget *parent)
     centralLayout->setAlignment(m_tipsIcon, Qt::AlignHCenter);
     centralLayout->addWidget(m_resolutionsWidget);
     centralLayout->addWidget(m_progress);
+    centralLayout->addSpacing(20);
     centralLayout->setAlignment(m_progress, Qt::AlignHCenter);
+    centralLayout->addWidget(m_topTips);
+    centralLayout->addSpacing(10);
     centralLayout->addWidget(m_botTips);
+    centralLayout->setAlignment(m_botTips, Qt::AlignHCenter);
     centralLayout->addStretch();
     centralLayout->addWidget(m_warnning);
     centralLayout->addSpacing(10);
@@ -118,18 +121,28 @@ MainWindow::MainWindow(QWidget *parent)
     centralLayout->addWidget(m_updateButton);
     centralLayout->addWidget(m_cancelButtion);
 
-    QHBoxLayout *hBoxLayout = new QHBoxLayout;
+    auto *hBoxLayout = new QHBoxLayout;
     hBoxLayout->addWidget(m_rebootLaterButton);
     hBoxLayout->addSpacing(10);
     hBoxLayout->addWidget(m_rebootButton);
 
     centralLayout->addLayout(hBoxLayout);
     centralLayout->setSpacing(0);
-    centralLayout->setContentsMargins(20, 10, 20, 10);
+    centralLayout->setContentsMargins(10, 79, 10, 10);
     titlebar()->setTitle(" ");
     titlebar()->setIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
-    setCentralWidget(new QWidget);
-    centralWidget()->setLayout(centralLayout);
+    m_centerWidget = new QWidget;
+    m_centerWidget->setObjectName("centerWidget");
+
+    m_centerWidget->setLayout(centralLayout);
+
+    auto *mainLayout = new QHBoxLayout;
+    auto *mainWidget = new QWidget;
+    mainWidget->setObjectName("mainWidget");
+    mainLayout->addWidget(m_centerWidget);
+    setCentralWidget(mainWidget);
+    centralWidget()->setLayout(mainLayout);
+
 
     setFixedSize(484, 682);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
@@ -245,7 +258,7 @@ void MainWindow::loadResolutions()
     loadDevice();
     QString strResolution;
 #ifdef TEST_UI
-    QString path = RESOURCES_DIR"/test/intel_nvidia_use_nvidia.json";
+    QString path = RESOURCES_DIR"/test/intel_nvidia.json";
     QFile file(path);
     if (file.exists()) {
        file.open(QIODevice::ReadOnly);
@@ -414,9 +427,8 @@ void MainWindow::onPolicyKitPassed(const QString &state)
     if (!m_started) {
         m_started = true;
         // toggle UI
-        m_topTips->setText(tr("Downloading %1").arg(new_driver_title));
         m_topTips->setVisible(true);
-        m_botTips->setText(tr("Downloading the driver for %1, please wait...").arg(new_driver_title));
+        m_topTips->setText(tr("Downloading the driver for %1, please wait...").arg(new_driver_title));
         m_botTips->setVisible(true);
         m_vendorIcon->setVisible(false);
         m_vendorName->setVisible(false);
@@ -442,7 +454,7 @@ void MainWindow::onPrepareFinished(bool success)
     }
 
     if (!m_started) {
-        m_botTips->setText(tr("Sorry, switch failed"));
+        m_topTips->setText(tr("Sorry, switch failed"));
         m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
         m_okButton->setVisible(true);
         m_rebootButton->setVisible(false);
@@ -455,8 +467,7 @@ void MainWindow::onPrepareFinished(bool success)
     m_tipsIcon->setVisible(true);
 
     if (!success) {
-       m_topTips->setText(tr("Download failed"));
-       m_botTips->setText(tr("Sorry, switch failed"));
+       m_topTips->setText(tr("Sorry, switch failed"));
        m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
        m_okButton->setVisible(true);
        m_rebootButton->setVisible(false);
@@ -474,4 +485,54 @@ void MainWindow::onPrepareFinished(bool success)
     }
 
     m_cancelButtion->setVisible(false);
+}
+
+void MainWindow::paintEvent(QPaintEvent *event)
+{
+    if (DGuiApplicationHelper::LightType == DApplicationHelper::instance()->themeType()) {
+        m_centerWidget->setStyleSheet("QWidget#centerWidget{"
+                                      "border-radius: 8px;"
+                                      "padding:2px 4px;"
+                                      "background-color: rgba(255, 255, 255, 1);"
+                                      "}");
+
+        m_topTips->setStyleSheet("QLabel {"
+                                 "font-size: 14px;"
+                                 "color: #414d68;"
+                                 "}");
+
+        m_botTips->setStyleSheet("QLabel {"
+                                 "font-size: 12px;"
+                                 "color: #526a7f;"
+                                 "}");
+
+        m_warnning->setStyleSheet("QLabel {"
+                                  "font-size: 12px;"
+                                  "color: #526a7f;"
+                                  "}");
+    } else if (DGuiApplicationHelper::DarkType == DApplicationHelper::instance()->themeType()) {
+        m_centerWidget->setStyleSheet("QWidget#centerWidget{"
+                                      "border-radius: 8px;"
+                                      "padding:2px 4px;"
+                                      "background-color: rgba(255, 255, 255, 0.05);"
+                                      "}");
+
+        m_topTips->setStyleSheet("QLabel {"
+                                 "font-size: 14px;"
+                                 "color: #C0C6D4;"
+                                 "}");
+
+
+        m_botTips->setStyleSheet("QLabel {"
+                                 "font-size: 12px;"
+                                 "color: #C0C6D4;"
+                                 "width:"
+                                 "}");
+
+        m_warnning->setStyleSheet("QLabel {"
+                                  "font-size: 12px;"
+                                  "color: #6d7c88;"
+                                  "}");
+    }
+    QWidget::paintEvent(event);
 }

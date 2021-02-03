@@ -72,7 +72,7 @@
             {
                 "name": "glamor",
                 "driver": "i915",
-                "title": "Integrated Graphics",
+                "title": "Integrated graphics driver",
                 "keep_gltest": true,
                 "description": "Poor compatibility for parts of old graphics cards.",
                 "prepare": "intel/prepare_intel_opensource.sh",
@@ -82,7 +82,7 @@
             {
                 "name": "uxa",
                 "driver": "i915",
-                "title": "Integrated Graphics",
+                "title": "Integrated graphics driver",
                 "keep_gltest": true,
                 "description": "Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.",
                 "prepare": "intel/prepare_intel_opensource.sh",
@@ -92,7 +92,7 @@
             {
                 "name": "sna",
                 "driver": "i915",
-                "title": "Integrated Graphics",
+                "title": "Integrated graphics driver",
                 "keep_gltest": true,
                 "description": "Speed up the graphics card with better performance, but unstable in some cards with screen flashing.",
                 "prepare": "intel/prepare_intel_opensource.sh",
