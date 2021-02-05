@@ -1,5 +1,11 @@
 deepin-graphics-driver-manager (5.1.0) unstable; urgency=medium
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial Release.
 
- -- unknown <dong@dong-PC>  Thu, 26 Nov 2020 16:04:06 +0800
+ -- Deepin Packages Builder <packages@deepin.com>  Fri, 05 Feb 2021 11:14:23 +0800
+
+deepin-graphics-driver-manager (5.0.9) unstable; urgency=medium
+
+  * Initial Release.
+
+ -- Deepin Packages Builder <packages@deepin.com>  Tue, 26 Sep 2017 17:14:51 +0800

@@ -2,11 +2,12 @@ Source: deepin-graphics-driver-manager
 Section: misc
 Priority: optional
 Maintainer: Deepin Packages Builder <packages@deepin.com>
-Build-Depends: debhelper (>= 9), cmake, pkg-config, libqt5widgets5, libdtkwidget-dev, libpci-dev, libgl1-mesa-dev, freeglut3-dev, libxmu-dev, libxi-dev, qt5-default, qttools5-dev-tools
+Build-Depends: debhelper (>= 9), dh-systemd, cmake, pkg-config, libqt5widgets5, libdtkwidget-dev, libpci-dev, libgl1-mesa-dev, freeglut3-dev, libxmu-dev, libxi-dev, qttools5-dev-tools
 Standards-Version: 3.9.8
 Homepage: https://www.deepin.org
 
 Package: deepin-graphics-driver-manager
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, dialog, overlayroot, rsync, sed, qdbus-qt5, xinit, deepin-feedback
+Depends: ${shlibs:Depends}, ${misc:Depends}, dialog, overlayroot, rsync, qdbus-qt5, xinit, deepin-feedback
 Description: deepin driver manager
+ New version of deepin-installer, rewritten with Qt5.
