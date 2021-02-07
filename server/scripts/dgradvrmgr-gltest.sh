@@ -2,9 +2,10 @@
 systemctl stop lightdm
 
 # run this command again here to avoid disable overlayroot in service not work
-overlayroot-disable
 
 . /usr/lib/deepin-graphics-driver-manager/common.sh
+
+overlayroot_disable
 
 # write to tty
 journalctl -f -u driver-installer.service | sed 's/$/\r/g' > /dev/tty1 2>&1 &
@@ -24,8 +25,6 @@ nvidia_blacklist_recovery
 
 # run this command again here to avoid disable overlayroot in service not work
 # same as above
-overlayroot-disable
-
-sleep 1
+overlayroot_disable
 
 reboot

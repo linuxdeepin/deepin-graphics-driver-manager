@@ -8,7 +8,6 @@ ConditionPathExists=/usr/lib/deepin-graphics-driver-manager/working-dir/dgradvrm
 [Service]
 Type=oneshot
 Environment=LC_ALL=C
-ExecStartPre=-/usr/sbin/overlayroot-disable
 ExecStartPre=-/usr/sbin/overlayroot-chroot rm -f /usr/lib/deepin-graphics-driver-manager/working-dir/dgradvrmgr_gltest_flag
 ExecStartPre=-/usr/bin/xset s 0 0
 ExecStartPre=-/usr/bin/xset s off

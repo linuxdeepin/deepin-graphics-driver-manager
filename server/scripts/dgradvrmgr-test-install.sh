@@ -14,4 +14,6 @@ $INSTALL_NEW_G || error_reboot "test install new driver failed!"
 
 /usr/sbin/overlayroot-chroot touch /usr/lib/deepin-graphics-driver-manager/working-dir/dgradvrmgr_gltest_flag
 
+overlayroot_save
+
 reboot

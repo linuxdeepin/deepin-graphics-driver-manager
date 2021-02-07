@@ -45,6 +45,11 @@ install(FILES data/com.deepin.graphicmanger.conf
 install(FILES data/com.deepin.graphicmanger.service
         DESTINATION share/dbus-1/system-services/)
 
+# initramfs-tools
+install(PROGRAMS data/deepin-overlay 
+        DESTINATION share/initramfs-tools/scripts/init-bottom/)
+
+
 # resolutions.json
 install(FILES resources/config/resolutions/resolutions.json
         DESTINATION deepin-graphics-driver-manager)

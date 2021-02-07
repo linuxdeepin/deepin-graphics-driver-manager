@@ -46,17 +46,6 @@ success=false
 notified=false
 " | tee $CONFIG_FILE_G
 chmod 666 $CONFIG_FILE_G
-# Warning: overlayroot-disable command only works in system is already in overlay mode
-# overlayroot will take effect after reboot
-# overlayroot-disable will excute when driver-installer service startup or some error occured
 
-dev=""
-if findmnt -n /data 2>&1 >/dev/null ;then
-    dev=$(findmnt -n /data | awk '{print $2}')
-elif findmnt -n /recovery 2>&1 >/dev/null ;then
-    dev=$(findmnt -n /recovery | awk '{print $2}')
-elif findmnt -n /root 2>&1 >/dev/null ;then
-    dev=$(findmnt -n /root | awk '{print $2}')
-fi
 
-overlayroot-enable ${dev} || error_exit_dgm "overlayroot-enable failed!" 1
+overlayroot_enable || error_exit_dgm "overlayroot-enable failed!" 1

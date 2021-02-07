@@ -6,8 +6,34 @@ export REMOVE_OLD_G=$WORKING_DIR_G/remove_old.sh
 export INSTALL_NEW_G=$WORKING_DIR_G/install_new.sh
 export CONFIG_FILE_G=$WORKING_DIR_G/config.conf
 
+OVERLAYROOT_IMAGE=$WORKING_DIR_G/overlayroot.img
+OVERLAYROOT_CONF=/etc/overlayroot.conf
+LOOP_DEV=/dev/loop0
+
+
+isInOverlayRoot=$(grep -m1 "^overlayroot / overlay " /proc/mounts) || isInOverlayRoot=
+
+overlayroot_disable() {
+    overlayroot-chroot sed -i 's:overlayroot=".*":overlayroot="":' ${OVERLAYROOT_CONF}
+    [ -e "${OVERLAYROOT_IMAGE}" ] || overlayroot-chroot rm -f ${OVERLAYROOT_IMAGE}
+}
+
+overlayroot_enable() {
+    if [[ -n "${isInOverlayRoot}" ]]; then
+        echo "overlayroot is enabled already"
+    else
+        [ -e "${OVERLAYROOT_IMAGE}" ] || rm -f ${OVERLAYROOT_IMAGE}
+        dd if=/dev/zero of=${OVERLAYROOT_IMAGE} bs=1MiB count=640 && \
+            sed -i "s:overlayroot=".*":overlayroot=\"device\:dev=\/dev\/loop0,recurse=0\":" ${OVERLAYROOT_CONF}
+        mkfs.ext4 ${OVERLAYROOT_IMAGE}
+    fi
+}
+
+overlayroot_save() {
+    overlayroot-chroot cp -f /run/overlayroot.img ${OVERLAYROOT_IMAGE}
+}
+ 
 cleanWorking() {
-    isInOverlayRoot="$(df -h | grep -e "^overlayroot.*/$")"
     if [[ -z "${isInOverlayRoot}" ]]; then
         rm -rf $TEST_IN_OVERLAY_G
         rm -rf $REMOVE_OLD_G
@@ -16,7 +42,7 @@ cleanWorking() {
         /usr/sbin/overlayroot-chroot rm -rf $TEST_IN_OVERLAY_G
         /usr/sbin/overlayroot-chroot rm -rf $REMOVE_OLD_G
         /usr/sbin/overlayroot-chroot rm -rf $INSTALL_NEW_G
-        /usr/sbin/overlayroot-disable
+        overlayroot_disable
     fi
 }
 

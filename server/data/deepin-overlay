@@ -1,0 +1,23 @@
+#!/bin/sh
+
+case "$1" in
+        # no pre-reqs
+        prereqs) echo ""; exit 0;;
+esac
+
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+MYTAG="my"
+
+ROOTMNT=${rootmnt}
+LOOP_DEV="/dev/loop0"
+
+isEnableOverlayRoot=$(grep "^overlayroot=" ${ROOTMNT}/etc/overlayroot.conf |awk -F \" '{print $2}') || isEnableOverlayRoot=
+
+if [ -z "${isEnableOverlayRoot}" ]; then
+    echo "Overlayroot is not enable"
+else
+    cp ${ROOTMNT}/usr/lib/deepin-graphics-driver-manager/working-dir/overlayroot.img /run
+    [ -e "${LOOP_DEV}" ] || mknod ${LOOP_DEV} b 7 0
+    losetup ${LOOP_DEV} /run/overlayroot.img
+fi
+exit 0
