@@ -114,7 +114,7 @@ package_download() {
         fi
         let index++;
         ratio=$(($index*100/$len))
-        let ratio-=1
+	[ ${ratio} -gt 99 ] && ratio=99
         echo "PROGRESS:${ratio}"
     done
 }
