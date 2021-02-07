@@ -37,6 +37,7 @@ public:
     ~MainWindow();
 private:
     void keyPressEvent(QKeyEvent *e);
+    void closeEvent(QCloseEvent *event);
     void paintEvent(QPaintEvent *event);
     void noResolutions();
     void loadDevice();

@@ -536,3 +536,10 @@ void MainWindow::paintEvent(QPaintEvent *event)
     }
     QWidget::paintEvent(event);
 }
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    QDBusPendingReply<void> reply = m_graphicsDriver->CancelInstall();
+    reply.waitForFinished();
+    qApp->quit();
+}
