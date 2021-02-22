@@ -57,6 +57,7 @@ cleanWorking() {
         else
             # Delete blacklist file
             cp -f ${lowerdir}/${nvidia_blacklist_file} ${nvidia_blacklist_file}
+            echo "blacklist  nouveau" > ${nvidia_blacklist_file}
         fi
         update-initramfs -u
      fi
