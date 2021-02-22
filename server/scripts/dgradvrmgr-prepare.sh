@@ -25,6 +25,9 @@ cp -f $INSTALL $INSTALL_NEW_G || error_exit_dgm "copy $INSTALL failed!"  1
 
 chmod +x $REMOVE_OLD_G
 chmod +x $INSTALL_NEW_G
+
+overlayroot_enable || error_exit_dgm "overlayroot-enable failed!" 1
+
 # generate config file
 echo "[General]
 lang=$USER_LANG
@@ -35,7 +38,6 @@ gltest-success=false
 success=false
 notified=false
 " | tee $CONFIG_FILE_G
+
 chmod 666 $CONFIG_FILE_G
 
-
-overlayroot_enable || error_exit_dgm "overlayroot-enable failed!" 1

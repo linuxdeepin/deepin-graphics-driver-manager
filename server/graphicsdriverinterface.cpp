@@ -196,6 +196,8 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
 
     connect(this, &GraphicsDriverInterface::Cancel, proc, [=]{
         qDebug()<< "Cancel prepare install!!!";
+        QFile overlay_flag("/usr/lib/deepin-graphics-driver-manager/working-dir/test_in_overlay_flag");
+        if (overlay_flag.exists()) overlay_flag.remove();
         proc->kill();
         proc->waitForFinished(1000);
     });
