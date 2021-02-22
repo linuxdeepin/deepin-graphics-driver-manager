@@ -5,7 +5,7 @@ if [ "$(id -u)" -ne "0" ];then
     exit 1
 fi
 
-export DEBIAN_FRONTEND=noninteractive
+. /usr/lib/deepin-graphics-driver-manager/common.sh
 
 apt-get --reinstall -y --allow-downgrades install \
     libgl1-mesa-glx \

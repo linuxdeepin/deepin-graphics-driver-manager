@@ -5,23 +5,20 @@ if [ "$(id -u)" -ne "0" ];then
     exit 1
 fi
 
-export DEBIAN_FRONTEND=noninteractive
-
-nvidia_mod=`lsmod | grep nvidia`
-
-if [ -x /usr/bin/nvidia-installer ];then
-    nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
-fi
-
+. /usr/lib/deepin-graphics-driver-manager/common.sh
 
 rm -rf /etc/modprobe.d/bumblebee.conf
 
-apt-get -y purge \
-    bumblebee \
-    bumblebee-nvidia \
-    primus \
-    primus-libs \
-    bbswitch-dkms \
-    nvidia-driver \
-    nvidia-alternative \
-    xserver-xorg-video-nvidia
+
+packages=(
+    "bumblebee"
+    "bumblebee-nvidia"
+    "primus"
+    "primus-libs"
+    "bbswitch-dkms"
+    "nvidia-driver"
+    "nvidia-alternative"
+    "xserver-xorg-video-nvidia"
+)
+
+package_remove "${packages[*]}" "${#packages[*]}"

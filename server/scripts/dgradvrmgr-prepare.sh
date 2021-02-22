@@ -2,25 +2,15 @@
 
 . /usr/lib/deepin-graphics-driver-manager/common.sh
 
-PREPARE=$1
-REMOVEOLD=$2
-INSTALL=$3
+REMOVEOLD=$1
+INSTALL=$2
 
-OLD_DRIVER=$4
-NEW_DRIVER=$5
+OLD_DRIVER=$3
+NEW_DRIVER=$4
 
-USER_LANG=$6
-EXIT_TEST=$7
+USER_LANG=$5
+EXIT_TEST=$6
 
-echo $PREPARE
-echo $REMOVEOLD
-echo $INSTALL
-
-echo $OLD_DRIVER
-echo $NEW_DRIVER
-
-# execute prepare script for new solution
-bash -x $PREPARE || error_exit_dgm "prepare for $NEW_DRIVER failed!" 1
 
 # prepare working directory
 mkdir -p $WORKING_DIR_G || error_exit_dgm "mkdir $WORKING_DIR_G failed!" 1

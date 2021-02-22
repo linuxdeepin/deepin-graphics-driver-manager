@@ -5,13 +5,12 @@ export TEST_IN_OVERLAY_G=$WORKING_DIR_G/test_in_overlay_flag
 export REMOVE_OLD_G=$WORKING_DIR_G/remove_old.sh
 export INSTALL_NEW_G=$WORKING_DIR_G/install_new.sh
 export CONFIG_FILE_G=$WORKING_DIR_G/config.conf
-
+export REAL_INSTALLE_DESKTOP=/etc/xdg/autostart/deepin-gradvrmgr-installer.desktop
+export isInOverlayRoot=$(grep -m1 "^overlayroot / overlay " /proc/mounts) || isInOverlayRoot=
+export DEBIAN_FRONTEND=noninteractive
 OVERLAYROOT_IMAGE=$WORKING_DIR_G/overlayroot.img
 OVERLAYROOT_CONF=/etc/overlayroot.conf
 LOOP_DEV=/dev/loop0
-
-
-isInOverlayRoot=$(grep -m1 "^overlayroot / overlay " /proc/mounts) || isInOverlayRoot=
 
 overlayroot_disable() {
     overlayroot-chroot sed -i 's:overlayroot=".*":overlayroot="":' ${OVERLAYROOT_CONF}
@@ -34,15 +33,16 @@ overlayroot_save() {
 }
  
 cleanWorking() {
-    if [[ -z "${isInOverlayRoot}" ]]; then
-        rm -rf $TEST_IN_OVERLAY_G
-        rm -rf $REMOVE_OLD_G
-        rm -rf $INSTALL_NEW_G
-    else
+    if [[ -n "${isInOverlayRoot}" ]]; then
         /usr/sbin/overlayroot-chroot rm -rf $TEST_IN_OVERLAY_G
         /usr/sbin/overlayroot-chroot rm -rf $REMOVE_OLD_G
         /usr/sbin/overlayroot-chroot rm -rf $INSTALL_NEW_G
         overlayroot_disable
+
+    else
+        rm -rf $TEST_IN_OVERLAY_G
+        rm -rf $REMOVE_OLD_G
+        rm -rf $INSTALL_NEW_G
     fi
 }
 
@@ -76,45 +76,63 @@ error_reboot() {
     reboot
 }
 
-package_download() {
-    pkg_list=$1
-    len=$(($2+2))
-    index=0
-
-    ratio=0
-    echo "PROGRESS:${ratio}"
-
+apt_update()
+{
     apt-get update
     if [ $? != 0 ]; then
-        echo "Excute apt-get update failed"
-        echo "PROGRESS:${-1}"
-        exit 1;
+        echo "Error: excute apt-get update failed"
+        echo "PROGRESS:-1"
+        exit 1
     fi
-    let index++
-    ratio=$(($index*100/$len))
-    echo "PROGRESS:${ratio}"
-
-    apt-get install  --fix-missing
+    echo "PROGRESS:5"
+    apt-get install  --fix-missing || dpkg --configure -a
     if [ $? != 0 ]; then
-        echo "Excute --fix-missing failed"
-        echo "PROGRESS:${-1}"
+        echo "Error: excute apt-get install  --fix-missing failed"
+        echo "PROGRESS:-1"
         exit 1;
     fi
-    let index++
-    ratio=$(($index*100/$len))
-    echo "PROGRESS:${ratio}"
+    echo "PROGRESS:15"
+}
 
+package_remove()
+{
+    pkg_list=$1
+    len=$2
+    inital_ratio=15
+    max_ratio=50
+    let range=${max_ratio}-${inital_ratio}
     for pkg in ${pkg_list[@]}
     do
-        apt-get install -d --reinstall -y --allow-downgrades ${pkg};
+        apt-get -y purge ${pkg};
         if [ $? != 0 ]; then
-            echo "Download ${pkg} failed"
-            echo "PROGRESS:${-1}"
-            exit 1;
+            echo "Error: remove ${pkg} failed"
+            echo "PROGRESS:-1"
+            exit 1
+        fi
+        let index++
+        ratio=$(($index*$range/$len)+$inital_ratio)
+        let ratio+=${inital_ratio}
+        echo "PROGRESS:${ratio}"
+    done
+}
+
+package_install()
+{
+   pkg_list=$1
+   len=$2
+    inital_ratio=50
+    max_ratio=99
+    for pkg in ${pkg_list[@]}
+    do
+        apt-get -y --reinstall --allow-downgrades install ${pkg};
+        if [ $? != 0 ]; then
+            echo "Error：install ${pkg} failed"
+            echo "PROGRESS:-1"
+            exit 1
         fi
         let index++;
-        ratio=$(($index*100/$len))
-	[ ${ratio} -gt 99 ] && ratio=99
+        ratio=$(($index*$range/$len)+$inital_ratio)
+        let ratio+=${inital_ratio}
         echo "PROGRESS:${ratio}"
     done
 }

@@ -30,9 +30,6 @@ Resolution::Resolution(const QJsonObject &info)
     m_resdriver = info["driver"].toString();
     m_resTitle = info["title"].toString();
     m_resDescription = info["description"].toString();
-    m_prepareScript = info["prepare"].toString();
     m_installScript = info["install"].toString();
     m_removeScript = info["remove"].toString();
-    m_conditionScript = info["condition"].toString();
-    m_versionScript = info["version"].toString();
 }

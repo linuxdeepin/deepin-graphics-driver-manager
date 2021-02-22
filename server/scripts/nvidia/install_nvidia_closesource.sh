@@ -5,16 +5,18 @@ if [ "$(id -u)" -ne "0" ];then
     exit 1
 fi
 
-export DEBIAN_FRONTEND=noninteractive
+. /usr/lib/deepin-graphics-driver-manager/common.sh
 
-apt-get --reinstall -y --allow-downgrades install \
-    nvidia-driver \
-    xserver-xorg-core \
-    xserver-xorg-input-all
+packages=(
+    "nvidia-driver"
+    "xserver-xorg-core"
+    "xserver-xorg-input-all"
+)
 
-if [[ $? -ne 0 ]]; then
-    echo "apt-get execute failed!"
-    exit 1
-fi
+package_install "${packages[*]}" "${#packages[*]}"
+
+# TODO: remove after package problem fixed #
+echo "Manual update initramfs ..."
+update-initramfs -u -t
 
 exit 0

@@ -19,11 +19,8 @@ public:
     inline const QString driver() const { return m_resdriver; }
     inline const QString title() const { return m_resTitle; }
     inline const QString description() const { return m_resDescription; }
-    inline const QString prepareScript() const { return m_prepareScript; }
     inline const QString installScript() const { return m_installScript; }
     inline const QString removeScript() const { return m_removeScript; }
-    inline const QString conditionScript() const { return m_conditionScript; }
-    inline const QString versionScript() const { return m_versionScript; }
 
     inline bool operator==(const Resolution &rhs) const { return m_resName == rhs.m_resName; }
 

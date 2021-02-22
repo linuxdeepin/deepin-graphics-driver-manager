@@ -79,6 +79,12 @@ QString GraphicsDriverAdaptor::GetResolutionTitle()
     return out0;
 }
 
+void GraphicsDriverAdaptor::Install()
+{
+    // handle method call com.deepin.daemon.GraphicsDriver.Install
+    QMetaObject::invokeMethod(parent(), "Install");
+}
+
 bool GraphicsDriverAdaptor::IsTestSuccess()
 {
     // handle method call com.deepin.daemon.GraphicsDriver.IsTestSuccess
@@ -91,12 +97,6 @@ void GraphicsDriverAdaptor::PrepareInstall(const QString &name, const QString &l
 {
     // handle method call com.deepin.daemon.GraphicsDriver.PrepareInstall
     QMetaObject::invokeMethod(parent(), "PrepareInstall", Q_ARG(QString, name), Q_ARG(QString, language));
-}
-
-void GraphicsDriverAdaptor::RealInstaller()
-{
-    // handle method call com.deepin.daemon.GraphicsDriver.RealInstaller
-    QMetaObject::invokeMethod(parent(), "RealInstaller");
 }
 
 void GraphicsDriverAdaptor::TestSuccess()

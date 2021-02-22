@@ -5,15 +5,21 @@ if [ "$(id -u)" -ne "0" ];then
     exit 1
 fi
 
-export DEBIAN_FRONTEND=noninteractive
+. /usr/lib/deepin-graphics-driver-manager/common.sh
+
 
 # 0 ------ default is glamor
 # 1 ------ use SNA accel method
 # 2 ------ use UXA accel method
 
+
+packages=(
+    "xserver-xorg-video-intel"
+)
+
 remove_config_driver_overlay() {
-rm /etc/X11/xorg.conf.d/20-intel.conf
-apt-get purge xserver-xorg-video-intel -y
+    rm /etc/X11/xorg.conf.d/20-intel.conf
+    package_remove "${packages[*]}" "${#packages[*]}"
 }
 
 case $1 in

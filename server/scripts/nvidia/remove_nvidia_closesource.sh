@@ -5,23 +5,14 @@ if [ "$(id -u)" -ne "0" ];then
     exit 1
 fi
 
-export DEBIAN_FRONTEND=noninteractive
+. /usr/lib/deepin-graphics-driver-manager/common.sh
 
-nvidia_mod=`lsmod | grep nvidia`
+packages=(
+    "glx-alternative-nvidia"
+    "nvidia-alternative"
+)
 
-if [ -x /usr/bin/nvidia-installer ];then
-    nvidia-installer --uninstall --no-runlevel-check --no-x-check --ui=none || true
-fi
-
-
-apt-get -y purge \
-    glx-alternative-nvidia \
-    nvidia-alternative
-
-if [[ $? -ne 0 ]]; then
-    echo "apt-get execute failed!"
-    exit 1
-fi
+package_remove "${packages[*]}" "${#packages[*]}"
 
 # TODO: remove after package problem fixed #
 echo "Manual update initramfs ..."

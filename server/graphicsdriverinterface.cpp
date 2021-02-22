@@ -169,10 +169,9 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
         return;
     }
 
-    const QString prepare = scriptAbsolutePath(new_resl.prepareScript());
     const QString install = scriptAbsolutePath(new_resl.installScript());
     const QString removeOld = scriptAbsolutePath(old_resl.removeScript());
-    Q_ASSERT(!prepare.isEmpty() && !install.isEmpty() && !removeOld.isEmpty());
+    Q_ASSERT(!install.isEmpty() && !removeOld.isEmpty());
 
     QProcess *proc = new QProcess(this);
     QPROCESS_DELETE_SELF(proc);
@@ -202,25 +201,8 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
     });
 
     connect(proc, &QProcess::started, this, [=] {
-        qDebug() << "PrepareInstall start!"; 
+        qDebug() << "PrepareInstall start!";
         Q_EMIT ReportProgress("0");//开始
-    });
-
-    connect(proc, &QProcess::readyReadStandardOutput, this, [=]() {
-        QString out = proc->readAllStandardOutput();
-        qDebug() << out;
-        QStringList line_list = out.split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
-        for(int i=0; i < line_list.size(); i++){
-            QString line_str = line_list[i];
-            QRegExp rx("^PROGRESS:[ /t/n]?[0-9]{1,3}");
-            int pos = line_str.indexOf(rx);
-            if (pos < 0) continue;
-            else{
-                QString ratio = rx.cap(0).split(QRegExp(":[ /t/n]?"))[1];
-                qDebug() << "ratio:" <<ratio;
-                if (!ratio.isEmpty()) Q_EMIT ReportProgress(ratio);
-            }
-        }
     });
 
     const QString &exit_gltest = new_resl.keep_gltest() ? "false" : "true";
@@ -229,7 +211,7 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
     const QString &sc = scriptAbsolutePath("dgradvrmgr-prepare.sh");
     const QString &old_driver = old_resl.name();
 
-    QString cmd = QString("%1 %2 %3 %4 %5 %6 %7 %8").arg(sc, prepare, removeOld, install, old_driver, new_driver, language, exit_gltest);
+    QString cmd = QString("%1 %2 %3 %4 %5 %6 %7 %8").arg(sc, removeOld, install, old_driver, new_driver, language, exit_gltest);
     proc->start(cmd);
 }
 
@@ -254,22 +236,10 @@ bool GraphicsDriverInterface::isInOverlayRoot()
 
 void GraphicsDriverInterface::CancelInstall()
 {
-    if (QFile(INSTALLER_ROOT_DESKTOP_FILE_DEST).exists()){
-        QString output;
-        QString cmd;
-        QStringList args;
-
-        if(isInOverlayRoot()){
-            cmd = "overlayroot-chroot";
-            args << "rm" << "-f" << INSTALLER_ROOT_DESKTOP_FILE_DEST;
-        }else{
-            cmd = "rm";
-            args << "-f" << INSTALLER_ROOT_DESKTOP_FILE_DEST;
-        }
-        if (!command(cmd, args, output)){
-            qWarning() << output;
-        }
-    }
+    QProcess *proc = new QProcess(this);
+    QPROCESS_DELETE_SELF(proc);
+    proc->setProcessChannelMode(QProcess::MergedChannels);
+    proc->execute("/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-cancel.sh");
 
     Q_EMIT Cancel();
 }
@@ -292,7 +262,7 @@ bool GraphicsDriverInterface::IsTestSuccess()
     const QString &config_file = scriptAbsolutePath("working-dir/config.conf");
     if (!QFile(config_file).exists())
         return  false;
-    
+
     QSettings *settings = new QSettings(config_file, QSettings::IniFormat);
     settings->setIniCodec(QTextCodec::codecForName("UTF-8"));
 
@@ -302,7 +272,7 @@ bool GraphicsDriverInterface::IsTestSuccess()
     return gltestSuccess;
 }
 
-void GraphicsDriverInterface::RealInstaller()
+void GraphicsDriverInterface::Install()
 {
     QProcess *proc = new QProcess(this);
     QPROCESS_DELETE_SELF(proc);
@@ -310,28 +280,42 @@ void GraphicsDriverInterface::RealInstaller()
 
     connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, [=](int exitCode) {
         if (exitCode){ //失败
-            qWarning() << "Real install failed, ExitCode: " << exitCode;
+            qWarning() << "Driver install failed, ExitCode: " << exitCode;
             Q_EMIT ReportProgress("-1");
         }else{ //成功
-            qDebug() << "Real install success!"; 
+            qDebug() << "Driver install success!";
             Q_EMIT ReportProgress("100");
         }
     });
 
     connect(proc, &QProcess::started, this, [=] {
-        qDebug() << "PrepareInstall start!"; 
+        qDebug() << "Driver install start!";
         Q_EMIT ReportProgress("0");//开始
     });
+
 
     connect(proc, &QProcess::readyReadStandardOutput, this, [=]() {
         QString out = proc->readAllStandardOutput();
         qDebug() << out;
+        QStringList line_list = out.split(QRegExp("[\r\n]"),QString::SkipEmptyParts);
+        for(int i=0; i < line_list.size(); i++){
+            QString line_str = line_list[i];
+            QRegExp rx("^PROGRESS:[ /t/n]?[0-9]{1,3}");
+            int pos = line_str.indexOf(rx);
+            if (pos < 0) continue;
+            else{
+                QString ratio = rx.cap(0).split(QRegExp(":[ /t/n]?"))[1];
+                qDebug() << "ratio:" <<ratio;
+                if (!ratio.isEmpty()) Q_EMIT ReportProgress(ratio);
+            }
+        }
     });
 
-    const QString &cmd = scriptAbsolutePath("dgradvrmgr-real-install.sh");
+    const QString &cmd = scriptAbsolutePath("dgradvrmgr-install.sh");
     proc->start(cmd);
     return;
 }
+
 
 QString GraphicsDriverInterface::GetCurrDriverName()
 {
@@ -339,7 +323,7 @@ QString GraphicsDriverInterface::GetCurrDriverName()
     QString name = m_resolutions.name();
     if (statusScript.isEmpty())
         return nullptr;
-    
+
     QProcess *proc = new QProcess;
     QPROCESS_DUMP(proc);
     QPROCESS_DELETE_SELF(proc);

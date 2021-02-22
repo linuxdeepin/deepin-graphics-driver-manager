@@ -5,8 +5,11 @@ if [ "$(id -u)" -ne "0" ];then
     exit 1
 fi
 
-export DEBIAN_FRONTEND=noninteractive
-nouveau_mod=`lsmod | grep nouveau`
+. /usr/lib/deepin-graphics-driver-manager/common.sh
 
+packages=(
+    "xserver-xorg-video-nouveau"
+)
 
-apt-get purge xserver-xorg-video-nouveau -y
+package_remove "${packages[*]}" "${#packages[*]}"
+

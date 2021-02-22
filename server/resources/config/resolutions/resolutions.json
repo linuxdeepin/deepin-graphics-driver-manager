@@ -15,7 +15,6 @@
                 "title": "Use AMDGPU driver",
                 "keep_gltest": true,
                 "description": "For special needs. Auto determine the acceleration way without external configuration.",
-                "prepare": "empty.sh",
                 "install": "empty.sh",
                 "remove": "empty.sh"
             },
@@ -25,7 +24,6 @@
                 "title": "Use Radeon driver",
                 "keep_gltest": true,
                 "description": "For special needs. Auto determine the acceleration way without external configuration.",
-                "prepare": "empty.sh",
                 "install": "empty.sh",
                 "remove": "empty.sh"
             }
@@ -44,8 +42,6 @@
                 "title": "Unofficial driver",
                 "keep_gltest": true,
                 "description": "Poor performance, unstable in some graphics cards",
-                "version": "nvidia/version_nouveau_driver.sh",
-                "prepare": "nvidia/prepare_nouveau_opensource.sh",
                 "install": "nvidia/install_nouveau.sh",
                 "remove": "nvidia/remove_nouveau.sh"
             },
@@ -55,8 +51,6 @@
                 "title": "Official driver",
                 "keep_gltest": true,
                 "description": "Only adaptive to parts of distributions and graphics cards, and it may cause a black screen",
-                "version": "nvidia/version_nvidia_driver.sh",
-                "prepare": "nvidia/prepare_nvidia_closesource.sh",
                 "install": "nvidia/install_nvidia_closesource.sh",
                 "remove": "nvidia/remove_nvidia_closesource.sh"
             }
@@ -75,7 +69,6 @@
                 "title": "Integrated graphics driver",
                 "keep_gltest": true,
                 "description": "Poor compatibility for parts of old graphics cards.",
-                "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_glamor.sh",
                 "remove": "intel/remove_glamor.sh"
             },
@@ -85,7 +78,6 @@
                 "title": "Integrated graphics driver",
                 "keep_gltest": true,
                 "description": "Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.",
-                "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_uxa.sh",
                 "remove": "intel/remove_uxa.sh"
             },
@@ -95,7 +87,6 @@
                 "title": "Integrated graphics driver",
                 "keep_gltest": true,
                 "description": "Speed up the graphics card with better performance, but unstable in some cards with screen flashing.",
-                "prepare": "intel/prepare_intel_opensource.sh",
                 "install": "intel/install_sna.sh",
                 "remove": "intel/remove_sna.sh"
             }
@@ -114,9 +105,6 @@
                 "title": "Bumblebee",
                 "keep_gltest": true,
                 "description": "Save power to reduce power consumption",
-                "prepare": "nvidia_intel/prepare_nvidia_intel_bumblebee.sh",
-                "condition": "nvidia_intel/bumblebee.sh",
-                "version": "nvidia_intel/version_bumblebee.sh",
                 "install": "nvidia_intel/install_nvidia_intel_bumblebee.sh",
                 "remove": "nvidia_intel/remove_nvidia_intel_bumblebee.sh"
             },
@@ -126,9 +114,6 @@
                 "title": "PRIME",
                 "keep_gltest": true,
                 "description": "Best performance, for computers with hybrid graphics",
-                "prepare": "nvidia_intel/prepare_nvidia_intel_prime.sh",
-                "condition": "nvidia_intel/bumblebee.sh",
-                "version": "nvidia_intel/version_nvidia_prime.sh",
                 "install": "nvidia_intel/install_nvidia_intel_prime.sh",
                 "remove": "nvidia_intel/remove_nvidia_intel_prime.sh"
             }

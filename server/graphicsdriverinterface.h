@@ -105,17 +105,17 @@ public slots:
     Others:         无
     *************************************************/
     bool IsTestSuccess();
-
+    
     /*************************************************
-    Function:       RealInstaller
-    Description:    正式安装
+    Function:       DriverSwitch
+    Description:    切换驱动
     Input:          无
     Output:         无
-    Return:         空
+    Return:         方案名称
     Others:         无
     *************************************************/
-    void RealInstaller();
-    
+    void Install();
+
     /*************************************************
     Function:       GetOldDriverName
     Description:    获取老方案名称

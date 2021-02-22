@@ -52,7 +52,7 @@ class GraphicsDriverAdaptor: public QDBusAbstractAdaptor
 "    <method name=\"IsTestSuccess\">\n"
 "      <arg direction=\"out\" type=\"b\"/>\n"
 "    </method>\n"
-"    <method name=\"RealInstaller\"/>\n"
+"    <method name=\"Install\"/>\n"
 "    <method name=\"GetOldDriverName\">\n"
 "      <arg direction=\"out\" type=\"s\"/>\n"
 "    </method>\n"
@@ -76,9 +76,9 @@ public Q_SLOTS: // METHODS
     QString GetNewDriverName();
     QString GetOldDriverName();
     QString GetResolutionTitle();
+    void Install();
     bool IsTestSuccess();
     void PrepareInstall(const QString &name, const QString &language);
-    void RealInstaller();
     void TestSuccess();
 Q_SIGNALS: // SIGNALS
     void Cancel();

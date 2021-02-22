@@ -5,7 +5,7 @@ if [ "$(id -u)" -ne "0" ];then
     exit 1
 fi
 
-export DEBIAN_FRONTEND=noninteractive
+. /usr/lib/deepin-graphics-driver-manager/common.sh
 
 # 0 ------ default is glamor
 # 1 ------ use SNA accel method
@@ -21,7 +21,6 @@ Option "AccelMethod" "sna"
 #Option "PageFlip" "False"
 #Option "TearFree" "True"
 EndSection' | tee $INTEL_XORG_CONF
-apt-get install xserver-xorg-video-intel --reinstall -y --allow-downgrades
 }
 
 set_intel_accel_uxa() {
@@ -32,12 +31,15 @@ Option "AccelMethod" "uxa"
 #Option "PageFlip" "False"
 #Option "TearFree" "True"
 EndSection' | tee $INTEL_XORG_CONF
-apt-get install xserver-xorg-video-intel --reinstall -y --allow-downgrades
 }
 
-apt-get --reinstall -y --allow-downgrades install \
-    xserver-xorg-core \
-    xserver-xorg-input-all
+packages=(
+    "xserver-xorg-core"
+    "xserver-xorg-input-all"
+    "xserver-xorg-video-intel"
+)
+
+package_install "${packages[*]}" "${#packages[*]}"
 
 #根据需求调整显卡的加速方式，从而达到最优化
 case $1 in
