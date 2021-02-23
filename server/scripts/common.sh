@@ -13,23 +13,27 @@ OVERLAYROOT_CONF=/etc/overlayroot.conf
 LOOP_DEV=/dev/loop0
 
 overlayroot_disable() {
-    overlayroot-chroot sed -i 's:overlayroot=".*":overlayroot="":' ${OVERLAYROOT_CONF}
-    [ -e "${OVERLAYROOT_IMAGE}" ] || overlayroot-chroot rm -f ${OVERLAYROOT_IMAGE}
+    if [[ -n "${isInOverlayRoot}" ]]; then
+         overlayroot-chroot sed -i 's:overlayroot=".*":overlayroot="":' ${OVERLAYROOT_CONF}
+        [ -e "${OVERLAYROOT_IMAGE}" ] && overlayroot-chroot rm -f ${OVERLAYROOT_IMAGE}
+    else
+        sed -i 's:overlayroot=".*":overlayroot="":' ${OVERLAYROOT_CONF}
+        [ -e "${OVERLAYROOT_IMAGE}" ] && rm -f ${OVERLAYROOT_IMAGE}
+    fi
 }
 
 overlayroot_enable() {
     if [[ -n "${isInOverlayRoot}" ]]; then
         echo "overlayroot is enabled already"
     else
-        [ -e "${OVERLAYROOT_IMAGE}" ] || rm -f ${OVERLAYROOT_IMAGE}
-        dd if=/dev/zero of=${OVERLAYROOT_IMAGE} bs=1MiB count=640 && \
-            sed -i "s:overlayroot=".*":overlayroot=\"device\:dev=\/dev\/loop0,recurse=0\":" ${OVERLAYROOT_CONF}
-        mkfs.ext4 ${OVERLAYROOT_IMAGE}
+        [ -e "${OVERLAYROOT_IMAGE}" ] && rm -f ${OVERLAYROOT_IMAGE}
+        dd if=/dev/zero of=${OVERLAYROOT_IMAGE} bs=1MiB count=640
+        mkfs.ext4 ${OVERLAYROOT_IMAGE} && sed -i "s:overlayroot=".*":overlayroot=\"device\:dev=\/dev\/loop0,recurse=0\":" ${OVERLAYROOT_CONF}
     fi
 }
 
 overlayroot_save() {
-    overlayroot-chroot cp -f /run/overlayroot.img ${OVERLAYROOT_IMAGE}
+    overlayroot-chroot cp -f /run/overlayroot/overlayroot.img ${OVERLAYROOT_IMAGE}
 }
  
 cleanWorking() {
