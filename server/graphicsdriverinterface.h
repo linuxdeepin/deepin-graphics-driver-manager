@@ -107,14 +107,24 @@ public slots:
     bool IsTestSuccess();
     
     /*************************************************
-    Function:       DriverSwitch
-    Description:    切换驱动
+    Function:       RealInstall
+    Description:    非overlay环境上切换驱动
     Input:          无
     Output:         无
     Return:         方案名称
     Others:         无
     *************************************************/
-    void Install();
+    void RealInstall();
+
+    /*************************************************
+    Function:       TestInstall
+    Description:    overlay环境上切换驱动
+    Input:          无
+    Output:         无
+    Return:         方案名称
+    Others:         无
+    *************************************************/
+    void TestInstall();
 
     /*************************************************
     Function:       GetOldDriverName
@@ -152,6 +162,7 @@ private:
     QString GetKernelVersion();
     QString GetCurrPackageVersion(QString pkg_name);
     QString GetDepoPackageVersion(QString pkg_name);
+    void Install(QString script);
     bool command(const QString &cmd, const QStringList &args, QString &output);
     bool isInOverlayRoot();
 

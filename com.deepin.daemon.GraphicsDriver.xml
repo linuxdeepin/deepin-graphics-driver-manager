@@ -23,7 +23,9 @@
     <method name="IsTestSuccess">
       <arg type="b" direction="out"/>
     </method>
-    <method name="Install">
+    <method name="RealInstall">
+    </method>
+    <method name="TestInstall">
     </method>
     <method name="GetOldDriverName">
       <arg type="s" direction="out"/>

@@ -5,8 +5,12 @@
 cleanWorking
 
 if [[ -n "${isInOverlayRoot}" ]]; then
-    [ -e "${REAL_INSTALLE_DESKTOP}" ] && /usr/sbin/overlayroot-chroot rm -rf $REAL_INSTALLE_DESKTOP
+    [ -e "${INSTALLER_DESKTOP_FILE_DEST}" ] && /usr/sbin/overlayroot-chroot rm -rf $INSTALLER_DESKTOP_FILE_DEST
+    [ -e "${TEST_INSTALLER_DESKTOP_FILE_DEST}" ] && /usr/sbin/overlayroot-chroot rm -rf $TEST_INSTALLER_DESKTOP_FILE_DEST
+    [ -e "${GLTEST_FLAG}" ] && /usr/sbin/overlayroot-chroot rm -rf $GLTEST_FLAG
 else
-    [ -e "${REAL_INSTALLE_DESKTOP}" ] && rm -rf $REAL_INSTALLE_DESKTOP
+    [ -e "${INSTALLER_DESKTOP_FILE_DEST}" ] && rm -rf $INSTALLER_DESKTOP_FILE_DEST
+    [ -e "${TEST_INSTALLER_DESKTOP_FILE_DEST}" ] && rm -rf $TEST_INSTALLER_DESKTOP_FILE_DEST
+    [ -e "${GLTEST_FLAG}" ] && rm -rf $GLTEST_FLAG
 fi
 

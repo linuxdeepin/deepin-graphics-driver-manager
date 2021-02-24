@@ -12,8 +12,10 @@
 using namespace std;
 
 #define INSTALLER_DESKTOP_FILE_SOURCE "/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-installer.desktop"
-#define INSTALLER_ROOT_DESKTOP_FILE_DEST "etc/xdg/autostart/deepin-gradvrmgr-installer.desktop"
+#define INSTALLER_DESKTOP_FILE_DEST "/etc/xdg/autostart/deepin-gradvrmgr-installer.desktop"
 
+#define TEST_INSTALLER_DESKTOP_FILE_SOURCE "/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-test-installer.desktop"
+#define TEST_INSTALLER_DESKTOP_FILE_DEST "/etc/xdg/autostart/deepin-gradvrmgr-test-installer.desktop"
 
 GraphicsDriverInterface::GraphicsDriverInterface(QObject* parent)
     : QObject(parent),
@@ -182,13 +184,13 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
             qWarning() << "Prepare install failed, ExitCode: " << exitCode;
             Q_EMIT ReportProgress("-1");
         }else{ //成功
-            QFile installerDesktopFileSource(INSTALLER_DESKTOP_FILE_SOURCE);
+            QFile installerDesktopFileSource(TEST_INSTALLER_DESKTOP_FILE_SOURCE);
             if (installerDesktopFileSource.exists()){
-                installerDesktopFileSource.copy(QDir::rootPath() + INSTALLER_ROOT_DESKTOP_FILE_DEST);
+                installerDesktopFileSource.copy(QDir::rootPath() + TEST_INSTALLER_DESKTOP_FILE_DEST);
                 qDebug() << "Prepare install scucess!"; 
                 Q_EMIT ReportProgress("100");
             }else{
-                qWarning() << INSTALLER_DESKTOP_FILE_SOURCE << "do not exists!";
+                qWarning() << TEST_INSTALLER_DESKTOP_FILE_SOURCE << "do not exists!";
                 Q_EMIT ReportProgress("-1");
             }
         }
@@ -256,7 +258,7 @@ void GraphicsDriverInterface::TestSuccess()
 
 bool GraphicsDriverInterface::IsTestSuccess()
 {
-    QFile desktop_file("/etc/xdg/autostart/deepin-gradvrmgr-installer.desktop");
+    QFile desktop_file(INSTALLER_DESKTOP_FILE_DEST);
     if (desktop_file.exists())
 	{
 		desktop_file.remove();
@@ -274,7 +276,23 @@ bool GraphicsDriverInterface::IsTestSuccess()
     return gltestSuccess;
 }
 
-void GraphicsDriverInterface::Install()
+
+void GraphicsDriverInterface::RealInstall()
+{
+    const QString install_script("/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-real-install.sh");
+    Q_ASSERT(!install_script.isEmpty());
+    Install(install_script);
+}
+
+
+void GraphicsDriverInterface::TestInstall()
+{
+    const QString install_script("/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-test-install.sh");
+    Q_ASSERT(!install_script.isEmpty());
+    Install(install_script);
+}
+
+void GraphicsDriverInterface::Install(QString script)
 {
     QProcess *proc = new QProcess(this);
     QPROCESS_DELETE_SELF(proc);
@@ -313,7 +331,7 @@ void GraphicsDriverInterface::Install()
         }
     });
 
-    const QString &cmd = scriptAbsolutePath("dgradvrmgr-install.sh");
+    const QString &cmd = scriptAbsolutePath(script);
     proc->start(cmd);
     return;
 }

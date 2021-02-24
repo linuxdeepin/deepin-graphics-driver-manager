@@ -12,9 +12,4 @@ apt_update
 $REMOVE_OLD_G || error_reboot "test remove old driver failed!"
 $INSTALL_NEW_G || error_reboot "test install new driver failed!"
 
-if [[ -n "${isInOverlayRoot}" ]]; then
-    /usr/sbin/overlayroot-chroot touch /usr/lib/deepin-graphics-driver-manager/working-dir/dgradvrmgr_gltest_flag
-    overlayroot_save
-fi
-
 reboot

@@ -79,12 +79,6 @@ QString GraphicsDriverAdaptor::GetResolutionTitle()
     return out0;
 }
 
-void GraphicsDriverAdaptor::Install()
-{
-    // handle method call com.deepin.daemon.GraphicsDriver.Install
-    QMetaObject::invokeMethod(parent(), "Install");
-}
-
 bool GraphicsDriverAdaptor::IsTestSuccess()
 {
     // handle method call com.deepin.daemon.GraphicsDriver.IsTestSuccess
@@ -97,6 +91,18 @@ void GraphicsDriverAdaptor::PrepareInstall(const QString &name, const QString &l
 {
     // handle method call com.deepin.daemon.GraphicsDriver.PrepareInstall
     QMetaObject::invokeMethod(parent(), "PrepareInstall", Q_ARG(QString, name), Q_ARG(QString, language));
+}
+
+void GraphicsDriverAdaptor::RealInstall()
+{
+    // handle method call com.deepin.daemon.GraphicsDriver.RealInstall
+    QMetaObject::invokeMethod(parent(), "RealInstall");
+}
+
+void GraphicsDriverAdaptor::TestInstall()
+{
+    // handle method call com.deepin.daemon.GraphicsDriver.TestInstall
+    QMetaObject::invokeMethod(parent(), "TestInstall");
 }
 
 void GraphicsDriverAdaptor::TestSuccess()

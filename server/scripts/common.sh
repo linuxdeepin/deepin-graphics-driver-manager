@@ -6,6 +6,14 @@ export REMOVE_OLD_G=$WORKING_DIR_G/remove_old.sh
 export INSTALL_NEW_G=$WORKING_DIR_G/install_new.sh
 export CONFIG_FILE_G=$WORKING_DIR_G/config.conf
 export REAL_INSTALLE_DESKTOP=/etc/xdg/autostart/deepin-gradvrmgr-installer.desktop
+
+export INSTALLER_DESKTOP_FILE_SOURCE=/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-installer.desktop
+export INSTALLER_DESKTOP_FILE_DEST=/etc/xdg/autostart/deepin-gradvrmgr-installer.desktop
+export TEST_INSTALLER_DESKTOP_FILE_SOURCE=/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-test-installer.desktop
+export TEST_INSTALLER_DESKTOP_FILE_DEST=/etc/xdg/autostart/deepin-gradvrmgr-test-installer.desktop
+
+export GLTEST_FLAG=/usr/lib/deepin-graphics-driver-manager/working-dir/dgradvrmgr_gltest_flag
+
 export isInOverlayRoot=$(grep -m1 "^overlayroot / overlay " /proc/mounts) || isInOverlayRoot=
 export DEBIAN_FRONTEND=noninteractive
 OVERLAYROOT_IMAGE=$WORKING_DIR_G/overlayroot.img
@@ -75,7 +83,6 @@ error_exit_dgm() {
 
 error_reboot() {
     echo "$1"
-    nvidia_blacklist_recoverys
     cleanWorking
     sync
     reboot

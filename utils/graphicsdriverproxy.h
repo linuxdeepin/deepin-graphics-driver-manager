@@ -72,12 +72,6 @@ public Q_SLOTS: // METHODS
         return asyncCallWithArgumentList(QStringLiteral("GetResolutionTitle"), argumentList);
     }
 
-    inline QDBusPendingReply<> Install()
-    {
-        QList<QVariant> argumentList;
-        return asyncCallWithArgumentList(QStringLiteral("Install"), argumentList);
-    }
-
     inline QDBusPendingReply<bool> IsTestSuccess()
     {
         QList<QVariant> argumentList;
@@ -89,6 +83,18 @@ public Q_SLOTS: // METHODS
         QList<QVariant> argumentList;
         argumentList << QVariant::fromValue(name) << QVariant::fromValue(language);
         return asyncCallWithArgumentList(QStringLiteral("PrepareInstall"), argumentList);
+    }
+
+    inline QDBusPendingReply<> RealInstall()
+    {
+        QList<QVariant> argumentList;
+        return asyncCallWithArgumentList(QStringLiteral("RealInstall"), argumentList);
+    }
+
+    inline QDBusPendingReply<> TestInstall()
+    {
+        QList<QVariant> argumentList;
+        return asyncCallWithArgumentList(QStringLiteral("TestInstall"), argumentList);
     }
 
     inline QDBusPendingReply<> TestSuccess()
