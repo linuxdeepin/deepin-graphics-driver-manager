@@ -15,6 +15,7 @@
 #include <DSuggestButton>
 
 
+
 DWIDGET_USE_NAMESPACE
 
 
@@ -50,36 +51,31 @@ private Q_SLOTS:
     void onToggleBtnClicked();
     void onRebootBtnClicked();
     void onCancelBtnClicked();
-    void onPolicyKitPassed(const QString &state);
-    void onPrepareFinished(bool success);
+    void onPreInstallProgress(int progress);
 
 
 
 private:
-    int m_usedIndex;
-    int m_selectedIndex;
-    bool m_started;
-    //GraphicsDeviceInfo m_devInfo;
-    //Resolutions m_resolutions;
+    int m_usedIndex = 0;
+    int m_selectedIndex = 0;
 
     QWidget *m_centerWidget;
     QVBoxLayout *m_resolutionsLayout;
-    QLabel *m_topTips;
     QLabel *m_vendorIcon;
     QLabel *m_vendorName;
     QLabel *m_tipsIcon;
-    QLabel *m_warnning;
-    QLabel *m_botTips;
+    QLabel *m_warningTips;
+    QLabel *m_installTips;
+
     QWidget *m_resolutionsWidget;
-    DWaterProgress *m_progress;
     QPushButton *m_toggleButton;
-    QPushButton *m_okButton;
     QPushButton *m_updateButton;
     DSuggestButton *m_rebootButton;
-    QPushButton *m_rebootLaterButton;
-    QPushButton *m_cancelButtion;
+    QPushButton *m_cancelButton;
+    QPushButton *m_okButton;
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver = nullptr;
     DeviceList m_devices;
+    bool m_startPreInstall = false;
 
 };
 

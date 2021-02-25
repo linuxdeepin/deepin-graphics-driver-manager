@@ -24,14 +24,15 @@ include_directories(${CMAKE_SOURCE_DIR}/utils/)
 add_executable(${BIN_NAME} ${SRCS} ${UTILS_FILES} resources.qrc)
 
 target_include_directories(${BIN_NAME} PUBLIC
-    ${DtkWidget_INCLUDE_DIRS}
-    ${Qt5DBus_INCLUDE_DIRS})
+        ${DtkWidget_INCLUDE_DIRS}
+        ${Qt5DBus_INCLUDE_DIRS}
+        )
 
 target_link_libraries(${BIN_NAME}
-    ${Qt5DBus_LIBRARIES}
-    ${Qt5Widgets_LIBRARIES}
-    ${DtkWidget_LIBRARIES}
-)
+        ${Qt5DBus_LIBRARIES}
+        ${Qt5Widgets_LIBRARIES}
+        ${DtkWidget_LIBRARIES}
+        )
 
 # bin
 install(TARGETS ${BIN_NAME} DESTINATION bin)

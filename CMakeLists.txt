@@ -44,6 +44,7 @@ file(GLOB UTILS_FILES "${CMAKE_SOURCE_DIR}/utils/*.h" "${CMAKE_SOURCE_DIR}/utils
 
 add_subdirectory(server)
 add_subdirectory(prepare)
+add_subdirectory(test_installer)
 add_subdirectory(installer)
 add_subdirectory(gltest)
 

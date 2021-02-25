@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <filter id="success-a" width="130.8%" height="129.6%" x="-15.4%" y="-14.8%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="success-b" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#089F10"/>
+      <stop offset="100%" stop-color="#04801F"/>
+    </linearGradient>
+    <linearGradient id="success-c" x1="26.939%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#F1F1F1"/>
+      <stop offset="100%" stop-color="#DCDCDC"/>
+    </linearGradient>
+    <linearGradient id="success-d" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#F7F7F7"/>
+      <stop offset="100%" stop-color="#F7F7F7"/>
+    </linearGradient>
+    <linearGradient id="success-e" x1="50%" x2="50%" y1="100%" y2="0%">
+      <stop offset="0%" stop-color="#3A3A3A"/>
+      <stop offset="100%" stop-color="#595959"/>
+    </linearGradient>
+    <linearGradient id="success-f" x1="50%" x2="50%" y1="100%" y2="0%">
+      <stop offset="0%" stop-color="#AAB014"/>
+      <stop offset="100%" stop-color="#D7D142"/>
+    </linearGradient>
+    <filter id="success-g" width="172.7%" height="172.7%" x="-36.4%" y="-36.4%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0"/>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(3.25 5.25)">
+    <g filter="url(#success-a)">
+      <rect width="50" height="50" x=".75" y="2.75" fill="#196B2F" fill-rule="nonzero" rx="6"/>
+      <rect width="50" height="50" x=".75" y=".75" fill="#47AF4C" fill-rule="nonzero" rx="6"/>
+      <rect width="50" height="50" x=".75" y="1.75" fill="url(#success-b)" fill-rule="nonzero" rx="6"/>
+      <g transform="translate(.1 2.53)">
+        <image width="50" height="50" x=".651" y=".22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGOfPtRkwAAA8xJREFUaAXtmktv00AUhc/M2G0IffAQZYMQrwV7Fixhxe9G7FiwYAUSFUKlEiriVdq0iR8znDO2m0TqysJxQL7RNOPHON+5944XvddgyYKZH5qF+fxs/7MQ5gzmYr4AKxHG4hESjDluIMUZHOcGJUef5hDIEshS4gdyzgvscyB4MkcxNWAU4fAcI/JuYQPXKGUXV5MRTinG8uN6ElNSgOdniyImxZT4x8jwi5yneIkpxZQSk1SOZhrdYQRS7CBJ78KWzwD3GBN/HdZtUoLho/oxudpSzKScwaQ/Mc7fwaWvUOQHZC5xaEQmIRcptckFt4j8GMG9gDH3YO02Au+xPUWjcZ2iYm1B1BNkdLTBVzKdcxuc4ZCpFiGrmw3zb0RdN+HMfXr/IWzY4/INLuovGo2QagNQTNiCN0r1+2Q9wLg44i0T3caIMK0e8VLBxNoMOxS3xyNGApvGpVbbiVL6NW5nvoa4G3JmTRDbHhKyzsgs9n2jy7QpD7RDcjci9FWeSXmziS+6vkWIjwyRhUyRTYxiFbPYaZUQzSacO0aocCm3kLbX+pmYxCZGsYq5tmpym0pTjpBqR6xDDBq+y7/FKFYxi512oSiusJmJ2/vy5etzVq8gsS7YspCFC//adBCybhEbIjJEpCMPDKnVkWNbP3aISGvXdbRwiEhHjm392CEirV3X0cIhIh05tvVjh4i0dl1HC4eIdOTY1o8dItLadR0tHCLSkWNbP3aISGvXdbRwiEhHjm392P80In4jsGJaVUaW/tfd2lF/d2HDJEaxLlgVkSNemLBy6HJV1HOOUlXc2DKwdPvCylVOyRBZqjJgxShWMYudNk+tEauIXoWs/ATO/VbtKmR5VexaJfRlv8VIRBYyRTYxilXMtVV19hFPO0bCZyzE2y+w/i1LwQ8o5hpCvsGrTVCbdav9ViEwMUoo8vmP8OFLZBWz2GmqswdWRT1nM9zDN5Z993meHRD2GN7fhGfRUZ0PpuxHTHAh5or1U5Z2v1PIp8gYsm/4TOZ9CVEzQGUBdxkqw04PZB9YbDxn+feAYxd5oc4H+iSZp2G9aCVfJvP8dY/UzlCGYxT+iE49jKxifl/tkcbLgkzwlJHYYddHqn6U8TamZ1d4OqmE8G8fxrInP/R6UWA0Pkd2dsKEOsVvjtcUwgscvoar2zjYgIInSjdK2eaQuJz+UEz6tBmlpHEvFJAMcLyJAthQU3UILQBGMTrWULuTuiFMHBJRl4E1XanVr1e6lBueI+6JKIqvXbURLLU5NWgS01h8czcHa/QdeyBqnnnj2R8f/z5QGvOiHgAAAABJRU5ErkJggg=="/>
+        <path fill="#939393" fill-rule="nonzero" d="M40.6508772,20.293697 L40.6508772,39.219697 C40.6508772,39.7719817 40.2031619,40.219697 39.6508772,40.219697 L1.65087719,40.219697 C1.09859244,40.219697 0.65087719,39.7719817 0.65087719,39.219697 L0.65087719,20.293697 L0.65087719,1.36769697 L0.65087719,1.36769697 C0.65087719,0.73367408 1.1648543,0.21969697 1.79887719,0.21969697 L1.79887719,0.21969697 L39.5028772,0.21969697 C40.1369001,0.21969697 40.6508772,0.73367408 40.6508772,1.36769697 L40.6508772,20.293697 Z M40.6508772,20.293697 L40.6508772,2.36769697 C40.6508772,1.73367408 40.1369001,1.21969697 39.5028772,1.21969697 L1.79887719,1.21969697 L1.79887719,1.21969697 C1.1648543,1.21969697 0.65087719,1.73367408 0.65087719,2.36769697 L0.65087719,20.293697 L0.65087719,38.219697 C0.65087719,38.7719817 1.09859244,39.219697 1.65087719,39.219697 L39.6508772,39.219697 C40.2031619,39.219697 40.6508772,38.7719817 40.6508772,38.219697 L40.6508772,20.293697 Z" transform="translate(5 4)"/>
+        <rect width="40" height="40" x=".651" y=".22" fill="url(#success-c)" fill-rule="nonzero" rx="1" transform="translate(5 3)"/>
+        <path fill="url(#success-d)" fill-rule="nonzero" d="M40.6508772,1.21969697 C40.6508772,0.66741222 40.2031619,0.21969697 39.6508772,0.21969697 L1.65087719,0.21969697 L1.65087719,0.21969697 C1.09859244,0.21969697 0.65087719,0.66741222 0.65087719,1.21969697 L40.6508772,1.21969697 Z" transform="translate(5 3)"/>
+      </g>
+      <path fill="url(#success-e)" fill-rule="nonzero" d="M15.6002776,29.8636364 C17.1732269,29.8636364 18.5018346,29.2638889 19.2654022,28.5291982 L19.2654022,23.5213068 L15.2490365,23.5213068 L15.2490365,25.3355429 L17.2495837,25.3355429 L17.2495837,27.5246212 C16.9288852,27.7945076 16.3791166,27.9444444 15.8293479,27.9444444 C13.6150017,27.9444444 12.4849216,26.4900568 12.4849216,24.0760732 C12.4849216,21.692077 13.798258,20.2526831 15.6766343,20.2526831 C16.699815,20.2526831 17.3412118,20.6575126 17.8909805,21.1822917 L19.0974173,19.7728851 C18.3643924,19.0381944 17.2343123,18.3484848 15.6002776,18.3484848 C12.5918211,18.3484848 10.1789474,20.4925821 10.1789474,24.1510417 C10.1789474,27.8544823 12.5154643,29.8636364 15.6002776,29.8636364 Z M21.6935473,29.6537247 L21.6935473,18.5583965 L25.404486,18.5583965 C27.9089878,18.5583965 29.8331782,19.4130366 29.8331782,22.0369318 C29.8331782,24.5708649 27.8937165,25.7103851 25.4655714,25.7103851 L23.9537075,25.7103851 L23.9537075,29.6537247 L21.6935473,29.6537247 Z M23.9537075,23.9561237 L25.3128579,23.9561237 C26.8705358,23.9561237 27.6188321,23.3113952 27.6188321,22.0369318 C27.6188321,20.7474747 26.7941791,20.3126578 25.2365011,20.3126578 L23.9537075,20.3126578 L23.9537075,23.9561237 Z M36.2166037,29.8636364 C38.9807185,29.8636364 40.5842105,28.349274 40.5842105,24.660827 L40.5842105,18.5583965 L38.4156784,18.5583965 L38.4156784,24.8557449 C38.4156784,27.1647727 37.5604827,27.9444444 36.2166037,27.9444444 C34.887996,27.9444444 34.0786143,27.1647727 34.0786143,24.8557449 L34.0786143,18.5583965 L31.8184541,18.5583965 L31.8184541,24.660827 C31.8184541,28.349274 33.4677602,29.8636364 36.2166037,29.8636364 Z"/>
+      <path fill="url(#success-f)" fill-rule="nonzero" d="M44.25,3.49989856 C43.6977153,3.49989856 43.25,3.05219628 43.25,2.49992754 C43.25,1.9476588 43.6977153,1.49995652 44.25,1.49995652 C44.8022847,1.49995652 45.25,1.9476588 45.25,2.49992754 C45.25,3.05219628 44.8022847,3.49989856 44.25,3.49989856 Z M14,0.75 L16,0.75 L16,2.75 L14,2.75 L14,0.75 Z M11,0.75 L13,0.75 L13,2.75 L11,2.75 L11,0.75 Z M19,0.75 L21,0.75 L21,2.75 L19,2.75 L19,0.75 Z M8,0.75 L10,0.75 L10,2.75 L8,2.75 L8,0.75 Z M5,0.75 L7,0.75 L7,2.75 L5,2.75 L5,0.75 Z M5,45.75 L7,45.75 L7,47.75 L5,47.75 L5,45.75 Z M15,45.75 L17,45.75 L17,47.75 L15,47.75 L15,45.75 Z M18,45.75 L20,45.75 L20,47.75 L18,47.75 L18,45.75 Z M8,45.75 L10,45.75 L10,47.75 L8,47.75 L8,45.75 Z M-2.66453526e-14,8.75 L2,8.75 L2,10.75 L-2.66453526e-14,10.75 L-2.66453526e-14,8.75 Z M4.4408921e-14,5.75 L2,5.75 L2,7.75 L4.4408921e-14,7.75 L4.4408921e-14,5.75 Z M22,0.75 L24,0.75 L24,2.75 L22,2.75 L22,0.75 Z M25,0.75 L27,0.75 L27,2.75 L25,2.75 L25,0.75 Z M28,0.75 L30,0.75 L30,2.75 L28,2.75 L28,0.75 Z M31,0.75 L33,0.75 L33,2.75 L31,2.75 L31,0.75 Z" opacity=".8" transform="translate(1.75 2)"/>
+    </g>
+    <g filter="url(#success-g)" transform="translate(34.75 30.25)">
+      <circle cx="11" cy="11" r="11" fill="#FFF" fill-rule="nonzero"/>
+      <polyline stroke="#00CB1B" stroke-width="2" points="0 5.132 3.348 8.5 11 .5" transform="translate(6 6)"/>
+    </g>
+  </g>
+</svg>

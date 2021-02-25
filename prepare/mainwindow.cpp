@@ -4,6 +4,8 @@
 #include "singleresolutionwidget.h"
 #include "utils.h"
 #include "resolution.h"
+#include "../test_installer/mainwindow.h"
+
 
 #include <QApplication>
 #include <QScreen>
@@ -16,6 +18,7 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <DApplicationHelper>
+#include <iostream>
 
 
 const QString GraphicMangerServiceName = "com.deepin.graphicmanger";
@@ -36,30 +39,23 @@ MainWindow::MainWindow(QWidget *parent)
     m_toggleButton->setFixedHeight(38);
     m_toggleButton->setVisible(false);
 
-    m_topTips = new QLabel;
-    m_topTips->setAlignment(Qt::AlignHCenter);
-    m_topTips->setVisible(false);
-    m_topTips->setObjectName("TopTips");
 
-    m_botTips = new QLabel;
-    m_botTips->setAlignment(Qt::AlignHCenter);
-    m_botTips->setVisible(false);
-    m_botTips->setWordWrap(true);
-    m_botTips->setObjectName("BottomTips");
-    m_botTips->setFixedSize(302, m_botTips->height());
+    m_warningTips = new QLabel;
+    m_warningTips->setAlignment(Qt::AlignHCenter);
+    m_warningTips->setVisible(false);
+    m_warningTips->setWordWrap(true);
+    m_warningTips->setObjectName("WarningTips");
 
 
-    m_warnning = new QLabel;
-    m_warnning->setAlignment(Qt::AlignHCenter);
-    m_warnning->setVisible(false);
-    m_warnning->setWordWrap(true);
-    m_warnning->setObjectName("Warnning");
+    m_installTips = new QLabel;
+    m_installTips->setVisible(false);
+    m_installTips->setWordWrap(true);
+    m_installTips->setAlignment(Qt::AlignHCenter);
+    m_installTips->setContentsMargins(116, 0, 116, 0);
+    m_installTips->setObjectName("installTips");
+
 
     m_tipsIcon = new QLabel;
-
-    m_okButton = new QPushButton;
-    m_okButton->setText(tr("OK"));
-    m_okButton->setFixedHeight(38);
 
     m_updateButton = new QPushButton;
     m_updateButton->setText(tr("Update"));
@@ -71,21 +67,15 @@ MainWindow::MainWindow(QWidget *parent)
     m_rebootButton->setFixedHeight(38);
     m_rebootButton->setVisible(false);
 
-    m_rebootLaterButton = new QPushButton;
-    m_rebootLaterButton->setText(tr("Later"));
-    m_rebootLaterButton->setFixedHeight(38);
-    m_rebootLaterButton->setVisible(false);
+    m_cancelButton = new QPushButton;
+    m_cancelButton->setText(tr("Cancel"));
+    m_cancelButton->setFixedHeight(38);
+    m_cancelButton->setVisible(false);
 
-    m_cancelButtion = new QPushButton;
-    m_cancelButtion->setText(tr("Cancel"));
-    m_cancelButtion->setFixedHeight(38);
-    m_cancelButtion->setVisible(false);
-
-    m_progress = new DWaterProgress;
-    m_progress->setTextVisible(true);
-    m_progress->setFixedSize(100, 100);
-    m_progress->setValue(0);
-    m_progress->setVisible(false);
+    m_okButton = new QPushButton;
+    m_okButton->setText(tr("OK"));
+    m_okButton->setFixedHeight(38);
+    m_okButton->setVisible(false);
 
     m_vendorIcon = new QLabel;
     m_vendorIcon->setAlignment(Qt::AlignCenter);
@@ -106,25 +96,20 @@ MainWindow::MainWindow(QWidget *parent)
     centralLayout->addWidget(m_tipsIcon);
     centralLayout->setAlignment(m_tipsIcon, Qt::AlignHCenter);
     centralLayout->addWidget(m_resolutionsWidget);
-    centralLayout->addWidget(m_progress);
-    centralLayout->addSpacing(20);
-    centralLayout->setAlignment(m_progress, Qt::AlignHCenter);
-    centralLayout->addWidget(m_topTips);
-    centralLayout->addSpacing(10);
-    centralLayout->addWidget(m_botTips);
-    centralLayout->setAlignment(m_botTips, Qt::AlignHCenter);
+    centralLayout->addWidget(m_installTips);
+    centralLayout->setAlignment(m_installTips, Qt::AlignHCenter);
     centralLayout->addStretch();
-    centralLayout->addWidget(m_warnning);
+    centralLayout->addWidget(m_warningTips);
     centralLayout->addSpacing(10);
     centralLayout->addWidget(m_toggleButton);
-    centralLayout->addWidget(m_okButton);
     centralLayout->addWidget(m_updateButton);
-    centralLayout->addWidget(m_cancelButtion);
+    centralLayout->addWidget(m_okButton);
 
     auto *hBoxLayout = new QHBoxLayout;
-    hBoxLayout->addWidget(m_rebootLaterButton);
+    hBoxLayout->addWidget(m_cancelButton);
     hBoxLayout->addSpacing(10);
     hBoxLayout->addWidget(m_rebootButton);
+
 
     centralLayout->addLayout(hBoxLayout);
     centralLayout->setSpacing(0);
@@ -148,20 +133,17 @@ MainWindow::MainWindow(QWidget *parent)
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
     connect(m_toggleButton, &QPushButton::clicked, this, &MainWindow::onToggleBtnClicked);
-    connect(m_updateButton, &QPushButton::clicked, this, &MainWindow::onUpdateBtnClicked);
+    connect(m_updateButton, &QPushButton::clicked, this, &MainWindow::onToggleBtnClicked);
     connect(m_rebootButton, &QPushButton::clicked, this, &MainWindow::onRebootBtnClicked);
+    connect(m_cancelButton, &QPushButton::clicked, this, &MainWindow::onCancelBtnClicked);
     connect(m_okButton, &QPushButton::clicked, qApp, &QApplication::quit);
-    connect(m_rebootLaterButton, &QPushButton::clicked, qApp, &QApplication::quit);
-    connect(m_cancelButtion, &QPushButton::clicked, this, &MainWindow::onCancelBtnClicked);
 
     QTimer::singleShot(0, this, &MainWindow::loadResolutions);
 
 }
 
 MainWindow::~MainWindow()
-{
-
-}
+= default;
 
 void MainWindow::keyPressEvent(QKeyEvent *e)
 {
@@ -172,8 +154,8 @@ void MainWindow::noResolutions()
 {
     m_tipsIcon->setVisible(true);
     m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
-    m_botTips->setText(tr("Your hardware is not supported currently, please wait for future version."));
-    m_botTips->setVisible(true);
+    m_warningTips->setText(tr("Your hardware is not supported currently, please wait for future version."));
+    m_warningTips->setVisible(true);
     m_resolutionsWidget->setVisible(false);
     m_toggleButton->setVisible(false);
 }
@@ -284,12 +266,12 @@ void MainWindow::loadResolutions()
     }
 
     if (resolutionRoot["type"].toInt() == INTEL_NVIDIA_USE_INTEL) {
-        m_warnning->setVisible(true);
-        m_warnning->setText(tr("Switching to the discrete graphics interface may cause a black screen."));
+        m_warningTips->setVisible(true);
+        m_warningTips->setText(tr("Switching to the discrete graphics interface may cause a black screen."));
 
     } else if (resolutionRoot["type"].toInt() == INTEL_NVIDIA_USE_NVIDIA) {
-        m_warnning->setVisible(true);
-        m_warnning->setText(tr("Switching to the integrated graphics interface may cause a black screen."));
+        m_warningTips->setVisible(true);
+        m_warningTips->setText(tr("Switching to the integrated graphics interface may cause a black screen."));
     }
 
     if (resolutions.size() == 1) {
@@ -301,24 +283,23 @@ void MainWindow::loadResolutions()
         connect(rw, &ResolutionWidget::clicked, this, &MainWindow::onResolutionSelected);
         if (rw->canUpdate()) {
             m_updateButton->setVisible(true);
-            m_okButton->setVisible(false);
             m_toggleButton->setVisible(false);
+        } else {
+            m_okButton->setVisible(true);
         }
     } else {
         int index = 0;
         for (const auto res : resolutions) {
             Resolution solution(res.toObject());
-            ResolutionWidget *rw = new ResolutionWidget(m_graphicsDriver, solution);
+            auto *rw = new ResolutionWidget(m_graphicsDriver, solution);
             rw->initUI();
             m_resolutionsLayout->addWidget(rw);
             connect(rw, &ResolutionWidget::clicked, this, &MainWindow::onResolutionSelected);
             if (solution.enable()) {
                 m_usedIndex = index;
-
                 qInfo() << "m_usedIndex = " << m_usedIndex;
                 if (rw->canUpdate()) {
                     m_updateButton->setVisible(true);
-                    m_okButton->setVisible(false);
                     m_toggleButton->setVisible(false);
                 }
             }
@@ -331,7 +312,7 @@ void MainWindow::loadResolutions()
 
 void MainWindow::onResolutionSelected()
 {
-    ResolutionWidget *rw = static_cast<ResolutionWidget *>(sender());
+    auto *rw = dynamic_cast<ResolutionWidget *>(sender());
     qInfo() << "Resolution selected: " << rw->resolution().name();
 
     const int idx = m_resolutionsLayout->indexOf(rw);
@@ -341,7 +322,7 @@ void MainWindow::onResolutionSelected()
 
     for (int i = 0; i != m_resolutionsLayout->count(); ++i)
     {
-        ResolutionWidget *w = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(i)->widget());
+        auto *w = dynamic_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(i)->widget());
         w->setChecked(i == idx);
     }
     qInfo() << "m_usedIndex = " << m_usedIndex;
@@ -351,27 +332,18 @@ void MainWindow::onResolutionSelected()
     if (changed) {
         if (rw->resolution().enable() && rw->canUpdate()) {
             m_toggleButton->setVisible(false);
-            m_okButton->setVisible(false);
             m_updateButton->setVisible(true);
-            //m_updateButton->setFocus();
         } else {
             m_toggleButton->setVisible(true);
-            m_okButton->setVisible(false);
-            //m_toggleButton->setFocus();
             m_updateButton->setVisible(false);
-
         }
 
     } else {
         if (rw->canUpdate()) {
             m_toggleButton->setVisible(false);
-            m_okButton->setVisible(false);
             m_updateButton->setVisible(true);
-            //m_updateButton->setFocus();
         } else {
-            //m_okButton->setFocus();
             m_toggleButton->setVisible(false);
-            m_okButton->setVisible(true);
             m_updateButton->setVisible(false);
         }
 
@@ -380,112 +352,36 @@ void MainWindow::onResolutionSelected()
 
 void MainWindow::onUpdateBtnClicked()
 {
-    ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_usedIndex)->widget());
-    new_driver_widget->prepareInstall();
-    m_toggleButton->setVisible(false);
-    m_okButton->setVisible(false);
-    m_updateButton->setVisible(false);
-    connect(new_driver_widget, &ResolutionWidget::prepareFinished, this, &MainWindow::onPrepareFinished);
-    connect(new_driver_widget, &ResolutionWidget::policyKitPassed, this, &MainWindow::onPolicyKitPassed);
+//    auto *new_driver_widget = dynamic_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_usedIndex)->widget());
+//    new_driver_widget->prepareInstall();
+//    m_toggleButton->setVisible(false);
+//    m_updateButton->setVisible(false);
 }
 
 void MainWindow::onToggleBtnClicked()
 {
     Q_ASSERT(m_selectedIndex != m_usedIndex);
-
-    m_started = false;
-
-    ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
+    m_updateButton->setEnabled(false);
+    m_toggleButton->setEnabled(false);
+    auto *new_driver_widget = dynamic_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
+    connect(new_driver_widget, &ResolutionWidget::preInstallProgress, this, &MainWindow::onPreInstallProgress);
     new_driver_widget->prepareInstall();
-
-    connect(new_driver_widget, &ResolutionWidget::prepareFinished, this, &MainWindow::onPrepareFinished);
-    connect(new_driver_widget, &ResolutionWidget::policyKitPassed, this, &MainWindow::onPolicyKitPassed);
 }
 
 void MainWindow::onRebootBtnClicked()
 {
+    qInfo() << "onRebootBtnClicked";
     QProcess::startDetached("dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true");
 }
 
 void MainWindow::onCancelBtnClicked()
 {
+    qInfo() << "onCancelBtnClicked";
     QDBusPendingReply<void> reply = m_graphicsDriver->CancelInstall();
     reply.waitForFinished();
     qApp->quit();
 }
 
-void MainWindow::onPolicyKitPassed(const QString &state)
-{
-    ResolutionWidget *rw = static_cast<ResolutionWidget *>(sender());
-    ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
-    if (rw != new_driver_widget) {
-        return;
-    }
-
-    const QString &new_driver_title = new_driver_widget->resolution().title();
-
-    if (!m_started) {
-        m_started = true;
-        // toggle UI
-        m_topTips->setVisible(true);
-        m_topTips->setText(tr("Downloading the driver for %1, please wait...").arg(new_driver_title));
-        m_botTips->setVisible(true);
-        m_vendorIcon->setVisible(false);
-        m_vendorName->setVisible(false);
-        m_resolutionsWidget->setVisible(false);
-        m_toggleButton->setVisible(false);
-        m_cancelButtion->setVisible(true);
-        m_progress->setVisible(true);
-        m_progress->start();
-    } else {
-        int processValue = state.toInt();
-        m_progress->setValue(processValue);
-    }
-
-}
-
-void MainWindow::onPrepareFinished(bool success)
-{
-    qInfo() << "onPrepareFinished = " << success;
-    ResolutionWidget *rw = static_cast<ResolutionWidget *>(sender());
-    ResolutionWidget *new_driver_widget = static_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
-    if (rw != new_driver_widget) {
-        return;
-    }
-
-    if (!m_started) {
-        m_topTips->setText(tr("Sorry, switch failed"));
-        m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
-        m_okButton->setVisible(true);
-        m_rebootButton->setVisible(false);
-        m_rebootLaterButton->setVisible(false);
-    }
-
-
-    m_progress->setVisible(false);
-    m_progress->stop();
-    m_tipsIcon->setVisible(true);
-
-    if (!success) {
-       m_topTips->setText(tr("Sorry, switch failed"));
-       m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
-       m_okButton->setVisible(true);
-       m_rebootButton->setVisible(false);
-       m_rebootLaterButton->setVisible(false);
-       //m_okButton->setFocus();
-    } else {
-       m_topTips->setText(tr("Download successful"));
-       if (!m_devices.empty())
-           m_botTips->setText(tr("Please reboot to test the driver. If no signal, please confirm whether the monitor output port is connected correctly."));
-       else
-           m_botTips->setText(tr("Please reboot to test the driver"));
-       m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/success.svg", QSize(128, 128)));
-       m_rebootButton->setVisible(true);
-       m_rebootLaterButton->setVisible(true);
-    }
-
-    m_cancelButtion->setVisible(false);
-}
 
 void MainWindow::paintEvent(QPaintEvent *event)
 {
@@ -496,20 +392,23 @@ void MainWindow::paintEvent(QPaintEvent *event)
                                       "background-color: rgba(255, 255, 255, 1);"
                                       "}");
 
-        m_topTips->setStyleSheet("QLabel {"
-                                 "font-size: 14px;"
-                                 "color: #414d68;"
-                                 "}");
+        m_vendorName->setStyleSheet("QLabel {"
+                                     "font-size: 12px;"
+                                     "color: #001a2e;"
+                                     "}");
 
-        m_botTips->setStyleSheet("QLabel {"
-                                 "font-size: 12px;"
-                                 "color: #526a7f;"
-                                 "}");
 
-        m_warnning->setStyleSheet("QLabel {"
+        m_warningTips->setStyleSheet("QLabel {"
                                   "font-size: 12px;"
                                   "color: #526a7f;"
                                   "}");
+
+        m_installTips->setStyleSheet("QLabel {"
+                                     "font-size: 14px;"
+                                     "font-weight: 500;"
+                                     "color: rgba(0, 0, 0, 0.9);"
+                                     "}");
+
     } else if (DGuiApplicationHelper::DarkType == DApplicationHelper::instance()->themeType()) {
         m_centerWidget->setStyleSheet("QWidget#centerWidget{"
                                       "border-radius: 8px;"
@@ -517,22 +416,20 @@ void MainWindow::paintEvent(QPaintEvent *event)
                                       "background-color: rgba(255, 255, 255, 0.05);"
                                       "}");
 
-        m_topTips->setStyleSheet("QLabel {"
-                                 "font-size: 14px;"
-                                 "color: #C0C6D4;"
-                                 "}");
+        m_vendorName->setStyleSheet("QLabel {"
+                                    "font-size: 12px;"
+                                    "color: #c0c6d4;"
+                                    "}");
 
-
-        m_botTips->setStyleSheet("QLabel {"
-                                 "font-size: 12px;"
-                                 "color: #C0C6D4;"
-                                 "width:"
-                                 "}");
-
-        m_warnning->setStyleSheet("QLabel {"
+        m_warningTips->setStyleSheet("QLabel {"
                                   "font-size: 12px;"
                                   "color: #6d7c88;"
                                   "}");
+
+        m_installTips->setStyleSheet("QLabel {"
+                                     "font-size: 14px;"
+                                     "font-weight: 500;"
+                                     "}");
     }
     QWidget::paintEvent(event);
 }
@@ -543,3 +440,49 @@ void MainWindow::closeEvent(QCloseEvent *event)
     reply.waitForFinished();
     qApp->quit();
 }
+
+void MainWindow::onPreInstallProgress(int progress)
+{
+    qInfo() << "preInstallerProgress = " << progress;
+
+    if (progress >= 0 && progress < 100) {
+        if (!m_startPreInstall) {
+            m_resolutionsWidget->setVisible(false);
+            m_toggleButton->setVisible(false);
+            m_updateButton->setVisible(false);
+            m_warningTips->setVisible(false);
+            m_rebootButton->setVisible(true);
+            m_rebootButton->setEnabled(false);
+            m_cancelButton->setEnabled(false);
+            m_cancelButton->setVisible(true);
+            m_installTips->setText(tr("Please reboot for switching to another driver, which may cost several minutes, please wait patiently"));
+            m_installTips->setVisible(true);
+            m_startPreInstall = true;
+        }
+    } else if (progress < 0){
+        m_resolutionsWidget->setVisible(false);
+        m_toggleButton->setVisible(false);
+        m_updateButton->setVisible(false);
+        m_warningTips->setVisible(false);
+        m_rebootButton->setVisible(false);
+        m_cancelButton->setVisible(true);
+        m_installTips->setText(tr("Preparation for installation failed"));
+        m_installTips->setVisible(true);
+        Utils::resetDisablePluginList();
+        qCritical() << "prepareInstall failed";
+    } else {
+        m_resolutionsWidget->setVisible(false);
+        m_toggleButton->setVisible(false);
+        m_updateButton->setVisible(false);
+        m_warningTips->setVisible(false);
+        m_rebootButton->setVisible(true);
+        m_cancelButton->setVisible(true);
+        m_rebootButton->setEnabled(true);
+        m_cancelButton->setEnabled(true);
+        m_installTips->setText(tr("Please reboot for switching to another driver, which may cost several minutes, please wait patiently"));
+        m_installTips->setVisible(true);
+        Utils::setDisablePluginList();
+    }
+}
+
+

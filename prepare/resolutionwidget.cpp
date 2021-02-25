@@ -19,9 +19,7 @@ ResolutionWidget::ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graph
 }
 
 ResolutionWidget::~ResolutionWidget()
-{
-
-}
+= default;
 
 void ResolutionWidget::initUI()
 {
@@ -54,14 +52,14 @@ void ResolutionWidget::initUI()
     }
 
 
-    QVBoxLayout *infoLayout = new QVBoxLayout;
+    auto *infoLayout = new QVBoxLayout;
     infoLayout->addWidget(m_title);
     infoLayout->addWidget(m_version);
     infoLayout->addWidget(m_description);
     infoLayout->setSpacing(3);
     infoLayout->setContentsMargins(0, 0, 0, 0);
 
-    QHBoxLayout *centralLayout = new QHBoxLayout;
+    auto *centralLayout = new QHBoxLayout;
     centralLayout->addLayout(infoLayout);
     centralLayout->addWidget(m_checkedBtn);
     centralLayout->setAlignment(m_checkedBtn, Qt::AlignVCenter | Qt::AlignRight);
@@ -69,7 +67,7 @@ void ResolutionWidget::initUI()
     centralLayout->setContentsMargins(10, 10, 0, 10);
 
     setLayout(centralLayout);
-    //setFixedHeight(64);
+
     setChecked(m_resolution.enable());
     setObjectName("ResolutionWidget");
     setStyleSheet("QFrame#ResolutionWidget {"
@@ -84,36 +82,37 @@ void ResolutionWidget::setChecked(const bool checked)
     m_checkedBtn->setVisible(checked);
 }
 
-void ResolutionWidget::prepareInstall()
+void  ResolutionWidget::prepareInstall()
 {
 #ifdef TEST_UI
-    m_timer.setInterval(50);
-    m_timer.start();
-    m_process = 0;
-    connect(&m_timer, &QTimer::timeout, this, &ResolutionWidget::onTimeout);
+    if (m_timer == nullptr) {
+        m_timer = new QTimer();
+    }
+
+    static int progress = -20;
+    m_timer->setInterval(500);
+    m_timer->start();
+    connect(m_timer, &QTimer::timeout, [&] {
+        if (progress <= 100) {
+            Q_EMIT preInstallProgress(progress);
+            progress += 10;
+        } else {
+            m_timer->stop();
+        }
+    });
+
 #else
     QDBusPendingReply<void> preInstallReply = m_graphicsDriver->PrepareInstall(m_resolution.name(), QLocale::system().name());
     preInstallReply.waitForFinished();
     qInfo() << "m_resolution.name = " << m_resolution.name();
     if (!preInstallReply.isValid()) {
         qCritical() << "prepareInstall error:" << preInstallReply.error();
-        Q_EMIT prepareFinished(false);
-        return;
-    }
-
-    connect(m_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::ReportProgress, [=](QString ratio){
-        if (m_checked) {
+    } else {
+        connect(m_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::ReportProgress, [=](QString ratio){
             int process = ratio.toInt();
-            if (process < 0) {
-                Q_EMIT prepareFinished(false);
-            } else if (process >= 100) {
-                Q_EMIT prepareFinished(true);
-            } else {
-                Q_EMIT policyKitPassed(ratio);
-            }
-            qInfo() << "prepare install process: " << ratio;
-        }
-    });
+            Q_EMIT preInstallProgress(process);
+        });
+    }
 #endif
 }
 
@@ -165,18 +164,5 @@ void ResolutionWidget::paintEvent(QPaintEvent *event)
     }
     QFrame::paintEvent(event);
 }
-
-#ifdef TEST_UI
-void ResolutionWidget::onTimeout()
-{
-    m_process++;
-    QString state = QString("%1").arg(m_process);
-    Q_EMIT policyKitPassed(state);
-    if (m_process >= 100) {
-        m_process = 0;
-        Q_EMIT prepareFinished(true);
-    }
-}
-#endif
 
 

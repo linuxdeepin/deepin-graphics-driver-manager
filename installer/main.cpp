@@ -122,6 +122,7 @@ int show_install_dialog() {
 
 void init()
 {
+    Utils::resetDisablePluginList();
     bool testSuccess = false;
     QDBusPendingReply<bool> reply = g_graphicsDriver->IsTestSuccess();
     reply.waitForFinished();
@@ -148,6 +149,7 @@ void init()
         show_fail_dialog();
     }
 }
+
 
 int main(int argc, char *args[])
 {

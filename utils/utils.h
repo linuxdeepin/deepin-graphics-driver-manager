@@ -17,6 +17,9 @@ QString JsonToQString(QJsonObject &jsonObject);
 
 const QPixmap hidpiPixmap(const QString &path, const QSize &sz);
 
+bool setDisablePluginList();
+
+bool resetDisablePluginList();
 
 }
 

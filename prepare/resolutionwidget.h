@@ -22,42 +22,30 @@ class ResolutionWidget: public QFrame
 
 public:
     explicit ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graphicsDriver, const Resolution &resolution,  QWidget *parent = nullptr);
-    virtual ~ResolutionWidget();
+    ~ResolutionWidget() override;
     virtual void initUI();
-    virtual void setChecked(const bool checked);
+    virtual void setChecked(bool checked);
     virtual void prepareInstall();
-    virtual bool checked() const { return m_checked; }
-    virtual const Resolution resolution() const { return m_resolution; }
+    virtual Resolution resolution() const { return m_resolution; }
     virtual bool canUpdate();
-
-private:
-    void paintEvent(QPaintEvent *event);
 
 signals:
     void clicked() const;
-    void policyKitPassed(const QString &state);
-    void prepareFinished(const bool success);
-
-
+    void preInstallProgress(int);
 protected:
-    void mouseReleaseEvent(QMouseEvent *e);
+    void mouseReleaseEvent(QMouseEvent *e) override;
+    void paintEvent(QPaintEvent *event) override;
 
 protected:
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver;
     Resolution m_resolution;
     bool m_checked = false;
-    bool m_using;
-    QLabel *m_checkedBtn;
-    QLabel *m_title;
-    QLabel *m_version;
-    QLabel *m_description;
-#ifdef TEST_UI
-private slots:
-    void onTimeout();
-private:
-    QTimer m_timer;
-    int m_process;
-#endif
+    bool m_using = false;
+    QLabel *m_checkedBtn = nullptr;
+    QLabel *m_title = nullptr;
+    QLabel *m_version = nullptr;
+    QLabel *m_description = nullptr;
+    QTimer *m_timer = nullptr;
 
 };
 
