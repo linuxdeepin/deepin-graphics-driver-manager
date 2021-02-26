@@ -5,10 +5,19 @@ if [ "$(id -u)" -ne "0" ];then
     exit 1
 fi
 
-export DEBIAN_FRONTEND=noninteractive
+. /usr/lib/deepin-graphics-driver-manager/common.sh
 
 apt-get -y --reinstall --allow-downgrades install \
     bumblebee \
     bumblebee-nvidia \
     nvidia-driver \
     xserver-xorg-video-nvidia
+
+packages=(
+    "bumblebee"
+    "bumblebee-nvidia"
+    "nvidia-driver"
+    "xserver-xorg-video-nvidia"   
+)
+
+package_install "${packages[*]}" "${#packages[*]}"

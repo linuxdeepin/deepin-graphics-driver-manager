@@ -13,10 +13,20 @@ export TEST_INSTALLER_DESKTOP_FILE_SOURCE=/usr/lib/deepin-graphics-driver-manage
 export TEST_INSTALLER_DESKTOP_FILE_DEST=/etc/xdg/autostart/deepin-gradvrmgr-test-installer.desktop
 
 export GLTEST_FLAG=/usr/lib/deepin-graphics-driver-manager/working-dir/dgradvrmgr_gltest_flag
-
+export OVERLAYROOT_IMAGE=$WORKING_DIR_G/overlayroot.img
 export isInOverlayRoot=$(grep -m1 "^overlayroot / overlay " /proc/mounts) || isInOverlayRoot=
 export DEBIAN_FRONTEND=noninteractive
-OVERLAYROOT_IMAGE=$WORKING_DIR_G/overlayroot.img
+
+#define error exit code
+export COMMON_ERROR=1
+export APT_UPDATE_ERROR=2
+export PURGE_PACKAGE_ERROR=3
+export INSTALL_PACKAGE_ERROR=4
+export NETWORK_CONNECTION_ERROR=5
+export OVERLAYROOT_ENABLE_ERROR=6
+export OVERLAYROOT_DISABLE_ERROR=7
+export OVERLAYROOT_SAVE_ERROR=8
+
 OVERLAYROOT_CONF=/etc/overlayroot.conf
 LOOP_DEV=/dev/loop0
 
@@ -50,7 +60,6 @@ cleanWorking() {
         /usr/sbin/overlayroot-chroot rm -rf $REMOVE_OLD_G
         /usr/sbin/overlayroot-chroot rm -rf $INSTALL_NEW_G
         overlayroot_disable
-
     else
         rm -rf $TEST_IN_OVERLAY_G
         rm -rf $REMOVE_OLD_G
@@ -75,9 +84,10 @@ cleanWorking() {
      fi
  }
 
-error_exit_dgm() {
-    echo "$1"
+error_exit() {
+    echo "Error: $1"
     cleanWorking
+    modify_config "exit_code" "$2"
     exit "$2"
 }
 
@@ -90,20 +100,14 @@ error_reboot() {
 
 apt_update()
 {
-    apt-get update
-    if [ $? != 0 ]; then
-        echo "Error: excute apt-get update failed"
-        echo "PROGRESS:-1"
-        exit 1
-    fi
-    echo "PROGRESS:5"
-    apt-get install  --fix-missing || dpkg --configure -a
-    if [ $? != 0 ]; then
-        echo "Error: excute apt-get install  --fix-missing failed"
-        echo "PROGRESS:-1"
-        exit 1;
-    fi
-    echo "PROGRESS:15"
+    loop=0
+    while [ $loop -lt 20 ]
+    do
+        sleep 1
+        let loop+=1
+        apt-get update && (apt-get install --fix-missing || dpkg --configure -a)
+        [ $? -eq 0 ] && break
+    done
 }
 
 package_remove()
@@ -111,21 +115,20 @@ package_remove()
     pkg_list=$1
     len=$2
     inital_ratio=15
-    max_ratio=50
+    max_ratio=45
+    echo "PROGRESS:15"
     let range=${max_ratio}-${inital_ratio}
     for pkg in ${pkg_list[@]}
     do
         apt-get -y purge ${pkg};
-        if [ $? != 0 ]; then
-            echo "Error: remove ${pkg} failed"
-            echo "PROGRESS:-1"
-            exit 1
-        fi
         let index++
-        ratio=$(($index*$range/$len)+$inital_ratio)
+        ratio=$(($index*$range/$len))
         let ratio+=${inital_ratio}
         echo "PROGRESS:${ratio}"
     done
+
+    apt-get autoremove -y
+    echo "PROGRESS:50"
 }
 
 package_install()
@@ -134,17 +137,36 @@ package_install()
    len=$2
     inital_ratio=50
     max_ratio=99
+    let range=${max_ratio}-${inital_ratio}
     for pkg in ${pkg_list[@]}
     do
         apt-get -y --reinstall --allow-downgrades install ${pkg};
-        if [ $? != 0 ]; then
-            echo "Error：install ${pkg} failed"
-            echo "PROGRESS:-1"
-            exit 1
-        fi
         let index++;
-        ratio=$(($index*$range/$len)+$inital_ratio)
+        ratio=$(($index*$range/$len))
         let ratio+=${inital_ratio}
         echo "PROGRESS:${ratio}"
     done
+}
+
+check_network()
+{
+    loop=0
+    while [ $loop -lt 10 ]
+    do
+        sleep 1
+        let loop+=1
+        ping -c 1 www.baidu.com > /dev/null 2>&1
+        [ $? -eq 0 ] && break
+    done
+}
+
+modify_config()
+{
+    key=$1
+    value=$2
+    if [[ -n "${isInOverlayRoot}" ]]; then
+        overlayroot-chroot sed -i -E "s/(${key}=).*$/\1${value}/" $CONFIG_FILE_G
+    else
+        sed -i -E "s/(${key}=).*$/\1${value}/" $CONFIG_FILE_G
+    fi
 }

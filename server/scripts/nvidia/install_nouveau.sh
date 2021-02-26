@@ -7,34 +7,20 @@ fi
 
 . /usr/lib/deepin-graphics-driver-manager/common.sh
 
-apt-get --reinstall -y --allow-downgrades install \
-    libgl1-mesa-glx \
-    xserver-xorg-input-all \
-    xserver-xorg-core \
-    xserver-xorg-video-nouveau
+packages=(
+    "xserver-xorg-input-all"
+    "xserver-xorg-core"
+    "xserver-xorg-video-nouveau"
+    "nvidia-installer-cleanup"
+    "update-glx"
+    "glx-alternative-mesa"
+    "libgl1-mesa-glx"
+    "libgl1-mesa-glx:i386"
+    "libglx-mesa0"
+    "libglx-mesa0:i386"
+    "glx-diversions"
+)
 
-if [[ $? -ne 0 ]]; then
-    echo "apt-get execute failed!"
-    exit 1
-fi
-
-# repair glx alternative for nouveau
-apt-get --reinstall -y --allow-downgrades install \
-    update-glx \
-    nvidia-installer-cleanup \
-    glx-alternative-mesa \
-    libgl1-mesa-glx \
-    libgl1-mesa-glx:i386 \
-    libglx-mesa0 \
-    libglx-mesa0:i386 \
-    glx-diversions
-
-if [[ $? -ne 0 ]]; then
-    echo "apt-get execute for repair failed!"
-    exit 1
-fi
-
-echo "Loading kernel modules......"
-modprobe nouveau
+package_install "${packages[*]}" "${#packages[*]}"
 
 exit 0

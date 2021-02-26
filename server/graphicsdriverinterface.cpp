@@ -197,7 +197,7 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
     });
 
     connect(this, &GraphicsDriverInterface::Cancel, proc, [=]{
-        qDebug()<< "Cancel prepare install!!!";
+        qDebug()<< "Cancel prepare install and kill my self!!!";
         QFile overlay_flag("/usr/lib/deepin-graphics-driver-manager/working-dir/test_in_overlay_flag");
         if (overlay_flag.exists()) overlay_flag.remove();
         proc->kill();
@@ -279,7 +279,7 @@ bool GraphicsDriverInterface::IsTestSuccess()
 
 void GraphicsDriverInterface::RealInstall()
 {
-    const QString install_script("/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-real-install.sh");
+    const QString install_script("dgradvrmgr-real-install.sh");
     Q_ASSERT(!install_script.isEmpty());
     Install(install_script);
 }
@@ -287,7 +287,7 @@ void GraphicsDriverInterface::RealInstall()
 
 void GraphicsDriverInterface::TestInstall()
 {
-    const QString install_script("/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-test-install.sh");
+    const QString install_script("dgradvrmgr-test-install.sh");
     Q_ASSERT(!install_script.isEmpty());
     Install(install_script);
 }
@@ -329,6 +329,12 @@ void GraphicsDriverInterface::Install(QString script)
                 if (!ratio.isEmpty()) Q_EMIT ReportProgress(ratio);
             }
         }
+    });
+
+    connect(this, &GraphicsDriverInterface::Cancel, proc, [=]{
+        qDebug()<< "Cancel install and kill my self!!!";
+        proc->kill();
+        proc->waitForFinished(1000);
     });
 
     const QString &cmd = scriptAbsolutePath(script);

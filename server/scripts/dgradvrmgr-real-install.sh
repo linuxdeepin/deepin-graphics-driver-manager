@@ -2,14 +2,15 @@
 
 . /usr/lib/deepin-graphics-driver-manager/common.sh
 
-# write to tty
-journalctl -f -u dgradvrmgr-test-installer.service | sed 's/$/\r/g' > /dev/tty1 2>&1 &
+
+#check the network
+check_network || error_exit "The network is not working, please check the network connection" ${NETWORK_CONNECTION_ERROR}
 
 #apt-get update
-apt_update
+apt_update || error_exit "Execute apt update failed" ${APT_UPDATE_ERROR}
 
 #remove/install drivers
-$REMOVE_OLD_G || error_reboot "test remove old driver failed!"
-$INSTALL_NEW_G || error_reboot "test install new driver failed!"
+$REMOVE_OLD_G || error_exit "Remove old driver failed" ${PURGE_PACKAGE_ERROR}
+$INSTALL_NEW_G || error_exit "Install new driver failed" ${INSTALL_PACKAGE_ERROR}
 
 reboot
