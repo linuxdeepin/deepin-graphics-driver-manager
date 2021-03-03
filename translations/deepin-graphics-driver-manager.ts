@@ -2,17 +2,17 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/gltestwindow.cpp" line="9"/>
+        <location filename="../gltest/gltestwindow.cpp" line="18"/>
         <source>Apply</source>
         <translation>Apply</translation>
     </message>
     <message>
-        <location filename="../gltest/gltestwindow.cpp" line="10"/>
+        <location filename="../gltest/gltestwindow.cpp" line="19"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../gltest/gltestwindow.cpp" line="11"/>
+        <location filename="../gltest/gltestwindow.cpp" line="20"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Please ensure the driver works normally without blurred screen and screen tearing</translation>
     </message>
@@ -20,85 +20,91 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="35"/>
+        <location filename="../prepare/mainwindow.cpp" line="38"/>
         <source>Switch</source>
         <translation>Switch</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="63"/>
-        <source>OK</source>
-        <translation>OK</translation>
-    </message>
-    <message>
-        <location filename="../prepare/mainwindow.cpp" line="67"/>
+        <location filename="../prepare/mainwindow.cpp" line="61"/>
         <source>Update</source>
         <translation>Update</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="72"/>
+        <location filename="../prepare/mainwindow.cpp" line="66"/>
         <source>Reboot Now</source>
         <translation>Reboot Now</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="77"/>
-        <source>Later</source>
-        <translation>Later</translation>
-    </message>
-    <message>
-        <location filename="../prepare/mainwindow.cpp" line="82"/>
+        <location filename="../prepare/mainwindow.cpp" line="71"/>
+        <location filename="../test_installer/mainwindow.cpp" line="48"/>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="164"/>
+        <location filename="../prepare/mainwindow.cpp" line="76"/>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="157"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
         <translation>Your hardware is not supported currently, please wait for future version.</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="277"/>
+        <location filename="../prepare/mainwindow.cpp" line="270"/>
         <source>Switching to the discrete graphics interface may cause a black screen.</source>
         <translation>Switching to the discrete graphics interface may cause a black screen.</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="281"/>
+        <location filename="../prepare/mainwindow.cpp" line="274"/>
         <source>Switching to the integrated graphics interface may cause a black screen.</source>
         <translation>Switching to the integrated graphics interface may cause a black screen.</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="419"/>
-        <source>Downloading %1</source>
-        <translation>Downloading %1</translation>
+        <location filename="../prepare/mainwindow.cpp" line="458"/>
+        <location filename="../prepare/mainwindow.cpp" line="482"/>
+        <source>Please reboot for switching to another driver, which may cost several minutes, please wait patiently</source>
+        <translation>Please reboot for switching to another driver, which may cost several minutes, please wait patiently</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="421"/>
-        <source>Downloading the driver for %1, please wait...</source>
-        <translation>Downloading the driver for %1, please wait...</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="53"/>
+        <source>Reboot</source>
+        <translation>Reboot</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="447"/>
-        <location filename="../prepare/mainwindow.cpp" line="461"/>
-        <source>Sorry, switch failed</source>
-        <translation>Sorry, switch failed</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="167"/>
+        <source>Installing</source>
+        <translation>Installing</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="460"/>
-        <source>Download failed</source>
-        <translation>Download failed</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="169"/>
+        <source>It will auto reboot after the successful installation, please do not take any actions</source>
+        <translation>It will auto reboot after the successful installation, please do not take any actions</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="468"/>
-        <source>Download successful</source>
-        <translation>Download successful</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="232"/>
+        <source>Installation successful</source>
+        <translation>Installation successful</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="470"/>
-        <source>Please reboot to test the driver. If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation>Please reboot to test the driver. If no signal, please confirm whether the monitor output port is connected correctly.</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="233"/>
+        <source>Your computer will reboot soon</source>
+        <translation>Your computer will reboot soon</translation>
     </message>
     <message>
-        <location filename="../prepare/mainwindow.cpp" line="472"/>
-        <source>Please reboot to test the driver</source>
-        <translation>Please reboot to test the driver</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="238"/>
+        <source>Installation failed</source>
+        <translation>Installation failed</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="239"/>
+        <source>Your computer will reboot soon and switch to the previous driver</source>
+        <translation>Your computer will reboot soon and switch to the previous driver</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="252"/>
+        <source>Reboot Now (%1)</source>
+        <translation>Reboot Now (%1)</translation>
     </message>
 </context>
 <context>
@@ -168,7 +174,7 @@
 <context>
     <name>ResolutionWidget</name>
     <message>
-        <location filename="../prepare/resolutionwidget.cpp" line="42"/>
+        <location filename="../prepare/resolutionwidget.cpp" line="38"/>
         <source>Driver/Version: %1/%2</source>
         <translation>Driver/Version: %1/%2</translation>
     </message>
@@ -176,12 +182,14 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../prepare/main.cpp" line="42"/>
+        <location filename="../prepare/main.cpp" line="43"/>
+        <location filename="../test_installer/main.cpp" line="39"/>
         <source>Graphics Driver Manager</source>
         <translation>Graphics Driver Manager</translation>
     </message>
     <message>
-        <location filename="../prepare/main.cpp" line="43"/>
+        <location filename="../prepare/main.cpp" line="44"/>
+        <location filename="../test_installer/main.cpp" line="40"/>
         <source>Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
         <translation>Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</translation>
     </message>

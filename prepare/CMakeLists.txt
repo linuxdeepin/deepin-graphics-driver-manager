@@ -2,7 +2,7 @@
 set(BIN_NAME deepin-graphics-driver-manager)
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
-  add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_SOURCE_DIR}/translations/\"")
+  add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_BINARY_DIR}/translations/\"")
   add_definitions("-DRESOURCES_DIR=\"${CMAKE_SOURCE_DIR}/prepare/resources\"")
 else()
   add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_INSTALL_PREFIX}/share/deepin-graphics-driver-manager/translations/\"")
@@ -14,9 +14,8 @@ configure_file(environments.h.in environments.h @ONLY)
 find_package(PkgConfig REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5DBus REQUIRED)
-
-pkg_check_modules(DtkWidget REQUIRED dtkwidget)
-
+find_package(DtkCMake REQUIRED)
+find_package(DtkWidget REQUIRED)
 
 file(GLOB SRCS "*.h" "*.cpp")
 
@@ -33,6 +32,7 @@ target_link_libraries(${BIN_NAME}
         ${Qt5Widgets_LIBRARIES}
         ${DtkWidget_LIBRARIES}
         )
+add_dependencies(${BIN_NAME} graphics-qm-update)
 
 # bin
 install(TARGETS ${BIN_NAME} DESTINATION bin)
@@ -56,6 +56,8 @@ install(FILES ${TEST_FILE}
 
 # qm files
 file(GLOB QM_FILES "../translations/*.qm")
-install(FILES ${QM_FILES}
-        DESTINATION share/deepin-graphics-driver-manager/translations)
+install(DIRECTORY ${CMAKE_BINARY_DIR}/translations
+        DESTINATION /usr/share/deepin-graphics-driver-manager/
+        FILES_MATCHING PATTERN "*"
+)
 

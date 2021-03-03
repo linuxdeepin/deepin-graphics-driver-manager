@@ -1,12 +1,19 @@
+
+if (POLICY CMP0072)
+  set(OpenGL_GL_PREFERENCE LEGACY)
+endif()
+
 find_package(PkgConfig REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5DBus REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
-pkg_check_modules(DtkWidget REQUIRED dtkwidget)
+find_package(DtkCMake REQUIRED)
+find_package(DtkWidget REQUIRED)
+
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
-  add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_SOURCE_DIR}/translations/\"")
+  add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_BINARY_DIR}/translations/\"")
 else()
   add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_INSTALL_PREFIX}/share/deepin-graphics-driver-manager/translations/\"")
 endif()

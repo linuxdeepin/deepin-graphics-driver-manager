@@ -436,6 +436,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
+    qInfo() << "closeEvent";
     QDBusPendingReply<void> reply = m_graphicsDriver->CancelInstall();
     reply.waitForFinished();
     qApp->quit();
@@ -466,7 +467,7 @@ void MainWindow::onPreInstallProgress(int progress)
         m_warningTips->setVisible(false);
         m_rebootButton->setVisible(false);
         m_cancelButton->setVisible(true);
-        m_installTips->setText(tr("Preparation for installation failed"));
+        //m_installTips->setText("Preparation for installation failed");
         m_installTips->setVisible(true);
         Utils::resetDisablePluginList();
         qCritical() << "prepareInstall failed";

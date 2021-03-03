@@ -89,7 +89,7 @@ void  ResolutionWidget::prepareInstall()
         m_timer = new QTimer();
     }
 
-    static int progress = -20;
+    static int progress = 0;
     m_timer->setInterval(500);
     m_timer->start();
     connect(m_timer, &QTimer::timeout, [&] {

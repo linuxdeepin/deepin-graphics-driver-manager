@@ -2,7 +2,7 @@
 set(BIN_NAME test-installer)
 
 if (CMAKE_BUILD_TYPE MATCHES Debug)
-  add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_SOURCE_DIR}/translations/\"")
+  add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_BINARY_DIR}/translations/\"")
   add_definitions("-DRESOURCES_DIR=\"${CMAKE_SOURCE_DIR}/test-installer/resources\"")
 else()
   add_definitions("-DTRANSLATIONS_DIR=\"${CMAKE_INSTALL_PREFIX}/share/deepin-graphics-driver-manager/translations/\"")
@@ -13,8 +13,8 @@ endif()
 find_package(PkgConfig REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5DBus REQUIRED)
-
-pkg_check_modules(DtkWidget REQUIRED dtkwidget)
+find_package(DtkCMake REQUIRED)
+find_package(DtkWidget REQUIRED)
 
 
 file(GLOB SRCS "*.h" "*.cpp")

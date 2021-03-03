@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.1)
 
 if (NOT DEFINED VERSION)
     set(VERSION 1.0.0)
@@ -6,7 +6,7 @@ endif()
 
 project(deepin-graphics-driver-manager)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -31,13 +31,14 @@ if (NOT (${CMAKE_BUILD_TYPE} MATCHES "Debug"))
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Ofast")
 endif ()
 
-message("translate_generation.sh")
-# generate qm
-execute_process(COMMAND bash "translate_generation.sh"
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
-execute_process(COMMAND bash "translate_ts2desktop.sh"
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+find_package(Qt5LinguistTools REQUIRED)
 
+
+file(GLOB TS_FILES
+        ${CMAKE_SOURCE_DIR}/translations/*.ts)
+set_source_files_properties(${TS_FILES} PROPERTIES OUTPUT_LOCATION ${CMAKE_BINARY_DIR}/translations)
+qt5_add_translation(QM_FILES ${TS_FILES})
+add_custom_target(graphics-qm-update DEPENDS ${QM_FILES})
 
 
 file(GLOB UTILS_FILES "${CMAKE_SOURCE_DIR}/utils/*.h" "${CMAKE_SOURCE_DIR}/utils/*.cpp")

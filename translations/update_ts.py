@@ -42,7 +42,8 @@ def generate_ts(ts_path):
         "prepare",
         "server",
         "installer",
-        "gltest"
+        "gltest",
+        "test_installer"
     )
 
     # Add -I. option to solve namespace error

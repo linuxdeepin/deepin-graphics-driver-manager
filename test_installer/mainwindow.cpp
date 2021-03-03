@@ -159,6 +159,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     QDBusPendingReply<void> reply = m_graphicsDriver->CancelInstall();
     reply.waitForFinished();
     Utils::resetDisablePluginList();
+    reboot();
     qApp->quit();
 }
 
