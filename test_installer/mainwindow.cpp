@@ -96,11 +96,14 @@ MainWindow::MainWindow(QWidget *parent)
     setFixedSize(484, 682);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
+    onThemeChanged(DGuiApplicationHelper::instance()->themeType());
+
     connect(m_cancelButton, &QPushButton::clicked, this, &MainWindow::onCancelBtnClicked);
     connect(m_rebootButton, &QPushButton::clicked, [=] {
        reboot();
     });
     QTimer::singleShot(0, this, &MainWindow::onInstall);
+    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &MainWindow::onThemeChanged);
 
 }
 
@@ -114,44 +117,6 @@ void MainWindow::onCancelBtnClicked()
     QDBusPendingReply<void> reply = m_graphicsDriver->CancelInstall();
     reply.waitForFinished();
     reboot();
-}
-
-
-void MainWindow::paintEvent(QPaintEvent *event)
-{
-    if (DGuiApplicationHelper::LightType == DApplicationHelper::instance()->themeType()) {
-        m_centerWidget->setStyleSheet("QWidget#centerWidget{"
-                                      "border-radius: 8px;"
-                                      "padding:2px 4px;"
-                                      "background-color: rgba(255, 255, 255, 1);"
-                                      "}");
-
-        m_installState->setStyleSheet("QLabel {"
-                                 "font-size: 14px;"
-                                 "font-weight: 500;"
-                                 "color: rgba(0, 0, 0, 0.9);"
-                                 "}");
-
-        m_warningTips->setStyleSheet("QLabel {"
-                                     "font-size: 14px;"
-                                     "color: rgba(0, 0, 0, 0.7);"
-                                     "}");
-
-    } else if (DGuiApplicationHelper::DarkType == DApplicationHelper::instance()->themeType()) {
-        m_centerWidget->setStyleSheet("QWidget#centerWidget{"
-                                      "border-radius: 8px;"
-                                      "padding:2px 4px;"
-                                      "background-color: rgba(255, 255, 255, 0.05);"
-                                      "}");
-
-        m_installState->setStyleSheet("QLabel {"
-                                 "font-size: 12px;"
-                                 "color: #C0C6D4;"
-                                 "width:"
-                                 "}");
-
-    }
-    QWidget::paintEvent(event);
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -198,6 +163,16 @@ void MainWindow::onInstall()
         updateProgress();
     });
 #endif
+}
+
+void  MainWindow::onThemeChanged(DGuiApplicationHelper::ColorType type)
+{
+    if (type == DGuiApplicationHelper::ColorType::LightType) {
+        DGuiApplicationHelper::instance()->setThemeType(type);
+
+    } else if (type == DGuiApplicationHelper::ColorType::DarkType) {
+        DGuiApplicationHelper::instance()->setThemeType(type);
+    }
 }
 
 void MainWindow::updateProgress()

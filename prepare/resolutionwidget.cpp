@@ -6,8 +6,6 @@
 #include <QVBoxLayout>
 #include <QMouseEvent>
 #include <QTimer>
-#include <QLineEdit>
-#include <QLocale>
 #include <DApplicationHelper>
 
 ResolutionWidget::ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graphicsDriver, const Resolution &resolution,  QWidget *parent)
@@ -15,7 +13,7 @@ ResolutionWidget::ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graph
       m_graphicsDriver(graphicsDriver),
       m_resolution(resolution)
 {
-
+    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &ResolutionWidget::onThemeChanged);
 }
 
 ResolutionWidget::~ResolutionWidget()
@@ -74,6 +72,8 @@ void ResolutionWidget::initUI()
                   "background-color: rgba(0, 0, 0, 0.03);"
                   "border-radius: 8px"
                   "}");
+
+    onThemeChanged(DGuiApplicationHelper::instance()->themeType());
 }
 
 void ResolutionWidget::setChecked(const bool checked)
@@ -121,15 +121,10 @@ bool ResolutionWidget::canUpdate()
     return m_resolution.currVersion().compare(m_resolution.repVersion()) < 0;
 }
 
-void ResolutionWidget::mouseReleaseEvent(QMouseEvent *e)
+void ResolutionWidget::onThemeChanged(DGuiApplicationHelper::ColorType type)
 {
-    e->accept();
-    Q_EMIT clicked();
-}
-
-void ResolutionWidget::paintEvent(QPaintEvent *event)
-{
-    if (DGuiApplicationHelper::LightType == Dtk::Widget::DApplicationHelper::instance()->themeType()) {
+    if (type == DGuiApplicationHelper::ColorType::LightType) {
+        DGuiApplicationHelper::instance()->setThemeType(type);
         m_version->setStyleSheet("QLabel {"
                                  "font-size: 12px;"
                                  "color: #001A2E;"
@@ -137,6 +132,7 @@ void ResolutionWidget::paintEvent(QPaintEvent *event)
 
         m_title->setStyleSheet("QLabel {"
                                "font-size: 14px;"
+                               "font-weight: 500;"
                                "color: #414d68;"
                                "}");
 
@@ -144,8 +140,8 @@ void ResolutionWidget::paintEvent(QPaintEvent *event)
                                      "font-size: 12px;"
                                      "color: #526a7f;"
                                      "}");
-
-    } else if (DGuiApplicationHelper::DarkType == Dtk::Widget::DApplicationHelper::instance()->themeType()) {
+    } else if (type == DGuiApplicationHelper::ColorType::DarkType) {
+        DGuiApplicationHelper::instance()->setThemeType(type);
         m_version->setStyleSheet("QLabel {"
                                  "font-size: 12px;"
                                  "color: #c0c6d4;"
@@ -153,6 +149,7 @@ void ResolutionWidget::paintEvent(QPaintEvent *event)
 
         m_title->setStyleSheet("QLabel {"
                                "font-size: 14px;"
+                               "font-weight: 500;"
                                "color: #C0C6D4;"
                                "}");
 
@@ -160,9 +157,14 @@ void ResolutionWidget::paintEvent(QPaintEvent *event)
                                      "font-size: 12px;"
                                      "color: #6d7c88;"
                                      "}");
-
     }
-    QFrame::paintEvent(event);
 }
+
+void ResolutionWidget::mouseReleaseEvent(QMouseEvent *e)
+{
+    e->accept();
+    Q_EMIT clicked();
+}
+
 
 

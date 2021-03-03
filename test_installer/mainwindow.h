@@ -12,6 +12,7 @@
 #include <QStackedLayout>
 #include <DThemeManager>
 #include <DSuggestButton>
+#include <DGuiApplicationHelper>
 
 
 DWIDGET_USE_NAMESPACE
@@ -26,14 +27,13 @@ public:
     ~MainWindow() override;
 private:
     void closeEvent(QCloseEvent *event) override;
-    void paintEvent(QPaintEvent *event) override;
     void updateProgress();
     void updateInstallState(bool success);
     void reboot();
 private Q_SLOTS:
     void onCancelBtnClicked();
     void onInstall();
-
+    void onThemeChanged(DGuiApplicationHelper::ColorType type);
 
 private:
     QWidget *m_centerWidget;

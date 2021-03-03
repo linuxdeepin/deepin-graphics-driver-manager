@@ -132,11 +132,15 @@ MainWindow::MainWindow(QWidget *parent)
     setFixedSize(484, 682);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
+    onThemeChanged(DGuiApplicationHelper::instance()->themeType());
+
+
     connect(m_toggleButton, &QPushButton::clicked, this, &MainWindow::onToggleBtnClicked);
     connect(m_updateButton, &QPushButton::clicked, this, &MainWindow::onToggleBtnClicked);
     connect(m_rebootButton, &QPushButton::clicked, this, &MainWindow::onRebootBtnClicked);
     connect(m_cancelButton, &QPushButton::clicked, this, &MainWindow::onCancelBtnClicked);
     connect(m_okButton, &QPushButton::clicked, qApp, &QApplication::quit);
+    connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &MainWindow::onThemeChanged);
 
     QTimer::singleShot(0, this, &MainWindow::loadResolutions);
 
@@ -383,57 +387,6 @@ void MainWindow::onCancelBtnClicked()
 }
 
 
-void MainWindow::paintEvent(QPaintEvent *event)
-{
-    if (DGuiApplicationHelper::LightType == DApplicationHelper::instance()->themeType()) {
-        m_centerWidget->setStyleSheet("QWidget#centerWidget{"
-                                      "border-radius: 8px;"
-                                      "padding:2px 4px;"
-                                      "background-color: rgba(255, 255, 255, 1);"
-                                      "}");
-
-        m_vendorName->setStyleSheet("QLabel {"
-                                     "font-size: 12px;"
-                                     "color: #001a2e;"
-                                     "}");
-
-
-        m_warningTips->setStyleSheet("QLabel {"
-                                  "font-size: 12px;"
-                                  "color: #526a7f;"
-                                  "}");
-
-        m_installTips->setStyleSheet("QLabel {"
-                                     "font-size: 14px;"
-                                     "font-weight: 500;"
-                                     "color: rgba(0, 0, 0, 0.9);"
-                                     "}");
-
-    } else if (DGuiApplicationHelper::DarkType == DApplicationHelper::instance()->themeType()) {
-        m_centerWidget->setStyleSheet("QWidget#centerWidget{"
-                                      "border-radius: 8px;"
-                                      "padding:2px 4px;"
-                                      "background-color: rgba(255, 255, 255, 0.05);"
-                                      "}");
-
-        m_vendorName->setStyleSheet("QLabel {"
-                                    "font-size: 12px;"
-                                    "color: #c0c6d4;"
-                                    "}");
-
-        m_warningTips->setStyleSheet("QLabel {"
-                                  "font-size: 12px;"
-                                  "color: #6d7c88;"
-                                  "}");
-
-        m_installTips->setStyleSheet("QLabel {"
-                                     "font-size: 14px;"
-                                     "font-weight: 500;"
-                                     "}");
-    }
-    QWidget::paintEvent(event);
-}
-
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     qInfo() << "closeEvent";
@@ -486,4 +439,53 @@ void MainWindow::onPreInstallProgress(int progress)
     }
 }
 
+void MainWindow::onThemeChanged(DGuiApplicationHelper::ColorType type)
+{
+    if (type == DGuiApplicationHelper::ColorType::LightType) {
+        DGuiApplicationHelper::instance()->setThemeType(type);
+        m_centerWidget->setStyleSheet("QWidget#centerWidget{"
+                                      "border-radius: 8px;"
+                                      "padding:2px 4px;"
+                                      "background-color: rgba(255, 255, 255, 1);"
+                                      "}");
 
+        m_vendorName->setStyleSheet("QLabel {"
+                                    "font-size: 12px;"
+                                    "color: #001a2e;"
+                                    "}");
+
+
+        m_warningTips->setStyleSheet("QLabel {"
+                                     "font-size: 12px;"
+                                     "color: #526a7f;"
+                                     "}");
+
+        m_installTips->setStyleSheet("QLabel {"
+                                     "font-size: 14px;"
+                                     "font-weight: 500;"
+                                     "color: rgba(0, 0, 0, 0.9);"
+                                     "}");
+    } else if (type == DGuiApplicationHelper::ColorType::DarkType) {
+        DGuiApplicationHelper::instance()->setThemeType(type);
+        m_centerWidget->setStyleSheet("QWidget#centerWidget{"
+                                      "border-radius: 8px;"
+                                      "padding:2px 4px;"
+                                      "background-color: rgba(255, 255, 255, 0.05);"
+                                      "}");
+
+        m_vendorName->setStyleSheet("QLabel {"
+                                    "font-size: 12px;"
+                                    "color: #c0c6d4;"
+                                    "}");
+
+        m_warningTips->setStyleSheet("QLabel {"
+                                     "font-size: 12px;"
+                                     "color: #6d7c88;"
+                                     "}");
+
+        m_installTips->setStyleSheet("QLabel {"
+                                     "font-size: 14px;"
+                                     "font-weight: 500;"
+                                     "}");
+    }
+}

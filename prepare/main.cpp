@@ -6,7 +6,7 @@
 #include <DApplication>
 #include <QLocale>
 #include <DLog>
-
+#include <DApplicationSettings>
 
 
 DCORE_USE_NAMESPACE
@@ -42,6 +42,9 @@ int main(int argc, char* argv[])
     app.setProductIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
     app.setProductName(QApplication::translate("main", "Graphics Driver Manager"));
     app.setApplicationDescription(QApplication::translate("main", "Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions."));
+
+    //主题自动保存
+    DApplicationSettings as;
 
     //设置日志
     const QString logFormat = "[%{time}{yyyy-MM-dd, HH:mm:ss.zzz}] [%{type:1}] [%{file}=>%{function}: %{line}] %{message}\n";

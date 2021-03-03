@@ -13,6 +13,7 @@
 #include <QStackedLayout>
 #include <DThemeManager>
 #include <DSuggestButton>
+#include <DGuiApplicationHelper>
 
 
 
@@ -39,7 +40,6 @@ public:
 private:
     void keyPressEvent(QKeyEvent *e);
     void closeEvent(QCloseEvent *event);
-    void paintEvent(QPaintEvent *event);
     void noResolutions();
     void loadDevice();
     void setVendorIcon();
@@ -52,6 +52,7 @@ private Q_SLOTS:
     void onRebootBtnClicked();
     void onCancelBtnClicked();
     void onPreInstallProgress(int progress);
+    void onThemeChanged(DGuiApplicationHelper::ColorType type);
 
 
 

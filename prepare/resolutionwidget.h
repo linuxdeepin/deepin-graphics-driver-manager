@@ -12,6 +12,7 @@
 #include <QDir>
 #include <QLineEdit>
 #include <QTimer>
+#include <DGuiApplicationHelper>
 
 //#define TEST_UI
 
@@ -32,9 +33,12 @@ public:
 signals:
     void clicked() const;
     void preInstallProgress(int);
+
+private Q_SLOTS:
+    void onThemeChanged(Dtk::Gui::DGuiApplicationHelper::ColorType type);
+
 protected:
     void mouseReleaseEvent(QMouseEvent *e) override;
-    void paintEvent(QPaintEvent *event) override;
 
 protected:
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver;
