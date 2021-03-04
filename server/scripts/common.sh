@@ -58,15 +58,15 @@ overlayroot_save() {
  
 cleanWorking() {
     if [[ -n "${isInOverlayRoot}" ]]; then
-        /usr/sbin/overlayroot-chroot rm -rf $TEST_IN_OVERLAY_G
-        /usr/sbin/overlayroot-chroot rm -rf $REMOVE_OLD_G
-        /usr/sbin/overlayroot-chroot rm -rf $INSTALL_NEW_G
-        overlayroot_disable
+        [ -e "${OVERLAY_LOWDIR}/${TEST_IN_OVERLAY_G}" ] && /usr/sbin/overlayroot-chroot rm -rf $TEST_IN_OVERLAY_G
+        [ -e "${OVERLAY_LOWDIR}/${REMOVE_OLD_G}" ] && /usr/sbin/overlayroot-chroot rm -rf $REMOVE_OLD_G
+        [ -e "${OVERLAY_LOWDIR}/${INSTALL_NEW_G}" ] && /usr/sbin/overlayroot-chroot rm -rf $INSTALL_NEW_G
     else
-        rm -rf $TEST_IN_OVERLAY_G
-        rm -rf $REMOVE_OLD_G
-        rm -rf $INSTALL_NEW_G
+        [ -e "${TEST_IN_OVERLAY_G}" ] && rm -rf $TEST_IN_OVERLAY_G
+        [ -e "${REMOVE_OLD_G}" ] && rm -rf $REMOVE_OLD_G
+        [ -e "${INSTALL_NEW_G}" ] && rm -rf $INSTALL_NEW_G
     fi
+    overlayroot_disable
 }
 
  nvidia_blacklist_recovery(){
@@ -112,16 +112,18 @@ apt_update()
 
 package_remove()
 {
+    set -e
     pkg_list=$1
     len=$2
     inital_ratio=15
     max_ratio=45
+    index=0
     echo "PROGRESS:15"
     let range=${max_ratio}-${inital_ratio}
     for pkg in ${pkg_list[@]}
     do
         apt-get -y purge ${pkg};
-        let index++
+        let index+=1
         ratio=$(($index*$range/$len))
         let ratio+=${inital_ratio}
         echo "PROGRESS:${ratio}"
@@ -129,23 +131,27 @@ package_remove()
 
     apt-get autoremove -y
     echo "PROGRESS:50"
+    set +e
 }
 
 package_install()
 {
+   set -e
    pkg_list=$1
    len=$2
     inital_ratio=50
     max_ratio=99
+    index=0
     let range=${max_ratio}-${inital_ratio}
     for pkg in ${pkg_list[@]}
     do
         apt-get -y --reinstall --allow-downgrades install ${pkg};
-        let index++;
+        let index+=1
         ratio=$(($index*$range/$len))
         let ratio+=${inital_ratio}
         echo "PROGRESS:${ratio}"
     done
+    set +e
 }
 
 check_network()

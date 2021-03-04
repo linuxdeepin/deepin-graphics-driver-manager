@@ -14,6 +14,4 @@ packages=(
 
 package_remove "${packages[*]}" "${#packages[*]}"
 
-# TODO: remove after package problem fixed #
-echo "Manual update initramfs ..."
-update-initramfs -u -t
+exit 0

@@ -197,11 +197,14 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
     });
 
     connect(this, &GraphicsDriverInterface::Cancel, proc, [=]{
-        qDebug()<< "Cancel prepare install and kill my self!!!";
+        qDebug()<< "Cancel prepare install";
         QFile overlay_flag("/usr/lib/deepin-graphics-driver-manager/working-dir/test_in_overlay_flag");
-        if (overlay_flag.exists()) overlay_flag.remove();
+        if (overlay_flag.exists())
+	{
+	    overlay_flag.remove();
+	}
         proc->kill();
-        proc->waitForFinished(1000);
+        proc->waitForFinished(-1);
     });
 
     connect(proc, &QProcess::started, this, [=] {
@@ -240,12 +243,36 @@ bool GraphicsDriverInterface::isInOverlayRoot()
 
 void GraphicsDriverInterface::CancelInstall()
 {
+    Q_EMIT Cancel();
+
     QProcess *proc = new QProcess(this);
     QPROCESS_DELETE_SELF(proc);
     proc->setProcessChannelMode(QProcess::MergedChannels);
-    proc->execute("/usr/lib/deepin-graphics-driver-manager/dgradvrmgr-cancel.sh");
 
-    Q_EMIT Cancel();
+    connect(proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, [=](int exitCode) {
+        if (exitCode){ //失败
+            qWarning() << "Cancel install failed, ExitCode: " << exitCode;
+            Q_EMIT ReportProgress("-1");
+        }else{ //成功
+            qDebug() << "Cancel install success!";
+            Q_EMIT ReportProgress("100");
+        }
+    });
+
+    connect(proc, &QProcess::started, this, [=] {
+        qDebug() << "Cancel install start!";
+        Q_EMIT ReportProgress("0");//开始
+    });
+
+
+    connect(proc, &QProcess::readyReadStandardOutput, this, [=]() {
+        QString out = proc->readAllStandardOutput();
+        qDebug() << out;
+    });
+
+    const QString &cmd = scriptAbsolutePath("dgradvrmgr-cancel.sh");
+    proc->start(cmd);
+    proc->waitForFinished(-1);
 }
 
 void GraphicsDriverInterface::TestSuccess()
@@ -332,14 +359,13 @@ void GraphicsDriverInterface::Install(QString script)
     });
 
     connect(this, &GraphicsDriverInterface::Cancel, proc, [=]{
-        qDebug()<< "Cancel install and kill my self!!!";
-        proc->kill();
-        proc->waitForFinished(1000);
+        qDebug()<< "Cancel install";
+	//proc->kill();
+	proc->waitForFinished(-1);
     });
 
     const QString &cmd = scriptAbsolutePath(script);
     proc->start(cmd);
-    return;
 }
 
 
