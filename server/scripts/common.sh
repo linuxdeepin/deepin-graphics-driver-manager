@@ -12,6 +12,8 @@ export INSTALLER_DESKTOP_FILE_DEST=/etc/xdg/autostart/deepin-gradvrmgr-installer
 export TEST_INSTALLER_DESKTOP_FILE_SOURCE=/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-test-installer.desktop
 export TEST_INSTALLER_DESKTOP_FILE_DEST=/etc/xdg/autostart/deepin-gradvrmgr-test-installer.desktop
 
+export OVERLAY_LOWDIR=/media/root-ro/
+
 export GLTEST_FLAG=/usr/lib/deepin-graphics-driver-manager/working-dir/dgradvrmgr_gltest_flag
 export OVERLAYROOT_IMAGE=$WORKING_DIR_G/overlayroot.img
 export isInOverlayRoot=$(grep -m1 "^overlayroot / overlay " /proc/mounts) || isInOverlayRoot=
@@ -70,14 +72,12 @@ cleanWorking() {
  nvidia_blacklist_recovery(){
      nvidia_blacklist_file="/etc/modprobe.d/nvidia-blacklists-nouveau.conf"
      upperdir="/media/root-rw/overlay/"
-     lowerdir="/media/root-ro/"
      if [ -e "${upperdir}/${nvidia_blacklist_file}" ]; then
         if [ -f "${nvidia_blacklist_file}" ]; then
             # Create blacklist file
             rm -f ${nvidia_blacklist_file}
         else
             # Delete blacklist file
-            cp -f ${lowerdir}/${nvidia_blacklist_file} ${nvidia_blacklist_file}
             echo "blacklist  nouveau" > ${nvidia_blacklist_file}
         fi
         update-initramfs -u
