@@ -78,7 +78,7 @@ MainWindow::MainWindow(QWidget *parent)
     hBoxLayout->addWidget(m_rebootButton);
 
     centralLayout->addLayout(hBoxLayout);
-    centralLayout->setContentsMargins(10, 180, 10, 10);
+    centralLayout->setContentsMargins(10, 150, 10, 10);
     titlebar()->setTitle(" ");
     titlebar()->setIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
     m_centerWidget = new QWidget;
@@ -137,9 +137,10 @@ void MainWindow::onInstall()
     m_rebootButton->setVisible(false);
 
 #ifdef TEST_UI
-    m_timer.setInterval(50);
+    m_timer.setInterval(5000);
     m_timer.start();
     m_process = 0;
+    updateProgress();
     connect(&m_timer, &QTimer::timeout, [=]{
         if (m_process >= 100) {
             m_timer.stop();
@@ -157,7 +158,8 @@ void MainWindow::onInstall()
         Utils::resetDisablePluginList();
         return;
     }
-
+    m_process = 0;
+    updateProgress();
     connect(m_graphicsDriver, &ComDeepinDaemonGraphicsDriverInterface::ReportProgress, [=](QString ratio){
         m_process = ratio.toInt();
         updateProgress();
@@ -170,8 +172,31 @@ void  MainWindow::onThemeChanged(DGuiApplicationHelper::ColorType type)
     if (type == DGuiApplicationHelper::ColorType::LightType) {
         DGuiApplicationHelper::instance()->setThemeType(type);
 
+        m_installState->setStyleSheet("QLabel {"
+                                     "font-size: 14px;"
+                                     "font-weight: medium;"
+                                     "color: rgba(0, 0, 0, 0.9);"
+                                     "}");
+
+        m_warningTips->setStyleSheet("QLabel {"
+                                     "font-size: 12px;"
+                                     "font-weight: normal;"
+                                     "color: rgba(0, 0, 0, 0.7);"
+                                     "}");
+
     } else if (type == DGuiApplicationHelper::ColorType::DarkType) {
         DGuiApplicationHelper::instance()->setThemeType(type);
+        m_installState->setStyleSheet("QLabel {"
+                                      "font-size: 14px;"
+                                      "font-weight: medium;"
+                                      "color: #c0c6d4;"
+                                      "}");
+
+        m_warningTips->setStyleSheet("QLabel {"
+                                     "font-size: 12px;"
+                                     "font-weight: normal;"
+                                     "color: #c0c6d4;"
+                                     "}");
     }
 }
 
@@ -180,8 +205,10 @@ void MainWindow::updateProgress()
     if (m_process < 100 && m_process >= 0) {
         if (m_process == 0) {
             m_waterProgress->start();
+            m_waterProgress->setValue(1);
+        } else {
+            m_waterProgress->setValue(m_process);
         }
-        m_waterProgress->setValue(m_process);
     } else if (m_process < 0) {
         updateInstallState(false);
         Utils::resetDisablePluginList();
@@ -194,8 +221,10 @@ void MainWindow::updateProgress()
 
 void MainWindow::reboot()
 {
+#ifndef TEST_UI
     qInfo() << "reboot";
     QProcess::startDetached("dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true");
+#endif
 }
 
 void MainWindow::updateInstallState(bool success)

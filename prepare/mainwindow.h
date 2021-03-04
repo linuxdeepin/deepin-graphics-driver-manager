@@ -14,6 +14,7 @@
 #include <DThemeManager>
 #include <DSuggestButton>
 #include <DGuiApplicationHelper>
+#include <DSpinner>
 
 
 
@@ -67,7 +68,7 @@ private:
     QLabel *m_tipsIcon;
     QLabel *m_warningTips;
     QLabel *m_installTips;
-
+    DSpinner *m_spinner;
     QWidget *m_resolutionsWidget;
     QPushButton *m_toggleButton;
     QPushButton *m_updateButton;

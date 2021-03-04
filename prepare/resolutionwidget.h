@@ -35,7 +35,7 @@ signals:
     void preInstallProgress(int);
 
 private Q_SLOTS:
-    void onThemeChanged(Dtk::Gui::DGuiApplicationHelper::ColorType type);
+    virtual void onThemeChanged(Dtk::Gui::DGuiApplicationHelper::ColorType type);
 
 protected:
     void mouseReleaseEvent(QMouseEvent *e) override;

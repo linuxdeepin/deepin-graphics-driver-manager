@@ -60,7 +60,7 @@ void ResolutionWidget::initUI()
     auto *centralLayout = new QHBoxLayout;
     centralLayout->addLayout(infoLayout);
     centralLayout->addWidget(m_checkedBtn);
-    centralLayout->setAlignment(m_checkedBtn, Qt::AlignVCenter | Qt::AlignRight);
+    centralLayout->setAlignment(m_checkedBtn, Qt::AlignTop | Qt::AlignRight);
     centralLayout->setSpacing(3);
     centralLayout->setContentsMargins(10, 10, 0, 10);
 
@@ -68,10 +68,6 @@ void ResolutionWidget::initUI()
 
     setChecked(m_resolution.enable());
     setObjectName("ResolutionWidget");
-    setStyleSheet("QFrame#ResolutionWidget {"
-                  "background-color: rgba(0, 0, 0, 0.03);"
-                  "border-radius: 8px"
-                  "}");
 
     onThemeChanged(DGuiApplicationHelper::instance()->themeType());
 }
@@ -140,6 +136,12 @@ void ResolutionWidget::onThemeChanged(DGuiApplicationHelper::ColorType type)
                                      "font-size: 12px;"
                                      "color: #526a7f;"
                                      "}");
+
+        setStyleSheet("QFrame#ResolutionWidget {"
+                      "background-color: rgba(0, 0, 0, 0.03);"
+                      "border-radius: 8px"
+                      "}");
+
     } else if (type == DGuiApplicationHelper::ColorType::DarkType) {
         DGuiApplicationHelper::instance()->setThemeType(type);
         m_version->setStyleSheet("QLabel {"
@@ -157,6 +159,11 @@ void ResolutionWidget::onThemeChanged(DGuiApplicationHelper::ColorType type)
                                      "font-size: 12px;"
                                      "color: #6d7c88;"
                                      "}");
+
+        setStyleSheet("QFrame#ResolutionWidget {"
+                      "background-color: rgba(255, 255, 255, 0.05);"
+                      "border-radius: 8px"
+                      "}");
     }
 }
 

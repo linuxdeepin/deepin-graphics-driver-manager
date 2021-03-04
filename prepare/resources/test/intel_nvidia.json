@@ -8,9 +8,9 @@
             "name": "glamor",
             "description": "Poor compatibility for parts of old graphics cards.",
             "driver": "xxx",
-            "currVersion": "yyy",
-            "depoVersion": "zzz",
-            "enable": false
+            "currVersion": "xxx",
+            "depoVersion": "yyy",
+            "enable": true
         },
 
         {
@@ -19,8 +19,8 @@
             "description": "Save power to reduce power consumption",
             "driver": "nvidia",
             "currVersion": "1.1",
-            "depoVersion": "1.2",
-            "enable": true
+            "depoVersion": "1.1",
+            "enable": false
         },
         {
             "name": "prime",
@@ -28,7 +28,7 @@
             "description": "Best performance, for computers with hybrid graphics",
             "driver": "nvidia",
             "currVersion": "yyy",
-            "depoVersion": "zzz",
+            "depoVersion": "yyy",
             "enable": false
         }
     ]

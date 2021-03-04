@@ -51,9 +51,13 @@ MainWindow::MainWindow(QWidget *parent)
     m_installTips->setVisible(false);
     m_installTips->setWordWrap(true);
     m_installTips->setAlignment(Qt::AlignHCenter);
-    m_installTips->setContentsMargins(116, 0, 116, 0);
+    m_installTips->setContentsMargins(65, 0, 65, 0);
     m_installTips->setObjectName("installTips");
+    m_installTips->setFixedSize(424, 40);
 
+    m_spinner = new DSpinner();
+    m_spinner->setFixedSize(32, 32);
+    m_spinner->setVisible(false);
 
     m_tipsIcon = new QLabel;
 
@@ -82,9 +86,10 @@ MainWindow::MainWindow(QWidget *parent)
     m_vendorName = new QLabel;
     m_vendorName->setWordWrap(true);
     m_vendorName->setAlignment(Qt::AlignCenter);
+    m_vendorName->setFixedHeight(54);
 
     m_resolutionsLayout = new QVBoxLayout;
-    m_resolutionsLayout->setContentsMargins(0, 8, 0, 8);
+    m_resolutionsLayout->setContentsMargins(0, 0, 0, 0);
     m_resolutionsLayout->setSpacing(10);
     m_resolutionsWidget = new QWidget;
     m_resolutionsWidget->setLayout(m_resolutionsLayout);
@@ -92,10 +97,12 @@ MainWindow::MainWindow(QWidget *parent)
     auto *centralLayout = new QVBoxLayout;
     centralLayout->addWidget(m_vendorIcon);
     centralLayout->addWidget(m_vendorName);
-    centralLayout->addStretch();
     centralLayout->addWidget(m_tipsIcon);
     centralLayout->setAlignment(m_tipsIcon, Qt::AlignHCenter);
     centralLayout->addWidget(m_resolutionsWidget);
+    centralLayout->addSpacing(60);
+    centralLayout->addWidget(m_spinner);
+    centralLayout->setAlignment(m_spinner, Qt::AlignHCenter);
     centralLayout->addWidget(m_installTips);
     centralLayout->setAlignment(m_installTips, Qt::AlignHCenter);
     centralLayout->addStretch();
@@ -113,7 +120,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     centralLayout->addLayout(hBoxLayout);
     centralLayout->setSpacing(0);
-    centralLayout->setContentsMargins(10, 79, 10, 10);
+    centralLayout->setContentsMargins(10, 30, 10, 10);
     titlebar()->setTitle(" ");
     titlebar()->setIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
     m_centerWidget = new QWidget;
@@ -125,9 +132,9 @@ MainWindow::MainWindow(QWidget *parent)
     auto *mainWidget = new QWidget;
     mainWidget->setObjectName("mainWidget");
     mainLayout->addWidget(m_centerWidget);
+    mainLayout->setContentsMargins(10, 10, 10, 10);
     setCentralWidget(mainWidget);
     centralWidget()->setLayout(mainLayout);
-
 
     setFixedSize(484, 682);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
@@ -234,7 +241,7 @@ void MainWindow::setVendorIcon()
         iconPath = ":/resources/icons/Intel-NVIDIA.svg";
     }
 
-    m_vendorIcon->setPixmap(Utils::hidpiPixmap(iconPath, QSize(128, 128)));
+    m_vendorIcon->setPixmap(Utils::hidpiPixmap(iconPath, QSize(140, 140)));
     m_vendorName->setText(devInfo.join('\n'));
 
 }
@@ -244,7 +251,7 @@ void MainWindow::loadResolutions()
     loadDevice();
     QString strResolution;
 #ifdef TEST_UI
-    QString path = RESOURCES_DIR"/test/intel_nvidia.json";
+    QString path = RESOURCES_DIR"/test/nvidia.json";
     QFile file(path);
     if (file.exists()) {
        file.open(QIODevice::ReadOnly);
@@ -305,6 +312,8 @@ void MainWindow::loadResolutions()
                 if (rw->canUpdate()) {
                     m_updateButton->setVisible(true);
                     m_toggleButton->setVisible(false);
+                } else {
+                    m_okButton->setVisible(true);
                 }
             }
             qInfo() << "index = " << index;
@@ -331,27 +340,10 @@ void MainWindow::onResolutionSelected()
     }
     qInfo() << "m_usedIndex = " << m_usedIndex;
     qInfo() << "m_selectedIndex = " << m_selectedIndex;
-    const bool changed = m_selectedIndex != m_usedIndex;
 
-    if (changed) {
-        if (rw->resolution().enable() && rw->canUpdate()) {
-            m_toggleButton->setVisible(false);
-            m_updateButton->setVisible(true);
-        } else {
-            m_toggleButton->setVisible(true);
-            m_updateButton->setVisible(false);
-        }
-
-    } else {
-        if (rw->canUpdate()) {
-            m_toggleButton->setVisible(false);
-            m_updateButton->setVisible(true);
-        } else {
-            m_toggleButton->setVisible(false);
-            m_updateButton->setVisible(false);
-        }
-
-    }
+    m_updateButton->setVisible(rw->canUpdate());
+    m_toggleButton->setVisible(!m_updateButton->isVisible() && m_selectedIndex != m_usedIndex);
+    m_okButton->setVisible(!(m_updateButton->isVisible() || m_toggleButton->isVisible()));
 }
 
 void MainWindow::onUpdateBtnClicked()
@@ -409,8 +401,12 @@ void MainWindow::onPreInstallProgress(int progress)
             m_rebootButton->setEnabled(false);
             m_cancelButton->setEnabled(false);
             m_cancelButton->setVisible(true);
-            m_installTips->setText(tr("Please reboot for switching to another driver, which may cost several minutes, please wait patiently"));
-            m_installTips->setVisible(true);
+            if (!m_spinner->isPlaying()) {
+                m_spinner->start();
+                m_spinner->setVisible(true);
+            }
+            //m_installTips->setText(tr("Please reboot for switching to another driver, which may cost several minutes, please wait patiently"));
+            //m_installTips->setVisible(true);
             m_startPreInstall = true;
         }
     } else if (progress < 0){
@@ -423,6 +419,10 @@ void MainWindow::onPreInstallProgress(int progress)
         //m_installTips->setText("Preparation for installation failed");
         m_installTips->setVisible(true);
         Utils::resetDisablePluginList();
+        if (m_spinner->isPlaying()) {
+            m_spinner->stop();
+            m_spinner->setVisible(false);
+        }
         qCritical() << "prepareInstall failed";
     } else {
         m_resolutionsWidget->setVisible(false);
@@ -433,6 +433,10 @@ void MainWindow::onPreInstallProgress(int progress)
         m_cancelButton->setVisible(true);
         m_rebootButton->setEnabled(true);
         m_cancelButton->setEnabled(true);
+        if (m_spinner->isPlaying()) {
+            m_spinner->stop();
+            m_spinner->setVisible(false);
+        }
         m_installTips->setText(tr("Please reboot for switching to another driver, which may cost several minutes, please wait patiently"));
         m_installTips->setVisible(true);
         Utils::setDisablePluginList();
@@ -465,6 +469,8 @@ void MainWindow::onThemeChanged(DGuiApplicationHelper::ColorType type)
                                      "font-weight: 500;"
                                      "color: rgba(0, 0, 0, 0.9);"
                                      "}");
+
+
     } else if (type == DGuiApplicationHelper::ColorType::DarkType) {
         DGuiApplicationHelper::instance()->setThemeType(type);
         m_centerWidget->setStyleSheet("QWidget#centerWidget{"

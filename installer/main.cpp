@@ -7,6 +7,7 @@
 #include <QDebug>
 #include "graphicsdriverproxy.h"
 #include <QObject>
+#include <DSpinner>
 
 DWIDGET_USE_NAMESPACE
 DCORE_USE_NAMESPACE
@@ -100,8 +101,12 @@ void show_fail_dialog()
 }
 
 int show_install_dialog() {
-    DDialog *installDialog = dialog(qApp->translate("main", "Updating the driver, please wait..."), "://resources/icons/deepin-graphics-driver-manager-installing.svg");
 
+    DDialog *installDialog = dialog(qApp->translate("main", "Updating the driver, please wait..."), "://resources/icons/deepin-graphics-driver-manager-installing.svg");
+    installDialog->setCloseButtonVisible(false);
+    DSpinner *spinner = new DSpinner(installDialog);
+    installDialog->addContent(spinner);
+    spinner->start();
     QDBusPendingReply<void> realInstallReply =  g_graphicsDriver->RealInstall();
     realInstallReply.waitForFinished();
     if (realInstallReply.isValid()) {
@@ -115,7 +120,6 @@ int show_install_dialog() {
     } else {
         qDebug() << realInstallReply.error();
     }
-
     return installDialog->exec();
 }
 
