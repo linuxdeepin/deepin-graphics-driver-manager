@@ -14,8 +14,6 @@
 #include <QTimer>
 #include <DGuiApplicationHelper>
 
-//#define TEST_UI
-
 class QLabel;
 class ResolutionWidget: public QFrame
 {

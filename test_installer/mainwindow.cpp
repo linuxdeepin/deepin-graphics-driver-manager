@@ -13,7 +13,7 @@
 #include <DSvgRenderer>
 #include <QJsonDocument>
 #include <DApplicationHelper>
-
+#include <QMenuBar>
 
 const QString GraphicMangerServiceName = "com.deepin.graphicmanger";
 const QString GraphicMangerPath = "/com/deepin/graphicmanger";
@@ -23,11 +23,12 @@ MainWindow::MainWindow(QWidget *parent)
     : DMainWindow(parent),
     m_rebootDelay(3)
 {
-
     m_graphicsDriver = new ComDeepinDaemonGraphicsDriverInterface(
                    GraphicMangerServiceName,
                    GraphicMangerPath,
                    QDBusConnection::systemBus());
+
+    setWindowFlags(windowFlags() & ~Qt::WindowCloseButtonHint);
 
     m_installStateIcon = new QLabel;
 
@@ -47,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_cancelButton = new QPushButton;
     m_cancelButton->setText(tr("Cancel"));
     m_cancelButton->setFixedHeight(38);
-    m_cancelButton->setVisible(true);
+    m_cancelButton->setVisible(false);
 
     m_rebootButton = new QPushButton;
     m_rebootButton->setText(tr("Reboot"));
@@ -75,12 +76,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     auto *hBoxLayout = new QHBoxLayout;
     hBoxLayout->addWidget(m_cancelButton);
+    hBoxLayout->addSpacing(10);
     hBoxLayout->addWidget(m_rebootButton);
 
     centralLayout->addLayout(hBoxLayout);
     centralLayout->setContentsMargins(10, 150, 10, 10);
-    titlebar()->setTitle(" ");
-    titlebar()->setIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
     m_centerWidget = new QWidget;
     m_centerWidget->setObjectName("centerWidget");
 
@@ -90,11 +90,19 @@ MainWindow::MainWindow(QWidget *parent)
     auto *mainWidget = new QWidget;
     mainWidget->setObjectName("mainWidget");
     mainLayout->addWidget(m_centerWidget);
+    mainLayout->setContentsMargins(10, 10, 10, 10);
     setCentralWidget(mainWidget);
     centralWidget()->setLayout(mainLayout);
-
     setFixedSize(484, 682);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
+    titlebar()->setTitle(" ");
+    titlebar()->setIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
+    titlebar()->setFixedWidth(width() - 50);
+
+    m_closeButton = new CloseButton(this);
+    m_closeButton->setObjectName("closeButton");
+    m_closeButton->setVisible(true);
+    m_closeButton->setGeometry(titlebar()->width(),0,50,50);
 
     onThemeChanged(DGuiApplicationHelper::instance()->themeType());
 
@@ -104,6 +112,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
     QTimer::singleShot(0, this, &MainWindow::onInstall);
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &MainWindow::onThemeChanged);
+    connect(m_closeButton, &CloseButton::clicked, this, &MainWindow::onCancelBtnClicked);
 
 }
 
@@ -117,15 +126,17 @@ void MainWindow::onCancelBtnClicked()
     QDBusPendingReply<void> reply = m_graphicsDriver->CancelInstall();
     reply.waitForFinished();
     reboot();
+    qApp->quit();
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    QDBusPendingReply<void> reply = m_graphicsDriver->CancelInstall();
-    reply.waitForFinished();
-    Utils::resetDisablePluginList();
-    reboot();
-    qApp->quit();
+    if (!m_closeButton->isEnabled()) {
+        event->ignore();
+    } else {
+        onCancelBtnClicked();
+        qApp->quit();
+    }
 }
 
 void MainWindow::onInstall()
@@ -135,9 +146,10 @@ void MainWindow::onInstall()
     m_warningTips->setText(tr("It will auto reboot after the successful installation, please do not take any actions"));
     m_warningTips->setVisible(true);
     m_rebootButton->setVisible(false);
-
+    m_closeButton->setEnabled(false);
+    titlebar()->setQuitMenuDisabled(true);
 #ifdef TEST_UI
-    m_timer.setInterval(5000);
+    m_timer.setInterval(50);
     m_timer.start();
     m_process = 0;
     updateProgress();
@@ -172,6 +184,12 @@ void  MainWindow::onThemeChanged(DGuiApplicationHelper::ColorType type)
     if (type == DGuiApplicationHelper::ColorType::LightType) {
         DGuiApplicationHelper::instance()->setThemeType(type);
 
+        m_centerWidget->setStyleSheet("QWidget#centerWidget{"
+                                      "border-radius: 8px;"
+                                      "padding:2px 4px;"
+                                      "background-color: rgba(255, 255, 255, 1);"
+                                      "}");
+
         m_installState->setStyleSheet("QLabel {"
                                      "font-size: 14px;"
                                      "font-weight: medium;"
@@ -186,6 +204,13 @@ void  MainWindow::onThemeChanged(DGuiApplicationHelper::ColorType type)
 
     } else if (type == DGuiApplicationHelper::ColorType::DarkType) {
         DGuiApplicationHelper::instance()->setThemeType(type);
+
+        m_centerWidget->setStyleSheet("QWidget#centerWidget{"
+                                      "border-radius: 8px;"
+                                      "padding:2px 4px;"
+                                      "background-color: rgba(255, 255, 255, 0.05);"
+                                      "}");
+
         m_installState->setStyleSheet("QLabel {"
                                       "font-size: 14px;"
                                       "font-weight: medium;"
@@ -230,7 +255,9 @@ void MainWindow::reboot()
 void MainWindow::updateInstallState(bool success)
 {
     m_waterProgress->setVisible(false);
-    m_cancelButton->setVisible(false);
+    m_cancelButton->setVisible(true);
+    m_closeButton->setEnabled(true);
+    titlebar()->setQuitMenuDisabled(false);
     if (success) {
         m_installStateIcon->setVisible(true);
         m_installStateIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/success.svg", QSize(128, 128)));

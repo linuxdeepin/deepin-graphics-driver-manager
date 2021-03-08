@@ -3,6 +3,7 @@
 #define MAINWINDOW_H
 
 #include "graphicsdriverproxy.h"
+#include "closeButton.h"
 
 #include <QVBoxLayout>
 #include <QSettings>
@@ -13,11 +14,12 @@
 #include <DThemeManager>
 #include <DSuggestButton>
 #include <DGuiApplicationHelper>
+#include <QToolButton>
+
 
 
 DWIDGET_USE_NAMESPACE
 
-//#define TEST_UI
 class QLabel;
 class MainWindow : public DMainWindow
 {
@@ -46,6 +48,7 @@ private:
     QTimer m_timer;
     int m_rebootDelay;
     int m_process;
+    CloseButton *m_closeButton;
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver = nullptr;
 };
 
