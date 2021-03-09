@@ -157,7 +157,7 @@ package_install()
 check_network()
 {
     loop=0
-    while [ $loop -lt 10 ]
+    while [ $loop -lt 5 ]
     do
         sleep 1
         let loop+=1
