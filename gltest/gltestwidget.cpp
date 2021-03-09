@@ -5,8 +5,8 @@ GLTestWidget::GLTestWidget(QWidget *parent)
 {
     QThread *auto_quit_thread = new QThread();
 
-    QTimer *auto_quit_timer = new QTimer();
-    QTimer *restart_auto_quit_timer = new QTimer();
+    QTimer *auto_quit_timer = new QTimer(this);
+    QTimer *restart_auto_quit_timer = new QTimer(this);
 
     auto_quit_timer->moveToThread(auto_quit_thread);
     auto_quit_thread->start();

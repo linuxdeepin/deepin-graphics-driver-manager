@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
     QTranslator trans;
     trans.load(QString(TRANSLATIONS_DIR"/deepin-graphics-driver-manager_%1.qm").arg(lang));
     app.installTranslator(&trans);
-    GLTestWindow *w = new GLTestWindow;
-    w->show();
+    GLTestWindow w;
+    w.show();
 
     return app.exec();
 
