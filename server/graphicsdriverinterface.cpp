@@ -200,9 +200,9 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
         qDebug()<< "Cancel prepare install";
         QFile overlay_flag("/usr/lib/deepin-graphics-driver-manager/working-dir/test_in_overlay_flag");
         if (overlay_flag.exists())
-	{
-	    overlay_flag.remove();
-	}
+	    {
+	        overlay_flag.remove();
+	    }
         proc->kill();
         proc->waitForFinished(-1);
     });
@@ -218,7 +218,8 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
     const QString &sc = scriptAbsolutePath("dgradvrmgr-prepare.sh");
     const QString &old_driver = old_resl.name();
 
-    QString cmd = QString("%1 %2 %3 %4 %5 %6 %7 %8").arg(sc, removeOld, install, old_driver, new_driver, language, exit_gltest);
+    QString cmd = QString("%1 %2 %3 %4 %5 %6 %7").arg(sc, removeOld, install, old_driver, new_driver, language, exit_gltest);
+    qDebug() << "cmd: " << cmd;
     proc->start(cmd);
 }
 
@@ -360,8 +361,8 @@ void GraphicsDriverInterface::Install(QString script)
 
     connect(this, &GraphicsDriverInterface::Cancel, proc, [=]{
         qDebug()<< "Cancel install";
-	//proc->kill();
-	proc->waitForFinished(-1);
+	    //proc->kill();
+	    proc->waitForFinished(-1);
     });
 
     const QString &cmd = scriptAbsolutePath(script);

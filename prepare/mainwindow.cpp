@@ -97,10 +97,10 @@ MainWindow::MainWindow(QWidget *parent)
     auto *centralLayout = new QVBoxLayout;
     centralLayout->addWidget(m_vendorIcon);
     centralLayout->addWidget(m_vendorName);
-    centralLayout->addWidget(m_tipsIcon);
-    centralLayout->setAlignment(m_tipsIcon, Qt::AlignHCenter);
     centralLayout->addWidget(m_resolutionsWidget);
     centralLayout->addSpacing(60);
+    centralLayout->addWidget(m_tipsIcon);
+    centralLayout->setAlignment(m_tipsIcon, Qt::AlignHCenter);
     centralLayout->addWidget(m_spinner);
     centralLayout->setAlignment(m_spinner, Qt::AlignHCenter);
     centralLayout->addWidget(m_installTips);
@@ -167,6 +167,8 @@ void MainWindow::noResolutions()
     m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
     m_warningTips->setText(tr("Your hardware is not supported currently, please wait for future version."));
     m_warningTips->setVisible(true);
+    m_vendorName->setVisible(false);
+    m_vendorIcon->setVisible(false);
     m_resolutionsWidget->setVisible(false);
     m_toggleButton->setVisible(false);
 }
@@ -416,7 +418,11 @@ void MainWindow::onPreInstallProgress(int progress)
         m_warningTips->setVisible(false);
         m_rebootButton->setVisible(false);
         m_cancelButton->setVisible(true);
-        //m_installTips->setText("Preparation for installation failed");
+        m_tipsIcon->setVisible(true);
+        m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
+        m_vendorIcon->setVisible(false);
+        m_vendorName->setVisible(false);
+        m_installTips->setText("Preparation for installation failed");
         m_installTips->setVisible(true);
         Utils::resetDisablePluginList();
         if (m_spinner->isPlaying()) {
