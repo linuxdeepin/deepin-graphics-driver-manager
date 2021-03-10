@@ -53,7 +53,10 @@ overlayroot_enable() {
 }
 
 overlayroot_save() {
-    overlayroot-chroot cp -f /run/overlayroot/overlayroot.img ${OVERLAYROOT_IMAGE}
+    #overlayroot-chroot cp -f /run/overlayroot/overlayroot.img ${OVERLAYROOT_IMAGE}
+    POSTOS=`cat /proc/mounts | awk '{if ($2 == "/media/root-ro") print $1}'`
+    mount -o remount,rw $POSTOS /media/root-ro
+    cp -f /run/overlayroot/overlayroot.img ${OVERLAY_LOWDIR}/${OVERLAYROOT_IMAGE}
 }
  
 cleanWorking() {

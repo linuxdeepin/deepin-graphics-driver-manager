@@ -16,7 +16,7 @@ check_network || error_exit "The network is not working, please check the networ
 
 #apt-get update
 apt_update || error_exit "Execute apt update failed" ${APT_UPDATE_ERROR}
-　
+
 #remove old driver
 $REMOVE_OLD_G 
 if [ $? != 0 ]; then
