@@ -58,6 +58,7 @@ void GLTestWindow::onAccept()
 {
     QDBusPendingReply<void> reply = m_graphicsDriver->TestSuccess();
     reply.waitForFinished();
+    QProcess::startDetached("dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true");
     qApp->exit(0);
 }
 
@@ -65,5 +66,6 @@ void GLTestWindow::onCancel()
 {
     QDBusPendingReply<void> reply = m_graphicsDriver->CancelInstall();
     reply.waitForFinished();
+    QProcess::startDetached("dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager.Reboot boolean:true");
     qApp->exit(-1);
 }
