@@ -343,7 +343,7 @@ void MainWindow::onResolutionSelected()
     qInfo() << "m_usedIndex = " << m_usedIndex;
     qInfo() << "m_selectedIndex = " << m_selectedIndex;
 
-    m_updateButton->setVisible(rw->canUpdate());
+    m_updateButton->setVisible(rw->canUpdate() && !rw->isEnabled());
     m_toggleButton->setVisible(!m_updateButton->isVisible() && m_selectedIndex != m_usedIndex);
     m_okButton->setVisible(!(m_updateButton->isVisible() || m_toggleButton->isVisible()));
 }
