@@ -4,12 +4,12 @@
     <message>
         <location filename="../gltest/gltestwindow.cpp" line="18"/>
         <source>Apply</source>
-        <translation>应用</translation>
+        <translation>应 用</translation>
     </message>
     <message>
         <location filename="../gltest/gltestwindow.cpp" line="19"/>
         <source>Cancel</source>
-        <translation>取消</translation>
+        <translation>取 消</translation>
     </message>
     <message>
         <location filename="../gltest/gltestwindow.cpp" line="20"/>
@@ -22,7 +22,7 @@
     <message>
         <location filename="../prepare/mainwindow.cpp" line="38"/>
         <source>Switch</source>
-        <translation>切换</translation>
+        <translation>切 换</translation>
     </message>
     <message>
         <location filename="../prepare/mainwindow.cpp" line="61"/>
@@ -38,12 +38,12 @@
         <location filename="../prepare/mainwindow.cpp" line="71"/>
         <location filename="../test_installer/mainwindow.cpp" line="48"/>
         <source>Cancel</source>
-        <translation>取消</translation>
+        <translation>取 消</translation>
     </message>
     <message>
         <location filename="../prepare/mainwindow.cpp" line="76"/>
         <source>OK</source>
-        <translation>确定</translation>
+        <translation>确 定</translation>
     </message>
     <message>
         <location filename="../prepare/mainwindow.cpp" line="157"/>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../test_installer/mainwindow.cpp" line="53"/>
         <source>Reboot</source>
-        <translation>重启</translation>
+        <translation>重 启</translation>
     </message>
     <message>
         <location filename="../test_installer/mainwindow.cpp" line="167"/>
@@ -133,12 +133,12 @@
     <message>
         <location filename="../prepare/resolution.h" line="14"/>
         <source>Only adaptive to parts of distributions and graphics cards, and it may cause a black screen</source>
-        <translation>只适配了部分发行版和部分显卡，会出现版本不兼容、显卡不支持而导致黑屏</translation>
+        <translation>只适配了部分发行版和部分显卡，可能会出现版本不兼容、显卡不支持而导致黑屏</translation>
     </message>
     <message>
         <location filename="../prepare/resolution.h" line="15"/>
         <source>Poor performance, unstable in some graphics cards</source>
-        <translation>性能较弱，在部分显卡上不稳定</translation>
+        <translation>性能较弱，在部分显卡上可能不稳定</translation>
     </message>
     <message>
         <location filename="../prepare/resolution.h" line="16"/>
@@ -201,12 +201,12 @@
     <message>
         <location filename="../installer/main.cpp" line="51"/>
         <source>Cancel</source>
-        <translation>取消</translation>
+        <translation>取 消</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="52"/>
         <source>Reboot</source>
-        <translation>重启</translation>
+        <translation>重 启</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="90"/>

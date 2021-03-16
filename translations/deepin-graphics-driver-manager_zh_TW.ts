@@ -4,12 +4,12 @@
     <message>
         <location filename="../gltest/gltestwindow.cpp" line="18"/>
         <source>Apply</source>
-        <translation>套用</translation>
+        <translation>套 用</translation>
     </message>
     <message>
         <location filename="../gltest/gltestwindow.cpp" line="19"/>
         <source>Cancel</source>
-        <translation>取消</translation>
+        <translation>取 消</translation>
     </message>
     <message>
         <location filename="../gltest/gltestwindow.cpp" line="20"/>
@@ -22,7 +22,7 @@
     <message>
         <location filename="../prepare/mainwindow.cpp" line="38"/>
         <source>Switch</source>
-        <translation>切換</translation>
+        <translation>切 換</translation>
     </message>
     <message>
         <location filename="../prepare/mainwindow.cpp" line="61"/>
@@ -38,12 +38,12 @@
         <location filename="../prepare/mainwindow.cpp" line="71"/>
         <location filename="../test_installer/mainwindow.cpp" line="48"/>
         <source>Cancel</source>
-        <translation>取消</translation>
+        <translation>取 消</translation>
     </message>
     <message>
         <location filename="../prepare/mainwindow.cpp" line="76"/>
         <source>OK</source>
-        <translation>確定</translation>
+        <translation>確 定</translation>
     </message>
     <message>
         <location filename="../prepare/mainwindow.cpp" line="157"/>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../test_installer/mainwindow.cpp" line="53"/>
         <source>Reboot</source>
-        <translation>重啟</translation>
+        <translation>重 啟</translation>
     </message>
     <message>
         <location filename="../test_installer/mainwindow.cpp" line="167"/>
@@ -201,12 +201,12 @@
     <message>
         <location filename="../installer/main.cpp" line="51"/>
         <source>Cancel</source>
-        <translation>取消</translation>
+        <translation>取 消</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="52"/>
         <source>Reboot</source>
-        <translation>重啟</translation>
+        <translation>重 啟</translation>
     </message>
     <message>
         <location filename="../installer/main.cpp" line="90"/>

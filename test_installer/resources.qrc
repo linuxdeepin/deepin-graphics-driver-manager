@@ -6,6 +6,7 @@
         <file>resources/icons/NVIDIA.svg</file>
         <file>resources/icons/success.svg</file>
         <file>resources/icons/select.svg</file>
+        <file>resources/icons/select_dark.svg</file>
         <file>resources/icons/fail.svg</file>
         <file>resources/icons/close_normal.svg</file>
         <file>resources/icons/deepin-graphics-driver-manager-64px.svg</file>
