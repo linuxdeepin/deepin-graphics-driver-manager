@@ -22,8 +22,8 @@ ResolutionWidget::~ResolutionWidget()
 void ResolutionWidget::initUI()
 {
     m_checkedBtn = new QLabel;
-    m_checkedBtn->setPixmap(Utils::hidpiPixmap(":/resources/icons/select.svg", QSize(24, 24)));
-    m_checkedBtn->setFixedSize(24, 24);
+//    m_checkedBtn->setPixmap(Utils::hidpiPixmap(":/resources/icons/select.svg", QSize(16, 16)));
+//    m_checkedBtn->setFixedSize(16, 16);
 
     m_title = new QLabel;
     m_title->setText(m_resolution.title());
@@ -62,14 +62,14 @@ void ResolutionWidget::initUI()
     centralLayout->addWidget(m_checkedBtn);
     centralLayout->setAlignment(m_checkedBtn, Qt::AlignTop | Qt::AlignRight);
     centralLayout->setSpacing(3);
-    centralLayout->setContentsMargins(10, 10, 0, 10);
+    centralLayout->setContentsMargins(10, 10, 10, 10);
 
     setLayout(centralLayout);
-
+    onThemeChanged(DGuiApplicationHelper::instance()->themeType());
     setChecked(m_resolution.enable());
     setObjectName("ResolutionWidget");
 
-    onThemeChanged(DGuiApplicationHelper::instance()->themeType());
+
 }
 
 void ResolutionWidget::setChecked(const bool checked)
@@ -142,6 +142,9 @@ void ResolutionWidget::onThemeChanged(DGuiApplicationHelper::ColorType type)
                       "border-radius: 8px"
                       "}");
 
+        m_checkedBtn->setPixmap(Utils::hidpiPixmap(":/resources/icons/select.svg", QSize(16, 16)));
+        m_checkedBtn->setFixedSize(16, 16);
+
     } else if (type == DGuiApplicationHelper::ColorType::DarkType) {
         DGuiApplicationHelper::instance()->setThemeType(type);
         m_version->setStyleSheet("QLabel {"
@@ -164,6 +167,9 @@ void ResolutionWidget::onThemeChanged(DGuiApplicationHelper::ColorType type)
                       "background-color: rgba(255, 255, 255, 0.05);"
                       "border-radius: 8px"
                       "}");
+
+        m_checkedBtn->setPixmap(Utils::hidpiPixmap(":/resources/icons/select_dark.svg", QSize(16, 16)));
+        m_checkedBtn->setFixedSize(16, 16);
     }
 }
 

@@ -9,8 +9,6 @@ else()
   add_definitions("-DRESOURCES_DIR=\"${CMAKE_INSTALL_PREFIX}/share/deepin-graphics-driver-manager/prepare/\"")
 endif()
 
-configure_file(environments.h.in environments.h @ONLY)
-
 find_package(PkgConfig REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5DBus REQUIRED)

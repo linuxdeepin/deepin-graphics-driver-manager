@@ -81,12 +81,20 @@ MainWindow::MainWindow(QWidget *parent)
     m_okButton->setFixedHeight(38);
     m_okButton->setVisible(false);
 
+
     m_vendorIcon = new QLabel;
     m_vendorIcon->setAlignment(Qt::AlignCenter);
+    m_vendorIcon->setFixedSize(140, 140);
+    //m_vendorIcon->setFrameShape(QFrame::Box);
+
     m_vendorName = new QLabel;
     m_vendorName->setWordWrap(true);
-    m_vendorName->setAlignment(Qt::AlignCenter);
+    m_vendorName->setAlignment(Qt::AlignHCenter | Qt::AlignTop);
     m_vendorName->setFixedHeight(54);
+    m_vendorName->setContentsMargins(10, 0, 10, 0);
+    //m_vendorName->setFrameShape(QFrame::Box);
+
+
 
     m_resolutionsLayout = new QVBoxLayout;
     m_resolutionsLayout->setContentsMargins(0, 0, 0, 0);
@@ -96,7 +104,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     auto *centralLayout = new QVBoxLayout;
     centralLayout->addWidget(m_vendorIcon);
+    centralLayout->setAlignment(m_vendorIcon, Qt::AlignHCenter);
+    centralLayout->addSpacing(10);
     centralLayout->addWidget(m_vendorName);
+    centralLayout->addSpacing(10);
     centralLayout->addWidget(m_resolutionsWidget);
     centralLayout->addSpacing(60);
     centralLayout->addWidget(m_tipsIcon);
@@ -343,7 +354,7 @@ void MainWindow::onResolutionSelected()
     qInfo() << "m_usedIndex = " << m_usedIndex;
     qInfo() << "m_selectedIndex = " << m_selectedIndex;
 
-    m_updateButton->setVisible(rw->canUpdate());
+    m_updateButton->setVisible(rw->canUpdate() && !rw->isEnabled());
     m_toggleButton->setVisible(!m_updateButton->isVisible() && m_selectedIndex != m_usedIndex);
     m_okButton->setVisible(!(m_updateButton->isVisible() || m_toggleButton->isVisible()));
 }

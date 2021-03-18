@@ -6,6 +6,8 @@ endif()
 
 project(deepin-graphics-driver-manager)
 
+configure_file(${CMAKE_SOURCE_DIR}/utils/environments.h.in ${CMAKE_SOURCE_DIR}/utils/environments.h @ONLY)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)

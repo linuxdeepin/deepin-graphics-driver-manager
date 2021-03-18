@@ -43,6 +43,8 @@ MainWindow::MainWindow(QWidget *parent)
     m_warningTips->setVisible(false);
     m_warningTips->setWordWrap(true);
     m_warningTips->setObjectName("Warning");
+    //m_warningTips->setFrameShape(QFrame::Box);
+
 
 
     m_cancelButton = new QPushButton;
@@ -71,12 +73,12 @@ MainWindow::MainWindow(QWidget *parent)
     centralLayout->setAlignment(m_installState, Qt::AlignHCenter);
     centralLayout->addSpacing(10);
     centralLayout->addWidget(m_warningTips);
-    centralLayout->setAlignment(m_warningTips, Qt::AlignCenter);
+    //centralLayout->setAlignment(m_warningTips, Qt::AlignHCenter);
     centralLayout->addStretch();
 
     auto *hBoxLayout = new QHBoxLayout;
     hBoxLayout->addWidget(m_cancelButton);
-    hBoxLayout->addSpacing(10);
+    hBoxLayout->addSpacing(3);
     hBoxLayout->addWidget(m_rebootButton);
 
     centralLayout->addLayout(hBoxLayout);
@@ -220,7 +222,7 @@ void  MainWindow::onThemeChanged(DGuiApplicationHelper::ColorType type)
         m_warningTips->setStyleSheet("QLabel {"
                                      "font-size: 12px;"
                                      "font-weight: normal;"
-                                     "color: #c0c6d4;"
+                                     "color: rgba(255, 255, 255, 0.7);"
                                      "}");
     }
 }
