@@ -118,9 +118,11 @@ void GraphicsDeviceInfo::init()
             flag= DeviceFlag::AMD;
         }
 
-        if (!isNotebook() && !boot_vga)continue;
-
         m_sysDevFlag |= flag;
+
+        if (!isNotebook() && !boot_vga) {
+            continue;
+        }
         Device device = Device(devName, devInfo, driver, boot_vga, flag);
         m_devices.append(device);
         if(boot_vga){
