@@ -109,7 +109,7 @@ MainWindow::MainWindow(QWidget *parent)
     centralLayout->addWidget(m_vendorName);
     centralLayout->addSpacing(10);
     centralLayout->addWidget(m_resolutionsWidget);
-    centralLayout->addSpacing(60);
+    centralLayout->addSpacing(50);
     centralLayout->addWidget(m_tipsIcon);
     centralLayout->setAlignment(m_tipsIcon, Qt::AlignHCenter);
     centralLayout->addWidget(m_spinner);
@@ -125,7 +125,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     auto *hBoxLayout = new QHBoxLayout;
     hBoxLayout->addWidget(m_cancelButton);
-    hBoxLayout->addSpacing(10);
+    hBoxLayout->addSpacing(8);
     hBoxLayout->addWidget(m_rebootButton);
 
 
