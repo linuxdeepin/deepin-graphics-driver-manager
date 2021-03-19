@@ -125,7 +125,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     auto *hBoxLayout = new QHBoxLayout;
     hBoxLayout->addWidget(m_cancelButton);
-    hBoxLayout->addSpacing(10);
+    hBoxLayout->addSpacing(8);
     hBoxLayout->addWidget(m_rebootButton);
 
 
