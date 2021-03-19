@@ -22,12 +22,12 @@ ComDeepinDaemonGraphicsDriverInterface *g_graphicsDriver = nullptr;
 DDialog *dialog(const QString &message, const QString &iconName)
 {
     const auto ratio = qApp->devicePixelRatio();
-    QPixmap iconPix = QIcon::fromTheme(iconName).pixmap(QSize(64, 64) * ratio);
+    QPixmap iconPix = QIcon::fromTheme(iconName).pixmap(QSize(32, 32) * ratio);
     iconPix.setDevicePixelRatio(ratio);
 
     DDialog *d = new DDialog;
     d->setMessage(message);
-    d->setIcon(iconPix, QSize(64, 64));
+    d->setIcon(iconPix, QSize(32, 32));
     return d;
 }
 
@@ -92,7 +92,7 @@ void show_fail_dialog()
 
     new_driver = qApp->translate("Resolution", new_driver.toStdString().c_str());
     old_driver = qApp->translate("Resolution", old_driver.toStdString().c_str());
-    DDialog *d = dialog(message.arg(new_driver).arg(old_driver), "dialog-warning");
+    DDialog *d = dialog(message.arg(new_driver).arg(old_driver), "://resources/icons/deepin-dialog-warning.svg");
     d->addButton(qApp->translate("main", "Submit Feedback"));
 
     QObject::connect(d, &DDialog::buttonClicked, [=] { QProcess::startDetached("deepin-feedback"); });
