@@ -64,10 +64,12 @@ cleanWorking() {
         [ -e "${OVERLAY_LOWDIR}/${TEST_IN_OVERLAY_G}" ] && /usr/sbin/overlayroot-chroot rm -rf $TEST_IN_OVERLAY_G
         [ -e "${OVERLAY_LOWDIR}/${REMOVE_OLD_G}" ] && /usr/sbin/overlayroot-chroot rm -rf $REMOVE_OLD_G
         [ -e "${OVERLAY_LOWDIR}/${INSTALL_NEW_G}" ] && /usr/sbin/overlayroot-chroot rm -rf $INSTALL_NEW_G
+        [ -e "${OVERLAY_LOWDIR}/${GLTEST_FLAG}" ] && /usr/sbin/overlayroot-chroot rm -rf $GLTEST_FLAG
     else
         [ -e "${TEST_IN_OVERLAY_G}" ] && rm -rf $TEST_IN_OVERLAY_G
         [ -e "${REMOVE_OLD_G}" ] && rm -rf $REMOVE_OLD_G
         [ -e "${INSTALL_NEW_G}" ] && rm -rf $INSTALL_NEW_G
+        [ -e "${GLTEST_FLAG}" ] && rm -rf $GLTEST_FLAG
     fi
     overlayroot_disable
 }

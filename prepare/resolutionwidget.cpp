@@ -31,9 +31,14 @@ void ResolutionWidget::initUI()
     m_title->setAlignment(Qt::AlignLeft | Qt::AlignBottom);
     m_title->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
 
+    QString version = m_resolution.currVersion();
+    if ( version.isEmpty() )
+    {
+        version = m_resolution.repVersion();
+    }
 
     m_version = new QLabel;
-    m_version->setText(tr("Driver/Version: %1/%2").arg(m_resolution.driver()).arg(m_resolution.currVersion()));
+    m_version->setText(tr("Driver/Version: %1/%2").arg(m_resolution.driver()).arg(version));
     m_version->setWordWrap(true);
     m_version->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     m_version->setAlignment(Qt::AlignTop | Qt::AlignLeft);
