@@ -16,7 +16,9 @@ GLTestWindow::GLTestWindow(QWidget *parent)
                 nullptr);
 
     m_acceptBtn = new QPushButton(tr("Apply"));
+    m_acceptBtn->setFocusPolicy(Qt::NoFocus);
     m_cancelBtn = new QPushButton(tr("Cancel"));
+    m_cancelBtn->setFocusPolicy(Qt::NoFocus);
     m_tipsLabel = new QLabel(tr("Please ensure the driver works normally without blurred screen and screen tearing"));
     m_tipsLabel->setAlignment(Qt::AlignCenter);
 
