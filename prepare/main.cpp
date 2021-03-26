@@ -69,7 +69,7 @@ int main(int argc, char* argv[])
     RollingFileAppender *rollingFileAppender = new RollingFileAppender(log_file);
     rollingFileAppender->setFormat(logFormat);
     rollingFileAppender->setLogFilesLimit(5);
-    rollingFileAppender->setDatePattern(RollingFileAppender::MinutelyRollover);
+    rollingFileAppender->setDatePattern(RollingFileAppender::DailyRollover);
 
     logger->registerAppender(consoleAppender);
     logger->registerAppender(rollingFileAppender);
