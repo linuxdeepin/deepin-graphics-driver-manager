@@ -229,6 +229,7 @@ void  MainWindow::onThemeChanged(DGuiApplicationHelper::ColorType type)
 
 void MainWindow::updateProgress()
 {
+    qInfo() << QString("complete progress: %1").arg(m_process);
     if (m_process < 100 && m_process >= 0) {
         if (m_process == 0) {
             m_waterProgress->start();

@@ -32,6 +32,15 @@ int main(int argc, char* argv[])
     if (!app.setSingleInstance("dgradvrmgr"))
         return -1;
 
+    QProcess *process = new QProcess;
+    process->setProcessChannelMode(QProcess::MergedChannels);
+    QStringList args{"-c", "ps aux | grep /usr/lib/deepin-graphics-driver-manager |grep -v grep"};
+    process->start("/bin/bash", args);
+    process->waitForFinished(-1);
+    if (!process->exitCode()){
+        qInfo() << "The graphics driver manager is already working";
+        return -1;
+    }
 
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
     app.setOrganizationName("deepin");
@@ -60,7 +69,7 @@ int main(int argc, char* argv[])
     RollingFileAppender *rollingFileAppender = new RollingFileAppender(log_file);
     rollingFileAppender->setFormat(logFormat);
     rollingFileAppender->setLogFilesLimit(5);
-    rollingFileAppender->setDatePattern(RollingFileAppender::MinutelyRollover);
+    rollingFileAppender->setDatePattern(RollingFileAppender::DailyRollover);
 
     logger->registerAppender(consoleAppender);
     logger->registerAppender(rollingFileAppender);
