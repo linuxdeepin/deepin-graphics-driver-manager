@@ -14,10 +14,9 @@ apt-get -y --reinstall --allow-downgrades install \
     xserver-xorg-video-nvidia
 
 packages=(
-    "bumblebee"
     "bumblebee-nvidia"
-    "nvidia-driver"
-    "xserver-xorg-video-nvidia"   
+    "primus"
+    "primus-libs"
 )
 
 package_install "${packages[*]}" "${#packages[*]}"
