@@ -25,5 +25,15 @@ Section "Device"
 EndSection
 EOF
 
+cat  > /etc/lightdm/display_setup.sh <<EOF
+#!/bin/sh
+xrandr --setprovideroffloadsink 1 0
+xrandr --auto
+EOF
+
+chmod +x /etc/lightdm/display_setup.sh
+
+sed -i '/^\[Seat\:\*\]/a\display-setup-script=\/etc\/lightdm\/display_setup.sh' /etc/lightdm/lightdm.conf
+
 echo -e '#!/bin/sh\nexport __NV_PRIME_RENDER_OFFLOAD=1\nexport __GLX_VENDOR_LIBRARY_NAME=nvidia\n/usr/lib/deepin-graphics-driver-manager/gltest\n' > /tmp/deepin-prime-gltest
 chmod a+x /tmp/deepin-prime-gltest
