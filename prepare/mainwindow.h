@@ -52,6 +52,7 @@ private Q_SLOTS:
     void onToggleBtnClicked();
     void onRebootBtnClicked();
     void onCancelBtnClicked();
+    void onTryClicked();
     void onPreInstallProgress(int progress);
     void onThemeChanged(DGuiApplicationHelper::ColorType type);
 
@@ -74,6 +75,7 @@ private:
     QPushButton *m_updateButton;
     DSuggestButton *m_rebootButton;
     QPushButton *m_cancelButton;
+    QPushButton *m_tryButton;
     QPushButton *m_okButton;
     ComDeepinDaemonGraphicsDriverInterface *m_graphicsDriver = nullptr;
     DeviceList m_devices;

@@ -160,7 +160,7 @@ void init()
     }
 
     qDebug() << "testSuccess is:" << testSuccess;
-    if (testSuccess || true) {
+    if (testSuccess) {
         const int exitCode = show_install_dialog();
         qDebug() << "show_install_dialog exitCode" << exitCode;
         if (exitCode == 0) {

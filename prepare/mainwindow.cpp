@@ -76,6 +76,11 @@ MainWindow::MainWindow(QWidget *parent)
     m_cancelButton->setFixedHeight(38);
     m_cancelButton->setVisible(false);
 
+    m_tryButton = new DSuggestButton;
+    m_tryButton->setText(tr("Try Again"));
+    m_tryButton->setFixedHeight(38);
+    m_tryButton->setVisible(false);
+
     m_okButton = new QPushButton;
     m_okButton->setText(tr("OK"));
     m_okButton->setFixedHeight(38);
@@ -127,6 +132,7 @@ MainWindow::MainWindow(QWidget *parent)
     hBoxLayout->addWidget(m_cancelButton);
     hBoxLayout->addSpacing(8);
     hBoxLayout->addWidget(m_rebootButton);
+    hBoxLayout->addWidget(m_tryButton);
 
 
     centralLayout->addLayout(hBoxLayout);
@@ -157,6 +163,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_updateButton, &QPushButton::clicked, this, &MainWindow::onToggleBtnClicked);
     connect(m_rebootButton, &QPushButton::clicked, this, &MainWindow::onRebootBtnClicked);
     connect(m_cancelButton, &QPushButton::clicked, this, &MainWindow::onCancelBtnClicked);
+    connect(m_tryButton, &QPushButton::clicked, this, &MainWindow::onTryClicked);
     connect(m_okButton, &QPushButton::clicked, qApp, &QApplication::quit);
     connect(DGuiApplicationHelper::instance(), &DGuiApplicationHelper::themeTypeChanged, this, &MainWindow::onThemeChanged);
 
@@ -391,6 +398,21 @@ void MainWindow::onCancelBtnClicked()
     qApp->quit();
 }
 
+void MainWindow::onTryClicked()
+{
+    qInfo() << "onTryClicked";
+    auto *new_driver_widget = dynamic_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());
+    connect(new_driver_widget, &ResolutionWidget::preInstallProgress, this, &MainWindow::onPreInstallProgress);
+    m_startPreInstall = false;
+    m_tipsIcon->setVisible(false);
+    m_tryButton->setVisible(false);
+    setVendorIcon();
+    m_vendorIcon->setVisible(true);
+    m_vendorName->setVisible(true);
+    m_installTips->setVisible(false);
+    new_driver_widget->prepareInstall();
+}
+
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
@@ -430,10 +452,13 @@ void MainWindow::onPreInstallProgress(int progress)
         m_rebootButton->setVisible(false);
         m_cancelButton->setVisible(true);
         m_tipsIcon->setVisible(true);
+        m_tryButton->setVisible(true);
+        m_cancelButton->setEnabled(true);
+        m_tryButton->setEnabled(true);
         m_tipsIcon->setPixmap(Utils::hidpiPixmap(":/resources/icons/fail.svg", QSize(128, 128)));
         m_vendorIcon->setVisible(false);
         m_vendorName->setVisible(false);
-        m_installTips->setText("Preparation for installation failed");
+        m_installTips->setText(tr("Preparation failed for driver switching"));
         m_installTips->setVisible(true);
         Utils::resetDisablePluginList();
         if (m_spinner->isPlaying()) {
