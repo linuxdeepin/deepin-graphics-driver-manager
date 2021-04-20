@@ -8,14 +8,23 @@
 #include "graphicsdriverproxy.h"
 #include <QObject>
 #include <DSpinner>
+#include <QCloseEvent>
+#include <QEvent>
+
 
 DWIDGET_USE_NAMESPACE
 DCORE_USE_NAMESPACE
 
-
-
 const QString GraphicMangerServiceName = "com.deepin.graphicmanger";
 const QString GraphicMangerPath = "/com/deepin/graphicmanger";
+
+class My_DDialog : public DDialog
+{
+protected:
+    void closeEvent(QCloseEvent *event){
+        event->ignore();
+    }
+};
 
 ComDeepinDaemonGraphicsDriverInterface *g_graphicsDriver = nullptr;
 
@@ -30,6 +39,21 @@ DDialog *dialog(const QString &message, const QString &iconName)
     d->setIcon(iconPix, QSize(32, 32));
     return d;
 }
+
+
+My_DDialog *my_dialog(const QString &message, const QString &iconName)
+{
+    const auto ratio = qApp->devicePixelRatio();
+    QPixmap iconPix = QIcon::fromTheme(iconName).pixmap(QSize(32, 32) * ratio);
+    iconPix.setDevicePixelRatio(ratio);
+
+    My_DDialog *d = new My_DDialog;
+    d->setMessage(message);
+    d->setIcon(iconPix, QSize(32, 32));
+    return d;
+}
+
+
 
 void show_success_dialog()
 {
@@ -102,8 +126,7 @@ void show_fail_dialog()
 
 int show_install_dialog() {
 
-    DDialog *installDialog = dialog(qApp->translate("main", "Updating the driver, please wait..."), "://resources/icons/deepin-graphics-driver-manager-installing.svg");
-    installDialog->setCloseButtonVisible(false);
+    My_DDialog *installDialog = my_dialog(qApp->translate("main", "Updating the driver, please wait..."), "://resources/icons/deepin-graphics-driver-manager-installing.svg");
     DSpinner *spinner = new DSpinner(installDialog);
     installDialog->addContent(spinner);
     spinner->start();
@@ -137,7 +160,7 @@ void init()
     }
 
     qDebug() << "testSuccess is:" << testSuccess;
-    if (testSuccess) {
+    if (testSuccess || true) {
         const int exitCode = show_install_dialog();
         qDebug() << "show_install_dialog exitCode" << exitCode;
         if (exitCode == 0) {
