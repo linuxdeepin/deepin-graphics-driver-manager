@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 
     //设置日志
     const QString logFormat = "%{time}{yyyyMMdd.HH:mm:ss.zzz}[%{type:1}][%{function:-35} %{line:-4} %{threadid} ] %{message}\n";
-    const QString log_file(QString("/var/log/deepin/deepin-graphics-driver-manager-server.log"));
+    const QString log_file(QString("/var/log/deepin-graphics-driver-manager-server.log"));
     ConsoleAppender *consoleAppender = new ConsoleAppender;
     consoleAppender->setFormat(logFormat);
     RollingFileAppender *rollingFileAppender = new RollingFileAppender(log_file);
