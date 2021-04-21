@@ -7,12 +7,6 @@ fi
 
 . /usr/lib/deepin-graphics-driver-manager/common.sh
 
-apt-get -y --reinstall --allow-downgrades install \
-    bumblebee \
-    bumblebee-nvidia \
-    nvidia-driver \
-    xserver-xorg-video-nvidia
-
 packages=(
     "bumblebee-nvidia"
     "primus"
