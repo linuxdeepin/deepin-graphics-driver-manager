@@ -8,9 +8,12 @@ fi
 . /usr/lib/deepin-graphics-driver-manager/common.sh
 
 packages=(
+    "nvidia-driver"
     "bumblebee-nvidia"
     "primus"
     "primus-libs"
 )
+
+systemctl  enable  bumblebeed.service
 
 package_install "${packages[*]}" "${#packages[*]}"
