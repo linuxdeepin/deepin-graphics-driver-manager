@@ -14,6 +14,6 @@ packages=(
     "primus-libs"
 )
 
-systemctl  enable  bumblebeed.service
-
 package_install "${packages[*]}" "${#packages[*]}"
+
+systemctl  enable  bumblebeed.service
