@@ -154,6 +154,7 @@ MainWindow::MainWindow(QWidget *parent)
     centralWidget()->setLayout(mainLayout);
 
     setFixedSize(484, 682);
+    setWindowFlags(windowFlags()&~Qt::WindowMinMaxButtonsHint|Qt::WindowMinimizeButtonHint);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
 
     onThemeChanged(DGuiApplicationHelper::instance()->themeType());
