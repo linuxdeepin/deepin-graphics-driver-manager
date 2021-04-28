@@ -7,8 +7,8 @@
             "title": "Unofficial driver",
             "name": "nouveau",
             "description": "Poor performance, unstable in some graphics cards",
-            "driver": "xxx",
-            "currVersion": "yyy",
+            "driver": "driver_name",
+            "currVersion": "xxx",
             "depoVersion": "yyy",
             "enable": true
         },
@@ -16,8 +16,8 @@
             "title": "Official driver",
             "name": "nvidia",
             "description": "Only adaptive to parts of distributions and graphics cards, and it may cause a black screen",
-            "driver": "xxx",
-            "currVersion": "yyy",
+            "driver": "driver_name",
+            "currVersion": "xxx",
             "depoVersion": "yyy",
             "enable": false
         }

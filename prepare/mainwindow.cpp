@@ -289,7 +289,7 @@ void MainWindow::loadResolutions()
 
     qInfo() << strResolution;
     QJsonObject resolutionRoot = Utils::QStringToJson(strResolution);
-
+    qInfo() << resolutionRoot;
     QJsonArray resolutions = resolutionRoot["resolutions"].toArray();
     if (resolutions.empty()) {
         noResolutions();
@@ -328,7 +328,9 @@ void MainWindow::loadResolutions()
             connect(rw, &ResolutionWidget::clicked, this, &MainWindow::onResolutionSelected);
             if (solution.enable()) {
                 m_usedIndex = index;
+                m_selectedIndex = index;
                 qInfo() << "m_usedIndex = " << m_usedIndex;
+                qInfo() << "m_selectedIndex = " << m_selectedIndex;
                 if (rw->canUpdate()) {
                     m_updateButton->setVisible(true);
                     m_toggleButton->setVisible(false);
@@ -361,7 +363,7 @@ void MainWindow::onResolutionSelected()
     qInfo() << "m_usedIndex = " << m_usedIndex;
     qInfo() << "m_selectedIndex = " << m_selectedIndex;
 
-    m_updateButton->setVisible(rw->canUpdate() && !rw->isEnabled());
+    m_updateButton->setVisible(rw->canUpdate());
     m_toggleButton->setVisible(!m_updateButton->isVisible() && m_selectedIndex != m_usedIndex);
     m_okButton->setVisible(!(m_updateButton->isVisible() || m_toggleButton->isVisible()));
 }
@@ -376,7 +378,7 @@ void MainWindow::onUpdateBtnClicked()
 
 void MainWindow::onToggleBtnClicked()
 {
-    Q_ASSERT(m_selectedIndex != m_usedIndex);
+    //Q_ASSERT(m_selectedIndex != m_usedIndex);
     m_updateButton->setEnabled(false);
     m_toggleButton->setEnabled(false);
     auto *new_driver_widget = dynamic_cast<ResolutionWidget *>(m_resolutionsLayout->itemAt(m_selectedIndex)->widget());

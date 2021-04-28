@@ -128,6 +128,9 @@ QString GraphicsDriverInterface::GetResolutionTitle()
         QString depo_version;
         if ("nvidia" == resl.driver()){
             curr_version = GetCurrPackageVersion("nvidia-driver");
+            if (curr_version.isEmpty()){
+                curr_version = GetCurrPackageVersion("nvidia-driver-bin");
+            }
             depo_version = GetDepoPackageVersion("nvidia-driver");
         }else{
             curr_version = GetKernelVersion();
@@ -156,10 +159,10 @@ void GraphicsDriverInterface::PrepareInstall(QString name, QString language)
         qWarning("Resolution name is invalid!");
         return;
     }
-    if ( name == old_name ){
-        qWarning("The new resolution and the old one cannot be the same!");
-        return;
-    }
+    // if ( name == old_name ){
+    //     qWarning("The new resolution and the old one cannot be the same!");
+    //     return;
+    // }
     new_resl = m_resolutions.getResolutionByName(name);
     if ( new_resl.isNull() ){
         qWarning("Faild to get new resolution!");

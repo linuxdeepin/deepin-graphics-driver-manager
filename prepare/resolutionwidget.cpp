@@ -119,7 +119,7 @@ void  ResolutionWidget::prepareInstall()
 
 bool ResolutionWidget::canUpdate()
 {
-    return m_resolution.currVersion().compare(m_resolution.repVersion()) < 0;
+    return m_resolution.currVersion().compare(m_resolution.repVersion()) < 0 && m_resolution.enable();
 }
 
 void ResolutionWidget::onThemeChanged(DGuiApplicationHelper::ColorType type)
