@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
     app.setApplicationName("deepin-graphics-driver-manager-server");
 
     //设置日志
-    const QString logFormat = "%{time}{yyyyMMdd.HH:mm:ss.zzz}[%{type:1}][%{function:-35} %{line:-4} %{threadid} ] %{message}\n";
+    const QString logFormat = "%{time}{yyyyMMdd.HH:mm:ss.zzz}[%{type:1}][%{function:-40} %{line:-4} %{threadid:-8} ] %{message}\n";
     const QString log_file(QString("/var/log/deepin-graphics-driver-manager-server.log"));
     ConsoleAppender *consoleAppender = new ConsoleAppender;
     consoleAppender->setFormat(logFormat);

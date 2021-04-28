@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
     DApplicationSettings as;
 
     //设置日志
-    const QString logFormat = "[%{time}{yyyy-MM-dd, HH:mm:ss.zzz}] [%{type:1}] [%{file}=>%{function}: %{line}] %{message}\n";
+    const QString logFormat = "%{time}{yyyyMMdd.HH:mm:ss.zzz}[%{type:1}][%{function:-40} %{line:-4} %{threadid:-8} ] %{message}\n";
 
     QString log_file(QString("/home/%1/.cache/deepin/deepin-graphics-driver-manager/").arg(getUserName()));
     QDir dir(log_file);
