@@ -17,7 +17,7 @@ extern "C" {
 // NOTE: see more info /usr/share/misc/pci.ids
 inline bool is_display_controller(const uint devClass)
 {
-    qDebug() << "device_class：　"<< devClass;
+    //qDebug() << "device_class：　"<< devClass;
     return (devClass & 0xff00) == 0x0300 || devClass == 0x0400;
 }
 
@@ -117,12 +117,12 @@ void GraphicsDeviceInfo::init()
             devName = "AMD";
             flag= DeviceFlag::AMD;
         }
-
         m_sysDevFlag |= flag;
 
         if (!isNotebook() && !boot_vga) {
             continue;
         }
+        qDebug("devName=%s, devInfo=%s, driver=%s, boot_vga=%d, m_sysDevFlag=%d", qPrintable(devName), qPrintable(devInfo), qPrintable(driver), boot_vga, m_sysDevFlag);
         Device device = Device(devName, devInfo, driver, boot_vga, flag);
         m_devices.append(device);
         if(boot_vga){

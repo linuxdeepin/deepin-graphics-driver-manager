@@ -55,6 +55,36 @@ Resolutions ResolutionsBuilder::build()
             Resolution solution(resl.toObject());
             switch (deviceType)
             {
+            case (DeviceFlag::INTEL | DeviceFlag::AMD):
+                if (DeviceFlag::INTEL == m_devInfo.curDevice().m_flag){
+                    if(object["name"].toString() == "intel"){
+                        if(r.m_type == Resolutions::NoResolution){
+                            r.m_type = Resolutions::INTEL;
+                            r.m_name = object["name"].toString();
+                            r.m_iconName = object["icon_name"].toString();
+                            r.m_statusScript = object["status"].toString();
+                        }
+                        //根据白名单确认使用glamor、uxa、sna三者中的一个，目前这了默认使用glamor
+                        if(solution.name() == "glamor"){
+                            r.m_resolutions.append(solution);
+                        }
+                    }
+                }else{
+                    if(object["name"].toString() == "amd"){
+                        if(r.m_type == Resolutions::NoResolution){
+                            r.m_type = Resolutions::AMD;
+                            r.m_name = object["name"].toString();
+                            r.m_iconName = object["icon_name"].toString();
+                            r.m_statusScript = object["status"].toString();
+                        }
+                        if (m_devInfo.curDevice().m_driver == "amdgpu"){
+                            if(solution.name() == "amdgpu") r.m_resolutions.append(solution);
+                        }else {
+                            if(solution.name() == "radeon") r.m_resolutions.append(solution);
+                        }
+                    }
+                }
+                break;
             case DeviceFlag::AMD:
                 if(object["name"].toString() == "amd"){
                     if(r.m_type == Resolutions::NoResolution){
