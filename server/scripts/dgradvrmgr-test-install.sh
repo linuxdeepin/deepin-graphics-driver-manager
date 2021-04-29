@@ -4,41 +4,47 @@
 
 if [[ -z "${isInOverlayRoot}" ]]; then
     rm  -f /etc/xdg/autostart/deepin-gradvrmgr-test-installer.desktop
-    cp ${INSTALLER_DESKTOP_FILE_SOURCE} ${INSTALLER_DESKTOP_FILE_DEST} || error_exit "Copy ${INSTALLER_DESKTOP_FILE_SOURCE} to ${INSTALLER_DESKTOP_FILE_DEST} failed" ${COMMON_ERROR}
-    error_exit "Overlayroot is not enabled, please enable the overlayroot" ${COMMON_ERROR}
+    cp ${INSTALLER_DESKTOP_FILE_SOURCE} ${INSTALLER_DESKTOP_FILE_DEST} || error_reboot "Copy ${INSTALLER_DESKTOP_FILE_SOURCE} to ${INSTALLER_DESKTOP_FILE_DEST} failed" ${COMMON_ERROR}
+    error_reboot "Overlayroot is not enabled, please enable the overlayroot" ${COMMON_ERROR}
 fi
 
-#防止强制退出后overlayroot没有退出，在脚本末尾再恢复设置
+#防止强制退出后overlayroot没有退出，在脚本末尾再进行恢复
 overlayroot-chroot sed -i 's:overlayroot=".*":overlayroot="":' ${OVERLAYROOT_CONF}
 
 /usr/sbin/overlayroot-chroot rm -f /etc/xdg/autostart/deepin-gradvrmgr-test-installer.desktop
-/usr/sbin/overlayroot-chroot cp ${INSTALLER_DESKTOP_FILE_SOURCE} ${INSTALLER_DESKTOP_FILE_DEST} || error_exit "Overlay-chroot copy ${INSTALLER_DESKTOP_FILE_SOURCE} to ${INSTALLER_DESKTOP_FILE_DEST} failed" ${COMMON_ERROR}
+/usr/sbin/overlayroot-chroot cp ${INSTALLER_DESKTOP_FILE_SOURCE} ${INSTALLER_DESKTOP_FILE_DEST} || error_reboot "Overlay-chroot copy ${INSTALLER_DESKTOP_FILE_SOURCE} to ${INSTALLER_DESKTOP_FILE_DEST} failed" ${COMMON_ERROR}
 
 #check network
-check_network || error_exit "The network is not working, please check the network connection" ${NETWORK_CONNECTION_ERROR}
+check_network || error_reboot "The network is not working, please check the network connection" ${NETWORK_CONNECTION_ERROR}
 
 #apt-get update
-apt_update || error_exit "Execute apt update failed" ${APT_UPDATE_ERROR}
+apt_update || error_reboot "Execute apt update failed" ${APT_UPDATE_ERROR}
 
 #remove old driver
 $REMOVE_OLD_G 
 if [ $? != 0 ]; then
     nvidia_blacklist_recovery
-    error_exit "Remove old driver failed" ${PURGE_PACKAGE_ERROR}
+    error_reboot "Remove old driver failed" ${PURGE_PACKAGE_ERROR}
 fi
 
 #install old driver
 $INSTALL_NEW_G 
 if [ $? != 0 ]; then
     nvidia_blacklist_recovery
-    error_exit "Install new driver failed" ${INSTALL_PACKAGE_ERROR}
+    error_reboot "Install new driver failed" ${INSTALL_PACKAGE_ERROR}
 fi
 
-/usr/sbin/overlayroot-chroot touch ${GLTEST_FLAG} || error_exit "Overlay-chroot touch ${GLTEST_FLAG} failed" ${COMMON_ERROR}
+/usr/sbin/overlayroot-chroot touch ${GLTEST_FLAG} || error_reboot "Overlay-chroot touch ${GLTEST_FLAG} failed" ${COMMON_ERROR}
 
 #save the upperdir
-overlayroot_save || error_exit "Overlayroot save failed" ${OVERLAYROOT_SAVE_ERROR}
+overlayroot_save || error_reboot "Overlayroot save failed" ${OVERLAYROOT_SAVE_ERROR}
 
 overlayroot-chroot sed -i "s:overlayroot=".*":overlayroot=\"device\:dev=\/dev\/loop0,recurse=0\":" ${OVERLAYROOT_CONF}
+
+# 判断前前台进程是否还存在（防止被强行退出）
+killall -e -0 deepin-graphics-driver-manager
+if [ $? -ne 0 ]; then
+    reboot
+fi
 
 exit 0

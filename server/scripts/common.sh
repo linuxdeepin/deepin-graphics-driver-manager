@@ -94,14 +94,17 @@ error_exit() {
     echo "Error: $1"
     cleanWorking
     modify_config "exit_code" "$2"
+    sync
     exit "$2"
 }
 
 error_reboot() {
-    echo "$1"
+    echo "Error: $1"
     cleanWorking
+    modify_config "exit_code" "$2"
     sync
     reboot
+    exit "$2"
 }
 
 apt_update()
