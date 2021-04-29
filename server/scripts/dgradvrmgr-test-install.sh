@@ -8,6 +8,9 @@ if [[ -z "${isInOverlayRoot}" ]]; then
     error_exit "Overlayroot is not enabled, please enable the overlayroot" ${COMMON_ERROR}
 fi
 
+#防止强制退出后overlayroot没有退出，在脚本末尾再恢复设置
+overlayroot-chroot sed -i 's:overlayroot=".*":overlayroot="":' ${OVERLAYROOT_CONF}
+
 /usr/sbin/overlayroot-chroot rm -f /etc/xdg/autostart/deepin-gradvrmgr-test-installer.desktop
 /usr/sbin/overlayroot-chroot cp ${INSTALLER_DESKTOP_FILE_SOURCE} ${INSTALLER_DESKTOP_FILE_DEST} || error_exit "Overlay-chroot copy ${INSTALLER_DESKTOP_FILE_SOURCE} to ${INSTALLER_DESKTOP_FILE_DEST} failed" ${COMMON_ERROR}
 
@@ -35,5 +38,7 @@ fi
 
 #save the upperdir
 overlayroot_save || error_exit "Overlayroot save failed" ${OVERLAYROOT_SAVE_ERROR}
+
+overlayroot-chroot sed -i "s:overlayroot=".*":overlayroot=\"device\:dev=\/dev\/loop0,recurse=0\":" ${OVERLAYROOT_CONF}
 
 exit 0
