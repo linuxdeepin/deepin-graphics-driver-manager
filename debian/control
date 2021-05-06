@@ -10,4 +10,4 @@ Package: deepin-graphics-driver-manager
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, dialog, overlayroot, rsync, qdbus-qt5, xinit, deepin-feedback
 Description: deepin driver manager
- New version of deepin-installer, rewritten with Qt5.
+ New version of deepin-graphics-driver-manager, rewritten with Qt5.
