@@ -47,7 +47,7 @@ overlayroot_enable() {
         echo "overlayroot is enabled already"
     else
         [ -e "${OVERLAYROOT_IMAGE}" ] && rm -f ${OVERLAYROOT_IMAGE}
-        dd if=/dev/zero of=${OVERLAYROOT_IMAGE} bs=1MiB count=640
+        dd if=/dev/zero of=${OVERLAYROOT_IMAGE} bs=1MiB count=960
         mkfs.ext4 ${OVERLAYROOT_IMAGE} && sed -i "s:overlayroot=".*":overlayroot=\"device\:dev=\/dev\/loop0,recurse=0\":" ${OVERLAYROOT_CONF}
     fi
 }
