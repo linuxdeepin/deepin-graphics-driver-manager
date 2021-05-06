@@ -96,6 +96,7 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(mainWidget);
     centralWidget()->setLayout(mainLayout);
     setFixedSize(484, 682);
+    setWindowFlags(windowFlags()&~Qt::WindowMinMaxButtonsHint|Qt::WindowMinimizeButtonHint);
     move(qApp->primaryScreen()->geometry().center() - rect().center());
     titlebar()->setTitle(" ");
     titlebar()->setIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
