@@ -149,7 +149,7 @@ package_install()
    pkg_list=$1
    len=$2
     inital_ratio=50
-    max_ratio=99
+    max_ratio=95
     index=0
     let range=${max_ratio}-${inital_ratio}
     for pkg in ${pkg_list[@]}
@@ -160,6 +160,8 @@ package_install()
         let ratio+=${inital_ratio}
         echo "PROGRESS:${ratio}"
     done
+    update-initramfs -u
+    echo "PROGRESS:99"
     set +e
 }
 

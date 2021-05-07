@@ -16,6 +16,4 @@ packages=(
 
 package_install "${packages[*]}" "${#packages[*]}"
 
-update-initramfs  -u
-
 systemctl  enable  bumblebeed.service
