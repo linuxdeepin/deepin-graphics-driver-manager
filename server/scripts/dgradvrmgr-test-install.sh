@@ -42,7 +42,7 @@ overlayroot_save || error_reboot "Overlayroot save failed" ${OVERLAYROOT_SAVE_ER
 overlayroot-chroot sed -i "s:overlayroot=".*":overlayroot=\"device\:dev=\/dev\/loop0,recurse=0\":" ${OVERLAYROOT_CONF}
 
 # 判断前前台进程是否还存在（防止被强行退出）
-killall -e -0 deepin-graphics-driver-manager
+killall -e -0 test-installer
 if [ $? -ne 0 ]; then
     reboot
 fi
