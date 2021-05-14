@@ -16,7 +16,7 @@ export OVERLAY_LOWDIR=/media/root-ro/
 
 export GLTEST_FLAG=/usr/lib/deepin-graphics-driver-manager/working-dir/dgradvrmgr_gltest_flag
 export OVERLAYROOT_IMAGE=$WORKING_DIR_G/overlayroot.img
-export isInOverlayRoot=$(grep -m1 "^overlayroot / overlay " /proc/mounts) || isInOverlayRoot=
+export isInOverlayRoot=$(grep -Em1 "^overlayroot / overlay |^overlay-root / overlay " /proc/mounts) || isInOverlayRoot=
 export DEBIAN_FRONTEND=noninteractive
 
 #define error exit code
