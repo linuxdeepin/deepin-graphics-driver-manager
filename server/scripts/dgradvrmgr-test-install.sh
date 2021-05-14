@@ -5,7 +5,7 @@
 if [[ -z "${isInOverlayRoot}" ]]; then
     rm  -f /etc/xdg/autostart/deepin-gradvrmgr-test-installer.desktop
     cp ${INSTALLER_DESKTOP_FILE_SOURCE} ${INSTALLER_DESKTOP_FILE_DEST} || error_reboot "Copy ${INSTALLER_DESKTOP_FILE_SOURCE} to ${INSTALLER_DESKTOP_FILE_DEST} failed" ${COMMON_ERROR}
-    error_reboot "Overlayroot is not enabled, please enable the overlayroot" ${COMMON_ERROR}
+    error_reboot "Overlayroot failed to mount for the first time" ${OVERLAYROOT_MOUNT_ERROR}
 fi
 
 #防止强制退出后overlayroot没有退出，在脚本末尾再进行恢复
