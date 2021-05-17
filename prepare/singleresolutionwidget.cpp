@@ -24,36 +24,30 @@ void SingleResolutionWidget::onThemeChanged(Dtk::Gui::DGuiApplicationHelper::Col
     if (type == Dtk::Gui::DGuiApplicationHelper::ColorType::LightType) {
         Dtk::Gui::DGuiApplicationHelper::instance()->setThemeType(type);
         m_version->setStyleSheet("QLabel {"
-                                 "font-size: 12px;"
                                  "color: #001A2E;"
                                  "}");
 
         m_title->setStyleSheet("QLabel {"
-                               "font-size: 14px;"
                                "font-weight: 500;"
                                "color: #414d68;"
                                "}");
 
         m_description->setStyleSheet("QLabel {"
-                                     "font-size: 12px;"
                                      "color: #526a7f;"
                                      "}");
 
     } else if (type == Dtk::Gui::DGuiApplicationHelper::ColorType::DarkType) {
         Dtk::Gui::DGuiApplicationHelper::instance()->setThemeType(type);
         m_version->setStyleSheet("QLabel {"
-                                 "font-size: 12px;"
                                  "color: #c0c6d4;"
                                  "}");
 
         m_title->setStyleSheet("QLabel {"
-                               "font-size: 14px;"
                                "font-weight: 500;"
                                "color: #C0C6D4;"
                                "}");
 
         m_description->setStyleSheet("QLabel {"
-                                     "font-size: 12px;"
                                      "color: #6d7c88;"
                                      "}");
     }

@@ -8,6 +8,7 @@
 #include <QTimer>
 #include <DApplicationHelper>
 
+
 ResolutionWidget::ResolutionWidget(ComDeepinDaemonGraphicsDriverInterface *graphicsDriver, const Resolution &resolution,  QWidget *parent)
     : QFrame(parent),
       m_graphicsDriver(graphicsDriver),
@@ -30,6 +31,7 @@ void ResolutionWidget::initUI()
 
     m_title->setAlignment(Qt::AlignLeft | Qt::AlignBottom);
     m_title->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+    DFontSizeManager::instance()->bind(m_title, DFontSizeManager::T6);
 
     QString version = m_resolution.currVersion();
     if ( version.isEmpty() )
@@ -42,6 +44,7 @@ void ResolutionWidget::initUI()
     m_version->setWordWrap(true);
     m_version->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     m_version->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    DFontSizeManager::instance()->bind(m_version, DFontSizeManager::T8);
 
 
     m_description = new QLabel;
@@ -49,6 +52,7 @@ void ResolutionWidget::initUI()
     m_description->setWordWrap(true);
     m_description->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_description->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    DFontSizeManager::instance()->bind(m_description, DFontSizeManager::T8);
 
     if (m_resolution.name().contains("glamor") || m_resolution.name().contains("uxa") || m_resolution.name().contains("sna")) {
         m_description->setVisible(false);
@@ -127,18 +131,15 @@ void ResolutionWidget::onThemeChanged(DGuiApplicationHelper::ColorType type)
     if (type == DGuiApplicationHelper::ColorType::LightType) {
         DGuiApplicationHelper::instance()->setThemeType(type);
         m_version->setStyleSheet("QLabel {"
-                                 "font-size: 12px;"
                                  "color: #001A2E;"
                                  "}");
 
         m_title->setStyleSheet("QLabel {"
-                               "font-size: 14px;"
                                "font-weight: 500;"
                                "color: #414d68;"
                                "}");
 
         m_description->setStyleSheet("QLabel {"
-                                     "font-size: 12px;"
                                      "color: #526a7f;"
                                      "}");
 
@@ -153,18 +154,15 @@ void ResolutionWidget::onThemeChanged(DGuiApplicationHelper::ColorType type)
     } else if (type == DGuiApplicationHelper::ColorType::DarkType) {
         DGuiApplicationHelper::instance()->setThemeType(type);
         m_version->setStyleSheet("QLabel {"
-                                 "font-size: 12px;"
                                  "color: #c0c6d4;"
                                  "}");
 
         m_title->setStyleSheet("QLabel {"
-                               "font-size: 14px;"
                                "font-weight: 500;"
                                "color: #C0C6D4;"
                                "}");
 
         m_description->setStyleSheet("QLabel {"
-                                     "font-size: 12px;"
                                      "color: #6d7c88;"
                                      "}");
 

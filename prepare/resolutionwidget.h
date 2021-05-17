@@ -13,7 +13,9 @@
 #include <QLineEdit>
 #include <QTimer>
 #include <DGuiApplicationHelper>
+#include <DFontSizeManager>
 
+DWIDGET_USE_NAMESPACE
 class QLabel;
 class ResolutionWidget: public QFrame
 {

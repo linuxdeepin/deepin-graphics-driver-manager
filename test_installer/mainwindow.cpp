@@ -14,6 +14,7 @@
 #include <QJsonDocument>
 #include <DApplicationHelper>
 #include <QMenuBar>
+#include <DFontSizeManager>
 
 const QString GraphicMangerServiceName = "com.deepin.graphicmanger";
 const QString GraphicMangerPath = "/com/deepin/graphicmanger";
@@ -37,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_installState->setVisible(false);
     m_installState->setWordWrap(true);
     m_installState->setObjectName("InstallTips");
+    DFontSizeManager::instance()->bind(m_installState, DFontSizeManager::T6);
 
     m_warningTips = new QLabel;
     m_warningTips->setAlignment(Qt::AlignHCenter);
@@ -44,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_warningTips->setWordWrap(true);
     m_warningTips->setObjectName("Warning");
     //m_warningTips->setFrameShape(QFrame::Box);
+    DFontSizeManager::instance()->bind(m_warningTips, DFontSizeManager::T8);
 
 
 
@@ -51,11 +54,13 @@ MainWindow::MainWindow(QWidget *parent)
     m_cancelButton->setText(tr("Cancel"));
     m_cancelButton->setFixedHeight(38);
     m_cancelButton->setVisible(false);
+    DFontSizeManager::instance()->bind(m_cancelButton, DFontSizeManager::T6);
 
     m_rebootButton = new QPushButton;
     m_rebootButton->setText(tr("Reboot"));
     m_rebootButton->setFixedHeight(38);
     m_rebootButton->setVisible(true);
+    DFontSizeManager::instance()->bind(m_rebootButton, DFontSizeManager::T6);
 
 
     m_waterProgress = new DWaterProgress;
@@ -194,13 +199,11 @@ void  MainWindow::onThemeChanged(DGuiApplicationHelper::ColorType type)
                                       "}");
 
         m_installState->setStyleSheet("QLabel {"
-                                     "font-size: 14px;"
                                      "font-weight: medium;"
                                      "color: rgba(0, 0, 0, 0.9);"
                                      "}");
 
         m_warningTips->setStyleSheet("QLabel {"
-                                     "font-size: 12px;"
                                      "font-weight: normal;"
                                      "color: rgba(0, 0, 0, 0.7);"
                                      "}");
@@ -215,13 +218,11 @@ void  MainWindow::onThemeChanged(DGuiApplicationHelper::ColorType type)
                                       "}");
 
         m_installState->setStyleSheet("QLabel {"
-                                      "font-size: 14px;"
                                       "font-weight: medium;"
                                       "color: #c0c6d4;"
                                       "}");
 
         m_warningTips->setStyleSheet("QLabel {"
-                                     "font-size: 12px;"
                                      "font-weight: normal;"
                                      "color: rgba(255, 255, 255, 0.7);"
                                      "}");

@@ -19,6 +19,8 @@
 #include <QJsonDocument>
 #include <DApplicationHelper>
 #include <iostream>
+#include <DFontSizeManager>
+
 
 
 const QString GraphicMangerServiceName = "com.deepin.graphicmanger";
@@ -38,6 +40,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_toggleButton->setText(tr("Switch"));
     m_toggleButton->setFixedHeight(38);
     m_toggleButton->setVisible(false);
+    DFontSizeManager::instance()->bind(m_toggleButton, DFontSizeManager::T6);
 
 
     m_warningTips = new QLabel;
@@ -45,6 +48,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_warningTips->setVisible(false);
     m_warningTips->setWordWrap(true);
     m_warningTips->setObjectName("WarningTips");
+    DFontSizeManager::instance()->bind(m_warningTips, DFontSizeManager::T8);
 
 
     m_installTips = new QLabel;
@@ -53,7 +57,9 @@ MainWindow::MainWindow(QWidget *parent)
     m_installTips->setAlignment(Qt::AlignHCenter);
     m_installTips->setContentsMargins(65, 0, 65, 0);
     m_installTips->setObjectName("installTips");
-    m_installTips->setFixedSize(424, 40);
+    m_installTips->setFixedWidth(424);
+    DFontSizeManager::instance()->bind(m_installTips, DFontSizeManager::T6);
+
 
     m_spinner = new DSpinner();
     m_spinner->setFixedSize(32, 32);
@@ -65,26 +71,31 @@ MainWindow::MainWindow(QWidget *parent)
     m_updateButton->setText(tr("Update"));
     m_updateButton->setFixedHeight(38);
     m_updateButton->setVisible(false);
+    DFontSizeManager::instance()->bind(m_updateButton, DFontSizeManager::T6);
 
     m_rebootButton = new DSuggestButton;
     m_rebootButton->setText(tr("Reboot Now"));
     m_rebootButton->setFixedHeight(38);
     m_rebootButton->setVisible(false);
+    DFontSizeManager::instance()->bind(m_rebootButton, DFontSizeManager::T6);
 
     m_cancelButton = new QPushButton;
     m_cancelButton->setText(tr("Cancel"));
     m_cancelButton->setFixedHeight(38);
     m_cancelButton->setVisible(false);
+    DFontSizeManager::instance()->bind(m_cancelButton, DFontSizeManager::T6);
 
     m_tryButton = new DSuggestButton;
     m_tryButton->setText(tr("Try Again"));
     m_tryButton->setFixedHeight(38);
     m_tryButton->setVisible(false);
+    DFontSizeManager::instance()->bind(m_tryButton, DFontSizeManager::T6);
 
     m_okButton = new QPushButton;
     m_okButton->setText(tr("OK"));
     m_okButton->setFixedHeight(38);
     m_okButton->setVisible(false);
+    DFontSizeManager::instance()->bind(m_okButton, DFontSizeManager::T6);
 
 
     m_vendorIcon = new QLabel;
@@ -98,6 +109,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_vendorName->setFixedHeight(54);
     m_vendorName->setContentsMargins(10, 0, 10, 0);
     //m_vendorName->setFrameShape(QFrame::Box);
+    DFontSizeManager::instance()->bind(m_vendorName, DFontSizeManager::T8);
 
 
 
@@ -114,7 +126,7 @@ MainWindow::MainWindow(QWidget *parent)
     centralLayout->addWidget(m_vendorName);
     centralLayout->addSpacing(10);
     centralLayout->addWidget(m_resolutionsWidget);
-    centralLayout->addSpacing(50);
+    //centralLayout->addSpacing(50);
     centralLayout->addWidget(m_tipsIcon);
     centralLayout->setAlignment(m_tipsIcon, Qt::AlignHCenter);
     centralLayout->addWidget(m_spinner);
@@ -264,7 +276,6 @@ void MainWindow::setVendorIcon()
 
     m_vendorIcon->setPixmap(Utils::hidpiPixmap(iconPath, QSize(140, 140)));
     m_vendorName->setText(devInfo.join('\n'));
-
 }
 
 void MainWindow::loadResolutions()
@@ -499,18 +510,15 @@ void MainWindow::onThemeChanged(DGuiApplicationHelper::ColorType type)
                                       "}");
 
         m_vendorName->setStyleSheet("QLabel {"
-                                    "font-size: 12px;"
                                     "color: #001a2e;"
                                     "}");
 
 
         m_warningTips->setStyleSheet("QLabel {"
-                                     "font-size: 12px;"
                                      "color: #526a7f;"
                                      "}");
 
         m_installTips->setStyleSheet("QLabel {"
-                                     "font-size: 14px;"
                                      "font-weight: 500;"
                                      "color: rgba(0, 0, 0, 0.9);"
                                      "}");
@@ -525,17 +533,14 @@ void MainWindow::onThemeChanged(DGuiApplicationHelper::ColorType type)
                                       "}");
 
         m_vendorName->setStyleSheet("QLabel {"
-                                    "font-size: 12px;"
                                     "color: #c0c6d4;"
                                     "}");
 
         m_warningTips->setStyleSheet("QLabel {"
-                                     "font-size: 12px;"
                                      "color: #6d7c88;"
                                      "}");
 
         m_installTips->setStyleSheet("QLabel {"
-                                     "font-size: 14px;"
                                      "font-weight: 500;"
                                      "}");
     }
