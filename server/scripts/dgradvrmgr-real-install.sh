@@ -13,4 +13,6 @@ apt_update || error_exit "Execute apt update failed" ${APT_UPDATE_ERROR}
 $REMOVE_OLD_G || error_exit "Remove old driver failed" ${PURGE_PACKAGE_ERROR}
 $INSTALL_NEW_G || error_exit "Install new driver failed" ${INSTALL_PACKAGE_ERROR}
 
+cleanWorking
+
 reboot

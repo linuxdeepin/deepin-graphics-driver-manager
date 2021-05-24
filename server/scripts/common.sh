@@ -5,6 +5,7 @@ export TEST_IN_OVERLAY_G=$WORKING_DIR_G/test_in_overlay_flag
 export REMOVE_OLD_G=$WORKING_DIR_G/remove_old.sh
 export INSTALL_NEW_G=$WORKING_DIR_G/install_new.sh
 export CONFIG_FILE_G=$WORKING_DIR_G/config.conf
+export PRIME_GLTEST_G=${WORKING_DIR_G}/deepin-prime-gltest
 export REAL_INSTALLE_DESKTOP=/etc/xdg/autostart/deepin-gradvrmgr-installer.desktop
 
 export INSTALLER_DESKTOP_FILE_SOURCE=/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-installer.desktop
@@ -29,6 +30,7 @@ export OVERLAYROOT_ENABLE_ERROR=6
 export OVERLAYROOT_DISABLE_ERROR=7
 export OVERLAYROOT_SAVE_ERROR=8
 export OVERLAYROOT_MOUNT_ERROR=9
+export GLTEST_RUNNING_ERROR=10
 
 OVERLAYROOT_CONF=/etc/overlayroot.conf
 LOOP_DEV=/dev/loop0
@@ -72,7 +74,9 @@ cleanWorking() {
         [ -e "${REMOVE_OLD_G}" ] && rm -rf $REMOVE_OLD_G
         [ -e "${INSTALL_NEW_G}" ] && rm -rf $INSTALL_NEW_G
         [ -e "${GLTEST_FLAG}" ] && rm -rf $GLTEST_FLAG
+       
     fi
+     [ -e "${PRIME_GLTEST_G}" ] && rm -rf $PRIME_GLTEST_G
     overlayroot_disable
 }
 
