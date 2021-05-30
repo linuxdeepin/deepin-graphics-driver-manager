@@ -80,20 +80,20 @@ cleanWorking() {
     overlayroot_disable
 }
 
- nvidia_blacklist_recovery(){
-     nvidia_blacklist_file="/etc/modprobe.d/nvidia-blacklists-nouveau.conf"
-     upperdir="/media/root-rw/overlay/"
-     if [ -e "${upperdir}/${nvidia_blacklist_file}" ]; then
-        if [ -f "${nvidia_blacklist_file}" ]; then
-            # Create blacklist file
-            rm -f ${nvidia_blacklist_file}
-        else
-            # Delete blacklist file
-            echo "blacklist  nouveau" > ${nvidia_blacklist_file}
-        fi
-        update-initramfs -u
-     fi
- }
+
+backup_initramfs(){
+    if [[ -n "${isInOverlayRoot}" ]]; then
+        cp -f /boot/initrd.img*  ${WORKING_DIR_G}
+    fi
+
+}
+
+recovery_initramfs(){
+    if [[ -n "${isInOverlayRoot}" ]]; then
+        cp -f  ${WORKING_DIR_G}/initrd.img* /boot/
+        sync
+    fi
+}
 
 error_exit() {
     echo "Error: $1"

@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ -z "$1" ]; then
-    echo "A parameter is required.(eg: enable|disbale|save)"
+    echo "A parameter is required.(eg: enable|disable|save)"
     exit 0
 fi
 . /usr/lib/deepin-graphics-driver-manager/common.sh

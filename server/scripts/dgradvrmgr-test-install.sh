@@ -8,6 +8,9 @@ if [[ -z "${isInOverlayRoot}" ]]; then
     error_reboot "Overlayroot failed to mount for the first time" ${OVERLAYROOT_MOUNT_ERROR}
 fi
 
+# boot分区不被overlayroot保护，需要单独备份
+backup_initramfs
+
 #防止强制退出后overlayroot没有退出，在脚本末尾再进行恢复
 overlayroot-chroot sed -i 's:overlayroot=".*":overlayroot="":' ${OVERLAYROOT_CONF}
 
@@ -23,14 +26,14 @@ apt_update || error_reboot "Execute apt update failed" ${APT_UPDATE_ERROR}
 #remove old driver
 $REMOVE_OLD_G 
 if [ $? != 0 ]; then
-    nvidia_blacklist_recovery
+    recovery_initramfs
     error_reboot "Remove old driver failed" ${PURGE_PACKAGE_ERROR}
 fi
 
 #install old driver
 $INSTALL_NEW_G 
 if [ $? != 0 ]; then
-    nvidia_blacklist_recovery
+    recovery_initramfs
     error_reboot "Install new driver failed" ${INSTALL_PACKAGE_ERROR}
 fi
 

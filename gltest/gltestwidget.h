@@ -27,6 +27,8 @@ protected:
 
 private:
     float m_xRotated, m_yRotated, m_zRotated;
+    unsigned int m_currPaintCnt;
+    unsigned int m_lastPaintCnt;
 };
 
 #endif
