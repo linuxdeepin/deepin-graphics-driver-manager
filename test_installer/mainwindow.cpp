@@ -56,7 +56,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_cancelButton->setVisible(false);
     DFontSizeManager::instance()->bind(m_cancelButton, DFontSizeManager::T6);
 
-    m_rebootButton = new QPushButton;
+    m_rebootButton = new DSuggestButton;
     m_rebootButton->setText(tr("Reboot"));
     m_rebootButton->setFixedHeight(38);
     m_rebootButton->setVisible(true);

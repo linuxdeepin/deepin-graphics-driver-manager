@@ -44,7 +44,7 @@ private:
     QLabel *m_warningTips;
     DWaterProgress *m_waterProgress;
     QPushButton *m_cancelButton;
-    QPushButton *m_rebootButton;
+    DSuggestButton *m_rebootButton;
     QTimer m_timer;
     int m_rebootDelay;
     int m_process;
