@@ -13,6 +13,8 @@ export INSTALLER_DESKTOP_FILE_DEST=/etc/xdg/autostart/deepin-gradvrmgr-installer
 export TEST_INSTALLER_DESKTOP_FILE_SOURCE=/usr/lib/deepin-graphics-driver-manager/deepin-gradvrmgr-test-installer.desktop
 export TEST_INSTALLER_DESKTOP_FILE_DEST=/etc/xdg/autostart/deepin-gradvrmgr-test-installer.desktop
 
+export is10GENERATIONS_CPU=false
+
 export OVERLAY_LOWDIR=/media/root-ro/
 
 export GLTEST_FLAG=/usr/lib/deepin-graphics-driver-manager/working-dir/dgradvrmgr_gltest_flag
@@ -92,6 +94,30 @@ recovery_initramfs(){
     if [[ -n "${isInOverlayRoot}" ]]; then
         cp -f  ${WORKING_DIR_G}/initrd.img* /boot/
         sync
+    fi
+}
+
+check_cpu() {
+    cpu_mode=$(lscpu |grep "Model name:" |sed 's/Model name:[ \n \t ]*//g')
+    echo "cpu mode: $cpu_mode"
+    is_intel=$(echo ${cpu_mode}　|grep -i intel)
+    if [[ ${is_intel} != "" ]]; then
+        cpu_id=$(echo $cpu_mode |awk '{print $3}' |sed 's/.*-//g' |tr -d 'a-zA-Z')
+        [ "$cpu_id" -ge "10700" ] && is10GENERATIONS_CPU=true
+    fi
+}
+
+purge_intelgpu() {
+    lsmod |grep intelgpu
+    if [[ $? -eq 0 ]]; then
+        apt-get -y purge intelgpu-drm
+    fi
+}
+
+install_intelgpu() {
+    check_cpu
+    if ! $is10GENERATIONS_CPU ; then
+        apt-get -y install intelgpu-drm
     fi
 }
 
