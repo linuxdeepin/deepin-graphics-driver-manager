@@ -108,16 +108,16 @@ check_cpu() {
 }
 
 purge_intelgpu() {
-    lsmod |grep intelgpu
+    dpkg -l |grep intelgpu-drm >/dev/null 2>&1
     if [[ $? -eq 0 ]]; then
-        apt-get -y purge intelgpu-drm
+        apt-get -y purge intelgpu-dkms
     fi
 }
 
 install_intelgpu() {
-    check_cpu
-    if ! $is10GENERATIONS_CPU ; then
-        apt-get -y install intelgpu-drm
+    dpkg -l |grep intelgpu-drm >/dev/null 2>&1
+    if [[ $? -ne 0 ]]; then
+        apt-get -y install intelgpu-dkms || true
     fi
 }
 

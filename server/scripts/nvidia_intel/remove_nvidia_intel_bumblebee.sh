@@ -21,4 +21,6 @@ packages=(
     "xserver-xorg-video-nvidia"
 )
 
+install_intelgpu
+
 package_remove "${packages[*]}" "${#packages[*]}"
