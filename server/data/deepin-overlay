@@ -6,7 +6,7 @@ case "$1" in
 esac
 
 PATH=/usr/sbin:/usr/bin:/sbin:/bin
-MYTAG="my"
+MYTAG="Deepin"
 
 ROOTMNT=${rootmnt}
 LOOP_DEV="/dev/loop0"

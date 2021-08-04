@@ -11,9 +11,6 @@ fi
 # boot分区不被overlayroot保护，需要单独备份
 backup_initramfs
 
-#防止强制退出后overlayroot没有退出，在脚本末尾再进行恢复
-overlayroot-chroot sed -i 's:overlayroot=".*":overlayroot="":' ${OVERLAYROOT_CONF}
-
 /usr/sbin/overlayroot-chroot rm -f /etc/xdg/autostart/deepin-gradvrmgr-test-installer.desktop
 /usr/sbin/overlayroot-chroot cp ${INSTALLER_DESKTOP_FILE_SOURCE} ${INSTALLER_DESKTOP_FILE_DEST} || error_reboot "Overlay-chroot copy ${INSTALLER_DESKTOP_FILE_SOURCE} to ${INSTALLER_DESKTOP_FILE_DEST} failed" ${COMMON_ERROR}
 

@@ -48,6 +48,8 @@ install(FILES data/com.deepin.graphicmanger.service
 # initramfs-tools
 install(PROGRAMS data/deepin-overlay 
         DESTINATION share/initramfs-tools/scripts/init-bottom/)
+install(PROGRAMS data/zzz-overlay
+        DESTINATION share/initramfs-tools/scripts/init-bottom/)
 
 
 # resolutions.json
