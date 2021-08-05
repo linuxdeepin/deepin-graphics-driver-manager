@@ -108,14 +108,14 @@ check_cpu() {
 }
 
 purge_intelgpu() {
-    dpkg -l |grep intelgpu-drm >/dev/null 2>&1
+    dpkg -l |grep intelgpu-dkms >/dev/null 2>&1
     if [[ $? -eq 0 ]]; then
         apt-get -y purge intelgpu-dkms
     fi
 }
 
 install_intelgpu() {
-    dpkg -l |grep intelgpu-drm >/dev/null 2>&1
+    dpkg -l |grep intelgpu-dkms >/dev/null 2>&1
     if [[ $? -ne 0 ]]; then
         apt-get -y install intelgpu-dkms || true
     fi
