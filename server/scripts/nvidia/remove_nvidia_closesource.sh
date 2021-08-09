@@ -12,8 +12,6 @@ packages=(
     "nvidia-alternative"
 )
 
-install_intelgpu
-
 package_remove "${packages[*]}" "${#packages[*]}"
 
 exit 0

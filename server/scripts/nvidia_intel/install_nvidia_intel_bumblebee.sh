@@ -16,6 +16,11 @@ packages=(
 
 package_install "${packages[*]}" "${#packages[*]}"
 
-purge_intelgpu
+modinfo intelgpu >/dev/null 2>&1
+if [[ $? -eq 0 ]]; then
+    echo "blacklist intelgpu" >> /etc/modprobe.d/nvidia-blacklists-nouveau.conf
+    update-initramfs -u
+fi
+
 
 systemctl  enable  bumblebeed.service
