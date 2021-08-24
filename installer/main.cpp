@@ -128,7 +128,9 @@ int show_install_dialog() {
 
     My_DDialog *installDialog = my_dialog(qApp->translate("main", "Updating the driver, please wait..."), "://resources/icons/deepin-graphics-driver-manager-installing.svg");
     DSpinner *spinner = new DSpinner(installDialog);
-    installDialog->addContent(spinner);
+    installDialog->addContent(spinner, Qt::AlignCenter);
+    spinner->setFixedSize(32, 32);
+    spinner->setVisible(true);
     spinner->start();
     QDBusPendingReply<void> realInstallReply =  g_graphicsDriver->RealInstall();
     realInstallReply.waitForFinished();
