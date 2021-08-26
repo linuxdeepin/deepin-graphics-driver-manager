@@ -7,6 +7,7 @@
 #include <QLocale>
 #include <DLog>
 #include <DApplicationSettings>
+#include <DWidgetUtil>
 
 
 DCORE_USE_NAMESPACE
@@ -27,10 +28,8 @@ int main(int argc, char* argv[])
 
     QTranslator trans;
     trans.load(loc_tr_file.arg(loc));
+    app.setAutoActivateWindows(true);
     app.installTranslator(&trans);
-
-    if (!app.setSingleInstance("dgradvrmgr"))
-        return -1;
 
     QProcess *process = new QProcess;
     process->setProcessChannelMode(QProcess::MergedChannels);
@@ -43,9 +42,9 @@ int main(int argc, char* argv[])
     }
 
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
+    app.setAttribute(Qt::AA_EnableHighDpiScaling);
     app.setOrganizationName("deepin");
-    //app.setApplicationName("deepin-graphics-driver-manager");
-    app.setApplicationName(" ");
+    app.setApplicationName("deepin-graphics-driver-manager");
     app.setApplicationVersion(VERSION);
     app.setApplicationAcknowledgementPage("https://www.deepin.org/acknowledgments/deepin-graphics-driver-manager/");
     app.setProductIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
@@ -74,6 +73,10 @@ int main(int argc, char* argv[])
     logger->registerAppender(consoleAppender);
     logger->registerAppender(rollingFileAppender);
     qInfo() << "VERSION: " << VERSION;
+    qputenv("DTK_USE_SEMAPHORE_SINGLEINSTANCE", "1");
+    if (!app.setSingleInstance(app.applicationName(), DApplication::UserScope)) {
+        exit(0);
+    }
     MainWindow w;
     w.show();
 
