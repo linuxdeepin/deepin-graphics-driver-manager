@@ -212,3 +212,8 @@ modify_config()
         sed -i -E "s/(${key}=).*$/\1${value}/" $CONFIG_FILE_G
     fi
 }
+
+remove_nvidia()
+{
+    dpkg -l | grep nvidia | awk '{print $2}' | xargs pkexec apt-get purge -y
+}

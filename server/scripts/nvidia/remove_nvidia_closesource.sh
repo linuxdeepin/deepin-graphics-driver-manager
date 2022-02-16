@@ -14,4 +14,6 @@ packages=(
 
 package_remove "${packages[*]}" "${#packages[*]}"
 
+remove_nvidia
+
 exit 0

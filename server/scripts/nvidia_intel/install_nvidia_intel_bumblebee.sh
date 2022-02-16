@@ -7,6 +7,8 @@ fi
 
 . /usr/lib/deepin-graphics-driver-manager/common.sh
 
+remove_nvidia
+
 packages=(
     "nvidia-driver"
     "bumblebee-nvidia"
