@@ -29,19 +29,20 @@ int main(int argc, char* argv[])
     trans.load(loc_tr_file.arg(loc));
     app.installTranslator(&trans);
 
-    if (!app.setSingleInstance("dgradvrmgr"))
-        return -1;
-
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
+    app.setAttribute(Qt::AA_EnableHighDpiScaling);
     app.setOrganizationName("deepin");
-    app.setApplicationName(" ");
+    app.setApplicationName("dgradvrmgr");
     app.setApplicationVersion(VERSION);
     app.setApplicationAcknowledgementPage("https://www.deepin.org/acknowledgments/deepin-graphics-driver-manager/");
     app.setProductIcon(QIcon(":/resources/icons/deepin-graphics-driver-manager-64px.svg"));
     app.setProductName(QApplication::translate("main", "Graphics Driver Manager"));
+    app.setAutoActivateWindows(true);
     app.setApplicationDescription(QApplication::translate("main", "Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions."));
     DApplicationSettings as;
 
+    if (!app.setSingleInstance("dgradvrmgr"))
+        return -1;
     //设置日志
     const QString logFormat = "%{time}{yyyyMMdd.HH:mm:ss.zzz}[%{type:1}][%{function:-40} %{line:-4} %{threadid:-8} ] %{message}\n";
 

@@ -14,6 +14,9 @@ backup_initramfs
 /usr/sbin/overlayroot-chroot rm -f /etc/xdg/autostart/deepin-gradvrmgr-test-installer.desktop
 /usr/sbin/overlayroot-chroot cp ${INSTALLER_DESKTOP_FILE_SOURCE} ${INSTALLER_DESKTOP_FILE_DEST} || error_reboot "Overlay-chroot copy ${INSTALLER_DESKTOP_FILE_SOURCE} to ${INSTALLER_DESKTOP_FILE_DEST} failed" ${COMMON_ERROR}
 
+# 测试安装时，最小化窗口后，启动器点击无界面弹出问题
+cp -f ${TEST_INSTALLER_DESKTOP_FILE_SOURCE} /usr/share/applications/deepin-graphics-driver-manager.desktop
+
 #check network
 check_network || error_reboot "The network is not working, please check the network connection" ${NETWORK_CONNECTION_ERROR}
 
