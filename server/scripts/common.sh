@@ -215,5 +215,5 @@ modify_config()
 
 remove_nvidia()
 {
-    dpkg -l | grep nvidia | awk '{print $2}' | xargs pkexec apt-get purge -y
+    dpkg -l | grep nvidia | awk '{print $2}' | xargs apt-get purge -y
 }
