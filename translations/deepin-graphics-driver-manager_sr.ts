@@ -2,17 +2,17 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/main.cpp" line="124"/>
+        <location filename="../gltest/gltestwindow.cpp" line="18"/>
         <source>Apply</source>
         <translation>Примени</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="125"/>
+        <location filename="../gltest/gltestwindow.cpp" line="20"/>
         <source>Cancel</source>
         <translation>Откажи</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="126"/>
+        <location filename="../gltest/gltestwindow.cpp" line="22"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Уверите се да управљачки програм ради нормално без замућења и цепања приказа</translation>
     </message>
@@ -20,252 +20,217 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="41"/>
+        <location filename="../prepare/mainwindow.cpp" line="38"/>
         <source>Switch</source>
         <translation>Пређи</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="58"/>
+        <location filename="../prepare/mainwindow.cpp" line="65"/>
+        <source>Update</source>
+        <translation>Ажурирај</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="70"/>
+        <source>Reboot Now</source>
+        <translation>Поново покрени сад</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="75"/>
+        <location filename="../test_installer/mainwindow.cpp" line="51"/>
+        <source>Cancel</source>
+        <translation>Откажи</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="80"/>
+        <source>Try Again</source>
+        <translation>Поново покушај</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="85"/>
         <source>OK</source>
         <translation>У реду</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="62"/>
-        <source>Reboot</source>
-        <translation>Поново покрени</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="177"/>
+        <location filename="../prepare/mainwindow.cpp" line="186"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
         <translation>Ваш уређај тренутно није подржан, молимо сачекајте будућу верзију.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
-        <source>Downloading</source>
-        <translation>Преузимање</translation>
+        <location filename="../prepare/mainwindow.cpp" line="301"/>
+        <source>Switching to the discrete graphics interface may cause a black screen.</source>
+        <translation>Прелазак на дискретно графичко сучеље може проузроковати црни екран.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="269"/>
-        <source>Downloading the driver for %1, please wait...</source>
-        <translation>Преузимање управљачког програма за %1, молимо сачекајте...</translation>
+        <location filename="../prepare/mainwindow.cpp" line="305"/>
+        <source>Switching to the integrated graphics interface may cause a black screen.</source>
+        <translation>Прелазак на интегрисано графичко сучеље може проузроковати црни екран.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
-        <source>Download Successful</source>
-        <translation>Успешно преузимање</translation>
+        <location filename="../prepare/mainwindow.cpp" line="461"/>
+        <source>Preparation failed for driver switching</source>
+        <translation>Припрема за замену управљача није успела</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
-        <source>Please reboot to test the driver.
-
-If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation>Поново покрените да тестирате управљач.
-
-Ако нема сигнала, проверите да ли је прикључак видео излаза правилно намештен.</translation>
+        <location filename="../prepare/mainwindow.cpp" line="482"/>
+        <source>Please reboot for switching to another driver, which may cost several minutes, please wait patiently</source>
+        <translation>Поново покрените да пређете на други управљач. Процес може трајати неколико минута. Молимо будите стрпљиви.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="302"/>
-        <source>Please reboot to test the driver</source>
-        <translation>Поново покрените да тестирате управљачки програм</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="56"/>
+        <source>Reboot</source>
+        <translation>Поново покрени</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="290"/>
-        <source>Download failed</source>
-        <translation>Неуспешно преузимање</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="146"/>
+        <source>Installing</source>
+        <translation>Инсталирање</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="38"/>
-        <source>Dark theme</source>
-        <translation>Тамна тема</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="148"/>
+        <source>It will auto reboot after the successful installation, please do not take any actions</source>
+        <translation>Након успешне инсталације рачунар ће се поново покренути, немојте предузимати никакве радње</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="291"/>
-        <source>Sorry, switch failed</source>
-        <translation>Извините, прелазак није успео</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="267"/>
+        <source>Installation successful</source>
+        <translation>Успешна инсталација</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="268"/>
+        <source>Your computer will reboot soon</source>
+        <translation>Рачунар ће се ускоро поново покрнути</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="273"/>
+        <source>Installation failed</source>
+        <translation>Неуспешна инсталација</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="274"/>
+        <source>Your computer will reboot soon and switch to the previous driver</source>
+        <translation>Рачунар ће се ускоро поново покрнути и вратити на претходни управљач</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="287"/>
+        <source>Reboot Now (%1)</source>
+        <translation>Поново покрни сад (%1)</translation>
     </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="8"/>
-        <source>Use AMD card driver</source>
-        <translation>Користи AMD управљач картица</translation>
+        <location filename="../prepare/resolution.h" line="10"/>
+        <location filename="../prepare/resolution.h" line="17"/>
+        <source>Integrated Graphics</source>
+        <translation>Интегрисана графика</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="9"/>
-        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation>За посебне потребе. Аутоматски одређује начин убрзања без спољњег подешавања.</translation>
+        <location filename="../prepare/resolution.h" line="11"/>
+        <source>Switching to the discrete graphics interface may cause a black screen</source>
+        <translation>Прелазак на дискретно графичко сучеље може проузроковати црни екран.</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="11"/>
-        <source>NVIDIA Default Driver</source>
-        <translation>NVIDIA подразумевани управљач</translation>
+        <location filename="../prepare/resolution.h" line="12"/>
+        <source>Official driver</source>
+        <translation>Званични управљач</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="14"/>
-        <source>NVIDIA Open Source Driver</source>
-        <translation>NVIDIA управљач отвореног кода</translation>
+        <location filename="../prepare/resolution.h" line="13"/>
+        <source>Unofficial driver</source>
+        <translation>Незванични управљач</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="17"/>
-        <source>NVIDIA Closed Source Driver</source>
-        <translation>NVIDIA власнички управљач</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="19"/>
-        <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
+        <location filename="../prepare/resolution.h" line="14"/>
+        <source>Only adaptive to parts of distributions and graphics cards, and it may cause a black screen</source>
         <translation>Прилагодљив само делу дистрибуција и графичких картица, може изазвати црни екран.</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="21"/>
-        <source>Intel Default Driver</source>
-        <translation>Intel подразумевани управљач</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="24"/>
-        <source>Intel Compatible Mode</source>
-        <translation>Intel режим компатибилности</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="25"/>
-        <source>Use Intel compatible mode</source>
-        <translation>Користи Intel режим компатибилности</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="12"/>
-        <source>Use default driver</source>
-        <translation>Користи подразумевани управљач</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="13"/>
-        <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation>NVIDIA управљач није откривен у тренутном окружењу и NVIDIA картица неће правилно радити.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="15"/>
-        <source>Use open source driver</source>
-        <translation>Користи управљач отвореног кода</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="16"/>
-        <source>Poor performance, unstable in some graphics cards.</source>
+        <location filename="../prepare/resolution.h" line="15"/>
+        <source>Poor performance, unstable in some graphics cards</source>
         <translation>Слаб учинак, нестабилан са неким графичким картицама.</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="18"/>
-        <source>Use closed source driver</source>
-        <translation>Користи власнички управљач</translation>
+        <location filename="../prepare/resolution.h" line="16"/>
+        <source>Switching to the integrated graphics interface may cause a black screen</source>
+        <translation>Прелазак на интегрисано графичко сучеље може проузроковати црни екран.</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="22"/>
-        <source>Use Intel default driver</source>
-        <translation>Користи Intel подразумевани управљач</translation>
+        <location filename="../prepare/resolution.h" line="18"/>
+        <source>Integrated graphics driver</source>
+        <translation>Управљач интегрисане графике</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="23"/>
-        <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation>Слаба компатибилност са делом старијих графичких картица.</translation>
+        <location filename="../prepare/resolution.h" line="19"/>
+        <source>Bumblebee</source>
+        <translation>Bumblebee</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="26"/>
-        <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation>Највећа компатибилност за убрзање са свим Интеловим графичким картицама, али учинак је релативно слаб.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="27"/>
-        <source>Intel Acceleration Mode</source>
-        <translation>Intel режим убрзања</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="28"/>
-        <source>Use Intel acceleration mode</source>
-        <translation>Користи Intel режим убрзања</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="29"/>
-        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Убрзајте графичку картицу са бољим учинком, али нестабилно са неким картицама уз треперење екрана.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="31"/>
-        <source>Use Bumblebee Solution</source>
-        <translation>Користи Bumblebee решење</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="32"/>
-        <source>Bumblebee Solution</source>
-        <translation>Bumblebee решење</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="33"/>
-        <source>Save power to reduce power consumption.</source>
+        <location filename="../prepare/resolution.h" line="20"/>
+        <source>Save power to reduce power consumption</source>
         <translation>Штедите енергију да смањите потрошњу.</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="35"/>
-        <source>Use NV-PRIME Solution</source>
-        <translation>Користи NV-PRIME решење</translation>
+        <location filename="../prepare/resolution.h" line="21"/>
+        <source>PRIME</source>
+        <translation>PRIME</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="36"/>
-        <source>PRIME Solution</source>
-        <translation>PRIME решење</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="37"/>
-        <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation>За преносне рачунаре са хибридном графиком. Има најбољи учинак, али мора радити са власничким управљачким програмом.</translation>
+        <location filename="../prepare/resolution.h" line="22"/>
+        <source>Best performance, for computers with hybrid graphics</source>
+        <translation>Најбољи учинак за рачунаре са хибридним графичким картицама</translation>
     </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
     <message>
-        <location filename="../widgets/resolutionwidget.cpp" line="118"/>
-        <source>Version: </source>
-        <translation>Верзија:</translation>
+        <location filename="../prepare/resolutionwidget.cpp" line="41"/>
+        <source>Driver/Version: %1/%2</source>
+        <translation>Управљач/Верзија: %1/%2</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
-        <location filename="../installer/main.cpp" line="37"/>
+        <location filename="../prepare/main.cpp" line="52"/>
+        <location filename="../test_installer/main.cpp" line="41"/>
+        <source>Graphics Driver Manager</source>
+        <translation>Управник Графичких Управљача</translation>
+    </message>
+    <message>
+        <location filename="../prepare/main.cpp" line="53"/>
+        <location filename="../test_installer/main.cpp" line="42"/>
+        <source>Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation>Управник Графичких Управљача је лак за коришћење и компактан алат за управљање графичким управљачким програмима. То укључује откривање графичких картица, инсталацију графичких управљача, пребацивање између решења графичких управљача, самосталан опоравак графичких управљача и друге функције.</translation>
+    </message>
+    <message>
+        <location filename="../installer/main.cpp" line="49"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
         <translation>Честитамо! Прешли сте на %1. Поново покрените да ступи на снагу.</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="40"/>
+        <location filename="../installer/main.cpp" line="52"/>
         <source>Cancel</source>
         <translation>Откажи</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="41"/>
+        <location filename="../installer/main.cpp" line="53"/>
         <source>Reboot</source>
         <translation>Поново покрени</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="58"/>
+        <location filename="../installer/main.cpp" line="91"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
         <translation>Аутоматски враћено на %2 након неуспешног преласка на %1</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="61"/>
+        <location filename="../installer/main.cpp" line="96"/>
         <source>Submit Feedback</source>
         <translation>Повратне информације</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="69"/>
+        <location filename="../installer/main.cpp" line="105"/>
         <source>Updating the driver, please wait...</source>
         <translation>Ажурирање управљача, молимо сачекајте...</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="25"/>
-        <source>Deepin Graphics Driver Manager</source>
-        <translation>Управник Управљачких Програма</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Дипин Управник Управљачких Програма је лак за коришћење и компактан алат за управљање графичким управљачким програмима. То укључује откривање графичких картица, инсталацију графичких управљача, пребацивање између решења графичких управљача, самосталан опоравак графичких управљача и друге функције.</translation>
     </message>
 </context>
 </TS>

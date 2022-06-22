@@ -2,17 +2,17 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/main.cpp" line="124"/>
+        <location filename="../gltest/gltestwindow.cpp" line="18"/>
         <source>Apply</source>
         <translation>Appliquer</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="125"/>
+        <location filename="../gltest/gltestwindow.cpp" line="20"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="126"/>
+        <location filename="../gltest/gltestwindow.cpp" line="22"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Assurez-vous que le pilote fonctionne correctement en vérifiant l&apos;affichage de l&apos;écran</translation>
     </message>
@@ -20,252 +20,217 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="41"/>
+        <location filename="../prepare/mainwindow.cpp" line="38"/>
         <source>Switch</source>
         <translation>Basculer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="58"/>
+        <location filename="../prepare/mainwindow.cpp" line="65"/>
+        <source>Update</source>
+        <translation>Mise à jour</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="70"/>
+        <source>Reboot Now</source>
+        <translation>Redémarrer maintenant</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="75"/>
+        <location filename="../test_installer/mainwindow.cpp" line="51"/>
+        <source>Cancel</source>
+        <translation>Annuler</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="80"/>
+        <source>Try Again</source>
+        <translation>Réessayer</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="85"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="62"/>
-        <source>Reboot</source>
-        <translation>Redémarrer</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="177"/>
+        <location filename="../prepare/mainwindow.cpp" line="186"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
         <translation>Votre matériel n&apos;est pas supporté actuellement, veuillez attendre la prochaine version.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
-        <source>Downloading</source>
-        <translation>Téléchargement</translation>
+        <location filename="../prepare/mainwindow.cpp" line="301"/>
+        <source>Switching to the discrete graphics interface may cause a black screen.</source>
+        <translation>Le passage à l&apos;interface graphique discrète peut provoquer un écran noir.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="269"/>
-        <source>Downloading the driver for %1, please wait...</source>
-        <translation>Téléchargement du pilote pour %1, veuillez patienter ...</translation>
+        <location filename="../prepare/mainwindow.cpp" line="305"/>
+        <source>Switching to the integrated graphics interface may cause a black screen.</source>
+        <translation>Le passage à l&apos;interface graphique intégrée peut provoquer un écran noir.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
-        <source>Download Successful</source>
-        <translation>Téléchargement réussi</translation>
+        <location filename="../prepare/mainwindow.cpp" line="461"/>
+        <source>Preparation failed for driver switching</source>
+        <translation>La préparation a échoué pour le changement de pilote</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
-        <source>Please reboot to test the driver.
-
-If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation>Veuillez redémarrer pour tester le pilote.
-
-Si aucun signal apparait, vérifiez que le port de sortie du moniteur soit correctement connecté.</translation>
+        <location filename="../prepare/mainwindow.cpp" line="482"/>
+        <source>Please reboot for switching to another driver, which may cost several minutes, please wait patiently</source>
+        <translation>Veuillez redémarrer pour passer à un autre pilote, ce qui peut durer plusieurs minutes, merci de patienter</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="302"/>
-        <source>Please reboot to test the driver</source>
-        <translation>Veuillez redémarrer pour tester le pilote</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="56"/>
+        <source>Reboot</source>
+        <translation>Redémarrer</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="290"/>
-        <source>Download failed</source>
-        <translation>Échec du téléchargement</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="146"/>
+        <source>Installing</source>
+        <translation>Installation</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="38"/>
-        <source>Dark theme</source>
-        <translation>Thème sombre</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="148"/>
+        <source>It will auto reboot after the successful installation, please do not take any actions</source>
+        <translation>Il redémarrera automatiquement après l&apos;installation réussie, veuillez ne pas entreprendre d&apos;action</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="291"/>
-        <source>Sorry, switch failed</source>
-        <translation>Désolé, nous n&apos;avons pas réussi à changer le pilote.</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="267"/>
+        <source>Installation successful</source>
+        <translation>Installation réussie</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="268"/>
+        <source>Your computer will reboot soon</source>
+        <translation>Votre ordinateur redémarrera bientôt</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="273"/>
+        <source>Installation failed</source>
+        <translation>L&apos;installation a échoué</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="274"/>
+        <source>Your computer will reboot soon and switch to the previous driver</source>
+        <translation>Votre ordinateur redémarrera bientôt et passera au pilote précédent</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="287"/>
+        <source>Reboot Now (%1)</source>
+        <translation>Redémarrer maintenant (%1)</translation>
     </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="8"/>
-        <source>Use AMD card driver</source>
-        <translation>Utiliser le pilote graphique AMD</translation>
+        <location filename="../prepare/resolution.h" line="10"/>
+        <location filename="../prepare/resolution.h" line="17"/>
+        <source>Integrated Graphics</source>
+        <translation>Carte graphique intégré</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="9"/>
-        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation>Pour les besoins spécifiques. Déterminer automatiquement le mode d&apos;accélération sans configuration externe.</translation>
+        <location filename="../prepare/resolution.h" line="11"/>
+        <source>Switching to the discrete graphics interface may cause a black screen</source>
+        <translation>Le passage à l&apos;interface graphique discrète peut provoquer un écran noir</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="11"/>
-        <source>NVIDIA Default Driver</source>
-        <translation>Pilote NVIDIA par défaut</translation>
+        <location filename="../prepare/resolution.h" line="12"/>
+        <source>Official driver</source>
+        <translation>Pilote officiel</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="14"/>
-        <source>NVIDIA Open Source Driver</source>
-        <translation>Pilote NVIDIA Open Source</translation>
+        <location filename="../prepare/resolution.h" line="13"/>
+        <source>Unofficial driver</source>
+        <translation>Pilote non officiel</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="17"/>
-        <source>NVIDIA Closed Source Driver</source>
-        <translation>Pilote NVIDIA propriétaire </translation>
+        <location filename="../prepare/resolution.h" line="14"/>
+        <source>Only adaptive to parts of distributions and graphics cards, and it may cause a black screen</source>
+        <translation>S&apos;adapte uniquement à certaines parties des distributions et des cartes graphiques, et cela peut provoquer un écran noir</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="19"/>
-        <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation>Convient uniquement pour certaines cartes graphiques. Un écran noir peut apparaître si le pilote est non compatible.</translation>
+        <location filename="../prepare/resolution.h" line="15"/>
+        <source>Poor performance, unstable in some graphics cards</source>
+        <translation>Mauvaises performances, instables pour certaines cartes graphiques</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="21"/>
-        <source>Intel Default Driver</source>
-        <translation>Pilote Intel par défaut</translation>
+        <location filename="../prepare/resolution.h" line="16"/>
+        <source>Switching to the integrated graphics interface may cause a black screen</source>
+        <translation>Le passage à l&apos;interface graphique intégrée peut provoquer un écran noir</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="24"/>
-        <source>Intel Compatible Mode</source>
-        <translation>Mode compatibilité Intel</translation>
+        <location filename="../prepare/resolution.h" line="18"/>
+        <source>Integrated graphics driver</source>
+        <translation>Pilote graphique intégré</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="25"/>
-        <source>Use Intel compatible mode</source>
-        <translation>Utiliser le mode compatible Intel</translation>
+        <location filename="../prepare/resolution.h" line="19"/>
+        <source>Bumblebee</source>
+        <translation>Bumblebee</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="12"/>
-        <source>Use default driver</source>
-        <translation>Utiliser le pilote par défaut</translation>
+        <location filename="../prepare/resolution.h" line="20"/>
+        <source>Save power to reduce power consumption</source>
+        <translation>Économiser de l&apos;énergie pour réduire la consommation d&apos;énergie</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="13"/>
-        <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation>Le pilote graphique NVIDIA n&apos;est pas détecté dans l&apos;environnement actuel, la carte NVIDIA ne fonctionnera pas correctement.</translation>
+        <location filename="../prepare/resolution.h" line="21"/>
+        <source>PRIME</source>
+        <translation>PREMIER</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="15"/>
-        <source>Use open source driver</source>
-        <translation>Utiliser le pilote open source</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="16"/>
-        <source>Poor performance, unstable in some graphics cards.</source>
-        <translation>Performances faibles, instables sur certaines cartes graphiques.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="18"/>
-        <source>Use closed source driver</source>
-        <translation>Utiliser le pilote propiétaire</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="22"/>
-        <source>Use Intel default driver</source>
-        <translation>Utiliser le pilote par défaut Intel</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="23"/>
-        <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation>Mauvaise compatibilité avec certaines anciennes cartes graphiques.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="26"/>
-        <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation>Meilleure compatibilité pour toutes les cartes graphiques Intel, mais les performances sont relativement faibles.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="27"/>
-        <source>Intel Acceleration Mode</source>
-        <translation>Mode d&apos;accélération Intel</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="28"/>
-        <source>Use Intel acceleration mode</source>
-        <translation>Utiliser le mode d&apos;accélération Intel</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="29"/>
-        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Augmente les performances de la carte graphique, mais des flash à l&apos;écran peuvent apparaitre avec certaines cartes.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="31"/>
-        <source>Use Bumblebee Solution</source>
-        <translation>Utilisez la solution Bumblebee</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="32"/>
-        <source>Bumblebee Solution</source>
-        <translation>La solution Bumblebee</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="33"/>
-        <source>Save power to reduce power consumption.</source>
-        <translation>Économisez de l&apos;énergie pour réduire la consommation d&apos;électricité.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="35"/>
-        <source>Use NV-PRIME Solution</source>
-        <translation>Utiliser la solution NV-PRIME</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="36"/>
-        <source>PRIME Solution</source>
-        <translation>La solution PRIME</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="37"/>
-        <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation>Pour les ordinateurs portables avec des cartes graphiques hybrides, possède les meilleures performances, mais fonctionne avec un driver propriétaire.</translation>
+        <location filename="../prepare/resolution.h" line="22"/>
+        <source>Best performance, for computers with hybrid graphics</source>
+        <translation>Meilleures performances, pour les ordinateurs dotés de cartes graphiques hybrides</translation>
     </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
     <message>
-        <location filename="../widgets/resolutionwidget.cpp" line="118"/>
-        <source>Version: </source>
-        <translation>Version : </translation>
+        <location filename="../prepare/resolutionwidget.cpp" line="41"/>
+        <source>Driver/Version: %1/%2</source>
+        <translation>Pilote Version : %1/%2</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
-        <location filename="../installer/main.cpp" line="37"/>
+        <location filename="../prepare/main.cpp" line="52"/>
+        <location filename="../test_installer/main.cpp" line="41"/>
+        <source>Graphics Driver Manager</source>
+        <translation>Gestionnaire de pilotes graphiques</translation>
+    </message>
+    <message>
+        <location filename="../prepare/main.cpp" line="53"/>
+        <location filename="../test_installer/main.cpp" line="42"/>
+        <source>Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation>Graphics Driver Manager est un outil de gestion de pilote graphique compact et facile à utiliser. Il comprend la détection du matériel de la carte graphique, l&apos;installation du pilote graphique, la commutation de la solution du pilote graphique, la récupération automatique du pilote graphique et d&apos;autres fonctions.</translation>
+    </message>
+    <message>
+        <location filename="../installer/main.cpp" line="49"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
         <translation>Félicitations, vous êtes passé à %1, veuillez redémarrer pour prendre effet.</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="40"/>
+        <location filename="../installer/main.cpp" line="52"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="41"/>
+        <location filename="../installer/main.cpp" line="53"/>
         <source>Reboot</source>
         <translation>Redémarrer</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="58"/>
+        <location filename="../installer/main.cpp" line="91"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
         <translation>Restauration automatique en %2 suite à l&apos;échec en %1</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="61"/>
+        <location filename="../installer/main.cpp" line="96"/>
         <source>Submit Feedback</source>
         <translation>Envoyer des commentaires</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="69"/>
+        <location filename="../installer/main.cpp" line="105"/>
         <source>Updating the driver, please wait...</source>
         <translation>Mise à jour du pilote, veuillez patienter...</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="25"/>
-        <source>Deepin Graphics Driver Manager</source>
-        <translation>Gestionnaire de pilotes graphiques Deepin</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin Graphics Driver Manager est un outil de gestion de pilotes graphiques compact et facile à utiliser. Il comprend la détection matérielle de la carte graphique, l’installation du pilote graphique, le changement de solution du pilote graphique, la récupération automatique du pilote graphique et d’autres fonctions.</translation>
     </message>
 </context>
 </TS>

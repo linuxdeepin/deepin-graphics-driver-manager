@@ -7,5 +7,3 @@ include /usr/share/dpkg/default.mk
 
 override_dh_auto_configure:
 	dh_auto_configure -- -DVERSION=$(DEB_VERSION_UPSTREAM)
-
-

@@ -2,17 +2,17 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/main.cpp" line="124"/>
+        <location filename="../gltest/gltestwindow.cpp" line="18"/>
         <source>Apply</source>
         <translation>Застосувати</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="125"/>
+        <location filename="../gltest/gltestwindow.cpp" line="20"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="126"/>
+        <location filename="../gltest/gltestwindow.cpp" line="22"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Переконайтеся, що драйвер працює нормально без розмиття та розривів у зображенні</translation>
     </message>
@@ -20,252 +20,217 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="41"/>
+        <location filename="../prepare/mainwindow.cpp" line="38"/>
         <source>Switch</source>
         <translation>Перемикач</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="58"/>
+        <location filename="../prepare/mainwindow.cpp" line="65"/>
+        <source>Update</source>
+        <translation>Оновити</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="70"/>
+        <source>Reboot Now</source>
+        <translation>Перезавантажити зараз</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="75"/>
+        <location filename="../test_installer/mainwindow.cpp" line="51"/>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="80"/>
+        <source>Try Again</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="85"/>
         <source>OK</source>
         <translation>Гаразд</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="62"/>
-        <source>Reboot</source>
-        <translation>Перезавантажити</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="177"/>
+        <location filename="../prepare/mainwindow.cpp" line="186"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
         <translation>У поточній версії системи не передбачено підтримки вашого обладнання. Будь ласка, зачекайте на наступну версію.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
-        <source>Downloading</source>
-        <translation>Отримання</translation>
+        <location filename="../prepare/mainwindow.cpp" line="301"/>
+        <source>Switching to the discrete graphics interface may cause a black screen.</source>
+        <translation>Перемикання на інтерфейс дискретної графіки може спричинити зникнення зображення з екрана.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="269"/>
-        <source>Downloading the driver for %1, please wait...</source>
-        <translation>Отримуємо драйвер до %1. Будь ласка, зачекайте…</translation>
+        <location filename="../prepare/mainwindow.cpp" line="305"/>
+        <source>Switching to the integrated graphics interface may cause a black screen.</source>
+        <translation>Перемикання на інтерфейс інтегрованої графіки може спричинити зникнення зображення з екрана.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
-        <source>Download Successful</source>
-        <translation>Завантаження успішне</translation>
+        <location filename="../prepare/mainwindow.cpp" line="461"/>
+        <source>Preparation failed for driver switching</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
-        <source>Please reboot to test the driver.
-
-If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation>Будь ласка, перезавантажте комп&apos;ютер, щоб перевірити драйвер.
-
-Якщо сигнал не з&apos;явиться, перевірте, чи з&apos;єднано монітор із портом виведення даних належним чином.</translation>
+        <location filename="../prepare/mainwindow.cpp" line="482"/>
+        <source>Please reboot for switching to another driver, which may cost several minutes, please wait patiently</source>
+        <translation>Будь ласка, перезавантажте систему для переходу на інший драйвер. Оновлення може тривати декілька хвилин — будь ласка, наберіться терпіння.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="302"/>
-        <source>Please reboot to test the driver</source>
-        <translation>Будь ласка, перезавантажте комп&apos;ютер, щоб випробувати драйвер</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="56"/>
+        <source>Reboot</source>
+        <translation>Перезавантажити</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="290"/>
-        <source>Download failed</source>
-        <translation>Помилка завантаження</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="146"/>
+        <source>Installing</source>
+        <translation>Встановлення</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="38"/>
-        <source>Dark theme</source>
-        <translation>Темна тема</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="148"/>
+        <source>It will auto reboot after the successful installation, please do not take any actions</source>
+        <translation>Система автоматично перезавантажиться після успішного встановлення. Будь ласка, не виконуйте ніяких зайвих дій.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="291"/>
-        <source>Sorry, switch failed</source>
-        <translation>На жаль, пермкнути невдалось</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="267"/>
+        <source>Installation successful</source>
+        <translation>Успішне встановлення</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="268"/>
+        <source>Your computer will reboot soon</source>
+        <translation>Невдовзі ваш комп&apos;ютер буде перезавантажено</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="273"/>
+        <source>Installation failed</source>
+        <translation>Не вдалося встановити</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="274"/>
+        <source>Your computer will reboot soon and switch to the previous driver</source>
+        <translation>Невдовзі ваш комп&apos;ютер буде перезавантажено. Систему буде перемкнено на попередній драйвер.</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="287"/>
+        <source>Reboot Now (%1)</source>
+        <translation>Перезавантажити зараз (%1)</translation>
     </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="8"/>
-        <source>Use AMD card driver</source>
-        <translation>Використати драйвер AMD-карти</translation>
+        <location filename="../prepare/resolution.h" line="10"/>
+        <location filename="../prepare/resolution.h" line="17"/>
+        <source>Integrated Graphics</source>
+        <translation>Інтегрована графіка</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="9"/>
-        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation>Для особливих потреб. Автоматично визначати шлях прискорення без зовнішньої конфігурації.</translation>
+        <location filename="../prepare/resolution.h" line="11"/>
+        <source>Switching to the discrete graphics interface may cause a black screen</source>
+        <translation>Перемикання на інтерфейс дискретної графіки може спричинити зникнення зображення з екрана</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="11"/>
-        <source>NVIDIA Default Driver</source>
-        <translation>Драйвер за замовчуванням NVIDIA</translation>
+        <location filename="../prepare/resolution.h" line="12"/>
+        <source>Official driver</source>
+        <translation>Офіційний драйвер</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="14"/>
-        <source>NVIDIA Open Source Driver</source>
-        <translation>NVIDIA Open Source Driver</translation>
+        <location filename="../prepare/resolution.h" line="13"/>
+        <source>Unofficial driver</source>
+        <translation>Неофіційний драйвер</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="17"/>
-        <source>NVIDIA Closed Source Driver</source>
-        <translation>NVIDIA Closed Source Driver</translation>
+        <location filename="../prepare/resolution.h" line="14"/>
+        <source>Only adaptive to parts of distributions and graphics cards, and it may cause a black screen</source>
+        <translation>Пристосований лише до частини дистрибутивів та деяких графічних карток. Може призвести до зникнення зображення з монітора</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="19"/>
-        <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
-        <translation>Пристосований лише до частини дистрибутивів та деяких графічних карток. Може призвести до відсутності зображення.</translation>
+        <location filename="../prepare/resolution.h" line="15"/>
+        <source>Poor performance, unstable in some graphics cards</source>
+        <translation>Низька швидкодія, нестабільний на деяких графічних картках</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="21"/>
-        <source>Intel Default Driver</source>
-        <translation>Драйвер за умовчанням Intel</translation>
+        <location filename="../prepare/resolution.h" line="16"/>
+        <source>Switching to the integrated graphics interface may cause a black screen</source>
+        <translation>Перемикання на інтерфейс інтегрованої графіки може спричинити зникнення зображення з екрана</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="24"/>
-        <source>Intel Compatible Mode</source>
-        <translation>Сумісний режим Intel</translation>
+        <location filename="../prepare/resolution.h" line="18"/>
+        <source>Integrated graphics driver</source>
+        <translation>Драйвер до інтегрованої графіки</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="25"/>
-        <source>Use Intel compatible mode</source>
-        <translation>Використовувати сумісний режим Intel</translation>
+        <location filename="../prepare/resolution.h" line="19"/>
+        <source>Bumblebee</source>
+        <translation>Bumblebee</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="12"/>
-        <source>Use default driver</source>
-        <translation>Типовий драйвер</translation>
+        <location filename="../prepare/resolution.h" line="20"/>
+        <source>Save power to reduce power consumption</source>
+        <translation>Заощадження енергії для зменшення її споживання</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="13"/>
-        <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation>У поточному середовищі не виявлено драйвера NVIDIA. Картка NVIDIA не буде працювати належним чином.</translation>
+        <location filename="../prepare/resolution.h" line="21"/>
+        <source>PRIME</source>
+        <translation>PRIME</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="15"/>
-        <source>Use open source driver</source>
-        <translation>Відкритий драйвер</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="16"/>
-        <source>Poor performance, unstable in some graphics cards.</source>
-        <translation>Низька швидкодія, нестабільний на деяких графічних картках.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="18"/>
-        <source>Use closed source driver</source>
-        <translation>Драйвер із закритим кодом</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="22"/>
-        <source>Use Intel default driver</source>
-        <translation>Використовувати драйвер Intel за замовчуванням</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="23"/>
-        <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation>Погана сумісність із частиною застарілих графічних карток.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="26"/>
-        <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation>Найкраща сумісність із усіма графічними картками Intel для апаратного прискорення обробки, але швидкодія, зазвичай, відносно невисока.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="27"/>
-        <source>Intel Acceleration Mode</source>
-        <translation>Режим прискорення Intel</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="28"/>
-        <source>Use Intel acceleration mode</source>
-        <translation>Використовувати режим розгону Intel</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="29"/>
-        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Надає можливість скористатися усією потужністю графічної картки, але працює нестабільно із деякими картками, може спричиняти блимання зображення.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="31"/>
-        <source>Use Bumblebee Solution</source>
-        <translation>Використовувати рішення Bumblebee Solution</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="32"/>
-        <source>Bumblebee Solution</source>
-        <translation>Bumblebee Solution</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="33"/>
-        <source>Save power to reduce power consumption.</source>
-        <translation>Заощадження енергії для зменшення її споживання.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="35"/>
-        <source>Use NV-PRIME Solution</source>
-        <translation>Рішення NV-PRIME</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="36"/>
-        <source>PRIME Solution</source>
-        <translation>Рішення PRIME</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="37"/>
-        <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation>Для ноутбуків із гібридною графічною підсистемою. Найкраща швидкодія, але потрібен драйвер із закритим кодом.</translation>
+        <location filename="../prepare/resolution.h" line="22"/>
+        <source>Best performance, for computers with hybrid graphics</source>
+        <translation>Найкраща швидкодія, для комп&apos;ютерів із гібридною графікою</translation>
     </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
     <message>
-        <location filename="../widgets/resolutionwidget.cpp" line="118"/>
-        <source>Version: </source>
-        <translation>Версія:</translation>
+        <location filename="../prepare/resolutionwidget.cpp" line="41"/>
+        <source>Driver/Version: %1/%2</source>
+        <translation>Драйвер/Версія: %1/%2</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
-        <location filename="../installer/main.cpp" line="37"/>
+        <location filename="../prepare/main.cpp" line="52"/>
+        <location filename="../test_installer/main.cpp" line="41"/>
+        <source>Graphics Driver Manager</source>
+        <translation>Керування драйверами графіки</translation>
+    </message>
+    <message>
+        <location filename="../prepare/main.cpp" line="53"/>
+        <location filename="../test_installer/main.cpp" line="42"/>
+        <source>Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation>Засіб керування графічними драйверами — компактний і простий у користуванні інструмент керування графічним драйвером. До нього включено засіб виявлення апаратних засобів відеокарти, встановлення графічного драйвера, перемикання графічного драйвера, автоматичного відновлення графічного драйвера та інші функції.</translation>
+    </message>
+    <message>
+        <location filename="../installer/main.cpp" line="49"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
         <translation>Вітаємо, ви перейшли на %1. Будь ласка, перезавантажте комп&apos;ютер, щоб зміни набули чинності.</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="40"/>
+        <location filename="../installer/main.cpp" line="52"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="41"/>
+        <location filename="../installer/main.cpp" line="53"/>
         <source>Reboot</source>
         <translation>Перезавантажити</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="58"/>
+        <location filename="../installer/main.cpp" line="91"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
         <translation>Автоматичне відновлення %2 після невдалої спроби перемкнутися на %1</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="61"/>
+        <location filename="../installer/main.cpp" line="96"/>
         <source>Submit Feedback</source>
         <translation>Надіслати відгук</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="69"/>
+        <location filename="../installer/main.cpp" line="105"/>
         <source>Updating the driver, please wait...</source>
         <translation>Оновлюємо драйвер. Будь ласка, зачекайте…</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="25"/>
-        <source>Deepin Graphics Driver Manager</source>
-        <translation>Deepin Graphics Driver Manager</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin Graphics Driver Manager - це компактний і простий у використанні інструмент керування графічним драйвером. Він включає в себе виявлення апаратних засобів відеокарти, встановлення графічного драйвера, перемикання розширення графічного драйвера, автоматичного відновлення графічного драйвера та інші функції.</translation>
     </message>
 </context>
 </TS>

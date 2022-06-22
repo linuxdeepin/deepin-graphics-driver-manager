@@ -2,17 +2,17 @@
 <context>
     <name>GLTestWindow</name>
     <message>
-        <location filename="../gltest/main.cpp" line="124"/>
+        <location filename="../gltest/gltestwindow.cpp" line="18"/>
         <source>Apply</source>
         <translation>Uygula</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="125"/>
+        <location filename="../gltest/gltestwindow.cpp" line="20"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../gltest/main.cpp" line="126"/>
+        <location filename="../gltest/gltestwindow.cpp" line="22"/>
         <source>Please ensure the driver works normally without blurred screen and screen tearing</source>
         <translation>Lütfen yeni sürücünün ekranda bulanık ya da bölünmüş bir görüntü oluşturmadığından ve normal şekilde çalıştığından emin olun</translation>
     </message>
@@ -20,252 +20,217 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="41"/>
+        <location filename="../prepare/mainwindow.cpp" line="38"/>
         <source>Switch</source>
         <translation>Geçiş Yap</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="58"/>
+        <location filename="../prepare/mainwindow.cpp" line="65"/>
+        <source>Update</source>
+        <translation>Güncelle</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="70"/>
+        <source>Reboot Now</source>
+        <translation>Şimdi Yeniden Başlat</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="75"/>
+        <location filename="../test_installer/mainwindow.cpp" line="51"/>
+        <source>Cancel</source>
+        <translation>İptal</translation>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="80"/>
+        <source>Try Again</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../prepare/mainwindow.cpp" line="85"/>
         <source>OK</source>
         <translation>Tamam</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="62"/>
-        <source>Reboot</source>
-        <translation>Yeniden Başlat</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="177"/>
+        <location filename="../prepare/mainwindow.cpp" line="186"/>
         <source>Your hardware is not supported currently, please wait for future version.</source>
         <translation>Donanımınız henüz desteklenmiyor, lütfen sonraki sürümü bekleyin.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
-        <source>Downloading</source>
-        <translation>İndiriliyor</translation>
+        <location filename="../prepare/mainwindow.cpp" line="301"/>
+        <source>Switching to the discrete graphics interface may cause a black screen.</source>
+        <translation>Harici grafik arayüzüne geçmek siyah ekrana neden olabilir</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="269"/>
-        <source>Downloading the driver for %1, please wait...</source>
-        <translation>%1 sürücüsü indiriliyor, lütfen bekleyin...</translation>
+        <location filename="../prepare/mainwindow.cpp" line="305"/>
+        <source>Switching to the integrated graphics interface may cause a black screen.</source>
+        <translation>Dahili grafik arayüzüne geçmek siyah ekrana neden olabilir.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="298"/>
-        <source>Download Successful</source>
-        <translation>İndirildi</translation>
+        <location filename="../prepare/mainwindow.cpp" line="461"/>
+        <source>Preparation failed for driver switching</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
-        <source>Please reboot to test the driver.
-
-If no signal, please confirm whether the monitor output port is connected correctly.</source>
-        <translation>Lütfen sürücüyü denemek için yeniden başlatın.
-
-Herhangi bir görüntü yok ise ekran bağlantısının doğru yapılıp yapılmadığını denetleyin.</translation>
+        <location filename="../prepare/mainwindow.cpp" line="482"/>
+        <source>Please reboot for switching to another driver, which may cost several minutes, please wait patiently</source>
+        <translation>Lütfen başka bir sürücüye geçmek için yeniden başlatın bu işlem birkaç dakika sürebilir, lütfen sabırla bekleyin</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="302"/>
-        <source>Please reboot to test the driver</source>
-        <translation>Lütfen sürücüyü denemek için yeniden başlatın</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="56"/>
+        <source>Reboot</source>
+        <translation>Yeniden Başlat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="290"/>
-        <source>Download failed</source>
-        <translation>İndirilemedi</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="146"/>
+        <source>Installing</source>
+        <translation>Kuruluyor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="38"/>
-        <source>Dark theme</source>
-        <translation>Koyu tema</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="148"/>
+        <source>It will auto reboot after the successful installation, please do not take any actions</source>
+        <translation>Başarılı kurulumdan sonra kendiliğinden yeniden başlayacak, lütfen herhangi bir işlem yapmayın</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="291"/>
-        <source>Sorry, switch failed</source>
-        <translation>Maalesef, geçiş yapılamadı</translation>
+        <location filename="../test_installer/mainwindow.cpp" line="267"/>
+        <source>Installation successful</source>
+        <translation>Kurulum başarılı</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="268"/>
+        <source>Your computer will reboot soon</source>
+        <translation>Bilgisayarınız yeniden başlayacak</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="273"/>
+        <source>Installation failed</source>
+        <translation>Kurulum başarısız</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="274"/>
+        <source>Your computer will reboot soon and switch to the previous driver</source>
+        <translation>Bilgisayarınız yeniden başlayacak ve önceki sürücüye geçecek</translation>
+    </message>
+    <message>
+        <location filename="../test_installer/mainwindow.cpp" line="287"/>
+        <source>Reboot Now (%1)</source>
+        <translation>Şimdi Yeniden Başlat (%1)</translation>
     </message>
 </context>
 <context>
     <name>Resolution</name>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="8"/>
-        <source>Use AMD card driver</source>
-        <translation>AMD Aygıt Sürücüsü Kullanılsın</translation>
+        <location filename="../prepare/resolution.h" line="10"/>
+        <location filename="../prepare/resolution.h" line="17"/>
+        <source>Integrated Graphics</source>
+        <translation>Dahili Grafikler</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="9"/>
-        <source>For special needs. Auto determine the acceleration way without external configuration.</source>
-        <translation>Özel gereksinimler için. Dış yapılandırma olmadan hızlandırma yöntemi otomatik olarak belirlenir.</translation>
+        <location filename="../prepare/resolution.h" line="11"/>
+        <source>Switching to the discrete graphics interface may cause a black screen</source>
+        <translation>Harici grafik arayüzüne geçmek siyah ekrana neden olabilir</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="11"/>
-        <source>NVIDIA Default Driver</source>
-        <translation>Varsayılan NVIDIA Sürücüsü</translation>
+        <location filename="../prepare/resolution.h" line="12"/>
+        <source>Official driver</source>
+        <translation>Resmi sürücü</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="14"/>
-        <source>NVIDIA Open Source Driver</source>
-        <translation>Açık Kaynaklı NVIDIA Sürücüsü</translation>
+        <location filename="../prepare/resolution.h" line="13"/>
+        <source>Unofficial driver</source>
+        <translation>Resmi olmayan sürücü</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="17"/>
-        <source>NVIDIA Closed Source Driver</source>
-        <translation>Kapalı Kaynaklı NVIDIA Sürücüsü</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="19"/>
-        <source>Only adaptive to parts of distributions and graphics cards, may cause black screen.</source>
+        <location filename="../prepare/resolution.h" line="14"/>
+        <source>Only adaptive to parts of distributions and graphics cards, and it may cause a black screen</source>
         <translation>Yalnızca bazı dağıtım ve görüntü aygıtları ile uyumludur. Görüntünün kararmasına neden olabilir.</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="21"/>
-        <source>Intel Default Driver</source>
-        <translation>Varsayılan Intel Sürücüsü</translation>
+        <location filename="../prepare/resolution.h" line="15"/>
+        <source>Poor performance, unstable in some graphics cards</source>
+        <translation>Başarımı düşüktür, bazı görüntü aygıtlarında kararsızlığa neden olabilir</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="24"/>
-        <source>Intel Compatible Mode</source>
-        <translation>İntel Uyumlu Kip</translation>
+        <location filename="../prepare/resolution.h" line="16"/>
+        <source>Switching to the integrated graphics interface may cause a black screen</source>
+        <translation>Dahili grafik arayüzüne geçmek siyah ekrana neden olabilir</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="25"/>
-        <source>Use Intel compatible mode</source>
-        <translation>İntel Uyumlu Kip Kullanılsın</translation>
+        <location filename="../prepare/resolution.h" line="18"/>
+        <source>Integrated graphics driver</source>
+        <translation>Dahili grafik sürücüsü</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="12"/>
-        <source>Use default driver</source>
-        <translation>Varsayılan Sürücü Kullanılsın</translation>
+        <location filename="../prepare/resolution.h" line="19"/>
+        <source>Bumblebee</source>
+        <translation>Bumblebee</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="13"/>
-        <source>NVIDIA driver is not detected in the current environment, and NVIDIA card will not work properly.</source>
-        <translation>Geçerli ortamda NVIDIA sürücüsü algılanamadığından NVIDIA aygıtı düzgün çalışmayacak.</translation>
+        <location filename="../prepare/resolution.h" line="20"/>
+        <source>Save power to reduce power consumption</source>
+        <translation>Güç tüketimini azaltmak için güç tasarrufu yapılır</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="15"/>
-        <source>Use open source driver</source>
-        <translation>Açık Kaynaklı Sürücü Kullanılsın</translation>
+        <location filename="../prepare/resolution.h" line="21"/>
+        <source>PRIME</source>
+        <translation>PRIME</translation>
     </message>
     <message>
-        <location filename="../resolutions/resolution.cpp" line="16"/>
-        <source>Poor performance, unstable in some graphics cards.</source>
-        <translation>Başarımı düşüktür, bazı görüntü aygıtlarında kararsızlığa neden olabilir.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="18"/>
-        <source>Use closed source driver</source>
-        <translation>Kapalı Kaynaklı Sürücü Kullanılsın</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="22"/>
-        <source>Use Intel default driver</source>
-        <translation>Varsayılan Intel Sürücüsü Kullanılsın</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="23"/>
-        <source>Poor compatibility for parts of old graphics cards.</source>
-        <translation>Eski görüntü aygıtı bileşenleri ile uyumluluk sorunları olabilir.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="26"/>
-        <source>Best compatibility for all Intel graphics cards to accelerate, but performance is relatively weak.</source>
-        <translation>Tüm Intel görüntü aygıtlarını hızlandırmak için en iyi uyumluluğu sağlar ancak göreceli olarak başarımı daha düşüktür.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="27"/>
-        <source>Intel Acceleration Mode</source>
-        <translation>Intel Hızlandırma Kipi</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="28"/>
-        <source>Use Intel acceleration mode</source>
-        <translation>Intel Hızlandırma Kipi Kullanılsın</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="29"/>
-        <source>Speed up the graphics card with better performance, but unstable in some cards with screen flashing.</source>
-        <translation>Daha iyi başarım için görüntü aygıtını hızlandırır ancak bazı donanımlarda görüntünün gelip gitmesine neden olan bir soruna yol açabilir.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="31"/>
-        <source>Use Bumblebee Solution</source>
-        <translation>Bumblebee Çözümü Kullanılsın</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="32"/>
-        <source>Bumblebee Solution</source>
-        <translation>Bumblebee Çözümü</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="33"/>
-        <source>Save power to reduce power consumption.</source>
-        <translation>Güç tüketimini azaltmak için güç tasarrufu yapılır.</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="35"/>
-        <source>Use NV-PRIME Solution</source>
-        <translation>NV-PRIME Çözümü Kullanılsın</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="36"/>
-        <source>PRIME Solution</source>
-        <translation>PRIME Çözümü</translation>
-    </message>
-    <message>
-        <location filename="../resolutions/resolution.cpp" line="37"/>
-        <source>For laptops with hybrid graphics, having best performance but must work with closed-source driver.</source>
-        <translation>Birden fazla görüntü aygıtı bulunan taşınabilir bilgisayarlar için en iyi başarımı sunar ancak kapalı kaynaklı bir sürücü kullanılması gerekir.</translation>
+        <location filename="../prepare/resolution.h" line="22"/>
+        <source>Best performance, for computers with hybrid graphics</source>
+        <translation>Hibrid grafik kartlı bilgisayarlar için en iyi performans</translation>
     </message>
 </context>
 <context>
     <name>ResolutionWidget</name>
     <message>
-        <location filename="../widgets/resolutionwidget.cpp" line="118"/>
-        <source>Version: </source>
-        <translation>Sürüm: </translation>
+        <location filename="../prepare/resolutionwidget.cpp" line="41"/>
+        <source>Driver/Version: %1/%2</source>
+        <translation>Sürücü/Sürüm: %1/%2</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
-        <location filename="../installer/main.cpp" line="37"/>
+        <location filename="../prepare/main.cpp" line="52"/>
+        <location filename="../test_installer/main.cpp" line="41"/>
+        <source>Graphics Driver Manager</source>
+        <translation>Görüntü Aygıtı Sürücüsü Yöneticisi</translation>
+    </message>
+    <message>
+        <location filename="../prepare/main.cpp" line="53"/>
+        <location filename="../test_installer/main.cpp" line="42"/>
+        <source>Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
+        <translation>Görüntü Aygıtı Sürücüsü Yöneticisi basit ve kullanımı kolay bir görüntü aygıtı sürücü yönetimi aracıdır. Görüntü aygıtı donanımını algılama, görüntü aygıtı sürücüsünü yükleme, görüntü aygıtı sürücü çözümünü değiştirme, görüntü aygıtı sürücüsünü otomatik olarak kurtarma gibi özellikleri vardır.</translation>
+    </message>
+    <message>
+        <location filename="../installer/main.cpp" line="49"/>
         <source>Congratulations, you have switched to %1, please reboot to take effect.</source>
         <translation>Tebrikler, %1 geçişini yaptınız. Değişikliklerin etkili olması için lütfen yeniden başlatın.</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="40"/>
+        <location filename="../installer/main.cpp" line="52"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="41"/>
+        <location filename="../installer/main.cpp" line="53"/>
         <source>Reboot</source>
         <translation>Yeniden Başlat</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="58"/>
+        <location filename="../installer/main.cpp" line="91"/>
         <source>Auto restore to %2 after failed to switch to %1</source>
         <translation>%1 geçişi yapılamadığından otomatik olarak %2 geri yüklendi</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="61"/>
+        <location filename="../installer/main.cpp" line="96"/>
         <source>Submit Feedback</source>
         <translation>Geri Bildirim Gönder</translation>
     </message>
     <message>
-        <location filename="../installer/main.cpp" line="69"/>
+        <location filename="../installer/main.cpp" line="105"/>
         <source>Updating the driver, please wait...</source>
         <translation>Sürücü güncelleniyor, lütfen bekleyin...</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="25"/>
-        <source>Deepin Graphics Driver Manager</source>
-        <translation>Deepin Görüntü Aygıtı Sürücüsü Yöneticisi</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="26"/>
-        <source>Deepin Graphics Driver Manager is a compact and easy to use graphics driver management tool. It includes graphics card hardware detection, graphics driver installation, graphics driver solution switching,  graphics driver automatic recovery and other functions.</source>
-        <translation>Deepin Görüntü Aygıtı Sürücüsü Yöneticisi basit ve kullanımı kolay bir görüntü aygıtı sürücü yönetimi aracıdır. Görüntü aygıtı donanımını algılama, görüntü aygıtı sürücüsünü yükleme, görüntü aygıtı sürücü çözümünü değiştirme, görüntü aygıtı sürücüsünü otomatik olarak kurtarma gibi özellikleri vardır.</translation>
     </message>
 </context>
 </TS>
