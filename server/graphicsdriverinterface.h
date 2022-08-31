@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2017 - 2022 UnionTech Software Technology Co., Ltd.
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 #ifndef GRAPHICSDRIVERINTERFACE_H_
 #define GRAPHICSDRIVERINTERFACE_H_
 

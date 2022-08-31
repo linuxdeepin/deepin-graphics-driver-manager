@@ -1,8 +1,6 @@
+// SPDX-FileCopyrightText: 2017 - 2022 UnionTech Software Technology Co., Ltd.
 //
-// Created by uos on 2021/3/8.
-//
-
-// You may need to build the project (run Qt uic code generator) to get "ui_CloseWidget.h" resolved
+// SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "closeButton.h"
 
