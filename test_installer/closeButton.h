@@ -1,6 +1,6 @@
+// SPDX-FileCopyrightText: 2017 - 2022 UnionTech Software Technology Co., Ltd.
 //
-// Created by uos on 2021/3/8.
-//
+// SPDX-License-Identifier: GPL-3.0-or-later
 
 #ifndef DEEPIN_GRAPHICS_DRIVER_MANAGER_CLOSEBUTTON_H
 #define DEEPIN_GRAPHICS_DRIVER_MANAGER_CLOSEBUTTON_H
