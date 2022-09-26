@@ -43,4 +43,4 @@ sudo make install
 
 ## 协议
 
-深度显卡驱动管理遵循协议 [GPLv3](LICENSE).
+深度显卡驱动管理遵循协议 [GPL-3.0-or-later](LICENSE).

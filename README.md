@@ -43,4 +43,4 @@ We encourage you to report issues and contribute changes
 
 ## License
 
-Deepin Graphics Driver Manager is licensed under [GPLv3](LICENSE).
+Deepin Graphics Driver Manager is licensed under [GPL-3.0-or-later](LICENSE).
