@@ -1,3 +1,9 @@
+deepin-graphics-driver-manager (5.1.22) unstable; urgency=medium
+
+  * remove dh-systemd from build dep.
+
+ -- Deepin Packages Builder <liujianqiang@uniontech.com>  Wed, 07 Aug 2024 15:00:06 +0800
+
 deepin-graphics-driver-manager (5.1.21-1) unstable; urgency=medium
 
   * Initial Release.

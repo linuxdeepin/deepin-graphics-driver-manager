@@ -2,7 +2,7 @@ Source: deepin-graphics-driver-manager
 Section: misc
 Priority: optional
 Maintainer: Deepin Packages Builder <packages@deepin.com>
-Build-Depends: debhelper (>= 9), dh-systemd, cmake, pkg-config, libqt5widgets5, libdtkwidget-dev, libdtkcore5-bin | libdtkcore-bin, libpci-dev, libgl1-mesa-dev, freeglut3-dev, libxmu-dev, libxi-dev,  qtbase5-dev, qttools5-dev, qttools5-dev-tools
+Build-Depends: debhelper (>= 9), cmake, pkg-config, libqt5widgets5, libdtkwidget-dev, libdtkcore5-bin | libdtkcore-bin, libpci-dev, libgl1-mesa-dev, freeglut3-dev, libxmu-dev, libxi-dev,  qtbase5-dev, qttools5-dev, qttools5-dev-tools
 Standards-Version: 3.9.8
 Homepage: https://www.deepin.org
 
